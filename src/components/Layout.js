@@ -28,7 +28,7 @@ export default function Layout({ children }) {
       </Head>
 
       <Header />
-      <main className="min-h-screen">{children}</main>
+      <main className="my-20 mx-28 min-h-screen text-center">{children}</main>
       <Footer />
     </div>
   );
