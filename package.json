@@ -14,8 +14,10 @@
     "@notionhq/client": "^1.0.4",
     "classnames": "^2.3.1",
     "next": "12.1.5",
+    "notion-to-md": "^2.3.2",
     "react": "18.0.0",
-    "react-dom": "18.0.0"
+    "react-dom": "18.0.0",
+    "react-markdown": "^8.0.3"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.4",
