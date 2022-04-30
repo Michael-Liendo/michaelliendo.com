@@ -9,29 +9,26 @@ const n2m = new NotionToMarkdown({ notionClient: client });
 
 export async function getPublishedBlogPosts() {
   const database = process.env.NOTION_BLOG_DATABASE_ID ?? '';
-
   // list blog posts
-  await client.databases
-    .query({
-      database_id: database,
-      filter: {
-        property: 'Published',
-        checkbox: {
-          equals: true,
-        },
+  const response = await client.databases.query({
+    database_id: database,
+    filter: {
+      property: 'Published',
+      checkbox: {
+        equals: true,
       },
-      sorts: [
-        {
-          property: 'Updated',
-          direction: 'descending',
-        },
-      ],
-    })
-    .then((res) => {
-      return res.results.map((res) => {
-        return pageToPostTransformer(res);
-      });
-    });
+    },
+    sorts: [
+      {
+        property: 'Updated',
+        direction: 'descending',
+      },
+    ],
+  });
+
+  return response.results.map((res) => {
+    return pageToPostTransformer(res);
+  });
 }
 
 export async function getSingleBlogPost(slug) {
