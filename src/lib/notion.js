@@ -11,25 +11,27 @@ export async function getPublishedBlogPosts() {
   const database = process.env.NOTION_BLOG_DATABASE_ID ?? '';
 
   // list blog posts
-  const response = await client.databases.query({
-    database_id: database,
-    filter: {
-      property: 'Published',
-      checkbox: {
-        equals: true,
+  await client.databases
+    .query({
+      database_id: database,
+      filter: {
+        property: 'Published',
+        checkbox: {
+          equals: true,
+        },
       },
-    },
-    sorts: [
-      {
-        property: 'Updated',
-        direction: 'descending',
-      },
-    ],
-  });
-
-  return response.results.map((res) => {
-    return pageToPostTransformer(res);
-  });
+      sorts: [
+        {
+          property: 'Updated',
+          direction: 'descending',
+        },
+      ],
+    })
+    .then((res) => {
+      return res.results.map((res) => {
+        return pageToPostTransformer(res);
+      });
+    });
 }
 
 export async function getSingleBlogPost(slug) {
@@ -38,7 +40,7 @@ export async function getSingleBlogPost(slug) {
   const database = process.env.NOTION_BLOG_DATABASE_ID ?? '';
 
   // list of blog posts
-  const response = await this.client.databases.query({
+  const response = await client.databases.query({
     database_id: database,
     filter: {
       property: 'Slug',
