@@ -26,14 +26,14 @@ export async function getPublishedBlogPosts() {
     ],
   });
 
-  return response.results.map((res) => {
-    return pageToPostTransformer(res);
-  });
+  return Promise.all(
+    response.results.map((res) => {
+      return pageToPostTransformer(res);
+    }),
+  );
 }
 
 export async function getSingleBlogPost(slug) {
-  let post, markdown;
-
   const database = process.env.NOTION_BLOG_DATABASE_ID ?? '';
 
   // list of blog posts
@@ -60,12 +60,10 @@ export async function getSingleBlogPost(slug) {
     throw 'No results available';
   }
 
-  // grab page from notion
   const page = response.results[0];
-
   const mdBlocks = await n2m.pageToMarkdown(page.id);
-  markdown = n2m.toMarkdownString(mdBlocks);
-  post = pageToPostTransformer(page);
+  const post = await pageToPostTransformer(page);
+  const markdown = n2m.toMarkdownString(mdBlocks);
 
   return {
     post,
