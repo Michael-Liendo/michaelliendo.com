@@ -33,21 +33,12 @@ export async function getPublishedBlogPosts() {
   );
 }
 
-export async function getSingleBlogPost(slug) {
+export async function getSingleBlogPost(url) {
   const database = process.env.NOTION_BLOG_DATABASE_ID ?? '';
 
   // list of blog posts
   const response = await client.databases.query({
     database_id: database,
-    filter: {
-      property: 'Slug',
-      formula: {
-        text: {
-          equals: slug, // slug
-        },
-      },
-      // add option for tags in the future
-    },
     sorts: [
       {
         property: 'Updated',
@@ -56,11 +47,15 @@ export async function getSingleBlogPost(slug) {
     ],
   });
 
-  if (!response.results[0]) {
+  let filter = response.results.filter(
+    (res) => res.properties.Url.rich_text[0].plain_text === url,
+  );
+
+  if (!filter[0]) {
     throw 'No results available';
   }
 
-  const page = response.results[0];
+  const page = filter[0];
   const mdBlocks = await n2m.pageToMarkdown(page.id);
   const post = await pageToPostTransformer(page);
   const markdown = n2m.toMarkdownString(mdBlocks);
@@ -72,8 +67,9 @@ export async function getSingleBlogPost(slug) {
 }
 
 export async function pageToPostTransformer(page) {
-  let cover = page.cover.type;
-  switch (cover) {
+  let cover = page.cover;
+  // todo: check if cover is an file and not a url
+  switch (cover.type) {
     case 'file':
       cover = page.cover.file;
       break;
@@ -92,6 +88,6 @@ export async function pageToPostTransformer(page) {
     tags: page.properties.Tags.multi_select,
     description: page.properties.Description.rich_text[0].plain_text,
     date: page.properties.Updated.last_edited_time,
-    slug: page.properties.Slug.formula.string,
+    url: page.properties.Url.rich_text[0].plain_text,
   };
 }

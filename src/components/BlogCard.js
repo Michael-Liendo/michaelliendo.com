@@ -5,7 +5,7 @@ export default function BlogCard({ post }) {
   let date = new Date(post.date);
 
   return (
-    <Link href={`/post/${post.slug}`}>
+    <Link href={`/post/${post.url}`}>
       <a className="transition duration-300 hover:scale-105">
         <div
           key={post.title}

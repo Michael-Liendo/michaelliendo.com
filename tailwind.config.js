@@ -5,6 +5,10 @@ module.exports = {
   ],
   theme: {
     extend: {},
+    fontFamily: {
+      sans: ["'Montserrat'"],
+      mono: ["'Inconsolata'"],
+    },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/typography')],
 };

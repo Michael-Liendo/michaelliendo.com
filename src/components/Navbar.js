@@ -7,13 +7,17 @@ export default function Home() {
   return (
     <div className="text-cyan-500 text-xl font-thin font-mono">
       <Link href="/">
-        <a className={cn({ 'text-cyan-600 font-semibold': route === '/' })}>
+        <a
+          className={cn('font-medium', {
+            'text-cyan-600 font-semibold': route === '/',
+          })}
+        >
           Home
         </a>
       </Link>
       <Link href="/about-me">
         <a
-          className={cn('ml-5', {
+          className={cn('ml-5 font-medium', {
             'text-cyan-600 font-semibold': route === '/about-me',
           })}
         >
@@ -22,7 +26,7 @@ export default function Home() {
       </Link>
       <Link href="/portfolio">
         <a
-          className={cn('ml-5', {
+          className={cn('ml-5 font-medium', {
             'text-cyan-600 font-semibold': route === '/portfolio',
           })}
         >
@@ -30,7 +34,7 @@ export default function Home() {
         </a>
       </Link>
       <Link href="mailto:me@michaelliendo.com">
-        <a className="ml-5">Contact</a>
+        <a className="ml-5 font-medium">Contact</a>
       </Link>
     </div>
   );
