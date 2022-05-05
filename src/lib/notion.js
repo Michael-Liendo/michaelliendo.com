@@ -67,18 +67,13 @@ export async function getSingleBlogPost(url) {
 }
 
 export async function pageToPostTransformer(page) {
-  let cover = page.cover;
-  // todo: check if cover is an file and not a url
-  switch (cover.type) {
-    case 'file':
-      cover = page.cover.file;
-      break;
-    case 'external':
-      cover = page.cover.external.url;
-      break;
-    default:
-      // Add default cover image if you want...
-      cover = '';
+  let cover = page.properties.cover;
+
+  if (cover.url) {
+    cover = page.properties.cover.url;
+  } else {
+    // default cover
+    cover = 'https://cdn.michaelliendo.com/blog/cover/default.png';
   }
 
   return {
