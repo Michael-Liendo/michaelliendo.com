@@ -66,6 +66,26 @@ export async function getSingleBlogPost(url) {
   };
 }
 
+export async function getAboutMe() {
+  const database = process.env.NOTION_ABOUT_ME_DATABASE_ID ?? '';
+
+  const response = await client.databases.query({
+    database_id: database,
+  });
+  const page = response.results[0];
+
+  if (!page) {
+    throw 'No results available';
+  }
+
+  const mdBlocks = await n2m.pageToMarkdown(page.id);
+  const markdown = n2m.toMarkdownString(mdBlocks);
+
+  return {
+    markdown,
+  };
+}
+
 export async function pageToPostTransformer(page) {
   let cover = page.properties.cover;
 
