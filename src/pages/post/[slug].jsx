@@ -1,5 +1,5 @@
 import ReactMarkdown from 'react-markdown';
-import Layout from '../../components/Layout.js';
+import Layout from '../../components/Layout';
 
 import { getSingleBlogPost, getPublishedBlogPosts } from '../../lib/notion.js';
 
