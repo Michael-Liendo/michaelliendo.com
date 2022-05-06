@@ -3,27 +3,23 @@ import Layout from '../../components/Layout.js';
 
 import { getSingleBlogPost, getPublishedBlogPosts } from '../../lib/notion.js';
 
-const Post = ({ markdown, post }) => {
+export default function Post({ markdown, post }) {
   return (
     <Layout title={post.title}>
-      <div className="min-h-screen">
-        <main className="max-w-5xl mx-auto relative">
-          <div className="flex items-center justify-center">
-            <article className="prose">
-              <ReactMarkdown>{markdown}</ReactMarkdown>
-            </article>
-          </div>
-        </main>
+      <div className="flex items-center justify-center">
+        <article className="prose">
+          <ReactMarkdown>{markdown}</ReactMarkdown>
+        </article>
       </div>
     </Layout>
   );
-};
+}
 
-export const getStaticProps = async (context) => {
+export async function getStaticProps(context) {
   const p = await getSingleBlogPost(context.params?.slug);
 
   if (!p) {
-    throw '';
+    throw 'I no have a post';
   }
 
   return {
@@ -32,7 +28,7 @@ export const getStaticProps = async (context) => {
       post: p.post,
     },
   };
-};
+}
 
 export async function getStaticPaths() {
   const posts = await getPublishedBlogPosts();
@@ -46,5 +42,3 @@ export async function getStaticPaths() {
     fallback: false,
   };
 }
-
-export default Post;
