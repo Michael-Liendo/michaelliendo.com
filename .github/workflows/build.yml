@@ -24,4 +24,5 @@ jobs:
           NOTION_ACCESS_TOKEN: ${{ secrets.NOTION_ACCESS_TOKEN }}
           NOTION_BLOG_DATABASE_ID: ${{ secrets.NOTION_BLOG_DATABASE_ID }}
           NOTION_ABOUT_ME_DATABASE_ID: ${{ secrets.NOTION_ABOUT_ME_DATABASE_ID }}
+          NOTION_PROJECTS_DATABASE_ID: ${{ secrets.NOTION_PROJECTS_DATABASE_ID }}
         run: npm run build
