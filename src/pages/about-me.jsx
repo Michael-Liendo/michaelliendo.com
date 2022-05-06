@@ -1,7 +1,6 @@
 import ReactMarkdown from 'react-markdown';
 
 import Layout from '../components/Layout';
-
 import { getAboutMe } from '../lib/notion';
 
 export async function getStaticProps() {
