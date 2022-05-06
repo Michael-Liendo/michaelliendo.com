@@ -86,6 +86,26 @@ export async function getAboutMe() {
   };
 }
 
+export async function getProjects() {
+  const database = process.env.NOTION_PROJECTS_DATABASE_ID ?? '';
+
+  const response = await client.databases.query({
+    database_id: database,
+    sorts: [
+      {
+        property: 'Updated',
+        direction: 'descending',
+      },
+    ],
+  });
+
+  return Promise.all(
+    response.results.map((res) => {
+      return pageToPostTransformer(res);
+    }),
+  );
+}
+
 export async function pageToPostTransformer(page) {
   let cover = page.properties.cover;
 
