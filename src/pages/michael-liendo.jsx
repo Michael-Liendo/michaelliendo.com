@@ -13,9 +13,9 @@ export async function getStaticProps() {
   };
 }
 
-export default function AboutMe({ markdown }) {
+export default function MichaelLiendo({ markdown }) {
   return (
-    <Layout title="About Me | Michael Liendo">
+    <Layout title="Who is Michael Liendo?">
       <div className="flex items-center justify-center">
         <article className="prose">
           <ReactMarkdown>{markdown}</ReactMarkdown>

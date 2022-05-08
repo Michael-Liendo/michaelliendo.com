@@ -15,13 +15,13 @@ export default function Home() {
           Home
         </a>
       </Link>
-      <Link href="/about-me">
+      <Link href="/michael-liendo">
         <a
           className={cn('ml-5 font-medium', {
-            'text-cyan-600 font-semibold': route === '/about-me',
+            'text-cyan-600 font-semibold': route === '/michael-liendo',
           })}
         >
-          About Me
+          Biography
         </a>
       </Link>
       <Link href="/portfolio">
