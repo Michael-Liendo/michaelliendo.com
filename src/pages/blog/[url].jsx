@@ -16,7 +16,7 @@ export default function Post({ markdown, post }) {
 }
 
 export async function getStaticProps(context) {
-  const p = await getSingleBlogPost(context.params?.slug);
+  const p = await getSingleBlogPost(context.params?.url);
 
   if (!p) {
     throw 'I no have a post';
@@ -34,7 +34,7 @@ export async function getStaticPaths() {
   const posts = await getPublishedBlogPosts();
 
   const paths = posts.map((post) => {
-    return `/post/${post.url}`;
+    return `/blog/${post.url}`;
   });
 
   return {
