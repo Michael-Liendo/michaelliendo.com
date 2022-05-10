@@ -1,11 +1,11 @@
 import ReactMarkdown from 'react-markdown';
-import Layout from '../../components/Layout';
+import Layout from '../components/Layout';
 
-import { getSingleBlogPost, getPublishedBlogPosts } from '../../lib/notion.js';
+import { getSingleBlogPost, getPublishedBlogPosts } from '../lib/notion.js';
 
 export default function Post({ markdown, post }) {
   return (
-    <Layout title={post.title}>
+    <Layout title={post.title} description={post.description}>
       <div className="flex items-center justify-center">
         <article className="prose">
           <ReactMarkdown>{markdown}</ReactMarkdown>
@@ -34,7 +34,7 @@ export async function getStaticPaths() {
   const posts = await getPublishedBlogPosts();
 
   const paths = posts.map((post) => {
-    return `/blog/${post.url}`;
+    return `/${post.url}`;
   });
 
   return {

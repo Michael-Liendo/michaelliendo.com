@@ -16,7 +16,7 @@ export default function MyDocument() {
         <meta property="og:url" content="https://michaelliendo.com" />
         <meta
           property="og:image"
-          content="https://cdn.michaelliendo.com/michael/profile-pic.jpg"
+          content="https://cdn.michaelliendo.com/michael/profile-pic.png"
         />
 
         <link rel="preconnect" href="https://fonts.googleapis.com" />

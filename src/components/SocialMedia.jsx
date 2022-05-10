@@ -11,7 +11,7 @@ export default function SocialMedia() {
   let width = '30';
 
   return (
-    <div className="flex">
+    <nav className="flex">
       <Link href="https://twitter.com/Michael__Liendo">
         <a className="p-3" target="_blank">
           <Image
@@ -52,6 +52,6 @@ export default function SocialMedia() {
           />
         </a>
       </Link>
-    </div>
+    </nav>
   );
 }

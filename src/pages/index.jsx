@@ -14,8 +14,11 @@ export async function getStaticProps() {
 
 export default function Home({ posts }) {
   return (
-    <Layout>
-      <h1 className="text-5xl text-center">Last Post</h1>
+    <Layout
+      title="Michael Liendo"
+      description="Hi, there! I'm Michael a programmer interested in Web Development. Currently programming in Javascript."
+    >
+      <h2 className="text-5xl text-center">Last Post</h2>
       <div className="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-2 lg:max-w-none">
         {posts.map((post) => (
           <BlogCard key={post.id} post={post} />

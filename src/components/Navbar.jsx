@@ -5,7 +5,7 @@ import { useRouter } from 'next/router';
 export default function Home() {
   let route = useRouter().pathname;
   return (
-    <div className="text-cyan-500 text-xl font-thin font-mono">
+    <nav className="text-cyan-500 text-xl font-thin font-mono">
       <Link href="/">
         <a
           className={cn('font-medium', {
@@ -36,6 +36,6 @@ export default function Home() {
       <Link href="mailto:me@michaelliendo.com">
         <a className="ml-5 font-medium">Contact</a>
       </Link>
-    </div>
+    </nav>
   );
 }
