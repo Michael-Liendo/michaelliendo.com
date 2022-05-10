@@ -2,8 +2,23 @@ import { Html, Head, Main, NextScript } from 'next/document';
 
 export default function MyDocument() {
   return (
-    <Html>
+    <Html lang="en">
       <Head>
+        <meta property="og:title" content="Michael Liendo" />
+
+        <meta
+          property="og:description"
+          content="Hi, there 👋 ! I'm Michael a programmer interested in Web Development. Currently programming in Javascript."
+        />
+        <meta name="theme-color" content="#3bd6cf" />
+
+        <meta property="og:site_name" content="Michael Liendo" />
+        <meta property="og:url" content="https://michaelliendo.com" />
+        <meta
+          property="og:image"
+          content="https://cdn.michaelliendo.com/michael/profile-pic.png"
+        />
+
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"

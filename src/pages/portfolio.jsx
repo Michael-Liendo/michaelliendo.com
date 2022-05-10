@@ -14,7 +14,10 @@ export async function getStaticProps() {
 
 export default function Portfolio({ posts }) {
   return (
-    <Layout>
+    <Layout
+      title="Portfolio - Michael Liendo"
+      description="Here you can find the projects that Michael has developed!"
+    >
       <div className="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-2 lg:max-w-none">
         {posts.map((post) => (
           <ProjectCard key={post.id} post={post} />

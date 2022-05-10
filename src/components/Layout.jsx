@@ -1,23 +1,22 @@
 import Head from 'next/head';
-import { useRouter } from 'next/router';
 
 import Header from './Header';
 import Footer from './Footer';
 
-export default function Layout({ title, children }) {
-  let route = useRouter().pathname;
-
+export default function Layout({ title, description, children }) {
   function getTitle() {
-    if (route === '/') {
-      return 'Michael Liendo - Developer';
-    } else if (route === '/about-me') {
-      return 'Michael Liendo - About Me';
-    } else if (route === '/portfolio') {
-      return 'Michael Liendo - Portfolio';
-    } else if (title) {
+    if (title) {
       return title;
     } else {
       return 'Michael Liendo';
+    }
+  }
+
+  function getDescription() {
+    if (description) {
+      return description;
+    } else {
+      return "Hi, there 👋 ! I'm Michael a programmer interested in Web Development. Currently programming in Javascript.";
     }
   }
 
@@ -25,7 +24,7 @@ export default function Layout({ title, children }) {
     <div>
       <Head>
         <title>{getTitle()}</title>
-        <meta name="description" content="Michael Liendo's Portfolio" />
+        <meta name="description" content={getDescription()} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
