@@ -1,10 +1,10 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import Twitter from '../public/images/social-media-icons/twitter.svg';
-import Github from '../public/images/social-media-icons/github.svg';
-import Linkedin from '../public/images/social-media-icons/linkedin.svg';
-import StackOverflow from '../public/images/social-media-icons/stack-overflow.svg';
+import Twitter from '../../public/images/social-media-icons/twitter.svg';
+import Github from '../../public/images/social-media-icons/github.svg';
+import Linkedin from '../../public/images/social-media-icons/linkedin.svg';
+import StackOverflow from '../../public/images/social-media-icons/stack-overflow.svg';
 
 export default function SocialMedia() {
   let height = '30';
