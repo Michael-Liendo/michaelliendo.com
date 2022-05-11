@@ -19,6 +19,7 @@ export default function BlogCard({ post }) {
                 alt={post.title}
                 height={250}
                 width={500}
+                layout="responsive"
               />
             </div>
             <div className="flex-1 bg-gray-50 pt-2 pb-6 px-4 flex flex-col justify-between">
