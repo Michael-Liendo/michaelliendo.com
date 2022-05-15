@@ -29,7 +29,7 @@ export default function Layout({ title, description, children }) {
       </Head>
 
       <Header />
-      <main className="my-20 mx-28 min-h-screen">{children}</main>
+      <main className="my-20 mx-10 min-h-screen lg:mx-28">{children}</main>
       <Footer />
     </div>
   );
