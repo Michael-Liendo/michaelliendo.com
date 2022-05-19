@@ -12,7 +12,7 @@ export default function SocialMedia() {
 
   return (
     <nav className="flex">
-      <Link href="https://twitter.com/Michael__Liendo">
+      <Link href="https://twitter.com/MichaelMLiendo">
         <a className="p-3" target="_blank">
           <Image
             src={Twitter}
@@ -32,7 +32,7 @@ export default function SocialMedia() {
           />
         </a>
       </Link>
-      <Link href="https://www.linkedin.com/in/michaelliendo/">
+      <Link href="https://www.linkedin.com/in/michaelmliendo/">
         <a className="p-3" target="_blank">
           <Image
             src={Linkedin}
