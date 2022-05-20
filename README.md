@@ -21,7 +21,16 @@ git clone https://github.com/Michael-Liendo/michaelliendo.com.git
 npm install
 ```
 
-3. Run the server
+3. Create a .env file with the example
+
+```bash
+NOTION_ACCESS_TOKEN=
+NOTION_BLOG_DATABASE_ID=
+NOTION_ABOUT_ME_DATABASE_ID=
+NOTION_PROJECTS_DATABASE_ID=
+```
+
+4. Run the server
 
 ```bash
 npm run dev
