@@ -7,8 +7,13 @@ const client = new Client({
 
 const n2m = new NotionToMarkdown({ notionClient: client });
 
-export async function getPublishedBlogPosts() {
-  const database = process.env.NOTION_BLOG_DATABASE_ID ?? '';
+const databaseID = {
+  es: process.env.NOTION_BLOG_DATABASE_ID_ES,
+  en: process.env.NOTION_BLOG_DATABASE_ID_EN,
+};
+
+export async function getPublishedBlogPosts(locale = 'es') {
+  const database = databaseID[locale];
   // list blog posts
   const response = await client.databases.query({
     database_id: database,
@@ -33,8 +38,8 @@ export async function getPublishedBlogPosts() {
   );
 }
 
-export async function getSingleBlogPost(url) {
-  const database = process.env.NOTION_BLOG_DATABASE_ID ?? '';
+export async function getSingleBlogPost(locale = 'es', url) {
+  const database = databaseID[locale];
 
   // list of blog posts
   const response = await client.databases.query({
@@ -62,26 +67,6 @@ export async function getSingleBlogPost(url) {
 
   return {
     post,
-    markdown,
-  };
-}
-
-export async function getAboutMe() {
-  const database = process.env.NOTION_ABOUT_ME_DATABASE_ID ?? '';
-
-  const response = await client.databases.query({
-    database_id: database,
-  });
-  const page = response.results[0];
-
-  if (!page) {
-    throw 'No results available';
-  }
-
-  const mdBlocks = await n2m.pageToMarkdown(page.id);
-  const markdown = n2m.toMarkdownString(mdBlocks);
-
-  return {
     markdown,
   };
 }

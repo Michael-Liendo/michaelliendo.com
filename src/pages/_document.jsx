@@ -2,7 +2,7 @@ import { Html, Head, Main, NextScript } from 'next/document';
 
 export default function MyDocument() {
   return (
-    <Html lang="en">
+    <Html>
       <Head>
         <meta property="og:title" content="Michael Liendo" />
 
