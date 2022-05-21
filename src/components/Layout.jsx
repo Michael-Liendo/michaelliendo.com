@@ -3,12 +3,16 @@ import Head from 'next/head';
 import Header from './Header';
 import Footer from './Footer';
 
+import useTranslation from '../utils/i18n/hooks';
+
 export default function Layout({ title, description, children }) {
+  const t = useTranslation;
+
   function getTitle() {
     if (title) {
       return title;
     } else {
-      return 'Michael Liendo';
+      return t('title');
     }
   }
 
@@ -16,7 +20,7 @@ export default function Layout({ title, description, children }) {
     if (description) {
       return description;
     } else {
-      return "Hi, there 👋 ! I'm Michael a programmer interested in Web Development. Currently programming in Javascript.";
+      return t('description');
     }
   }
 
@@ -25,7 +29,6 @@ export default function Layout({ title, description, children }) {
       <Head>
         <title>{getTitle()}</title>
         <meta name="description" content={getDescription()} />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <Header />

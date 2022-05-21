@@ -3,8 +3,9 @@ import cn from 'classnames';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import Image from 'next/image';
-
 import Hamburger from '../../public/images/navbar-icons/hamburger-menu.svg';
+
+import useTranslation from '../utils/i18n/hooks';
 
 function NavLink({ children, href }) {
   const { pathname } = useRouter();
@@ -25,6 +26,8 @@ function NavLink({ children, href }) {
 }
 
 export default function Navbar() {
+  const t = useTranslation;
+
   const [navbarStatus, setNavbarStatus] = useState(false);
 
   return (
@@ -41,10 +44,10 @@ export default function Navbar() {
           { block: navbarStatus, hidden: !navbarStatus },
         )}
       >
-        <NavLink href="/">Home</NavLink>
-        <NavLink href="/michael-liendo">Biography</NavLink>
-        <NavLink href="/portfolio">Portfolio</NavLink>
-        <NavLink href="mailto:me@michaelliendo.com">Contact</NavLink>
+        <NavLink href="/">{t('home')}</NavLink>
+        <NavLink href="/michael-liendo">{t('biography')}</NavLink>
+        <NavLink href="/portfolio">{t('portfolio')}</NavLink>
+        <NavLink href="mailto:me@michaelliendo.com">{t('contact')}</NavLink>
       </nav>
     </>
   );

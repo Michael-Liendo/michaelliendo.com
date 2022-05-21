@@ -4,6 +4,10 @@ const nextConfig = {
   images: {
     domains: ['cdn.michaelliendo.com'],
   },
+  i18n: {
+    locales: ['es', 'en'],
+    defaultLocale: 'es',
+  },
 };
 
 module.exports = nextConfig;
