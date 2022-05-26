@@ -17,6 +17,6 @@ module.exports = {
     biography: 'Biografía',
     portfolio: 'Portafolio',
     contact: 'Contacto',
-    latest_blog_posts: 'Últimos Posts',
+    latest_blog_posts: 'Últimas publicaciones',
   },
 };
