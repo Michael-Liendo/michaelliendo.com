@@ -29,15 +29,15 @@ export default function BlogCard({ post }) {
                     {date.toDateString()}
                   </span>
                 </span>
-                <span className="block mt-2">
+                <div className="block mt-2">
                   <h3 className="text-xl font-semibold text-gray-900">
                     {post.title}
                   </h3>
-                </span>
+                </div>
 
-                <figcaption className="block mt-2">
+                <div className="block mt-2">
                   <p className="text-sm text-gray-600">{post.description}</p>
-                </figcaption>
+                </div>
 
                 <span className="block mt-2 space-x-4">
                   {post.tags.map((tag) => (
