@@ -6,7 +6,7 @@ export default function MyDocument() {
       <Head>
         <meta
           property="og:title"
-          content="Michael Liendo - Front-end Developer. Aprendiendiendo, programando y enseñando"
+          content="Michael Liendo - Front-end Developer. Aprendiendiendo, y programando."
         />
 
         <meta
@@ -28,6 +28,8 @@ export default function MyDocument() {
           name="keywords"
           content="michael liendo, liendo, michael, michaelliendo, michael liendo portafolio, michael liendo website, michael liendo developer, michael liendo portfolio, michael liendo portafolio, michael liendo biography, michael liendo biografia, liendo michael, who is michael liendo?, ¿quien es michael liendo?, publicaciones michael liendo, posts michael liendo"
         />
+
+        <meta rel="canonical" href="https://michaelliendo.com/" />
 
         <meta name="robots" content="follow" />
         <meta name="author" content="Michael Liendo" />
