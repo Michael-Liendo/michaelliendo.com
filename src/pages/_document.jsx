@@ -26,7 +26,7 @@ export default function MyDocument() {
 
         <meta
           name="keywords"
-          content="michael liendo, liendo, michael, michaelliendo, michael liendo portafolio, michael liendo website, michael liendo developer, freelancer, developer, javascript, liendo michael, javascript"
+          content="michael liendo, liendo, michael, michaelliendo, michael liendo portafolio, michael liendo website, michael liendo developer, michael liendo portfolio, michael liendo portafolio, michael liendo biography, michael liendo biografia, liendo michael, who is michael liendo?, ¿quien es michael liendo?, publicaciones michael liendo, posts michael liendo"
         />
 
         <meta name="robots" content="follow" />
