@@ -15,7 +15,7 @@ export default function Post({ markdown, post }) {
         <meta property="og:type" content="website" />
       </Head>
       <Layout title={post.title} description={post.description}>
-        <div className="flex items-center justify-center">
+        <div className="sm:flex sm:smitems-center sm:justify-center">
           <article className="prose">
             <ReactMarkdown>{markdown}</ReactMarkdown>
           </article>
