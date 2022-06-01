@@ -8,12 +8,12 @@ export default function Header() {
   const t = useTranslation;
 
   return (
-    <header className="h-30 bg-black">
-      <div className="flex justify-between">
-        <h2 className="ml-4 mt-5 text-3xl font-mono font-black text-white lg:ml-16 sm:text-5xl">
+    <header className="bg-black">
+      <div className="pt-5 flex justify-between">
+        <h2 className="ml-4 text-3xl font-mono font-black text-white lg:ml-16 sm:text-5xl">
           Michael Liendo
         </h2>
-        <div className="mr-16 mt-8">
+        <div className="mr-16">
           <Navbar />
         </div>
       </div>
