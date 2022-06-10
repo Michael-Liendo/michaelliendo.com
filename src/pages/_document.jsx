@@ -35,6 +35,24 @@ export default function MyDocument() {
         <meta name="author" content="Michael Liendo" />
         <meta name="copyright" content="Michael Liendo" />
 
+        {/* Global Site Tag (gtag.js) - Google Analytics */}
+        <script
+          async
+          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GOOGLE_ANALYTICS}`}
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${process.env.GOOGLE_ANALYTICS}', {
+              page_path: window.location.pathname,
+            });
+          `,
+          }}
+        />
+
         <link href="/favicon.ico" rel="shortcut icon" />
         <link
           href="/images/seo-images/apple-icon-180x180.png"
@@ -53,7 +71,6 @@ export default function MyDocument() {
           sizes="16x16"
           type="image/png"
         />
-
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link

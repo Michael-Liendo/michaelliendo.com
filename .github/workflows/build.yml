@@ -40,4 +40,5 @@ jobs:
           NOTION_BLOG_DATABASE_ID_ES: ${{ secrets.NOTION_BLOG_DATABASE_ID_ES }}
           NOTION_BLOG_DATABASE_ID_EN: ${{ secrets.NOTION_BLOG_DATABASE_ID_EN }}
           NOTION_PROJECTS_DATABASE_ID: ${{ secrets.NOTION_PROJECTS_DATABASE_ID }}
+          GOOGLE_ANALYTICS: ${{ secrets.GOOGLE_ANALYTICS }}
         run: npm run build
