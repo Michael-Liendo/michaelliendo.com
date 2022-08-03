@@ -7,8 +7,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "format": "prettier --write --plugin-search-dir=. .  &&  eslint --fix .",
-    "lint": "prettier --check --plugin-search-dir=. . && eslint --ignore-path .gitignore ."
+    "format": "prettier --write .  &&  eslint --fix .",
+    "lint": "prettier --check . && eslint --ignore-path .gitignore ."
   },
   "dependencies": {
     "@notionhq/client": "^1.0.4",
