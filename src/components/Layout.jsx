@@ -1,11 +1,10 @@
 import Head from 'next/head';
 
-import Header from './Header';
-import Footer from './Footer';
+import Navbar from './Navbar';
 
 import useTranslation from '../utils/i18n/hooks';
 
-export default function Layout({ title, description, children }) {
+export default function Layout({ title, children }) {
   const t = useTranslation;
 
   function getTitle() {
@@ -16,24 +15,14 @@ export default function Layout({ title, description, children }) {
     }
   }
 
-  function getDescription() {
-    if (description) {
-      return description;
-    } else {
-      return t('description');
-    }
-  }
-
   return (
     <div>
       <Head>
         <title>{getTitle()}</title>
-        <meta name="description" content={getDescription()} />
       </Head>
 
-      <Header />
-      <main className="my-20 mx-10 min-h-screen lg:mx-28">{children}</main>
-      <Footer />
+      <Navbar />
+      <main>{children}</main>
     </div>
   );
 }
