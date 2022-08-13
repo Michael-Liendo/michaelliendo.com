@@ -22,7 +22,7 @@ export default function Layout({ title, children }) {
       </Head>
 
       <Navbar />
-      <main>{children}</main>
+      <main className="mx-10 min-h-screen lg:mx-24">{children}</main>
     </div>
   );
 }
