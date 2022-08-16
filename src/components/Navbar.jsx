@@ -67,8 +67,8 @@ export default function Navbar() {
       </Link>
       <div className="hidden mt-2 md:block">
         <NavLink href="#about">{t('about')}</NavLink>
-        <NavLink href="#work">{t('work')}</NavLink>
         <NavLink href="#knowledge">{t('knowledge')}</NavLink>
+        <NavLink href="#work">{t('work')}</NavLink>
         <NavLink href="#contact">{t('contact')}</NavLink>
       </div>
       <Link href="/blog" passHref>
