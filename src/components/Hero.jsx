@@ -4,7 +4,7 @@ export default function Hero() {
   const t = useTranslation;
 
   return (
-    <div className="mt-24">
+    <div className="mt-32 h-[75vh]">
       <p className="text-base md:text-xl my-3 md:my-5">{t('hi_my_name')}</p>
       <h1 className="text-xl font-semibold md:text-4xl my-3 md:my-5">
         Michael Liendo
