@@ -23,7 +23,7 @@ export default function Layout({ title, children }) {
       </Head>
 
       <Navbar />
-      <main className="mx-10 min-h-screen lg:mx-24">{children}</main>
+      <main className="mx-10 min-h-screen md:mx-24">{children}</main>
       <Footer />
     </div>
   );
