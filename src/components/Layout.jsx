@@ -1,6 +1,7 @@
 import Head from 'next/head';
 
 import Navbar from './Navbar';
+import Footer from './Footer';
 
 import useTranslation from '../utils/i18n/hooks';
 
@@ -23,6 +24,7 @@ export default function Layout({ title, children }) {
 
       <Navbar />
       <main className="mx-10 min-h-screen lg:mx-24">{children}</main>
+      <Footer />
     </div>
   );
 }
