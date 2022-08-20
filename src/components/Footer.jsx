@@ -1,7 +1,9 @@
+import Translate from './Translate';
+
 export default function Footer() {
   let year = new Date().getFullYear();
   return (
-    <div className="flex mx-10 my-8 md:mx-24">
+    <div className="flex justify-between mx-10 my-8 md:mx-24">
       <h5>
         <a
           href="https://michaelliendo.com"
@@ -11,6 +13,9 @@ export default function Footer() {
         </a>{' '}
         &copy; {year}
       </h5>
+      <div className="hidden md:block">
+        <Translate />
+      </div>
     </div>
   );
 }
