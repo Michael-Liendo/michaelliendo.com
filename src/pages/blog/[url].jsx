@@ -1,8 +1,8 @@
 import Head from 'next/head';
 import ReactMarkdown from 'react-markdown';
-import Layout from '../components/Layout';
+import Layout from '../../components/Layout';
 
-import { getSingleBlogPost, getPublishedBlogPosts } from '../lib/notion.js';
+import { getSingleBlogPost, getPublishedBlogPosts } from '../../lib/notion.js';
 
 export default function Post({ markdown, post }) {
   return (
@@ -10,13 +10,15 @@ export default function Post({ markdown, post }) {
       <Head>
         <meta property="og:title" content={post.title} />
         <meta property="og:description" content={post.description} />
-        <meta property="og:image" content={post.cover} />
-        <meta property="og:url" content={post.url} />
-        <meta property="og:type" content="website" />
+        <meta
+          property="og:url"
+          content={`https://michaelliendo.com/${post.url}`}
+        />
+        <meta property="og:type" content="blog" />
       </Head>
       <Layout title={post.title} description={post.description}>
-        <div className="sm:flex sm:smitems-center sm:justify-center">
-          <article className="prose">
+        <div className="my-20 sm:flex sm:smitems-center sm:justify-center">
+          <article className="prose max-w-3xl  prose-p:text-white prose-headings:text-white prose-green prose-code:text-white">
             <ReactMarkdown>{markdown}</ReactMarkdown>
           </article>
         </div>
@@ -45,11 +47,11 @@ export async function getStaticPaths() {
   const postsEN = await getPublishedBlogPosts('en');
 
   const pathsES = postsES.map((post) => {
-    return `/${post.url}`;
+    return `/blog/${post.url}`;
   });
 
   const pathsEN = postsEN.map((post) => {
-    return `/en/${post.url}`;
+    return `/en/blog/${post.url}`;
   });
   let paths = [...pathsES, ...pathsEN];
 
