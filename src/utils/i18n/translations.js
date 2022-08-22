@@ -14,6 +14,10 @@ module.exports = {
       'My name is Michael Liendo and I am a web developer. I enjoy using my skills and knowledge to create, improve, and complete projects, with the goal of learning more and more. I became intrigued by this world at the end of 2018 and from then on, I am what I am now, getting better and better every day, to complete my goal of being at my peak.',
     languages: 'LANGUAGES',
     technology_stack: 'TECHNOLOGY STACK',
+    lets_work_together: "Let's work together",
+    open_to_opportunities:
+      'I am open to opportunities for this you can write to my email',
+    copied_to_your_clipboard: 'Email copied to your clipboard',
   },
   es: {
     title:
@@ -32,5 +36,9 @@ module.exports = {
       'Mi nombre es Michael Liendo y soy desarrollador web. Disfruto usar mis habilidades y conocimientos para crear, mejorar y completar proyectos, con el objetivo de aprender más y más. Me intrigó este mundo a fines de 2018 y, desde entonces, soy lo que soy ahora, cada día mejor y mejor, para completar mi objetivo de estar en mi peak.',
     languages: 'LENGUAJES',
     technology_stack: 'STACK DE TECNOLOGÍA',
+    lets_work_together: 'Trabajemos juntos',
+    open_to_opportunities:
+      'Estoy abierto a oportunidades para esto puedes escribirme a mi correo',
+    copied_to_your_clipboard: 'Correo electrónico copiado en su portapapeles',
   },
 };
