@@ -86,9 +86,20 @@ export async function getProjects() {
 
   return Promise.all(
     response.results.map((res) => {
-      return pageToPostTransformer(res);
+      return pageToProjectTransformer(res);
     }),
   );
+}
+
+export function pageToProjectTransformer(project) {
+  return {
+    id: project.id,
+    title: project.properties.Name.title[0].plain_text,
+    tags: project.properties.Tags.multi_select,
+    description: project.properties.Description.rich_text[0].plain_text,
+    repository: project.properties.repository.url,
+    preview: project.properties.preview.url,
+  };
 }
 
 export async function pageToPostTransformer(page) {
