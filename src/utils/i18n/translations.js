@@ -18,6 +18,7 @@ module.exports = {
     open_to_opportunities:
       'I am open to opportunities for this you can write to my email',
     copied_to_your_clipboard: 'Email copied to your clipboard',
+    latest_blog_posts: 'Lastest Posts',
   },
   es: {
     title:
@@ -40,5 +41,6 @@ module.exports = {
     open_to_opportunities:
       'Estoy abierto a oportunidades para esto puedes escribirme a mi correo',
     copied_to_your_clipboard: 'Correo electrónico copiado en su portapapeles',
+    latest_blog_posts: 'Últimas Publicaciones',
   },
 };

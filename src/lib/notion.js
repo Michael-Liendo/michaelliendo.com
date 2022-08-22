@@ -18,14 +18,14 @@ export async function getPublishedBlogPosts(locale = 'es') {
   const response = await client.databases.query({
     database_id: database,
     filter: {
-      property: 'Published',
+      property: 'published',
       checkbox: {
         equals: true,
       },
     },
     sorts: [
       {
-        property: 'Updated',
+        property: 'created',
         direction: 'descending',
       },
     ],
@@ -41,19 +41,12 @@ export async function getPublishedBlogPosts(locale = 'es') {
 export async function getSingleBlogPost(locale = 'es', url) {
   const database = databaseID[locale];
 
-  // list of blog posts
   const response = await client.databases.query({
     database_id: database,
-    sorts: [
-      {
-        property: 'Updated',
-        direction: 'descending',
-      },
-    ],
   });
 
   let filter = response.results.filter(
-    (res) => res.properties.Url.rich_text[0].plain_text === url,
+    (res) => res.properties.url.rich_text[0].plain_text === url,
   );
 
   if (!filter[0]) {
@@ -78,7 +71,7 @@ export async function getProjects() {
     database_id: database,
     sorts: [
       {
-        property: 'Updated',
+        property: 'updated',
         direction: 'descending',
       },
     ],
@@ -94,31 +87,26 @@ export async function getProjects() {
 export function pageToProjectTransformer(project) {
   return {
     id: project.id,
-    title: project.properties.Name.title[0].plain_text,
-    tags: project.properties.Tags.multi_select,
-    description: project.properties.Description.rich_text[0].plain_text,
+    title: project.properties.name.title[0].plain_text,
+    tags: project.properties.tags.multi_select,
+    description: project.properties.description.rich_text[0].plain_text,
     repository: project.properties.repository.url,
     preview: project.properties.preview.url,
   };
 }
 
-export async function pageToPostTransformer(page) {
-  let cover = page.properties.cover;
-
-  if (cover.url) {
-    cover = page.properties.cover.url;
-  } else {
-    // default cover
-    cover = 'https://cdn.michaelliendo.com/blog/cover/default.png';
-  }
+export async function pageToPostTransformer(post) {
+  let time = new Date(post.properties.created.created_time).toLocaleDateString(
+    'en',
+    { year: 'numeric', month: 'long', day: 'numeric' },
+  );
 
   return {
-    id: page.id,
-    cover: cover,
-    title: page.properties.Name.title[0].plain_text,
-    tags: page.properties.Tags.multi_select,
-    description: page.properties.Description.rich_text[0].plain_text,
-    date: page.properties.Updated.last_edited_time,
-    url: page.properties.Url.rich_text[0].plain_text,
+    id: post.id,
+    title: post.properties.name.title[0].plain_text,
+    tags: post.properties.tags.multi_select,
+    description: post.properties.description.rich_text[0].plain_text,
+    date: time,
+    url: post.properties.url.rich_text[0].plain_text,
   };
 }
