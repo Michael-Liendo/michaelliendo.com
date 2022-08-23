@@ -6,7 +6,7 @@ export default function SocialMedia() {
   return (
     <div className="flex flex-wrap flex-col items-center fixed bottom-0 right-1 opacity-50 md:right-12 md:opacity-100">
       <div className="mb-9">
-        <div className="mb-5">
+        <div className="mb-5 transition duration-200 hover:-translate-y-2">
           <a
             target="_blank"
             rel="noreferrer"
@@ -15,7 +15,7 @@ export default function SocialMedia() {
             <Linkedin />
           </a>
         </div>
-        <div className="mb-4">
+        <div className="mb-4 transition duration-200 hover:-translate-y-2">
           <a
             target="_blank"
             rel="noreferrer"
@@ -24,7 +24,7 @@ export default function SocialMedia() {
             <Twitter />
           </a>
         </div>
-        <div>
+        <div className="transition duration-200 hover:-translate-y-2">
           <a
             target="_blank"
             rel="noreferrer"
