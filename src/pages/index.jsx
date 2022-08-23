@@ -6,8 +6,6 @@ import Knowledge from '../components/Knowledge';
 import Layout from '../components/Layout';
 import Work from '../components/Work';
 import Contact from '../components/Contact';
-import SocialMedia from '../components/SocialMedia';
-import Email from '../components/Email';
 
 export default function Home({ projects }) {
   return (
@@ -17,8 +15,6 @@ export default function Home({ projects }) {
       <Knowledge />
       <Work projects={projects} />
       <Contact />
-      <SocialMedia />
-      <Email />
     </Layout>
   );
 }
