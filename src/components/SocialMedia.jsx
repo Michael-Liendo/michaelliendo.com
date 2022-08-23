@@ -4,20 +4,32 @@ import Twitter from './Icons/Twitter';
 
 export default function SocialMedia() {
   return (
-    <div className="flex flex-wrap flex-col items-center fixed bottom-0 right-12">
+    <div className="flex flex-wrap flex-col items-center fixed bottom-0 right-1 opacity-50 md:right-12 md:opacity-100">
       <div className="mb-9">
         <div className="mb-5">
-          <a href="https://www.linkedin.com/in/michaelliendo/">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://www.linkedin.com/in/michaelliendo/"
+          >
             <Linkedin />
           </a>
         </div>
         <div className="mb-4">
-          <a href="https://twitter.com/MichaelMLiendo">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://twitter.com/MichaelMLiendo"
+          >
             <Twitter />
           </a>
         </div>
         <div>
-          <a href="https://github.com/Michael-Liendo">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://github.com/Michael-Liendo"
+          >
             <GithubBorder />
           </a>
         </div>
