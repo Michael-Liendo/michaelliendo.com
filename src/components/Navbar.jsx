@@ -7,12 +7,11 @@ import useTranslation from '../utils/i18n/hooks';
 
 function NavLink({ children, href }) {
   return (
-    <a
-      className="transition ease-in mx-9 md:mx-4 my-6 hover:text-emerald-500 duration-150"
-      href={href}
-    >
-      {children}
-    </a>
+    <Link href={href}>
+      <a className="transition ease-in mx-9 md:mx-4 my-6 hover:text-teal-400 duration-150">
+        {children}
+      </a>
+    </Link>
   );
 }
 
@@ -63,13 +62,15 @@ export default function Navbar() {
   return (
     <nav className="flex justify-between mx-10 mt-5 md:mx-24">
       <Link href="/">
-        <a className="text-2xl z-0 font-extrabold">Michael Liendo</a>
+        <a className="text-2xl z-0 font-extrabold tracking-wide">
+          Michael Liendo
+        </a>
       </Link>
       <div className="hidden mt-2 md:block">
-        <NavLink href="#about">{t('about')}</NavLink>
-        <NavLink href="#knowledge">{t('knowledge')}</NavLink>
-        <NavLink href="#work">{t('work')}</NavLink>
-        <NavLink href="#contact">{t('contact')}</NavLink>
+        <NavLink href="/#about">{t('about')}</NavLink>
+        <NavLink href="/#knowledge">{t('knowledge')}</NavLink>
+        <NavLink href="/#work">{t('work')}</NavLink>
+        <NavLink href="/#contact">{t('contact')}</NavLink>
       </div>
       <Link href="/blog" passHref>
         <a>
