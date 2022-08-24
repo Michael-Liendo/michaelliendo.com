@@ -4,37 +4,6 @@ export default function MyDocument() {
   return (
     <Html>
       <Head>
-        <meta
-          property="og:title"
-          content="Michael Liendo - Front-end Developer. Aprendiendiendo, y programando."
-        />
-
-        <meta
-          property="og:description"
-          content="Michael Liendo es un desarrollador Frontend apasionado por aprender, programar y enseñar. Trabaja en equipo y está dispuesto a aprender cualquier tecnología que se necesite para llegar a su objetivo."
-        />
-        <meta name="theme-color" content="#3bd6cf" />
-
-        <meta property="og:site_name" content="Michael Liendo" />
-        <meta property="og:url" content="https://michaelliendo.com" />
-        <meta
-          property="og:image"
-          content="https://cdn.michaelliendo.com/michael/profile-pic.png"
-        />
-        <meta property="og:url" content="https://michaelliendo.com/" />
-        <meta property="og:type" content="website" />
-
-        <meta
-          name="keywords"
-          content="michael liendo, liendo, michael, michaelliendo, michael liendo portafolio, michael liendo website, michael liendo developer, michael liendo portfolio, michael liendo portafolio, michael liendo biography, michael liendo biografia, liendo michael, who is michael liendo?, ¿quien es michael liendo?, publicaciones michael liendo, posts michael liendo"
-        />
-
-        <meta rel="canonical" href="https://michaelliendo.com/" />
-
-        <meta name="robots" content="follow" />
-        <meta name="author" content="Michael Liendo" />
-        <meta name="copyright" content="Michael Liendo" />
-
         {/* Global Site Tag (gtag.js) - Google Analytics */}
         <script
           async
