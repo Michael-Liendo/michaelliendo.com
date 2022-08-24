@@ -17,6 +17,7 @@ export default function MyDocument() {
             gtag('js', new Date());
             gtag('config', '${process.env.GOOGLE_ANALYTICS}', {
               page_path: window.location.pathname,
+              cookie_flags: 'SameSite=None;Secure'
             });
           `,
           }}
