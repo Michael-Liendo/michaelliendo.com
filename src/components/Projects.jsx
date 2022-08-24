@@ -4,7 +4,7 @@ import Folder from './Icons/Folder';
 
 export default function Project({ projects }) {
   return (
-    <div className="grid grid-cols-1 gap-10 lg:grid-cols-3 md:grid-cols-2 my-6 mt-28">
+    <div className="grid grid-cols-1 gap-10 lg:grid-cols-3 md:grid-cols-2 2xl:grid-cols-5 my-6 mt-28">
       {projects.map((project, index) => (
         <div
           className="w-80 p-6 rounded-lg bg-slate-600 bg-opacity-50"

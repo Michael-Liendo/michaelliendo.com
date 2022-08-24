@@ -4,7 +4,7 @@ import Twitter from './Icons/Twitter';
 
 export default function SocialMedia() {
   return (
-    <div className="flex flex-wrap flex-col items-center fixed bottom-0 right-1 opacity-50 md:right-12 md:opacity-100">
+    <div className="flex flex-wrap flex-col items-center fixed bottom-0 right-0.5 opacity-50 md:right-4 md:opacity-100">
       <div className="mb-9">
         <div className="mb-5 transition duration-300 hover:-translate-y-1">
           <a
