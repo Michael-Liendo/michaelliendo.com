@@ -5,8 +5,8 @@ export default function Hero() {
 
   return (
     <div className="mt-[20vh] 2xl:mt-[30vh] h-[75vh]">
-      <p className="text-base md:text-xl my-3 md:my-5">{t('hi_my_name')}</p>
-      <h1 className="text-xl font-semibold md:text-4xl my-3 md:my-5">
+      <p className="md:text-xl my-3 md:my-5">{t('hi_my_name')}</p>
+      <h1 className="text-4xl font-semibold md:text-5xl my-3 md:my-5">
         Michael Liendo
       </h1>
       <h2 className="text-base md:text-3xl my-3 md:my-5">{t('short_bio')}</h2>
