@@ -7,7 +7,7 @@ export default function Home({ posts }) {
   const t = useTranslation;
 
   return (
-    <Layout>
+    <Layout title={t('blogTitle')} description={t('blogDescription')}>
       <h1 className="mt-10 mb-20 text-5xl text-center">
         {t('latest_blog_posts')}
       </h1>

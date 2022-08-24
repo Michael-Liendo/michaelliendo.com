@@ -1,4 +1,3 @@
-import Head from 'next/head';
 import ReactMarkdown from 'react-markdown';
 import Layout from '../../components/Layout';
 
@@ -7,18 +6,13 @@ import { getSingleBlogPost, getPublishedBlogPosts } from '../../lib/notion.js';
 export default function Post({ markdown, post }) {
   return (
     <>
-      <Head>
-        <meta property="og:title" content={post.title} />
-        <meta property="og:description" content={post.description} />
-        <meta
-          property="og:url"
-          content={`https://michaelliendo.com/${post.url}`}
-        />
-        <meta property="og:type" content="blog" />
-      </Head>
-      <Layout title={post.title} description={post.description}>
+      <Layout
+        title={post.title}
+        description={post.description}
+        url={`https://michaelliendo.com/blog/${post.url}`}
+      >
         <div className="my-20 sm:flex sm:smitems-center sm:justify-center">
-          <article className="prose max-w-3xl  prose-p:text-white prose-headings:text-white prose-green prose-code:text-white">
+          <article className="prose max-w-3xl prose-p:text-white prose-headings:text-white prose-green prose-code:text-white">
             <ReactMarkdown>{markdown}</ReactMarkdown>
           </article>
         </div>

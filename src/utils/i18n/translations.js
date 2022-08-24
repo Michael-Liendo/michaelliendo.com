@@ -1,6 +1,11 @@
 module.exports = {
   en: {
     title: 'Michael Liendo - Front-end Developer. Learning, y coding',
+    description:
+      'Michael Liendo is a Frontend developer with a passion for learning, programming and teaching. He works in a team and is willing to learn whatever technology is needed to reach his goal.',
+    blogTitle: 'Blog - Michael Liendo',
+    blogDescription:
+      "Michael's blog, where he shows articles, tutorials, and posts, referring to the world of technology",
     about: 'About',
     knowledge: 'Knowledge',
     work: 'Work',
@@ -23,6 +28,11 @@ module.exports = {
   es: {
     title:
       'Michael Liendo - Desarrollador Front-end. Aprendiendiendo, y programando',
+    description:
+      'Michael Liendo es un desarrollador Frontend apasionado por aprender, programar y enseñar. Trabaja en equipo y está dispuesto a aprender cualquier tecnología que se necesite para llegar a su objetivo.',
+    blogTitle: 'Blog - Michael Liendo',
+    blogDescription:
+      'Blog de Michael, donde muestra artículos, tutoriales y posts, referentes al mundo de la tecnología.',
     about: 'Sobre Mi',
     knowledge: 'Conocimiento',
     work: 'Trabajo',
