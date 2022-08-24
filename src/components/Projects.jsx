@@ -14,12 +14,14 @@ export default function Project({ projects }) {
             <Folder />
             <div className="flex">
               <a
+                aria-label="Project Repository"
                 className="transition duration-300 hover:-translate-y-1 mx-2"
                 href={project.repository}
               >
                 <GithubBorder />
               </a>
               <a
+                aria-label="Project Preview"
                 className="transition duration-300 hover:-translate-y-1 mx-2"
                 href={project.preview}
               >

@@ -11,6 +11,7 @@ export default function SocialMedia() {
             target="_blank"
             rel="noreferrer"
             href="https://www.linkedin.com/in/michaelliendo/"
+            aria-label="Linkedin"
           >
             <Linkedin />
           </a>
@@ -20,6 +21,7 @@ export default function SocialMedia() {
             target="_blank"
             rel="noreferrer"
             href="https://twitter.com/MichaelMLiendo"
+            aria-label="Twitter"
           >
             <Twitter />
           </a>
@@ -29,6 +31,7 @@ export default function SocialMedia() {
             target="_blank"
             rel="noreferrer"
             href="https://github.com/Michael-Liendo"
+            aria-label="Github"
           >
             <GithubBorder />
           </a>
