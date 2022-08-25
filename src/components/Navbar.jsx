@@ -73,7 +73,7 @@ export default function Navbar() {
         <NavLink href="/#contact">{t('contact')}</NavLink>
       </div>
       <Link href="/blog" passHref>
-        <a>
+        <a aria-label="blog">
           <button className="hidden md:block transition ease-in bg-gradient-to-br from-cyan-600 to-blue-600 hover:scale-110 duration-150 focus:outline-none font-medium rounded-lg px-5 py-2 text-center">
             Blog
           </button>
@@ -110,7 +110,7 @@ export default function Navbar() {
           <NavLink href="#knowledge">{t('knowledge')}</NavLink>
           <NavLink href="#contact">{t('contact')}</NavLink>
           <Link href="/blog" passHref>
-            <a className="mx-auto mt-20">
+            <a aria-label="blog" className="mx-auto mt-20">
               <button className="transition ease-in bg-gradient-to-br from-green-400 to-blue-600 hover:scale-110 duration-150 focus:outline-none font-medium rounded-lg w-32 h-12 text-center">
                 Blog
               </button>
