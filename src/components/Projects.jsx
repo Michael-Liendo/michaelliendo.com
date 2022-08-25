@@ -5,10 +5,10 @@ import Folder from './Icons/Folder';
 export default function Project({ projects }) {
   return (
     <div className="flex justify-center">
-      <div className="grid grid-cols-1 gap-x-24 gap-y-16 lg:grid-cols-3 md:grid-cols-2 2xl:grid-cols-5 mt-28">
+      <div className="grid grid-cols-1 gap-x-24 gap-y-16 lg:grid-cols-3 md:grid-cols-2 2xl:grid-cols-4 mt-28">
         {projects.map((project, index) => (
           <div
-            className="w-80 p-6 rounded-lg bg-slate-600 bg-opacity-50"
+            className="w-90 p-6 rounded-lg bg-slate-600 bg-opacity-50"
             key={index}
           >
             <div className="flex justify-between">
