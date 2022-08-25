@@ -1,4 +1,7 @@
 import { useState } from 'react';
+
+import SocialMedia from './SocialMedia';
+
 import useTranslation from '../utils/i18n/hooks';
 
 export default function Contact() {
@@ -20,15 +23,20 @@ export default function Contact() {
       <p className="my-3 text-xl">{t('open_to_opportunities')}</p>
       {status ? (
         <p className="text-green-500">{t('copied_to_your_clipboard')}</p>
-      ) : null}
-      <a href="mailto:me@michaelliendo.com">
-        <button
-          onClick={copyToClipboard}
-          className="mt-5 transition ease-in bg-gradient-to-br from-cyan-600 to-blue-600 hover:scale-110 duration-300 focus:outline-none font-medium rounded-lg px-5 py-2 text-center"
-        >
-          {t('contact')}
-        </button>
-      </a>
+      ) : (
+        <p>contact@michaelliendo.com</p>
+      )}
+      <div>
+        <a href="mailto:contact@michaelliendo.com">
+          <button
+            onClick={copyToClipboard}
+            className="mt-5 transition ease-in bg-gradient-to-br from-cyan-600 to-blue-600 hover:scale-110 duration-300 focus:outline-none font-medium rounded-lg px-5 py-2 text-center"
+          >
+            {t('contact')}
+          </button>
+        </a>
+        <SocialMedia />
+      </div>
     </div>
   );
 }

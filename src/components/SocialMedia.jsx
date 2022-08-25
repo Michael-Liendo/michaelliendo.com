@@ -4,9 +4,9 @@ import Twitter from './Icons/Twitter';
 
 export default function SocialMedia() {
   return (
-    <div className="flex flex-wrap flex-col items-center fixed bottom-0 right-0.5 opacity-50 md:right-4 md:opacity-100">
-      <div className="mb-9">
-        <div className="mb-5 transition duration-300 hover:-translate-y-1">
+    <div className="mt-10 md:mt-0 md:flex md:flex-wrap md:flex-col md:items-center md:fixed md:bottom-0 md:right-4 md:opacity-100">
+      <div className="flex md:block mb-9">
+        <div className="mr-4 md:mb-5 transition duration-300 hover:-translate-y-1">
           <a
             target="_blank"
             rel="noreferrer"
@@ -16,7 +16,7 @@ export default function SocialMedia() {
             <Linkedin />
           </a>
         </div>
-        <div className="mb-4 transition duration-300 hover:-translate-y-1">
+        <div className="mr-4 md:mb-4 transition duration-300 hover:-translate-y-1">
           <a
             target="_blank"
             rel="noreferrer"
@@ -37,7 +37,7 @@ export default function SocialMedia() {
           </a>
         </div>
       </div>
-      <div className="bg-white w-0.5 h-56"></div>
+      <div className="hidden md:block bg-white w-0.5 h-56"></div>
     </div>
   );
 }
