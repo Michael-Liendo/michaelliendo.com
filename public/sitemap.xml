@@ -1,33 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://michaelliendo.com/</loc>
-    <lastmod>2022-05-28T00:11:08+00:00</lastmod>
-    <priority>1.00</priority>
-  </url>
-  <url>
-    <loc>https://michaelliendo.com/en</loc>
-    <lastmod>2022-05-28T00:11:08+00:00</lastmod>
-    <priority>1.00</priority>
-  </url>
-  <url>
-    <loc>https://michaelliendo.com/michael-liendo</loc>
-    <lastmod>2022-05-28T00:11:08+00:00</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://michaelliendo.com/en/michael-liendo</loc>
-    <lastmod>2022-05-28T00:11:08+00:00</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://michaelliendo.com/portfolio</loc>
-    <lastmod>2022-05-28T00:11:08+00:00</lastmod>
-    <priority>0.64</priority>
-  </url>
-  <url>
-    <loc>https://michaelliendo.com/en/portfolio</loc>
-    <lastmod>2022-05-28T00:11:08+00:00</lastmod>
-    <priority>0.64</priority>
-  </url>
+<url>
+<loc>https://michaelliendo.com/</loc>
+<lastmod>2022-09-01T03:07:45+01:00</lastmod>
+<priority>0.4</priority>
+</url>
+<url>
+<loc>https://michaelliendo.com/en</loc>
+<lastmod>2022-09-01T03:07:45+01:00</lastmod>
+<priority>1.0</priority>
+</url>
+<url>
+<loc>https://michaelliendo.com/en/blog</loc>
+<lastmod>2022-09-01T03:07:45+01:00</lastmod>
+<priority>0.2</priority>
+</url>
+<url>
+<loc>https://michaelliendo.com/blog</loc>
+<lastmod>2022-09-01T03:07:47+01:00</lastmod>
+<priority>1.0</priority>
+</url>
+<url>
+<loc>https://michaelliendo.com/en/blog/how-to-make-a-squash-in-git</loc>
+<lastmod>2022-09-01T03:07:47+01:00</lastmod>
+<priority>0.1</priority>
+</url>
+<url>
+<loc>https://michaelliendo.com/en/blog/michael-liendo</loc>
+<lastmod>2022-09-01T03:07:47+01:00</lastmod>
+<priority>0.6</priority>
+</url>
+<url>
+<loc>https://michaelliendo.com/blog/how-to-make-a-squash-in-git</loc>
+<lastmod>2022-09-01T03:07:48+01:00</lastmod>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://michaelliendo.com/blog/michael-liendo</loc>
+<lastmod>2022-09-01T03:07:48+01:00</lastmod>
+<priority>0.8</priority>
+</url>
 </urlset>
