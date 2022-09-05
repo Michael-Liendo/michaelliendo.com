@@ -12,7 +12,7 @@ export default function Post({ markdown, post }) {
         url={`https://michaelliendo.com/blog/${post.url}`}
       >
         <div className="my-20 sm:flex sm:smitems-center sm:justify-center">
-          <article className="prose max-w-3xl prose-p:text-white prose-headings:text-white prose-green prose-code:text-white">
+          <article className="prose max-w-3xl prose-p:text-white prose-strong:text-green-500 prose-headings:text-white prose-green prose-code:text-white">
             <ReactMarkdown>{markdown}</ReactMarkdown>
           </article>
         </div>
