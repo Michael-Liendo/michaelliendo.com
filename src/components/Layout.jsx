@@ -35,10 +35,7 @@ export default function Layout({ title, description, url, children }) {
         />
         <meta property="og:type" content={title ? 'article' : 'website'} />
 
-        <meta
-          name="keywords"
-          content="michael liendo, liendo, michael, michaelliendo, michael liendo portafolio, michael liendo website, michael liendo developer, michael liendo portfolio, michael liendo portafolio, michael liendo biography, michael liendo biografia, liendo michael, who is michael liendo?, ¿quien es michael liendo?, publicaciones michael liendo, posts michael liendo, frontend developer michael"
-        />
+        <meta name="keywords" content={t('keywords')} />
 
         <meta rel="canonical" href="https://michaelliendo.com/" />
 

@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import ReactMarkdown from 'react-markdown';
 import Layout from '../../components/Layout';
 
@@ -6,6 +7,9 @@ import { getSingleBlogPost, getPublishedBlogPosts } from '../../lib/notion.js';
 export default function Post({ markdown, post }) {
   return (
     <>
+      <Head>
+        <meta name="keywords" content={post.tags.join(', ')} />
+      </Head>
       <Layout
         title={post.title}
         description={post.description}

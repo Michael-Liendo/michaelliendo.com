@@ -24,6 +24,8 @@ module.exports = {
       'I am open to opportunities for this you can write to my email',
     copied_to_your_clipboard: 'Email copied to your clipboard',
     latest_blog_posts: 'Lastest Posts',
+    keywords:
+      'michael liendo, liendo, michael, michaelliendo, michael liendo portafolio, michael liendo website, michael liendo developer, michael liendo portfolio, michael liendo biography, liendo michael, who is michael liendo?, posts michael liendo, frontend developer michael',
   },
   es: {
     title:
@@ -52,5 +54,7 @@ module.exports = {
       'Estoy abierto a oportunidades para esto puedes escribirme a mi correo',
     copied_to_your_clipboard: 'Correo electrónico copiado en su portapapeles',
     latest_blog_posts: 'Últimas Publicaciones',
+    keywords:
+      'michael liendo, liendo, michael, michaelliendo, michael liendo portafolio, michael liendo pagina web, michael liendo programador, michael liendo portafolio, michael liendo biografia, ¿quien es michael liendo?, publicaciones michael liendo, desarrollador frontend',
   },
 };
