@@ -74,7 +74,7 @@ export default function Navbar() {
       </div>
       <Link href="/blog" passHref>
         <a aria-label="blog">
-          <button className="hidden md:block transition ease-in bg-gradient-to-br from-cyan-600 to-blue-600 hover:scale-110 duration-150 focus:outline-none font-medium rounded-lg px-5 py-2 text-center">
+          <button className="hidden md:block transition ease-in bg-blue-600 hover:scale-110 duration-150 focus:outline-none font-medium rounded-lg px-5 py-2 text-center">
             Blog
           </button>
         </a>

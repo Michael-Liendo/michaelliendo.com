@@ -14,7 +14,7 @@ export default function Hero() {
         {t('larger_bio')}
       </h3>
       <a target="_blank" href="/michael-liendo.pdf">
-        <button className="mt-5 transition ease-in bg-gradient-to-br from-cyan-600 to-blue-600 hover:scale-110 duration-150 focus:outline-none font-medium rounded-lg px-5 py-2 text-center">
+        <button className="mt-5 transition ease-in bg-blue-600 hover:scale-110 duration-150 focus:outline-none font-medium rounded-lg px-5 py-2 text-center">
           {t('curriculum')}
         </button>
       </a>
