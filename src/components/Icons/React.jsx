@@ -1,6 +1,6 @@
 export default function React() {
   return (
-    <div>
+    <div className="flex flex-col items-center">
       <svg
         width="72"
         height="65"
@@ -13,6 +13,7 @@ export default function React() {
           fill="#00D8FF"
         />
       </svg>
+      <span className="mt-2">React</span>
     </div>
   );
 }

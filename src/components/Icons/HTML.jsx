@@ -1,6 +1,6 @@
 export default function HTML() {
   return (
-    <div>
+    <div className="flex flex-col items-center">
       <svg
         width="60"
         height="67"
@@ -33,6 +33,7 @@ export default function HTML() {
           fill="white"
         />
       </svg>
+      <span className="mt-0.5">HTML</span>
     </div>
   );
 }

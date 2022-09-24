@@ -1,6 +1,6 @@
 export default function Tailwind() {
   return (
-    <div>
+    <div className="flex flex-col items-center">
       <svg
         width="84"
         height="51"
@@ -26,6 +26,7 @@ export default function Tailwind() {
           </linearGradient>
         </defs>
       </svg>
+      <span className="mt-5">Tailwind</span>
     </div>
   );
 }

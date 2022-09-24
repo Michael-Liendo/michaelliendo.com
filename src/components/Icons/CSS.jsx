@@ -1,6 +1,6 @@
 export default function CSS() {
   return (
-    <div>
+    <div className="flex flex-col items-center">
       <svg
         width="59"
         height="67"
@@ -37,6 +37,7 @@ export default function CSS() {
           fill="#EBEBEB"
         />
       </svg>
+      <span className="mt-0.5">CSS</span>
     </div>
   );
 }
