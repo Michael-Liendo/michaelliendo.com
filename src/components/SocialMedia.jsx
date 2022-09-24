@@ -40,9 +40,9 @@ export default function SocialMedia() {
         </div>
         <div className="hidden md:block bg-white w-0.5 h-56"></div>
       </div>
-      <div className="hidden md:block mt-10">
-        <div className="flex mb-9">
-          <div className="mr-4 md:mb-5 transition duration-300 hover:-translate-y-1">
+      <div className="hidden md:block">
+        <div className="flex">
+          <div className="mr-4 transition duration-300 hover:-translate-y-1">
             <a
               target="_blank"
               rel="noreferrer"
@@ -52,7 +52,7 @@ export default function SocialMedia() {
               <Linkedin />
             </a>
           </div>
-          <div className="mr-4 md:mb-4 transition duration-300 hover:-translate-y-1">
+          <div className="mr-4 transition duration-300 hover:-translate-y-1">
             <a
               target="_blank"
               rel="noreferrer"
