@@ -21,8 +21,7 @@ module.exports = {
     technology_stack: 'TECHNOLOGY STACK',
     lets_work_together: "Let's work together",
     open_to_opportunities:
-      'I am open to opportunities for this you can write to my email',
-    copied_to_your_clipboard: 'Email copied to your clipboard',
+      'If you are interested in working together, you can contact me on my social networks',
     latest_blog_posts: 'Lastest Posts',
     keywords:
       'michael liendo, liendo, michael, michaelliendo, michael liendo portafolio, michael liendo website, michael liendo developer, michael liendo portfolio, michael liendo biography, liendo michael, who is michael liendo?, posts michael liendo, frontend developer michael',
@@ -51,8 +50,7 @@ module.exports = {
     technology_stack: 'STACK DE TECNOLOGÍA',
     lets_work_together: 'Trabajemos juntos',
     open_to_opportunities:
-      'Estoy abierto a oportunidades para esto puedes escribirme a mi correo',
-    copied_to_your_clipboard: 'Correo electrónico copiado en su portapapeles',
+      'Si estas interesado en trabajar juntos, puedes contactar conmigo en mis redes sociales',
     latest_blog_posts: 'Últimas Publicaciones',
     keywords:
       'michael liendo, liendo, michael, michaelliendo, michael liendo portafolio, michael liendo pagina web, michael liendo programador, michael liendo portafolio, michael liendo biografia, ¿quien es michael liendo?, publicaciones michael liendo, desarrollador frontend',
