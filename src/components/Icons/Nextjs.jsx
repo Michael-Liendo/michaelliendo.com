@@ -1,6 +1,6 @@
 export default function Nextjs() {
   return (
-    <div>
+    <div className="flex flex-col items-center">
       <svg
         width="71"
         height="71"
@@ -15,6 +15,7 @@ export default function Nextjs() {
           fill="white"
         />
       </svg>
+      <span className="mt-0.5">Next.js</span>
     </div>
   );
 }

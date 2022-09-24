@@ -1,6 +1,6 @@
 export default function Nodejs() {
   return (
-    <div>
+    <div className="flex flex-col items-center">
       <svg
         width="58"
         height="64"
@@ -13,6 +13,7 @@ export default function Nodejs() {
           fill="#539E43"
         />
       </svg>
+      <span className="mt-2">Node.js</span>
     </div>
   );
 }

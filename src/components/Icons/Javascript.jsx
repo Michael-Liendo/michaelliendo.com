@@ -1,6 +1,6 @@
 export default function Javascript() {
   return (
-    <div>
+    <div className="flex flex-col items-center">
       <svg
         width="57"
         height="56"
@@ -21,6 +21,7 @@ export default function Javascript() {
           fill="#0A192F"
         />
       </svg>
+      <span className="mt-3">Javascript</span>
     </div>
   );
 }

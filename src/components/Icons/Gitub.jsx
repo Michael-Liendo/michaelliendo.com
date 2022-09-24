@@ -1,6 +1,6 @@
 export default function Github() {
   return (
-    <div>
+    <div className="flex flex-col items-center">
       <svg
         width="60"
         height="58"
@@ -13,6 +13,7 @@ export default function Github() {
           fill="white"
         />
       </svg>
+      <span className="mt-3.5">Github</span>
     </div>
   );
 }

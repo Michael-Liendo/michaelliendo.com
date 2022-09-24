@@ -1,6 +1,6 @@
 export default function Git() {
   return (
-    <div>
+    <div className="flex flex-col items-center">
       <svg
         width="65"
         height="64"
@@ -13,6 +13,7 @@ export default function Git() {
           fill="#DE4C36"
         />
       </svg>
+      <span className="mt-2">Git</span>
     </div>
   );
 }
