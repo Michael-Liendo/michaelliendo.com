@@ -42,7 +42,10 @@ export default function MyDocument() {
           type="image/png"
         />
       </Head>
-      <body className="text-white bg-[#0A192F]">
+      <body
+        className="text-white bg-[#0A192F]"
+        style={{ backgroundImage: `url("./wiggle.svg")` }}
+      >
         <Main />
         <NextScript />
       </body>
