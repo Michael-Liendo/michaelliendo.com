@@ -58,9 +58,29 @@ function CloseSVG() {
 export default function Navbar() {
   const t = useTranslation;
   const [isOpen, setIsOpen] = useState(false);
+  const [scroll, setScroll] = useState(0);
+  const [hideNavbar, setHideNavbar] = useState(false);
+  if (typeof window !== 'undefined') {
+    addEventListener('scroll', () => {
+      if (window.scrollY > scroll) {
+        setHideNavbar(true);
+        setScroll(window.scrollY);
+      } else if (window.scrollY < scroll) {
+        setHideNavbar(false);
+        setScroll(window.scrollY);
+      }
+    });
+  }
 
   return (
-    <nav className="flex justify-between mx-10 mt-5 md:mx-24">
+    <nav
+      className={cn(
+        'transition duration-500 fixed top-0 w-[100vw] shadow-lg shadow-[rgba(255, 255, 255, .5)] flex justify-between px-10 pt-4 pb-2 md:px-24 bg-[rgba(255, 255, 255, .5)] bg-opacity-20 backdrop-blur-sm rounded drop-shadow-lg',
+        {
+          '-translate-y-16': hideNavbar,
+        },
+      )}
+    >
       <Link href="/">
         <a className="text-2xl z-0 font-extrabold tracking-wide">
           Michael Liendo

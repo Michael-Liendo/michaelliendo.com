@@ -8,7 +8,7 @@ export default function Home({ posts }) {
 
   return (
     <Layout title={t('blogTitle')} description={t('blogDescription')}>
-      <h1 className="mt-10 mb-20 text-5xl text-center">
+      <h1 className="mt-20 mb-20 text-5xl text-center">
         {t('latest_blog_posts')}
       </h1>
       {posts.map((post) => (
