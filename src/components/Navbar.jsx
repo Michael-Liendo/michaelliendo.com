@@ -8,7 +8,7 @@ import useTranslation from '../utils/i18n/hooks';
 function NavLink({ children, href }) {
   return (
     <Link href={href}>
-      <a className="transition ease-in mx-9 md:mx-4 my-6 hover:text-teal-400 duration-150">
+      <a className="transition ease-in mx-9 py-2 md:mx-4 my-6 hover:text-teal-400 duration-150">
         {children}
       </a>
     </Link>
@@ -75,9 +75,9 @@ export default function Navbar() {
   return (
     <nav
       className={cn(
-        'transition duration-500 fixed top-0 w-[100vw] shadow-lg shadow-[rgba(255, 255, 255, .5)] flex justify-between px-10 pt-4 pb-2 md:px-24 bg-[rgba(255, 255, 255, .5)] bg-opacity-20 backdrop-blur-sm rounded drop-shadow-lg',
+        'transition duration-500 fixed top-0 w-[100vw] flex justify-between px-10 pt-4 pb-2 md:px-24 bg-[rgba(255, 255, 255, .5)] bg-opacity-20 backdrop-blur-sm drop-shadow-lg',
         {
-          '-translate-y-16': hideNavbar,
+          'md:-translate-y-16': hideNavbar,
         },
       )}
     >
@@ -118,7 +118,7 @@ export default function Navbar() {
         </button>
         <div
           className={cn(
-            'flex flex-col fixed w-9/12 pt-16 h-screen -z-10 top-0 right-0 bg-sky-900',
+            'flex flex-col fixed w-9/12 pt-16 h-screen -z-10 top-0 right-0 bg-sky-900 bg-opacity-50',
             {
               block: isOpen,
               hidden: !isOpen,
@@ -131,7 +131,7 @@ export default function Navbar() {
           <NavLink href="#contact">{t('contact')}</NavLink>
           <Link href="/blog" passHref>
             <a aria-label="blog" className="mx-auto mt-20">
-              <button className="transition ease-in bg-gradient-to-br from-green-400 to-blue-600 hover:scale-110 duration-150 focus:outline-none font-medium rounded-lg w-32 h-12 text-center">
+              <button className="transition ease-in bg-blue-600 hover:scale-110 duration-150 focus:outline-none font-medium rounded-lg w-32 h-12 text-center">
                 Blog
               </button>
             </a>
