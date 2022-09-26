@@ -75,9 +75,11 @@ export default function Navbar() {
   return (
     <nav
       className={cn(
-        'transition duration-500 fixed top-0 w-[100vw] flex justify-between px-10 pt-4 pb-2 md:px-24 bg-[rgba(255, 255, 255, .5)] bg-opacity-20 backdrop-blur-sm drop-shadow-lg',
+        'transition duration-500 fixed top-0 w-[100vw] flex justify-between px-10 pt-4 pb-2 md:px-24',
         {
           'md:-translate-y-16': hideNavbar,
+          'bg-[rgba(255, 255, 255, .5)] bg-opacity-20 backdrop-blur-sm drop-shadow-lg':
+            typeof window !== 'undefined' ? window.scrollY !== 0 : null,
         },
       )}
     >
