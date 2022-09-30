@@ -120,7 +120,7 @@ export default function Navbar() {
         </button>
         <div
           className={cn(
-            'flex flex-col fixed w-9/12 pt-16 h-screen -z-10 top-0 right-0 bg-sky-900 bg-opacity-50',
+            'flex flex-col fixed w-9/12 pt-16 h-screen -z-10 top-0 right-0 bg-sky-900 bg-opacity-95',
             {
               block: isOpen,
               hidden: !isOpen,
