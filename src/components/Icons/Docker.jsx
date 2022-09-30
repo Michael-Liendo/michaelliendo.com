@@ -3,7 +3,7 @@ export default function DockerIcon() {
     <div className="flex flex-col items-center">
       <svg
         width="85"
-        height="72"
+        height="69"
         viewBox="0 0 100 72"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
