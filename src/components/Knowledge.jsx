@@ -23,13 +23,13 @@ export default function Knowledge() {
       <h3 className="text-5xl md:text-6xl">{t('knowledge')}</h3>
       <div className="my-9">
         <h4 className="items-center text-lg md:text-2xl">{t('languages')}</h4>
-        <div className="grid grid-cols-4 gap-7 my-6">
+        <div className="grid grid-cols-3 sm:grid-cols-4 gap-7 my-6">
           <Javascript />
           <CSS />
           <HTML />
         </div>
         <h4 className="items-center text-lg md:text-2xl">TECHNOLOGY STACK</h4>
-        <div className="grid grid-cols-4 gap-7 my-6">
+        <div className="grid grid-cols-3 sm:grid-cols-4 gap-7 my-6">
           <Nextjs />
           <Reactjs />
           <Git />
