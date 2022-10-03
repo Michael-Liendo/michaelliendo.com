@@ -105,7 +105,7 @@ export default function MongoDB() {
           fill="#4FAA41"
         />
       </svg>
-      <span className="">MongoDB</span>
+      <span>MongoDB</span>
     </div>
   );
 }
