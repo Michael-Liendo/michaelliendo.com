@@ -11,6 +11,7 @@ import Git from './Icons/Git';
 import Github from './Icons/Gitub';
 import Tailwind from './Icons/Tailwind';
 import DockerIcon from './Icons/Docker';
+import MongoDB from './Icons/MongoDB';
 
 export default function Knowledge() {
   const t = useTranslation;
@@ -37,6 +38,7 @@ export default function Knowledge() {
           <Nodejs />
           <Tailwind />
           <DockerIcon />
+          <MongoDB />
         </div>
       </div>
     </div>
