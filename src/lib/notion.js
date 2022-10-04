@@ -69,12 +69,6 @@ export async function getProjects() {
 
   const response = await client.databases.query({
     database_id: database,
-    sorts: [
-      {
-        property: 'updated',
-        direction: 'descending',
-      },
-    ],
   });
 
   return Promise.all(
