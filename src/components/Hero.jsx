@@ -12,7 +12,7 @@ export default function Hero() {
       <h2 className="text-base md:w-1/2 md:text-3xl my-3 md:my-5">
         {t('short_bio')}
       </h2>
-      <a target="_blank" href="/michael-liendo.pdf">
+      <a target="_blank" rel="noreferrer" href={`/${t('curriculumFile')}`}>
         <button className="mt-5 transition ease-in bg-blue-600 hover:scale-110 duration-150 focus:outline-none font-medium rounded-lg px-5 py-2 text-center">
           {t('curriculum')}
         </button>
