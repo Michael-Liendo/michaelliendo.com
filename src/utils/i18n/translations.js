@@ -15,7 +15,7 @@ module.exports = {
       'Frontend developer programming using Next.js to create solutions.',
     curriculum: 'View Curriculum',
     biography:
-      'My name is Michael Liendo and I am a web developer. I enjoy using my skills and knowledge to create, improve, and complete projects, with the goal of learning more and more. I became intrigued by this world at the end of 2018 and from then on, I am what I am now, getting better and better every day, to complete my goal of being at my peak.',
+      'In my two years of experience as a junior developer of web applications and web pages, it could be of interest to you, since I have knowledge in languages and technologies such as Javascript, Next.js, Git, Tailwind, Docker, Git, and MongoDB. My teamwork, and my love of learning and sharing knowledge is very beneficial in an organization that aspires to grow.',
     languages: 'LANGUAGES',
     technology_stack: 'TECHNOLOGY STACK',
     lets_work_together: "Let's work together",
@@ -42,7 +42,7 @@ module.exports = {
       'Desarrollador frontend programando usando Next.js para crear soluciones.',
     curriculum: 'Ver Curriculum',
     biography:
-      'Mi nombre es Michael Liendo y soy desarrollador web. Disfruto usar mis habilidades y conocimientos para crear, mejorar y completar proyectos, con el objetivo de aprender más y más. Me intrigó este mundo a fines de 2018 y, desde entonces, soy lo que soy ahora, cada día mejor y mejor, para completar mi objetivo de estar en mi peak.',
+      'En mis dos años de experiencia como desarrollador  junior de aplicaciones web y páginas web, podría ser de su interés, ya que tengo conocimiento en lenguajes y tecnologías como, Javascript, Next.js, Git, Tailwind, Docker, Git, y MongoDB. Mi trabajo en equipo, y mi amor por aprender y compartir conocimientos es muy beneficioso en una organización que aspira a crecer.',
     languages: 'LENGUAJES',
     technology_stack: 'STACK DE TECNOLOGÍA',
     lets_work_together: 'Trabajemos juntos',
