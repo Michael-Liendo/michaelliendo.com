@@ -128,8 +128,8 @@ export default function Navbar() {
           )}
         >
           <NavLink href="#about">{t('about')}</NavLink>
-          <NavLink href="#work">{t('work')}</NavLink>
           <NavLink href="#knowledge">{t('knowledge')}</NavLink>
+          <NavLink href="#work">{t('work')}</NavLink>
           <NavLink href="#contact">{t('contact')}</NavLink>
           <Link href="/blog" passHref>
             <a aria-label="blog" className="mx-auto mt-20">
