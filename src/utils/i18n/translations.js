@@ -22,9 +22,7 @@ module.exports = {
     lets_work_together: "Let's work together",
     open_to_opportunities:
       'If you are interested in working together, you can contact me on my social networks',
-    latest_blog_posts: 'Lastest Posts',
-    keywords:
-      'michael liendo, liendo, michael, michaelliendo, michael liendo portafolio, michael liendo website, michael liendo developer, michael liendo portfolio, michael liendo biography, liendo michael, who is michael liendo?, posts michael liendo, frontend developer michael',
+    latest_blog_posts: 'Latest Posts',
   },
   es: {
     title:
@@ -51,7 +49,5 @@ module.exports = {
     open_to_opportunities:
       'Si estas interesado en trabajar juntos, puedes contactar conmigo en mis redes sociales',
     latest_blog_posts: 'Últimas Publicaciones',
-    keywords:
-      'michael liendo, liendo, michael, michaelliendo, michael liendo portafolio, michael liendo pagina web, michael liendo programador, michael liendo portafolio, michael liendo biografia, ¿quien es michael liendo?, publicaciones michael liendo, desarrollador frontend',
   },
 };

@@ -7,7 +7,13 @@ export default function Home({ posts }) {
   const t = useTranslation;
 
   return (
-    <Layout title={t('blogTitle')} description={t('blogDescription')}>
+    <Layout
+      title={t('blogTitle')}
+      description={t('blogDescription')}
+      url="https://michaelliendo.com/blog"
+      type="blog.website"
+      keywords="michael liendo blog, blog of michael liendo, michaels posts, blog de michael"
+    >
       <h1 className="mt-20 mb-20 text-5xl text-center">
         {t('latest_blog_posts')}
       </h1>

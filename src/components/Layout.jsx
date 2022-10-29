@@ -3,24 +3,30 @@ import Head from 'next/head';
 import Navbar from './Navbar';
 import Footer from './Footer';
 
-import useTranslation from '../utils/i18n/hooks';
-
-export default function Layout({ title, description, url, children }) {
-  const t = useTranslation;
-
+export default function Layout({
+  title,
+  description,
+  url,
+  type,
+  keywords,
+  children,
+}) {
   return (
     <div>
       <Head>
-        <title>{title ? title : t('title')}</title>
+        <title>{title ? title : 'Without title'}</title>
         <meta
           name="description"
-          content={description ? description : t('description')}
+          content={description ? description : 'Without description'}
         />
-        <meta property="og:title" content={title ? title : t('title')} />
+        <meta
+          property="og:title"
+          content={title ? title : 'Without og title'}
+        />
 
         <meta
           property="og:description"
-          content={description ? description : t('description')}
+          content={description ? description : 'Without og description'}
         />
         <meta name="theme-color" content="#3bd6cf" />
 
@@ -33,9 +39,9 @@ export default function Layout({ title, description, url, children }) {
           property="og:url"
           content={url ? url : 'https://michaelliendo.com/'}
         />
-        <meta property="og:type" content={title ? 'article' : 'website'} />
+        <meta property="og:type" content={type ? type : 'portfolio.website'} />
 
-        <meta name="keywords" content={t('keywords')} />
+        <meta name="keywords" content={keywords} />
 
         <meta rel="canonical" href="https://michaelliendo.com/" />
 

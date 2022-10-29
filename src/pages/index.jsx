@@ -6,10 +6,18 @@ import Knowledge from '../components/Knowledge';
 import Layout from '../components/Layout';
 import Work from '../components/Work';
 import Contact from '../components/Contact';
+import useTranslation from '../utils/i18n/hooks';
 
 export default function Home({ projects }) {
+  const t = useTranslation;
   return (
-    <Layout>
+    <Layout
+      title={t('title')}
+      description={t('description')}
+      url={'https://michaelliendo.com/'}
+      keywords="michael liendo, michaelliendo, michael liendo portafolio, michael liendo website, michael liendo developer, michael liendo portfolio, liendo michael"
+      type="portfolio.website"
+    >
       <Hero />
       <About />
       <Knowledge />

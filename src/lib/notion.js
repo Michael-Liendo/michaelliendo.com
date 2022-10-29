@@ -12,7 +12,7 @@ const databaseID = {
   en: process.env.NOTION_BLOG_DATABASE_ID_EN,
 };
 
-export async function getPublishedBlogPosts(locale = 'es') {
+export async function getPublishedBlogPosts(locale = 'en') {
   const database = databaseID[locale];
   // list blog posts
   const response = await client.databases.query({
@@ -38,22 +38,15 @@ export async function getPublishedBlogPosts(locale = 'es') {
   );
 }
 
-export async function getSingleBlogPost(locale = 'es', url) {
+export async function getSingleBlogPost(locale = 'en', url) {
   const database = databaseID[locale];
 
   const response = await client.databases.query({
     database_id: database,
+    filter: { property: 'url', rich_text: { equals: url } },
   });
 
-  let filter = response.results.filter(
-    (res) => res.properties.url.rich_text[0].plain_text === url,
-  );
-
-  if (!filter[0]) {
-    throw 'No results available';
-  }
-
-  const page = filter[0];
+  const page = response.results[0];
   const mdBlocks = await n2m.pageToMarkdown(page.id);
   const post = await pageToPostTransformer(page);
   const markdown = n2m.toMarkdownString(mdBlocks);
