@@ -3,14 +3,18 @@ import PostCard from '../../components/PostCard';
 import { getPublishedBlogPosts } from '../../lib/notion.js';
 import useTranslation from '../../utils/i18n/hooks';
 
-export default function Home({ posts }) {
+export default function Home({ posts, locale }) {
   const t = useTranslation;
 
   return (
     <Layout
       title={t('blogTitle')}
       description={t('blogDescription')}
-      url="https://michaelliendo.com/blog"
+      url={
+        locale === 'es'
+          ? 'https://michaelliendo.com/es/blog'
+          : 'https://michaelliendo.com/blog'
+      }
       type="blog.website"
       keywords="michael liendo blog, blog of michael liendo, michaels posts, blog de michael"
     >
@@ -30,6 +34,7 @@ export async function getStaticProps({ locale }) {
   return {
     props: {
       posts,
+      locale,
     },
   };
 }

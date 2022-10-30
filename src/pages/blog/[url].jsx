@@ -3,12 +3,16 @@ import Layout from '../../components/Layout';
 
 import { getSingleBlogPost, getPublishedBlogPosts } from '../../lib/notion.js';
 
-export default function Post({ markdown, post }) {
+export default function Post({ markdown, post, locale }) {
   return (
     <Layout
       title={post.title}
       description={post.description}
-      url={`https://michaelliendo.com/es/blog/${post.url}`}
+      url={
+        locale === 'es'
+          ? `https://michaelliendo.com/es/blog/${post.url}`
+          : 'https://michaelliendo.com/blog'
+      }
       type="article.blog"
       keywords={`${post.tags.join(', ')}, ${post.title}, ${post.description}`}
     >
@@ -32,6 +36,7 @@ export async function getStaticProps({ locale, params }) {
     props: {
       markdown: p.markdown,
       post: p.post,
+      locale,
     },
   };
 }
