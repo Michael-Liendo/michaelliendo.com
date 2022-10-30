@@ -8,7 +8,7 @@ export default function Post({ markdown, post }) {
     <Layout
       title={post.title}
       description={post.description}
-      url={`https://michaelliendo.com/blog/${post.url}`}
+      url={`https://michaelliendo.com/es/blog/${post.url}`}
       type="article.blog"
       keywords={`${post.tags.join(', ')}, ${post.title}, ${post.description}`}
     >
@@ -40,12 +40,12 @@ export async function getStaticPaths() {
   const postsES = await getPublishedBlogPosts('es');
   const postsEN = await getPublishedBlogPosts('en');
 
-  const pathsES = postsES.map((post) => {
+  const pathsEN = postsEN.map((post) => {
     return `/blog/${post.url}`;
   });
 
-  const pathsEN = postsEN.map((post) => {
-    return `/en/blog/${post.url}`;
+  const pathsES = postsES.map((post) => {
+    return `/es/blog/${post.url}`;
   });
   let paths = [...pathsES, ...pathsEN];
 
