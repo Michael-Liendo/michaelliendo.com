@@ -90,6 +90,7 @@ export async function pageToPostTransformer(post) {
 
   return {
     id: post.id,
+    cover: post.cover?.external.url || null,
     title: post.properties.name.title[0].plain_text,
     tags: post.properties.tags.multi_select,
     description: post.properties.description.rich_text[0].plain_text,
