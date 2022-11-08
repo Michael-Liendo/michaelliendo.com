@@ -7,10 +7,11 @@ import useTranslation from '../utils/i18n/hooks';
 
 function NavLink({ children, href }) {
   return (
-    <Link href={href}>
-      <a className="transition ease-in mx-9 py-2 md:mx-4 my-6 hover:text-teal-400 duration-150">
-        {children}
-      </a>
+    <Link
+      className="transition ease-in mx-9 py-2 md:mx-4 my-6 hover:text-teal-400 duration-150"
+      href={href}
+    >
+      {children}
     </Link>
   );
 }
@@ -83,10 +84,8 @@ export default function Navbar() {
         },
       )}
     >
-      <Link href="/">
-        <a className="text-2xl z-0 font-extrabold tracking-wide">
-          Michael Liendo
-        </a>
+      <Link className="text-2xl z-0 font-extrabold tracking-wide" href="/">
+        Michael Liendo
       </Link>
       <div className="hidden mt-2 md:block">
         <NavLink href="/#about">{t('about')}</NavLink>
@@ -94,12 +93,10 @@ export default function Navbar() {
         <NavLink href="/#work">{t('work')}</NavLink>
         <NavLink href="/#contact">{t('contact')}</NavLink>
       </div>
-      <Link href="/blog" passHref>
-        <a aria-label="blog">
-          <button className="hidden md:block transition ease-in bg-blue-600 hover:scale-110 duration-150 focus:outline-none font-medium rounded-lg px-5 py-2 text-center">
-            Blog
-          </button>
-        </a>
+      <Link aria-label="blog" href="/blog" passHref>
+        <button className="hidden md:block transition ease-in bg-blue-600 hover:scale-110 duration-150 focus:outline-none font-medium rounded-lg px-5 py-2 text-center">
+          Blog
+        </button>
       </Link>
       <div className="block md:hidden z-10">
         <button
@@ -131,12 +128,15 @@ export default function Navbar() {
           <NavLink href="#knowledge">{t('knowledge')}</NavLink>
           <NavLink href="#work">{t('work')}</NavLink>
           <NavLink href="#contact">{t('contact')}</NavLink>
-          <Link href="/blog" passHref>
-            <a aria-label="blog" className="mx-auto mt-20">
-              <button className="transition ease-in bg-blue-600 hover:scale-110 duration-150 focus:outline-none font-medium rounded-lg w-32 h-12 text-center">
-                Blog
-              </button>
-            </a>
+          <Link
+            aria-label="blog"
+            className="mx-auto mt-20"
+            href="/blog"
+            passHref
+          >
+            <button className="transition ease-in bg-blue-600 hover:scale-110 duration-150 focus:outline-none font-medium rounded-lg w-32 h-12 text-center">
+              Blog
+            </button>
           </Link>
           <div className="mx-auto mt-10">
             <Translate />
