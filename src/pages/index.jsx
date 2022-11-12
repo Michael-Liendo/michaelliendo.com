@@ -14,7 +14,11 @@ export default function Home({ projects }) {
     <Layout
       title={t('title')}
       description={t('description')}
-      url={'https://michaelliendo.com/'}
+      url={
+        t('locale') === 'es'
+          ? 'https://michaelliendo.com/es/'
+          : 'https://michaelliendo.com/'
+      }
       keywords="michael liendo, michaelliendo, michael liendo portafolio, michael liendo website, michael liendo developer, michael liendo portfolio, liendo michael"
       type="portfolio.website"
     >

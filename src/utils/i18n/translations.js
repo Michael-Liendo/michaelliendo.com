@@ -1,5 +1,6 @@
 module.exports = {
   en: {
+    locale: 'en',
     title: 'Michael Liendo - Front-end Developer. Learning, y coding',
     description:
       'Michael Liendo is a Frontend developer with a passion for learning, programming and teaching. He works in a team and is willing to learn whatever technology is needed to reach his goal.',
@@ -25,6 +26,7 @@ module.exports = {
     latest_blog_posts: 'Latest Posts',
   },
   es: {
+    locale: 'es',
     title:
       'Michael Liendo - Desarrollador Front-end. Aprendiendiendo, y programando',
     description:
