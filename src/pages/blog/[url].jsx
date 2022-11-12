@@ -11,7 +11,7 @@ export default function Post({ markdown, post, locale }) {
       url={
         locale === 'es'
           ? `https://michaelliendo.com/es/blog/${post.url}`
-          : 'https://michaelliendo.com/blog'
+          : `https://michaelliendo.com/blog/${post.url}`
       }
       type="article.blog"
       keywords={`${post.tags.join(', ')}, ${post.title}, ${post.description}`}
