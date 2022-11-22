@@ -21,9 +21,13 @@ export default function Home({ posts, locale }) {
       <h1 className="mt-20 mb-20 text-5xl text-center">
         {t('latest_blog_posts')}
       </h1>
-      {posts.map((post) => (
-        <PostCard key={post.id} post={post} />
-      ))}
+      <div className="grid grid-cols-3 gap-10">
+        {posts.map((post, index) => {
+          if (!(index % 4))
+            return <PostCard key={post.id} post={post} view={1} />;
+          else return <PostCard key={post.id} post={post} />;
+        })}
+      </div>
     </Layout>
   );
 }
