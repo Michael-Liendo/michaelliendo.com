@@ -16,7 +16,7 @@ export default function PostCard({ post, view }) {
             ) : null}
           </div>
           <div>
-            <p className="mb-3 text-slate-400">{post.date}</p>
+            <p className="my-3 text-slate-400">{post.date}</p>
             <h2 className="text-2xl">{post.title}</h2>
             <div className="flex mt-1 mb-4">
               {post.tags.map((tag) => (
