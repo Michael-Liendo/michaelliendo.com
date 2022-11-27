@@ -8,6 +8,7 @@ export default function Post({ markdown, post, locale }) {
     <Layout
       title={post.title}
       description={post.description}
+      image={post.cover}
       url={
         locale === 'es'
           ? `https://michaelliendo.com/es/blog/${post.url}`

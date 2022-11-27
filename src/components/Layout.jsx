@@ -7,6 +7,7 @@ export default function Layout({
   title,
   description,
   url,
+  image,
   type,
   keywords,
   children,
@@ -14,15 +15,12 @@ export default function Layout({
   return (
     <div>
       <Head>
-        <title>{title ? title : 'Without title'}</title>
+        <title>{title ? title : 'Michael Liendo'}</title>
         <meta
           name="description"
           content={description ? description : 'Without description'}
         />
-        <meta
-          property="og:title"
-          content={title ? title : 'Without og title'}
-        />
+        <meta property="og:title" content={title ? title : 'Michael Liendo'} />
 
         <meta
           property="og:description"
@@ -30,10 +28,17 @@ export default function Layout({
         />
         <meta name="theme-color" content="#3bd6cf" />
 
-        <meta property="og:site_name" content="Michael Liendo" />
+        <meta
+          property="og:site_name"
+          content={title ? title : 'Michael Liendo'}
+        />
         <meta
           property="og:image"
-          content="https://cdn.michaelliendo.com/michael/profile-pic.png"
+          content={
+            image
+              ? image
+              : 'https://cdn.michaelliendo.com/michael/profile-pic.png'
+          }
         />
         <meta
           property="og:url"
