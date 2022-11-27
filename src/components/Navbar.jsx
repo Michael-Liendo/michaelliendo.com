@@ -8,6 +8,7 @@ import useTranslation from '../utils/i18n/hooks';
 function NavLink({ children, href }) {
   return (
     <Link
+      title={children}
       className="transition ease-in mx-9 py-2 md:mx-4 my-6 hover:text-teal-400 duration-150"
       href={href}
     >
@@ -84,7 +85,11 @@ export default function Navbar() {
         },
       )}
     >
-      <Link className="text-2xl z-0 font-extrabold tracking-wide" href="/">
+      <Link
+        title="Michael Liendo"
+        className="text-2xl z-0 font-extrabold tracking-wide"
+        href="/"
+      >
         Michael Liendo
       </Link>
       <div className="hidden mt-2 md:block">
@@ -130,6 +135,7 @@ export default function Navbar() {
           <NavLink href="#contact">{t('contact')}</NavLink>
           <Link
             aria-label="blog"
+            title="Blog"
             className="mx-auto mt-20"
             href="/blog"
             passHref

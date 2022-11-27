@@ -6,6 +6,7 @@ export default function Footer() {
     <div className="flex justify-between mx-10 my-8 md:mx-24">
       <footer>
         <a
+          title="Michael Liendo"
           href="https://michaelliendo.com"
           className="transition text-gray-400 duration-300 hover:text-slate-50"
         >

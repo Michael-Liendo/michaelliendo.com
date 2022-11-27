@@ -6,6 +6,7 @@ export default function PostCard({ post, view }) {
     <>
       {view === 1 ? (
         <Link
+          title={post.title}
           className="transition md:flex my-10 md:my-0 md:col-span-full duration-300 hover:-translate-y-2"
           href={`/blog/${post.url}`}
           passHref
@@ -36,7 +37,12 @@ export default function PostCard({ post, view }) {
         </Link>
       ) : (
         <div className="transition my-10 md:my-0 duration-300 hover:-translate-y-2">
-          <Link href={`/blog/${post.url}`} passHref id={post.id}>
+          <Link
+            title={post.title}
+            href={`/blog/${post.url}`}
+            passHref
+            id={post.id}
+          >
             {post.cover && (
               <Image
                 src={post.cover}

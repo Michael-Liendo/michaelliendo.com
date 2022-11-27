@@ -15,6 +15,7 @@ export default function Project({ projects }) {
               <Folder />
               <div className="flex">
                 <a
+                  title={project.title}
                   aria-label="Project Repository"
                   className="transition duration-300 hover:-translate-y-1 mx-2"
                   target="_blank"
@@ -24,6 +25,7 @@ export default function Project({ projects }) {
                   <GithubBorder />
                 </a>
                 <a
+                  title={project.title}
                   aria-label="Project Preview"
                   className="transition duration-300 hover:-translate-y-1 mx-2"
                   target="_blank"

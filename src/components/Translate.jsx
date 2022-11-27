@@ -7,6 +7,7 @@ function Translate() {
 
   return (
     <Link
+      title="Translate"
       className="no-underline items-center rounded-full text-white border-solid border-blue-500 border py-0 px-3 text-sm"
       href={router.asPath}
       locale={locate}

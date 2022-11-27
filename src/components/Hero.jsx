@@ -13,6 +13,7 @@ export default function Hero() {
         {t('short_bio')}
       </h2>
       <a
+        title="Curriculum"
         target="_blank"
         rel="noreferrer"
         href={`https://cdn.michaelliendo.com/${t('curriculumFile')}`}

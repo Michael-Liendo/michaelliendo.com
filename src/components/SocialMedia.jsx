@@ -9,6 +9,7 @@ export default function SocialMedia() {
         <div className="flex md:block mb-9">
           <div className="mr-4 md:mb-5 transition duration-300 hover:-translate-y-1">
             <a
+              title="Linkedin"
               target="_blank"
               rel="noreferrer"
               href="https://www.linkedin.com/in/michaelliendo/"
@@ -19,6 +20,7 @@ export default function SocialMedia() {
           </div>
           <div className="mr-4 md:mb-4 transition duration-300 hover:-translate-y-1">
             <a
+              title="Twitter"
               target="_blank"
               rel="noreferrer"
               href="https://twitter.com/MichaelMLiendo"
@@ -29,6 +31,7 @@ export default function SocialMedia() {
           </div>
           <div className="transition duration-300 hover:-translate-y-1">
             <a
+              title="Github"
               target="_blank"
               rel="noreferrer"
               href="https://github.com/Michael-Liendo"
@@ -44,6 +47,7 @@ export default function SocialMedia() {
         <div className="flex">
           <div className="mr-4 transition duration-300 hover:-translate-y-1">
             <a
+              title="Linkedin"
               target="_blank"
               rel="noreferrer"
               href="https://www.linkedin.com/in/michaelliendo/"
@@ -54,6 +58,7 @@ export default function SocialMedia() {
           </div>
           <div className="mr-4 transition duration-300 hover:-translate-y-1">
             <a
+              title="Twitter"
               target="_blank"
               rel="noreferrer"
               href="https://twitter.com/MichaelMLiendo"
@@ -64,6 +69,7 @@ export default function SocialMedia() {
           </div>
           <div className="transition duration-300 hover:-translate-y-1">
             <a
+              title="Github"
               target="_blank"
               rel="noreferrer"
               href="https://github.com/Michael-Liendo"
