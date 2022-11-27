@@ -52,6 +52,7 @@ export default function Layout({
 
         <meta name="robots" content="follow" />
         <meta name="author" content="Michael Liendo" />
+        <meta name="publisher" content="Michael Liendo" />
         <meta name="copyright" content="Michael Liendo" />
       </Head>
 
