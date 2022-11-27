@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['cdn.michaelliendo.com'],
+    remotePatterns: [{ hostname: '*' }],
   },
   i18n: {
     locales: ['es', 'en'],
