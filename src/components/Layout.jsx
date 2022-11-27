@@ -48,7 +48,7 @@ export default function Layout({
 
         <meta name="keywords" content={keywords} />
 
-        <meta rel="canonical" href={url ? url : 'https://michaelliendo.com/'} />
+        <link rel="canonical" href={url ? url : 'https://michaelliendo.com/'} />
 
         <meta name="robots" content="follow" />
         <meta name="author" content="Michael Liendo" />
