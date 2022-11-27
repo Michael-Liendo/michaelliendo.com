@@ -98,7 +98,7 @@ export default function Navbar() {
         <NavLink href="/#work">{t('work')}</NavLink>
         <NavLink href="/#contact">{t('contact')}</NavLink>
       </div>
-      <Link aria-label="blog" href="/blog" passHref>
+      <Link title="Blog" aria-label="blog" href="/blog" passHref>
         <button className="hidden md:block transition ease-in bg-blue-600 hover:scale-110 duration-150 focus:outline-none font-medium rounded-lg px-5 py-2 text-center">
           Blog
         </button>
