@@ -83,7 +83,7 @@ export function pageToProjectTransformer(project) {
 }
 
 export async function pageToPostTransformer(post) {
-  let time = new Date(post.properties.created.created_time).toLocaleDateString(
+  let time = new Date(post.properties.created.date.start).toLocaleDateString(
     'en',
     { year: 'numeric', month: 'long', day: 'numeric' },
   );
