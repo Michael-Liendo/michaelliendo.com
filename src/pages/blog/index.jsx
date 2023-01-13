@@ -32,7 +32,7 @@ export default function Home({ posts, locale }) {
   );
 }
 
-export async function getStaticProps({ locale }) {
+export async function getServerSideProps({ locale }) {
   const posts = await getPublishedBlogPosts(locale);
 
   return {
