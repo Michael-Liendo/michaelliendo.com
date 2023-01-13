@@ -29,8 +29,11 @@ export default function Post({ markdown, post, locale }) {
 export async function getServerSideProps({ locale, params }) {
   const p = await getSingleBlogPost(locale, params?.url);
 
-  if (!p) {
+  if (p.notFound) {
     console.log('no have a post');
+    return {
+      notFound: true,
+    };
   }
 
   return {

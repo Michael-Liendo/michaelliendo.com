@@ -46,6 +46,12 @@ export async function getSingleBlogPost(locale = 'en', url) {
     filter: { property: 'url', rich_text: { equals: url } },
   });
 
+  if (response.results.length < 1) {
+    return {
+      notFound: true,
+    };
+  }
+
   const page = response.results[0];
   const mdBlocks = await n2m.pageToMarkdown(page.id);
   const post = await pageToPostTransformer(page);
@@ -54,6 +60,7 @@ export async function getSingleBlogPost(locale = 'en', url) {
   return {
     post,
     markdown,
+    notFound: false,
   };
 }
 
