@@ -1,7 +1,7 @@
 import ReactMarkdown from 'react-markdown';
 import Layout from '../../components/Layout';
 
-import { getSingleBlogPost, getPublishedBlogPosts } from '../../lib/notion.js';
+import { getSingleBlogPost } from '../../lib/notion.js';
 
 export default function Post({ markdown, post, locale }) {
   return (
@@ -25,8 +25,8 @@ export default function Post({ markdown, post, locale }) {
     </Layout>
   );
 }
-// TODO: refresh post per request
-export async function getStaticProps({ locale, params }) {
+// todo: show 404 when there is no article with the slug
+export async function getServerSideProps({ locale, params }) {
   const p = await getSingleBlogPost(locale, params?.url);
 
   if (!p) {
@@ -39,24 +39,5 @@ export async function getStaticProps({ locale, params }) {
       post: p.post,
       locale,
     },
-  };
-}
-
-export async function getStaticPaths() {
-  const postsES = await getPublishedBlogPosts('es');
-  const postsEN = await getPublishedBlogPosts('en');
-
-  const pathsEN = postsEN.map((post) => {
-    return `/blog/${post.url}`;
-  });
-
-  const pathsES = postsES.map((post) => {
-    return `/es/blog/${post.url}`;
-  });
-  let paths = [...pathsES, ...pathsEN];
-
-  return {
-    paths,
-    fallback: false,
   };
 }
