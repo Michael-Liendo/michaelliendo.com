@@ -25,7 +25,7 @@ export default function Post({ markdown, post, locale }) {
     </Layout>
   );
 }
-
+// TODO: refresh post per request
 export async function getStaticProps({ locale, params }) {
   const p = await getSingleBlogPost(locale, params?.url);
 
