@@ -15,7 +15,7 @@ export default function PostCard({ post, view }) {
           <div className="mr-10">
             {post.cover && (
               <Image
-                className="rounded-lg w-96 h-96 object-cover"
+                className="rounded-lg w-[90vw] h-96 object-cover"
                 src={post.cover}
                 alt={post.title}
                 width="600"
