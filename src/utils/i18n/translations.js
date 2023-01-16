@@ -17,7 +17,7 @@ module.exports = {
       'Frontend developer programming using Next.js to create solutions.',
     curriculum: 'View Curriculum',
     biography:
-      'In my two years of experience as a junior developer of web applications and web pages, it could be of interest to you, since I have knowledge in languages and technologies such as Javascript, Next.js, Git, Tailwind, Docker, Git, and MongoDB. My teamwork, and my love of learning and sharing knowledge is very beneficial in an organization that aspires to grow.',
+      'My name is Michael Liendo and I am a passionate frontend developer with more than 2 years of experience in the field. My experience has given me a solid understanding of languages and technologies such as JavaScript, HTML, CSS, Next.js, React, Tailwind, Docker, Git, and MongoDB. I am an effective team player and pride myself on my ability to solve problems and make effective decisions. Also, I am always looking to learn and love to share my knowledge with others.',
     languages: 'LANGUAGES',
     technology_stack: 'TECHNOLOGY STACK',
     lets_work_together: "Let's work together",
@@ -44,7 +44,7 @@ module.exports = {
       'Desarrollador frontend programando usando Next.js para crear soluciones.',
     curriculum: 'Ver Curriculum',
     biography:
-      'En mis dos años de experiencia como desarrollador  junior de aplicaciones web y páginas web, podría ser de su interés, ya que tengo conocimiento en lenguajes y tecnologías como, Javascript, Next.js, Git, Tailwind, Docker, Git, y MongoDB. Mi trabajo en equipo, y mi amor por aprender y compartir conocimientos es muy beneficioso en una organización que aspira a crecer.',
+      'Mi nombre es Michael Liendo y soy un apasionado desarrollador frontend con más de 2 años de experiencia en el campo. Mi experiencia me ha brindado una sólida comprensión de lenguajes y tecnologías como JavaScript, HTML, CSS, Next.js, React, Tailwind, Docker, Git y MongoDB. Soy un colaborador eficaz en equipo y me enorgullezco de mi capacidad para resolver problemas y tomar decisiones eficaces. Además, siempre estoy buscando aprender y me encanta compartir mis conocimientos con otros.',
     languages: 'LENGUAJES',
     technology_stack: 'STACK DE TECNOLOGÍA',
     lets_work_together: 'Trabajemos juntos',
