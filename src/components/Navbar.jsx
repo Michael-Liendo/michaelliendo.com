@@ -16,7 +16,7 @@ function NavLink({ children, href }) {
 
 export default function Navbar() {
   return (
-    <Card className="flex justify-between items-center p-4">
+    <Card className="flex justify-between items-center p-4 my-5">
       <div className="space-x-3 sm:space-x-6">
         <NavLink href="/">Home</NavLink>
         <NavLink href="/projects">Projects</NavLink>
