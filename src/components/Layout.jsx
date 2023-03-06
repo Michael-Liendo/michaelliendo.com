@@ -1,7 +1,6 @@
 import Head from 'next/head';
 
 import Navbar from './Navbar';
-import Footer from './Footer';
 
 export default function Layout({
   title,
@@ -56,9 +55,10 @@ export default function Layout({
         <meta name="copyright" content="Michael Liendo" />
       </Head>
 
-      <Navbar />
-      <main className="mx-10 min-h-screen md:mx-24">{children}</main>
-      <Footer />
+      <div className="m-0 sm:m-10 md:m-28">
+        <Navbar />
+        <main className>{children}</main>
+      </div>
     </div>
   );
 }
