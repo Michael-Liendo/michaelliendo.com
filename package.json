@@ -10,6 +10,7 @@
     "lint": "prettier --check . && eslint --ignore-path .gitignore ."
   },
   "dependencies": {
+    "@iconify-json/logos": "^1.1.23",
     "@notionhq/client": "^1.0.4",
     "@svgr/core": "^6.5.1",
     "classnames": "^2.3.1",
