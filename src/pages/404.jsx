@@ -8,7 +8,7 @@ export default function Custom404() {
         <title>404 No found - Michael Liendo</title>
         <meta name="robots" content="noindex" />
       </Head>
-      <Navbar></Navbar>
+      <Navbar />
       <h1 className="text-7xl text-center mt-52">404 No Found</h1>
     </div>
   );

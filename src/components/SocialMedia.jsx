@@ -1,6 +1,6 @@
 import GithubIcon from '~icons/mdi/github.jsx';
 import TwitterIcon from '~icons/mdi/twitter.jsx';
-import Linkedin from '~icons/mdi/linkedin';
+import Linkedin from '~icons/mdi/linkedin.jsx';
 
 export default function SocialMedia() {
   return (

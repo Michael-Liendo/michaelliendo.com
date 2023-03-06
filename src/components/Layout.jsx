@@ -57,7 +57,7 @@ export default function Layout({
 
       <div className="m-0 sm:m-10 md:m-16 lg:m-20 xl:m-28">
         <Navbar />
-        <main className>{children}</main>
+        <main>{children}</main>
       </div>
     </div>
   );
