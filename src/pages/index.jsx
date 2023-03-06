@@ -1,15 +1,13 @@
-import { getProjects } from '../lib/notion';
-
-import About from '../components/About';
-import Hero from '../components/Hero';
-import Knowledge from '../components/Knowledge';
+import HomeComponent from '../components/Home';
 import Layout from '../components/Layout';
-import Work from '../components/Work';
-import Contact from '../components/Contact';
+import TechnologyPosts from '../components/TechnologyPosts';
+import { getPublishedBlogPosts } from '../lib/notion';
+
 import useTranslation from '../utils/i18n/hooks';
 
-export default function Home({ projects }) {
+export default function Home({ posts }) {
   const t = useTranslation;
+  console.log(posts);
   return (
     <Layout
       title={t('title')}
@@ -22,21 +20,24 @@ export default function Home({ projects }) {
       keywords="michael liendo, michaelliendo, michael liendo portafolio, michael liendo website, michael liendo developer, michael liendo portfolio, liendo michael"
       type="portfolio.website"
     >
-      <Hero />
-      <About />
-      <Knowledge />
-      <Work projects={projects} />
-      <Contact />
+      <div className="lg:flex lg:space-x-6 lg:space-y-0 space-y-5">
+        <HomeComponent />
+        <TechnologyPosts posts={posts} />
+      </div>
     </Layout>
   );
 }
 
-export async function getServerSideProps() {
-  const projects = await getProjects();
+export async function getStaticProps({ locale }) {
+  const posts = await getPublishedBlogPosts(locale);
 
+  const postWithTagTechnology = posts.filter((post) =>
+    post.tags.some((tag) => tag.name === 'technology'),
+  );
   return {
     props: {
-      projects,
+      posts: postWithTagTechnology,
+      locale,
     },
   };
 }
