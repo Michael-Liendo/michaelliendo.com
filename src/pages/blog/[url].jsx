@@ -1,7 +1,7 @@
 import ReactMarkdown from 'react-markdown';
 import Layout from '../../components/Layout';
 
-import { getSingleBlogPost } from '../../lib/notion.js';
+import { getPublishedBlogPosts, getSingleBlogPost } from '../../lib/notion.js';
 
 export default function Post({ markdown, post, locale }) {
   return (
@@ -42,5 +42,24 @@ export async function getStaticProps({ locale, params }) {
       post: p.post,
       locale,
     },
+  };
+}
+
+export async function getStaticPaths() {
+  const postsES = await getPublishedBlogPosts('es');
+  const postsEN = await getPublishedBlogPosts('en');
+
+  const pathsEN = postsEN.map((post) => {
+    return `/blog/${post.url}`;
+  });
+
+  const pathsES = postsES.map((post) => {
+    return `/es/blog/${post.url}`;
+  });
+  let paths = [...pathsES, ...pathsEN];
+
+  return {
+    paths,
+    fallback: false,
   };
 }
