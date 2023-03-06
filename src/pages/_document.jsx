@@ -23,7 +23,12 @@ export default function MyDocument() {
           type="image/png"
         />
       </Head>
-      <body className="text-white">
+      <body
+        className="text-white"
+        style={{
+          backgroundImage: `url("https://media4.giphy.com/media/TxVVB6PfWMjE4/giphy.gif?cid=ecf05e47bar9qnjddk6jmi3knyp0crh6nj4mnwcou98svv96&rid=giphy.gif&ct=g")`,
+        }}
+      >
         <Main />
         <NextScript />
       </body>
