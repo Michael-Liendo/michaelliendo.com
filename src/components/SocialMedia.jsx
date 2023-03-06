@@ -30,7 +30,7 @@ export default function SocialMedia() {
         href="https://github.com/Michael-Liendo"
         aria-label="Github"
       >
-        <GithubIcon style={{ fontSize: '1.5em', color: '' }} />
+        <GithubIcon style={{ fontSize: '1.5em' }} />
       </a>
     </div>
   );
