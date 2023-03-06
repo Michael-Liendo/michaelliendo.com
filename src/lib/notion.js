@@ -1,9 +1,5 @@
-import { Client } from '@notionhq/client';
 import { NotionToMarkdown } from 'notion-to-md';
-
-const client = new Client({
-  auth: process.env.NOTION_ACCESS_TOKEN,
-});
+import { client } from './notionClient';
 
 const n2m = new NotionToMarkdown({ notionClient: client });
 
