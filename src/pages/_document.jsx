@@ -23,7 +23,7 @@ export default function MyDocument() {
           type="image/png"
         />
       </Head>
-      <body>
+      <body className="text-white">
         <Main />
         <NextScript />
       </body>
