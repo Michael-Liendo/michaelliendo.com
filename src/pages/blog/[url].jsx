@@ -1,4 +1,5 @@
 import ReactMarkdown from 'react-markdown';
+import Card from '../../components/Card';
 import Layout from '../../components/Layout';
 
 import { getPublishedBlogPosts, getSingleBlogPost } from '../../lib/notion.js';
@@ -17,11 +18,13 @@ export default function Post({ markdown, post, locale }) {
       type="article.blog"
       keywords={`${post.tags.join(', ')}, ${post.title}, ${post.description}`}
     >
-      <div className="my-20 sm:flex sm:items-center sm:justify-center">
-        <article className="prose max-w-3xl prose-p:text-white prose-strong:text-green-500 prose-headings:text-white prose-green prose-code:text-white">
-          <ReactMarkdown>{markdown}</ReactMarkdown>
-        </article>
-      </div>
+      <Card className="p-8">
+        <div className="my-20 sm:flex sm:items-center sm:justify-center">
+          <article className="prose max-w-3xl prose-p:text-white prose-strong:text-green-500 prose-headings:text-white prose-green prose-code:text-white">
+            <ReactMarkdown>{markdown}</ReactMarkdown>
+          </article>
+        </div>
+      </Card>
     </Layout>
   );
 }
