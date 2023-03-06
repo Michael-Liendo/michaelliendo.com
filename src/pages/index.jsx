@@ -7,7 +7,6 @@ import useTranslation from '../utils/i18n/hooks';
 
 export default function Home({ posts }) {
   const t = useTranslation;
-  console.log(posts);
   return (
     <Layout
       title={t('title')}
