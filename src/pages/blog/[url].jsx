@@ -25,8 +25,8 @@ export default function Post({ markdown, post, locale }) {
     </Layout>
   );
 }
-// todo: show 404 when there is no article with the slug
-export async function getServerSideProps({ locale, params }) {
+
+export async function getStaticProps({ locale, params }) {
   const p = await getSingleBlogPost(locale, params?.url);
 
   if (p.notFound) {

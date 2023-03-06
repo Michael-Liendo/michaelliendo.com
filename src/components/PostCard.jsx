@@ -49,8 +49,8 @@ export default function PostCard({ post, view }) {
                 title={post.title}
                 src={post.cover}
                 className="rounded-lg object-cover"
-                width="450"
-                height="450"
+                width="600"
+                height="600"
                 alt={post.description}
               />
             )}
