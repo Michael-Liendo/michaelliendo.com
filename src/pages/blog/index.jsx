@@ -9,7 +9,7 @@ export default function Home({ posts, locale }) {
 
   return (
     <Layout
-      title={t('blogTitle')}
+      title="Blog | Michael Liendo"
       description={
         t('locale') === 'es'
           ? 'Aquí puedes encontrar mi blog personal donde comparto mis pensamientos, consejos y trucos sobre el desarrollo web, la programación, y el diseño de experiencias de usuario. Como desarrollador Front-End, creo que compartir conocimiento y aprendizajes es esencial para el crecimiento profesional y personal en la industria.'
