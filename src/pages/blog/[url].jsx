@@ -15,7 +15,7 @@ export default function Post({ markdown, post, locale }) {
           ? `https://michaelliendo.com/es/blog/${post.url}`
           : `https://michaelliendo.com/blog/${post.url}`
       }
-      type="article.blog"
+      type="article"
       keywords={`${post.tags.join(', ')}, ${post.title}, ${post.description}`}
     >
       <Card className="p-8">

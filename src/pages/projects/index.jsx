@@ -7,8 +7,11 @@ import FolderIcon from '~icons/mdi/folder-outline.jsx';
 import Card from '../../components/Card';
 import Layout from '../../components/Layout';
 import { useState } from 'react';
+import useTranslation from '../../utils/i18n/hooks';
 
 export default function ProjectPage({ projects }) {
+  const t = useTranslation;
+
   const [projectState, setProjectState] = useState(projects);
   function filterHandler(e) {
     setProjectState(() => {
@@ -28,7 +31,19 @@ export default function ProjectPage({ projects }) {
 
   return (
     <>
-      <Layout title="Project | Michael Liendo">
+      <Layout
+        title="Project | Michael Liendo"
+        description={
+          t('locale') === 'es'
+            ? 'En esta sección, puedes encontrar una selección de los proyectos en los que he trabajado recientemente. Explora mis proyectos para ver ejemplos de mi trabajo y cómo he aplicado mis habilidades de desarrollo para crear soluciones personalizadas para clientes y usuarios finales.'
+            : 'In this section, you can find a selection of the projects I have worked on recently. Explore my projects to see examples of my work and how I have applied my development skills to create customized solutions for clients and end users.'
+        }
+        url={
+          t('locale') === 'es'
+            ? 'https://michaelliendo.com/es/projects'
+            : 'https://michaelliendo.com/projects'
+        }
+      >
         <Card className="p-6 h-[80vh] md:h-[60vh] overflow-y-auto">
           <div>
             <input

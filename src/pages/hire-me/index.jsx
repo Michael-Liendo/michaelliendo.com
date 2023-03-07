@@ -7,7 +7,14 @@ import useTranslation from '../../utils/i18n/hooks';
 export default function HireMePage() {
   const t = useTranslation;
   return (
-    <Layout title="Work with me | Michael Liendo">
+    <Layout
+      title="Work with me | Michael Liendo"
+      description={
+        t('locale') === 'es'
+          ? '¡Hola! Si estás buscando un desarrollador Front-End experimentado y apasionado, has venido al lugar correcto. Como programador web con experiencia en React, Next.js, JavaScript y TypeScript, puedo ayudarte a crear soluciones personalizadas y altamente funcionales para tus proyectos web. Me encanta trabajar en equipo y colaborar con otros profesionales para lograr objetivos comunes. Si estás interesado en trabajar conmigo en tu próximo proyecto, no dudes en ponerse en contacto conmigo para discutir las posibilidades.'
+          : "Hi! If you're looking for an experienced and passionate Front-End developer, you've come to the right place. As a web developer with experience in React, Next.js, JavaScript and TypeScript, I can help you create custom and highly functional solutions for your web projects. I love working in teams and collaborating with other professionals to achieve common goals. If you are interested in working with me on your next project, feel free to contact me to discuss the possibilities."
+      }
+    >
       <div className="lg:flex lg:space-x-20 lg:space-y-0 space-y-5">
         <Card className="p-6">
           <h1 className="text-4xl">{t('workWithMe')}</h1>

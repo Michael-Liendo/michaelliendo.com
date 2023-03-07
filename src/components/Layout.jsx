@@ -44,9 +44,12 @@ export default function Layout({
           property="og:url"
           content={url ? url : 'https://michaelliendo.com/'}
         />
-        <meta property="og:type" content={type ? type : 'portfolio.website'} />
+        <meta property="og:type" content={type ? type : 'website'} />
 
-        <meta name="keywords" content={keywords} />
+        <meta
+          name="keywords"
+          content={`${keywords} michael liendo, michael liendo portafolio, michael liendo website, michael liendo developer, michael liendo portfolio, Michael Liendo, Programador web, React, Next.js, JavaScript, TypeScript, Desarrollo Front-End, Desarrollo de aplicaciones web, Portafolio de proyectos, Front-End Development, Web Application Development, Project Portfolio`}
+        />
 
         <link rel="canonical" href={url ? url : 'https://michaelliendo.com/'} />
 
