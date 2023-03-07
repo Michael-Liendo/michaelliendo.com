@@ -2,7 +2,10 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    remotePatterns: [{ hostname: '*' }],
+    remotePatterns: [
+      { hostname: 'cdn.michaelliendo.com' },
+      { hostname: 'images.unsplash.com' },
+    ],
   },
   i18n: {
     locales: ['es', 'en'],
