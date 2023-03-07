@@ -61,7 +61,7 @@ export default function Layout({
         <meta name="copyright" content="Michael Liendo" />
       </Head>
 
-      <div className="m-0 sm:m-10 md:m-16 lg:m-20 xl:m-28">
+      <div className="m-0 sm:m-10 md:m-16 lg:m-20 2xl:m-28">
         <div className="fixed top-0 sm:top-2 right-3 ">
           <Translate />
         </div>
