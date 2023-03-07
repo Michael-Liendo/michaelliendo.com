@@ -10,13 +10,17 @@ export default function Home({ posts, locale }) {
   return (
     <Layout
       title={t('blogTitle')}
-      description={t('blogDescription')}
+      description={
+        t('locale') === 'es'
+          ? 'Aquí puedes encontrar mi blog personal donde comparto mis pensamientos, consejos y trucos sobre el desarrollo web, la programación, y el diseño de experiencias de usuario. Como desarrollador Front-End, creo que compartir conocimiento y aprendizajes es esencial para el crecimiento profesional y personal en la industria.'
+          : 'Here you can find my personal blog where I share my thoughts, tips and tricks about web development, programming, and user experience design. As a Front-End developer, I believe that sharing knowledge and learnings is essential for professional and personal growth in the industry.'
+      }
       url={
         locale === 'es'
           ? 'https://michaelliendo.com/es/blog'
           : 'https://michaelliendo.com/blog'
       }
-      type="blog.website"
+      type="website"
       keywords="michael liendo blog, blog of michael liendo, michaels posts, blog de michael"
     >
       <Card className="p-7">

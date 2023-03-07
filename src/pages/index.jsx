@@ -16,7 +16,6 @@ export default function Home({ posts }) {
           ? 'https://michaelliendo.com/es/'
           : 'https://michaelliendo.com/'
       }
-      keywords="michael liendo, michaelliendo, michael liendo portafolio, michael liendo website, michael liendo developer, michael liendo portfolio, liendo michael"
       type="portfolio.website"
     >
       <div className="lg:flex lg:space-x-6 lg:space-y-0 space-y-5">
