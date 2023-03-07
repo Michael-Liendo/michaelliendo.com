@@ -68,9 +68,20 @@ export default function Home() {
         <p className="text-lg">{t('biography')}</p>
       </div>
       <div className="flex justify-end">
-        <button className="mt-5 min-w-max transition ease-in bg-blue-600 hover:scale-110 duration-150 focus:outline-none font-medium h-10 rounded-lg px-5 py-2 text-center">
-          {t('Curriculum')}
-        </button>
+        <a
+          title="Curriculum"
+          target="_blank"
+          rel="noreferrer"
+          href={
+            t('locale') === 'es'
+              ? 'https://cdn.michaelliendo.com/Michael-Liendo-Curriculum-Spanish.pdf'
+              : 'https://cdn.michaelliendo.com/Michael-Liendo-Curriculum-English.pdf'
+          }
+        >
+          <button className="mt-5 transition ease-in bg-blue-600 hover:scale-110 duration-150 focus:outline-none font-medium rounded-lg px-5 py-2 text-center">
+            Curriculum
+          </button>
+        </a>
       </div>
     </Card>
   );
