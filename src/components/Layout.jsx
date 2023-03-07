@@ -12,7 +12,7 @@ export default function Layout({
   children,
 }) {
   return (
-    <div>
+    <>
       <Head>
         <title>{title ? title : 'Michael Liendo'}</title>
         <meta
@@ -59,6 +59,6 @@ export default function Layout({
         <Navbar />
         <main>{children}</main>
       </div>
-    </div>
+    </>
   );
 }
