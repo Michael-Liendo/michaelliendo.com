@@ -62,7 +62,7 @@ export default function Layout({
       </Head>
 
       <div className="m-0 sm:m-10 md:m-16 lg:m-20 xl:m-28">
-        <div className="fixed top-2 right-3 ">
+        <div className="fixed top-0 sm:top-2 right-3 ">
           <Translate />
         </div>
         <Navbar />

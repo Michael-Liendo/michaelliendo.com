@@ -4,7 +4,7 @@ import Linkedin from '~icons/mdi/linkedin.jsx';
 
 export default function SocialMedia() {
   return (
-    <div className="flex space-x-1 sm:space-x-4">
+    <div className="flex flex-wrap space-x-1 sm:space-x-4">
       <a
         title="Linkedin"
         target="_blank"
