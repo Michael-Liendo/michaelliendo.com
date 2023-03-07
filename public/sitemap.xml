@@ -1,58 +1,121 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-  <!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
-
-
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+  <script type="text/javascript" id="in-page-script-id" data-name="in_page_channel_BSwTPa"/>
+  <!--  created with Free Online Sitemap Generator www.xml-sitemaps.com  -->
   <url>
     <loc>https://michaelliendo.com/</loc>
-    <lastmod>2022-10-11T12:21:45+00:00</lastmod>
+    <lastmod>2023-03-07T17:01:38+00:00</lastmod>
     <priority>1.00</priority>
   </url>
   <url>
     <loc>https://michaelliendo.com/es</loc>
-    <lastmod>2022-10-11T12:21:45+00:00</lastmod>
+    <lastmod>2023-03-07T17:01:38+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://michaelliendo.com/projects</loc>
+    <lastmod>2023-03-07T17:01:38+00:00</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://michaelliendo.com/blog</loc>
-    <lastmod>2022-10-11T12:21:45+00:00</lastmod>
+    <lastmod>2023-03-07T17:01:38+00:00</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://michaelliendo.com/es/blog</loc>
-    <lastmod>2022-10-11T12:21:45+00:00</lastmod>
+    <loc>https://michaelliendo.com/hire-me</loc>
+    <lastmod>2023-03-07T17:01:38+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://michaelliendo.com/blog/tips-cover-letter</loc>
+    <lastmod>2023-03-07T17:01:38+00:00</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://michaelliendo.com/blog/how-to-configure-husky</loc>
-    <lastmod>2022-10-11T12:21:45+00:00</lastmod>
-    <priority>0.64</priority>
+    <lastmod>2023-03-07T17:01:38+00:00</lastmod>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://michaelliendo.com/blog/how-to-make-a-squash-in-git</loc>
-    <lastmod>2022-10-11T12:21:45+00:00</lastmod>
+    <lastmod>2023-03-07T17:01:38+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://michaelliendo.com/es/projects</loc>
+    <lastmod>2023-03-07T17:01:38+00:00</lastmod>
     <priority>0.64</priority>
   </url>
   <url>
-    <loc>https://michaelliendo.com/blog/michael-liendo</loc>
-    <lastmod>2022-10-11T12:21:45+00:00</lastmod>
+    <loc>https://michaelliendo.com/es/blog</loc>
+    <lastmod>2023-03-07T17:01:38+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://michaelliendo.com/es/hire-me</loc>
+    <lastmod>2023-03-07T17:01:38+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://michaelliendo.com/es/blog/tips-cover-letter</loc>
+    <lastmod>2023-03-07T17:01:38+00:00</lastmod>
     <priority>0.64</priority>
   </url>
   <url>
     <loc>https://michaelliendo.com/es/blog/how-to-configure-husky</loc>
-    <lastmod>2022-10-11T12:21:45+00:00</lastmod>
+    <lastmod>2023-03-07T17:01:38+00:00</lastmod>
     <priority>0.64</priority>
   </url>
   <url>
     <loc>https://michaelliendo.com/es/blog/how-to-make-a-squash-in-git</loc>
-    <lastmod>2022-10-11T12:21:45+00:00</lastmod>
+    <lastmod>2023-03-07T17:01:38+00:00</lastmod>
     <priority>0.64</priority>
   </url>
   <url>
-    <loc>https://michaelliendo.com/es/blog/michael-liendo</loc>
-    <lastmod>2022-10-11T12:21:45+00:00</lastmod>
+    <loc>https://michaelliendo.com/blog/life-lessons</loc>
+    <lastmod>2023-03-07T17:01:38+00:00</lastmod>
     <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://michaelliendo.com/blog/an-elvis-telis-story</loc>
+    <lastmod>2023-03-07T17:01:38+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://michaelliendo.com/blog/how-to-win-friends-and-influence-people</loc>
+    <lastmod>2023-03-07T17:01:38+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://michaelliendo.com/blog/michael-liendo</loc>
+    <lastmod>2023-03-07T17:01:38+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://michaelliendo.com/es/blog/life-lessons</loc>
+    <lastmod>2023-03-07T17:01:38+00:00</lastmod>
+    <priority>0.51</priority>
+  </url>
+  <url>
+    <loc>https://michaelliendo.com/es/blog/citas</loc>
+    <lastmod>2023-03-07T17:01:38+00:00</lastmod>
+    <priority>0.51</priority>
+  </url>
+  <url>
+    <loc>https://michaelliendo.com/es/blog/an-elvis-telis-story</loc>
+    <lastmod>2023-03-07T17:01:38+00:00</lastmod>
+    <priority>0.51</priority>
+  </url>
+  <url>
+    <loc>https://michaelliendo.com/es/blog/how-to-win-friends-and-influence-people</loc>
+    <lastmod>2023-03-07T17:01:38+00:00</lastmod>
+    <priority>0.51</priority>
+  </url>
+  <url>
+    <loc>https://michaelliendo.com/es/blog/michael-liendo</loc>
+    <lastmod>2023-03-07T17:01:38+00:00</lastmod>
+    <priority>0.51</priority>
   </url>
 </urlset>
