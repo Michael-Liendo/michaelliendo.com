@@ -31,15 +31,15 @@ export default function Home() {
             className="rounded-full mb-5"
           />
           <span className="p-2 text-sm sm:text-base truncate bg-fuchsia-400 border-2 bg-opacity-10">
-            Available to hire
+            {t('availableWork')}
           </span>
         </div>
         <div className="flex flex-col justify-between">
           <div className="text-center sm:text-left">
             <h1 className="text-2xl lg:text-4xl xl:text-5xl mt-4">
-              Hi I&apos;m Michael Liendo
+              {t('greetings')}
             </h1>
-            <span className="text-2xl md:text-3xl">Front-end Developer</span>
+            <span className="text-2xl md:text-3xl">{t('profile')}</span>
             <div className="flex justify-center sm:justify-start items-center">
               <ReactIcon className="mr-1.5 text-blue-700" />
               <span>React | Next.js Developer</span>
@@ -64,12 +64,12 @@ export default function Home() {
         </div>
       </div>
       <div className="mt-7">
-        <h2 className="text-4xl mb-3">Who am I?</h2>
+        <h2 className="text-4xl mb-3">{t('whoAmI')}</h2>
         <p className="text-lg">{t('biography')}</p>
       </div>
       <div className="flex justify-end">
         <button className="mt-5 min-w-max transition ease-in bg-blue-600 hover:scale-110 duration-150 focus:outline-none font-medium h-10 rounded-lg px-5 py-2 text-center">
-          {t('curriculum')}
+          {t('Curriculum')}
         </button>
       </div>
     </Card>

@@ -20,7 +20,7 @@ export default function Home({ posts, locale }) {
       keywords="michael liendo blog, blog of michael liendo, michaels posts, blog de michael"
     >
       <Card className="p-7">
-        <h1 className="mb-20 text-5xl text-center">{t('latest_blog_posts')}</h1>
+        <h1 className="mb-20 text-5xl text-center">{t('latestBlogPosts')}</h1>
         <div className="md:grid grid-cols-3 gap-10">
           {posts.map((post, index) => {
             if (!(index % 4))
