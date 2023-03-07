@@ -8,7 +8,11 @@ export default function HireMePage() {
   const t = useTranslation;
   return (
     <Layout
-      title="Work with me | Michael Liendo"
+      title={
+        t('locale') == 'es'
+          ? 'Trabajar conmigo | Michael Liendo'
+          : 'Work with me | Michael Liendo'
+      }
       description={
         t('locale') === 'es'
           ? '¡Hola! Si estás buscando un desarrollador Front-End experimentado y apasionado, has venido al lugar correcto. Como programador web con experiencia en React, Next.js, JavaScript y TypeScript, puedo ayudarte a crear soluciones personalizadas y altamente funcionales para tus proyectos web. Me encanta trabajar en equipo y colaborar con otros profesionales para lograr objetivos comunes. Si estás interesado en trabajar conmigo en tu próximo proyecto, no dudes en ponerse en contacto conmigo para discutir las posibilidades.'
