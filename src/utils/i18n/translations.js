@@ -3,6 +3,8 @@ module.exports = {
     locale: 'en',
     // home
     title: 'Michael Liendo | Frontend Developer',
+    description:
+      "Welcome to my web portfolio. I'm Michael Liendo, a Front-End developer specialized in React, Next.js, JavaScript and TypeScript. Explore my projects and contact me to discuss your next project.",
     greetings: "Hi I'm Michael Liendo",
     profile: 'Front-end Developer',
     whoAmI: 'Who am I?',
@@ -32,6 +34,8 @@ module.exports = {
     locale: 'es',
     // home
     title: 'Michael Liendo | Programador Front-end',
+    description:
+      'Bienvenido a mi portafolio web. Soy Michael Liendo, un desarrollador Front-End especializado en React, Next.js, JavaScript y TypeScript. Explora mis proyectos y contáctame para discutir tu próximo proyecto.',
     greetings: 'Hola soy Michael Liendo',
     profile: 'Programador Front-end | Programador de páginas webs',
     whoAmI: '¿Quien soy yo?',

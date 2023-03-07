@@ -48,7 +48,9 @@ export default function Layout({
 
         <meta
           name="keywords"
-          content={`${keywords} michael liendo, michael liendo portafolio, michael liendo website, michael liendo developer, michael liendo portfolio, Michael Liendo, Programador web, React, Next.js, JavaScript, TypeScript, Desarrollo Front-End, Desarrollo de aplicaciones web, Portafolio de proyectos, Front-End Development, Web Application Development, Project Portfolio`}
+          content={`${
+            keywords ?? ''
+          } michael liendo, michael liendo portafolio, michael liendo website, michael liendo developer, michael liendo portfolio, Michael Liendo, Programador web, React, Next.js, JavaScript, TypeScript, Desarrollo Front-End, Desarrollo de aplicaciones web, Portafolio de proyectos, Front-End Development, Web Application Development, Project Portfolio`}
         />
 
         <link rel="canonical" href={url ? url : 'https://michaelliendo.com/'} />
