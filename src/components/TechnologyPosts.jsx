@@ -1,11 +1,14 @@
 import Link from 'next/link';
 import Card from './Card';
+import useTranslation from '../utils/i18n/hooks';
 
 export default function TechnologyPosts({ posts }) {
+  const t = useTranslation;
+
   return (
     <Card className="p-4 w-full lg:w-1/4">
-      <h2 className="text-center text-3xl mb-6">Latest posts</h2>
-      <div className="">
+      <h2 className="text-center text-3xl mb-6">{t('latestBlogPosts')}</h2>
+      <div>
         {posts.slice(0, 7).map((post) => (
           <Link href={`/blog/${post.url}`} key={post.id}>
             <div

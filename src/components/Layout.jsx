@@ -1,6 +1,7 @@
 import Head from 'next/head';
 
 import Navbar from './Navbar';
+import Translate from './Translate';
 
 export default function Layout({
   title,
@@ -56,6 +57,9 @@ export default function Layout({
       </Head>
 
       <div className="m-0 sm:m-10 md:m-16 lg:m-20 xl:m-28">
+        <div className="fixed top-2 right-3 ">
+          <Translate />
+        </div>
         <Navbar />
         <main>{children}</main>
       </div>
