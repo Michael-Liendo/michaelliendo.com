@@ -21,7 +21,7 @@ export default function Navbar() {
         <NavLink href="/">Home</NavLink>
         <NavLink href="/projects">Projects</NavLink>
         <NavLink href="/blog">Blog</NavLink>
-        <NavLink href="/hire-me">Hire me</NavLink>
+        <NavLink href="/hire-me">Work with me</NavLink>
       </div>
       <SocialMedia />
     </Card>
