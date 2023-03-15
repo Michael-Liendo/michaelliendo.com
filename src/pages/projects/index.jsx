@@ -44,7 +44,7 @@ export default function ProjectPage({ projects }) {
             : 'https://michaelliendo.com/projects'
         }
       >
-        <Card className="p-6 h-[80vh] md:h-[60vh] overflow-y-auto">
+        <Card className="p-6 h-[80vh] md:h-[70vh] overflow-y-auto">
           <div>
             <input
               type="text"
