@@ -1,15 +1,19 @@
 import Card from '../../components/Card';
 import Layout from '../../components/Layout';
-import PostCard from '../../components/PostCard';
-import { getPublishedBlogPosts } from '../../lib/notion.js';
+import Note from '../../components/NoteCard';
+import { getPublishedNotes } from '../../lib/notion.js';
 import useTranslation from '../../utils/i18n/hooks';
 
-export default function Home({ posts, locale }) {
+export default function Home({ notes, locale }) {
   const t = useTranslation;
 
   return (
     <Layout
-      title="Blog | Michael Liendo"
+      title={
+        t('locale') == 'es'
+          ? 'Michael Liendo | Notas'
+          : 'Michael Liendo | Notes'
+      }
       description={
         t('locale') === 'es'
           ? 'Aquí puedes encontrar mi blog personal donde comparto mis pensamientos, consejos y trucos sobre el desarrollo web, la programación, y el diseño de experiencias de usuario. Como desarrollador Front-End, creo que compartir conocimiento y aprendizajes es esencial para el crecimiento profesional y personal en la industria.'
@@ -17,19 +21,19 @@ export default function Home({ posts, locale }) {
       }
       url={
         locale === 'es'
-          ? 'https://michaelliendo.com/es/blog'
-          : 'https://michaelliendo.com/blog'
+          ? 'https://michaelliendo.com/es/notes'
+          : 'https://michaelliendo.com/notes'
       }
       type="website"
-      keywords="michael liendo blog, blog of michael liendo, michaels posts, blog de michael"
+      keywords="michael liendo blog, blog of michael liendo, michael's posts, blog de michael, notes, michael liendo notes, michael liendo's notes, notas, notas de michael"
     >
       <Card className="p-7">
-        <h1 className="mb-20 text-5xl text-center">{t('latestBlogPosts')}</h1>
+        <h1 className="mb-20 text-5xl text-center">{t('latestNotes')}</h1>
         <div className="md:grid grid-cols-3 gap-10">
-          {posts.map((post, index) => {
+          {notes.map((note, index) => {
             if (!(index % 4))
-              return <PostCard key={post.id} post={post} view={1} />;
-            else return <PostCard key={post.id} post={post} />;
+              return <Note key={note.id} note={note} view={1} />;
+            else return <Note key={note.id} note={note} />;
           })}
         </div>
       </Card>
@@ -38,11 +42,11 @@ export default function Home({ posts, locale }) {
 }
 
 export async function getStaticProps({ locale }) {
-  const posts = await getPublishedBlogPosts(locale);
+  const notes = await getPublishedNotes(locale);
 
   return {
     props: {
-      posts,
+      notes,
       locale,
     },
   };

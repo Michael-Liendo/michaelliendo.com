@@ -44,21 +44,21 @@ export default function ProjectPage({ projects }) {
             : 'https://michaelliendo.com/projects'
         }
       >
-        <Card className="p-6 h-[80vh] md:h-[70vh] overflow-y-auto">
-          <div>
+        <Card className="p-6 h-[80vh] overflow-y-auto">
+          <search>
             <input
               type="text"
-              className="border rounded-lg block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"
+              className="border rounded-lg block w-full p-2.5 bg-light-background-alt dark:bg-dark-background-alt border-gray-600   focus:ring-blue-500 focus:border-blue-500"
               placeholder="Search anything..."
               onChange={filterHandler}
             />
-          </div>
+          </search>
           <div>
             <div className="flex justify-center">
-              <div className="grid grid-cols-1 gap-x-24 gap-y-16 lg:grid-cols-3 md:grid-cols-2 2xl:grid-cols-4 mt-16">
+              <div className="grid grid-cols-1 gap-x-24 gap-y-16 lg:grid-cols-2 md:grid-cols-2 2xl:grid-cols-2 mt-16">
                 {projectState?.map((project, index) => (
                   <div
-                    className="flex flex-col content-between w-90 p-6 rounded-lg bg-slate-600 bg-opacity-50"
+                    className="flex flex-col content-between w-90 p-6 rounded-lg bg-light-background-alt dark:bg-dark-background-alt bg-opacity-50"
                     key={index}
                   >
                     <div className="flex justify-between">
@@ -88,7 +88,7 @@ export default function ProjectPage({ projects }) {
                     </div>
                     <div className="">
                       <p className="my-3 text-xl">{project.title}</p>
-                      <p className="text-indigo-200">{project.description}</p>
+                      <p>{project.description}</p>
                     </div>
                     <div className="flex flex-wrap mt-3">
                       {project.tags.map((tag) => (

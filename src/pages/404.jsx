@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import Navbar from '../components/Navbar';
+import Navbar from '../components/Header';
 
 export default function Custom404() {
   return (

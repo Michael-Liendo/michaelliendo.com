@@ -5,8 +5,8 @@ import LinkedIn from '~icons/mdi/linkedin.jsx';
 export default function SocialMedia() {
   return (
     <>
-      <ul class="flex py-4 mx-auto md:mx-0">
-        <li class="mr-4">
+      <ul className="flex py-4 mx-auto md:mx-0">
+        <li className="mr-4">
           <a
             title="Github"
             target="_blank"
@@ -14,10 +14,10 @@ export default function SocialMedia() {
             href="https://github.com/Michael-Liendo"
             aria-label="Github"
           >
-            <GithubIcon style={{ fontSize: '1.5em' }} />
+            <GithubIcon className="w-7 h-7" />
           </a>
         </li>
-        <li class="mr-4">
+        <li className="mr-4">
           <a
             title="LinkedIn"
             target="_blank"
@@ -25,10 +25,10 @@ export default function SocialMedia() {
             href="https://www.linkedin.com/in/michaelliendo/"
             aria-label="LinkedIn"
           >
-            <LinkedIn style={{ fontSize: '1.5em', color: '#0A66C2' }} />
+            <LinkedIn className="w-7 h-7" style={{ color: '#0A66C2' }} />
           </a>
         </li>
-        <li class="mr-4">
+        <li className="mr-4">
           <a
             title="Twitter"
             target="_blank"
@@ -36,7 +36,7 @@ export default function SocialMedia() {
             href="https://twitter.com/MichaelMLiendo"
             aria-label="Twitter"
           >
-            <TwitterIcon style={{ fontSize: '1.5em', color: '#1DA1F2' }} />
+            <TwitterIcon className="w-7 h-7" style={{ color: '#1DA1F2' }} />
           </a>
         </li>
       </ul>
