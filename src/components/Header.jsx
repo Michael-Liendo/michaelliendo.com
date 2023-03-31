@@ -13,16 +13,18 @@ function NavLink({ children, href }) {
 }
 
 export default function Navbar() {
-  const [useDarkMode, setUseDarkMode] = useState(false);
+  const [useDarkMode, setUseDarkMode] = useState(true);
 
   const t = useTranslation;
+  useEffect(() => {
+    const isDarkMode =
+      localStorage.theme === 'dark' ||
+      (!('theme' in localStorage) &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches);
+    setUseDarkMode(isDarkMode);
+  }, []);
 
   useEffect(() => {
-    setUseDarkMode(
-      localStorage.theme === 'dark' ||
-        (!('theme' in localStorage) &&
-          window.matchMedia('(prefers-color-scheme: dark)').matches),
-    );
     if (useDarkMode) {
       document.documentElement.classList.add('dark');
       localStorage.theme = 'dark';
