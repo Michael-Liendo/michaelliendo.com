@@ -4,13 +4,13 @@ import { client } from './notionClient';
 const n2m = new NotionToMarkdown({ notionClient: client });
 
 const databaseID = {
-  es: process.env.NOTION_BLOG_DATABASE_ID_ES,
-  en: process.env.NOTION_BLOG_DATABASE_ID_EN,
+  es: process.env.NOTION_NOTES_DATABASE_ID_ES,
+  en: process.env.NOTION_NOTES_DATABASE_ID_EN,
 };
 
-export async function getPublishedBlogPosts(locale = 'en') {
+export async function getPublishedNotesPosts(locale = 'en') {
   const database = databaseID[locale];
-  // list blog posts
+  // list NOTES posts
   const response = await client.databases.query({
     database_id: database,
     filter: {
@@ -34,7 +34,7 @@ export async function getPublishedBlogPosts(locale = 'en') {
   );
 }
 
-export async function getSingleBlogPost(locale = 'en', url) {
+export async function getSingleNOTESPost(locale = 'en', url) {
   const database = databaseID[locale];
 
   const response = await client.databases.query({
@@ -93,6 +93,7 @@ export async function pageToPostTransformer(post) {
 
   return {
     id: post.id,
+    icon: post.icon,
     cover: post.cover?.external?.url || post.cover?.file?.url || null,
     title: post.properties.name.title[0].plain_text,
     tags: post.properties.tags.multi_select,
