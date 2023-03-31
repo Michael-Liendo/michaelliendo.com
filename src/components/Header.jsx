@@ -13,7 +13,7 @@ function NavLink({ children, href }) {
 }
 
 export default function Navbar() {
-  const [useDarkMode, setUseDarkMode] = useState(true);
+  const [useDarkMode, setUseDarkMode] = useState(false);
 
   const t = useTranslation;
 
@@ -45,7 +45,7 @@ export default function Navbar() {
   }
 
   return (
-    <header className="flex items-center justify-between md:justify-around h-[70px]  bg-light-background  dark:bg-dark-background">
+    <header className="flex items-center justify-between md:justify-around h-[70px] px-2  bg-light-background  dark:bg-dark-background">
       <Link href="/">
         <h1 className="font-extrabold">Michael Liendo</h1>
       </Link>

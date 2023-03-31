@@ -48,7 +48,7 @@ export default function Home({ notes }) {
           <SocialMedia />
         </article>
       </section>
-      <section className="flex flex-col my-4">
+      <section className="flex flex-col mx-4 my-4">
         <div>
           <h2 className="text-xl font-bold mb-4">{t('latestNotes')}</h2>
           <ul className="space-y-2">
