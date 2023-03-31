@@ -8,9 +8,9 @@ const databaseID = {
   en: process.env.NOTION_NOTES_DATABASE_ID_EN,
 };
 
-export async function getPublishedNotesPosts(locale = 'en') {
+export async function getPublishedNotes(locale = 'en') {
   const database = databaseID[locale];
-  // list NOTES posts
+  // list NOTES s
   const response = await client.databases.query({
     database_id: database,
     filter: {
@@ -29,12 +29,12 @@ export async function getPublishedNotesPosts(locale = 'en') {
 
   return Promise.all(
     response.results.map((res) => {
-      return pageToPostTransformer(res);
+      return pageToNoteTransformer(res);
     }),
   );
 }
 
-export async function getSingleNOTESPost(locale = 'en', url) {
+export async function getSingleNotes(locale = 'en', url) {
   const database = databaseID[locale];
 
   const response = await client.databases.query({
@@ -50,11 +50,11 @@ export async function getSingleNOTESPost(locale = 'en', url) {
 
   const page = response.results[0];
   const mdBlocks = await n2m.pageToMarkdown(page.id);
-  const post = await pageToPostTransformer(page);
+  const note = await pageToNoteTransformer(page);
   const markdown = n2m.toMarkdownString(mdBlocks);
 
   return {
-    post,
+    note,
     markdown,
     notFound: false,
   };
@@ -85,20 +85,20 @@ export function pageToProjectTransformer(project) {
   };
 }
 
-export async function pageToPostTransformer(post) {
-  let time = new Date(post.properties.created.date.start).toLocaleDateString(
+export async function pageToNoteTransformer(note) {
+  let time = new Date(note.properties.created.date.start).toLocaleDateString(
     'en',
     { year: 'numeric', month: 'long', day: 'numeric' },
   );
 
   return {
-    id: post.id,
-    icon: post.icon,
-    cover: post.cover?.external?.url || post.cover?.file?.url || null,
-    title: post.properties.name.title[0].plain_text,
-    tags: post.properties.tags.multi_select,
-    description: post.properties.description.rich_text[0].plain_text,
+    id: note.id,
+    icon: note.icon,
+    cover: note.cover?.external?.url || note.cover?.file?.url || null,
+    title: note.properties.name.title[0].plain_text,
+    tags: note.properties.tags.multi_select,
+    description: note.properties.description.rich_text[0].plain_text,
     date: time,
-    url: post.properties.url.rich_text[0].plain_text,
+    url: note.properties.url.rich_text[0].plain_text,
   };
 }
