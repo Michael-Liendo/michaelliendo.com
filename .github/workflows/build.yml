@@ -37,7 +37,7 @@ jobs:
       - name: Build
         env:
           NOTION_ACCESS_TOKEN: ${{ secrets.NOTION_ACCESS_TOKEN }}
-          NOTION_BLOG_DATABASE_ID_ES: ${{ secrets.NOTION_BLOG_DATABASE_ID_ES }}
-          NOTION_BLOG_DATABASE_ID_EN: ${{ secrets.NOTION_BLOG_DATABASE_ID_EN }}
+          NOTION_NOTES_DATABASE_ID_ES: ${{ secrets.NOTION_NOTES_DATABASE_ID_ES }}
+          NOTION_NOTES_DATABASE_ID_EN: ${{ secrets.NOTION_NOTES_DATABASE_ID_EN }}
           NOTION_PROJECTS_DATABASE_ID: ${{ secrets.NOTION_PROJECTS_DATABASE_ID }}
         run: npm run build
