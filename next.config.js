@@ -5,6 +5,8 @@ const nextConfig = {
     remotePatterns: [
       { hostname: 'cdn.michaelliendo.com' },
       { hostname: 'images.unsplash.com' },
+      { hostname: 'avatars.githubusercontent.com' },
+      { hostname: 'www.notion.so' },
     ],
   },
   i18n: {
