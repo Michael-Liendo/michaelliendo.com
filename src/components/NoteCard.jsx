@@ -29,14 +29,14 @@ export default function NoteCard({ note }) {
               <figure className="mr-2">
                 <CalendarIcon size={16} />
               </figure>
-              <time className="text-sm mr-2" datetime={note.date.toString()}>
+              <time className="text-sm mr-2" dateTime={note.date.toString()}>
                 {note.date}
               </time>
             </span>
           </div>
           <ul className="flex flex-wrap">
             {note.tags.map((tag, index) => (
-              <li className="text-sm mr-2 mb-2 " key={index}>
+              <li className="text-sm mr-2 mb-2" key={index}>
                 <span className="inline-block mr-1 rounded-full bg-light-background-alt dark:bg-dark-background-alt py-1 px-2">
                   {tag.name}
                 </span>

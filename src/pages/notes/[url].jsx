@@ -20,7 +20,7 @@ export default function Post({ markdown, note, locale }) {
     >
       <Card className="p-8">
         <div className="my-2 sm:flex sm:items-center sm:justify-center">
-          <article className="prose max-w-3xl prose-p:text-white prose-strong:text-green-500 prose-headings:text-white prose-green prose-code:text-white">
+          <article className="prose max-w-3xl dark:prose-p:text-white prose-strong:text-green-500 dark:prose-headings:text-white prose-green dark:prose-code:text-white">
             <ReactMarkdown>{markdown}</ReactMarkdown>
           </article>
         </div>
