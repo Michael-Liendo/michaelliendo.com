@@ -47,10 +47,7 @@ export default function Layout({
           property="og:description"
           content={description ? description : 'Without og description'}
         />
-        <meta
-          property="og:site_name"
-          content={title ? title : 'Michael Liendo'}
-        />
+        <meta property="og:site_name" content="Michael Liendo" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@MichaelMLiendo" />

@@ -29,13 +29,13 @@ export default function Home({ notes, locale }) {
     >
       <Card className="p-7">
         <h1 className="mb-20 text-5xl text-center">{t('latestNotes')}</h1>
-        <div className="md:grid grid-cols-3 gap-10">
+        <ul class="flex flex-col md:grid md:grid-cols-3 md:gap-6">
           {notes.map((note, index) => {
             if (!(index % 4))
               return <Note key={note.id} note={note} view={1} />;
             else return <Note key={note.id} note={note} />;
           })}
-        </div>
+        </ul>
       </Card>
     </Layout>
   );
