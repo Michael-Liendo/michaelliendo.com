@@ -59,6 +59,7 @@ export default function Navbar() {
         </ul>
         <button
           className="flex justify-center items-center h-5 w-5"
+          aria-label="Change theme"
           onClick={toggleDarkMode}
         >
           <span>
