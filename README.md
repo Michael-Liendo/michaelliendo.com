@@ -36,4 +36,4 @@ NOTION_PROJECTS_DATABASE_ID=
 npm run dev
 ```
 
-The project must be available on [http://localhost:3000](http://localhost:3000).
+The project must be available on [http://localhost:5173/](http://localhost:5173/).
