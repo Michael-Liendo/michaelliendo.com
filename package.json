@@ -11,10 +11,11 @@
 		"lint": "prettier --plugin-search-dir . --check . && eslint .",
 		"format": "prettier --plugin-search-dir . --write .",
 		"i18n": "typesafe-i18n --no-watch",
-    "i18n:watch": "typesafe-i18n"
+		"i18n:watch": "typesafe-i18n"
 	},
 	"devDependencies": {
 		"@iconify-json/mdi": "^1.1.52",
+		"@notionhq/client": "^2.2.6",
 		"@sveltejs/adapter-auto": "^2.0.0",
 		"@sveltejs/kit": "^1.20.4",
 		"@typescript-eslint/eslint-plugin": "^5.45.0",
@@ -24,6 +25,7 @@
 		"eslint": "^8.28.0",
 		"eslint-config-prettier": "^8.5.0",
 		"eslint-plugin-svelte": "^2.30.0",
+		"notion-to-md": "^3.1.0",
 		"postcss": "^8.4.24",
 		"prettier": "^2.8.0",
 		"prettier-plugin-svelte": "^2.10.1",
