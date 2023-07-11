@@ -1,3 +1,14 @@
+export interface Note {
+	id: string;
+	icon: Icon | null | undefined;
+	cover: string | null;
+	title: string | undefined;
+	tags: MultiSelectEntity[] | null | undefined;
+	description: string | undefined;
+	date: string;
+	slug: string | undefined;
+}
+
 export interface NoteResponse {
 	object: string;
 	id: string;

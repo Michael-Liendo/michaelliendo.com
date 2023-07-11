@@ -1,6 +1,6 @@
-import type { NoteResponse } from './types';
+import type { Note, NoteResponse } from './types';
 
-export function pageToNoteTransformer(note: NoteResponse) {
+export function pageToNoteTransformer(note: NoteResponse): Note {
 	return {
 		id: note.id,
 		icon: note.icon,
@@ -9,7 +9,7 @@ export function pageToNoteTransformer(note: NoteResponse) {
 		tags: note.properties.tags.multi_select,
 		description: note.properties.description.rich_text?.at(0)?.plain_text,
 		date: note.properties.created.date.start,
-		url: note.properties.url.rich_text?.at(0)?.plain_text
+		slug: note.properties.url.rich_text?.at(0)?.plain_text
 	};
 }
 
