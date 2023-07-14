@@ -3,29 +3,18 @@
 	import type { MultiSelectEntity } from '$lib/utils/Notion/Notes/types';
 	import Calendar from '~icons/mdi/calendar-month';
 
-	export let title: string = '';
-	export let description: string = '';
+	export let title = '';
+	export let description = '';
 	export let publishDate: Date;
 	export let tags: MultiSelectEntity[] = [];
-	export let slug: string = '';
+	export let slug = '';
 	export let previewImageUrl: string | null = '';
-
-	const LANGUAGE_COLOR: {
-		[lang: string]: string;
-	} = {
-		python: '#3572A5',
-		rust: '#dea584',
-		svelte: '#ff3e00',
-		typescript: '#2b7489'
-	};
-	const langTags = Object.keys(LANGUAGE_COLOR);
 
 	let formattedDate = new Date(publishDate).toLocaleDateString(`${$page.data.locale}-us`, {
 		month: 'long',
 		day: '2-digit',
 		year: 'numeric'
 	});
-	let displayTags = tags?.sort((a, b) => (langTags.includes(a.name) ? 1 : 0));
 </script>
 
 <li class="mb-4 md:mb-0 last-of-type:mb-0">

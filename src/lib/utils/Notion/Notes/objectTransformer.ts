@@ -6,7 +6,7 @@ export function pageToNoteTransformer(note: NoteResponse): Note {
 		icon: note.icon,
 		cover: note.cover?.external?.url || note.cover.file?.url || null,
 		title: note.properties.name.title?.at(0)?.plain_text,
-		tags: note.properties.tags.multi_select,
+		tags: note.properties.tags.multi_select || [],
 		description: note.properties.description.rich_text?.at(0)?.plain_text,
 		date: note.properties.created.date.start,
 		slug: note.properties.url.rich_text?.at(0)?.plain_text
