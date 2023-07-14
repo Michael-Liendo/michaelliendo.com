@@ -10,7 +10,7 @@ export async function load({ params, fetch }) {
 		const notes = await res.json();
 
 		return {
-			note: notes as Note[]
+			notes: notes as Note[]
 		};
 	}
 
