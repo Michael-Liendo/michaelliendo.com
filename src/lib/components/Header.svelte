@@ -60,16 +60,16 @@
 <header
 	class="flex items-center justify-between sm:justify-evenly md:justify-around h-[70px] px-2 bg-light-background dark:bg-dark-background"
 >
-	<a href="/{$page.params.lang}">
+	<a href="/{$page.params.lang ?? 'en'}">
 		<h1 class="font-extrabold">Michael Liendo</h1>
 	</a>
 	<nav class="flex flex-wrap items-center">
 		<ul class="flex pr-4">
 			<li class="mx-2 font-semibold">
-				<a href="/{$page.params.lang}">{$LL.LAYOUT.NAV.HOME()}</a>
+				<a href="/{$page.params.lang ?? 'en'}">{$LL.LAYOUT.NAV.HOME()}</a>
 			</li>
 			<li class="mx-2 font-semibold">
-				<a href="/{$page.params.lang}/notes">{$LL.LAYOUT.NAV.NOTES()}</a>
+				<a href="/{$page.params.lang ?? 'en'}/notes">{$LL.LAYOUT.NAV.NOTES()}</a>
 			</li>
 		</ul>
 		<div class="flex justify-center items-center space-x-4">
