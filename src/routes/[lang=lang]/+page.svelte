@@ -95,7 +95,12 @@
 						<div class="pl-2 flex items-center">
 							<figure class="w-[18px] h-[18px] self-center">
 								{#if note.icon?.external?.url}
-									<img src={note.icon?.external?.url} width="50" alt={note.icon?.external?.url} />
+									<img
+										src={note.icon?.external?.url}
+										width="40"
+										height="40"
+										alt={note.icon?.external?.url}
+									/>
 								{:else}
 									{note.icon?.emoji || ' '}
 								{/if}
