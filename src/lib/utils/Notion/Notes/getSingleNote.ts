@@ -19,12 +19,6 @@ export async function getSingleNotes(locale: 'es' | 'en' = 'en', url: string) {
 		filter: { property: 'url', rich_text: { equals: url } }
 	});
 
-	if (response.results.length < 1) {
-		return {
-			notFound: true
-		};
-	}
-
 	const mdBlocks = await n2m.pageToMarkdown(response.results[0].id);
 	const note = await pageToNoteTransformer(response.results[0] as NoteResponse);
 	const markdown = n2m.toMarkdownString(mdBlocks);
