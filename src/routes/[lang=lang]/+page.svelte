@@ -12,6 +12,8 @@
 
 	let title = 'Michael Liendo | Software Developer';
 	let description = 'A Software Developer interested in Systems Programming and Web Development.';
+	let keywords =
+		'michael liendo, home, notes, portfolio, software developer, svelte, typescript, web development, challenging projects, collaboration, problem-solving';
 	let avatarUrl = 'https://avatars.githubusercontent.com/u/70660410?v=4';
 
 	$: {
@@ -19,11 +21,16 @@
 			case 'en':
 				title = 'Michael Liendo | Software Developer';
 				description = 'A Software Developer interested in Systems Programming and Web Development.';
+				keywords =
+					'michael liendo, home, notes, portfolio, software developer, svelte, typescript, web development, challenging projects, collaboration, problem-solving';
+
 				break;
 			case 'es':
 				title = 'Michael Liendo | Desarrollador de Software';
 				description =
 					'Un Desarrollador de Software interesado en Programación de Sistemas y Desarrollo Web.';
+				keywords =
+					'michael liendo, inicio, notas, portafolio, desarrollador de software, svelte, typescript, desarrollo web, proyectos desafiantes, colaboración, resolución de problemas';
 				break;
 		}
 	}
@@ -32,6 +39,7 @@
 <svelte:head>
 	<title>{title}</title>
 	<meta name="description" content={description} />
+	<meta name="keywords" content={keywords} />
 	<!-- Schema.org markup for Google+ -->
 	<meta itemprop="name" content={title} />
 	<meta itemprop="description" content={description} />
