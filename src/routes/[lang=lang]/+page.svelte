@@ -87,7 +87,7 @@
 		<h2 class="text-xl font-bold mb-4">{$LL.HOMEPAGE.LATEST_NOTES()}</h2>
 		<ul class="space-y-2">
 			{#each data.notes.filter( (note) => note.tags?.some((tag) => tag.name === 'programming' || tag.name == 'programación') ) as note}
-				<li>
+				<li title={note.title}>
 					<a
 						href="/{$page.params.lang}/notes/{note.slug}"
 						class="py-2 flex items-center justify-between rounded hover:bg-light-background dark:hover:bg-dark-background cursor-pointer mb-4 last-of-type:mb-0"
@@ -106,7 +106,7 @@
 								{/if}
 							</figure>
 							<span class="px-4">
-								{note.title?.slice(0, 60)}
+								{note.title}
 							</span>
 						</div>
 						<span class="hidden md:flex items-center md:w-[220px] text-left">
