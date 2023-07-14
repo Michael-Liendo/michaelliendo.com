@@ -69,7 +69,7 @@
 				<a href="/{$page.params.lang}">{$LL.LAYOUT.NAV.HOME()}</a>
 			</li>
 			<li class="mx-2 font-semibold">
-				<a href="/{$page.params.lang}">{$LL.LAYOUT.NAV.NOTES()}</a>
+				<a href="/{$page.params.lang}/notes">{$LL.LAYOUT.NAV.NOTES()}</a>
 			</li>
 		</ul>
 		<div class="flex justify-center items-center space-x-4">
@@ -117,7 +117,7 @@
 	</nav>
 </header>
 
-<style>
+<style lang="postcss">
 	.lang-opt {
 		@apply py-2 border-b border-gray-400 cursor-pointer;
 	}
