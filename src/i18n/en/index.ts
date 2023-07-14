@@ -7,13 +7,12 @@ const en = {
 			NOTES: 'Notes'
 		},
 		FOOTER: {
-			COPYRGHT: `Made by Michael Liendo © {start:number} - {end:number}`,
-			SOURCE_CODE: 'Source Code'
+			COPYRIGHT: `Made with ❤️ by Michael Liendo © {year:number}`
 		}
 	},
 	HOMEPAGE: {
 		HI: `Hi I'm {name:string} {surname:string},`,
-		ABOUT: `I'm a Software Developer focused on React and TypeScript with a passion for Web Development. I enjoy working on challenging projects and value collaboration and problem-solving.`,
+		ABOUT: `I'm a Software Developer focused on Svelte and TypeScript with a passion for Web Development. I enjoy working on challenging projects and value collaboration and problem-solving.`,
 		LATEST_NOTES: 'Latest Notes'
 	}
 } satisfies BaseTranslation;

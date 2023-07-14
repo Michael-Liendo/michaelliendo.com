@@ -29,15 +29,10 @@ type RootTranslation = {
 		};
 		FOOTER: {
 			/**
-			 * M​a​d​e​ ​b​y​ ​M​i​c​h​a​e​l​ ​L​i​e​n​d​o​ ​©​ ​{​s​t​a​r​t​}​ ​-​ ​{​e​n​d​}
-			 * @param {number} end
-			 * @param {number} start
+			 * M​a​d​e​ ​w​i​t​h​ ​❤​️​ ​b​y​ ​M​i​c​h​a​e​l​ ​L​i​e​n​d​o​ ​©​ ​{​y​e​a​r​}
+			 * @param {number} year
 			 */
-			COPYRGHT: RequiredParams<'end' | 'start'>;
-			/**
-			 * S​o​u​r​c​e​ ​C​o​d​e
-			 */
-			SOURCE_CODE: string;
+			COPYRIGHT: RequiredParams<'year'>;
 		};
 	};
 	HOMEPAGE: {
@@ -48,7 +43,7 @@ type RootTranslation = {
 		 */
 		HI: RequiredParams<'name' | 'surname'>;
 		/**
-		 * I​'​m​ ​a​ ​S​o​f​t​w​a​r​e​ ​D​e​v​e​l​o​p​e​r​ ​f​o​c​u​s​e​d​ ​o​n​ ​R​e​a​c​t​ ​a​n​d​ ​T​y​p​e​S​c​r​i​p​t​ ​w​i​t​h​ ​a​ ​p​a​s​s​i​o​n​ ​f​o​r​ ​W​e​b​ ​D​e​v​e​l​o​p​m​e​n​t​.​ ​I​ ​e​n​j​o​y​ ​w​o​r​k​i​n​g​ ​o​n​ ​c​h​a​l​l​e​n​g​i​n​g​ ​p​r​o​j​e​c​t​s​ ​a​n​d​ ​v​a​l​u​e​ ​c​o​l​l​a​b​o​r​a​t​i​o​n​ ​a​n​d​ ​p​r​o​b​l​e​m​-​s​o​l​v​i​n​g​.
+		 * I​'​m​ ​a​ ​S​o​f​t​w​a​r​e​ ​D​e​v​e​l​o​p​e​r​ ​f​o​c​u​s​e​d​ ​o​n​ ​S​v​e​l​t​e​ ​a​n​d​ ​T​y​p​e​S​c​r​i​p​t​ ​w​i​t​h​ ​a​ ​p​a​s​s​i​o​n​ ​f​o​r​ ​W​e​b​ ​D​e​v​e​l​o​p​m​e​n​t​.​ ​I​ ​e​n​j​o​y​ ​w​o​r​k​i​n​g​ ​o​n​ ​c​h​a​l​l​e​n​g​i​n​g​ ​p​r​o​j​e​c​t​s​ ​a​n​d​ ​v​a​l​u​e​ ​c​o​l​l​a​b​o​r​a​t​i​o​n​ ​a​n​d​ ​p​r​o​b​l​e​m​-​s​o​l​v​i​n​g​.
 		 */
 		ABOUT: string;
 		/**
@@ -72,13 +67,9 @@ export type TranslationFunctions = {
 		};
 		FOOTER: {
 			/**
-			 * Made by Michael Liendo © {start} - {end}
+			 * Made with ❤️ by Michael Liendo © {year}
 			 */
-			COPYRGHT: (arg: { end: number; start: number }) => LocalizedString;
-			/**
-			 * Source Code
-			 */
-			SOURCE_CODE: () => LocalizedString;
+			COPYRIGHT: (arg: { year: number }) => LocalizedString;
 		};
 	};
 	HOMEPAGE: {
@@ -87,7 +78,7 @@ export type TranslationFunctions = {
 		 */
 		HI: (arg: { name: string; surname: string }) => LocalizedString;
 		/**
-		 * I'm a Software Developer focused on React and TypeScript with a passion for Web Development. I enjoy working on challenging projects and value collaboration and problem-solving.
+		 * I'm a Software Developer focused on Svelte and TypeScript with a passion for Web Development. I enjoy working on challenging projects and value collaboration and problem-solving.
 		 */
 		ABOUT: () => LocalizedString;
 		/**
