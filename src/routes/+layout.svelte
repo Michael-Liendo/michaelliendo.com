@@ -1,4 +1,5 @@
 <script>
+	import { page } from '$app/stores';
 	import Footer from '$lib/components/Footer.svelte';
 	import Header from '$lib/components/Header.svelte';
 	import '../app.css';
@@ -7,7 +8,7 @@
 <svelte:head>
 	<meta name="theme-color" content="#3bd6cf" />
 
-	<link rel="canonical" href="https://michaelliendo.com/" />
+	<link rel="canonical" href={`https://michaelliendo.com/${$page.data.locale}`} />
 
 	<meta name="author" content="Michael Liendo" />
 	<meta name="publisher" content="Michael Liendo" />

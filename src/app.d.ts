@@ -10,7 +10,10 @@ declare global {
 			locale: Locales;
 			LL: TranslationFunctions;
 		}
-		// interface PageData {}
+		interface PageData {
+			locale: Locales;
+			LL: TranslationFunctions;
+		}
 		// interface Platform {}
 	}
 }
