@@ -8,7 +8,7 @@
 		notes: Note[];
 	};
 
-	let title = 'Michael Liendo | Notes';
+	let title = 'Notes | Michael Liendo';
 	let description = 'Notes taken while reading about computer science and software development.';
 	let keywords =
 		'notes, blog, articles, writing, content, topics, tips, insights, experiences, knowledge';
@@ -17,13 +17,13 @@
 	$: {
 		switch ($locale) {
 			case 'en':
-				title = 'Michael Liendo | Notes';
+				title = 'Notes | Michael Liendo';
 				description = 'Notes taken while reading about computer science and software development.';
 				keywords =
 					'notes, blog, articles, writing, content, topics, tips, insights, experiences, knowledge';
 				break;
 			case 'es':
-				title = 'Michael Liendo | Notas';
+				title = 'Notas | Michael Liendo';
 				description =
 					'Notas tomadas mientras leo sobre ciencias de la computación y desarrollo de software.';
 				keywords =
