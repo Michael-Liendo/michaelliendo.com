@@ -6,6 +6,12 @@
 <svelte:head>
 	<title>{data.note.title}</title>
 	<meta name="description" content={data.note.description} />
+	<meta
+		name="keywords"
+		content={`${data.note.title}, ${data.note.description}, ${data.note.tags
+			.map((tag) => tag.name)
+			.join(', ')}`}
+	/>
 	<!-- Schema.org markup for Google+ -->
 	<meta itemprop="name" content={data.note.title} />
 	<meta itemprop="description" content={data.note.description} />

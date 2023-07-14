@@ -10,6 +10,8 @@
 
 	let title = 'Michael Liendo | Notes';
 	let description = 'Notes taken while reading about computer science and software development.';
+	let keywords =
+		'notes, blog, articles, writing, content, topics, tips, insights, experiences, knowledge';
 	let avatarUrl = 'https://avatars.githubusercontent.com/u/70660410?v=4';
 
 	$: {
@@ -17,11 +19,15 @@
 			case 'en':
 				title = 'Michael Liendo | Notes';
 				description = 'Notes taken while reading about computer science and software development.';
+				keywords =
+					'notes, blog, articles, writing, content, topics, tips, insights, experiences, knowledge';
 				break;
 			case 'es':
 				title = 'Michael Liendo | Notas';
 				description =
 					'Notas tomadas mientras leo sobre ciencias de la computación y desarrollo de software.';
+				keywords =
+					'notas, blog, artículos, escritura, contenido, temas, consejos, perspectivas, experiencias, conocimiento';
 				break;
 		}
 	}
@@ -30,6 +36,7 @@
 <svelte:head>
 	<title>{title}</title>
 	<meta name="description" content={description} />
+	<meta name="keywords" content={keywords} />
 	<!-- Schema.org markup for Google+ -->
 	<meta itemprop="name" content={title} />
 	<meta itemprop="description" content={description} />
