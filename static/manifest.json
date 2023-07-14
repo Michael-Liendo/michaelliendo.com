@@ -1,0 +1,24 @@
+{
+	"name": "michaelliendo.com",
+	"description": "Michael Liendo website",
+	"short_name": "michaelliendo",
+	"start_url": "/",
+	"icons": [
+		{
+			"src": "/favicon-512x512.png",
+			"type": "image/png",
+			"sizes": "512x512"
+		}
+	],
+	"display": "standalone",
+	"scope": "/",
+	"shortcuts": [
+		{
+			"name": "Notes",
+			"short_name": "Notes",
+			"description": "Notes on learnings and experiences",
+			"url": "/notes",
+			"icons": [{ "src": "/favicon-192x192.png", "sizes": "192x192" }]
+		}
+	]
+}
