@@ -74,7 +74,12 @@
 		</ul>
 		<div class="flex justify-center items-center space-x-4">
 			<figure class="h-6 w-6">
-				<button class="h-6 w-6" on:click={toggleLanguageMenu}>
+				<button
+					class="h-6 w-6"
+					on:click={toggleLanguageMenu}
+					aria-label="Toggle language menu"
+					title="Toggle language menu"
+				>
 					<Translate class="h-6 w-6" />
 				</button>
 				{#if isLangMenuOpen}
@@ -102,7 +107,12 @@
 					</div>
 				{/if}
 			</figure>
-			<button class="h-5 w-5" on:click={toggleDarkMode}>
+			<button
+				class="h-5 w-5"
+				on:click={toggleDarkMode}
+				aria-label="Toggle dark mode"
+				title="Toggle dark mode"
+			>
 				{#if useDarkMode}
 					<span>
 						<Sun class="h-5 w-5" />
