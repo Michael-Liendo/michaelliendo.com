@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Calendar from '~icons/mdi/calendar-month';
 	import { page } from '$app/stores';
-	import LL from '$i18n/i18n-svelte';
+	import LL, { locale } from '$i18n/i18n-svelte';
 	import SocialMedia from '$lib/components/SocialMedia.svelte';
 
 	import type { Note } from '$lib/utils/Notion/Notes/types';
@@ -9,7 +9,48 @@
 	export let data: {
 		notes: Note[];
 	};
+
+	let title = 'Michael Liendo | Software Developer';
+	let description = 'A Software Developer interested in Systems Programming and Web Development.';
+	let avatarUrl = 'https://avatars.githubusercontent.com/u/70660410?v=4';
+
+	$: {
+		switch ($locale) {
+			case 'en':
+				title = 'Michael Liendo | Software Developer';
+				description = 'A Software Developer interested in Systems Programming and Web Development.';
+				break;
+			case 'es':
+				title = 'Michael Liendo | Desarrollador de Software';
+				description =
+					'Un Desarrollador de Software interesado en Programación de Sistemas y Desarrollo Web.';
+				break;
+		}
+	}
 </script>
+
+<svelte:head>
+	<title>{title}</title>
+	<meta name="description" content={description} />
+	<!-- Schema.org markup for Google+ -->
+	<meta itemprop="name" content={title} />
+	<meta itemprop="description" content={description} />
+	<meta itemprop="image" content={avatarUrl} />
+	<!-- Open Graph data -->
+	<meta property="og:title" content={title} />
+	<meta property="og:type" content="article" />
+	<meta property="og:url" content="https://michaelliendo.com/" />
+	<meta property="og:image" content={avatarUrl} />
+	<meta property="og:description" content={description} />
+	<meta property="og:site_name" content="MIchael Liendo" />
+	<!-- Twitter Card data -->
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:site" content="@MichaelMLiendo" />
+	<meta name="twitter:title" content={title} />
+	<meta name="twitter:description" content={description} />
+	<meta name="twitter:creator" content="@MichaelMLiendo" />
+	<meta name="twitter:image:src" content={avatarUrl} />
+</svelte:head>
 
 <section
 	class="flex flex-col justify-center items-center md:flex-row md:mx-auto md:justify-evenly md:items-center"
@@ -18,7 +59,7 @@
 		<figure class="w-[300px]">
 			<img
 				class="rounded-full"
-				src="https://avatars.githubusercontent.com/u/70660410?v=4"
+				src={avatarUrl}
 				height="500"
 				width="500"
 				alt="A selfie of Michael Liendo"
