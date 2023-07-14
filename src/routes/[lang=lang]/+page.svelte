@@ -37,7 +37,7 @@
 	<div>
 		<h2 class="text-xl font-bold mb-4">{$LL.HOMEPAGE.LATEST_NOTES()}</h2>
 		<ul class="space-y-2">
-			{#each data.notes.filter( (note) => note.tags?.some((tag) => tag.name === 'technology') ) as note}
+			{#each data.notes.filter( (note) => note.tags?.some((tag) => tag.name === 'programming' || tag.name == 'programación') ) as note}
 				<li>
 					<a
 						href="/{$page.params.lang}/notes/{note.slug}"
@@ -60,7 +60,7 @@
 								<Calendar class="text-gray-800 dark:text-white w-[18px] h-[18px]" />
 							</figure>
 							<time class="text-sm mr-2" dateTime={new Date(note.date).toString()}>
-								{new Date(note.date).toLocaleDateString('en-us', {
+								{new Date(note.date).toLocaleDateString(`${$page.data.locale}-us`, {
 									month: 'long',
 									day: '2-digit',
 									year: 'numeric'
