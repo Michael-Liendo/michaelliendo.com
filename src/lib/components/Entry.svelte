@@ -33,11 +33,11 @@
 		<img alt={title} src={previewImageUrl} />
 	</figure>
 	<header>
-		<h3 class="text-xl py-4 font-extrabold cursor-pointer hover:text-link hover:underline">
+		<h1 class="text-xl py-4 font-extrabold cursor-pointer hover:text-link hover:underline">
 			<a href="/{$page.params.lang}/notes/{slug}">
 				{title}
 			</a>
-		</h3>
+		</h1>
 	</header>
 	<main class="pb-4">
 		<p>{description}</p>
