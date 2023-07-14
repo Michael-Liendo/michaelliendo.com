@@ -3,7 +3,7 @@ export interface Note {
 	icon: Icon | null | undefined;
 	cover: string | null;
 	title: string | undefined;
-	tags: MultiSelectEntity[] | null | undefined;
+	tags: MultiSelectEntity[];
 	description: string | undefined;
 	date: string;
 	slug: string | undefined;
