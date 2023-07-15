@@ -1,6 +1,6 @@
 import type { Note } from '$lib/utils/Notion/Notes/types.js';
 
-export const srr = true;
+export const ssr = true;
 
 /** @type {import('./$types').PageLoad} */
 export async function load({ params, fetch }) {

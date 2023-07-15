@@ -1,7 +1,7 @@
 import type { Note } from '$lib/utils/Notion/Notes/types.js';
 import { error } from '@sveltejs/kit';
 
-export const srr = true;
+export const ssr = true;
 
 export async function load({ params, fetch }) {
 	try {
