@@ -33,7 +33,7 @@
 </svelte:head>
 
 <article
-	class="my-2 prose max-w-full dark:prose-p:text-white prose-strong:text-green-500 dark:prose-headings:text-white prose-green dark:prose-code:text-white"
+	class="my-2 prose max-w-full dark:prose-p:text-white prose-strong:text-green-500 dark:prose-headings:text-white prose-green dark:prose-code:text-white dark:prose-li:text-slate-100 prose-li:text-slate-900"
 >
 	<img src={data.note.cover} alt={data.note.title} class="h-96 w-full object-cover" />
 	<Markdown md={data.markdown.parent} />
