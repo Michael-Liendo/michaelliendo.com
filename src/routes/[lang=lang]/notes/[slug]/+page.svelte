@@ -1,6 +1,14 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
 	import Markdown from 'svelte-exmarkdown';
+	import hljs from 'highlight.js';
+	import 'highlight.js/styles/github-dark-dimmed.css';
+
 	export let data;
+
+	onMount(() => {
+		hljs.highlightAll();
+	});
 </script>
 
 <svelte:head>
@@ -33,7 +41,7 @@
 </svelte:head>
 
 <article
-	class="my-2 prose max-w-full dark:prose-p:text-white prose-strong:text-green-500 dark:prose-headings:text-white prose-green dark:prose-code:text-white dark:prose-li:text-slate-100 prose-li:text-slate-900"
+	class="my-2 prose max-w-full dark:prose-p:text-white prose-strong:text-green-500 dark:prose-headings:text-white prose-green prose-code:text-white dark:prose-li:text-slate-100 prose-li:text-slate-900 prose-code:!bg-dark-background prose-pre:bg-dark-background"
 >
 	<img src={data.note.cover} alt={data.note.title} class="h-96 w-full object-cover" />
 	<Markdown md={data.markdown.parent} />
