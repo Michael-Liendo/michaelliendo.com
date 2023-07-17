@@ -40,5 +40,8 @@
 		"unplugin-icons": "^0.16.3",
 		"vite": "^4.3.6"
 	},
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"highlight.js": "^11.8.0"
+	}
 }
