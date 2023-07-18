@@ -50,7 +50,7 @@
 	<meta property="og:url" content="https://michaelliendo.com/" />
 	<meta property="og:image" content={avatarUrl} />
 	<meta property="og:description" content={description} />
-	<meta property="og:site_name" content="MIchael Liendo" />
+	<meta property="og:site_name" content="Michael Liendo" />
 	<!-- Twitter Card data -->
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:site" content="@MichaelMLiendo" />
