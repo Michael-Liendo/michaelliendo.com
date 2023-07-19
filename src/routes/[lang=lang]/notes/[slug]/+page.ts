@@ -1,8 +1,9 @@
 import type { Note } from '$lib/utils/Notion/Notes/types.js';
 import { error } from '@sveltejs/kit';
 
-export const ssr = true;
+export const ssr = false;
 
+/** @type {import('./$types').PageLoad} */
 export async function load({ params, fetch }) {
 	try {
 		const request = await fetch(`/api/note/${params.lang}/${params.slug}`);
