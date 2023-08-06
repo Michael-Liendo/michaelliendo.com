@@ -3,6 +3,8 @@
 	import Markdown from 'svelte-exmarkdown';
 	import hljs from 'highlight.js';
 	import 'highlight.js/styles/github-dark-dimmed.css';
+	import h2 from '$lib/components/notes/custom/h2.svelte';
+	import h3 from '$lib/components/notes/custom/h3.svelte';
 
 	export let data;
 
@@ -31,6 +33,7 @@
 	<meta property="og:image" content={data.note.cover} />
 	<meta property="og:description" content={data.note.description} />
 	<meta property="og:site_name" content="Michael Liendo" />
+	<meta property="article:published_time" content={new Date(data.note.date).toJSON()} />
 	<!-- Twitter Card data -->
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:site" content="@MichaelMLiendo" />
@@ -40,9 +43,26 @@
 	<meta name="twitter:image:src" content={data.note.cover} />
 </svelte:head>
 
-<article
+<div
 	class="my-2 prose max-w-full dark:prose-p:text-white prose-strong:text-green-500 dark:prose-headings:text-white prose-green prose-code:text-white dark:prose-li:text-slate-100 prose-li:text-slate-900 prose-code:!bg-dark-background prose-pre:bg-dark-background"
 >
-	<img src={data.note.cover} alt={data.note.title} class="h-96 w-full object-cover" />
-	<Markdown md={data.markdown.parent} />
-</article>
+	<figure class="flex justify-center items-center overflow-hidden rounded">
+		<img src={data.note.cover} alt={data.note.title} class="h-96 w-full object-cover" />
+	</figure>
+	<header class="">
+		<div class="flex mb-2">
+			<span class="flex items-center mr-2">
+				<time class="text-sm mr-2" datetime={data.note.date}
+					>{new Date(data.note.date).toLocaleDateString(`${data.locale}-us`, {
+						month: 'long',
+						day: '2-digit',
+						year: 'numeric'
+					})}</time
+				>
+			</span>
+		</div>
+	</header>
+	<article>
+		<Markdown md={data.markdown.parent} />
+	</article>
+</div>
