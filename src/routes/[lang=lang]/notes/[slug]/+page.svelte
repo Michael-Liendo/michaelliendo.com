@@ -1,8 +1,9 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import Markdown from 'svelte-exmarkdown';
+	import Markdown from 'svelte-markdown';
 	import hljs from 'highlight.js';
 	import 'highlight.js/styles/github-dark-dimmed.css';
+	import Heading from '$lib/components/notes/custom/Heading.svelte';
 
 	export let data;
 
@@ -61,6 +62,6 @@
 		</div>
 	</header>
 	<article>
-		<Markdown md={data.markdown.parent} />
+		<Markdown source={data.markdown.parent} renderers={{ heading: Heading }} />
 	</article>
 </div>
