@@ -3,8 +3,6 @@
 	import Markdown from 'svelte-exmarkdown';
 	import hljs from 'highlight.js';
 	import 'highlight.js/styles/github-dark-dimmed.css';
-	import h2 from '$lib/components/notes/custom/h2.svelte';
-	import h3 from '$lib/components/notes/custom/h3.svelte';
 
 	export let data;
 
