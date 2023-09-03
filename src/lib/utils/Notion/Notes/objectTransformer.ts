@@ -4,7 +4,7 @@ export function pageToNoteTransformer(note: NoteResponse): Note {
 	return {
 		id: note.id,
 		icon: note.icon,
-		cover: note.cover?.external?.url || note.cover.file?.url || null,
+		cover: note.cover?.external?.url || note.cover?.file?.url || null,
 		title: note.properties.name.title?.at(0)?.plain_text,
 		tags: note.properties.tags.multi_select || [],
 		description: note.properties.description.rich_text?.at(0)?.plain_text,
