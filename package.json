@@ -8,8 +8,9 @@
 		"preview": "vite preview",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-		"lint": "prettier --plugin-search-dir . --check . && eslint .",
-		"format": "prettier --plugin-search-dir . --write .",
+		"lint": "biome format ./src && biome check ./src",
+    "format": "biome format --write ./src && biome check --apply ./src",
+    "format:unsafe": "biome format --write ./src && biome check --apply-unsafe ./src",
 		"i18n": "typesafe-i18n --no-watch",
 		"i18n:watch": "typesafe-i18n"
 	},
