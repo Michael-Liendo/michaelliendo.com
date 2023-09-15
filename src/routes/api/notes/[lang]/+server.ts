@@ -3,7 +3,7 @@ import { getNotes } from '$lib/utils/Notion/Notes';
 
 /** @type {import('./$types').RequestHandler} */
 export async function GET({ params }) {
-	const notes = await getNotes(params.lang as Locales);
+  const notes = await getNotes(params.lang as Locales);
 
-	return new Response(JSON.stringify(notes), { status: 200 });
+  return new Response(JSON.stringify(notes), { status: 200 });
 }

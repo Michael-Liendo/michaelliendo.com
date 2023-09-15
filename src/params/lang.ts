@@ -3,5 +3,5 @@ import type { ParamMatcher } from '@sveltejs/kit';
 
 // Validate the param to accept only valid locales
 export const match: ParamMatcher = (param) => {
-	return isLocale(param);
+  return isLocale(param);
 };

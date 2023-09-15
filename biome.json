@@ -7,11 +7,13 @@
     "enabled": true,
     "rules": {
       "recommended": true
-    }
+    },
+		"ignore":["./src/i18n/**/*"]
   },
   "formatter": {
     "enabled": true,
-    "indentStyle": "space"
+    "indentStyle": "space",
+		"ignore":["./src/i18n/**/*"]
   },
   "javascript": {
     "formatter": {

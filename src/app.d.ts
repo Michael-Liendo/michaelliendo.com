@@ -11,18 +11,18 @@ declare const __BUILD_DATE__: string;
 
 // for information about these interfaces
 declare global {
-	namespace App {
-		// interface Error {}
-		interface Locals {
-			locale: Locales;
-			LL: TranslationFunctions;
-		}
-		interface PageData {
-			locale: Locales;
-			LL: TranslationFunctions;
-		}
-		// interface Platform {}
-	}
+  namespace App {
+    // interface Error {}
+    interface Locals {
+      locale: Locales;
+      LL: TranslationFunctions;
+    }
+    interface PageData {
+      locale: Locales;
+      LL: TranslationFunctions;
+    }
+    // interface Platform {}
+  }
 }
 
 export {};
