@@ -70,16 +70,27 @@
     <ul
       class="hidden sm:flex text-xl items-center sm:space-x-10 md:space-x-16 px-10 py-2 bg-white dark:bg-black border border-black dark:border-white rounded-full"
     >
-      <li><a href="/notes">{$LL.LAYOUT.NAV.HOME()}</a></li>
-      <li><a href="/notes">{$LL.LAYOUT.NAV.NOTES()}</a></li>
-      <li><a href="/notes">{$LL.LAYOUT.NAV.PROJECTS()}</a></li>
+      <li>
+        <a href="/{$page.params.lang ?? 'en'}/">{$LL.LAYOUT.NAV.HOME()}</a>
+      </li>
+      <li>
+        <a href="/{$page.params.lang ?? 'en'}/notes">{$LL.LAYOUT.NAV.NOTES()}</a
+        >
+      </li>
+      <li>
+        <a href="/{$page.params.lang ?? 'en'}/projects"
+          >{$LL.LAYOUT.NAV.PROJECTS()}</a
+        >
+      </li>
     </ul>
     <ul
       class="text-xl flex sm:hidden items-center space-x-6 px-5 py-2 bg-white dark:bg-black border border-black dark:border-white rounded-full"
     >
-      <li><a href="/notes"><Home /></a></li>
-      <li><a href="/notes"><Notebook /></a></li>
-      <li><a href="/notes"><PodiumGold /></a></li>
+      <li><a href="/{$page.params.lang ?? 'en'}/"><Home /></a></li>
+      <li><a href="/{$page.params.lang ?? 'en'}/notes"><Notebook /></a></li>
+      <li>
+        <a href="/{$page.params.lang ?? 'en'}/projects"><PodiumGold /></a>
+      </li>
     </ul>
   </nav>
   <div class="flex sm:space-x-4 items-center">
