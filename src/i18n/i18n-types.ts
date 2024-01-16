@@ -24,6 +24,10 @@ type RootTranslation = {
 			 * N​o​t​e​s
 			 */
 			NOTES: string
+			/**
+			 * P​r​o​j​e​c​t​s
+			 */
+			PROJECTS: string
 		}
 		FOOTER: {
 			/**
@@ -62,6 +66,10 @@ export type TranslationFunctions = {
 			 * Notes
 			 */
 			NOTES: () => LocalizedString
+			/**
+			 * Projects
+			 */
+			PROJECTS: () => LocalizedString
 		}
 		FOOTER: {
 			/**
