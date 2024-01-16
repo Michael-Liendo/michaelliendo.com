@@ -5,6 +5,7 @@ const es = {
     NAV: {
       HOME: 'Inicio',
       NOTES: 'Notas',
+      PROJECTS: 'Proyectos',
     },
     FOOTER: {
       COPYRIGHT: 'Hecho con ❤️ por Michael Liendo © {year:number}',
