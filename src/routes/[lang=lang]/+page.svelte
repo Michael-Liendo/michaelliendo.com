@@ -64,12 +64,20 @@
 
 <section
   class="flex flex-col-reverse md:flex-row md:justify-between md:items-center mt-10"
+  itemscope
+  itemtype="http://schema.org/Person"
 >
   <div class="space-y-3 w-full">
-    <h1 class="mt-4 md:mt-0 text-4xl xl:text-7xl text-ellipsis font-bold">
+    <h1
+      class="mt-4 md:mt-0 text-4xl xl:text-7xl text-ellipsis font-bold"
+      itemprop="name"
+    >
       Michael Liendo
     </h1>
-    <p class="md:text-xl xl:text-2xl xl:w-[50rem] text-pretty">
+    <p
+      class="md:text-xl xl:text-2xl xl:w-[50rem] text-pretty"
+      itemprop="description"
+    >
       {@html $LL.HOMEPAGE.ABOUT()}
     </p>
     <div class="flex justify-between">
@@ -92,6 +100,7 @@
         height="384"
         title="Michael Liendo profile picture at GitHub."
         class="rounded w-full xl:w-96 h-96 object-cover"
+        itemprop="image"
       />
     </figure>
   </div>
