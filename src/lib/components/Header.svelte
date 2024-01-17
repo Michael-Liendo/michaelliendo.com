@@ -94,7 +94,11 @@
     </ul>
   </nav>
   <div class="flex sm:space-x-4 items-center">
-    <button class="mr-2" on:click={toggleDarkMode}>
+    <button
+      class="mr-2"
+      title="Change website into dark o white mode"
+      on:click={toggleDarkMode}
+    >
       {#if useDarkMode}
         <Sun />
       {:else}
