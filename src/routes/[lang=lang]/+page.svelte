@@ -158,7 +158,7 @@
           href={`/notes/${note.id}`}
           class="rounded-2xl flex flex-col justify-between w-full h-full px-5 py-4 bg-[#f5f5f5] xl:col-span-2"
         >
-          <div class="">
+          <div>
             <h3 class=" text-2xl font-bold text-balance">{note.title}</h3>
             <p class="text-lg text-truncate mt-2">
               {note.description}
@@ -193,11 +193,49 @@
           </div>
         </a>
       {/if}
-      {#if index === 2}
-        <div class="rounded-2xl w-full h-full bg-[#f5f5f5] xl:col-span-4"></div>
-      {/if}
-      {#if index === 3}
-        <div class="rounded-2xl w-full h-full bg-[#f5f5f5] xl:col-span-4"></div>
+      {#if index === 2 || index === 3}
+        <div class="flex rounded-2xl w-full h-full bg-[#f5f5f5] xl:col-span-4">
+          <img
+            src={note.cover}
+            alt={note.title}
+            class="w-2/5 object-cover rounded-l-2xl"
+          />
+          <div class="flex flex-col justify-between w-3/5 p-5">
+            <div>
+              <h3 class=" text-2xl font-bold text-balance">{note.title}</h3>
+              <p class="text-lg text-truncate mt-2">
+                {note.description}
+              </p>
+            </div>
+
+            <div>
+              <time
+                datetime={new Date(note.date).toISOString()}
+                class="flex items-center text-sm"
+              >
+                <Calendar class="w-4 h-4 mr-1" />
+                {new Date(note.date).toLocaleDateString($locale, {
+                  year: 'numeric',
+                  month: 'long',
+                  day: 'numeric',
+                })}
+              </time>
+              <ul class="mt-2 flex flex-wrap">
+                {#each note.tags as tag}
+                  <li
+                    class="text-sm mr-2 mb-2 bg-[#e0e0e0] dark:bg-black rounded py-1 px-2"
+                  >
+                    <span
+                      class="inline-block mr-1 rounded-full h-2 w-2"
+                      style="background-color: {tag.color};"
+                    />
+                    {tag.name}
+                  </li>
+                {/each}
+              </ul>
+            </div>
+          </div>
+        </div>
       {/if}
     {/each}
   </div>
