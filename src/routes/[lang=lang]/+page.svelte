@@ -115,7 +115,7 @@
     {#each data.notes as note, index}
       {#if index === 0}
         <a
-          href={`${$locale}/notes/${note.id}`}
+          href={`/${$locale}/notes/${note.id}`}
           class="rounded-2xl flex flex-col justify-between w-full h-full bg-[#f5f5f5] dark:bg-[#222] xl:col-span-2 xl:row-span-2"
         >
           <figure>
@@ -157,7 +157,7 @@
       {/if}
       {#if index === 1 || index === 4}
         <a
-          href={`/notes/${note.id}`}
+          href={`/${$locale}/notes/${note.id}`}
           class="rounded-2xl flex flex-col justify-between w-full h-full px-5 py-4 bg-[#f5f5f5] dark:bg-[#222] xl:col-span-2"
         >
           <div>
@@ -196,15 +196,16 @@
         </a>
       {/if}
       {#if index === 2 || index === 3}
-        <div
-          class="flex rounded-2xl w-full h-full bg-[#f5f5f5] dark:bg-[#222] xl:col-span-4"
+        <a
+          href={`/${$locale}/notes/${note.id}`}
+          class="block md:flex rounded-2xl w-full h-full bg-[#f5f5f5] dark:bg-[#222] xl:col-span-4"
         >
           <img
             src={note.cover}
             alt={note.title}
-            class="w-2/5 object-cover rounded-l-2xl"
+            class="md:w-2/5 object-cover rounded-l-2xl"
           />
-          <div class="flex flex-col justify-between w-3/5 p-5">
+          <div class="flex flex-col justify-between md:w-3/5 p-5">
             <div>
               <h3 class=" text-2xl font-bold text-balance">{note.title}</h3>
               <p class="text-lg text-truncate mt-2">
@@ -239,7 +240,7 @@
               </ul>
             </div>
           </div>
-        </div>
+        </a>
       {/if}
     {/each}
   </div>
