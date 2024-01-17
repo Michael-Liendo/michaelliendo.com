@@ -63,7 +63,7 @@
 </svelte:head>
 
 <section
-  class="flex flex-col-reverse md:flex-row md:justify-between md:items-center mt-10"
+  class="flex flex-col-reverse md:flex-row md:justify-between md:items-center mt-5 md:mt-10"
   itemscope
   itemtype="http://schema.org/Person"
 >
@@ -106,62 +106,81 @@
   </div>
 </section>
 
-<section class="flex flex-col mx-4 my-4">
-  <div>
-    <h2 class="text-xl font-bold mb-4">{$LL.HOMEPAGE.LATEST_NOTES()}</h2>
-    <ul class="space-y-2">
-      {#each data.notes.filter( (note) => note.tags?.some((tag) => tag.name === 'programming' || tag.name == 'programación') ) as note}
-        <li title={note.title}>
-          <a
-            href="/{$page.params.lang}/notes/{note.slug}"
-            class="py-2 flex items-center justify-between rounded hover:bg-light-background dark:hover:bg-dark-background cursor-pointer mb-4 last-of-type:mb-0"
-          >
-            <div class="pl-2 flex items-center">
-              <figure class="w-[18px] h-[18px] self-center">
-                {#if note.icon?.external?.url}
-                  <img
-                    src={note.icon?.external?.url}
-                    width="40"
-                    height="40"
-                    alt={note.icon?.external?.url}
-                  />
-                {:else}
-                  {note.icon?.emoji || ' '}
-                {/if}
-              </figure>
-              <span class="px-4">
-                {note.title}
-              </span>
-            </div>
-            <span class="hidden md:flex items-center md:w-[220px] text-left">
-              <figure class="pr-2">
-                <Calendar
-                  class="text-gray-800 dark:text-white w-[18px] h-[18px]"
-                />
-              </figure>
+<section>
+  <h2 class="text-2xl sm:text-3xl font-bold my-4">
+    {$LL.HOMEPAGE.LATEST_NOTES()}
+  </h2>
+
+  <div class="grid xl:grid-cols-8 gap-4">
+    {#each data.notes as note, index}
+      {#if index === 0}
+        <a
+          href={`/notes/${note.id}`}
+          class="rounded-2xl w-full h-full bg-[#f5f5f5] xl:col-span-2 xl:row-span-2"
+        >
+          <figure>
+            <img src={note.cover} class="rounded-t-2xl" alt="" />
+            <figcaption class="px-5">
+              <h3 class="mt-4 text-2xl font-bold text-balance">{note.title}</h3>
+              <p class="text-lg max-h-48 text-truncate mt-2">
+                {note.description}
+              </p>
               <time
-                class="text-sm mr-2"
-                dateTime={new Date(note.date).toString()}
+                datetime={new Date(note.date).toISOString()}
+                class="flex items-center text-sm mt-2"
               >
-                {new Date(note.date).toLocaleDateString(
-                  `${$page.data.locale}-us`,
-                  {
-                    month: 'long',
-                    day: '2-digit',
-                    year: 'numeric',
-                  }
-                )}
-              </time></span
-            >
-          </a>
-        </li>
-      {/each}
-    </ul>
+                <Calendar class="w-4 h-4 mr-1" />
+                {new Date(note.date).toLocaleDateString($locale, {
+                  year: 'numeric',
+                  month: 'long',
+                  day: 'numeric',
+                })}
+              </time>
+            </figcaption>
+          </figure>
+          <ul class="px-5 mt-2 flex flex-wrap">
+            {#each note.tags as tag}
+              <li
+                class="text-sm mr-2 mb-2 bg-[#e0e0e0] dark:bg-black rounded py-1 px-2"
+              >
+                <span
+                  class="inline-block mr-1 rounded-full h-2 w-2"
+                  style="background-color: {tag.color};"
+                />
+                {tag.name}
+              </li>
+            {/each}
+          </ul>
+        </a>
+      {/if}
+      {#if index === 1}
+        <div
+          class="rounded-2xl w-full h-full bg-[#f5f5f5] xl:col-span-2 xl:row-span-1"
+        ></div>
+      {/if}
+      {#if index === 2}
+        <div class="rounded-2xl w-full h-80 bg-[#f5f5f5] xl:col-span-4"></div>
+      {/if}
+      {#if index === 3}
+        <div class="rounded-2xl w-full h-80 bg-[#f5f5f5] xl:col-span-4"></div>
+      {/if}
+      {#if index === 4}
+        <div class="rounded-2xl w-full h-80 bg-[#f5f5f5] xl:col-span-2"></div>
+      {/if}
+    {/each}
   </div>
 </section>
 
 <style>
   .text-pretty {
     text-wrap: pretty;
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .text-truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 </style>
