@@ -116,7 +116,7 @@
       {#if index === 0}
         <a
           href={`${$locale}/notes/${note.id}`}
-          class="rounded-2xl w-full h-full bg-[#f5f5f5] xl:col-span-2 xl:row-span-2"
+          class="rounded-2xl flex flex-col justify-between w-full h-full bg-[#f5f5f5] dark:bg-[#222] xl:col-span-2 xl:row-span-2"
         >
           <figure>
             <img src={note.cover} class="rounded-t-2xl" alt={note.title} />
@@ -125,38 +125,40 @@
               <p class="text-lg h-48 text-truncate mt-2">
                 {note.description}
               </p>
-              <time
-                datetime={new Date(note.date).toISOString()}
-                class="flex items-center text-sm mt-2"
-              >
-                <Calendar class="w-4 h-4 mr-1" />
-                {new Date(note.date).toLocaleDateString($locale, {
-                  year: 'numeric',
-                  month: 'long',
-                  day: 'numeric',
-                })}
-              </time>
             </figcaption>
           </figure>
-          <ul class="px-5 mt-2 flex flex-wrap">
-            {#each note.tags as tag}
-              <li
-                class="text-sm mr-2 mb-2 bg-[#e0e0e0] dark:bg-black rounded py-1 px-2"
-              >
-                <span
-                  class="inline-block mr-1 rounded-full h-2 w-2"
-                  style="background-color: {tag.color};"
-                />
-                {tag.name}
-              </li>
-            {/each}
-          </ul>
+          <div class="px-5">
+            <time
+              datetime={new Date(note.date).toISOString()}
+              class="flex items-center text-sm mt-2"
+            >
+              <Calendar class="w-4 h-4 mr-1" />
+              {new Date(note.date).toLocaleDateString($locale, {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+              })}
+            </time>
+            <ul class="mt-2 flex flex-wrap">
+              {#each note.tags as tag}
+                <li
+                  class="text-sm mr-2 mb-2 bg-[#e0e0e0] dark:bg-black rounded py-1 px-2"
+                >
+                  <span
+                    class="inline-block mr-1 rounded-full h-2 w-2"
+                    style="background-color: {tag.color};"
+                  />
+                  {tag.name}
+                </li>
+              {/each}
+            </ul>
+          </div>
         </a>
       {/if}
       {#if index === 1 || index === 4}
         <a
           href={`/notes/${note.id}`}
-          class="rounded-2xl flex flex-col justify-between w-full h-full px-5 py-4 bg-[#f5f5f5] xl:col-span-2"
+          class="rounded-2xl flex flex-col justify-between w-full h-full px-5 py-4 bg-[#f5f5f5] dark:bg-[#222] xl:col-span-2"
         >
           <div>
             <h3 class=" text-2xl font-bold text-balance">{note.title}</h3>
@@ -194,7 +196,9 @@
         </a>
       {/if}
       {#if index === 2 || index === 3}
-        <div class="flex rounded-2xl w-full h-full bg-[#f5f5f5] xl:col-span-4">
+        <div
+          class="flex rounded-2xl w-full h-full bg-[#f5f5f5] dark:bg-[#222] xl:col-span-4"
+        >
           <img
             src={note.cover}
             alt={note.title}
