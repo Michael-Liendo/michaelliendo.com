@@ -72,20 +72,21 @@
     <p class="md:text-xl xl:text-2xl xl:w-[50rem] text-pretty">
       {@html $LL.HOMEPAGE.ABOUT()}
     </p>
-    <!-- Call to action
-			<div class="flex justify-end">
-      <a
+    <div class="flex justify-between">
+      <SocialMedia />
+      <!-- Call to action
+        <a
         href="/"
         class="inline-flex items-center justify-center px-4 py-2.5 text-base font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900"
       >
         Call Action
-      </a>
-    </div> -->
+      </a> -->
+    </div>
   </div>
   <div class="w-full md:flex justify-end">
     <figure>
       <img
-        src="https://avatars.githubusercontent.com/u/70660410?v=4"
+        src={avatarUrl}
         alt="Michael Liendo Avatar"
         width="384"
         height="384"
