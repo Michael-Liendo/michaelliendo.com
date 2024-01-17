@@ -8,12 +8,12 @@ const en = {
       PROJECTS: 'Projects',
     },
     FOOTER: {
-      COPYRIGHT: 'Made with ❤️ by Michael Liendo © {year:number}',
+      COPYRIGHT: 'Made with ❤️ by Michael Liendo © {startYear:number} - {year:number}',
     },
   },
   HOMEPAGE: {
     HI: `Hi I'm {name:string} {surname:string},`,
-    ABOUT: `I'm a <strong>Software Developer</strong> focused on Svelte and TypeScript with a passion for Web Development. I enjoy working on challenging projects and value collaboration and problem-solving.`,
+    ABOUT: `I'm a <strong>Software Developer</strong> focused on Svelte and TypeScript with a passion for Web Development. I enjoy working on challenging projects, value collaboration and problem-solving.`,
     LATEST_NOTES: 'Latest Notes',
   },
 } satisfies BaseTranslation;
