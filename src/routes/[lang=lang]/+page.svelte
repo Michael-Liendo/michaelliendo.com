@@ -16,6 +16,7 @@
   let keywords =
     'michael liendo, home, notes, portfolio, software developer, svelte, typescript, web development, challenging projects, collaboration, problem-solving';
   let avatarUrl = 'https://avatars.githubusercontent.com/u/70660410?v=4';
+  let lang = $page.params.lang ?? 'en';
 
   $: {
     switch ($locale) {
@@ -25,7 +26,6 @@
           'A Software Developer interested in Systems Programming and Web Development.';
         keywords =
           'michael liendo, home, notes, portfolio, software developer, svelte, typescript, web development, challenging projects, collaboration, problem-solving';
-
         break;
       case 'es':
         title = 'Michael Liendo | Desarrollador de Software';
@@ -115,14 +115,14 @@
     {#each data.notes as note, index}
       {#if index === 0}
         <a
-          href={`/notes/${note.id}`}
+          href={`${$locale}/notes/${note.id}`}
           class="rounded-2xl w-full h-full bg-[#f5f5f5] xl:col-span-2 xl:row-span-2"
         >
           <figure>
-            <img src={note.cover} class="rounded-t-2xl" alt="" />
+            <img src={note.cover} class="rounded-t-2xl" alt={note.title} />
             <figcaption class="px-5">
               <h3 class="mt-4 text-2xl font-bold text-balance">{note.title}</h3>
-              <p class="text-lg max-h-48 text-truncate mt-2">
+              <p class="text-lg h-48 text-truncate mt-2">
                 {note.description}
               </p>
               <time
@@ -153,19 +153,51 @@
           </ul>
         </a>
       {/if}
-      {#if index === 1}
-        <div
-          class="rounded-2xl w-full h-full bg-[#f5f5f5] xl:col-span-2 xl:row-span-1"
-        ></div>
+      {#if index === 1 || index === 4}
+        <a
+          href={`/notes/${note.id}`}
+          class="rounded-2xl flex flex-col justify-between w-full h-full px-5 py-4 bg-[#f5f5f5] xl:col-span-2"
+        >
+          <div class="">
+            <h3 class=" text-2xl font-bold text-balance">{note.title}</h3>
+            <p class="text-lg text-truncate mt-2">
+              {note.description}
+            </p>
+          </div>
+
+          <div>
+            <time
+              datetime={new Date(note.date).toISOString()}
+              class="flex items-center text-sm"
+            >
+              <Calendar class="w-4 h-4 mr-1" />
+              {new Date(note.date).toLocaleDateString($locale, {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+              })}
+            </time>
+            <ul class="mt-2 flex flex-wrap">
+              {#each note.tags as tag}
+                <li
+                  class="text-sm mr-2 mb-2 bg-[#e0e0e0] dark:bg-black rounded py-1 px-2"
+                >
+                  <span
+                    class="inline-block mr-1 rounded-full h-2 w-2"
+                    style="background-color: {tag.color};"
+                  />
+                  {tag.name}
+                </li>
+              {/each}
+            </ul>
+          </div>
+        </a>
       {/if}
       {#if index === 2}
-        <div class="rounded-2xl w-full h-80 bg-[#f5f5f5] xl:col-span-4"></div>
+        <div class="rounded-2xl w-full h-full bg-[#f5f5f5] xl:col-span-4"></div>
       {/if}
       {#if index === 3}
-        <div class="rounded-2xl w-full h-80 bg-[#f5f5f5] xl:col-span-4"></div>
-      {/if}
-      {#if index === 4}
-        <div class="rounded-2xl w-full h-80 bg-[#f5f5f5] xl:col-span-2"></div>
+        <div class="rounded-2xl w-full h-full bg-[#f5f5f5] xl:col-span-4"></div>
       {/if}
     {/each}
   </div>
