@@ -4,7 +4,7 @@
   import LinkedIn from '~icons/mdi/linkedin.jsx';
 </script>
 
-<ul class="flex mx-auto md:mx-0">
+<ul class="flex mx-auto md:mx-0" itemprop="sameAs">
   <li class="mr-4">
     <a
       title="Github"

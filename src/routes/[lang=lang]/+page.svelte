@@ -61,7 +61,6 @@
   <meta name="twitter:creator" content="@MichaelMLiendo" />
   <meta name="twitter:image:src" content={avatarUrl} />
 </svelte:head>
-
 <section
   class="flex flex-col-reverse md:flex-row md:justify-between md:items-center mt-5 md:mt-10"
   itemscope
@@ -92,15 +91,14 @@
     </div>
   </div>
   <div class="w-full md:flex justify-end">
-    <figure>
+    <figure itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
       <img
         src={avatarUrl}
         alt="Michael Liendo Avatar"
         width="384"
         height="384"
         title="Michael Liendo profile picture at GitHub."
-        class="rounded w-full xl:w-96 h-96 object-cover"
-        itemprop="image"
+        class="rounded-2xl w-full xl:w-96 h-96 object-cover"
       />
     </figure>
   </div>
@@ -117,12 +115,25 @@
         <a
           href={`/${$locale}/notes/${note.id}`}
           class="rounded-2xl flex flex-col justify-between w-full h-full bg-[#f5f5f5] dark:bg-[#222] xl:col-span-2 xl:row-span-2"
+          itemprop="blogPost"
+          itemscope
+          itemtype="http://schema.org/BlogPosting"
         >
           <figure>
-            <img src={note.cover} class="rounded-t-2xl" alt={note.title} />
+            <img
+              src={note.cover}
+              class="rounded-t-2xl"
+              alt={note.title}
+              itemprop="image"
+            />
             <figcaption class="px-5">
-              <h3 class="mt-4 text-2xl font-bold text-balance">{note.title}</h3>
-              <p class="text-lg h-48 text-truncate mt-2">
+              <h3
+                class="mt-4 text-2xl font-bold text-balance"
+                itemprop="headline"
+              >
+                {note.title}
+              </h3>
+              <p class="text-lg h-48 text-truncate mt-2" itemprop="description">
                 {note.description}
               </p>
             </figcaption>
@@ -131,6 +142,7 @@
             <time
               datetime={new Date(note.date).toISOString()}
               class="flex items-center text-sm mt-2"
+              itemprop="datePublished"
             >
               <Calendar class="w-4 h-4 mr-1" />
               {new Date(note.date).toLocaleDateString($locale, {
@@ -139,7 +151,7 @@
                 day: 'numeric',
               })}
             </time>
-            <ul class="mt-2 flex flex-wrap">
+            <ul class="mt-2 flex flex-wrap" itemprop="keywords">
               {#each note.tags as tag}
                 <li
                   class="text-sm mr-2 mb-2 bg-[#e0e0e0] dark:bg-black rounded py-1 px-2"
@@ -159,10 +171,15 @@
         <a
           href={`/${$locale}/notes/${note.id}`}
           class="rounded-2xl flex flex-col justify-between w-full h-full px-5 py-4 bg-[#f5f5f5] dark:bg-[#222] xl:col-span-2"
+          itemprop="blogPost"
+          itemscope
+          itemtype="http://schema.org/BlogPosting"
         >
           <div>
-            <h3 class=" text-2xl font-bold text-balance">{note.title}</h3>
-            <p class="text-lg text-truncate mt-2">
+            <h3 class="text-2xl font-bold text-balance" itemprop="headline">
+              {note.title}
+            </h3>
+            <p class="text-lg text-truncate mt-2" itemprop="description">
               {note.description}
             </p>
           </div>
@@ -171,6 +188,7 @@
             <time
               datetime={new Date(note.date).toISOString()}
               class="flex items-center text-sm"
+              itemprop="datePublished"
             >
               <Calendar class="w-4 h-4 mr-1" />
               {new Date(note.date).toLocaleDateString($locale, {
@@ -179,7 +197,7 @@
                 day: 'numeric',
               })}
             </time>
-            <ul class="mt-2 flex flex-wrap">
+            <ul class="mt-2 flex flex-wrap" itemprop="keywords">
               {#each note.tags as tag}
                 <li
                   class="text-sm mr-2 mb-2 bg-[#e0e0e0] dark:bg-black rounded py-1 px-2"
@@ -199,16 +217,22 @@
         <a
           href={`/${$locale}/notes/${note.id}`}
           class="block md:flex rounded-2xl w-full h-full bg-[#f5f5f5] dark:bg-[#222] xl:col-span-4"
+          itemprop="blogPost"
+          itemscope
+          itemtype="http://schema.org/BlogPosting"
         >
           <img
             src={note.cover}
             alt={note.title}
             class="md:w-2/5 object-cover rounded-l-2xl"
+            itemprop="image"
           />
           <div class="flex flex-col justify-between md:w-3/5 p-5">
             <div>
-              <h3 class=" text-2xl font-bold text-balance">{note.title}</h3>
-              <p class="text-lg text-truncate mt-2">
+              <h3 class="text-2xl font-bold text-balance" itemprop="headline">
+                {note.title}
+              </h3>
+              <p class="text-lg text-truncate mt-2" itemprop="description">
                 {note.description}
               </p>
             </div>
@@ -217,6 +241,7 @@
               <time
                 datetime={new Date(note.date).toISOString()}
                 class="flex items-center text-sm"
+                itemprop="datePublished"
               >
                 <Calendar class="w-4 h-4 mr-1" />
                 {new Date(note.date).toLocaleDateString($locale, {
@@ -225,7 +250,7 @@
                   day: 'numeric',
                 })}
               </time>
-              <ul class="mt-2 flex flex-wrap">
+              <ul class="mt-2 flex flex-wrap" itemprop="keywords">
                 {#each note.tags as tag}
                   <li
                     class="text-sm mr-2 mb-2 bg-[#e0e0e0] dark:bg-black rounded py-1 px-2"
