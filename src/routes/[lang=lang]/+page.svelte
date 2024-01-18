@@ -113,7 +113,7 @@
     {#each data.notes as note, index}
       {#if index === 0}
         <a
-          href={`/${$locale}/notes/${note.id}`}
+          href={`/${$locale}/notes/${note.slug}`}
           class="rounded-2xl flex flex-col justify-between w-full h-full bg-[#f5f5f5] dark:bg-[#222] xl:col-span-2 xl:row-span-2"
           itemprop="blogPost"
           itemscope
@@ -169,7 +169,7 @@
       {/if}
       {#if index === 1 || index === 4}
         <a
-          href={`/${$locale}/notes/${note.id}`}
+          href={`/${$locale}/notes/${note.slug}`}
           class="rounded-2xl flex flex-col justify-between w-full h-full px-5 py-4 bg-[#f5f5f5] dark:bg-[#222] xl:col-span-2"
           itemprop="blogPost"
           itemscope
@@ -215,7 +215,7 @@
       {/if}
       {#if index === 2 || index === 3}
         <a
-          href={`/${$locale}/notes/${note.id}`}
+          href={`/${$locale}/notes/${note.slug}`}
           class="block md:flex rounded-2xl w-full h-full bg-[#f5f5f5] dark:bg-[#222] xl:col-span-4"
           itemprop="blogPost"
           itemscope
