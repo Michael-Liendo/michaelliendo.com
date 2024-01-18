@@ -4,7 +4,9 @@ import { error } from '@sveltejs/kit';
 /** @type {import('./$types').PageLoad} */
 export async function load({ params, fetch }) {
   try {
-    const request = await fetch(`/api/note/${params.lang}/${params.slug}`);
+    const request = await fetch(
+      `/api/note/${params.lang ?? 'es'}/${params.slug}`,
+    );
     const note = await request.json();
 
     if (!note.note) {
