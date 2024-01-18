@@ -116,9 +116,9 @@
           <Translate class="h-6 w-6" />
         </button>
         {#if isLangMenuOpen}
-          <div class="relative">
+          <div class="relative z-20">
             <ul
-              class="absolute right-0 flex flex-col space-y-2 p-2 shadow-xl border-1 border-gray-400 dark:border-gray-900 bg-white dark:bg-black rounded-lg"
+              class="absolute right-0 flex flex-col space-y-2 p-2 shadow-xl border-1 border-gray-400 dark:border-gray-900 bg-white dark:bg-slate-800 rounded-lg"
             >
               <li class="lang-opt">
                 <button

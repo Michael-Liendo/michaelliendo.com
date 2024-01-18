@@ -61,7 +61,7 @@
 </svelte:head>
 <section
   id="about"
-  class="flex flex-col-reverse md:flex-row md:justify-between md:items-center mt-5 md:mt-10"
+  class="relative z-10 flex flex-col-reverse md:flex-row md:justify-between md:items-center mt-5 md:mt-10"
   itemscope
   itemtype="http://schema.org/Person"
 >
@@ -101,10 +101,17 @@
       />
     </figure>
   </div>
+  <!--  -->
+  <div
+    class="gradient absolute bottom-40 left-0 w-1/5 h-1/3 -z-20 bg-[rgba(102,199,216,0.47)] dark:bg-[rgba(65,153,211,0.3)] -rotate-12"
+  ></div>
+  <div
+    class="gradient absolute bottom-20 left-64 w-1/5 h-1/3 -z-20 bg-[rgba(116,233,100,0.3)] dark:bg-[rgba(65,211,121,0.3)] -rotate-12"
+  ></div>
 </section>
 
-<section>
-  <h2 class="text-2xl sm:text-3xl font-bold my-4">
+<section class="">
+  <h2 class="text-2xl sm:text-4xl font-bold my-4">
     {$LL.HOMEPAGE.LATEST_NOTES()}
   </h2>
 
@@ -271,6 +278,19 @@
 </section>
 
 <style>
+  .gradient {
+    filter: blur(100px);
+  }
+  /* 
+view later
+  h1 {
+    background-image: linear-gradient(45deg, #f0f0f0 44.71%, #6f00ff 93.29%);
+    background-size: 100%;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+  } */
+
   .text-pretty {
     text-wrap: pretty;
   }
