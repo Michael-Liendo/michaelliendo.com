@@ -138,7 +138,7 @@
               </p>
             </figcaption>
           </figure>
-          <div class="px-5">
+          <div class="px-5 pb-4">
             <time
               datetime={new Date(note.date).toISOString()}
               class="flex items-center text-sm mt-2"
