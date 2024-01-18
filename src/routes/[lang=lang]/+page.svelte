@@ -1,6 +1,5 @@
 <script lang="ts">
   import Calendar from '~icons/mdi/calendar-month';
-  import { page } from '$app/stores';
   import LL, { locale } from '$i18n/i18n-svelte';
   import SocialMedia from '$lib/components/SocialMedia.svelte';
 
@@ -16,7 +15,6 @@
   let keywords =
     'michael liendo, home, notes, portfolio, software developer, svelte, typescript, web development, challenging projects, collaboration, problem-solving';
   let avatarUrl = 'https://avatars.githubusercontent.com/u/70660410?v=4';
-  let lang = $page.params.lang ?? 'en';
 
   $: {
     switch ($locale) {
@@ -62,6 +60,7 @@
   <meta name="twitter:image:src" content={avatarUrl} />
 </svelte:head>
 <section
+  id="about"
   class="flex flex-col-reverse md:flex-row md:justify-between md:items-center mt-5 md:mt-10"
   itemscope
   itemtype="http://schema.org/Person"
