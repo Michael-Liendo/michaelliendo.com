@@ -1,9 +1,11 @@
 <script lang="ts">
   import { locale } from '$i18n/i18n-svelte';
-  import Entry from '$lib/components/Entry.svelte';
+  import Calendar from '~icons/mdi/calendar-month';
+
+  import type { Project } from '$lib/services/Notion/Projects/project';
 
   export let data: {
-    projects: any[];
+    projects: Project[];
   };
 
   let title = 'Projects | Michael Liendo';
@@ -12,6 +14,14 @@
   let keywords =
     'projects, blog, articles, writing, content, topics, tips, insights, experiences, knowledge';
   let avatarUrl = 'https://avatars.githubusercontent.com/u/70660410?v=4';
+
+  function formattedDate(date: Date): string {
+    return new Date(date).toLocaleDateString(`${$locale}-us`, {
+      month: 'long',
+      day: '2-digit',
+      year: 'numeric',
+    });
+  }
 
   $: {
     switch ($locale) {
@@ -58,16 +68,50 @@
 </svelte:head>
 
 <ul
-  class="max-w-5xl m-auto flex flex-col md:grid md:grid-cols-3 md:gap-6 px-4 md:px-0"
+  class="max-w-6xl m-auto flex flex-col md:grid md:grid-cols-3 md:gap-6 px-4 md:px-0"
 >
   {#each data.projects as project}
-    <Entry
-      title={project.title}
-      description={project.description}
-      publishDate={new Date(project.date)}
-      tags={project.tags}
-      slug={project.slug}
-      previewImageUrl={project.cover}
-    />
+    <li class="mb-4 md:mb-0 last-of-type:mb-0">
+      <figure
+        class="rounded overflow-hidden pb-4 flex justify-center items-center h-[250px]"
+      >
+        <img alt={title} src={project.cover} width="450" height="100" />
+      </figure>
+      <header>
+        <h1
+          class="text-xl mt-2 font-extrabold cursor-pointer hover:text-link hover:underline"
+        >
+          {title}
+        </h1>
+      </header>
+      <main class="pb-2">
+        <p>{description}</p>
+      </main>
+      <footer class="flex flex-col">
+        <div class="flex mb-2">
+          <span class="flex items-center mr-2">
+            <figure class="mr-2">
+              <Calendar class="text-gray-800 dark:text-white h-4 w-4" />
+            </figure>
+            <time class="text-sm mr-2" datetime={project.date.toString()}
+              >{formattedDate(project.date)}</time
+            >
+          </span>
+        </div>
+        <ul class="flex flex-wrap">
+          {#each project.tags as tag}
+            <li
+              class="text-sm mr-2 mb-2 bg-light-background dark:bg-dark-background rounded py-1 px-2"
+            >
+              <span
+                class="inline-block mr-1 rounded-full h-2 w-2"
+                style="background-color: {tag.color};"
+              />
+              {tag.name}
+            </li>
+          {/each}
+        </ul>
+      </footer>
+    </li>
   {/each}
 </ul>

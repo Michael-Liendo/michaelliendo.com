@@ -1,7 +1,9 @@
 <script lang="ts">
   import { page } from '$app/stores';
-  import type { MultiSelectEntity } from '$lib/services/Notion/Notes/notes';
+  import { locale } from '$i18n/i18n-svelte';
   import Calendar from '~icons/mdi/calendar-month';
+
+  import type { MultiSelectEntity } from '$lib/services/Notion/Notes/notes';
 
   export let title = '';
   export let description = '';
@@ -9,6 +11,8 @@
   export let tags: MultiSelectEntity[] = [];
   export let slug = '';
   export let previewImageUrl: string | null = '';
+
+  const baseLocaleUrl = $locale === 'es' ? '' : `/${$locale}`;
 
   let formattedDate = new Date(publishDate).toLocaleDateString(
     `${$page.data.locale}-us`,
@@ -21,7 +25,7 @@
 </script>
 
 <li class="mb-4 md:mb-0 last-of-type:mb-0">
-  <a href="/{$page.params.lang}/notes/{slug}">
+  <a href="{baseLocaleUrl}/notes/{slug}">
     <figure
       class="rounded overflow-hidden pb-4 flex justify-center items-center h-[150px]"
     >
