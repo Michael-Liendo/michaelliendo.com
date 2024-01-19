@@ -133,6 +133,7 @@
               src={note.cover}
               class="rounded-t-2xl"
               alt={note.title}
+              loading="lazy"
               height="200px"
               width="100%"
               itemprop="image"
@@ -237,6 +238,7 @@
             alt={note.title}
             height="200px"
             width="100%"
+            loading="lazy"
             class="md:w-2/5 object-cover rounded-l-2xl"
             itemprop="image"
           />
