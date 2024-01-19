@@ -7,7 +7,7 @@ import {
 import { client } from '../Client';
 import { pageToNoteTransformer } from '../objectTransformer';
 
-import type { NoteResponse } from './types';
+import type { NoteResponse } from './notes';
 
 export {
   pageToNoteTransformer,

@@ -1,6 +1,6 @@
 <script lang="ts">
   import { page } from '$app/stores';
-  import type { MultiSelectEntity } from '$lib/services/Notion/Notes/types';
+  import type { MultiSelectEntity } from '$lib/services/Notion/Notes/notes';
   import Calendar from '~icons/mdi/calendar-month';
 
   export let title = '';

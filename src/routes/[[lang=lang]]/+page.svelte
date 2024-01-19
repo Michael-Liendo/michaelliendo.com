@@ -3,7 +3,7 @@
   import LL, { locale } from '$i18n/i18n-svelte';
   import SocialMedia from '$lib/components/SocialMedia.svelte';
 
-  import type { Note } from '$lib/services/Notion/Notes/types';
+  import type { Note } from '$lib/services/Notion/Notes/notes';
 
   export let data: {
     notes: Note[];

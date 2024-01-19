@@ -1,4 +1,4 @@
-import type { Note, NoteResponse } from './Notes/types';
+import type { Note, NoteResponse } from './Notes/notes';
 
 export function pageToNoteTransformer(note: NoteResponse): Note {
   return {
