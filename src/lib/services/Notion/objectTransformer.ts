@@ -1,4 +1,5 @@
 import type { Note, NoteResponse } from './Notes/notes';
+import type { ProjectResponse } from './Projects/project';
 
 export function pageToNoteTransformer(note: NoteResponse): Note {
   return {
@@ -13,16 +14,14 @@ export function pageToNoteTransformer(note: NoteResponse): Note {
   };
 }
 
-// todo: types
-// biome-ignore lint/suspicious/noExplicitAny: create the type for the projects
-export function pageToProjectTransformer(project: any) {
+export function pageToProjectTransformer(project: ProjectResponse) {
   return {
     id: project.id,
-    title: project.properties.name.title[0].plain_text,
+    title: project.properties.name.title?.at(0)?.plain_text,
     tags: project.properties.tags.multi_select,
-    description: project.properties.description.rich_text[0].plain_text,
+    description: project.properties.description.rich_text.at(0).plain_text,
     repository: project.properties.repository.url,
-    preview: project.properties.preview.url,
+    cover: project.cover?.external?.url || project.cover?.file?.url || null,
     date: project.properties.created.date.start,
   };
 }

@@ -1,6 +1,7 @@
 import { NOTION_PROJECTS_DATABASE_ID } from '$env/static/private';
 import { client } from '../Client';
 import { pageToProjectTransformer } from '../objectTransformer';
+import type { ProjectResponse } from './project';
 
 export class Projects {
   static async getProjects() {
@@ -10,11 +11,9 @@ export class Projects {
       database_id: database,
     });
 
-    console.log(response.results);
-
     return Promise.all(
       response.results.map((res) => {
-        return pageToProjectTransformer(res);
+        return pageToProjectTransformer(res as ProjectResponse);
       }),
     );
   }
