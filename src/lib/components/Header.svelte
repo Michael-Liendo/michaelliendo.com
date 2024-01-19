@@ -10,9 +10,9 @@
   import LL, { locale, setLocale } from '$i18n/i18n-svelte';
   import { page } from '$app/stores';
   import { replaceLocaleInUrl } from '$lib/utils/locale';
+  import { baseLocale } from '$i18n/i18n-util';
 
   import type { Locales } from '$i18n/i18n-types';
-  import { baseLocale } from '$i18n/i18n-util';
 
   const baseLocaleUrl = $locale === baseLocale ? '' : `/${$locale}`;
 
@@ -86,18 +86,23 @@
     </ul>
     <ul
       class="text-xl flex sm:hidden items-center space-x-6 px-5 py-2 bg-white dark:bg-black border border-black dark:border-white rounded-full"
+      aria-label="Main navigation"
     >
-      <li><a href="{baseLocaleUrl}/"><Home /></a></li>
-      <li><a href="{baseLocaleUrl}/notes"><Notebook /></a></li>
+      <li><a href="{baseLocaleUrl}/" aria-label="Home"><Home /></a></li>
       <li>
-        <a href="{baseLocaleUrl}/projects"><PodiumGold /></a>
+        <a href="{baseLocaleUrl}/notes" aria-label="Notes"><Notebook /></a>
+      </li>
+      <li>
+        <a href="{baseLocaleUrl}/projects" aria-label="Projects"
+          ><PodiumGold /></a
+        >
       </li>
     </ul>
   </nav>
   <div class="flex sm:space-x-4 items-center">
     <button
-      class="mr-2"
-      title="Change website into dark o white mode"
+      class="mr-2 p-4 rounded-full"
+      title="Change website into dark or white mode"
       on:click={toggleDarkMode}
     >
       {#if useDarkMode}
@@ -106,10 +111,10 @@
         <Moon />
       {/if}
     </button>
-    <div class="flex justify-center items-center space-x-4">
-      <figure class="h-6 w-6">
+    <div class="flex justify-center items-center space-x-6">
+      <figure class="h-8 w-8">
         <button
-          class="h-6 w-6"
+          class="h-8 w-8 rounded-full"
           on:click={toggleLanguageMenu}
           aria-label="Toggle language menu"
           title="Toggle language menu"
@@ -119,7 +124,7 @@
         {#if isLangMenuOpen}
           <div class="relative z-20">
             <ul
-              class="absolute right-0 flex flex-col space-y-2 p-2 shadow-xl border-1 border-gray-400 dark:border-gray-900 bg-white dark:bg-slate-800 rounded-lg"
+              class="absolute right-0 flex flex-col space-y-2 p-4 shadow-xl border-1 border-gray-400 dark:border-gray-900 bg-white dark:bg-slate-800 rounded-lg"
             >
               <li class="lang-opt">
                 <button
