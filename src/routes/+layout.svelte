@@ -25,7 +25,7 @@
 <div class="bg-white dark:bg-black">
   <div class="min-h-screen">
     <Header />
-    <main class="max-w-5xl m-auto p-4"><slot /></main>
+    <main class="px-5 sm:px-10 md:px-20"><slot /></main>
   </div>
   <Footer />
 </div>

@@ -7,11 +7,14 @@
   import Notebook from '~icons/mdi/book';
   import PodiumGold from '~icons/mdi/podium-gold';
 
-  import LL, { setLocale } from '$i18n/i18n-svelte';
+  import LL, { locale, setLocale } from '$i18n/i18n-svelte';
   import { page } from '$app/stores';
   import { replaceLocaleInUrl } from '$lib/utils/locale';
 
   import type { Locales } from '$i18n/i18n-types';
+  import { baseLocale } from '$i18n/i18n-util';
+
+  const baseLocaleUrl = $locale === baseLocale ? '' : `/${$locale}`;
 
   let useDarkMode = false;
   let isLangMenuOpen = false;
@@ -48,7 +51,7 @@
   }
 
   function changeLanguage(locale: Locales): void {
-    const lang = $page.params.lang;
+    const lang = $locale;
 
     if (lang === locale) {
       isLangMenuOpen = false;
@@ -56,6 +59,7 @@
     }
 
     const next = replaceLocaleInUrl($page.url, locale);
+
     setLocale(locale);
     window.location.href = next;
   }
@@ -71,30 +75,31 @@
       class="hidden sm:flex text-xl items-center sm:space-x-10 md:space-x-16 px-10 py-2 bg-white dark:bg-black border border-black dark:border-white rounded-full"
     >
       <li>
-        <a href="/{$page.params.lang ?? 'en'}/">{$LL.LAYOUT.NAV.HOME()}</a>
+        <a href="{baseLocaleUrl}/">{$LL.LAYOUT.NAV.HOME()}</a>
       </li>
       <li>
-        <a href="/{$page.params.lang ?? 'en'}/notes">{$LL.LAYOUT.NAV.NOTES()}</a
-        >
+        <a href="{baseLocaleUrl}/notes">{$LL.LAYOUT.NAV.NOTES()}</a>
       </li>
       <li>
-        <a href="/{$page.params.lang ?? 'en'}/projects"
-          >{$LL.LAYOUT.NAV.PROJECTS()}</a
-        >
+        <a href="{baseLocaleUrl}/projects">{$LL.LAYOUT.NAV.PROJECTS()}</a>
       </li>
     </ul>
     <ul
       class="text-xl flex sm:hidden items-center space-x-6 px-5 py-2 bg-white dark:bg-black border border-black dark:border-white rounded-full"
     >
-      <li><a href="/{$page.params.lang ?? 'en'}/"><Home /></a></li>
-      <li><a href="/{$page.params.lang ?? 'en'}/notes"><Notebook /></a></li>
+      <li><a href="{baseLocaleUrl}/"><Home /></a></li>
+      <li><a href="{baseLocaleUrl}/notes"><Notebook /></a></li>
       <li>
-        <a href="/{$page.params.lang ?? 'en'}/projects"><PodiumGold /></a>
+        <a href="{baseLocaleUrl}/projects"><PodiumGold /></a>
       </li>
     </ul>
   </nav>
   <div class="flex sm:space-x-4 items-center">
-    <button class="mr-2" on:click={toggleDarkMode}>
+    <button
+      class="mr-2"
+      title="Change website into dark o white mode"
+      on:click={toggleDarkMode}
+    >
       {#if useDarkMode}
         <Sun />
       {:else}
@@ -112,13 +117,13 @@
           <Translate class="h-6 w-6" />
         </button>
         {#if isLangMenuOpen}
-          <div class="relative">
+          <div class="relative z-20">
             <ul
-              class="absolute right-0 flex flex-col space-y-2 p-2 shadow-xl border-1 border-gray-400 dark:border-gray-900 bg-white dark:bg-black rounded-lg"
+              class="absolute right-0 flex flex-col space-y-2 p-2 shadow-xl border-1 border-gray-400 dark:border-gray-900 bg-white dark:bg-slate-800 rounded-lg"
             >
               <li class="lang-opt">
                 <button
-                  class:lang-active={$page.params.lang === 'en'}
+                  class:lang-active={$locale === 'en'}
                   on:click={() => changeLanguage('en')}
                 >
                   🇺🇸&nbsp;English
@@ -126,7 +131,7 @@
               </li>
               <li>
                 <button
-                  class:lang-active={$page.params.lang === 'es'}
+                  class:lang-active={$locale === 'es'}
                   on:click={() => changeLanguage('es')}
                 >
                   🇪🇸&nbsp;Español

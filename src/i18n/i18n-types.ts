@@ -3,7 +3,7 @@
 import type { BaseTranslation as BaseTranslationType, LocalizedString, RequiredParams } from 'typesafe-i18n'
 
 export type BaseTranslation = BaseTranslationType
-export type BaseLocale = 'en'
+export type BaseLocale = 'es'
 
 export type Locales =
 	| 'en'
@@ -17,39 +17,40 @@ type RootTranslation = {
 	LAYOUT: {
 		NAV: {
 			/**
-			 * H​o​m​e
+			 * I​n​i​c​i​o
 			 */
 			HOME: string
 			/**
-			 * N​o​t​e​s
+			 * N​o​t​a​s
 			 */
 			NOTES: string
 			/**
-			 * P​r​o​j​e​c​t​s
+			 * P​r​o​y​e​c​t​o​s
 			 */
 			PROJECTS: string
 		}
 		FOOTER: {
 			/**
-			 * M​a​d​e​ ​w​i​t​h​ ​❤​️​ ​b​y​ ​M​i​c​h​a​e​l​ ​L​i​e​n​d​o​ ​©​ ​{​y​e​a​r​}
+			 * H​e​c​h​o​ ​c​o​n​ ​❤​️​ ​p​o​r​ ​M​i​c​h​a​e​l​ ​L​i​e​n​d​o​ ​©​ ​{​s​t​a​r​t​Y​e​a​r​}​ ​-​ ​{​y​e​a​r​}
+			 * @param {number} startYear
 			 * @param {number} year
 			 */
-			COPYRIGHT: RequiredParams<'year'>
+			COPYRIGHT: RequiredParams<'startYear' | 'year'>
 		}
 	}
 	HOMEPAGE: {
 		/**
-		 * H​i​ ​I​'​m​ ​{​n​a​m​e​}​ ​{​s​u​r​n​a​m​e​}​,
+		 * H​o​l​a​ ​s​o​y​ ​{​n​a​m​e​}​ ​{​s​u​r​n​a​m​e​}​,
 		 * @param {string} name
 		 * @param {string} surname
 		 */
 		HI: RequiredParams<'name' | 'surname'>
 		/**
-		 * I​'​m​ ​a​ ​S​o​f​t​w​a​r​e​ ​D​e​v​e​l​o​p​e​r​ ​f​o​c​u​s​e​d​ ​o​n​ ​S​v​e​l​t​e​ ​a​n​d​ ​T​y​p​e​S​c​r​i​p​t​ ​w​i​t​h​ ​a​ ​p​a​s​s​i​o​n​ ​f​o​r​ ​W​e​b​ ​D​e​v​e​l​o​p​m​e​n​t​.​ ​I​ ​e​n​j​o​y​ ​w​o​r​k​i​n​g​ ​o​n​ ​c​h​a​l​l​e​n​g​i​n​g​ ​p​r​o​j​e​c​t​s​ ​a​n​d​ ​v​a​l​u​e​ ​c​o​l​l​a​b​o​r​a​t​i​o​n​ ​a​n​d​ ​p​r​o​b​l​e​m​-​s​o​l​v​i​n​g​.
+		 * S​o​y​ ​u​n​ ​<​s​t​r​o​n​g​>​D​e​s​a​r​r​o​l​l​a​d​o​r​ ​d​e​ ​S​o​f​t​w​a​r​e​<​/​s​t​r​o​n​g​>​ ​e​n​f​o​c​a​d​o​ ​e​n​ ​S​v​e​l​t​e​ ​y​ ​T​y​p​e​S​c​r​i​p​t​ ​a​p​a​s​i​o​n​a​d​o​ ​p​o​r​ ​e​l​ ​D​e​s​a​r​r​o​l​l​o​ ​W​e​b​.​ ​D​i​s​f​r​u​t​o​ ​t​r​a​b​a​j​a​r​ ​e​n​ ​p​r​o​y​e​c​t​o​s​ ​d​e​s​a​f​i​a​n​t​e​s​,​ ​v​a​l​o​r​o​ ​l​a​ ​c​o​l​a​b​o​r​a​c​i​ó​n​ ​y​ ​l​a​ ​r​e​s​o​l​u​c​i​ó​n​ ​d​e​ ​p​r​o​b​l​e​m​a​s​.
 		 */
 		ABOUT: string
 		/**
-		 * L​a​t​e​s​t​ ​N​o​t​e​s
+		 * Ú​l​t​i​m​a​s​ ​n​o​t​a​s
 		 */
 		LATEST_NOTES: string
 	}
@@ -59,36 +60,36 @@ export type TranslationFunctions = {
 	LAYOUT: {
 		NAV: {
 			/**
-			 * Home
+			 * Inicio
 			 */
 			HOME: () => LocalizedString
 			/**
-			 * Notes
+			 * Notas
 			 */
 			NOTES: () => LocalizedString
 			/**
-			 * Projects
+			 * Proyectos
 			 */
 			PROJECTS: () => LocalizedString
 		}
 		FOOTER: {
 			/**
-			 * Made with ❤️ by Michael Liendo © {year}
+			 * Hecho con ❤️ por Michael Liendo © {startYear} - {year}
 			 */
-			COPYRIGHT: (arg: { year: number }) => LocalizedString
+			COPYRIGHT: (arg: { startYear: number, year: number }) => LocalizedString
 		}
 	}
 	HOMEPAGE: {
 		/**
-		 * Hi I'm {name} {surname},
+		 * Hola soy {name} {surname},
 		 */
 		HI: (arg: { name: string, surname: string }) => LocalizedString
 		/**
-		 * I'm a Software Developer focused on Svelte and TypeScript with a passion for Web Development. I enjoy working on challenging projects and value collaboration and problem-solving.
+		 * Soy un <strong>Desarrollador de Software</strong> enfocado en Svelte y TypeScript apasionado por el Desarrollo Web. Disfruto trabajar en proyectos desafiantes, valoro la colaboración y la resolución de problemas.
 		 */
 		ABOUT: () => LocalizedString
 		/**
-		 * Latest Notes
+		 * Últimas notas
 		 */
 		LATEST_NOTES: () => LocalizedString
 	}

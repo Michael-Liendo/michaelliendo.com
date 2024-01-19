@@ -1,6 +1,6 @@
 // src/routes/sitemap.xml/+server.ts
 
-import { getNotes } from '$lib/utils/Notion/Notes';
+import { Service } from '$lib/services';
 
 export async function GET() {
   const routes = await generateRoutes();
@@ -10,7 +10,9 @@ export async function GET() {
       return `
         <url>
           <loc>${route.url}</loc>
-          <lastmod>${new Date(__BUILD_DATE__).toISOString()}</lastmod>
+          <lastmod>${
+            route.date?.toISOString() ?? new Date(__BUILD_DATE__).toISOString()
+          }</lastmod>
           <priority>${route.priority}</priority>
         </url>
       `;
@@ -18,8 +20,12 @@ export async function GET() {
     .join('\n');
 
   const sitemap = `
-    <?xml version="1.0" encoding="UTF-8" ?>
-    <urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+    <?xml version="1.0" encoding="UTF-8"?>
+    <urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
       ${urlset}
     </urlset>
   `;
@@ -33,28 +39,40 @@ export async function GET() {
 
 async function generateRoutes() {
   const domain = 'https://michaelliendo.com';
-  const notesSlugs = await getNotes('en');
+  const notesSlugsEn = await Service.Notion.Notes.getNotes('en');
+  const notesSlugsEs = await Service.Notion.Notes.getNotes('en');
 
   const paths = [
+    { path: '/', priority: '1.00' },
+    { path: '/notes', priority: '0.90' },
+    { path: '/projects', priority: '0.90' },
+
     { path: '/en', priority: '1.00' },
-    { path: '/es', priority: '1.00' },
     { path: '/en/notes', priority: '0.90' },
-    { path: '/es/notes', priority: '0.90' },
+    { path: '/en/projects', priority: '0.90' },
   ];
 
-  const allRoutes: { url: string; priority: string }[] = [];
+  const allRoutes: { url: string; priority: string; date?: Date }[] = [];
 
   // for each route
   paths.forEach((url) => {
     allRoutes.push({ url: `${domain}${url.path}`, priority: url.priority });
   });
 
-  notesSlugs.forEach(({ slug }) => {
-    allRoutes.push({ url: `${domain}/en/notes/${slug}`, priority: '0.70' });
+  notesSlugsEs.forEach(({ slug, date }) => {
+    allRoutes.push({
+      url: `${domain}/notes/${slug}`,
+      priority: '0.70',
+      date: new Date(date),
+    });
   });
 
-  notesSlugs.forEach(({ slug }) => {
-    allRoutes.push({ url: `${domain}/es/notes/${slug}`, priority: '0.70' });
+  notesSlugsEn.forEach(({ slug, date }) => {
+    allRoutes.push({
+      url: `${domain}/en/notes/${slug}`,
+      priority: '0.70',
+      date: new Date(date),
+    });
   });
 
   return allRoutes;
