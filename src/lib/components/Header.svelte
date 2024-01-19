@@ -86,11 +86,16 @@
     </ul>
     <ul
       class="text-xl flex sm:hidden items-center space-x-6 px-5 py-2 bg-white dark:bg-black border border-black dark:border-white rounded-full"
+      aria-label="Main navigation"
     >
-      <li><a href="{baseLocaleUrl}/"><Home /></a></li>
-      <li><a href="{baseLocaleUrl}/notes"><Notebook /></a></li>
+      <li><a href="{baseLocaleUrl}/" aria-label="Home"><Home /></a></li>
       <li>
-        <a href="{baseLocaleUrl}/projects"><PodiumGold /></a>
+        <a href="{baseLocaleUrl}/notes" aria-label="Notes"><Notebook /></a>
+      </li>
+      <li>
+        <a href="{baseLocaleUrl}/projects" aria-label="Projects"
+          ><PodiumGold /></a
+        >
       </li>
     </ul>
   </nav>
