@@ -60,7 +60,7 @@
 </svelte:head>
 
 <ul
-  class="max-w-5xl m-auto flex flex-col md:grid md:grid-cols-3 md:gap-6 px-4 md:px-0"
+  class="max-w-5xl m-auto mt-10 flex flex-col md:grid md:grid-cols-3 md:gap-6 px-4 md:px-0"
 >
   {#each data.notes as note}
     <Entry

@@ -68,7 +68,7 @@
 </svelte:head>
 
 <ul
-  class="max-w-6xl m-auto flex flex-col md:grid md:grid-cols-3 md:gap-6 px-4 md:px-0"
+  class="max-w-6xl m-auto mt-10 flex flex-col md:grid md:grid-cols-3 md:gap-6 px-4 md:px-0"
 >
   {#each data.projects as project}
     <li class="mb-4 md:mb-0 last-of-type:mb-0">
