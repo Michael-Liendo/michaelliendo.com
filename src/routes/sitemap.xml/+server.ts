@@ -36,10 +36,10 @@ async function generateRoutes() {
   const notesSlugs = await Service.Notion.Notes.getNotes('en');
 
   const paths = [
+    { path: '/', priority: '1.00' },
+    { path: '/notes', priority: '0.90' },
     { path: '/en', priority: '1.00' },
-    { path: '/es', priority: '1.00' },
     { path: '/en/notes', priority: '0.90' },
-    { path: '/es/notes', priority: '0.90' },
   ];
 
   const allRoutes: { url: string; priority: string }[] = [];
@@ -54,7 +54,7 @@ async function generateRoutes() {
   });
 
   notesSlugs.forEach(({ slug }) => {
-    allRoutes.push({ url: `${domain}/es/notes/${slug}`, priority: '0.70' });
+    allRoutes.push({ url: `${domain}/notes/${slug}`, priority: '0.70' });
   });
 
   return allRoutes;
