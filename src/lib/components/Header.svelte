@@ -102,7 +102,7 @@
   <div class="flex sm:space-x-4 items-center">
     <button
       class="mr-2"
-      title="Change website into dark o white mode"
+      title="Change website into dark and white mode"
       on:click={toggleDarkMode}
     >
       {#if useDarkMode}
