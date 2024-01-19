@@ -2,7 +2,7 @@
   import { locale } from '$i18n/i18n-svelte';
   import Entry from '$lib/components/Entry.svelte';
 
-  import type { Note } from '$lib/utils/Notion/Notes/types';
+  import type { Note } from '$lib/services/Notion/Notes/types';
 
   export let data: {
     notes: Note[];

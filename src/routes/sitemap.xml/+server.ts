@@ -1,6 +1,6 @@
 // src/routes/sitemap.xml/+server.ts
 
-import { getNotes } from '$lib/utils/Notion/Notes';
+import { getNotes } from '$lib/services/Notion/Notes';
 
 export async function GET() {
   const routes = await generateRoutes();

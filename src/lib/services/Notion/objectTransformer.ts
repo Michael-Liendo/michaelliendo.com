@@ -1,4 +1,4 @@
-import type { Note, NoteResponse } from './types';
+import type { Note, NoteResponse } from './Notes/types';
 
 export function pageToNoteTransformer(note: NoteResponse): Note {
   return {
@@ -23,5 +23,6 @@ export function pageToProjectTransformer(project: any) {
     description: project.properties.description.rich_text[0].plain_text,
     repository: project.properties.repository.url,
     preview: project.properties.preview.url,
+    date: project.properties.created.date.start,
   };
 }
