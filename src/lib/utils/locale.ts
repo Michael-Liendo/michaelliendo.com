@@ -4,17 +4,31 @@
 // e.g. https://mywebsite.com/en/blog/article-1 => https://mywebsite.com/de/blog/article-1
 //
 // Otherwise (default) the URL relative to the base is returned.
+
+import { locales } from '$i18n/i18n-util';
+
 // e.g. https://mywebsite.com/en/blog/article-1 => /de/blog/article-1
 export const replaceLocaleInUrl = (
   url: URL,
-  locale?: string, // Ahora es opcional
+  locale: string, // Ahora es opcional
   full = false,
 ): string => {
   const [, ...rest] = url.pathname.split('/');
 
-  const new_pathname = locale
-    ? `/${[locale, ...rest].join('/')}`
-    : `/${rest.join('/')}`;
+  let new_pathname;
+  if (locale === 'es') {
+    if ((locales as string[]).includes(rest[0])) {
+      new_pathname = `/${rest.slice(1).join('/')}`;
+    } else {
+      new_pathname = `/${rest.join('/')}`;
+    }
+  } else {
+    if (rest[0] === locale) {
+      new_pathname = `/${rest.join('/')}`;
+    } else {
+      new_pathname = `/${locale}/${rest.join('/')}`;
+    }
+  }
 
   if (!full) {
     return `${new_pathname}${url.search}`;

@@ -57,7 +57,10 @@
       return;
     }
 
+    const next = replaceLocaleInUrl($page.url, locale);
+
     setLocale(locale);
+    window.location.href = next;
   }
 </script>
 
@@ -118,24 +121,20 @@
               class="absolute right-0 flex flex-col space-y-2 p-2 shadow-xl border-1 border-gray-400 dark:border-gray-900 bg-white dark:bg-slate-800 rounded-lg"
             >
               <li class="lang-opt">
-                <a
-                  href={replaceLocaleInUrl($page.url, 'en')}
-                  hreflang="en"
+                <button
                   class:lang-active={$locale === 'en'}
                   on:click={() => changeLanguage('en')}
                 >
                   🇺🇸&nbsp;English
-                </a>
+                </button>
               </li>
               <li>
-                <a
-                  href={`${replaceLocaleInUrl($page.url)}`}
-                  hreflang="es"
+                <button
                   class:lang-active={$locale === 'es'}
                   on:click={() => changeLanguage('es')}
                 >
                   🇪🇸&nbsp;Español
-                </a>
+                </button>
               </li>
             </ul>
           </div>
