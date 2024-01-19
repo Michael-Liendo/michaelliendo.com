@@ -26,15 +26,17 @@
 
 <li class="mb-4 md:mb-0 last-of-type:mb-0">
   <a href="{baseLocaleUrl}/notes/{slug}">
-    <figure
-      class="rounded overflow-hidden pb-4 flex justify-center items-center h-[150px]"
-    >
-      <img alt={title} src={previewImageUrl} width="350" height="100" />
+    <figure class="rounded-md mb-10 h-[200px]">
+      <img
+        alt={title}
+        class="rounded-md"
+        src={previewImageUrl}
+        width="350"
+        height="100"
+      />
     </figure>
     <header>
-      <h1
-        class="text-xl py-4 font-extrabold cursor-pointer hover:text-link hover:underline"
-      >
+      <h1 class="text-xl font-extrabold hover:text-link hover:underline">
         {title}
       </h1>
     </header>
