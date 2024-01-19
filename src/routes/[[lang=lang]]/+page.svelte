@@ -112,8 +112,8 @@
   ></div>
 </section>
 
-<section class="">
-  <h2 class="text-2xl sm:text-4xl font-bold my-7">
+<section>
+  <h2 class="text-3xl sm:text-4xl font-bold my-7">
     {$LL.HOMEPAGE.LATEST_NOTES()}
   </h2>
 
