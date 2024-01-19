@@ -59,17 +59,17 @@ async function generateRoutes() {
     allRoutes.push({ url: `${domain}${url.path}`, priority: url.priority });
   });
 
-  notesSlugsEn.forEach(({ slug, date }) => {
+  notesSlugsEs.forEach(({ slug, date }) => {
     allRoutes.push({
-      url: `${domain}/en/notes/${slug}`,
+      url: `${domain}/notes/${slug}`,
       priority: '0.70',
       date: new Date(date),
     });
   });
 
-  notesSlugsEs.forEach(({ slug, date }) => {
+  notesSlugsEn.forEach(({ slug, date }) => {
     allRoutes.push({
-      url: `${domain}/notes/${slug}`,
+      url: `${domain}/en/notes/${slug}`,
       priority: '0.70',
       date: new Date(date),
     });
