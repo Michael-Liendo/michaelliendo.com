@@ -1,6 +1,6 @@
 // src/routes/sitemap.xml/+server.ts
 
-import { getNotes } from '$lib/services/Notion/Notes';
+import { Service } from '$lib/services';
 
 export async function GET() {
   const routes = await generateRoutes();
@@ -33,7 +33,7 @@ export async function GET() {
 
 async function generateRoutes() {
   const domain = 'https://michaelliendo.com';
-  const notesSlugs = await getNotes('en');
+  const notesSlugs = await Service.Notion.Notes.getNotes('en');
 
   const paths = [
     { path: '/en', priority: '1.00' },
