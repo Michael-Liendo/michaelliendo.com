@@ -9,6 +9,12 @@ export class Projects {
 
     const response = await client.databases.query({
       database_id: database,
+      sorts: [
+        {
+          property: 'created',
+          direction: 'descending',
+        },
+      ],
     });
 
     return Promise.all(

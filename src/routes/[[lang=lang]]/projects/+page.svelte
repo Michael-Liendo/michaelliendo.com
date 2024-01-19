@@ -75,17 +75,17 @@
       <figure
         class="rounded overflow-hidden pb-4 flex justify-center items-center h-[250px]"
       >
-        <img alt={title} src={project.cover} width="450" height="100" />
+        <img alt={project.title} src={project.cover} width="450" height="100" />
       </figure>
       <header>
         <h1
           class="text-xl mt-2 font-extrabold cursor-pointer hover:text-link hover:underline"
         >
-          {title}
+          {project.title}
         </h1>
       </header>
       <main class="pb-2">
-        <p>{description}</p>
+        <p>{project.description}</p>
       </main>
       <footer class="flex flex-col">
         <div class="flex mb-2">
