@@ -1,7 +1,7 @@
 import { initAcceptLanguageHeaderDetector } from 'typesafe-i18n/detectors';
 
 import { loadAllLocales } from '$i18n/i18n-util.sync';
-import { detectLocale, i18n, isLocale } from '$i18n/i18n-util';
+import { baseLocale, detectLocale, i18n, isLocale } from '$i18n/i18n-util';
 
 import type { Handle, RequestEvent } from '@sveltejs/kit';
 import type { Locales } from '$i18n/i18n-types';
@@ -14,7 +14,7 @@ export const handle: Handle = async ({ event, resolve }) => {
   const [, lang] = event.url.pathname.split('/');
 
   // if slug is not a locale, use base locale (e.g. api endpoints)
-  const locale = isLocale(lang) ? (lang as Locales) : 'es';
+  const locale = isLocale(lang) ? (lang as Locales) : baseLocale;
   const LL = L[locale];
 
   // bind locale and translation functions to current request

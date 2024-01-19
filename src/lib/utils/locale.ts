@@ -5,7 +5,7 @@
 //
 // Otherwise (default) the URL relative to the base is returned.
 
-import { locales } from '$i18n/i18n-util';
+import { baseLocale, locales } from '$i18n/i18n-util';
 
 // e.g. https://mywebsite.com/en/blog/article-1 => /de/blog/article-1
 export const replaceLocaleInUrl = (
@@ -16,7 +16,7 @@ export const replaceLocaleInUrl = (
   const [, ...rest] = url.pathname.split('/');
 
   let new_pathname;
-  if (locale === 'es') {
+  if (locale === baseLocale) {
     if ((locales as string[]).includes(rest[0])) {
       new_pathname = `/${rest.slice(1).join('/')}`;
     } else {

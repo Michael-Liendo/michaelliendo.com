@@ -2,6 +2,7 @@
   import { page } from '$app/stores';
   import { locale } from '$i18n/i18n-svelte';
   import Calendar from '~icons/mdi/calendar-month';
+  import { baseLocale } from '$i18n/i18n-util';
 
   import type { MultiSelectEntity } from '$lib/services/Notion/Notes/notes';
 
@@ -12,7 +13,7 @@
   export let slug = '';
   export let previewImageUrl: string | null = '';
 
-  const baseLocaleUrl = $locale === 'es' ? '' : `/${$locale}`;
+  const baseLocaleUrl = $locale === baseLocale ? '' : `/${$locale}`;
 
   let formattedDate = new Date(publishDate).toLocaleDateString(
     `${$page.data.locale}-us`,

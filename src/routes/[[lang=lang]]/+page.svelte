@@ -4,12 +4,13 @@
   import SocialMedia from '$lib/components/SocialMedia.svelte';
 
   import type { Note } from '$lib/services/Notion/Notes/notes';
+  import { baseLocale } from '$i18n/i18n-util';
 
   export let data: {
     notes: Note[];
   };
 
-  const baseLocaleUrl = $locale === 'es' ? '' : `/${$locale}`;
+  const baseLocaleUrl = $locale === baseLocale ? '' : `/${$locale}`;
 
   let title = 'Michael Liendo | Software Developer';
   let description =

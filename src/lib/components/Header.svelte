@@ -12,8 +12,9 @@
   import { replaceLocaleInUrl } from '$lib/utils/locale';
 
   import type { Locales } from '$i18n/i18n-types';
+  import { baseLocale } from '$i18n/i18n-util';
 
-  const baseLocaleUrl = $locale === 'es' ? '' : `/${$locale}`;
+  const baseLocaleUrl = $locale === baseLocale ? '' : `/${$locale}`;
 
   let useDarkMode = false;
   let isLangMenuOpen = false;
