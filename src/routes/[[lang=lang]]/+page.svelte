@@ -96,6 +96,7 @@
     <figure itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
       <img
         src={avatarUrl}
+        loading="lazy"
         alt="Michael Liendo Avatar"
         width="384"
         height="384"
@@ -104,7 +105,6 @@
       />
     </figure>
   </div>
-  <!--  -->
   <div
     class="gradient absolute bottom-40 left-0 w-1/5 h-1/3 -z-20 bg-[rgba(102,199,216,0.47)] dark:bg-[rgba(65,153,211,0.3)] -rotate-12"
   ></div>
