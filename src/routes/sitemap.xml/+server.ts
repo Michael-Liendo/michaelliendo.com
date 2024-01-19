@@ -38,8 +38,11 @@ async function generateRoutes() {
   const paths = [
     { path: '/', priority: '1.00' },
     { path: '/notes', priority: '0.90' },
+    { path: '/projects', priority: '0.90' },
+
     { path: '/en', priority: '1.00' },
     { path: '/en/notes', priority: '0.90' },
+    { path: '/en/projects', priority: '0.90' },
   ];
 
   const allRoutes: { url: string; priority: string }[] = [];
