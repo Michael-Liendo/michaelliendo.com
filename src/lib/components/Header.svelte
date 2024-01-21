@@ -66,8 +66,12 @@
 </script>
 
 <header class="px-5 sm:px-10 md:px-20 py-4 flex justify-between items-center">
-  <h1 class="text-xl hidden sm:block">Michael Liendo</h1>
-  <h1 class="text-xl block sm:hidden">Michael L</h1>
+  <h1 class="text-xl hidden sm:block text-sky-900 dark:text-sky-500">
+    Michael Liendo
+  </h1>
+  <h1 class="text-xl block sm:hidden text-sky-900 dark:text-sky-500">
+    Michael L
+  </h1>
 
   <!-- only desktop -->
   <nav class="flex">
