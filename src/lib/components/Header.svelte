@@ -72,7 +72,7 @@
   <!-- only desktop -->
   <nav class="flex">
     <ul
-      class="hidden sm:flex text-xl items-center sm:space-x-10 md:space-x-16 px-10 py-2 bg-white dark:bg-black border border-black dark:border-white rounded-full"
+      class="hidden sm:flex text-xl items-center sm:space-x-10 md:space-x-16 px-10 py-2 bg-[#f5f5f5] dark:bg-slate-900 border border-black dark:border-white rounded-full"
     >
       <li>
         <a href="{baseLocaleUrl}/">{$LL.LAYOUT.NAV.HOME()}</a>
@@ -85,7 +85,7 @@
       </li>
     </ul>
     <ul
-      class="text-xl flex sm:hidden items-center space-x-6 px-5 py-2 bg-white dark:bg-black border border-black dark:border-white rounded-full"
+      class="text-xl flex sm:hidden items-center space-x-6 px-5 py-2 bg-[#f5f5f5] dark:bg-slate-900 border border-black dark:border-white rounded-full"
       aria-label="Main navigation"
     >
       <li><a href="{baseLocaleUrl}/" aria-label="Home"><Home /></a></li>
