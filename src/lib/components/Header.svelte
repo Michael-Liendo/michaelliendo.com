@@ -99,9 +99,11 @@
       </li>
     </ul>
   </nav>
-  <div class="flex sm:space-x-4 items-center">
+  <div
+    class="flex sm:space-x-4 items-center text-[#313131] dark:text-[#dddddd]"
+  >
     <button
-      class="mr-2 p-4 rounded-full"
+      class="mr-2 p-1.5 rounded-full"
       title="Change website into dark or white mode"
       on:click={toggleDarkMode}
     >
@@ -111,16 +113,16 @@
         <Moon />
       {/if}
     </button>
-    <div class="flex justify-center items-center space-x-6">
-      <figure class="h-8 w-8">
-        <button
-          class="h-8 w-8 rounded-full"
-          on:click={toggleLanguageMenu}
-          aria-label="Toggle language menu"
-          title="Toggle language menu"
-        >
-          <Translate class="h-6 w-6" />
-        </button>
+    <button
+      class="p-1.5 rounded-full"
+      on:click={toggleLanguageMenu}
+      aria-label="Toggle language menu"
+      title="Toggle language menu"
+    >
+      <Translate class="h-5 w-5" />
+    </button>
+    <div class="flex justify-center items-center">
+      <figure>
         {#if isLangMenuOpen}
           <div class="relative z-20">
             <ul
@@ -128,6 +130,7 @@
             >
               <li class="lang-opt">
                 <button
+                  aria-label="Change language to English"
                   class:lang-active={$locale === 'en'}
                   on:click={() => changeLanguage('en')}
                 >
@@ -136,6 +139,7 @@
               </li>
               <li>
                 <button
+                  aria-label="Cambiar language a Spanish"
                   class:lang-active={$locale === 'es'}
                   on:click={() => changeLanguage('es')}
                 >
