@@ -66,13 +66,17 @@
 </script>
 
 <header class="px-5 sm:px-10 md:px-20 py-4 flex justify-between items-center">
-  <h1 class="text-xl hidden sm:block">Michael Liendo</h1>
-  <h1 class="text-xl block sm:hidden">Michael L</h1>
+  <h1 class="text-xl hidden sm:block text-sky-900 dark:text-sky-500">
+    Michael Liendo
+  </h1>
+  <h1 class="text-xl block sm:hidden text-sky-900 dark:text-sky-500">
+    Michael L
+  </h1>
 
   <!-- only desktop -->
   <nav class="flex">
     <ul
-      class="hidden sm:flex text-xl items-center sm:space-x-10 md:space-x-16 px-10 py-2 bg-white dark:bg-black border border-black dark:border-white rounded-full"
+      class="hidden sm:flex text-xl items-center sm:space-x-10 md:space-x-16 px-10 py-2 bg-[#f5f5f5] dark:bg-slate-900 border border-black dark:border-white rounded-full"
     >
       <li>
         <a href="{baseLocaleUrl}/">{$LL.LAYOUT.NAV.HOME()}</a>
@@ -85,7 +89,7 @@
       </li>
     </ul>
     <ul
-      class="text-xl flex sm:hidden items-center space-x-6 px-5 py-2 bg-white dark:bg-black border border-black dark:border-white rounded-full"
+      class="text-xl flex sm:hidden items-center space-x-6 px-5 py-2 bg-[#f5f5f5] dark:bg-slate-900 border border-black dark:border-white rounded-full"
       aria-label="Main navigation"
     >
       <li><a href="{baseLocaleUrl}/" aria-label="Home"><Home /></a></li>
@@ -99,9 +103,11 @@
       </li>
     </ul>
   </nav>
-  <div class="flex sm:space-x-4 items-center">
+  <div
+    class="flex sm:space-x-4 items-center text-[#313131] dark:text-[#dddddd]"
+  >
     <button
-      class="mr-2 p-4 rounded-full"
+      class="mr-2 p-1.5 rounded-full"
       title="Change website into dark or white mode"
       on:click={toggleDarkMode}
     >
@@ -111,16 +117,16 @@
         <Moon />
       {/if}
     </button>
-    <div class="flex justify-center items-center space-x-6">
-      <figure class="h-8 w-8">
-        <button
-          class="h-8 w-8 rounded-full"
-          on:click={toggleLanguageMenu}
-          aria-label="Toggle language menu"
-          title="Toggle language menu"
-        >
-          <Translate class="h-6 w-6" />
-        </button>
+    <button
+      class="p-1.5 rounded-full"
+      on:click={toggleLanguageMenu}
+      aria-label="Toggle language menu"
+      title="Toggle language menu"
+    >
+      <Translate class="h-5 w-5" />
+    </button>
+    <div class="flex justify-center items-center">
+      <figure>
         {#if isLangMenuOpen}
           <div class="relative z-20">
             <ul
@@ -128,6 +134,7 @@
             >
               <li class="lang-opt">
                 <button
+                  aria-label="Change language to English"
                   class:lang-active={$locale === 'en'}
                   on:click={() => changeLanguage('en')}
                 >
@@ -136,6 +143,7 @@
               </li>
               <li>
                 <button
+                  aria-label="Cambiar language a Spanish"
                   class:lang-active={$locale === 'es'}
                   on:click={() => changeLanguage('es')}
                 >
