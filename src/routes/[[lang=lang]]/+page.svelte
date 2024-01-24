@@ -2,9 +2,9 @@
   import Calendar from '~icons/mdi/calendar-month';
   import LL, { locale } from '$i18n/i18n-svelte';
   import SocialMedia from '$lib/components/SocialMedia.svelte';
+  import { baseLocale, locales } from '$i18n/i18n-util';
 
   import type { Note } from '$lib/services/Notion/Notes/notes';
-  import { baseLocale } from '$i18n/i18n-util';
 
   export let data: {
     notes: Note[];
@@ -61,6 +61,22 @@
   <meta name="twitter:description" content={description} />
   <meta name="twitter:creator" content="@MichaelMLiendo" />
   <meta name="twitter:image:src" content={avatarUrl} />
+
+  {#each locales as locale}
+    {#if locale !== baseLocale}
+      <link
+        rel="alternate"
+        hreflang={locale}
+        href={`https://michaelliendo.com/${locale}`}
+      />
+    {:else}
+      <link
+        rel="alternate"
+        hreflang={baseLocale}
+        href="https://michaelliendo.com/"
+      />
+    {/if}
+  {/each}
 </svelte:head>
 <section
   id="about"
