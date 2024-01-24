@@ -8,10 +8,7 @@
 <svelte:head>
   <meta name="theme-color" content="#3bd6cf" />
 
-  <link
-    rel="canonical"
-    href={`https://michaelliendo.com/${$page.data.locale}`}
-  />
+  <link rel="canonical" href={`https://michaelliendo.com/`} />
 
   <meta name="author" content="Michael Liendo" />
   <meta name="publisher" content="Michael Liendo" />

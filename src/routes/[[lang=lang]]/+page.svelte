@@ -2,15 +2,16 @@
   import Calendar from '~icons/mdi/calendar-month';
   import LL, { locale } from '$i18n/i18n-svelte';
   import SocialMedia from '$lib/components/SocialMedia.svelte';
+  import { baseLocale, locales } from '$i18n/i18n-util';
 
   import type { Note } from '$lib/services/Notion/Notes/notes';
-  import { baseLocale } from '$i18n/i18n-util';
 
   export let data: {
     notes: Note[];
   };
 
   const baseLocaleUrl = $locale === baseLocale ? '' : `/${$locale}`;
+  const currentPageLocale = $locale;
 
   let title = 'Michael Liendo | Software Developer';
   let description =
@@ -61,6 +62,22 @@
   <meta name="twitter:description" content={description} />
   <meta name="twitter:creator" content="@MichaelMLiendo" />
   <meta name="twitter:image:src" content={avatarUrl} />
+
+  {#each locales as locale}
+    {#if locale !== baseLocale && currentPageLocale !== locale}
+      <link
+        rel="alternate"
+        hreflang={locale}
+        href={`https://michaelliendo.com/${locale}`}
+      />
+    {:else if locale === baseLocale && currentPageLocale !== locale}
+      <link
+        rel="alternate"
+        hreflang={locale}
+        href={`https://michaelliendo.com/`}
+      />
+    {/if}
+  {/each}
 </svelte:head>
 <section
   id="about"
@@ -122,6 +139,7 @@
     {#each data.notes as note, index}
       {#if index === 0}
         <a
+          title="Read more about {note.title}"
           href={`${baseLocaleUrl}/notes/${note.slug}`}
           class="rounded-2xl flex flex-col justify-between w-full h-full bg-[#f5f5f5] dark:bg-slate-900 xl:col-span-2 xl:row-span-2"
           itemprop="blogPost"
@@ -182,6 +200,7 @@
       {/if}
       {#if index === 1 || index === 4}
         <a
+          title="Read more about {note.title}"
           href={`${baseLocaleUrl}/notes/${note.slug}`}
           class="rounded-2xl flex flex-col justify-between w-full h-full px-5 py-4 bg-[#f5f5f5] dark:bg-slate-900 xl:col-span-2"
           itemprop="blogPost"
@@ -228,6 +247,7 @@
       {/if}
       {#if index === 2 || index === 3}
         <a
+          title="Read more about {note.title}"
           href={`${baseLocaleUrl}/notes/${note.slug}`}
           class="block md:flex rounded-2xl w-full h-full bg-[#f5f5f5] dark:bg-slate-900 xl:col-span-4"
           itemprop="blogPost"
