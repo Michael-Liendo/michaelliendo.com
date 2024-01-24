@@ -11,6 +11,7 @@
   };
 
   const baseLocaleUrl = $locale === baseLocale ? '' : `/${$locale}`;
+  const currentPageLocale = $locale;
 
   let title = 'Michael Liendo | Software Developer';
   let description =
@@ -63,17 +64,17 @@
   <meta name="twitter:image:src" content={avatarUrl} />
 
   {#each locales as locale}
-    {#if locale !== baseLocale}
+    {#if locale !== baseLocale && currentPageLocale !== locale}
       <link
         rel="alternate"
         hreflang={locale}
         href={`https://michaelliendo.com/${locale}`}
       />
-    {:else}
+    {:else if locale === baseLocale && currentPageLocale !== locale}
       <link
         rel="alternate"
-        hreflang={baseLocale}
-        href="https://michaelliendo.com/"
+        hreflang={locale}
+        href={`https://michaelliendo.com/`}
       />
     {/if}
   {/each}
