@@ -79,26 +79,42 @@
       class="hidden sm:flex text-xl items-center sm:space-x-10 md:space-x-16 px-10 py-2 bg-[#f5f5f5] dark:bg-slate-900 border border-black dark:border-white rounded-full"
     >
       <li>
-        <a href="{baseLocaleUrl}/">{$LL.LAYOUT.NAV.HOME()}</a>
+        <a title="Go to the main page" href="{baseLocaleUrl}/"
+          >{$LL.LAYOUT.NAV.HOME()}</a
+        >
       </li>
       <li>
-        <a href="{baseLocaleUrl}/notes">{$LL.LAYOUT.NAV.NOTES()}</a>
+        <a title="Read about Michael's notes" href="{baseLocaleUrl}/notes"
+          >{$LL.LAYOUT.NAV.NOTES()}</a
+        >
       </li>
       <li>
-        <a href="{baseLocaleUrl}/projects">{$LL.LAYOUT.NAV.PROJECTS()}</a>
+        <a title="View Michael's Projects" href="{baseLocaleUrl}/projects"
+          >{$LL.LAYOUT.NAV.PROJECTS()}</a
+        >
       </li>
     </ul>
     <ul
       class="text-xl flex sm:hidden items-center space-x-6 px-5 py-2 bg-[#f5f5f5] dark:bg-slate-900 border border-black dark:border-white rounded-full"
       aria-label="Main navigation"
     >
-      <li><a href="{baseLocaleUrl}/" aria-label="Home"><Home /></a></li>
       <li>
-        <a href="{baseLocaleUrl}/notes" aria-label="Notes"><Notebook /></a>
+        <a title="Go to the main page" href="{baseLocaleUrl}/" aria-label="Home"
+          ><Home /></a
+        >
       </li>
       <li>
-        <a href="{baseLocaleUrl}/projects" aria-label="Projects"
-          ><PodiumGold /></a
+        <a
+          title="Read about Michael's notes"
+          href="{baseLocaleUrl}/notes"
+          aria-label="Notes"><Notebook /></a
+        >
+      </li>
+      <li>
+        <a
+          title="View Michael's Projects"
+          href="{baseLocaleUrl}/projects"
+          aria-label="Projects"><PodiumGold /></a
         >
       </li>
     </ul>

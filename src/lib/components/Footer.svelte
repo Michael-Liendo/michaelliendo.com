@@ -13,6 +13,7 @@
   <div class="flex justify-center">
     <small
       ><a
+        title="Source code"
         class="underline"
         href="https://github.com/Michael-Liendo/michaelliendo.com"
         >Source code</a
