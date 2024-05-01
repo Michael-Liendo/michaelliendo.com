@@ -32,7 +32,7 @@
       title="Twitter"
       target="_blank"
       rel="noreferrer"
-      href="https://twitter.com/MichaelMLiendo"
+      href="https://twitter.com/mykeliendo"
       aria-label="Twitter"
     >
       <TwitterIcon class="w-7 h-7 text-[#1DA1F2]" />
