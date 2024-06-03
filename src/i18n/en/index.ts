@@ -13,7 +13,7 @@ const en = {
   },
   HOMEPAGE: {
     HI: `Hi I'm {name:string} {surname:string},`,
-    ABOUT: `I'm a <strong>Software Developer</strong> focused on Svelte and TypeScript with a passion for Mobile Development and Websites. I enjoy working on challenging projects, value collaboration and problem-solving.`,
+    ABOUT: `I'm a <strong>Software Developer</strong> focused on Svelte and TypeScript with a passion for <strong>Mobile Development and Websites</strong>. I enjoy working on challenging projects, value collaboration and problem-solving.`,
     LATEST_NOTES: 'Latest Notes',
   },
 } satisfies BaseTranslation;

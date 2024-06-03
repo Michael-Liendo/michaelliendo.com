@@ -126,7 +126,7 @@
     class="gradient absolute bottom-40 left-0 w-1/5 h-1/3 -z-20 bg-[rgba(102,199,216,0.47)] dark:bg-[rgba(65,153,211,0.3)] -rotate-12"
   ></div>
   <div
-    class="gradient absolute bottom-20 left-64 w-1/5 h-1/3 -z-20 bg-[rgba(116,233,100,0.3)] dark:bg-[rgba(65,211,121,0.3)] -rotate-12"
+    class="gradient absolute bottom-20 left-64 w-1/5 h-1/3 -z-20 bg-[rgba(100,202,233,0.3)] dark:bg-[rgba(48,96,136,0.3)] -rotate-12"
   ></div>
 </section>
 
