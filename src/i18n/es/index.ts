@@ -14,7 +14,7 @@ const es = {
   HOMEPAGE: {
     HI: 'Hola soy {name:string} {surname:string},',
     ABOUT:
-      'Soy un <strong>Desarrollador de Software</strong> enfocado en Svelte y TypeScript apasionado por el Desarrollo Web. Disfruto trabajar en proyectos desafiantes, valoro la colaboración y la resolución de problemas.',
+      'Soy un <strong>Desarrollador de Software</strong> enfocado en Svelte y TypeScript apasionado por el Desarrollo de Aplicaciones Móviles y Páginas Web. Disfruto trabajar en proyectos desafiantes, valoro la colaboración y la resolución de problemas.',
     LATEST_NOTES: 'Últimas notas',
   },
 } satisfies BaseTranslation;
