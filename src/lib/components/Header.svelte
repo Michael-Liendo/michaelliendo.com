@@ -72,7 +72,7 @@
   <!-- only desktop -->
   <nav class="flex">
     <ul
-      class="hidden sm:flex text-xl items-center sm:space-x-10 md:space-x-16 px-10 py-2 bg-[#f5f5f5] dark:bg-slate-900 border border-black dark:border-white rounded-full"
+      class="hidden sm:flex text-xl items-center sm:space-x-10 md:space-x-16 px-10 py-2 bg-[#f5f5f5] dark:bg-[#161616] border border-black dark:border-[#232323] rounded-full"
     >
       <li>
         <a title="Go to the main page" href="{baseLocaleUrl}/"
