@@ -1,44 +1,44 @@
 {
-	"name": "michaelliendo.com",
-	"version": "5.0.3",
-	"private": true,
-	"scripts": {
-		"dev": "vite dev",
-		"build": "vite build",
-		"preview": "vite preview",
-		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
-		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-		"lint": "biome format ./src && biome check ./src",
-		"format": "biome format --write ./src && biome check --apply ./src",
-		"format:unsafe": "biome format --write ./src && biome check --apply-unsafe ./src",
-		"i18n": "typesafe-i18n --no-watch",
-		"i18n:watch": "typesafe-i18n"
-	},
-	"devDependencies": {
-		"@biomejs/biome": "1.1.2",
-		"@iconify-json/mdi": "^1.1.52",
-		"@notionhq/client": "^2.2.6",
-		"@sveltejs/adapter-auto": "^2.0.0",
-		"@sveltejs/kit": "^1.20.4",
-		"@tailwindcss/typography": "^0.5.9",
-		"autoprefixer": "^10.4.14",
-		"classnames": "^2.3.2",
-		"notion-to-md": "^3.1.0",
-		"postcss": "^8.4.24",
-		"svelte": "^4.0.0",
-		"svelte-check": "^3.4.3",
-		"svelte-markdown": "^0.3.0",
-		"tailwindcss": "^3.3.2",
-		"tslib": "^2.4.1",
-		"typesafe-i18n": "^5.24.3",
-		"typescript": "^5.0.0",
-		"unplugin-icons": "^0.16.3",
-		"vite": "^4.3.6"
-	},
-	"type": "module",
-	"dependencies": {
-		"@sveltejs/adapter-vercel": "^5.4.3",
-		"@sveltejs/enhanced-img": "^0.3.4",
-		"highlight.js": "^11.8.0"
-	}
+  "name": "michaelliendo.com",
+  "version": "5.0.3",
+  "private": true,
+  "scripts": {
+    "dev": "vite dev",
+    "build": "vite build",
+    "preview": "vite preview",
+    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+    "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+    "lint": "biome format ./src && biome check ./src",
+    "format": "biome format --write ./src && biome check --apply ./src",
+    "format:unsafe": "biome format --write ./src && biome check --apply-unsafe ./src",
+    "i18n": "typesafe-i18n --no-watch",
+    "i18n:watch": "typesafe-i18n"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.1.2",
+    "@iconify-json/mdi": "^1.1.52",
+    "@notionhq/client": "^2.2.6",
+    "@sveltejs/adapter-auto": "^2.0.0",
+    "@sveltejs/kit": "^2.5.20",
+    "@tailwindcss/typography": "^0.5.9",
+    "autoprefixer": "^10.4.14",
+    "classnames": "^2.3.2",
+    "notion-to-md": "^3.1.0",
+    "postcss": "^8.4.24",
+    "svelte": "^4.0.0",
+    "svelte-check": "^3.4.3",
+    "svelte-markdown": "^0.3.0",
+    "tailwindcss": "^3.3.2",
+    "tslib": "^2.4.1",
+    "typesafe-i18n": "^5.24.3",
+    "typescript": "^5.0.0",
+    "unplugin-icons": "^0.16.3",
+    "vite": "^4.3.6"
+  },
+  "type": "module",
+  "dependencies": {
+    "@sveltejs/adapter-vercel": "^5.4.3",
+    "@sveltejs/enhanced-img": "^0.3.4",
+    "highlight.js": "^11.8.0"
+  }
 }
