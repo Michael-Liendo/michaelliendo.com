@@ -28,7 +28,7 @@
 <li class="mb-4 md:mb-0 last-of-type:mb-0">
   <a href="{baseLocaleUrl}/notes/{slug}">
     <figure class="rounded-md mb-4">
-      <enhanced:img
+      <img
         alt={title}
         class="rounded-md object-cover h-[220px]"
         src={previewImageUrl}

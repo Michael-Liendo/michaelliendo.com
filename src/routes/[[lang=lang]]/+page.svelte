@@ -111,7 +111,7 @@
   </div>
   <div class="w-full md:flex justify-end">
     <figure itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
-      <enhanced:img
+      <img
         src={avatarUrl}
         loading="lazy"
         alt="Michael Liendo Avatar"
