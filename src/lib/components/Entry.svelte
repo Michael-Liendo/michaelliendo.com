@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { enhancedImages } from '@sveltejs/enhanced-img';
   import { page } from '$app/stores';
   import { locale } from '$i18n/i18n-svelte';
   import Calendar from '~icons/mdi/calendar-month';
