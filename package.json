@@ -37,6 +37,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@sveltejs/enhanced-img": "^0.3.4",
 		"highlight.js": "^11.8.0"
 	}
 }

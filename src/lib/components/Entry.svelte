@@ -33,8 +33,6 @@
         alt={title}
         class="rounded-md object-cover h-[220px]"
         src={previewImageUrl}
-        width="350"
-        height="100"
       />
     </figure>
     <header>
