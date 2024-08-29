@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { enhancedImages } from '@sveltejs/enhanced-img';
   import { page } from '$app/stores';
   import { locale } from '$i18n/i18n-svelte';
   import Calendar from '~icons/mdi/calendar-month';
@@ -28,7 +29,7 @@
 <li class="mb-4 md:mb-0 last-of-type:mb-0">
   <a href="{baseLocaleUrl}/notes/{slug}">
     <figure class="rounded-md mb-4">
-      <img
+      <enhanced:img
         alt={title}
         class="rounded-md object-cover h-[220px]"
         src={previewImageUrl}
