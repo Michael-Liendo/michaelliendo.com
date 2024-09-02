@@ -48,13 +48,19 @@
 <div
   class="max-w-5xl m-auto my-2 prose dark:prose-p:text-white prose-strong:text-green-500 dark:prose-headings:text-white prose-green prose-code:text-white dark:prose-li:text-slate-100 prose-li:text-slate-900 prose-code:!bg-dark-background prose-pre:bg-dark-background"
 >
-  <figure class="flex justify-center items-center overflow-hidden rounded">
-    <img
-      src={data.note.cover}
-      alt={data.note.title}
-      class="h-96 w-full object-cover"
-    />
-  </figure>
+  {#if data.note.cover}
+    <figure class="flex justify-center items-center overflow-hidden rounded">
+      <img
+        src={data.note.cover}
+        alt={data.note.title}
+        class="h-96 w-full object-cover"
+      />
+    </figure>
+  {:else}
+    <h1 class="mt-20 text-4xl font-bold text-white">
+      {data.note.title}
+    </h1>
+  {/if}
   <header class="">
     <div class="flex mb-2">
       <span class="flex items-center mr-2">
