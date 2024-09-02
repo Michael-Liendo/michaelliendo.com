@@ -57,7 +57,7 @@
       />
     </figure>
   {:else}
-    <h1 class="mt-20 text-4xl font-bold text-white">
+    <h1 class="mt-20 text-4xl font-bold">
       {data.note.title}
     </h1>
   {/if}
