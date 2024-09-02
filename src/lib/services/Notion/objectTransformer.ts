@@ -22,6 +22,6 @@ export function pageToProjectTransformer(project: ProjectResponse) {
     description: project.properties.description.rich_text.at(0).plain_text,
     repository: project.properties.repository.url,
     cover: project.cover?.external?.url || project.cover?.file?.url || null,
-    date: project.properties.created.date.start,
+    date: project.properties.created.date?.start,
   };
 }

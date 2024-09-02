@@ -28,11 +28,13 @@
 <li class="mb-4 md:mb-0 last-of-type:mb-0">
   <a href="{baseLocaleUrl}/notes/{slug}">
     <figure class="rounded-md mb-4">
-      <img
-        alt={title}
-        class="rounded-md object-cover h-[220px]"
-        src={previewImageUrl}
-      />
+      {#if previewImageUrl}
+        <img
+          alt={title}
+          class="rounded-md object-cover h-[220px]"
+          src={previewImageUrl}
+        />
+      {/if}
     </figure>
     <header>
       <h1 class="text-xl font-extrabold hover:text-link hover:underline">
@@ -40,7 +42,7 @@
       </h1>
     </header>
     <main class="pb-4">
-      <p>{description}</p>
+      <p>{description || ''}</p>
     </main>
     <footer class="flex flex-col">
       <div class="flex mb-2">

@@ -145,16 +145,18 @@
           itemtype="http://schema.org/BlogPosting"
         >
           <figure>
-            <img
-              src={note.cover}
-              class="rounded-t-2xl"
-              alt={note.title}
-              title={note.title}
-              loading="lazy"
-              height="200px"
-              width="100%"
-              itemprop="image"
-            />
+            {#if note.cover}
+              <img
+                src={note.cover}
+                class="rounded-t-2xl"
+                alt={note.title}
+                title={note.title}
+                loading="lazy"
+                height="200px"
+                width="100%"
+                itemprop="image"
+              />
+            {/if}
             <figcaption class="px-5">
               <h3
                 class="mt-4 text-2xl font-bold text-balance"
@@ -162,8 +164,11 @@
               >
                 {note.title}
               </h3>
-              <p class="text-lg h-48 text-truncate mt-2" itemprop="description">
-                {note.description}
+              <p
+                class="text-lg max-h-48 text-truncate mt-2"
+                itemprop="description"
+              >
+                {note.description || ''}
               </p>
             </figcaption>
           </figure>
