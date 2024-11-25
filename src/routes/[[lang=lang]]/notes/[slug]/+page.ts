@@ -1,4 +1,4 @@
-import type { Note } from '$lib/services/Notion/Notes/types.js';
+import type { Note } from '$lib/services/Notion/Notes/notes.js';
 import { error } from '@sveltejs/kit';
 
 /** @type {import('./$types').PageLoad} */

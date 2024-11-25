@@ -18,7 +18,7 @@
   <meta
     name="keywords"
     content={`${data.note.title}, ${data.note.description}, ${data.note.tags
-      .map((tag) => tag.name)
+      .map((tag: { name: string }) => tag.name)
       .join(', ')}`}
   />
   <!-- Schema.org markup for Google+ -->
