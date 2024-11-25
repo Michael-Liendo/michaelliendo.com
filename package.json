@@ -39,6 +39,7 @@
   "dependencies": {
     "@sveltejs/adapter-vercel": "^5.4.3",
     "@sveltejs/enhanced-img": "^0.3.9",
+    "caniuse-lite": "^1.0.30001684",
     "highlight.js": "^11.8.0"
   }
 }
