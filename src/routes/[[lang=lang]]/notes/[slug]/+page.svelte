@@ -5,7 +5,7 @@
   import 'highlight.js/styles/github-dark-dimmed.css';
   import Heading from '$lib/components/notes/custom/Heading.svelte';
 
-  export let data;
+  let { data } = $props();
 
   onMount(() => {
     hljs.highlightAll();

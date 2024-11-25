@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { run } from 'svelte/legacy';
+
   import Calendar from '~icons/mdi/calendar-month';
   import LL, { locale } from '$i18n/i18n-svelte';
   import SocialMedia from '$lib/components/SocialMedia.svelte';
@@ -6,21 +8,25 @@
 
   import type { Note } from '$lib/services/Notion/Notes/notes';
 
-  export let data: {
+  interface Props {
+    data: {
     notes: Note[];
   };
+  }
+
+  let { data }: Props = $props();
 
   const baseLocaleUrl = $locale === baseLocale ? '' : `/${$locale}`;
   const currentPageLocale = $locale;
 
-  let title = 'Michael Liendo | Software Developer';
+  let title = $state('Michael Liendo | Software Developer');
   let description =
-    'A Software Developer interested in Systems Programming and Web Development.';
+    $state('A Software Developer interested in Systems Programming and Web Development.');
   let keywords =
-    'michael liendo, home, notes, portfolio, software developer, svelte, typescript, web development, challenging projects, collaboration, problem-solving';
+    $state('michael liendo, home, notes, portfolio, software developer, svelte, typescript, web development, challenging projects, collaboration, problem-solving');
   let avatarUrl = 'https://avatars.githubusercontent.com/u/70660410?v=4';
 
-  $: {
+  run(() => {
     switch ($locale) {
       case 'en':
         title = 'Michael Liendo | Software Developer';
@@ -37,7 +43,7 @@
           'michael liendo, inicio, notas, portafolio, desarrollador de software, svelte, typescript, desarrollo web, proyectos desafiantes, colaboración, resolución de problemas';
         break;
     }
-  }
+  });
 </script>
 
 <svelte:head>
@@ -193,7 +199,7 @@
                   <span
                     class="inline-block mr-1 rounded-full h-2 w-2"
                     style="background-color: {tag.color};"
-                  />
+></span>
                   {tag.name}
                 </li>
               {/each}
@@ -240,7 +246,7 @@
                   <span
                     class="inline-block mr-1 rounded-full h-2 w-2"
                     style="background-color: {tag.color};"
-                  />
+></span>
                   {tag.name}
                 </li>
               {/each}
@@ -298,7 +304,7 @@
                     <span
                       class="inline-block mr-1 rounded-full h-2 w-2"
                       style="background-color: {tag.color};"
-                    />
+></span>
                     {tag.name}
                   </li>
                 {/each}
