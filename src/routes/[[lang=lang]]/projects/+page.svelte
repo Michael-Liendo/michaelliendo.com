@@ -1,18 +1,24 @@
 <script lang="ts">
+  import { run } from 'svelte/legacy';
+
   import { locale } from '$i18n/i18n-svelte';
   import Calendar from '~icons/mdi/calendar-month';
 
   import type { Project } from '$lib/services/Notion/Projects/project';
 
-  export let data: {
+  interface Props {
+    data: {
     projects: Project[];
   };
+  }
 
-  let title = 'Projects | Michael Liendo';
+  let { data }: Props = $props();
+
+  let title = $state('Projects | Michael Liendo');
   let description =
-    'projects taken while reading about computer science and software development.';
+    $state('projects taken while reading about computer science and software development.');
   let keywords =
-    'projects, blog, articles, writing, content, topics, tips, insights, experiences, knowledge';
+    $state('projects, blog, articles, writing, content, topics, tips, insights, experiences, knowledge');
   let avatarUrl = 'https://avatars.githubusercontent.com/u/70660410?v=4';
 
   function formattedDate(date: Date): string {
@@ -23,7 +29,7 @@
     });
   }
 
-  $: {
+  run(() => {
     switch ($locale) {
       case 'en':
         title = 'Projects | Michael Liendo';
@@ -40,7 +46,7 @@
           'notas, blog, artículos, escritura, contenido, temas, consejos, perspectivas, experiencias, conocimiento';
         break;
     }
-  }
+  });
 </script>
 
 <svelte:head>
@@ -106,7 +112,7 @@
               <span
                 class="inline-block mr-1 rounded-full h-2 w-2"
                 style="background-color: {tag.color};"
-              />
+></span>
               {tag.name}
             </li>
           {/each}

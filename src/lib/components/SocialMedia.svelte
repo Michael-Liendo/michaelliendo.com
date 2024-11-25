@@ -39,4 +39,4 @@
     </a>
   </li>
 </ul>
-<div class="flex space-x-1 sm:space-x-4" />
+<div class="flex space-x-1 sm:space-x-4"></div>

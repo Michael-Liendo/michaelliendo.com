@@ -1,4 +1,4 @@
-import type { Note } from '$lib/services/Notion/Notes/types.js';
+import type { Note } from '$lib/services/Notion/Notes/notes.js';
 
 /** @type {import('./$types').PageLoad} */
 export async function load({ params, fetch }) {

@@ -1,21 +1,27 @@
 <script lang="ts">
+  import { run } from 'svelte/legacy';
+
   import { locale } from '$i18n/i18n-svelte';
   import Entry from '$lib/components/Entry.svelte';
 
   import type { Note } from '$lib/services/Notion/Notes/notes';
 
-  export let data: {
+  interface Props {
+    data: {
     notes: Note[];
   };
+  }
 
-  let title = 'Notes | Michael Liendo';
+  let { data }: Props = $props();
+
+  let title = $state('Notes | Michael Liendo');
   let description =
-    'Notes taken while reading about computer science and software development.';
+    $state('Notes taken while reading about computer science and software development.');
   let keywords =
-    'notes, blog, articles, writing, content, topics, tips, insights, experiences, knowledge';
+    $state('notes, blog, articles, writing, content, topics, tips, insights, experiences, knowledge');
   let avatarUrl = 'https://avatars.githubusercontent.com/u/70660410?v=4';
 
-  $: {
+  run(() => {
     switch ($locale) {
       case 'en':
         title = 'Notes | Michael Liendo';
@@ -32,7 +38,7 @@
           'notas, blog, artículos, escritura, contenido, temas, consejos, perspectivas, experiencias, conocimiento';
         break;
     }
-  }
+  });
 </script>
 
 <svelte:head>

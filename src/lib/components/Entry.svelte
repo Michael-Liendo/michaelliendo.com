@@ -6,12 +6,23 @@
 
   import type { MultiSelectEntity } from '$lib/services/Notion/Notes/notes';
 
-  export let title = '';
-  export let description = '';
-  export let publishDate: Date;
-  export let tags: MultiSelectEntity[] = [];
-  export let slug = '';
-  export let previewImageUrl: string | null = '';
+  interface Props {
+    title?: string;
+    description?: string;
+    publishDate: Date;
+    tags?: MultiSelectEntity[];
+    slug?: string;
+    previewImageUrl?: string | null;
+  }
+
+  let {
+    title = '',
+    description = '',
+    publishDate,
+    tags = [],
+    slug = '',
+    previewImageUrl = '',
+  }: Props = $props();
 
   const baseLocaleUrl = $locale === baseLocale ? '' : `/${$locale}`;
 
@@ -21,7 +32,7 @@
       month: 'long',
       day: '2-digit',
       year: 'numeric',
-    }
+    },
   );
 </script>
 
@@ -63,7 +74,7 @@
             <span
               class="inline-block mr-1 rounded-full h-2 w-2"
               style="background-color: {tag.color};"
-            />
+            ></span>
             {tag.name}
           </li>
         {/each}

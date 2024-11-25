@@ -19,26 +19,27 @@
     "@iconify-json/mdi": "^1.1.52",
     "@notionhq/client": "^2.2.6",
     "@sveltejs/adapter-auto": "^3.2.4",
-    "@sveltejs/kit": "^2.5.20",
+    "@sveltejs/kit": "^2.5.27",
     "@tailwindcss/typography": "^0.5.9",
     "autoprefixer": "^10.4.14",
     "classnames": "^2.3.2",
     "notion-to-md": "^3.1.0",
     "postcss": "^8.4.24",
-    "svelte": "^4.0.0",
-    "svelte-check": "^3.4.3",
+    "svelte": "^5.0.0",
+    "svelte-check": "^4.0.0",
     "svelte-markdown": "^0.3.0",
     "tailwindcss": "^3.3.2",
     "tslib": "^2.4.1",
     "typesafe-i18n": "^5.24.3",
-    "typescript": "^5.0.0",
+    "typescript": "^5.5.0",
     "unplugin-icons": "^0.16.3",
-    "vite": "^4.3.6"
+    "vite": "^5.4.4"
   },
   "type": "module",
   "dependencies": {
     "@sveltejs/adapter-vercel": "^5.4.3",
-    "@sveltejs/enhanced-img": "^0.3.4",
+    "@sveltejs/enhanced-img": "^0.3.9",
+    "caniuse-lite": "^1.0.30001684",
     "highlight.js": "^11.8.0"
   }
 }
