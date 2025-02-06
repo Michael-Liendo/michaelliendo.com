@@ -1,0 +1,43 @@
+.note-container p code,
+.note-container ul li code {
+	@apply bg-black rounded;
+
+	color: #f04f4f !important;
+	padding: 0.2rem;
+}
+
+.note-container h2 code {
+	@apply bg-black rounded;
+
+	color: #f04f4f !important;
+	padding: 0.2rem;
+}
+
+.note-container a code {
+	@apply underline;
+}
+
+.note-container ul,
+.note-container ol {
+	@apply pl-4 my-4;
+}
+
+.note-container ul {
+	list-style-type: disc;
+}
+
+.note-container ol {
+	list-style-type: decimal;
+}
+
+.note-container p {
+	@apply pb-2;
+}
+
+.note-container pre code {
+	@apply text-base;
+}
+
+.note-container .note-quote-content a {
+	@apply text-green-400 underline;
+}

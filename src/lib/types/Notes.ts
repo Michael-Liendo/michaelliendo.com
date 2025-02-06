@@ -9,4 +9,5 @@ export interface NoteMetadata {
 	date: string;
 	icon: string;
 	categories: string[];
+	preview_image_url?: string;
 }

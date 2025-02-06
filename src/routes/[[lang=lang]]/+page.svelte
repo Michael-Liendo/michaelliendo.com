@@ -23,10 +23,10 @@ const currentPageLocale = $locale;
     <meta property="og:site_name" content="Michael Liendo" />
   <!-- Twitter Card data -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@MichaelMLiendo" />
+    <meta name="twitter:site" content="@mykeliendo" />
     <meta name="twitter:title" content={$LL.SEO.TITLE()} />
     <meta name="twitter:description" content={$LL.SEO.DESCRIPTION()} />
-    <meta name="twitter:creator" content="@MichaelMLiendo" />
+    <meta name="twitter:creator" content="@mykeliendo" />
     <meta name="twitter:image:src" content={$LL.SEO.IMAGE()} />
 
     {#each locales as locale}

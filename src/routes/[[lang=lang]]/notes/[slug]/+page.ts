@@ -1,4 +1,5 @@
-import { locales } from "$i18n/i18n-util.js";
+import { baseLocale, locales } from "$i18n/i18n-util.js";
+import type { NoteMetadata } from "$lib/types/Notes";
 import { error } from "@sveltejs/kit";
 
 async function findAvailableLang(
@@ -21,21 +22,26 @@ async function findAvailableLang(
 }
 
 export async function load({ params }) {
+	const language = params.lang ?? baseLocale;
+
 	// FIXME: I dont like this at all, needs refactor but its 1:37 AM
 	try {
 		const post = await import(
-			`../../../../mdsvex/${params.slug}/${params.lang}.svx`
+			`../../../../mdsvex/${params.slug}/${language}.svx`
 		);
 		const content = post.default;
+		const metadata = post.metadata as NoteMetadata;
 
 		return {
-			content,
+			note: {
+				...metadata,
+				content,
+			},
 		};
 	} catch (error) {
 		// Failed to find the requested language, try to find a fallback language
 	}
 
-	const language = params.lang as string;
 	const fallbackLang = await findAvailableLang(params.slug, language);
 
 	if (fallbackLang) {
@@ -43,9 +49,13 @@ export async function load({ params }) {
 			`../../../../mdsvex/${params.slug}/${fallbackLang}.svx`
 		);
 		const content = post.default;
+		const metadata = post.metadata as NoteMetadata;
 
 		return {
-			content,
+			note: {
+				...metadata,
+				content,
+			},
 		};
 	}
 
