@@ -46,7 +46,7 @@ function changeLanguage(locale: Locales): void {
 <header class="px-5 sm:px-10 md:px-20 py-4 flex justify-between items-center">
   <h1 class="text-xl">michaelliendo.com</h1>
 
-  <div class="flex space-x-4">
+  <div class="flex">
 
   <nav class="flex">
     <!-- DESKTOP -->
