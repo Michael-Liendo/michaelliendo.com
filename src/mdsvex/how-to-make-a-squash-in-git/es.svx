@@ -1,0 +1,118 @@
+---
+title: "Cómo hacer un squash en Git?"
+description: "En este artículo, podrás hacer un squash en Git. Squash es una técnica que nos permite hacer varios commits en un solo commit, haciendo más fácil leer el historial de cambios y mantener el repositorio limpio."
+categories: [git, git-squash]
+icon: git
+date: 2023-10-23
+published: true
+---
+
+# ¿Cómo hacer squash en Git?
+
+Hay dos maneras que conozco de hacer squash, en éste post les enseñaré las dos maneras. Pero primero les diré la definición de Squash
+
+### ¿Qué es Squash?
+
+Hacer squash en Git, (“comprimir”), hace que nuestra rama a mergear (a la que haremos un pull request) se componga de un solo commit de esta manera mergearemos un solo commit de código a nuestra rama de desarrollo que contendrá una funcionalidad completa.
+
+## Ahora sí, a los pasos
+
+Parado en la branch que queremos hacer squash, ahora en la consola haremos
+
+```jsx
+git log
+```
+
+retornará
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/bf781c07-a7c9-4f50-a257-1e7018d93360/Untitled.png)
+
+Algo así, de ahí vamos a copiar el hash que está arriba de `origin/main, main` en mi caso es este `b6adbbcd8f99935113cf1e24943736fb2c501e26`
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/005d840a-ba57-4a97-8f85-4e669d2b94e9/Untitled.png)
+
+Luego vamos a hacer rebase
+
+```bash
+git rebase -i TU-HASH
+```
+
+en mi caso es
+
+```bash
+git rebase -i b6adbbcd8f99935113cf1e24943736fb2c501e26
+```
+
+Te va a mostrar algo así, te abrirá el editor VIM
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/9f3067fd-b5a9-4ece-ad4c-ef261a2789ee/Untitled.png)
+
+Tendrás que remplazar todos las lineas que dice `pick`  por `squash` o `s` excepto el la primera línea
+
+> Para escribir en VIM deberás darle a la tecla `i`
+> 
+
+Quedará así
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/effebe74-da5b-467c-9805-9298d2b999f0/Untitled.png)
+
+Luego presionaremos dos veces la tecla `Esc`
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/53098a7b-f2f9-4b07-b1c3-11fd712a991d/Untitled.png)
+
+al hacer eso, deberás escribir `:wq` y darle `enter`
+
+Ahí pasará a pedirte el mensaje final para el commit comprimido
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/d4b0d30c-7d33-4866-bef2-e9244efdbf28/Untitled.png)
+
+Colocas el mensaje, pulsando `i` para escribir, luego presionas dos veces `Esc` y escribes `:wq` 
+
+Y listo, ya hiciste Squash
+
+Ahora debes para subirlo a tu repositorio, basta con escribir
+
+```bash
+git push -f
+```
+
+Y listo, ya estaría listo
+
+### La otra manera de hacer Squash
+
+Para ello, parado en la rama para hacer squash, se coloca
+
+```bash
+git reset --soft TU-HASH
+```
+
+Anteriormente expliqué como se obtiene el hash
+
+Luego harás
+
+```bash
+git commit --amend
+```
+
+Se abrirá el editor VIM, para colocar el mensaje final del commit, presiona `i` para escribir
+
+Luego presionas `Esc` y escribes `:wq` para guardar y salir
+
+Ahora con 
+
+```bash
+git push -f
+```
+
+Se subiría tus cambios a tu repositorio
+
+Si haces `git log` ahora, deberías de tener 1 solo commit encima de `origin/main`
+
+con el nombre que le diste en ammend
+
+> Por nada hagas `git reset --hard` al menos de que quieras borrar todo tu progreso
+> 
+
+### Extras
+
+Recomiendo usar [Conventional Commits](https://www.conventionalcommits.org) para tu mensajes de commit

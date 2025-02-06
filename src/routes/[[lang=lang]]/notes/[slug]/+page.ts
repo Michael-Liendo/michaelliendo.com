@@ -12,6 +12,7 @@ async function findAvailableLang(
 			await import(`../../../../mdsvex/${slug}/${lang}.svx`);
 			return lang;
 		} catch (_) {
+			// biome-ignore lint/correctness/noUnnecessaryContinue: <explanation>
 			continue;
 		}
 	}
