@@ -1,6 +1,7 @@
 <script lang="ts">
 import LL, { locale } from "$i18n/i18n-svelte";
 import { baseLocale, locales } from "$i18n/i18n-util";
+import SocialMedia from "$lib/components/social-media.svelte";
 
 const currentPageLocale = $locale;
 </script>
@@ -58,7 +59,7 @@ const currentPageLocale = $locale;
       {@html $LL.HOMEPAGE.ABOUT()}
     </p>
     <div class="flex justify-between">
-      <!-- <SocialMedia /> -->
+    <SocialMedia /> 
     </div>
   </div>
   <div class="w-full md:flex justify-end">

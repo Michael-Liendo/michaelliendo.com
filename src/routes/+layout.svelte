@@ -1,5 +1,6 @@
 <script lang="ts">
 import Footer from "$lib/components/footer.svelte";
+import Header from "$lib/components/header.svelte";
 import "../app.css";
 const { children } = $props();
 </script>
@@ -21,7 +22,7 @@ const { children } = $props();
 
 <div class="bg-white">
   <div class="min-h-screen">
-    <!-- <Header /> -->
+    <Header /> 
     <main class="px-5 sm:px-10 md:px-20">{@render children()}</main>
   </div>
   <Footer />
