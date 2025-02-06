@@ -39,15 +39,12 @@ export const replaceLocaleInUrl = (
 	return newUrl.toString();
 };
 
-export const removeLocaleFromUrl = (url: URL): string => {
-	const [, ...rest] = url.pathname.split("/");
+export const removeLocaleFromPath = (path: string): string => {
+	const segments = path.split("/").filter(Boolean);
 
-	let new_pathname: string;
-	if (rest[0] === "en") {
-		new_pathname = `/${rest.join("/")}`;
-	} else {
-		new_pathname = `/${rest.join("/")}`;
+	if (segments.length > 0 && (segments[0] === "en" || segments[0] === "es")) {
+		segments.shift();
 	}
 
-	return new_pathname;
+	return `/${segments.join("/")}`;
 };
