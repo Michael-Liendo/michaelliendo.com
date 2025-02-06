@@ -2,7 +2,7 @@
 const { children } = $props();
 </script>
 <blockquote
-  class="p-2 text-black bg-yellow-200 border-l-yellow-600 border-l-[4px] rounded-tr-md rounded-br-md my-4"
+  class="p-2 text-black bg-red-200 border-l-red-600 border-l-[4px] rounded-tr-md rounded-br-md my-4"
 >
 {@render children()}
 </blockquote>
