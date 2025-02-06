@@ -10,7 +10,7 @@ import { baseLocale, locales } from "$i18n/i18n-util";
 // e.g. https://mywebsite.com/en/blog/article-1 => /de/blog/article-1
 export const replaceLocaleInUrl = (
 	url: URL,
-	locale: string, // Ahora es opcional
+	locale: string,
 	full = false,
 ): string => {
 	const [, ...rest] = url.pathname.split("/");
@@ -37,4 +37,17 @@ export const replaceLocaleInUrl = (
 	const newUrl = new URL(url.toString());
 	newUrl.pathname = new_pathname;
 	return newUrl.toString();
+};
+
+export const removeLocaleFromUrl = (url: URL): string => {
+	const [, ...rest] = url.pathname.split("/");
+
+	let new_pathname: string;
+	if (rest[0] === "en") {
+		new_pathname = `/${rest.join("/")}`;
+	} else {
+		new_pathname = `/${rest.join("/")}`;
+	}
+
+	return new_pathname;
 };

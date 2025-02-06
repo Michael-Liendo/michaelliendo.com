@@ -3,11 +3,22 @@
 import { Home, Languages, Notebook, Trophy } from "lucide-svelte";
 
 import LL, { locale, setLocale } from "$i18n/i18n-svelte";
-import { replaceLocaleInUrl } from "$lib/utils/locale";
+import { removeLocaleFromUrl, replaceLocaleInUrl } from "$lib/utils/locale";
 import { baseLocale } from "$i18n/i18n-util";
 
 import type { Locales } from "$i18n/i18n-types";
 import { clickOutside } from "$lib/actions/clickOutside";
+import { PublicRoutesEnum } from "$lib/utils/routes";
+import { cn } from "$lib";
+import { onMount } from "svelte";
+
+let currentUrl = $state();
+
+onMount(() => {
+	currentUrl = removeLocaleFromUrl(new URL(window.location.href));
+});
+
+const activeLocale = $locale;
 
 const baseLocaleUrl = $locale === baseLocale ? "" : `/${$locale}`;
 
@@ -18,6 +29,13 @@ function toggleLanguageMenu(): void {
 }
 
 function changeLanguage(locale: Locales): void {
+	const lang = activeLocale;
+
+	if (lang === locale) {
+		isLangMenuOpen = false;
+		return;
+	}
+
 	const next = replaceLocaleInUrl(new URL(window.location.href), locale);
 
 	setLocale(locale);
@@ -36,17 +54,26 @@ function changeLanguage(locale: Locales): void {
       class="hidden sm:flex  items-center space-x-5 px-5 py-2"
     >
       <li>
-        <a title="Go to the main page" href="{baseLocaleUrl}/"
+        <a title="Go to the main page" href="{baseLocaleUrl}{PublicRoutesEnum.Home}"
+        class={cn({
+          "underline": currentUrl === PublicRoutesEnum.Home,
+        })}
           >{$LL.LAYOUT.NAV.HOME()}</a
         >
       </li>
       <li>
-        <a title="Read about Michael's notes" href="{baseLocaleUrl}/notes"
+        <a title="Read about Michael's notes" href="{baseLocaleUrl}{PublicRoutesEnum.Notes}"
+        class={cn({
+          "underline": currentUrl === PublicRoutesEnum.Notes,
+        })}
           >{$LL.LAYOUT.NAV.NOTES()}</a
         >
       </li>
       <li>
-        <a title="View Michael's Projects" href="{baseLocaleUrl}/projects"
+        <a title="View Michael's Projects" href="{baseLocaleUrl}{PublicRoutesEnum.Projects}"
+        class={cn({
+          "underline": currentUrl === PublicRoutesEnum.Projects,
+        })}
           >{$LL.LAYOUT.NAV.PROJECTS()}</a
         >
       </li>
@@ -57,21 +84,21 @@ function changeLanguage(locale: Locales): void {
       aria-label="Main navigation"
     >
       <li>
-        <a title="Go to the main page" href="{baseLocaleUrl}/" aria-label="Home"
+        <a title="Go to the main page" href="{baseLocaleUrl}{PublicRoutesEnum.Home}" aria-label="Home"
           ><Home /></a
         >
       </li>
       <li>
         <a
           title="Read about Michael's notes"
-          href="{baseLocaleUrl}/notes"
+          href="{baseLocaleUrl}{PublicRoutesEnum.Notes}"
           aria-label="Notes"><Notebook /></a
         >
       </li>
       <li>
         <a
           title="View Michael's Projects"
-          href="{baseLocaleUrl}/projects"
+          href="{baseLocaleUrl}{PublicRoutesEnum.Projects}"
           aria-label="Projects"><Trophy /></a
         >
       </li>
@@ -80,7 +107,7 @@ function changeLanguage(locale: Locales): void {
 
 
   <div
-    class="flex  items-center "
+    class="flex items-center"
   >
   
     <button
@@ -101,7 +128,7 @@ function changeLanguage(locale: Locales): void {
               <li class="lang-opt">
                 <button
                   aria-label="Change language to English"
-                  class:lang-active={$locale === 'en'}
+                  class:lang-active={activeLocale === 'en'}
                   onclick={() => changeLanguage('en')}
                 >
                   🇺🇸&nbsp;English
@@ -110,7 +137,7 @@ function changeLanguage(locale: Locales): void {
               <li>
                 <button
                   aria-label="Cambiar language a Spanish"
-                  class:lang-active={$locale === 'es'}
+                  class:lang-active={activeLocale === 'es'}
                   onclick={() => changeLanguage('es')}
                 >
                   🇪🇸&nbsp;Español
