@@ -66,11 +66,8 @@ const formattedDate = new Date(publishDate).toLocaleDateString(
       <ul class="flex flex-wrap">
         {#each tags as tag}
           <li
-            class="text-sm mr-2 mb-2 bg-light-background dark:bg-dark-background rounded py-1 px-2"
+            class="text-sm mr-2 mb-2 bg-slate-200 rounded py-1 px-2"
           >
-            <span
-              class="inline-block mr-1 rounded-full h-2 w-2"
-            ></span>
             {tag}
           </li>
         {/each}
