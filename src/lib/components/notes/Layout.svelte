@@ -17,8 +17,6 @@ export { a, blockquote, h2, h3, img, table, th, td };
   import './styles/note.css';
   import './styles/prism-one-dark.css';
 
-
-
   let {
     title,
     description,
@@ -26,7 +24,7 @@ export { a, blockquote, h2, h3, img, table, th, td };
     preview_image_url,
     children,
   } = $props();
-  
+
   const publishedTime = new Date(date);
   const formattedDate = new Intl.DateTimeFormat($locale).format(publishedTime);
 </script>

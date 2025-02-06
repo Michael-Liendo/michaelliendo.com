@@ -16,6 +16,7 @@ let currentUrl = $state();
 
 onMount(() => {
 	currentUrl = removeLocaleFromUrl(new URL(window.location.href));
+	console.log(currentUrl);
 });
 
 const activeLocale = $locale;
@@ -44,7 +45,7 @@ function changeLanguage(locale: Locales): void {
 </script>
 
 <header class="px-5 sm:px-10 md:px-20 py-4 flex justify-between items-center">
-  <h1 class="text-xl">michaelliendo.com</h1>
+  <h1 class="text-xl">Michael Liendo</h1>
 
   <div class="flex">
 

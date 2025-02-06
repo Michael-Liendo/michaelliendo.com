@@ -8,6 +8,6 @@ export interface NoteMetadata {
 	description: string;
 	date: string;
 	icon: string;
-	categories: string[];
+	tags: string[];
 	preview_image_url?: string;
 }

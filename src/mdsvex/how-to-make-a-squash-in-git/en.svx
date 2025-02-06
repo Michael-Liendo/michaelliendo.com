@@ -1,7 +1,7 @@
 ---
 title: "How to make Squash in Git?"
 description: "In this article, you'll learn how to squash git. Squash is a technique that allows multiple commits to be merged into one commit, making it easier to read the change history and keeping the repository clean."
-categories: [git, git-squash]
+tags: [git, git-squash]
 icon: git
 date: 2023-10-23
 published: true

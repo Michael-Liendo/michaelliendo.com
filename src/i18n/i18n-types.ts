@@ -31,6 +31,37 @@ type RootTranslation = {
 		 * h​t​t​p​s​:​/​/​a​v​a​t​a​r​s​.​g​i​t​h​u​b​u​s​e​r​c​o​n​t​e​n​t​.​c​o​m​/​u​/​7​0​6​6​0​4​1​0​?​v​=​4
 		 */
 		IMAGE: string
+		NOTES: {
+			/**
+			 * N​o​t​a​s​ ​|​ ​M​i​c​h​a​e​l​ ​L​i​e​n​d​o
+			 */
+			TITLE: string
+			/**
+			 * N​o​t​a​s​ ​s​o​b​r​e​ ​a​p​r​e​n​d​i​z​a​j​e​s​ ​y​ ​e​x​p​e​r​i​e​n​c​i​a​s
+			 */
+			DESCRIPTION: string
+			/**
+			 * m​i​c​h​a​e​l​ ​l​i​e​n​d​o​,​ ​n​o​t​a​s​,​ ​a​p​r​e​n​d​i​z​a​j​e​s​,​ ​e​x​p​e​r​i​e​n​c​i​a​s​,​ ​s​v​e​l​t​e​,​ ​t​y​p​e​s​c​r​i​p​t​,​ ​d​e​s​a​r​r​o​l​l​o​ ​w​e​b​,​ ​c​o​l​a​b​o​r​a​c​i​ó​n​,​ ​r​e​s​o​l​u​c​i​ó​n​ ​d​e​ ​p​r​o​b​l​e​m​a​s
+			 */
+			KEYWORDS: string
+		}
+		NOTE: {
+			/**
+			 * {​t​i​t​l​e​}​ ​|​ ​N​o​t​a​s​ ​d​e​ ​M​i​c​h​a​e​l​ ​L​i​e​n​d​o
+			 * @param {string} title
+			 */
+			TITLE: RequiredParams<'title'>
+			/**
+			 * {​d​e​s​c​r​i​p​t​i​o​n​}
+			 * @param {string} description
+			 */
+			DESCRIPTION: RequiredParams<'description'>
+			/**
+			 * {​k​e​y​w​o​r​d​s​}
+			 * @param {string} keywords
+			 */
+			KEYWORDS: RequiredParams<'keywords'>
+		}
 	}
 	LAYOUT: {
 		NAV: {
@@ -92,6 +123,34 @@ export type TranslationFunctions = {
 		 * https://avatars.githubusercontent.com/u/70660410?v=4
 		 */
 		IMAGE: () => LocalizedString
+		NOTES: {
+			/**
+			 * Notas | Michael Liendo
+			 */
+			TITLE: () => LocalizedString
+			/**
+			 * Notas sobre aprendizajes y experiencias
+			 */
+			DESCRIPTION: () => LocalizedString
+			/**
+			 * michael liendo, notas, aprendizajes, experiencias, svelte, typescript, desarrollo web, colaboración, resolución de problemas
+			 */
+			KEYWORDS: () => LocalizedString
+		}
+		NOTE: {
+			/**
+			 * {title} | Notas de Michael Liendo
+			 */
+			TITLE: (arg: { title: string }) => LocalizedString
+			/**
+			 * {description}
+			 */
+			DESCRIPTION: (arg: { description: string }) => LocalizedString
+			/**
+			 * {keywords}
+			 */
+			KEYWORDS: (arg: { keywords: string }) => LocalizedString
+		}
 	}
 	LAYOUT: {
 		NAV: {

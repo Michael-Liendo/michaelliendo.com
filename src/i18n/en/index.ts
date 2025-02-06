@@ -8,6 +8,17 @@ const en = {
 		KEYWORDS:
 			"michael liendo, home, notes, portfolio, software developer, svelte, typescript, web development, challenging projects, collaboration, problem-solving",
 		IMAGE: "https://avatars.githubusercontent.com/u/70660410?v=4",
+		NOTES: {
+			TITLE: "Notes | Michael Liendo",
+			DESCRIPTION: "Notes on learnings and experiences",
+			KEYWORDS:
+				"michael liendo, notes, learnings, experiences, svelte, typescript, web development, collaboration, problem-solving",
+		},
+		NOTE: {
+			TITLE: "{title:string} | Notes of Michael Liendo",
+			DESCRIPTION: "{description:string}",
+			KEYWORDS: "{keywords:string}",
+		},
 	},
 	LAYOUT: {
 		NAV: {

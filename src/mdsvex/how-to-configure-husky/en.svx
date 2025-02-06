@@ -1,7 +1,7 @@
 ---
 title: "How to configure husky with conventional commits? Using Prettier and ESLint" 
 description: "Here I will teach how to configure husky with conventionals commits with eslint and prettier to have the best workflow in your projects."
-categories: [git, git-commit, husky, eslint, prettier]
+tags: [git, git-commit, husky, eslint, prettier]
 icon: git
 date: 2023-12-14
 published: true

@@ -8,6 +8,17 @@ const es = {
 		KEYWORDS:
 			"michael liendo, inicio, notas, portafolio, desarrollador de software, svelte, typescript, desarrollo web, proyectos desafiantes, colaboración, resolución de problemas",
 		IMAGE: "https://avatars.githubusercontent.com/u/70660410?v=4",
+		NOTES: {
+			TITLE: "Notas | Michael Liendo",
+			DESCRIPTION: "Notas sobre aprendizajes y experiencias",
+			KEYWORDS:
+				"michael liendo, notas, aprendizajes, experiencias, svelte, typescript, desarrollo web, colaboración, resolución de problemas",
+		},
+		NOTE: {
+			TITLE: "{title:string} | Notas de Michael Liendo",
+			DESCRIPTION: "{description:string}",
+			KEYWORDS: "{keywords:string}",
+		},
 	},
 	LAYOUT: {
 		NAV: {

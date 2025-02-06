@@ -1,7 +1,7 @@
 ---
 title: "Cómo hacer un squash en Git?"
 description: "En este artículo, podrás hacer un squash en Git. Squash es una técnica que nos permite hacer varios commits en un solo commit, haciendo más fácil leer el historial de cambios y mantener el repositorio limpio."
-categories: [git, git-squash]
+tags: [git, git-squash]
 icon: git
 date: 2023-10-23
 published: true
