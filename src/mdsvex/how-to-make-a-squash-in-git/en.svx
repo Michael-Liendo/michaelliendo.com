@@ -6,7 +6,6 @@ icon: git
 date: 2023-10-23
 published: true
 ---
-# How to squash in Git?
 
 There are two ways that I know of to make squash, in this post I will show you both ways. But first I will tell you the definition of Squash
 

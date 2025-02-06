@@ -7,10 +7,6 @@ date: 2023-12-14
 published: true
 ---
 
-# How to configure Husky with Conventional commits?
-
-In this post I will show how you could have a good workflow using husky
-
 Husky is a tool that allows us to execute **Git Hooks** in a simple way to guarantee that the tests are executed in our code, and to verify that it does not send bugs or inconsistencies to the project repository.
 
 Before configuring Husky, I will first teach how to install and configure [Prettier](https://prettier.io/) and [ESLint](https://eslint.org/)

@@ -25,7 +25,7 @@ const focusElement = () => {
         </span>
     <span
       class="h-8 w-8 invisible flex justify-center items-center group-hover:visible bg-gray-200 font-bold rounded-full dark:bg-gray-600 dark:text-gray-200"
-      >⛺︎
+      >#
     </span>
   </a>
 </h2>

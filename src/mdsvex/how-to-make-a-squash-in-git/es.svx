@@ -7,8 +7,6 @@ date: 2023-10-23
 published: true
 ---
 
-# ¿Cómo hacer squash en Git?
-
 Hay dos maneras que conozco de hacer squash, en éste post les enseñaré las dos maneras. Pero primero les diré la definición de Squash
 
 ### ¿Qué es Squash?
