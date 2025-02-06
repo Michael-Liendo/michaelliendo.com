@@ -10,10 +10,6 @@
 		"sourceMap": true,
 		"strict": true,
 		"moduleResolution": "bundler",
-		"paths": {
-			"$i18n": ["./src/i18n"],
-      "$i18n/*": ["./src/i18n/*"]
-		}
 	}
 	// Path aliases are handled by https://svelte.dev/docs/kit/configuration#alias
 	// except $lib which is handled by https://svelte.dev/docs/kit/configuration#files
