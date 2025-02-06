@@ -8,7 +8,7 @@ const en = {
       PROJECTS: 'Projects',
     },
     FOOTER: {
-      COPYRIGHT: 'Made with ❤️ by Michael Liendo © {startYear:number} - {year:number}',
+      COPYRIGHT: 'Made with ❤️ by Michael Liendo © {startYear:number} - {currentYear:number}',
     },
   },
   HOMEPAGE: {

@@ -31,11 +31,11 @@ type RootTranslation = {
 		}
 		FOOTER: {
 			/**
-			 * H​e​c​h​o​ ​c​o​n​ ​❤​️​ ​p​o​r​ ​M​i​c​h​a​e​l​ ​L​i​e​n​d​o​ ​©​ ​{​s​t​a​r​t​Y​e​a​r​}​ ​-​ ​{​y​e​a​r​}
+			 * H​e​c​h​o​ ​c​o​n​ ​❤​️​ ​p​o​r​ ​M​i​c​h​a​e​l​ ​L​i​e​n​d​o​ ​©​ ​{​s​t​a​r​t​Y​e​a​r​}​ ​-​ ​{​c​u​r​r​e​n​t​Y​e​a​r​}
+			 * @param {number} currentYear
 			 * @param {number} startYear
-			 * @param {number} year
 			 */
-			COPYRIGHT: RequiredParams<'startYear' | 'year'>
+			COPYRIGHT: RequiredParams<'currentYear' | 'startYear'>
 		}
 	}
 	HOMEPAGE: {
@@ -46,7 +46,7 @@ type RootTranslation = {
 		 */
 		HI: RequiredParams<'name' | 'surname'>
 		/**
-		 * S​o​y​ ​u​n​ ​<​s​t​r​o​n​g​>​D​e​s​a​r​r​o​l​l​a​d​o​r​ ​d​e​ ​S​o​f​t​w​a​r​e​<​/​s​t​r​o​n​g​>​ ​e​n​f​o​c​a​d​o​ ​e​n​ ​S​v​e​l​t​e​ ​y​ ​T​y​p​e​S​c​r​i​p​t​ ​a​p​a​s​i​o​n​a​d​o​ ​p​o​r​ ​e​l​ ​D​e​s​a​r​r​o​l​l​o​ ​W​e​b​.​ ​D​i​s​f​r​u​t​o​ ​t​r​a​b​a​j​a​r​ ​e​n​ ​p​r​o​y​e​c​t​o​s​ ​d​e​s​a​f​i​a​n​t​e​s​,​ ​v​a​l​o​r​o​ ​l​a​ ​c​o​l​a​b​o​r​a​c​i​ó​n​ ​y​ ​l​a​ ​r​e​s​o​l​u​c​i​ó​n​ ​d​e​ ​p​r​o​b​l​e​m​a​s​.
+		 * S​o​y​ ​u​n​ ​<​s​t​r​o​n​g​>​D​e​s​a​r​r​o​l​l​a​d​o​r​ ​d​e​ ​S​o​f​t​w​a​r​e​<​/​s​t​r​o​n​g​>​ ​e​n​f​o​c​a​d​o​ ​e​n​ ​S​v​e​l​t​e​ ​y​ ​T​y​p​e​S​c​r​i​p​t​ ​a​p​a​s​i​o​n​a​d​o​ ​p​o​r​ ​e​l​ ​<​s​t​r​o​n​g​>​D​e​s​a​r​r​o​l​l​o​ ​d​e​ ​A​p​l​i​c​a​c​i​o​n​e​s​ ​M​ó​v​i​l​e​s​ ​y​ ​P​á​g​i​n​a​s​ ​W​e​b​<​/​s​t​r​o​n​g​>​.​ ​D​i​s​f​r​u​t​o​ ​t​r​a​b​a​j​a​r​ ​e​n​ ​p​r​o​y​e​c​t​o​s​ ​d​e​s​a​f​i​a​n​t​e​s​,​ ​v​a​l​o​r​o​ ​l​a​ ​c​o​l​a​b​o​r​a​c​i​ó​n​ ​y​ ​l​a​ ​r​e​s​o​l​u​c​i​ó​n​ ​d​e​ ​p​r​o​b​l​e​m​a​s​.
 		 */
 		ABOUT: string
 		/**
@@ -74,9 +74,9 @@ export type TranslationFunctions = {
 		}
 		FOOTER: {
 			/**
-			 * Hecho con ❤️ por Michael Liendo © {startYear} - {year}
+			 * Hecho con ❤️ por Michael Liendo © {startYear} - {currentYear}
 			 */
-			COPYRIGHT: (arg: { startYear: number, year: number }) => LocalizedString
+			COPYRIGHT: (arg: { currentYear: number, startYear: number }) => LocalizedString
 		}
 	}
 	HOMEPAGE: {
@@ -85,7 +85,7 @@ export type TranslationFunctions = {
 		 */
 		HI: (arg: { name: string, surname: string }) => LocalizedString
 		/**
-		 * Soy un <strong>Desarrollador de Software</strong> enfocado en Svelte y TypeScript apasionado por el Desarrollo Web. Disfruto trabajar en proyectos desafiantes, valoro la colaboración y la resolución de problemas.
+		 * Soy un <strong>Desarrollador de Software</strong> enfocado en Svelte y TypeScript apasionado por el <strong>Desarrollo de Aplicaciones Móviles y Páginas Web</strong>. Disfruto trabajar en proyectos desafiantes, valoro la colaboración y la resolución de problemas.
 		 */
 		ABOUT: () => LocalizedString
 		/**

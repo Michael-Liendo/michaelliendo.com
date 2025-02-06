@@ -8,7 +8,7 @@ const es = {
       PROJECTS: 'Proyectos',
     },
     FOOTER: {
-      COPYRIGHT: 'Hecho con ❤️ por Michael Liendo © {startYear:number} - {year:number}',
+      COPYRIGHT: 'Hecho con ❤️ por Michael Liendo © {startYear:number} - {currentYear:number}',
     },
   },
   HOMEPAGE: {

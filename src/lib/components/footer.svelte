@@ -7,7 +7,7 @@
 <footer class="w-full mt-5 px-4 py-5">
   <div class=" flex items-center justify-center">
     <small>
-      {$LL.LAYOUT.FOOTER.COPYRIGHT({ year: currentYear, startYear: 2021 })}
+      {$LL.LAYOUT.FOOTER.COPYRIGHT({ currentYear, startYear: 2021 })}
     </small>
   </div>
   <div class="flex justify-center">
