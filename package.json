@@ -24,6 +24,7 @@
 		"vite": "^6.0.0"
 	},
 	"dependencies": {
+		"lucide-svelte": "^0.474.0",
 		"typesafe-i18n": "^5.26.2"
 	}
 }

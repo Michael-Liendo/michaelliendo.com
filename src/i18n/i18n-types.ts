@@ -14,6 +14,24 @@ export type Translation = RootTranslation
 export type Translations = RootTranslation
 
 type RootTranslation = {
+	SEO: {
+		/**
+		 * M​i​c​h​a​e​l​ ​L​i​e​n​d​o​ ​|​ ​D​e​s​a​r​r​o​l​l​a​d​o​r​ ​d​e​ ​S​o​f​t​w​a​r​e
+		 */
+		TITLE: string
+		/**
+		 * U​n​ ​D​e​s​a​r​r​o​l​l​a​d​o​r​ ​d​e​ ​S​o​f​t​w​a​r​e​ ​i​n​t​e​r​e​s​a​d​o​ ​e​n​ ​P​r​o​g​r​a​m​a​c​i​ó​n​ ​d​e​ ​S​i​s​t​e​m​a​s​ ​y​ ​D​e​s​a​r​r​o​l​l​o​ ​W​e​b​.
+		 */
+		DESCRIPTION: string
+		/**
+		 * m​i​c​h​a​e​l​ ​l​i​e​n​d​o​,​ ​i​n​i​c​i​o​,​ ​n​o​t​a​s​,​ ​p​o​r​t​a​f​o​l​i​o​,​ ​d​e​s​a​r​r​o​l​l​a​d​o​r​ ​d​e​ ​s​o​f​t​w​a​r​e​,​ ​s​v​e​l​t​e​,​ ​t​y​p​e​s​c​r​i​p​t​,​ ​d​e​s​a​r​r​o​l​l​o​ ​w​e​b​,​ ​p​r​o​y​e​c​t​o​s​ ​d​e​s​a​f​i​a​n​t​e​s​,​ ​c​o​l​a​b​o​r​a​c​i​ó​n​,​ ​r​e​s​o​l​u​c​i​ó​n​ ​d​e​ ​p​r​o​b​l​e​m​a​s
+		 */
+		KEYWORDS: string
+		/**
+		 * h​t​t​p​s​:​/​/​a​v​a​t​a​r​s​.​g​i​t​h​u​b​u​s​e​r​c​o​n​t​e​n​t​.​c​o​m​/​u​/​7​0​6​6​0​4​1​0​?​v​=​4
+		 */
+		IMAGE: string
+	}
 	LAYOUT: {
 		NAV: {
 			/**
@@ -57,6 +75,24 @@ type RootTranslation = {
 }
 
 export type TranslationFunctions = {
+	SEO: {
+		/**
+		 * Michael Liendo | Desarrollador de Software
+		 */
+		TITLE: () => LocalizedString
+		/**
+		 * Un Desarrollador de Software interesado en Programación de Sistemas y Desarrollo Web.
+		 */
+		DESCRIPTION: () => LocalizedString
+		/**
+		 * michael liendo, inicio, notas, portafolio, desarrollador de software, svelte, typescript, desarrollo web, proyectos desafiantes, colaboración, resolución de problemas
+		 */
+		KEYWORDS: () => LocalizedString
+		/**
+		 * https://avatars.githubusercontent.com/u/70660410?v=4
+		 */
+		IMAGE: () => LocalizedString
+	}
 	LAYOUT: {
 		NAV: {
 			/**

@@ -1,4 +1,5 @@
 <script lang="ts">
+import Footer from "$lib/components/footer.svelte";
 import "../app.css";
 const { children } = $props();
 </script>
@@ -17,4 +18,13 @@ const { children } = $props();
   <link rel="icon" type="image/png" href="/favicon.png" sizes="16x16" />
 </svelte:head>
 
-{@render children()}
+
+<div class="bg-white">
+  <div class="min-h-screen">
+    <!-- <Header /> -->
+    <main class="px-5 sm:px-10 md:px-20">{@render children()}</main>
+  </div>
+  <Footer />
+</div>
+
+
