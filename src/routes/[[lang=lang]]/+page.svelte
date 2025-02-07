@@ -1,9 +1,13 @@
 <script lang="ts">
   import LL, { locale } from '$i18n/i18n-svelte';
   import { baseLocale, locales } from '$i18n/i18n-util';
+  import Entry from '$lib/components/entry.svelte';
+  import Note from '$lib/components/note.svelte';
   import SocialMedia from '$lib/components/social-media.svelte';
 
   const currentPageLocale = $locale;
+
+  const { data } = $props();
 </script>
 
 <svelte:head>
@@ -85,6 +89,18 @@
   <h2 class="text-3xl sm:text-4xl font-bold my-7">
     {$LL.HOMEPAGE.LATEST_NOTES()}
   </h2>
+
+  <section class="grid gap-y-8 gap-x-6 grid-cols-4 md:grid-cols-12">
+    {#each data.notes as note}
+      <Note
+        title={note.title}
+        description={note.description}
+        publishDate={new Date(note.date)}
+        tags={note.tags}
+        slug={note.slug!}
+      />
+    {/each}
+  </section>
 </section>
 
 <style>

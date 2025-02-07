@@ -2,6 +2,7 @@
   import { locale } from '$i18n/i18n-svelte';
   import { baseLocale } from '$i18n/i18n-util';
   import { Calendar } from 'lucide-svelte';
+  import Tag from './tag.svelte';
 
   interface Props {
     title?: string;
@@ -56,7 +57,7 @@
       <div class="flex mb-2">
         <span class="flex items-center mr-2">
           <figure class="mr-2">
-            <Calendar class="text-gray-800 dark:text-white h-4 w-4" />
+            <Calendar class="text-gray-800 h-4 w-4" />
           </figure>
           <time class="text-sm mr-2" datetime={publishDate.toString()}
             >{formattedDate}</time
@@ -65,9 +66,7 @@
       </div>
       <ul class="flex flex-wrap">
         {#each tags as tag}
-          <li class="text-sm mr-2 mb-2 bg-slate-200 rounded py-1 px-2">
-            {tag}
-          </li>
+          <Tag title={tag} />
         {/each}
       </ul>
     </footer>
