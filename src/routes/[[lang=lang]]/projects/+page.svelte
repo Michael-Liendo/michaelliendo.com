@@ -1,6 +1,6 @@
 <script>
-  import { en_projects } from '$i18n/en';
-  import { es_projects } from '$i18n/es';
+  import en_projects from '$i18n/en/project';
+  import es_projects from '$i18n/es/project';
   import LL, { locale } from '$i18n/i18n-svelte';
   import { Github } from 'lucide-svelte';
 
