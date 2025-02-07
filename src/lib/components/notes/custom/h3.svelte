@@ -1,21 +1,21 @@
 <script lang="ts">
-const { children } = $props();
+  const { children } = $props();
 
-// biome-ignore lint/style/useConst: svelte doesnt support const
-let data = $state<HTMLHeadingElement | null>(null);
-let href = $state("");
-let id = $state("");
+  // biome-ignore lint/style/useConst: svelte doesnt support const
+  let data = $state<HTMLHeadingElement | null>(null);
+  let href = $state('');
+  let id = $state('');
 
-$effect(() => {
-	if (typeof data?.innerText === "string") {
-		id = data?.innerText?.toLowerCase().trim().split(" ").join("-");
-		href = `#${id}`;
-	}
-});
+  $effect(() => {
+    if (typeof data?.innerText === 'string') {
+      id = data?.innerText?.toLowerCase().trim().split(' ').join('-');
+      href = `#${id}`;
+    }
+  });
 
-const focusElement = () => {
-	data?.scrollIntoView();
-};
+  const focusElement = () => {
+    data?.scrollIntoView();
+  };
 </script>
 
 <h3 {id} class="text-xl font-display relative group py-4" bind:this={data}>

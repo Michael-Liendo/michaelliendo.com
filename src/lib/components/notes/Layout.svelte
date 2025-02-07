@@ -1,14 +1,14 @@
 <script lang="ts" module>
-import a from "./custom/a.svelte";
-import blockquote from "./custom/blockquote.svelte";
-import h2 from "./custom/h2.svelte";
-import h3 from "./custom/h3.svelte";
-import img from "./custom/img.svelte";
-import table from "./custom/table.svelte";
-import td from "./custom/td.svelte";
-import th from "./custom/th.svelte";
+  import a from './custom/a.svelte';
+  import blockquote from './custom/blockquote.svelte';
+  import h2 from './custom/h2.svelte';
+  import h3 from './custom/h3.svelte';
+  import img from './custom/img.svelte';
+  import table from './custom/table.svelte';
+  import td from './custom/td.svelte';
+  import th from './custom/th.svelte';
 
-export { a, blockquote, h2, h3, img, table, th, td };
+  export { a, blockquote, h2, h3, img, table, th, td };
 </script>
 
 <script lang="ts">
@@ -17,13 +17,7 @@ export { a, blockquote, h2, h3, img, table, th, td };
   import './styles/note.css';
   import './styles/prism-one-dark.css';
 
-  let {
-    title,
-    description,
-    date,
-    preview_image_url,
-    children,
-  } = $props();
+  let { title, description, date, preview_image_url, children } = $props();
 
   const publishedTime = new Date(date);
   const formattedDate = new Intl.DateTimeFormat($locale).format(publishedTime);
@@ -56,13 +50,12 @@ export { a, blockquote, h2, h3, img, table, th, td };
 
 <div class="w-full md:max-w-[800px] mx-auto pb-6">
   {#if preview_image_url}
-    
-  <figure
-  class="flex justify-center items-center overflow-hidden rounded h-[300px]"
-  >
-  <img class="w-full" src={preview_image_url} alt={title} />
-</figure>
-{/if}
+    <figure
+      class="flex justify-center items-center overflow-hidden rounded h-[300px]"
+    >
+      <img class="w-full" src={preview_image_url} alt={title} />
+    </figure>
+  {/if}
   <header class="py-4">
     <h1 class="text-3xl py-4 font-semibold text-pretty">{title}</h1>
     <div class="flex mb-2">
@@ -75,7 +68,7 @@ export { a, blockquote, h2, h3, img, table, th, td };
       </span>
     </div>
   </header>
-    <article class="prose w-full md:max-w-[1000px]">
-      {@render children()}
-    </article>
+  <article class="prose w-full md:max-w-[1000px]">
+    {@render children()}
+  </article>
 </div>

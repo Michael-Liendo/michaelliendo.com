@@ -1,5 +1,5 @@
 <script lang="ts">
-import { Github, Linkedin, Twitter } from "lucide-svelte";
+  import { Github, Linkedin, Twitter } from 'lucide-svelte';
 </script>
 
 <ul class="flex mx-auto md:mx-0" itemprop="sameAs">

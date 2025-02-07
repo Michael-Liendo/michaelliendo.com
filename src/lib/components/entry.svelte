@@ -1,36 +1,36 @@
 <script lang="ts">
-import { locale } from "$i18n/i18n-svelte";
-import { baseLocale } from "$i18n/i18n-util";
-import { Calendar } from "lucide-svelte";
+  import { locale } from '$i18n/i18n-svelte';
+  import { baseLocale } from '$i18n/i18n-util';
+  import { Calendar } from 'lucide-svelte';
 
-interface Props {
-	title?: string;
-	description?: string;
-	publishDate: Date;
-	tags?: string[];
-	slug?: string;
-	previewImageUrl?: string | null;
-}
+  interface Props {
+    title?: string;
+    description?: string;
+    publishDate: Date;
+    tags?: string[];
+    slug?: string;
+    previewImageUrl?: string | null;
+  }
 
-const {
-	title = "",
-	description = "",
-	publishDate,
-	tags = [],
-	slug = "",
-	previewImageUrl = "",
-}: Props = $props();
+  const {
+    title = '',
+    description = '',
+    publishDate,
+    tags = [],
+    slug = '',
+    previewImageUrl = '',
+  }: Props = $props();
 
-const baseLocaleUrl = $locale === baseLocale ? "" : `/${$locale}`;
+  const baseLocaleUrl = $locale === baseLocale ? '' : `/${$locale}`;
 
-const formattedDate = new Date(publishDate).toLocaleDateString(
-	`${$locale}-us`,
-	{
-		month: "long",
-		day: "2-digit",
-		year: "numeric",
-	},
-);
+  const formattedDate = new Date(publishDate).toLocaleDateString(
+    `${$locale}-us`,
+    {
+      month: 'long',
+      day: '2-digit',
+      year: 'numeric',
+    },
+  );
 </script>
 
 <li class="mb-4 md:mb-0 last-of-type:mb-0">
@@ -65,9 +65,7 @@ const formattedDate = new Date(publishDate).toLocaleDateString(
       </div>
       <ul class="flex flex-wrap">
         {#each tags as tag}
-          <li
-            class="text-sm mr-2 mb-2 bg-slate-200 rounded py-1 px-2"
-          >
+          <li class="text-sm mr-2 mb-2 bg-slate-200 rounded py-1 px-2">
             {tag}
           </li>
         {/each}

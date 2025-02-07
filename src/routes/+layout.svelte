@@ -1,8 +1,8 @@
 <script lang="ts">
-import Footer from "$lib/components/footer.svelte";
-import Header from "$lib/components/header.svelte";
-import "../app.css";
-const { children } = $props();
+  import Footer from '$lib/components/footer.svelte';
+  import Header from '$lib/components/header.svelte';
+  import '../app.css';
+  const { children } = $props();
 </script>
 
 <svelte:head>
@@ -19,13 +19,10 @@ const { children } = $props();
   <link rel="icon" type="image/png" href="/favicon.png" sizes="16x16" />
 </svelte:head>
 
-
 <div class="bg-white">
   <div class="min-h-screen px-5 sm:px-10 md:px-20">
-    <Header /> 
+    <Header />
     <main>{@render children()}</main>
   </div>
   <Footer />
 </div>
-
-

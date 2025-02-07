@@ -1,9 +1,9 @@
 <script lang="ts">
-import LL, { locale } from "$i18n/i18n-svelte";
-import { baseLocale, locales } from "$i18n/i18n-util";
-import SocialMedia from "$lib/components/social-media.svelte";
+  import LL, { locale } from '$i18n/i18n-svelte';
+  import { baseLocale, locales } from '$i18n/i18n-util';
+  import SocialMedia from '$lib/components/social-media.svelte';
 
-const currentPageLocale = $locale;
+  const currentPageLocale = $locale;
 </script>
 
 <svelte:head>
@@ -11,33 +11,33 @@ const currentPageLocale = $locale;
   <meta name="description" content={$LL.SEO.DESCRIPTION()} />
   <meta name="keywords" content={$LL.SEO.KEYWORDS()} />
   <!-- Schema.org markup for Google+ -->
-    <meta itemprop="name" content={$LL.SEO.TITLE()} />
-    <meta itemprop="description" content={$LL.SEO.DESCRIPTION()} />
-    <meta itemprop="image" content={$LL.SEO.IMAGE()} />
+  <meta itemprop="name" content={$LL.SEO.TITLE()} />
+  <meta itemprop="description" content={$LL.SEO.DESCRIPTION()} />
+  <meta itemprop="image" content={$LL.SEO.IMAGE()} />
   <!-- Open Graph data -->
-    <meta property="og:title" content={$LL.SEO.TITLE()} />
-    <meta property="og:type" content="article" />
-    <meta property="og:url" content="https://michaelliendo.com/" />
-    <meta property="og:image" content={$LL.SEO.IMAGE()} />
-    <meta property="og:description" content={$LL.SEO.DESCRIPTION()} />
-    <meta property="og:site_name" content="Michael Liendo" />
+  <meta property="og:title" content={$LL.SEO.TITLE()} />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://michaelliendo.com/" />
+  <meta property="og:image" content={$LL.SEO.IMAGE()} />
+  <meta property="og:description" content={$LL.SEO.DESCRIPTION()} />
+  <meta property="og:site_name" content="Michael Liendo" />
   <!-- Twitter Card data -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@mykeliendo" />
-    <meta name="twitter:title" content={$LL.SEO.TITLE()} />
-    <meta name="twitter:description" content={$LL.SEO.DESCRIPTION()} />
-    <meta name="twitter:creator" content="@mykeliendo" />
-    <meta name="twitter:image:src" content={$LL.SEO.IMAGE()} />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@mykeliendo" />
+  <meta name="twitter:title" content={$LL.SEO.TITLE()} />
+  <meta name="twitter:description" content={$LL.SEO.DESCRIPTION()} />
+  <meta name="twitter:creator" content="@mykeliendo" />
+  <meta name="twitter:image:src" content={$LL.SEO.IMAGE()} />
 
-    {#each locales as locale}
-		{#if currentPageLocale !== locale}
-			<link
-				rel="alternate"
-				hreflang={locale}
-				href={`https://michaelliendo.com/${locale === baseLocale ? '' : locale}`}
-			/>
-		{/if}
-	{/each}
+  {#each locales as locale}
+    {#if currentPageLocale !== locale}
+      <link
+        rel="alternate"
+        hreflang={locale}
+        href={`https://michaelliendo.com/${locale === baseLocale ? '' : locale}`}
+      />
+    {/if}
+  {/each}
 </svelte:head>
 <section
   id="about"
@@ -59,7 +59,7 @@ const currentPageLocale = $locale;
       {@html $LL.HOMEPAGE.ABOUT()}
     </p>
     <div class="flex justify-between">
-    <SocialMedia /> 
+      <SocialMedia />
     </div>
   </div>
   <div class="w-full md:flex justify-end">
@@ -85,7 +85,6 @@ const currentPageLocale = $locale;
   <h2 class="text-3xl sm:text-4xl font-bold my-7">
     {$LL.HOMEPAGE.LATEST_NOTES()}
   </h2>
-
 </section>
 
 <style>

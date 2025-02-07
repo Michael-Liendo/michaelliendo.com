@@ -1,6 +1,7 @@
 <script lang="ts">
-const { children } = $props();
+  const { children } = $props();
 </script>
+
 <th class="border p-2 text-left">
-  {@render children()}  
+  {@render children()}
 </th>
