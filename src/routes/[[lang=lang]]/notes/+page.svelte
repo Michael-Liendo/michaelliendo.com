@@ -31,7 +31,7 @@
   <meta name="twitter:image:src" content={$LL.SEO.IMAGE()} />
 </svelte:head>
 
-<h1 class="text-3xl sm:text-4xl font-bold">
+<h1 class="text-2xl sm:text-3xl font-bold mt-5">
   {$LL.NOTES.NOTES()}
 </h1>
 

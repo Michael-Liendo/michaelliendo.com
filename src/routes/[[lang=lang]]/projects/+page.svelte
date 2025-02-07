@@ -34,10 +34,7 @@
   <meta name="twitter:image:src" content={$LL.SEO.IMAGE()} />
 </svelte:head>
 
-<!-- Projects
-Open-Source projects that I have been part of or that I maintain. -->
-
-<h1 class="text-3xl sm:text-4xl font-bold mt-5">
+<h1 class="text-2xl sm:text-3xl font-bold mt-5">
   {$LL.PROJECTS.PROJECTS()}
 </h1>
 
