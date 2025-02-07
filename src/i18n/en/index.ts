@@ -42,6 +42,14 @@ const en = {
 		ABOUT: `I'm a <strong>Software Developer</strong> focused on Svelte and TypeScript with a passion for <strong>Mobile Development and Websites</strong>. I enjoy working on challenging projects, value collaboration and problem-solving.`,
 		LATEST_NOTES: "Latest Notes",
 	},
+	NOTES: {
+		NOTES: "Notes",
+		DESCRIPTION: "Notes on learnings, bookmark and experiences",
+	},
+	PROJECTS: {
+		PROJECTS: "Projects",
+		DESCRIPTION: "Projects I've worked on.",
+	},
 } satisfies BaseTranslation;
 
 export default en;

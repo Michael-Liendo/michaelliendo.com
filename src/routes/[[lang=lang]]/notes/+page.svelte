@@ -31,7 +31,15 @@
   <meta name="twitter:image:src" content={$LL.SEO.IMAGE()} />
 </svelte:head>
 
-<ul class="m-auto mt-10 flex flex-col md:grid md:grid-cols-3 md:gap-6 md:px-0">
+<h1 class="text-3xl sm:text-4xl font-bold">
+  {$LL.NOTES.NOTES()}
+</h1>
+
+<p class="mt-1 text-sm text-gray-600">
+  {$LL.NOTES.DESCRIPTION()}
+</p>
+
+<ul class="m-auto mt-5 flex flex-col md:grid md:grid-cols-3 md:gap-6 md:px-0">
   {#each data.notes as note}
     <Entry
       title={note.title}

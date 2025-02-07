@@ -43,6 +43,14 @@ const es = {
 			"Soy un <strong>Desarrollador de Software</strong> enfocado en Svelte y TypeScript apasionado por el <strong>Desarrollo de Aplicaciones Móviles y Páginas Web</strong>. Disfruto trabajar en proyectos desafiantes, valoro la colaboración y la resolución de problemas.",
 		LATEST_NOTES: "Últimas notas",
 	},
+	NOTES: {
+		NOTES: "Notas",
+		DESCRIPTION: "Notas sobre aprendizajes, marcadores y experiencias",
+	},
+	PROJECTS: {
+		PROJECTS: "Proyectos",
+		DESCRIPTION: "Proyectos en los que he trabajado.",
+	},
 } satisfies BaseTranslation;
 
 export default es;

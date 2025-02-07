@@ -34,7 +34,18 @@
   <meta name="twitter:image:src" content={$LL.SEO.IMAGE()} />
 </svelte:head>
 
-<div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+<!-- Projects
+Open-Source projects that I have been part of or that I maintain. -->
+
+<h1 class="text-3xl sm:text-4xl font-bold mt-5">
+  {$LL.PROJECTS.PROJECTS()}
+</h1>
+
+<p class="mt-1 text-sm text-gray-600">
+  {$LL.PROJECTS.DESCRIPTION()}
+</p>
+
+<div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mt-5">
   {#each projects as project}
     <div class="bg-white shadow rounded-lg overflow-hidden">
       <div class="px-4 py-5 sm:p-6">
