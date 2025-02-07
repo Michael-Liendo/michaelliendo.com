@@ -7,16 +7,16 @@ tags: [expo, android, desarrollo móvil]
 published: true
 ---
 
+
+
 ## Introducción
 
 He visto un gran interés de la comunidad en aprender React Native con expo, pero se que puede ser un poco complicado el hecho de tener un APK sin tener que pagar o depende de una capa gratuita en los servicios de expo
-
 En esta publicación enseñaré como generar un APK, necesitaremos tener instalado Android Studio para ello y el proyecto de expo al cual generamos el APK de nuestra app.
 
 primero nos vamos a nuestra terminar y ejecutamos el comando de expo prebuild eso nos generará dos carpetas IOS y Android, nos centraremos en Android que es la que tienes lo archivos que android puede interpretar 
 
 esa carpeta la abriremos con el IDE de android studio.
-
 
 Para ello hay que tener instalado Android Studio: https://developer.android.com/studio/install
 

@@ -54,7 +54,7 @@ export { a, blockquote, h2, h3, img, table, th, td };
   <meta name="twitter:image:src" content={preview_image_url} />
 </svelte:head>
 
-<div class="w-full md:max-w-[1000px] mx-auto pb-6">
+<div class="w-full md:max-w-[800px] mx-auto pb-6">
   {#if preview_image_url}
     
   <figure
@@ -64,7 +64,7 @@ export { a, blockquote, h2, h3, img, table, th, td };
 </figure>
 {/if}
   <header class="py-4">
-    <h1 class="text-3xl py-4 font-semibold">{title}</h1>
+    <h1 class="text-3xl py-4 font-semibold text-pretty">{title}</h1>
     <div class="flex mb-2">
       <span class="flex items-center mr-2">
         <time
@@ -75,7 +75,7 @@ export { a, blockquote, h2, h3, img, table, th, td };
       </span>
     </div>
   </header>
-  <article>
-    {@render children()}
+    <article class="prose w-full md:max-w-[1000px]">
+      {@render children()}
     </article>
 </div>
