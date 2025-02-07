@@ -1,6 +1,6 @@
 ---
 title: "Como generar un APK en React Native y Expo sin Expo Application Services (EAS)"
-description: How to build an APK without paying for Expo
+description: "Como generar un APK en React Native y Expo sin Expo Application Services (EAS)"
 date: 2024-07-11
 icon: git
 tags: [expo, android, desarrollo móvil]
