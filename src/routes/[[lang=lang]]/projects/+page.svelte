@@ -35,9 +35,9 @@
   {#each projects as project}
     <div class="bg-white shadow rounded-lg overflow-hidden">
       <div class="px-4 py-5 sm:p-6">
-        <h3 class="text-lg leading-6 font-medium text-gray-900">
+        <h2 class="text-lg leading-6 font-medium text-gray-900">
           {project.name}
-        </h3>
+        </h2>
         <p class="mt-1 text-sm text-gray-600">
           {project.description}
         </p>
@@ -58,8 +58,10 @@
             target="_blank"
             rel="noopener noreferrer"
             class="text-sm font-medium text-indigo-600 hover:text-indigo-500"
+            aria-label="GitHub Repository"
           >
-            <Github />
+            <Github aria-hidden="true" />
+            <span class="sr-only">GitHub Repository</span>
           </a>
         {/if}
         {#if project.preview_url}
@@ -68,8 +70,10 @@
             target="_blank"
             rel="noopener noreferrer"
             class="text-sm font-medium text-indigo-600 hover:text-indigo-500"
+            aria-label="Live Demo"
           >
             Live Demo
+            <span class="sr-only">opens in a new tab</span>
           </a>
         {/if}
       </div>
