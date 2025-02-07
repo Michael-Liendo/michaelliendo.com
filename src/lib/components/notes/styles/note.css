@@ -32,7 +32,7 @@
 }
 
 .note-container p {
-	@apply pb-2;
+	@apply pb-0;
 }
 
 .note-container pre code {
