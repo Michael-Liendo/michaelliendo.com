@@ -8,6 +8,7 @@
 
 <svelte:head>
   <title>{$LL.SEO.NOTES.TITLE()}</title>
+  <link rel="canonical" href="https://michaelliendo.com/notes" />
   <meta name="description" content={$LL.SEO.NOTES.DESCRIPTION()} />
   <meta name="keywords" content={$LL.SEO.NOTES.KEYWORDS()} />
   <!-- Schema.org markup for Google+ -->
