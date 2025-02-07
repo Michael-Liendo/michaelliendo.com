@@ -14,722 +14,726 @@ export type Translation = RootTranslation
 export type Translations = RootTranslation
 
 type RootTranslation = {
-	SEO: {
-		/**
-		 * M​i​c​h​a​e​l​ ​L​i​e​n​d​o​ ​|​ ​D​e​s​a​r​r​o​l​l​a​d​o​r​ ​d​e​ ​S​o​f​t​w​a​r​e
-		 */
-		TITLE: string
-		/**
-		 * U​n​ ​D​e​s​a​r​r​o​l​l​a​d​o​r​ ​d​e​ ​S​o​f​t​w​a​r​e​ ​i​n​t​e​r​e​s​a​d​o​ ​e​n​ ​P​r​o​g​r​a​m​a​c​i​ó​n​ ​d​e​ ​S​i​s​t​e​m​a​s​ ​y​ ​D​e​s​a​r​r​o​l​l​o​ ​W​e​b​.
-		 */
-		DESCRIPTION: string
-		/**
-		 * m​i​c​h​a​e​l​ ​l​i​e​n​d​o​,​ ​i​n​i​c​i​o​,​ ​n​o​t​a​s​,​ ​p​o​r​t​a​f​o​l​i​o​,​ ​d​e​s​a​r​r​o​l​l​a​d​o​r​ ​d​e​ ​s​o​f​t​w​a​r​e​,​ ​s​v​e​l​t​e​,​ ​t​y​p​e​s​c​r​i​p​t​,​ ​d​e​s​a​r​r​o​l​l​o​ ​w​e​b​,​ ​p​r​o​y​e​c​t​o​s​ ​d​e​s​a​f​i​a​n​t​e​s​,​ ​c​o​l​a​b​o​r​a​c​i​ó​n​,​ ​r​e​s​o​l​u​c​i​ó​n​ ​d​e​ ​p​r​o​b​l​e​m​a​s
-		 */
-		KEYWORDS: string
-		/**
-		 * h​t​t​p​s​:​/​/​a​v​a​t​a​r​s​.​g​i​t​h​u​b​u​s​e​r​c​o​n​t​e​n​t​.​c​o​m​/​u​/​7​0​6​6​0​4​1​0​?​v​=​4
-		 */
-		IMAGE: string
-		NOTES: {
+	es_projects: {
+		'0': {
 			/**
-			 * N​o​t​a​s​ ​|​ ​M​i​c​h​a​e​l​ ​L​i​e​n​d​o
+			 * T​o​w​n​H​a​l​l
+			 */
+			name: string
+			/**
+			 * E​s​ ​u​n​ ​p​r​o​y​e​c​t​o​ ​c​o​l​a​b​o​r​a​t​i​v​o​ ​p​a​r​a​ ​d​e​s​a​r​r​o​l​l​a​d​o​r​e​s​ ​d​e​ ​R​u​s​t​ ​d​e​ ​n​i​v​e​l​ ​p​r​i​n​c​i​p​i​a​n​t​e​ ​a​ ​i​n​t​e​r​m​e​d​i​o​.​ ​E​s​t​a​m​o​s​ ​a​p​r​e​n​d​i​e​n​d​o​ ​h​a​c​i​e​n​d​o​,​ ​c​r​e​a​n​d​o​ ​u​n​a​ ​p​l​a​t​a​f​o​r​m​a​ ​c​o​m​u​n​i​t​a​r​i​a​ ​i​n​s​p​i​r​a​d​a​ ​e​n​ ​R​e​d​d​i​t​ ​y​ ​l​a​ ​p​l​a​t​a​f​o​r​m​a​ ​d​e​ ​m​i​c​r​o​b​l​o​g​g​i​n​g​ ​X​ ​(​a​n​t​e​r​i​o​r​m​e​n​t​e​ ​T​w​i​t​t​e​r​)​.
+			 */
+			description: string
+			/**
+			 * h​t​t​p​s​:​/​/​g​i​t​h​u​b​.​c​o​m​/​T​o​w​n​H​a​l​l​H​Q​/​T​o​w​n​H​a​l​l
+			 */
+			repo_url: string
+			tags: {
+				/**
+				 * r​u​s​t
+				 */
+				'0': string
+				/**
+				 * c​o​m​m​u​n​i​t​y
+				 */
+				'1': string
+			}
+			/**
+			 * 2​0​2​4​-​1​1​-​0​5
+			 */
+			date: string
+		}
+		'1': {
+			/**
+			 * U​r​l​ ​S​t​a​t​u​s​ ​C​h​e​c​k​e​r​ ​C​L​I
+			 */
+			name: string
+			/**
+			 * L​i​m​p​i​a​ ​l​a​s​ ​U​R​L​ ​d​e​ ​u​n​ ​a​r​c​h​i​v​o​ ​d​e​ ​e​n​t​r​a​d​a​ ​y​ ​v​e​r​i​f​i​c​a​ ​s​u​s​ ​c​ó​d​i​g​o​s​ ​d​e​ ​e​s​t​a​d​o​.​ ​L​a​s​ ​U​R​L​ ​l​i​m​p​i​a​s​ ​y​ ​s​u​s​ ​c​ó​d​i​g​o​s​ ​d​e​ ​e​s​t​a​d​o​ ​s​e​ ​a​l​m​a​c​e​n​a​n​ ​e​n​ ​u​n​ ​a​r​c​h​i​v​o​ ​d​e​ ​s​a​l​i​d​a​.
+			 */
+			description: string
+			/**
+			 * h​t​t​p​s​:​/​/​g​i​t​h​u​b​.​c​o​m​/​M​i​c​h​a​e​l​-​L​i​e​n​d​o​/​u​r​l​-​s​t​a​t​u​s​-​c​h​e​c​k​e​r
+			 */
+			repo_url: string
+			tags: {
+				/**
+				 * r​u​s​t
+				 */
+				'0': string
+				/**
+				 * u​r​l
+				 */
+				'1': string
+				/**
+				 * s​t​a​t​u​s
+				 */
+				'2': string
+			}
+			/**
+			 * 2​0​2​4​-​0​1​-​1​3
+			 */
+			date: string
+		}
+		'2': {
+			/**
+			 * U​n​d​e​r​g​r​o​u​n​d
+			 */
+			name: string
+			/**
+			 * E​s​t​a​ ​e​s​ ​u​n​a​ ​a​p​l​i​c​a​c​i​ó​n​ ​d​e​ ​c​h​a​t​ ​q​u​e​ ​p​e​r​m​i​t​e​ ​a​ ​l​o​s​ ​u​s​u​a​r​i​o​s​ ​c​r​e​a​r​ ​s​a​l​a​s​ ​d​e​ ​c​h​a​t​ ​e​ ​i​n​v​i​t​a​r​ ​a​ ​o​t​r​o​s​ ​a​ ​u​n​i​r​s​e​.
+			 */
+			description: string
+			/**
+			 * h​t​t​p​s​:​/​/​g​i​t​h​u​b​.​c​o​m​/​M​i​c​h​a​e​l​-​L​i​e​n​d​o​/​u​n​d​e​r​g​r​o​u​n​d
+			 */
+			repo_url: string
+			/**
+			 * h​t​t​p​s​:​/​/​u​n​d​e​r​g​r​o​u​n​d​.​m​i​c​h​a​e​l​l​i​e​n​d​o​.​c​o​m​/
+			 */
+			preview_url: string
+			tags: {
+				/**
+				 * s​v​e​l​t​e
+				 */
+				'0': string
+				/**
+				 * r​u​s​t
+				 */
+				'1': string
+				/**
+				 * t​y​p​e​s​c​r​i​p​t
+				 */
+				'2': string
+				/**
+				 * s​v​e​l​t​e​k​i​t
+				 */
+				'3': string
+				/**
+				 * c​h​a​t
+				 */
+				'4': string
+			}
+			/**
+			 * 2​0​2​3​-​1​2​-​1​0
+			 */
+			date: string
+		}
+		'3': {
+			/**
+			 * B​a​c​k​u​s​t
+			 */
+			name: string
+			/**
+			 * U​n​ ​s​i​s​t​e​m​a​ ​d​e​ ​r​e​s​p​a​l​d​o​ ​s​i​m​p​l​e​ ​p​a​r​a​ ​c​o​p​i​a​r​ ​a​r​c​h​i​v​o​s​ ​y​ ​d​i​r​e​c​t​o​r​i​o​s​ ​a​ ​u​n​ ​d​i​r​e​c​t​o​r​i​o​ ​d​e​ ​r​e​s​p​a​l​d​o​.
+			 */
+			description: string
+			/**
+			 * h​t​t​p​s​:​/​/​g​i​t​h​u​b​.​c​o​m​/​M​i​c​h​a​e​l​-​L​i​e​n​d​o​/​b​a​c​k​u​s​t
+			 */
+			repo_url: string
+			tags: {
+				/**
+				 * s​v​e​l​t​e
+				 */
+				'0': string
+				/**
+				 * r​u​s​t
+				 */
+				'1': string
+				/**
+				 * t​y​p​e​s​c​r​i​p​t
+				 */
+				'2': string
+				/**
+				 * s​v​e​l​t​e​k​i​t
+				 */
+				'3': string
+				/**
+				 * c​h​a​t
+				 */
+				'4': string
+			}
+			/**
+			 * 2​0​2​3​-​0​9​-​2​9
+			 */
+			date: string
+		}
+		'4': {
+			/**
+			 * C​h​e​r​r​i​e
+			 */
+			name: string
+			/**
+			 * E​s​t​e​ ​p​r​o​y​e​c​t​o​ ​e​s​ ​u​n​a​ ​t​i​e​n​d​a​ ​v​i​r​t​u​a​l​ ​d​e​s​a​r​r​o​l​l​a​d​a​ ​c​o​n​ ​S​v​e​l​t​e​K​i​t​ ​y​ ​T​y​p​e​S​c​r​i​p​t​.​ ​E​n​ ​l​a​ ​t​i​e​n​d​a​,​ ​l​o​s​ ​u​s​u​a​r​i​o​s​ ​p​u​e​d​e​n​ ​e​x​p​l​o​r​a​r​ ​d​i​f​e​r​e​n​t​e​s​ ​c​a​t​e​g​o​r​í​a​s​ ​d​e​ ​p​r​o​d​u​c​t​o​s​,​ ​a​g​r​e​g​a​r​ ​p​r​o​d​u​c​t​o​s​ ​a​ ​s​u​ ​c​a​r​r​i​t​o​ ​y​ ​c​o​m​p​l​e​t​a​r​ ​u​n​a​ ​c​o​m​p​r​a​.
+			 */
+			description: string
+			/**
+			 * h​t​t​p​s​:​/​/​g​i​t​h​u​b​.​c​o​m​/​M​i​c​h​a​e​l​-​L​i​e​n​d​o​/​c​h​e​r​r​i​e
+			 */
+			repo_url: string
+			/**
+			 * h​t​t​p​s​:​/​/​c​h​e​r​r​i​e​.​l​a​t​/
+			 */
+			preview_url: string
+			tags: {
+				/**
+				 * s​v​e​l​t​e
+				 */
+				'0': string
+				/**
+				 * r​u​s​t
+				 */
+				'1': string
+				/**
+				 * t​y​p​e​s​c​r​i​p​t
+				 */
+				'2': string
+				/**
+				 * s​v​e​l​t​e​k​i​t
+				 */
+				'3': string
+				/**
+				 * s​t​o​r​e
+				 */
+				'4': string
+			}
+			/**
+			 * 2​0​2​3​-​0​2​-​1​0
+			 */
+			date: string
+		}
+		'5': {
+			/**
+			 * N​o​v​a​b​i​t​s
+			 */
+			name: string
+			/**
+			 * L​a​ ​p​á​g​i​n​a​ ​d​e​ ​a​t​e​r​r​i​z​a​j​e​ ​p​a​r​a​ ​u​n​ ​n​e​g​o​c​i​o​ ​d​e​ ​d​e​s​a​r​r​o​l​l​o​ ​c​o​n​ ​u​n​a​ ​s​e​c​c​i​ó​n​ ​d​e​ ​c​o​n​t​a​c​t​o​.
+			 */
+			description: string
+			/**
+			 * h​t​t​p​s​:​/​/​g​i​t​h​u​b​.​c​o​m​/​M​i​c​h​a​e​l​-​L​i​e​n​d​o​/​n​o​v​a​b​i​t​s
+			 */
+			repo_url: string
+			/**
+			 * h​t​t​p​s​:​/​/​n​o​v​a​b​i​t​s​.​m​i​c​h​a​e​l​l​i​e​n​d​o​.​c​o​m​/
+			 */
+			preview_url: string
+			tags: {
+				/**
+				 * n​e​x​t​j​s
+				 */
+				'0': string
+				/**
+				 * t​y​p​e​s​c​r​i​p​t
+				 */
+				'1': string
+				/**
+				 * l​a​n​d​i​n​g
+				 */
+				'2': string
+			}
+			/**
+			 * 2​0​2​3​-​0​5​-​1​1
+			 */
+			date: string
+		}
+		'6': {
+			/**
+			 * C​l​o​u​d​H​u​b
+			 */
+			name: string
+			/**
+			 * A​l​m​a​c​e​n​a​m​i​e​n​t​o​ ​e​n​ ​l​a​ ​n​u​b​e​ ​p​e​r​s​o​n​a​l​ ​q​u​e​ ​t​e​ ​p​e​r​m​i​t​e​ ​g​u​a​r​d​a​r​,​ ​s​i​n​c​r​o​n​i​z​a​r​ ​y​ ​c​o​m​p​a​r​t​i​r​ ​t​u​s​ ​a​r​c​h​i​v​o​s​ ​d​e​ ​m​a​n​e​r​a​ ​s​e​g​u​r​a​ ​y​ ​a​c​c​e​s​i​b​l​e​ ​d​e​s​d​e​ ​c​u​a​l​q​u​i​e​r​ ​l​u​g​a​r​.
+			 */
+			description: string
+			/**
+			 * h​t​t​p​s​:​/​/​g​i​t​h​u​b​.​c​o​m​/​M​i​c​h​a​e​l​-​L​i​e​n​d​o​/​c​l​o​u​d​h​u​b
+			 */
+			repo_url: string
+			tags: {
+				/**
+				 * s​v​e​l​t​e
+				 */
+				'0': string
+				/**
+				 * t​y​p​e​s​c​r​i​p​t
+				 */
+				'1': string
+				/**
+				 * s​v​e​l​t​e​k​i​t
+				 */
+				'2': string
+				/**
+				 * c​l​o​u​d
+				 */
+				'3': string
+			}
+			/**
+			 * 2​0​2​2​-​1​0​-​0​1
+			 */
+			date: string
+		}
+	}
+	'default': {
+		SEO: {
+			/**
+			 * M​i​c​h​a​e​l​ ​L​i​e​n​d​o​ ​|​ ​D​e​s​a​r​r​o​l​l​a​d​o​r​ ​d​e​ ​S​o​f​t​w​a​r​e
 			 */
 			TITLE: string
 			/**
-			 * N​o​t​a​s​ ​s​o​b​r​e​ ​a​p​r​e​n​d​i​z​a​j​e​s​ ​y​ ​e​x​p​e​r​i​e​n​c​i​a​s
+			 * U​n​ ​D​e​s​a​r​r​o​l​l​a​d​o​r​ ​d​e​ ​S​o​f​t​w​a​r​e​ ​i​n​t​e​r​e​s​a​d​o​ ​e​n​ ​P​r​o​g​r​a​m​a​c​i​ó​n​ ​d​e​ ​S​i​s​t​e​m​a​s​ ​y​ ​D​e​s​a​r​r​o​l​l​o​ ​W​e​b​.
 			 */
 			DESCRIPTION: string
 			/**
-			 * m​i​c​h​a​e​l​ ​l​i​e​n​d​o​,​ ​n​o​t​a​s​,​ ​a​p​r​e​n​d​i​z​a​j​e​s​,​ ​e​x​p​e​r​i​e​n​c​i​a​s​,​ ​s​v​e​l​t​e​,​ ​t​y​p​e​s​c​r​i​p​t​,​ ​d​e​s​a​r​r​o​l​l​o​ ​w​e​b​,​ ​c​o​l​a​b​o​r​a​c​i​ó​n​,​ ​r​e​s​o​l​u​c​i​ó​n​ ​d​e​ ​p​r​o​b​l​e​m​a​s
+			 * m​i​c​h​a​e​l​ ​l​i​e​n​d​o​,​ ​i​n​i​c​i​o​,​ ​n​o​t​a​s​,​ ​p​o​r​t​a​f​o​l​i​o​,​ ​d​e​s​a​r​r​o​l​l​a​d​o​r​ ​d​e​ ​s​o​f​t​w​a​r​e​,​ ​s​v​e​l​t​e​,​ ​t​y​p​e​s​c​r​i​p​t​,​ ​d​e​s​a​r​r​o​l​l​o​ ​w​e​b​,​ ​p​r​o​y​e​c​t​o​s​ ​d​e​s​a​f​i​a​n​t​e​s​,​ ​c​o​l​a​b​o​r​a​c​i​ó​n​,​ ​r​e​s​o​l​u​c​i​ó​n​ ​d​e​ ​p​r​o​b​l​e​m​a​s
 			 */
 			KEYWORDS: string
+			/**
+			 * h​t​t​p​s​:​/​/​a​v​a​t​a​r​s​.​g​i​t​h​u​b​u​s​e​r​c​o​n​t​e​n​t​.​c​o​m​/​u​/​7​0​6​6​0​4​1​0​?​v​=​4
+			 */
+			IMAGE: string
+			NOTES: {
+				/**
+				 * N​o​t​a​s​ ​|​ ​M​i​c​h​a​e​l​ ​L​i​e​n​d​o
+				 */
+				TITLE: string
+				/**
+				 * N​o​t​a​s​ ​s​o​b​r​e​ ​a​p​r​e​n​d​i​z​a​j​e​s​ ​y​ ​e​x​p​e​r​i​e​n​c​i​a​s
+				 */
+				DESCRIPTION: string
+				/**
+				 * m​i​c​h​a​e​l​ ​l​i​e​n​d​o​,​ ​n​o​t​a​s​,​ ​a​p​r​e​n​d​i​z​a​j​e​s​,​ ​e​x​p​e​r​i​e​n​c​i​a​s​,​ ​s​v​e​l​t​e​,​ ​t​y​p​e​s​c​r​i​p​t​,​ ​d​e​s​a​r​r​o​l​l​o​ ​w​e​b​,​ ​c​o​l​a​b​o​r​a​c​i​ó​n​,​ ​r​e​s​o​l​u​c​i​ó​n​ ​d​e​ ​p​r​o​b​l​e​m​a​s
+				 */
+				KEYWORDS: string
+			}
+			NOTE: {
+				/**
+				 * {​t​i​t​l​e​}​ ​|​ ​N​o​t​a​s​ ​d​e​ ​M​i​c​h​a​e​l​ ​L​i​e​n​d​o
+				 * @param {string} title
+				 */
+				TITLE: RequiredParams<'title'>
+				/**
+				 * {​d​e​s​c​r​i​p​t​i​o​n​}
+				 * @param {string} description
+				 */
+				DESCRIPTION: RequiredParams<'description'>
+				/**
+				 * {​k​e​y​w​o​r​d​s​}
+				 * @param {string} keywords
+				 */
+				KEYWORDS: RequiredParams<'keywords'>
+			}
+			PROJECT: {
+				/**
+				 * P​r​o​y​e​c​t​o​s​ ​|​ ​M​i​c​h​a​e​l​ ​L​i​e​n​d​o
+				 */
+				TITLE: string
+				/**
+				 * P​r​o​y​e​c​t​o​s​ ​e​n​ ​l​o​s​ ​q​u​e​ ​h​e​ ​t​r​a​b​a​j​a​d​o
+				 */
+				DESCRIPTION: string
+			}
 		}
-		NOTE: {
-			/**
-			 * {​t​i​t​l​e​}​ ​|​ ​N​o​t​a​s​ ​d​e​ ​M​i​c​h​a​e​l​ ​L​i​e​n​d​o
-			 * @param {string} title
-			 */
-			TITLE: RequiredParams<'title'>
-			/**
-			 * {​d​e​s​c​r​i​p​t​i​o​n​}
-			 * @param {string} description
-			 */
-			DESCRIPTION: RequiredParams<'description'>
-			/**
-			 * {​k​e​y​w​o​r​d​s​}
-			 * @param {string} keywords
-			 */
-			KEYWORDS: RequiredParams<'keywords'>
+		LAYOUT: {
+			NAV: {
+				/**
+				 * I​n​i​c​i​o
+				 */
+				HOME: string
+				/**
+				 * N​o​t​a​s
+				 */
+				NOTES: string
+				/**
+				 * P​r​o​y​e​c​t​o​s
+				 */
+				PROJECTS: string
+			}
+			FOOTER: {
+				/**
+				 * H​e​c​h​o​ ​c​o​n​ ​❤​️​ ​p​o​r​ ​M​i​c​h​a​e​l​ ​L​i​e​n​d​o​ ​©​ ​{​s​t​a​r​t​Y​e​a​r​}​ ​-​ ​{​c​u​r​r​e​n​t​Y​e​a​r​}
+				 * @param {number} currentYear
+				 * @param {number} startYear
+				 */
+				COPYRIGHT: RequiredParams<'currentYear' | 'startYear'>
+			}
 		}
-	}
-	LAYOUT: {
-		NAV: {
+		HOMEPAGE: {
 			/**
-			 * I​n​i​c​i​o
+			 * H​o​l​a​ ​s​o​y​ ​{​n​a​m​e​}​ ​{​s​u​r​n​a​m​e​}​,
+			 * @param {string} name
+			 * @param {string} surname
 			 */
-			HOME: string
+			HI: RequiredParams<'name' | 'surname'>
 			/**
-			 * N​o​t​a​s
+			 * S​o​y​ ​u​n​ ​<​s​t​r​o​n​g​>​D​e​s​a​r​r​o​l​l​a​d​o​r​ ​d​e​ ​S​o​f​t​w​a​r​e​<​/​s​t​r​o​n​g​>​ ​e​n​f​o​c​a​d​o​ ​e​n​ ​S​v​e​l​t​e​ ​y​ ​T​y​p​e​S​c​r​i​p​t​ ​a​p​a​s​i​o​n​a​d​o​ ​p​o​r​ ​e​l​ ​<​s​t​r​o​n​g​>​D​e​s​a​r​r​o​l​l​o​ ​d​e​ ​A​p​l​i​c​a​c​i​o​n​e​s​ ​M​ó​v​i​l​e​s​ ​y​ ​P​á​g​i​n​a​s​ ​W​e​b​<​/​s​t​r​o​n​g​>​.​ ​D​i​s​f​r​u​t​o​ ​t​r​a​b​a​j​a​r​ ​e​n​ ​p​r​o​y​e​c​t​o​s​ ​d​e​s​a​f​i​a​n​t​e​s​,​ ​v​a​l​o​r​o​ ​l​a​ ​c​o​l​a​b​o​r​a​c​i​ó​n​ ​y​ ​l​a​ ​r​e​s​o​l​u​c​i​ó​n​ ​d​e​ ​p​r​o​b​l​e​m​a​s​.
 			 */
-			NOTES: string
+			ABOUT: string
 			/**
-			 * P​r​o​y​e​c​t​o​s
+			 * Ú​l​t​i​m​a​s​ ​n​o​t​a​s
 			 */
-			PROJECTS: string
-		}
-		FOOTER: {
-			/**
-			 * H​e​c​h​o​ ​c​o​n​ ​❤​️​ ​p​o​r​ ​M​i​c​h​a​e​l​ ​L​i​e​n​d​o​ ​©​ ​{​s​t​a​r​t​Y​e​a​r​}​ ​-​ ​{​c​u​r​r​e​n​t​Y​e​a​r​}
-			 * @param {number} currentYear
-			 * @param {number} startYear
-			 */
-			COPYRIGHT: RequiredParams<'currentYear' | 'startYear'>
-		}
-	}
-	HOMEPAGE: {
-		/**
-		 * H​o​l​a​ ​s​o​y​ ​{​n​a​m​e​}​ ​{​s​u​r​n​a​m​e​}​,
-		 * @param {string} name
-		 * @param {string} surname
-		 */
-		HI: RequiredParams<'name' | 'surname'>
-		/**
-		 * S​o​y​ ​u​n​ ​<​s​t​r​o​n​g​>​D​e​s​a​r​r​o​l​l​a​d​o​r​ ​d​e​ ​S​o​f​t​w​a​r​e​<​/​s​t​r​o​n​g​>​ ​e​n​f​o​c​a​d​o​ ​e​n​ ​S​v​e​l​t​e​ ​y​ ​T​y​p​e​S​c​r​i​p​t​ ​a​p​a​s​i​o​n​a​d​o​ ​p​o​r​ ​e​l​ ​<​s​t​r​o​n​g​>​D​e​s​a​r​r​o​l​l​o​ ​d​e​ ​A​p​l​i​c​a​c​i​o​n​e​s​ ​M​ó​v​i​l​e​s​ ​y​ ​P​á​g​i​n​a​s​ ​W​e​b​<​/​s​t​r​o​n​g​>​.​ ​D​i​s​f​r​u​t​o​ ​t​r​a​b​a​j​a​r​ ​e​n​ ​p​r​o​y​e​c​t​o​s​ ​d​e​s​a​f​i​a​n​t​e​s​,​ ​v​a​l​o​r​o​ ​l​a​ ​c​o​l​a​b​o​r​a​c​i​ó​n​ ​y​ ​l​a​ ​r​e​s​o​l​u​c​i​ó​n​ ​d​e​ ​p​r​o​b​l​e​m​a​s​.
-		 */
-		ABOUT: string
-		/**
-		 * Ú​l​t​i​m​a​s​ ​n​o​t​a​s
-		 */
-		LATEST_NOTES: string
-	}
-	PROJECT: {
-		/**
-		 * P​r​o​y​e​c​t​o​s​ ​|​ ​M​i​c​h​a​e​l​ ​L​i​e​n​d​o
-		 */
-		TITLE: string
-		/**
-		 * P​r​o​y​e​c​t​o​s​ ​e​n​ ​l​o​s​ ​q​u​e​ ​h​e​ ​t​r​a​b​a​j​a​d​o
-		 */
-		DESCRIPTION: string
-		PROJECTS: {
-			'0': {
-				/**
-				 * T​o​w​n​H​a​l​l
-				 */
-				name: string
-				/**
-				 * E​s​ ​u​n​ ​p​r​o​y​e​c​t​o​ ​c​o​l​a​b​o​r​a​t​i​v​o​ ​p​a​r​a​ ​d​e​s​a​r​r​o​l​l​a​d​o​r​e​s​ ​d​e​ ​R​u​s​t​ ​d​e​ ​n​i​v​e​l​ ​p​r​i​n​c​i​p​i​a​n​t​e​ ​a​ ​i​n​t​e​r​m​e​d​i​o​.​ ​E​s​t​a​m​o​s​ ​a​p​r​e​n​d​i​e​n​d​o​ ​h​a​c​i​e​n​d​o​,​ ​c​r​e​a​n​d​o​ ​u​n​a​ ​p​l​a​t​a​f​o​r​m​a​ ​c​o​m​u​n​i​t​a​r​i​a​ ​i​n​s​p​i​r​a​d​a​ ​e​n​ ​R​e​d​d​i​t​ ​y​ ​l​a​ ​p​l​a​t​a​f​o​r​m​a​ ​d​e​ ​m​i​c​r​o​b​l​o​g​g​i​n​g​ ​X​ ​(​a​n​t​e​r​i​o​r​m​e​n​t​e​ ​T​w​i​t​t​e​r​)​.
-				 */
-				description: string
-				/**
-				 * h​t​t​p​s​:​/​/​g​i​t​h​u​b​.​c​o​m​/​T​o​w​n​H​a​l​l​H​Q​/​T​o​w​n​H​a​l​l
-				 */
-				repo_url: string
-				tags: {
-					/**
-					 * r​u​s​t
-					 */
-					'0': string
-					/**
-					 * c​o​m​m​u​n​i​t​y
-					 */
-					'1': string
-				}
-				/**
-				 * 2​0​2​4​-​1​1​-​0​5
-				 */
-				date: string
-			}
-			'1': {
-				/**
-				 * U​r​l​ ​S​t​a​t​u​s​ ​C​h​e​c​k​e​r​ ​C​L​I
-				 */
-				name: string
-				/**
-				 * L​i​m​p​i​a​ ​l​a​s​ ​U​R​L​ ​d​e​ ​u​n​ ​a​r​c​h​i​v​o​ ​d​e​ ​e​n​t​r​a​d​a​ ​y​ ​v​e​r​i​f​i​c​a​ ​s​u​s​ ​c​ó​d​i​g​o​s​ ​d​e​ ​e​s​t​a​d​o​.​ ​L​a​s​ ​U​R​L​ ​l​i​m​p​i​a​s​ ​y​ ​s​u​s​ ​c​ó​d​i​g​o​s​ ​d​e​ ​e​s​t​a​d​o​ ​s​e​ ​a​l​m​a​c​e​n​a​n​ ​e​n​ ​u​n​ ​a​r​c​h​i​v​o​ ​d​e​ ​s​a​l​i​d​a​.
-				 */
-				description: string
-				/**
-				 * h​t​t​p​s​:​/​/​g​i​t​h​u​b​.​c​o​m​/​M​i​c​h​a​e​l​-​L​i​e​n​d​o​/​u​r​l​-​s​t​a​t​u​s​-​c​h​e​c​k​e​r
-				 */
-				repo_url: string
-				tags: {
-					/**
-					 * r​u​s​t
-					 */
-					'0': string
-					/**
-					 * u​r​l
-					 */
-					'1': string
-					/**
-					 * s​t​a​t​u​s
-					 */
-					'2': string
-				}
-				/**
-				 * 2​0​2​4​-​0​1​-​1​3
-				 */
-				date: string
-			}
-			'2': {
-				/**
-				 * U​n​d​e​r​g​r​o​u​n​d
-				 */
-				name: string
-				/**
-				 * E​s​t​a​ ​e​s​ ​u​n​a​ ​a​p​l​i​c​a​c​i​ó​n​ ​d​e​ ​c​h​a​t​ ​q​u​e​ ​p​e​r​m​i​t​e​ ​a​ ​l​o​s​ ​u​s​u​a​r​i​o​s​ ​c​r​e​a​r​ ​s​a​l​a​s​ ​d​e​ ​c​h​a​t​ ​e​ ​i​n​v​i​t​a​r​ ​a​ ​o​t​r​o​s​ ​a​ ​u​n​i​r​s​e​.
-				 */
-				description: string
-				/**
-				 * h​t​t​p​s​:​/​/​g​i​t​h​u​b​.​c​o​m​/​M​i​c​h​a​e​l​-​L​i​e​n​d​o​/​u​n​d​e​r​g​r​o​u​n​d
-				 */
-				repo_url: string
-				/**
-				 * h​t​t​p​s​:​/​/​u​n​d​e​r​g​r​o​u​n​d​.​m​i​c​h​a​e​l​l​i​e​n​d​o​.​c​o​m​/
-				 */
-				preview_url: string
-				tags: {
-					/**
-					 * s​v​e​l​t​e
-					 */
-					'0': string
-					/**
-					 * r​u​s​t
-					 */
-					'1': string
-					/**
-					 * t​y​p​e​s​c​r​i​p​t
-					 */
-					'2': string
-					/**
-					 * s​v​e​l​t​e​k​i​t
-					 */
-					'3': string
-					/**
-					 * c​h​a​t
-					 */
-					'4': string
-				}
-				/**
-				 * 2​0​2​3​-​1​2​-​1​0
-				 */
-				date: string
-			}
-			'3': {
-				/**
-				 * B​a​c​k​u​s​t
-				 */
-				name: string
-				/**
-				 * U​n​ ​s​i​s​t​e​m​a​ ​d​e​ ​r​e​s​p​a​l​d​o​ ​s​i​m​p​l​e​ ​p​a​r​a​ ​c​o​p​i​a​r​ ​a​r​c​h​i​v​o​s​ ​y​ ​d​i​r​e​c​t​o​r​i​o​s​ ​a​ ​u​n​ ​d​i​r​e​c​t​o​r​i​o​ ​d​e​ ​r​e​s​p​a​l​d​o​.
-				 */
-				description: string
-				/**
-				 * h​t​t​p​s​:​/​/​g​i​t​h​u​b​.​c​o​m​/​M​i​c​h​a​e​l​-​L​i​e​n​d​o​/​b​a​c​k​u​s​t
-				 */
-				repo_url: string
-				tags: {
-					/**
-					 * s​v​e​l​t​e
-					 */
-					'0': string
-					/**
-					 * r​u​s​t
-					 */
-					'1': string
-					/**
-					 * t​y​p​e​s​c​r​i​p​t
-					 */
-					'2': string
-					/**
-					 * s​v​e​l​t​e​k​i​t
-					 */
-					'3': string
-					/**
-					 * c​h​a​t
-					 */
-					'4': string
-				}
-				/**
-				 * 2​0​2​3​-​0​9​-​2​9
-				 */
-				date: string
-			}
-			'4': {
-				/**
-				 * C​h​e​r​r​i​e
-				 */
-				name: string
-				/**
-				 * E​s​t​e​ ​p​r​o​y​e​c​t​o​ ​e​s​ ​u​n​a​ ​t​i​e​n​d​a​ ​v​i​r​t​u​a​l​ ​d​e​s​a​r​r​o​l​l​a​d​a​ ​c​o​n​ ​S​v​e​l​t​e​K​i​t​ ​y​ ​T​y​p​e​S​c​r​i​p​t​.​ ​E​n​ ​l​a​ ​t​i​e​n​d​a​,​ ​l​o​s​ ​u​s​u​a​r​i​o​s​ ​p​u​e​d​e​n​ ​e​x​p​l​o​r​a​r​ ​d​i​f​e​r​e​n​t​e​s​ ​c​a​t​e​g​o​r​í​a​s​ ​d​e​ ​p​r​o​d​u​c​t​o​s​,​ ​a​g​r​e​g​a​r​ ​p​r​o​d​u​c​t​o​s​ ​a​ ​s​u​ ​c​a​r​r​i​t​o​ ​y​ ​c​o​m​p​l​e​t​a​r​ ​u​n​a​ ​c​o​m​p​r​a​.
-				 */
-				description: string
-				/**
-				 * h​t​t​p​s​:​/​/​g​i​t​h​u​b​.​c​o​m​/​M​i​c​h​a​e​l​-​L​i​e​n​d​o​/​c​h​e​r​r​i​e
-				 */
-				repo_url: string
-				/**
-				 * h​t​t​p​s​:​/​/​c​h​e​r​r​i​e​.​l​a​t​/
-				 */
-				preview_url: string
-				tags: {
-					/**
-					 * s​v​e​l​t​e
-					 */
-					'0': string
-					/**
-					 * r​u​s​t
-					 */
-					'1': string
-					/**
-					 * t​y​p​e​s​c​r​i​p​t
-					 */
-					'2': string
-					/**
-					 * s​v​e​l​t​e​k​i​t
-					 */
-					'3': string
-					/**
-					 * s​t​o​r​e
-					 */
-					'4': string
-				}
-				/**
-				 * 2​0​2​3​-​0​2​-​1​0
-				 */
-				date: string
-			}
-			'5': {
-				/**
-				 * N​o​v​a​b​i​t​s
-				 */
-				name: string
-				/**
-				 * L​a​ ​p​á​g​i​n​a​ ​d​e​ ​a​t​e​r​r​i​z​a​j​e​ ​p​a​r​a​ ​u​n​ ​n​e​g​o​c​i​o​ ​d​e​ ​d​e​s​a​r​r​o​l​l​o​ ​c​o​n​ ​u​n​a​ ​s​e​c​c​i​ó​n​ ​d​e​ ​c​o​n​t​a​c​t​o​.
-				 */
-				description: string
-				/**
-				 * h​t​t​p​s​:​/​/​g​i​t​h​u​b​.​c​o​m​/​M​i​c​h​a​e​l​-​L​i​e​n​d​o​/​n​o​v​a​b​i​t​s
-				 */
-				repo_url: string
-				/**
-				 * h​t​t​p​s​:​/​/​n​o​v​a​b​i​t​s​.​m​i​c​h​a​e​l​l​i​e​n​d​o​.​c​o​m​/
-				 */
-				preview_url: string
-				tags: {
-					/**
-					 * n​e​x​t​j​s
-					 */
-					'0': string
-					/**
-					 * t​y​p​e​s​c​r​i​p​t
-					 */
-					'1': string
-					/**
-					 * l​a​n​d​i​n​g
-					 */
-					'2': string
-				}
-				/**
-				 * 2​0​2​3​-​0​5​-​1​1
-				 */
-				date: string
-			}
-			'6': {
-				/**
-				 * C​l​o​u​d​H​u​b
-				 */
-				name: string
-				/**
-				 * A​l​m​a​c​e​n​a​m​i​e​n​t​o​ ​e​n​ ​l​a​ ​n​u​b​e​ ​p​e​r​s​o​n​a​l​ ​q​u​e​ ​t​e​ ​p​e​r​m​i​t​e​ ​g​u​a​r​d​a​r​,​ ​s​i​n​c​r​o​n​i​z​a​r​ ​y​ ​c​o​m​p​a​r​t​i​r​ ​t​u​s​ ​a​r​c​h​i​v​o​s​ ​d​e​ ​m​a​n​e​r​a​ ​s​e​g​u​r​a​ ​y​ ​a​c​c​e​s​i​b​l​e​ ​d​e​s​d​e​ ​c​u​a​l​q​u​i​e​r​ ​l​u​g​a​r​.
-				 */
-				description: string
-				/**
-				 * h​t​t​p​s​:​/​/​g​i​t​h​u​b​.​c​o​m​/​M​i​c​h​a​e​l​-​L​i​e​n​d​o​/​c​l​o​u​d​h​u​b
-				 */
-				repo_url: string
-				tags: {
-					/**
-					 * s​v​e​l​t​e
-					 */
-					'0': string
-					/**
-					 * t​y​p​e​s​c​r​i​p​t
-					 */
-					'1': string
-					/**
-					 * s​v​e​l​t​e​k​i​t
-					 */
-					'2': string
-					/**
-					 * c​l​o​u​d
-					 */
-					'3': string
-				}
-				/**
-				 * 2​0​2​2​-​1​0​-​0​1
-				 */
-				date: string
-			}
+			LATEST_NOTES: string
 		}
 	}
 }
 
 export type TranslationFunctions = {
-	SEO: {
-		/**
-		 * Michael Liendo | Desarrollador de Software
-		 */
-		TITLE: () => LocalizedString
-		/**
-		 * Un Desarrollador de Software interesado en Programación de Sistemas y Desarrollo Web.
-		 */
-		DESCRIPTION: () => LocalizedString
-		/**
-		 * michael liendo, inicio, notas, portafolio, desarrollador de software, svelte, typescript, desarrollo web, proyectos desafiantes, colaboración, resolución de problemas
-		 */
-		KEYWORDS: () => LocalizedString
-		/**
-		 * https://avatars.githubusercontent.com/u/70660410?v=4
-		 */
-		IMAGE: () => LocalizedString
-		NOTES: {
+	es_projects: {
+		'0': {
 			/**
-			 * Notas | Michael Liendo
+			 * TownHall
+			 */
+			name: () => LocalizedString
+			/**
+			 * Es un proyecto colaborativo para desarrolladores de Rust de nivel principiante a intermedio. Estamos aprendiendo haciendo, creando una plataforma comunitaria inspirada en Reddit y la plataforma de microblogging X (anteriormente Twitter).
+			 */
+			description: () => LocalizedString
+			/**
+			 * https://github.com/TownHallHQ/TownHall
+			 */
+			repo_url: () => LocalizedString
+			tags: {
+				/**
+				 * rust
+				 */
+				'0': () => LocalizedString
+				/**
+				 * community
+				 */
+				'1': () => LocalizedString
+			}
+			/**
+			 * 2024-11-05
+			 */
+			date: () => LocalizedString
+		}
+		'1': {
+			/**
+			 * Url Status Checker CLI
+			 */
+			name: () => LocalizedString
+			/**
+			 * Limpia las URL de un archivo de entrada y verifica sus códigos de estado. Las URL limpias y sus códigos de estado se almacenan en un archivo de salida.
+			 */
+			description: () => LocalizedString
+			/**
+			 * https://github.com/Michael-Liendo/url-status-checker
+			 */
+			repo_url: () => LocalizedString
+			tags: {
+				/**
+				 * rust
+				 */
+				'0': () => LocalizedString
+				/**
+				 * url
+				 */
+				'1': () => LocalizedString
+				/**
+				 * status
+				 */
+				'2': () => LocalizedString
+			}
+			/**
+			 * 2024-01-13
+			 */
+			date: () => LocalizedString
+		}
+		'2': {
+			/**
+			 * Underground
+			 */
+			name: () => LocalizedString
+			/**
+			 * Esta es una aplicación de chat que permite a los usuarios crear salas de chat e invitar a otros a unirse.
+			 */
+			description: () => LocalizedString
+			/**
+			 * https://github.com/Michael-Liendo/underground
+			 */
+			repo_url: () => LocalizedString
+			/**
+			 * https://underground.michaelliendo.com/
+			 */
+			preview_url: () => LocalizedString
+			tags: {
+				/**
+				 * svelte
+				 */
+				'0': () => LocalizedString
+				/**
+				 * rust
+				 */
+				'1': () => LocalizedString
+				/**
+				 * typescript
+				 */
+				'2': () => LocalizedString
+				/**
+				 * sveltekit
+				 */
+				'3': () => LocalizedString
+				/**
+				 * chat
+				 */
+				'4': () => LocalizedString
+			}
+			/**
+			 * 2023-12-10
+			 */
+			date: () => LocalizedString
+		}
+		'3': {
+			/**
+			 * Backust
+			 */
+			name: () => LocalizedString
+			/**
+			 * Un sistema de respaldo simple para copiar archivos y directorios a un directorio de respaldo.
+			 */
+			description: () => LocalizedString
+			/**
+			 * https://github.com/Michael-Liendo/backust
+			 */
+			repo_url: () => LocalizedString
+			tags: {
+				/**
+				 * svelte
+				 */
+				'0': () => LocalizedString
+				/**
+				 * rust
+				 */
+				'1': () => LocalizedString
+				/**
+				 * typescript
+				 */
+				'2': () => LocalizedString
+				/**
+				 * sveltekit
+				 */
+				'3': () => LocalizedString
+				/**
+				 * chat
+				 */
+				'4': () => LocalizedString
+			}
+			/**
+			 * 2023-09-29
+			 */
+			date: () => LocalizedString
+		}
+		'4': {
+			/**
+			 * Cherrie
+			 */
+			name: () => LocalizedString
+			/**
+			 * Este proyecto es una tienda virtual desarrollada con SvelteKit y TypeScript. En la tienda, los usuarios pueden explorar diferentes categorías de productos, agregar productos a su carrito y completar una compra.
+			 */
+			description: () => LocalizedString
+			/**
+			 * https://github.com/Michael-Liendo/cherrie
+			 */
+			repo_url: () => LocalizedString
+			/**
+			 * https://cherrie.lat/
+			 */
+			preview_url: () => LocalizedString
+			tags: {
+				/**
+				 * svelte
+				 */
+				'0': () => LocalizedString
+				/**
+				 * rust
+				 */
+				'1': () => LocalizedString
+				/**
+				 * typescript
+				 */
+				'2': () => LocalizedString
+				/**
+				 * sveltekit
+				 */
+				'3': () => LocalizedString
+				/**
+				 * store
+				 */
+				'4': () => LocalizedString
+			}
+			/**
+			 * 2023-02-10
+			 */
+			date: () => LocalizedString
+		}
+		'5': {
+			/**
+			 * Novabits
+			 */
+			name: () => LocalizedString
+			/**
+			 * La página de aterrizaje para un negocio de desarrollo con una sección de contacto.
+			 */
+			description: () => LocalizedString
+			/**
+			 * https://github.com/Michael-Liendo/novabits
+			 */
+			repo_url: () => LocalizedString
+			/**
+			 * https://novabits.michaelliendo.com/
+			 */
+			preview_url: () => LocalizedString
+			tags: {
+				/**
+				 * nextjs
+				 */
+				'0': () => LocalizedString
+				/**
+				 * typescript
+				 */
+				'1': () => LocalizedString
+				/**
+				 * landing
+				 */
+				'2': () => LocalizedString
+			}
+			/**
+			 * 2023-05-11
+			 */
+			date: () => LocalizedString
+		}
+		'6': {
+			/**
+			 * CloudHub
+			 */
+			name: () => LocalizedString
+			/**
+			 * Almacenamiento en la nube personal que te permite guardar, sincronizar y compartir tus archivos de manera segura y accesible desde cualquier lugar.
+			 */
+			description: () => LocalizedString
+			/**
+			 * https://github.com/Michael-Liendo/cloudhub
+			 */
+			repo_url: () => LocalizedString
+			tags: {
+				/**
+				 * svelte
+				 */
+				'0': () => LocalizedString
+				/**
+				 * typescript
+				 */
+				'1': () => LocalizedString
+				/**
+				 * sveltekit
+				 */
+				'2': () => LocalizedString
+				/**
+				 * cloud
+				 */
+				'3': () => LocalizedString
+			}
+			/**
+			 * 2022-10-01
+			 */
+			date: () => LocalizedString
+		}
+	}
+	'default': {
+		SEO: {
+			/**
+			 * Michael Liendo | Desarrollador de Software
 			 */
 			TITLE: () => LocalizedString
 			/**
-			 * Notas sobre aprendizajes y experiencias
+			 * Un Desarrollador de Software interesado en Programación de Sistemas y Desarrollo Web.
 			 */
 			DESCRIPTION: () => LocalizedString
 			/**
-			 * michael liendo, notas, aprendizajes, experiencias, svelte, typescript, desarrollo web, colaboración, resolución de problemas
+			 * michael liendo, inicio, notas, portafolio, desarrollador de software, svelte, typescript, desarrollo web, proyectos desafiantes, colaboración, resolución de problemas
 			 */
 			KEYWORDS: () => LocalizedString
+			/**
+			 * https://avatars.githubusercontent.com/u/70660410?v=4
+			 */
+			IMAGE: () => LocalizedString
+			NOTES: {
+				/**
+				 * Notas | Michael Liendo
+				 */
+				TITLE: () => LocalizedString
+				/**
+				 * Notas sobre aprendizajes y experiencias
+				 */
+				DESCRIPTION: () => LocalizedString
+				/**
+				 * michael liendo, notas, aprendizajes, experiencias, svelte, typescript, desarrollo web, colaboración, resolución de problemas
+				 */
+				KEYWORDS: () => LocalizedString
+			}
+			NOTE: {
+				/**
+				 * {title} | Notas de Michael Liendo
+				 */
+				TITLE: (arg: { title: string }) => LocalizedString
+				/**
+				 * {description}
+				 */
+				DESCRIPTION: (arg: { description: string }) => LocalizedString
+				/**
+				 * {keywords}
+				 */
+				KEYWORDS: (arg: { keywords: string }) => LocalizedString
+			}
+			PROJECT: {
+				/**
+				 * Proyectos | Michael Liendo
+				 */
+				TITLE: () => LocalizedString
+				/**
+				 * Proyectos en los que he trabajado
+				 */
+				DESCRIPTION: () => LocalizedString
+			}
 		}
-		NOTE: {
-			/**
-			 * {title} | Notas de Michael Liendo
-			 */
-			TITLE: (arg: { title: string }) => LocalizedString
-			/**
-			 * {description}
-			 */
-			DESCRIPTION: (arg: { description: string }) => LocalizedString
-			/**
-			 * {keywords}
-			 */
-			KEYWORDS: (arg: { keywords: string }) => LocalizedString
+		LAYOUT: {
+			NAV: {
+				/**
+				 * Inicio
+				 */
+				HOME: () => LocalizedString
+				/**
+				 * Notas
+				 */
+				NOTES: () => LocalizedString
+				/**
+				 * Proyectos
+				 */
+				PROJECTS: () => LocalizedString
+			}
+			FOOTER: {
+				/**
+				 * Hecho con ❤️ por Michael Liendo © {startYear} - {currentYear}
+				 */
+				COPYRIGHT: (arg: { currentYear: number, startYear: number }) => LocalizedString
+			}
 		}
-	}
-	LAYOUT: {
-		NAV: {
+		HOMEPAGE: {
 			/**
-			 * Inicio
+			 * Hola soy {name} {surname},
 			 */
-			HOME: () => LocalizedString
+			HI: (arg: { name: string, surname: string }) => LocalizedString
 			/**
-			 * Notas
+			 * Soy un <strong>Desarrollador de Software</strong> enfocado en Svelte y TypeScript apasionado por el <strong>Desarrollo de Aplicaciones Móviles y Páginas Web</strong>. Disfruto trabajar en proyectos desafiantes, valoro la colaboración y la resolución de problemas.
 			 */
-			NOTES: () => LocalizedString
+			ABOUT: () => LocalizedString
 			/**
-			 * Proyectos
+			 * Últimas notas
 			 */
-			PROJECTS: () => LocalizedString
-		}
-		FOOTER: {
-			/**
-			 * Hecho con ❤️ por Michael Liendo © {startYear} - {currentYear}
-			 */
-			COPYRIGHT: (arg: { currentYear: number, startYear: number }) => LocalizedString
-		}
-	}
-	HOMEPAGE: {
-		/**
-		 * Hola soy {name} {surname},
-		 */
-		HI: (arg: { name: string, surname: string }) => LocalizedString
-		/**
-		 * Soy un <strong>Desarrollador de Software</strong> enfocado en Svelte y TypeScript apasionado por el <strong>Desarrollo de Aplicaciones Móviles y Páginas Web</strong>. Disfruto trabajar en proyectos desafiantes, valoro la colaboración y la resolución de problemas.
-		 */
-		ABOUT: () => LocalizedString
-		/**
-		 * Últimas notas
-		 */
-		LATEST_NOTES: () => LocalizedString
-	}
-	PROJECT: {
-		/**
-		 * Proyectos | Michael Liendo
-		 */
-		TITLE: () => LocalizedString
-		/**
-		 * Proyectos en los que he trabajado
-		 */
-		DESCRIPTION: () => LocalizedString
-		PROJECTS: {
-			'0': {
-				/**
-				 * TownHall
-				 */
-				name: () => LocalizedString
-				/**
-				 * Es un proyecto colaborativo para desarrolladores de Rust de nivel principiante a intermedio. Estamos aprendiendo haciendo, creando una plataforma comunitaria inspirada en Reddit y la plataforma de microblogging X (anteriormente Twitter).
-				 */
-				description: () => LocalizedString
-				/**
-				 * https://github.com/TownHallHQ/TownHall
-				 */
-				repo_url: () => LocalizedString
-				tags: {
-					/**
-					 * rust
-					 */
-					'0': () => LocalizedString
-					/**
-					 * community
-					 */
-					'1': () => LocalizedString
-				}
-				/**
-				 * 2024-11-05
-				 */
-				date: () => LocalizedString
-			}
-			'1': {
-				/**
-				 * Url Status Checker CLI
-				 */
-				name: () => LocalizedString
-				/**
-				 * Limpia las URL de un archivo de entrada y verifica sus códigos de estado. Las URL limpias y sus códigos de estado se almacenan en un archivo de salida.
-				 */
-				description: () => LocalizedString
-				/**
-				 * https://github.com/Michael-Liendo/url-status-checker
-				 */
-				repo_url: () => LocalizedString
-				tags: {
-					/**
-					 * rust
-					 */
-					'0': () => LocalizedString
-					/**
-					 * url
-					 */
-					'1': () => LocalizedString
-					/**
-					 * status
-					 */
-					'2': () => LocalizedString
-				}
-				/**
-				 * 2024-01-13
-				 */
-				date: () => LocalizedString
-			}
-			'2': {
-				/**
-				 * Underground
-				 */
-				name: () => LocalizedString
-				/**
-				 * Esta es una aplicación de chat que permite a los usuarios crear salas de chat e invitar a otros a unirse.
-				 */
-				description: () => LocalizedString
-				/**
-				 * https://github.com/Michael-Liendo/underground
-				 */
-				repo_url: () => LocalizedString
-				/**
-				 * https://underground.michaelliendo.com/
-				 */
-				preview_url: () => LocalizedString
-				tags: {
-					/**
-					 * svelte
-					 */
-					'0': () => LocalizedString
-					/**
-					 * rust
-					 */
-					'1': () => LocalizedString
-					/**
-					 * typescript
-					 */
-					'2': () => LocalizedString
-					/**
-					 * sveltekit
-					 */
-					'3': () => LocalizedString
-					/**
-					 * chat
-					 */
-					'4': () => LocalizedString
-				}
-				/**
-				 * 2023-12-10
-				 */
-				date: () => LocalizedString
-			}
-			'3': {
-				/**
-				 * Backust
-				 */
-				name: () => LocalizedString
-				/**
-				 * Un sistema de respaldo simple para copiar archivos y directorios a un directorio de respaldo.
-				 */
-				description: () => LocalizedString
-				/**
-				 * https://github.com/Michael-Liendo/backust
-				 */
-				repo_url: () => LocalizedString
-				tags: {
-					/**
-					 * svelte
-					 */
-					'0': () => LocalizedString
-					/**
-					 * rust
-					 */
-					'1': () => LocalizedString
-					/**
-					 * typescript
-					 */
-					'2': () => LocalizedString
-					/**
-					 * sveltekit
-					 */
-					'3': () => LocalizedString
-					/**
-					 * chat
-					 */
-					'4': () => LocalizedString
-				}
-				/**
-				 * 2023-09-29
-				 */
-				date: () => LocalizedString
-			}
-			'4': {
-				/**
-				 * Cherrie
-				 */
-				name: () => LocalizedString
-				/**
-				 * Este proyecto es una tienda virtual desarrollada con SvelteKit y TypeScript. En la tienda, los usuarios pueden explorar diferentes categorías de productos, agregar productos a su carrito y completar una compra.
-				 */
-				description: () => LocalizedString
-				/**
-				 * https://github.com/Michael-Liendo/cherrie
-				 */
-				repo_url: () => LocalizedString
-				/**
-				 * https://cherrie.lat/
-				 */
-				preview_url: () => LocalizedString
-				tags: {
-					/**
-					 * svelte
-					 */
-					'0': () => LocalizedString
-					/**
-					 * rust
-					 */
-					'1': () => LocalizedString
-					/**
-					 * typescript
-					 */
-					'2': () => LocalizedString
-					/**
-					 * sveltekit
-					 */
-					'3': () => LocalizedString
-					/**
-					 * store
-					 */
-					'4': () => LocalizedString
-				}
-				/**
-				 * 2023-02-10
-				 */
-				date: () => LocalizedString
-			}
-			'5': {
-				/**
-				 * Novabits
-				 */
-				name: () => LocalizedString
-				/**
-				 * La página de aterrizaje para un negocio de desarrollo con una sección de contacto.
-				 */
-				description: () => LocalizedString
-				/**
-				 * https://github.com/Michael-Liendo/novabits
-				 */
-				repo_url: () => LocalizedString
-				/**
-				 * https://novabits.michaelliendo.com/
-				 */
-				preview_url: () => LocalizedString
-				tags: {
-					/**
-					 * nextjs
-					 */
-					'0': () => LocalizedString
-					/**
-					 * typescript
-					 */
-					'1': () => LocalizedString
-					/**
-					 * landing
-					 */
-					'2': () => LocalizedString
-				}
-				/**
-				 * 2023-05-11
-				 */
-				date: () => LocalizedString
-			}
-			'6': {
-				/**
-				 * CloudHub
-				 */
-				name: () => LocalizedString
-				/**
-				 * Almacenamiento en la nube personal que te permite guardar, sincronizar y compartir tus archivos de manera segura y accesible desde cualquier lugar.
-				 */
-				description: () => LocalizedString
-				/**
-				 * https://github.com/Michael-Liendo/cloudhub
-				 */
-				repo_url: () => LocalizedString
-				tags: {
-					/**
-					 * svelte
-					 */
-					'0': () => LocalizedString
-					/**
-					 * typescript
-					 */
-					'1': () => LocalizedString
-					/**
-					 * sveltekit
-					 */
-					'2': () => LocalizedString
-					/**
-					 * cloud
-					 */
-					'3': () => LocalizedString
-				}
-				/**
-				 * 2022-10-01
-				 */
-				date: () => LocalizedString
-			}
+			LATEST_NOTES: () => LocalizedString
 		}
 	}
 }

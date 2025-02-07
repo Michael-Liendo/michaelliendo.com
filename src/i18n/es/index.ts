@@ -1,6 +1,7 @@
 import type { Project } from "$lib/types/Project";
 import type { BaseTranslation } from "../i18n-types";
-const projects = [
+
+export const es_projects = [
 	{
 		name: "TownHall",
 		description:
@@ -81,6 +82,10 @@ const es = {
 			DESCRIPTION: "{description:string}",
 			KEYWORDS: "{keywords:string}",
 		},
+		PROJECT: {
+			TITLE: "Proyectos | Michael Liendo",
+			DESCRIPTION: "Proyectos en los que he trabajado",
+		},
 	},
 	LAYOUT: {
 		NAV: {
@@ -98,11 +103,6 @@ const es = {
 		ABOUT:
 			"Soy un <strong>Desarrollador de Software</strong> enfocado en Svelte y TypeScript apasionado por el <strong>Desarrollo de Aplicaciones Móviles y Páginas Web</strong>. Disfruto trabajar en proyectos desafiantes, valoro la colaboración y la resolución de problemas.",
 		LATEST_NOTES: "Últimas notas",
-	},
-	PROJECT: {
-		TITLE: "Proyectos | Michael Liendo",
-		DESCRIPTION: "Proyectos en los que he trabajado",
-		PROJECTS: projects,
 	},
 } satisfies BaseTranslation;
 
