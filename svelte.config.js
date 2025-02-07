@@ -6,11 +6,11 @@ import { mdsvex } from 'mdsvex';
 const config = {
 	// Consult https://svelte.dev/docs/kit/integrations
 	// for more information about preprocessors
+	extensions: ['.svelte', '.svx'],
 	preprocess: [vitePreprocess(),   mdsvex({
 		layout: './src/lib/components/notes/Layout.svelte',
 		extensions: ['.svx'],
 	})],
-	extensions: ['.svelte', '.svx'],
 	kit: {
 		alias:{
 			"$i18n": "./src/i18n",
