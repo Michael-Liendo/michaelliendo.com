@@ -71,6 +71,10 @@ type RootTranslation = {
 			 * P​r​o​y​e​c​t​o​s​ ​e​n​ ​l​o​s​ ​q​u​e​ ​h​e​ ​t​r​a​b​a​j​a​d​o
 			 */
 			DESCRIPTION: string
+			/**
+			 * p​r​o​y​e​c​t​o​s​ ​d​e​ ​m​i​c​h​a​e​l​ ​l​i​e​n​d​o​,​ ​d​e​s​a​r​r​o​l​l​a​d​o​r​ ​d​e​ ​s​o​f​t​w​a​r​e​,​ ​s​v​e​l​t​e​,​ ​t​y​p​e​s​c​r​i​p​t​,​ ​d​e​s​a​r​r​o​l​l​o​ ​w​e​b​,​ ​c​o​l​a​b​o​r​a​c​i​ó​n​,​ ​r​e​s​o​l​u​c​i​ó​n​ ​d​e​ ​p​r​o​b​l​e​m​a​s
+			 */
+			KEYWORDS: string
 		}
 	}
 	LAYOUT: {
@@ -170,6 +174,10 @@ export type TranslationFunctions = {
 			 * Proyectos en los que he trabajado
 			 */
 			DESCRIPTION: () => LocalizedString
+			/**
+			 * proyectos de michael liendo, desarrollador de software, svelte, typescript, desarrollo web, colaboración, resolución de problemas
+			 */
+			KEYWORDS: () => LocalizedString
 		}
 	}
 	LAYOUT: {

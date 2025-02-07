@@ -22,6 +22,8 @@ const es = {
 		PROJECT: {
 			TITLE: "Proyectos | Michael Liendo",
 			DESCRIPTION: "Proyectos en los que he trabajado",
+			KEYWORDS:
+				"proyectos de michael liendo, desarrollador de software, svelte, typescript, desarrollo web, colaboración, resolución de problemas",
 		},
 	},
 	LAYOUT: {
