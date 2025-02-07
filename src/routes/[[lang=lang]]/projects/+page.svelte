@@ -2,6 +2,7 @@
   import en_projects from '$i18n/en/project';
   import es_projects from '$i18n/es/project';
   import LL, { locale } from '$i18n/i18n-svelte';
+  import Tag from '$lib/components/tag.svelte';
   import { Github } from 'lucide-svelte';
 
   const projects = $locale === 'en' ? en_projects : es_projects;
@@ -43,11 +44,7 @@
         </p>
         <div class="mt-4 flex flex-wrap gap-2">
           {#each project.tags as tag}
-            <span
-              class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800"
-            >
-              {tag}
-            </span>
+            <Tag title={tag} />
           {/each}
         </div>
       </div>
