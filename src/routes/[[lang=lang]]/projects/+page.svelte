@@ -12,6 +12,8 @@
   <title>{$LL.SEO.PROJECT.TITLE()}</title>
   <meta name="description" content={$LL.SEO.PROJECT.DESCRIPTION()} />
   <meta name="keywords" content={$LL.SEO.PROJECT.KEYWORDS()} />
+  <link rel="canonical" href={`https://michaelliendo.com/projects`} />
+
   <!-- Schema.org markup for Google+ -->
   <meta itemprop="name" content={$LL.SEO.PROJECT.TITLE()} />
   <meta itemprop="description" content={$LL.SEO.PROJECT.DESCRIPTION()} />
@@ -19,7 +21,7 @@
   <!-- Open Graph data -->
   <meta property="og:title" content={$LL.SEO.PROJECT.TITLE()} />
   <meta property="og:type" content="article" />
-  <meta property="og:url" content="https://michaelliendo.com/" />
+  <meta property="og:url" content="https://michaelliendo.com/projects" />
   <meta property="og:image" content={$LL.SEO.IMAGE()} />
   <meta property="og:description" content={$LL.SEO.PROJECT.DESCRIPTION()} />
   <meta property="og:site_name" content="Michael Liendo" />
