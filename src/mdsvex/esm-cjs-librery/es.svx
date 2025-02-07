@@ -1,0 +1,23 @@
+---
+title: "ESM vs CJS: compartir un paquete utilizando typescript en monorepo"
+description: Compartir un paquete utilizando typescript en monorepo
+date: 2024-12-11
+icon: git
+tags: [bookmarks]
+published: true
+---
+
+https://www.sensedeep.com/blog/posts/2021/how-to-create-single-source-npm-module.html
+
+pues si, y no,typescripts es javascript con tipos, y ese archivo como tal javascript porque no existe, solo que cuando se compila si existe (todo es archivo ya esta transpilado a js) por eso que es funciona ya que el import queda igual 
+
+porque ts no reescribe las importaciones, en tiempo de ejecución nodejs los archivos estarán en .js, por lo que debe escribir importaciones en .js
+
+y parece que las tendrán ya que nodejs va a correr typescript:
+https://github.com/microsoft/TypeScript/issues/59597#issuecomment-2287466184
+
+por ahora, para hacer eso hay que usar un compilador o bundle como swc que reescriba las importaciones
+
+solo cuando se transpile a esm, cuando es a commonjs, no ocurre, creo que common si tiene esa transpilation pero no es buscado
+
+tu tsconfig si funciona porque usa como modulo commonjs, pero yo uso esm

@@ -1,13 +1,12 @@
 {
 	"name": "michaelliendo.com",
-	"description": "Michael Liendo website",
+	"description": "Michael Liendo | Software Developer",
 	"short_name": "michaelliendo",
 	"start_url": "/",
 	"icons": [
 		{
-			"src": "/favicon-512x512.png",
-			"type": "image/png",
-			"sizes": "512x512"
+			"src": "/favicon.png",
+			"type": "image/png"
 		}
 	],
 	"display": "standalone",
@@ -18,7 +17,7 @@
 			"short_name": "Notes",
 			"description": "Notes on learnings and experiences",
 			"url": "/notes",
-			"icons": [{ "src": "/favicon-192x192.png", "sizes": "192x192" }]
+			"icons": [{ "src": "/favicon.png" }]
 		}
 	]
 }

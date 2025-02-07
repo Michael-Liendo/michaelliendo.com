@@ -1,39 +1,38 @@
-# michaelliendo.com
+# sv
 
-Welcome to my personal website.
+Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
 
-## Requirements
+## Creating a project
 
-- [Node.js](https://nodejs.org/)
-- [Git](https://git-scm.com/)
-
-## Getting Started
-
-1. Clone this repository
+If you're seeing this, you've probably already done this step. Congrats!
 
 ```bash
-git clone https://github.com/Michael-Liendo/michaelliendo.com.git
+# create a new project in the current directory
+npx sv create
+
+# create a new project in my-app
+npx sv create my-app
 ```
 
-2. In a separate terminal session, install project dependencies.
+## Developing
 
-```bash
-npm install
-```
-
-3. Create a .env file with the example
-
-```bash
-NOTION_ACCESS_TOKEN=
-NOTION_NOTES_DATABASE_ID=
-NOTION_ABOUT_ME_DATABASE_ID=
-NOTION_PROJECTS_DATABASE_ID=
-```
-
-4. Run the server
+Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
 
 ```bash
 npm run dev
+
+# or start the server and open the app in a new browser tab
+npm run dev -- --open
 ```
 
-The project must be available on [http://localhost:5173/](http://localhost:5173/).
+## Building
+
+To create a production version of your app:
+
+```bash
+npm run build
+```
+
+You can preview the production build with `npm run preview`.
+
+> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.

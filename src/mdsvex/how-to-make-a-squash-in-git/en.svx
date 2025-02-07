@@ -1,0 +1,117 @@
+---
+title: "How to make Squash in Git?"
+description: "In this article, you'll learn how to squash git. Squash is a technique that allows multiple commits to be merged into one commit, making it easier to read the change history and keeping the repository clean."
+tags: [git, git-squash]
+icon: git
+date: 2023-10-23
+published: true
+---
+
+There are two ways that I know of to make squash, in this post I will show you both ways. But first I will tell you the definition of Squash
+
+### What is Squash?
+
+Git squash, (“compress”), makes our branch to merge (to which we will make a pull request) be composed of a single commit in this way we will merge a single code commit to our development branch that will contain a functionality complete.
+
+## Now yes, to the steps
+
+Standing on the branch we want to squash, now on the console we'll do
+
+```
+git log
+```
+
+will return
+
+!https://s3-us-west-2.amazonaws.com/secure.notion-static.com/bf781c07-a7c9-4f50-a257-1e7018d93360/Untitled.png
+
+Something like that, from there we are going to copy the hash that is above `origin/main, main` in my case it is this `b6adbbcd8f99935113cf1e24943736fb2c501e26`
+
+!https://s3-us-west-2.amazonaws.com/secure.notion-static.com/005d840a-ba57-4a97-8f85-4e669d2b94e9/Untitled.png
+
+Then we're going to rebase
+
+```
+git rebase -i TU-HASH
+```
+
+in my case it is
+
+```
+git rebase -i b6adbbcd8f99935113cf1e24943736fb2c501e26
+```
+
+It will show you something like this, it will open the VIM editor
+
+!https://s3-us-west-2.amazonaws.com/secure.notion-static.com/9f3067fd-b5a9-4ece-ad4c-ef261a2789ee/Untitled.png
+
+You will have to replace all the lines that say `pick` with `squash` or `s` except the first line
+
+> To write in VIM you must hit the i key
+> 
+
+it will stay like this
+
+!https://s3-us-west-2.amazonaws.com/secure.notion-static.com/effebe74-da5b-467c-9805-9298d2b999f0/Untitled.png
+
+Then we will press the `Esc` key twice
+
+!https://s3-us-west-2.amazonaws.com/secure.notion-static.com/53098a7b-f2f9-4b07-b1c3-11fd712a991d/Untitled.png
+
+when doing that, you will have to type `:wq` and hit `enter`
+
+There it will ask you for the final message for the compressed commit
+
+!https://s3-us-west-2.amazonaws.com/secure.notion-static.com/d4b0d30c-7d33-4866-bef2-e9244efdbf28/Untitled.png
+
+You place the message, pressing `i` to type, then pressing `Esc` twice and typing `:wq`
+
+And that's it, you already did Squash
+
+Now you must to upload it to your repository, just write
+
+```
+git push -f
+```
+
+And ready, I'd be ready
+
+### The other way to do Squash
+
+To do this, standing on the branch to make squash, he places
+
+```
+git reset --soft TU-HASH
+```
+
+Previously I explained how the hash is obtained
+
+then you will
+
+```
+git commit --amend
+
+```
+
+The VIM editor will open, to put the final message of the commit, press `i` to type
+
+Then you press `Esc` and type `:wq` to save and exit
+
+Now with
+
+```
+git push -f
+```
+
+Your changes will be uploaded to your repository
+
+If you do `git log` now, you should have 1 single commit above `origin/main`
+
+with the name you gave him in ammend
+
+> Do not do git reset --hard unless you want to erase all your progress
+> 
+
+### Additional features
+
+I recommend using [Conventional Commits](https://www.conventionalcommits.org/) for your commit messages

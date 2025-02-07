@@ -3,3 +3,4 @@ Allow: /
 
 Sitemap: https://michaelliendo.com/sitemap.xml
 
+Host: https://michaelliendo.com

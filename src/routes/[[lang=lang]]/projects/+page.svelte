@@ -1,123 +1,79 @@
-<script lang="ts">
-  import { run } from 'svelte/legacy';
+<script>
+  import en_projects from '$i18n/en/project';
+  import es_projects from '$i18n/es/project';
+  import LL, { locale } from '$i18n/i18n-svelte';
+  import Tag from '$lib/components/tag.svelte';
+  import { Github } from 'lucide-svelte';
 
-  import { locale } from '$i18n/i18n-svelte';
-  import Calendar from '~icons/mdi/calendar-month';
-
-  import type { Project } from '$lib/services/Notion/Projects/project';
-
-  interface Props {
-    data: {
-    projects: Project[];
-  };
-  }
-
-  let { data }: Props = $props();
-
-  let title = $state('Projects | Michael Liendo');
-  let description =
-    $state('projects taken while reading about computer science and software development.');
-  let keywords =
-    $state('projects, blog, articles, writing, content, topics, tips, insights, experiences, knowledge');
-  let avatarUrl = 'https://avatars.githubusercontent.com/u/70660410?v=4';
-
-  function formattedDate(date: Date): string {
-    return new Date(date).toLocaleDateString(`${$locale}-us`, {
-      month: 'long',
-      day: '2-digit',
-      year: 'numeric',
-    });
-  }
-
-  run(() => {
-    switch ($locale) {
-      case 'en':
-        title = 'Projects | Michael Liendo';
-        description =
-          'projects taken while reading about computer science and software development.';
-        keywords =
-          'projects, blog, articles, writing, content, topics, tips, insights, experiences, knowledge';
-        break;
-      case 'es':
-        title = 'Proyectos | Michael Liendo';
-        description =
-          'Notas tomadas mientras leo sobre ciencias de la computación y desarrollo de software.';
-        keywords =
-          'notas, blog, artículos, escritura, contenido, temas, consejos, perspectivas, experiencias, conocimiento';
-        break;
-    }
-  });
+  const projects = $locale === 'en' ? en_projects : es_projects;
 </script>
 
 <svelte:head>
-  <title>{title}</title>
-  <meta name="description" content={description} />
-  <meta name="keywords" content={keywords} />
+  <title>{$LL.SEO.PROJECT.TITLE()}</title>
+  <meta name="description" content={$LL.SEO.PROJECT.DESCRIPTION()} />
+  <meta name="keywords" content={$LL.SEO.PROJECT.KEYWORDS()} />
   <!-- Schema.org markup for Google+ -->
-  <meta itemprop="name" content={title} />
-  <meta itemprop="description" content={description} />
-  <meta itemprop="image" content={avatarUrl} />
+  <meta itemprop="name" content={$LL.SEO.PROJECT.TITLE()} />
+  <meta itemprop="description" content={$LL.SEO.PROJECT.DESCRIPTION()} />
+  <meta itemprop="image" content={$LL.SEO.IMAGE()} />
   <!-- Open Graph data -->
-  <meta property="og:title" content={title} />
+  <meta property="og:title" content={$LL.SEO.PROJECT.TITLE()} />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://michaelliendo.com/" />
-  <meta property="og:image" content={avatarUrl} />
-  <meta property="og:description" content={description} />
+  <meta property="og:image" content={$LL.SEO.IMAGE()} />
+  <meta property="og:description" content={$LL.SEO.PROJECT.DESCRIPTION()} />
   <meta property="og:site_name" content="Michael Liendo" />
   <!-- Twitter Card data -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:site" content="@MichaelMLiendo" />
-  <meta name="twitter:title" content={title} />
-  <meta name="twitter:description" content={description} />
-  <meta name="twitter:creator" content="@MichaelMLiendo" />
-  <meta name="twitter:image:src" content={avatarUrl} />
+  <meta name="twitter:site" content="@mykeliendo" />
+  <meta name="twitter:title" content={$LL.SEO.PROJECT.TITLE()} />
+  <meta name="twitter:description" content={$LL.SEO.PROJECT.DESCRIPTION()} />
+  <meta name="twitter:creator" content="@mykeliendo" />
+  <meta name="twitter:image:src" content={$LL.SEO.IMAGE()} />
 </svelte:head>
 
-<ul
-  class="max-w-6xl m-auto mt-10 flex flex-col md:grid md:grid-cols-3 md:gap-6 px-4 md:px-0"
->
-  {#each data.projects as project}
-    <li class="mb-4 md:mb-0 last-of-type:mb-0">
-      <figure
-        class="rounded overflow-hidden pb-4 flex justify-center items-center h-[250px]"
-      >
-        <img alt={project.title} src={project.cover} width="450" height="100" />
-      </figure>
-      <header>
-        <h1
-          class="text-xl mt-2 font-extrabold cursor-pointer hover:text-link hover:underline"
-        >
-          {project.title}
-        </h1>
-      </header>
-      <main class="pb-2">
-        <p>{project.description}</p>
-      </main>
-      <footer class="flex flex-col">
-        <div class="flex mb-2">
-          <span class="flex items-center mr-2">
-            <figure class="mr-2">
-              <Calendar class="text-gray-800 dark:text-white h-4 w-4" />
-            </figure>
-            <time class="text-sm mr-2" datetime={project.date.toString()}
-              >{formattedDate(project.date)}</time
-            >
-          </span>
-        </div>
-        <ul class="flex flex-wrap">
+<div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+  {#each projects as project}
+    <div class="bg-white shadow rounded-lg overflow-hidden">
+      <div class="px-4 py-5 sm:p-6">
+        <h2 class="text-lg leading-6 font-medium text-gray-900">
+          {project.name}
+        </h2>
+        <p class="mt-1 text-sm text-gray-600">
+          {project.description}
+        </p>
+        <div class="mt-4 flex flex-wrap gap-2">
           {#each project.tags as tag}
-            <li
-              class="text-sm mr-2 mb-2 bg-light-background dark:bg-dark-background rounded py-1 px-2"
-            >
-              <span
-                class="inline-block mr-1 rounded-full h-2 w-2"
-                style="background-color: {tag.color};"
-></span>
-              {tag.name}
-            </li>
+            <Tag title={tag} />
           {/each}
-        </ul>
-      </footer>
-    </li>
+        </div>
+      </div>
+      <div class="px-4 py-4 sm:px-6 flex justify-between">
+        {#if project.repo_url}
+          <a
+            href={project.repo_url}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-sm font-medium text-indigo-600 hover:text-indigo-500"
+            aria-label="GitHub Repository"
+          >
+            <Github aria-hidden="true" />
+            <span class="sr-only">GitHub Repository</span>
+          </a>
+        {/if}
+        {#if project.preview_url}
+          <a
+            href={project.preview_url}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-sm font-medium text-indigo-600 hover:text-indigo-500"
+            aria-label="Live Demo"
+          >
+            Live Demo
+            <span class="sr-only">opens in a new tab</span>
+          </a>
+        {/if}
+      </div>
+    </div>
   {/each}
-</ul>
+</div>

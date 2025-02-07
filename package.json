@@ -1,45 +1,33 @@
 {
-  "name": "michaelliendo.com",
-  "version": "5.0.3",
-  "private": true,
-  "scripts": {
-    "dev": "vite dev",
-    "build": "vite build",
-    "preview": "vite preview",
-    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
-    "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-    "lint": "biome format ./src && biome check ./src",
-    "format": "biome format --write ./src && biome check --apply ./src",
-    "format:unsafe": "biome format --write ./src && biome check --apply-unsafe ./src",
-    "i18n": "typesafe-i18n --no-watch",
-    "i18n:watch": "typesafe-i18n"
-  },
-  "devDependencies": {
-    "@biomejs/biome": "1.1.2",
-    "@iconify-json/mdi": "^1.2.3",
-    "@notionhq/client": "^2.2.15",
-    "@sveltejs/adapter-auto": "^3.3.1",
-    "@sveltejs/kit": "^2.17.1",
-    "@tailwindcss/typography": "^0.5.16",
-    "autoprefixer": "^10.4.20",
-    "classnames": "^2.5.1",
-    "notion-to-md": "^3.1.4",
-    "postcss": "^8.5.1",
-    "svelte": "^5.19.7",
-    "svelte-check": "^4.1.4",
-    "svelte-markdown": "^0.3.0",
-    "tailwindcss": "^3.4.17",
-    "tslib": "^2.8.1",
-    "typesafe-i18n": "^5.26.2",
-    "typescript": "^5.7.3",
-    "unplugin-icons": "^0.16.6",
-    "vite": "^5.4.14"
-  },
-  "type": "module",
-  "dependencies": {
-    "@sveltejs/adapter-vercel": "^5.6.1",
-    "@sveltejs/enhanced-img": "^0.3.10",
-    "caniuse-lite": "^1.0.30001697",
-    "highlight.js": "^11.11.1"
-  }
+	"name": "michaelliendo.com",
+	"private": true,
+	"version": "5.1.0",
+	"type": "module",
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build",
+		"preview": "vite preview",
+		"prepare": "svelte-kit sync || echo ''",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+		"typesafe-i18n": "typesafe-i18n"
+	},
+	"devDependencies": {
+		"@sveltejs/adapter-vercel": "^5.5.2",
+		"@sveltejs/kit": "^2.16.0",
+		"@sveltejs/vite-plugin-svelte": "^5.0.0",
+		"autoprefixer": "^10.4.20",
+		"mdsvex": "^0.12.3",
+		"svelte": "^5.0.0",
+		"svelte-check": "^4.0.0",
+		"tailwindcss": "^3.4.17",
+		"typescript": "^5.0.0",
+		"vite": "^6.0.0"
+	},
+	"dependencies": {
+		"@tailwindcss/typography": "^0.5.16",
+		"lucide-svelte": "^0.474.0",
+		"tailwind-merge": "^3.0.1",
+		"typesafe-i18n": "^5.26.2"
+	}
 }

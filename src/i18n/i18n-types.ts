@@ -14,6 +14,69 @@ export type Translation = RootTranslation
 export type Translations = RootTranslation
 
 type RootTranslation = {
+	SEO: {
+		/**
+		 * M​i​c​h​a​e​l​ ​L​i​e​n​d​o​ ​|​ ​D​e​s​a​r​r​o​l​l​a​d​o​r​ ​d​e​ ​S​o​f​t​w​a​r​e
+		 */
+		TITLE: string
+		/**
+		 * U​n​ ​D​e​s​a​r​r​o​l​l​a​d​o​r​ ​d​e​ ​S​o​f​t​w​a​r​e​ ​i​n​t​e​r​e​s​a​d​o​ ​e​n​ ​P​r​o​g​r​a​m​a​c​i​ó​n​ ​d​e​ ​S​i​s​t​e​m​a​s​ ​y​ ​D​e​s​a​r​r​o​l​l​o​ ​W​e​b​.
+		 */
+		DESCRIPTION: string
+		/**
+		 * m​i​c​h​a​e​l​ ​l​i​e​n​d​o​,​ ​i​n​i​c​i​o​,​ ​n​o​t​a​s​,​ ​p​o​r​t​a​f​o​l​i​o​,​ ​d​e​s​a​r​r​o​l​l​a​d​o​r​ ​d​e​ ​s​o​f​t​w​a​r​e​,​ ​s​v​e​l​t​e​,​ ​t​y​p​e​s​c​r​i​p​t​,​ ​d​e​s​a​r​r​o​l​l​o​ ​w​e​b​,​ ​p​r​o​y​e​c​t​o​s​ ​d​e​s​a​f​i​a​n​t​e​s​,​ ​c​o​l​a​b​o​r​a​c​i​ó​n​,​ ​r​e​s​o​l​u​c​i​ó​n​ ​d​e​ ​p​r​o​b​l​e​m​a​s
+		 */
+		KEYWORDS: string
+		/**
+		 * h​t​t​p​s​:​/​/​a​v​a​t​a​r​s​.​g​i​t​h​u​b​u​s​e​r​c​o​n​t​e​n​t​.​c​o​m​/​u​/​7​0​6​6​0​4​1​0​?​v​=​4
+		 */
+		IMAGE: string
+		NOTES: {
+			/**
+			 * N​o​t​a​s​ ​|​ ​M​i​c​h​a​e​l​ ​L​i​e​n​d​o
+			 */
+			TITLE: string
+			/**
+			 * N​o​t​a​s​ ​s​o​b​r​e​ ​a​p​r​e​n​d​i​z​a​j​e​s​ ​y​ ​e​x​p​e​r​i​e​n​c​i​a​s
+			 */
+			DESCRIPTION: string
+			/**
+			 * m​i​c​h​a​e​l​ ​l​i​e​n​d​o​,​ ​n​o​t​a​s​,​ ​a​p​r​e​n​d​i​z​a​j​e​s​,​ ​e​x​p​e​r​i​e​n​c​i​a​s​,​ ​s​v​e​l​t​e​,​ ​t​y​p​e​s​c​r​i​p​t​,​ ​d​e​s​a​r​r​o​l​l​o​ ​w​e​b​,​ ​c​o​l​a​b​o​r​a​c​i​ó​n​,​ ​r​e​s​o​l​u​c​i​ó​n​ ​d​e​ ​p​r​o​b​l​e​m​a​s
+			 */
+			KEYWORDS: string
+		}
+		NOTE: {
+			/**
+			 * {​t​i​t​l​e​}​ ​|​ ​N​o​t​a​s​ ​d​e​ ​M​i​c​h​a​e​l​ ​L​i​e​n​d​o
+			 * @param {string} title
+			 */
+			TITLE: RequiredParams<'title'>
+			/**
+			 * {​d​e​s​c​r​i​p​t​i​o​n​}
+			 * @param {string} description
+			 */
+			DESCRIPTION: RequiredParams<'description'>
+			/**
+			 * {​k​e​y​w​o​r​d​s​}
+			 * @param {string} keywords
+			 */
+			KEYWORDS: RequiredParams<'keywords'>
+		}
+		PROJECT: {
+			/**
+			 * P​r​o​y​e​c​t​o​s​ ​|​ ​M​i​c​h​a​e​l​ ​L​i​e​n​d​o
+			 */
+			TITLE: string
+			/**
+			 * P​r​o​y​e​c​t​o​s​ ​e​n​ ​l​o​s​ ​q​u​e​ ​h​e​ ​t​r​a​b​a​j​a​d​o
+			 */
+			DESCRIPTION: string
+			/**
+			 * p​r​o​y​e​c​t​o​s​ ​d​e​ ​m​i​c​h​a​e​l​ ​l​i​e​n​d​o​,​ ​d​e​s​a​r​r​o​l​l​a​d​o​r​ ​d​e​ ​s​o​f​t​w​a​r​e​,​ ​s​v​e​l​t​e​,​ ​t​y​p​e​s​c​r​i​p​t​,​ ​d​e​s​a​r​r​o​l​l​o​ ​w​e​b​,​ ​c​o​l​a​b​o​r​a​c​i​ó​n​,​ ​r​e​s​o​l​u​c​i​ó​n​ ​d​e​ ​p​r​o​b​l​e​m​a​s
+			 */
+			KEYWORDS: string
+		}
+	}
 	LAYOUT: {
 		NAV: {
 			/**
@@ -31,11 +94,11 @@ type RootTranslation = {
 		}
 		FOOTER: {
 			/**
-			 * H​e​c​h​o​ ​c​o​n​ ​❤​️​ ​p​o​r​ ​M​i​c​h​a​e​l​ ​L​i​e​n​d​o​ ​©​ ​{​s​t​a​r​t​Y​e​a​r​}​ ​-​ ​{​y​e​a​r​}
+			 * H​e​c​h​o​ ​c​o​n​ ​❤​️​ ​p​o​r​ ​M​i​c​h​a​e​l​ ​L​i​e​n​d​o​ ​©​ ​{​s​t​a​r​t​Y​e​a​r​}​ ​-​ ​{​c​u​r​r​e​n​t​Y​e​a​r​}
+			 * @param {number} currentYear
 			 * @param {number} startYear
-			 * @param {number} year
 			 */
-			COPYRIGHT: RequiredParams<'startYear' | 'year'>
+			COPYRIGHT: RequiredParams<'currentYear' | 'startYear'>
 		}
 	}
 	HOMEPAGE: {
@@ -46,7 +109,7 @@ type RootTranslation = {
 		 */
 		HI: RequiredParams<'name' | 'surname'>
 		/**
-		 * S​o​y​ ​u​n​ ​<​s​t​r​o​n​g​>​D​e​s​a​r​r​o​l​l​a​d​o​r​ ​d​e​ ​S​o​f​t​w​a​r​e​<​/​s​t​r​o​n​g​>​ ​e​n​f​o​c​a​d​o​ ​e​n​ ​S​v​e​l​t​e​ ​y​ ​T​y​p​e​S​c​r​i​p​t​ ​a​p​a​s​i​o​n​a​d​o​ ​p​o​r​ ​e​l​ ​D​e​s​a​r​r​o​l​l​o​ ​W​e​b​.​ ​D​i​s​f​r​u​t​o​ ​t​r​a​b​a​j​a​r​ ​e​n​ ​p​r​o​y​e​c​t​o​s​ ​d​e​s​a​f​i​a​n​t​e​s​,​ ​v​a​l​o​r​o​ ​l​a​ ​c​o​l​a​b​o​r​a​c​i​ó​n​ ​y​ ​l​a​ ​r​e​s​o​l​u​c​i​ó​n​ ​d​e​ ​p​r​o​b​l​e​m​a​s​.
+		 * S​o​y​ ​u​n​ ​<​s​t​r​o​n​g​>​D​e​s​a​r​r​o​l​l​a​d​o​r​ ​d​e​ ​S​o​f​t​w​a​r​e​<​/​s​t​r​o​n​g​>​ ​e​n​f​o​c​a​d​o​ ​e​n​ ​S​v​e​l​t​e​ ​y​ ​T​y​p​e​S​c​r​i​p​t​ ​a​p​a​s​i​o​n​a​d​o​ ​p​o​r​ ​e​l​ ​<​s​t​r​o​n​g​>​D​e​s​a​r​r​o​l​l​o​ ​d​e​ ​A​p​l​i​c​a​c​i​o​n​e​s​ ​M​ó​v​i​l​e​s​ ​y​ ​P​á​g​i​n​a​s​ ​W​e​b​<​/​s​t​r​o​n​g​>​.​ ​D​i​s​f​r​u​t​o​ ​t​r​a​b​a​j​a​r​ ​e​n​ ​p​r​o​y​e​c​t​o​s​ ​d​e​s​a​f​i​a​n​t​e​s​,​ ​v​a​l​o​r​o​ ​l​a​ ​c​o​l​a​b​o​r​a​c​i​ó​n​ ​y​ ​l​a​ ​r​e​s​o​l​u​c​i​ó​n​ ​d​e​ ​p​r​o​b​l​e​m​a​s​.
 		 */
 		ABOUT: string
 		/**
@@ -57,6 +120,66 @@ type RootTranslation = {
 }
 
 export type TranslationFunctions = {
+	SEO: {
+		/**
+		 * Michael Liendo | Desarrollador de Software
+		 */
+		TITLE: () => LocalizedString
+		/**
+		 * Un Desarrollador de Software interesado en Programación de Sistemas y Desarrollo Web.
+		 */
+		DESCRIPTION: () => LocalizedString
+		/**
+		 * michael liendo, inicio, notas, portafolio, desarrollador de software, svelte, typescript, desarrollo web, proyectos desafiantes, colaboración, resolución de problemas
+		 */
+		KEYWORDS: () => LocalizedString
+		/**
+		 * https://avatars.githubusercontent.com/u/70660410?v=4
+		 */
+		IMAGE: () => LocalizedString
+		NOTES: {
+			/**
+			 * Notas | Michael Liendo
+			 */
+			TITLE: () => LocalizedString
+			/**
+			 * Notas sobre aprendizajes y experiencias
+			 */
+			DESCRIPTION: () => LocalizedString
+			/**
+			 * michael liendo, notas, aprendizajes, experiencias, svelte, typescript, desarrollo web, colaboración, resolución de problemas
+			 */
+			KEYWORDS: () => LocalizedString
+		}
+		NOTE: {
+			/**
+			 * {title} | Notas de Michael Liendo
+			 */
+			TITLE: (arg: { title: string }) => LocalizedString
+			/**
+			 * {description}
+			 */
+			DESCRIPTION: (arg: { description: string }) => LocalizedString
+			/**
+			 * {keywords}
+			 */
+			KEYWORDS: (arg: { keywords: string }) => LocalizedString
+		}
+		PROJECT: {
+			/**
+			 * Proyectos | Michael Liendo
+			 */
+			TITLE: () => LocalizedString
+			/**
+			 * Proyectos en los que he trabajado
+			 */
+			DESCRIPTION: () => LocalizedString
+			/**
+			 * proyectos de michael liendo, desarrollador de software, svelte, typescript, desarrollo web, colaboración, resolución de problemas
+			 */
+			KEYWORDS: () => LocalizedString
+		}
+	}
 	LAYOUT: {
 		NAV: {
 			/**
@@ -74,9 +197,9 @@ export type TranslationFunctions = {
 		}
 		FOOTER: {
 			/**
-			 * Hecho con ❤️ por Michael Liendo © {startYear} - {year}
+			 * Hecho con ❤️ por Michael Liendo © {startYear} - {currentYear}
 			 */
-			COPYRIGHT: (arg: { startYear: number, year: number }) => LocalizedString
+			COPYRIGHT: (arg: { currentYear: number, startYear: number }) => LocalizedString
 		}
 	}
 	HOMEPAGE: {
@@ -85,7 +208,7 @@ export type TranslationFunctions = {
 		 */
 		HI: (arg: { name: string, surname: string }) => LocalizedString
 		/**
-		 * Soy un <strong>Desarrollador de Software</strong> enfocado en Svelte y TypeScript apasionado por el Desarrollo Web. Disfruto trabajar en proyectos desafiantes, valoro la colaboración y la resolución de problemas.
+		 * Soy un <strong>Desarrollador de Software</strong> enfocado en Svelte y TypeScript apasionado por el <strong>Desarrollo de Aplicaciones Móviles y Páginas Web</strong>. Disfruto trabajar en proyectos desafiantes, valoro la colaboración y la resolución de problemas.
 		 */
 		ABOUT: () => LocalizedString
 		/**

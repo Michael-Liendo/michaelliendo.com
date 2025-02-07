@@ -1,0 +1,45 @@
+---
+title: "Como generar un APK en React Native y Expo sin Expo Application Services (EAS)"
+description: "Como generar un APK en React Native y Expo sin Expo Application Services (EAS)"
+date: 2024-07-11
+icon: git
+tags: [expo, android, desarrollo móvil]
+published: true
+---
+
+
+
+## Introducción
+
+He visto un gran interés de la comunidad en aprender React Native con expo, pero se que puede ser un poco complicado el hecho de tener un APK sin tener que pagar o depende de una capa gratuita en los servicios de expo
+En esta publicación enseñaré como generar un APK, necesitaremos tener instalado Android Studio para ello y el proyecto de expo al cual generamos el APK de nuestra app.
+
+primero nos vamos a nuestra terminar y ejecutamos el comando de expo prebuild eso nos generará dos carpetas IOS y Android, nos centraremos en Android que es la que tienes lo archivos que android puede interpretar 
+
+esa carpeta la abriremos con el IDE de android studio.
+
+Para ello hay que tener instalado Android Studio: https://developer.android.com/studio/install
+
+Ya con eso podemos generar las APK’s sin tener que depender de **Expo Application Services** para hacerlo.
+
+El siguiente paso  que se necesita es generar el codigo nativo de tu proyecto, sea para IOS o Android, con Expo CLI genera código nativo de tu proyecto sin tener que de compilarlo de la forma convencional en la Web de Expo ya que no serias dependiente de su servicio de **Expo Application Services** para poder tener tus aplicaciones y distribuirlas
+
+Dentro de la carpeta de tu proyecto donde tienes los archivos de configuración de expo tienes que correr el comando de:
+
+```bash
+npx expo prebuild --platform android
+```
+
+Esto generara las carpetas `android/` para ejecutar tu código React.
+
+Si deseas tener el codigo nativo de ambas plataformas puedes ejecutar 
+
+```bash
+npx expo prebuild
+```
+
+eso creara la carpeta `android/` y `ios/` con el codigo nativo de las plataformas.
+
+si quieres tener mas información sobre el comando prebuilt puedes visitar la documentacion de [Expo](https://docs.expo.dev/workflow/prebuild/#usage-with-eas-build)
+
+Luego de tener las carpetas de `android/` vamos a abrir con [Android Studio](https://developer.android.com/studio/install) la capeta `android/`

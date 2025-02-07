@@ -1,86 +1,44 @@
 <script lang="ts">
-  import { run } from 'svelte/legacy';
-
-  import Calendar from '~icons/mdi/calendar-month';
   import LL, { locale } from '$i18n/i18n-svelte';
-  import SocialMedia from '$lib/components/SocialMedia.svelte';
   import { baseLocale, locales } from '$i18n/i18n-util';
+  import Entry from '$lib/components/entry.svelte';
+  import Note from '$lib/components/note.svelte';
+  import SocialMedia from '$lib/components/social-media.svelte';
 
-  import type { Note } from '$lib/services/Notion/Notes/notes';
-
-  interface Props {
-    data: {
-    notes: Note[];
-  };
-  }
-
-  let { data }: Props = $props();
-
-  const baseLocaleUrl = $locale === baseLocale ? '' : `/${$locale}`;
   const currentPageLocale = $locale;
 
-  let title = $state('Michael Liendo | Software Developer');
-  let description =
-    $state('A Software Developer interested in Systems Programming and Web Development.');
-  let keywords =
-    $state('michael liendo, home, notes, portfolio, software developer, svelte, typescript, web development, challenging projects, collaboration, problem-solving');
-  let avatarUrl = 'https://avatars.githubusercontent.com/u/70660410?v=4';
-
-  run(() => {
-    switch ($locale) {
-      case 'en':
-        title = 'Michael Liendo | Software Developer';
-        description =
-          'A Software Developer interested in Systems Programming and Web Development.';
-        keywords =
-          'michael liendo, home, notes, portfolio, software developer, svelte, typescript, web development, challenging projects, collaboration, problem-solving';
-        break;
-      case 'es':
-        title = 'Michael Liendo | Desarrollador de Software';
-        description =
-          'Un Desarrollador de Software interesado en Programación de Sistemas y Desarrollo Web.';
-        keywords =
-          'michael liendo, inicio, notas, portafolio, desarrollador de software, svelte, typescript, desarrollo web, proyectos desafiantes, colaboración, resolución de problemas';
-        break;
-    }
-  });
+  const { data } = $props();
 </script>
 
 <svelte:head>
-  <title>{title}</title>
-  <meta name="description" content={description} />
-  <meta name="keywords" content={keywords} />
+  <title>{$LL.SEO.TITLE()}</title>
+  <meta name="description" content={$LL.SEO.DESCRIPTION()} />
+  <meta name="keywords" content={$LL.SEO.KEYWORDS()} />
   <!-- Schema.org markup for Google+ -->
-  <meta itemprop="name" content={title} />
-  <meta itemprop="description" content={description} />
-  <meta itemprop="image" content={avatarUrl} />
+  <meta itemprop="name" content={$LL.SEO.TITLE()} />
+  <meta itemprop="description" content={$LL.SEO.DESCRIPTION()} />
+  <meta itemprop="image" content={$LL.SEO.IMAGE()} />
   <!-- Open Graph data -->
-  <meta property="og:title" content={title} />
+  <meta property="og:title" content={$LL.SEO.TITLE()} />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://michaelliendo.com/" />
-  <meta property="og:image" content={avatarUrl} />
-  <meta property="og:description" content={description} />
+  <meta property="og:image" content={$LL.SEO.IMAGE()} />
+  <meta property="og:description" content={$LL.SEO.DESCRIPTION()} />
   <meta property="og:site_name" content="Michael Liendo" />
   <!-- Twitter Card data -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:site" content="@MichaelMLiendo" />
-  <meta name="twitter:title" content={title} />
-  <meta name="twitter:description" content={description} />
-  <meta name="twitter:creator" content="@MichaelMLiendo" />
-  <meta name="twitter:image:src" content={avatarUrl} />
+  <meta name="twitter:site" content="@mykeliendo" />
+  <meta name="twitter:title" content={$LL.SEO.TITLE()} />
+  <meta name="twitter:description" content={$LL.SEO.DESCRIPTION()} />
+  <meta name="twitter:creator" content="@mykeliendo" />
+  <meta name="twitter:image:src" content={$LL.SEO.IMAGE()} />
 
   {#each locales as locale}
-    {#if locale !== baseLocale && currentPageLocale !== locale}
+    {#if currentPageLocale !== locale}
       <link
         rel="alternate"
         hreflang={locale}
-        href={`https://michaelliendo.com/${locale}`}
-      />
-    {:else if locale === baseLocale && currentPageLocale !== locale}
-      <link
-        rel="alternate"
-        hreflang={locale}
-        href={`https://michaelliendo.com/`}
+        href={`https://michaelliendo.com/${locale === baseLocale ? '' : locale}`}
       />
     {/if}
   {/each}
@@ -106,19 +64,12 @@
     </p>
     <div class="flex justify-between">
       <SocialMedia />
-      <!-- Call to action
-        <a
-        href="/"
-        class="inline-flex items-center justify-center px-4 py-2.5 text-base font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900"
-      >
-        Call Action
-      </a> -->
     </div>
   </div>
   <div class="w-full md:flex justify-end">
     <figure itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
       <img
-        src={avatarUrl}
+        src={$LL.SEO.IMAGE()}
         loading="lazy"
         alt="Michael Liendo Avatar"
         title="Michael Liendo profile picture at GitHub."
@@ -139,207 +90,21 @@
     {$LL.HOMEPAGE.LATEST_NOTES()}
   </h2>
 
-  <div class="grid xl:grid-cols-8 gap-4">
-    {#each data.notes as note, index}
-      {#if index === 0}
-        <a
-          title="Read more about {note.title}"
-          href={`${baseLocaleUrl}/notes/${note.slug}`}
-          class="rounded-2xl flex flex-col justify-between w-full h-full bg-[#f5f5f5] dark:bg-slate-900 xl:col-span-2 xl:row-span-2"
-          itemprop="blogPost"
-          itemscope
-          itemtype="http://schema.org/BlogPosting"
-        >
-          <figure>
-            {#if note.cover}
-              <img
-                src={note.cover}
-                class="rounded-t-2xl"
-                alt={note.title}
-                title={note.title}
-                loading="lazy"
-                height="200px"
-                width="100%"
-                itemprop="image"
-              />
-            {/if}
-            <figcaption class="px-5">
-              <h3
-                class="mt-4 text-2xl font-bold text-balance"
-                itemprop="headline"
-              >
-                {note.title}
-              </h3>
-              <p
-                class="text-lg max-h-48 text-truncate mt-2"
-                itemprop="description"
-              >
-                {note.description || ''}
-              </p>
-            </figcaption>
-          </figure>
-          <div class="px-5 pb-4">
-            <time
-              datetime={new Date(note.date).toISOString()}
-              class="flex items-center text-sm mt-2"
-              itemprop="datePublished"
-            >
-              <Calendar class="w-4 h-4 mr-1" />
-              {new Date(note.date).toLocaleDateString($locale, {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric',
-              })}
-            </time>
-            <ul class="mt-2 flex flex-wrap" itemprop="keywords">
-              {#each note.tags as tag}
-                <li
-                  class="text-sm mr-2 mb-2 bg-[#e0e0e0] dark:bg-black rounded py-1 px-2"
-                >
-                  <span
-                    class="inline-block mr-1 rounded-full h-2 w-2"
-                    style="background-color: {tag.color};"
-></span>
-                  {tag.name}
-                </li>
-              {/each}
-            </ul>
-          </div>
-        </a>
-      {/if}
-      {#if index === 1 || index === 4}
-        <a
-          title="Read more about {note.title}"
-          href={`${baseLocaleUrl}/notes/${note.slug}`}
-          class="rounded-2xl flex flex-col justify-between w-full h-full px-5 py-4 bg-[#f5f5f5] dark:bg-slate-900 xl:col-span-2"
-          itemprop="blogPost"
-          itemscope
-          itemtype="http://schema.org/BlogPosting"
-        >
-          <div>
-            <h3 class="text-2xl font-bold text-balance" itemprop="headline">
-              {note.title}
-            </h3>
-            <p class="text-lg text-truncate mt-2" itemprop="description">
-              {note.description}
-            </p>
-          </div>
-
-          <div>
-            <time
-              datetime={new Date(note.date).toISOString()}
-              class="flex items-center text-sm"
-              itemprop="datePublished"
-            >
-              <Calendar class="w-4 h-4 mr-1" />
-              {new Date(note.date).toLocaleDateString($locale, {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric',
-              })}
-            </time>
-            <ul class="mt-2 flex flex-wrap" itemprop="keywords">
-              {#each note.tags as tag}
-                <li
-                  class="text-sm mr-2 mb-2 bg-[#e0e0e0] dark:bg-black rounded py-1 px-2"
-                >
-                  <span
-                    class="inline-block mr-1 rounded-full h-2 w-2"
-                    style="background-color: {tag.color};"
-></span>
-                  {tag.name}
-                </li>
-              {/each}
-            </ul>
-          </div>
-        </a>
-      {/if}
-      {#if index === 2 || index === 3}
-        <a
-          title="Read more about {note.title}"
-          href={`${baseLocaleUrl}/notes/${note.slug}`}
-          class="block md:flex rounded-2xl w-full h-full bg-[#f5f5f5] dark:bg-slate-900 xl:col-span-4"
-          itemprop="blogPost"
-          itemscope
-          itemtype="http://schema.org/BlogPosting"
-        >
-          <img
-            src={note.cover}
-            alt={note.title}
-            title={note.title}
-            height="200px"
-            width="100%"
-            loading="lazy"
-            class="md:w-2/5 object-cover rounded-l-2xl"
-            itemprop="image"
-          />
-          <div class="flex flex-col justify-between md:w-3/5 p-5">
-            <div>
-              <h3 class="text-2xl font-bold text-balance" itemprop="headline">
-                {note.title}
-              </h3>
-              <p class="text-lg text-truncate mt-2" itemprop="description">
-                {note.description}
-              </p>
-            </div>
-
-            <div>
-              <time
-                datetime={new Date(note.date).toISOString()}
-                class="flex items-center text-sm"
-                itemprop="datePublished"
-              >
-                <Calendar class="w-4 h-4 mr-1" />
-                {new Date(note.date).toLocaleDateString($locale, {
-                  year: 'numeric',
-                  month: 'long',
-                  day: 'numeric',
-                })}
-              </time>
-              <ul class="mt-2 flex flex-wrap" itemprop="keywords">
-                {#each note.tags as tag}
-                  <li
-                    class="text-sm mr-2 mb-2 bg-[#e0e0e0] dark:bg-black rounded py-1 px-2"
-                  >
-                    <span
-                      class="inline-block mr-1 rounded-full h-2 w-2"
-                      style="background-color: {tag.color};"
-></span>
-                    {tag.name}
-                  </li>
-                {/each}
-              </ul>
-            </div>
-          </div>
-        </a>
-      {/if}
+  <section class="grid gap-y-8 gap-x-6 grid-cols-4 md:grid-cols-12">
+    {#each data.notes as note}
+      <Note
+        title={note.title}
+        description={note.description}
+        publishDate={new Date(note.date)}
+        tags={note.tags}
+        slug={note.slug!}
+      />
     {/each}
-  </div>
+  </section>
 </section>
 
 <style>
   .gradient {
     filter: blur(100px);
-  }
-  /* 
-view later
-  h1 {
-    background-image: linear-gradient(45deg, #f0f0f0 44.71%, #6f00ff 93.29%);
-    background-size: 100%;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -moz-text-fill-color: transparent;
-  } */
-
-  .text-pretty {
-    text-wrap: pretty;
-  }
-  .text-balance {
-    text-wrap: balance;
-  }
-
-  .text-truncate {
-    overflow: hidden;
-    text-overflow: ellipsis;
   }
 </style>
