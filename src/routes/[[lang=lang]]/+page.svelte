@@ -14,6 +14,7 @@
   <title>{$LL.SEO.TITLE()}</title>
   <meta name="description" content={$LL.SEO.DESCRIPTION()} />
   <meta name="keywords" content={$LL.SEO.KEYWORDS()} />
+  <link rel="canonical" href={`https://michaelliendo.com/`} />
   <!-- Schema.org markup for Google+ -->
   <meta itemprop="name" content={$LL.SEO.TITLE()} />
   <meta itemprop="description" content={$LL.SEO.DESCRIPTION()} />

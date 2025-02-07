@@ -42,11 +42,11 @@
         <p class="mt-1 text-sm text-gray-600">
           {project.description}
         </p>
-        <div class="mt-4 flex flex-wrap gap-2">
+        <ul class="mt-4 flex flex-wrap gap-2">
           {#each project.tags as tag}
             <Tag title={tag} />
           {/each}
-        </div>
+        </ul>
       </div>
       <div class="px-4 py-4 sm:px-6 flex justify-between">
         {#if project.repo_url}
