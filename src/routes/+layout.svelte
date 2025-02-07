@@ -21,9 +21,9 @@ const { children } = $props();
 
 
 <div class="bg-white">
-  <div class="min-h-screen">
+  <div class="min-h-screen px-5 sm:px-10 md:px-20">
     <Header /> 
-    <main class="px-5 sm:px-10 md:px-20">{@render children()}</main>
+    <main>{@render children()}</main>
   </div>
   <Footer />
 </div>

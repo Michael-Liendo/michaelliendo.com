@@ -43,7 +43,7 @@ function changeLanguage(locale: Locales): void {
 }
 </script>
 
-<header class="px-5 sm:px-10 md:px-20 py-4 flex justify-between items-center">
+<header class="py-4 flex justify-between items-center">
   <h1 class="text-xl">Michael Liendo</h1>
 
   <div class="flex">
