@@ -68,7 +68,7 @@
       </span>
     </div>
   </header>
-  <article class="prose w-full md:max-w-[1000px]">
+  <article class="prose w-full md:max-w-[1000px] note-container">
     {@render children()}
   </article>
 </div>

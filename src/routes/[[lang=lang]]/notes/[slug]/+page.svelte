@@ -67,9 +67,7 @@
   <meta name="twitter:image:src" content={note.preview_image_url} />
 </svelte:head>
 
-<div id="note-container">
-  {#if note}
-    {@const Component = note.content}
-    <Component />
-  {/if}
-</div>
+{#if note}
+  {@const Component = note.content}
+  <Component />
+{/if}

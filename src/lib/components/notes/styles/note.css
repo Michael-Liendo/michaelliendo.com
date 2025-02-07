@@ -1,15 +1,16 @@
 .note-container p code,
 .note-container ul li code {
-	@apply bg-black rounded;
+	@apply bg-white rounded;
+	@apply border-2 border-red-100;
 
-	color: #f04f4f !important;
+	color: #4fb0f0;
 	padding: 0.2rem;
 }
 
 .note-container h2 code {
-	@apply bg-black rounded;
+	@apply bg-white rounded;
 
-	color: #f04f4f !important;
+	color: #4fb0f0;
 	padding: 0.2rem;
 }
 
