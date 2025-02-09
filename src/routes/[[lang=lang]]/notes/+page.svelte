@@ -44,7 +44,7 @@
     <Entry
       title={note.title}
       description={note.description}
-      publishDate={new Date(note.date)}
+      date={note.date}
       tags={note.tags}
       slug={note.slug!}
       previewImageUrl={note.preview_image_url}

@@ -46,6 +46,7 @@ const es = {
 	NOTES: {
 		NOTES: "Notas",
 		DESCRIPTION: "Notas sobre aprendizajes, marcadores y experiencias",
+		READ_MORE: "Leer más",
 	},
 	PROJECTS: {
 		PROJECTS: "Proyectos",

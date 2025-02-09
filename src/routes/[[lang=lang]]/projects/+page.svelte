@@ -54,7 +54,9 @@
         </p>
         <ul class="mt-4 flex flex-wrap gap-2">
           {#each project.tags as tag}
-            <Tag title={tag} />
+            <Tag>
+              {tag}
+            </Tag>
           {/each}
         </ul>
       </div>

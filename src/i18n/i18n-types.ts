@@ -126,6 +126,10 @@ type RootTranslation = {
 		 * N​o​t​a​s​ ​s​o​b​r​e​ ​a​p​r​e​n​d​i​z​a​j​e​s​,​ ​m​a​r​c​a​d​o​r​e​s​ ​y​ ​e​x​p​e​r​i​e​n​c​i​a​s
 		 */
 		DESCRIPTION: string
+		/**
+		 * L​e​e​r​ ​m​á​s
+		 */
+		READ_MORE: string
 	}
 	PROJECTS: {
 		/**
@@ -133,7 +137,7 @@ type RootTranslation = {
 		 */
 		PROJECTS: string
 		/**
-		 * P​r​o​y​e​c​t​o​s​ ​e​n​ ​l​o​s​ ​q​u​e​ ​h​e​ ​t​r​a​b​a​j​a​d​o​.​ ​P​u​e​d​e​s​ ​v​e​r​ ​m​i​s​ ​p​r​o​y​e​c​t​o​s​ ​e​n​ ​G​i​t​H​u​b​.
+		 * P​r​o​y​e​c​t​o​s​ ​e​n​ ​l​o​s​ ​q​u​e​ ​h​e​ ​t​r​a​b​a​j​a​d​o​.
 		 */
 		DESCRIPTION: string
 	}
@@ -245,6 +249,10 @@ export type TranslationFunctions = {
 		 * Notas sobre aprendizajes, marcadores y experiencias
 		 */
 		DESCRIPTION: () => LocalizedString
+		/**
+		 * Leer más
+		 */
+		READ_MORE: () => LocalizedString
 	}
 	PROJECTS: {
 		/**
@@ -252,7 +260,7 @@ export type TranslationFunctions = {
 		 */
 		PROJECTS: () => LocalizedString
 		/**
-		 * Proyectos en los que he trabajado. Puedes ver mis proyectos en GitHub.
+		 * Proyectos en los que he trabajado.
 		 */
 		DESCRIPTION: () => LocalizedString
 	}

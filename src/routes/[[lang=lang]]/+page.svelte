@@ -1,6 +1,7 @@
 <script lang="ts">
   import LL, { locale } from '$i18n/i18n-svelte';
   import { baseLocale, locales } from '$i18n/i18n-util';
+  import { cn } from '$lib';
   import Entry from '$lib/components/entry.svelte';
   import Note from '$lib/components/note.svelte';
   import SocialMedia from '$lib/components/social-media.svelte';
@@ -91,12 +92,17 @@
     {$LL.HOMEPAGE.LATEST_NOTES()}
   </h2>
 
-  <section class="grid gap-y-8 gap-x-6 grid-cols-4 md:grid-cols-12">
+  <section
+    class={cn(
+      'flex flex-col space-y-4',
+      'delay-300 duration-500 animate-in fade-in slide-in-from-bottom-4 fill-mode-backwards'
+    )}
+  >
     {#each data.notes as note}
       <Note
         title={note.title}
         description={note.description}
-        publishDate={new Date(note.date)}
+        date={note.date}
         tags={note.tags}
         slug={note.slug!}
       />

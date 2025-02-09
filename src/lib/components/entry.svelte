@@ -1,13 +1,14 @@
 <script lang="ts">
   import { locale } from '$i18n/i18n-svelte';
   import { baseLocale } from '$i18n/i18n-util';
-  import { Calendar } from 'lucide-svelte';
+  import { Calendar, TagIcon } from 'lucide-svelte';
   import Tag from './tag.svelte';
+  import { formatDate } from '$lib/utils';
 
   interface Props {
     title?: string;
     description?: string;
-    publishDate: Date;
+    date: string;
     tags?: string[];
     slug?: string;
     previewImageUrl?: string | null;
@@ -16,22 +17,13 @@
   const {
     title = '',
     description = '',
-    publishDate,
+    date,
     tags = [],
     slug = '',
     previewImageUrl = '',
   }: Props = $props();
 
   const baseLocaleUrl = $locale === baseLocale ? '' : `/${$locale}`;
-
-  const formattedDate = new Date(publishDate).toLocaleDateString(
-    `${$locale}-us`,
-    {
-      month: 'long',
-      day: '2-digit',
-      year: 'numeric',
-    },
-  );
 </script>
 
 <li class="mb-4 md:mb-0 last-of-type:mb-0">
@@ -59,16 +51,21 @@
           <figure class="mr-2">
             <Calendar class="text-gray-800 h-4 w-4" />
           </figure>
-          <time class="text-sm mr-2" datetime={publishDate.toString()}
-            >{formattedDate}</time
+          <time
+            class="text-sm mr-2"
+            datetime={formatDate(date, undefined, $locale)}
+            >{formatDate(date, undefined, $locale)}</time
           >
         </span>
       </div>
-      <ul class="flex flex-wrap">
+      <div class="flex items-center space-x-1.5">
         {#each tags as tag}
-          <Tag title={tag} />
+          <Tag>
+            <TagIcon size={12} />
+            <span>{tag}</span>
+          </Tag>
         {/each}
-      </ul>
+      </div>
     </footer>
   </a>
 </li>

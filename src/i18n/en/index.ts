@@ -45,6 +45,7 @@ const en = {
 	NOTES: {
 		NOTES: "Notes",
 		DESCRIPTION: "Notes on learnings, bookmark and experiences",
+		READ_MORE: "Read more",
 	},
 	PROJECTS: {
 		PROJECTS: "Projects",

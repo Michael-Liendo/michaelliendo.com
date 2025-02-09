@@ -1,44 +1,63 @@
 <script lang="ts">
-  import { locale } from '$i18n/i18n-svelte';
+  import { formatDate } from '$lib/utils';
+  import LL, { locale } from '$i18n/i18n-svelte';
+  import { CalendarIcon, ChevronRightIcon, TagIcon } from 'lucide-svelte';
   import Tag from './tag.svelte';
 
-  const { title, description, publishDate, tags, slug } = $props();
+  const { title, description, date, tags, slug } = $props();
+
+  const note = { title, description, date, tags, slug };
 
   const langTags = ['python', 'rust', 'svelte', 'typescript'];
-
-  const formattedDate = new Date(publishDate).toLocaleDateString(
-    `${$locale}-us`,
-    {
-      month: 'long',
-      day: '2-digit',
-      year: 'numeric',
-    },
-  );
 
   const displayTags = tags
     .sort((a: string, _: string) => (langTags.includes(a) ? 0 : 1))
     .slice(0, 3);
 </script>
 
-<article class="self-start flex flex-col justify-start w-full col-span-4">
-  <h3 class="text-lg md:text-xl hover:underline">
-    <a href="/{$locale}/notes/{slug}">
-      {title}
+<article
+  class="w-full rounded-md border border-neutral-300 p-3 dark:border-neutral-800"
+>
+  <div class="mb-3 flex flex-col space-y-1">
+    <a
+      href="/{$locale}/notes/{slug}"
+      class="text-md flex items-center space-x-2 font-medium decoration-neutral-500 decoration-dotted underline-offset-[5px] duration-150 hover:underline hover:opacity-80 md:text-lg"
+    >
+      <span>{note.title}</span>
+      <ChevronRightIcon
+        size={14}
+        class="block flex-shrink-0 text-neutral-500 dark:text-neutral-400 md:hidden"
+      />
     </a>
-  </h3>
-  <p aria-label={description} class="py-1 text-sm truncate">
-    {description}
-  </p>
-  <ul class="flex justify-start items-start flex-wrap gap-2 py-2">
-    {#each displayTags as category}
-      <Tag title={category} />
-    {/each}
-  </ul>
-  <div class="flex">
-    <span class="flex items-center">
-      <time class="py-2 text-xs uppercase" datetime={publishDate.toString()}>
-        {formattedDate}
-      </time>
-    </span>
+    <p class="text-pretty text-sm dark:text-neutral-400">
+      {note.description}
+    </p>
+  </div>
+  <div class="flex w-full items-center justify-between">
+    <div class="flex items-center space-x-1.5">
+      {#each displayTags as tag}
+        <Tag>
+          <TagIcon size={12} />
+          <span>{tag}</span>
+        </Tag>
+      {/each}
+
+      <Tag>
+        <CalendarIcon size={12} />
+        <time datetime={formatDate(note.date, undefined, $locale)}>
+          {formatDate(note.date, undefined, $locale)}
+        </time>
+      </Tag>
+    </div>
+    <a
+      href="/{$locale}/notes/{slug}"
+      class="group hidden items-center space-x-[4px] text-sm tracking-tight opacity-70 transition-opacity duration-100 hover:opacity-100 md:flex"
+    >
+      <span>{$LL.NOTES.READ_MORE()}</span>
+      <ChevronRightIcon
+        size={16}
+        class="duration-150 group-hover:translate-x-[2px]"
+      />
+    </a>
   </div>
 </article>
