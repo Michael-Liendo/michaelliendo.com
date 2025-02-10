@@ -2,11 +2,20 @@ import type { Project } from "$lib/types/Project";
 
 export default [
 	{
+		name: "Contapp",
+		description:
+			"Aplicación de contabilidad basada en web construida con TypeScript, diseñada para gestionar múltiples empresas, mantener planes de cuentas, registrar asientos y generar informes financieros como balances de prueba con funcionalidad de exportación a Excel.",
+		repo_url: "https://github.com/Michael-Liendo/contapp",
+		preview_url: "https://contapp.michaelliendo.com/",
+		tags: ["svelte", "fastify", "typescript", "sveltekit", "accounting"],
+		date: "2025-02-10",
+	},
+	{
 		name: "TownHall",
 		description:
 			"Es un proyecto colaborativo para desarrolladores de Rust de nivel principiante a intermedio. Estamos aprendiendo haciendo, creando una plataforma comunitaria inspirada en Reddit y la plataforma de microblogging X (anteriormente Twitter).",
 		repo_url: "https://github.com/TownHallHQ/TownHall",
-		tags: ["rust", "community"],
+		tags: ["rust", "leptos", "community"],
 		date: "2024-11-05",
 	},
 	{
