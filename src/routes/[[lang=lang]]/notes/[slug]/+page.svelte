@@ -1,9 +1,9 @@
 <script lang="ts">
-  import LL from '$i18n/i18n-svelte';
+import LL from "$i18n/i18n-svelte";
 
-  const { data } = $props();
+const { data } = $props();
 
-  const note = data.note;
+const note = data.note;
 </script>
 
 <svelte:head>

@@ -1,8 +1,8 @@
 <script lang="ts">
-  import Footer from '$lib/components/footer.svelte';
-  import Header from '$lib/components/header.svelte';
-  import '../app.css';
-  const { children } = $props();
+import Footer from "$lib/components/footer.svelte";
+import Header from "$lib/components/header.svelte";
+import "../app.css";
+const { children } = $props();
 </script>
 
 <svelte:head>

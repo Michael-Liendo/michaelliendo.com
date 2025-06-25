@@ -109,9 +109,17 @@ type RootTranslation = {
 		 */
 		HI: RequiredParams<'name' | 'surname'>
 		/**
-		 * S​o​y​ ​u​n​ ​<​s​t​r​o​n​g​>​D​e​s​a​r​r​o​l​l​a​d​o​r​ ​d​e​ ​S​o​f​t​w​a​r​e​<​/​s​t​r​o​n​g​>​ ​e​n​f​o​c​a​d​o​ ​e​n​ ​S​v​e​l​t​e​ ​y​ ​T​y​p​e​S​c​r​i​p​t​ ​a​p​a​s​i​o​n​a​d​o​ ​p​o​r​ ​e​l​ ​<​s​t​r​o​n​g​>​D​e​s​a​r​r​o​l​l​o​ ​d​e​ ​A​p​l​i​c​a​c​i​o​n​e​s​ ​M​ó​v​i​l​e​s​ ​y​ ​P​á​g​i​n​a​s​ ​W​e​b​<​/​s​t​r​o​n​g​>​.​ ​D​i​s​f​r​u​t​o​ ​t​r​a​b​a​j​a​r​ ​e​n​ ​p​r​o​y​e​c​t​o​s​ ​d​e​s​a​f​i​a​n​t​e​s​,​ ​v​a​l​o​r​o​ ​l​a​ ​c​o​l​a​b​o​r​a​c​i​ó​n​ ​y​ ​l​a​ ​r​e​s​o​l​u​c​i​ó​n​ ​d​e​ ​p​r​o​b​l​e​m​a​s​.
+		 * S​o​y​ ​u​n​ ​<​s​t​r​o​n​g​>​D​e​s​a​r​r​o​l​l​a​d​o​r​ ​d​e​ ​S​o​f​t​w​a​r​e​<​/​s​t​r​o​n​g​>​ ​e​n​f​o​c​a​d​o​ ​e​n​ ​R​e​a​c​t​.​j​s​ ​y​ ​T​y​p​e​S​c​r​i​p​t​ ​a​p​a​s​i​o​n​a​d​o​ ​p​o​r​ ​e​l​ ​<​s​t​r​o​n​g​>​D​e​s​a​r​r​o​l​l​o​ ​d​e​ ​A​p​l​i​c​a​c​i​o​n​e​s​ ​M​ó​v​i​l​e​s​ ​y​ ​P​á​g​i​n​a​s​ ​W​e​b​<​/​s​t​r​o​n​g​>​.​ ​D​i​s​f​r​u​t​o​ ​t​r​a​b​a​j​a​r​ ​e​n​ ​p​r​o​y​e​c​t​o​s​ ​d​e​s​a​f​i​a​n​t​e​s​,​ ​v​a​l​o​r​o​ ​l​a​ ​c​o​l​a​b​o​r​a​c​i​ó​n​ ​y​ ​l​a​ ​r​e​s​o​l​u​c​i​ó​n​ ​d​e​ ​p​r​o​b​l​e​m​a​s​.
 		 */
 		ABOUT: string
+		/**
+		 * ¿​T​e​ ​i​n​t​e​r​e​s​a​ ​t​r​a​b​a​j​a​r​ ​c​o​n​m​i​g​o​ ​o​ ​c​o​l​a​b​o​r​a​r​ ​e​n​ ​u​n​ ​p​r​o​y​e​c​t​o​?​ ​h​o​l​a​@​m​i​c​h​a​e​l​l​i​e​n​d​o​.​c​o​m
+		 */
+		CTA_LABEL: string
+		/**
+		 * C​o​n​t​á​c​t​e​m​e​ ​p​o​r​ ​e​m​a​i​l
+		 */
+		CTA_BUTTON: string
 		/**
 		 * Ú​l​t​i​m​a​s​ ​n​o​t​a​s
 		 */
@@ -232,9 +240,17 @@ export type TranslationFunctions = {
 		 */
 		HI: (arg: { name: string, surname: string }) => LocalizedString
 		/**
-		 * Soy un <strong>Desarrollador de Software</strong> enfocado en Svelte y TypeScript apasionado por el <strong>Desarrollo de Aplicaciones Móviles y Páginas Web</strong>. Disfruto trabajar en proyectos desafiantes, valoro la colaboración y la resolución de problemas.
+		 * Soy un <strong>Desarrollador de Software</strong> enfocado en React.js y TypeScript apasionado por el <strong>Desarrollo de Aplicaciones Móviles y Páginas Web</strong>. Disfruto trabajar en proyectos desafiantes, valoro la colaboración y la resolución de problemas.
 		 */
 		ABOUT: () => LocalizedString
+		/**
+		 * ¿Te interesa trabajar conmigo o colaborar en un proyecto? hola@michaelliendo.com
+		 */
+		CTA_LABEL: () => LocalizedString
+		/**
+		 * Contácteme por email
+		 */
+		CTA_BUTTON: () => LocalizedString
 		/**
 		 * Últimas notas
 		 */

@@ -1,10 +1,9 @@
-import { initAcceptLanguageHeaderDetector } from "typesafe-i18n/detectors";
-
-import { loadAllLocales } from "$i18n/i18n-util.sync";
+import type { Locales } from "$i18n/i18n-types";
 import { baseLocale, detectLocale, i18n, isLocale } from "$i18n/i18n-util";
+import { loadAllLocales } from "$i18n/i18n-util.sync";
 
 import type { Handle, RequestEvent } from "@sveltejs/kit";
-import type { Locales } from "$i18n/i18n-types";
+import { initAcceptLanguageHeaderDetector } from "typesafe-i18n/detectors";
 
 loadAllLocales();
 const L = i18n();

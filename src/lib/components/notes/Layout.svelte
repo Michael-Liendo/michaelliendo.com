@@ -1,14 +1,14 @@
 <script lang="ts" module>
-  import a from './custom/a.svelte';
-  import blockquote from './custom/blockquote.svelte';
-  import h2 from './custom/h2.svelte';
-  import h3 from './custom/h3.svelte';
-  import img from './custom/img.svelte';
-  import table from './custom/table.svelte';
-  import td from './custom/td.svelte';
-  import th from './custom/th.svelte';
+import a from "./custom/a.svelte";
+import blockquote from "./custom/blockquote.svelte";
+import h2 from "./custom/h2.svelte";
+import h3 from "./custom/h3.svelte";
+import img from "./custom/img.svelte";
+import table from "./custom/table.svelte";
+import td from "./custom/td.svelte";
+import th from "./custom/th.svelte";
 
-  export { a, blockquote, h2, h3, img, table, th, td };
+export { a, blockquote, h2, h3, img, table, th, td };
 </script>
 
 <script lang="ts">

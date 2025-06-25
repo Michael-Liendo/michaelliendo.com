@@ -2,7 +2,6 @@
   import LL, { locale } from '$i18n/i18n-svelte';
   import { baseLocale, locales } from '$i18n/i18n-util';
   import { cn } from '$lib';
-  import Entry from '$lib/components/entry.svelte';
   import Note from '$lib/components/note.svelte';
   import SocialMedia from '$lib/components/social-media.svelte';
 
@@ -64,6 +63,18 @@
     >
       {@html $LL.HOMEPAGE.ABOUT()}
     </p>
+
+    <p class="text-sm font-medium text-gray-700">
+      {$LL.HOMEPAGE.CTA_LABEL()}
+    </p>
+    <div class="flex w-full">
+      <a
+        href="mailto:hello@michaelliendo.com"
+        class="mt-1.5 inline-block w-full md:w-auto text-center px-6 py-3 bg-blue-600 text-white rounded-xl shadow-md hover:bg-blue-700 transition"
+      >
+        {$LL.HOMEPAGE.CTA_BUTTON()}
+      </a>
+    </div>
     <div class="flex justify-between">
       <SocialMedia />
     </div>
@@ -95,7 +106,7 @@
   <section
     class={cn(
       'flex flex-col space-y-4',
-      'delay-300 duration-500 animate-in fade-in slide-in-from-bottom-4 fill-mode-backwards'
+      'delay-300 duration-500 animate-in fade-in slide-in-from-bottom-4 fill-mode-backwards',
     )}
   >
     {#each data.notes as note}

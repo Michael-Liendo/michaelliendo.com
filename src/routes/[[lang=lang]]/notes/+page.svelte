@@ -1,9 +1,9 @@
 <script lang="ts">
-  import LL from '$i18n/i18n-svelte';
-  import Entry from '$lib/components/entry.svelte';
-  import type { PageProps } from './$types';
+import LL from "$i18n/i18n-svelte";
+import Entry from "$lib/components/entry.svelte";
+import type { PageProps } from "./$types";
 
-  const { data }: PageProps = $props();
+const { data }: PageProps = $props();
 </script>
 
 <svelte:head>

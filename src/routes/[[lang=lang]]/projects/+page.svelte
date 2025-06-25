@@ -1,11 +1,11 @@
 <script>
-  import en_projects from '$i18n/en/project';
-  import es_projects from '$i18n/es/project';
-  import LL, { locale } from '$i18n/i18n-svelte';
-  import Tag from '$lib/components/tag.svelte';
-  import { Github } from 'lucide-svelte';
+import en_projects from "$i18n/en/project";
+import es_projects from "$i18n/es/project";
+import LL, { locale } from "$i18n/i18n-svelte";
+import Tag from "$lib/components/tag.svelte";
+import { Github } from "lucide-svelte";
 
-  const projects = $locale === 'en' ? en_projects : es_projects;
+const projects = $locale === "en" ? en_projects : es_projects;
 </script>
 
 <svelte:head>

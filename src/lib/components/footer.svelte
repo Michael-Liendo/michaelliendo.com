@@ -1,8 +1,8 @@
 <script lang="ts">
-  import LL from '$i18n/i18n-svelte';
+import LL from "$i18n/i18n-svelte";
 
-  const currentYear = new Date().getFullYear();
-  const startYear = 2021;
+const currentYear = new Date().getFullYear();
+const startYear = 2021;
 </script>
 
 <footer class="w-full mt-5 px-4 py-5">

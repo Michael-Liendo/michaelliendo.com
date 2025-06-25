@@ -1,5 +1,5 @@
 <script lang="ts">
-  const { href, children } = $props();
+const { href, children } = $props();
 </script>
 
 <a class="text-blue-600" {href}>
