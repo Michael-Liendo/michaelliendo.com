@@ -1,14 +1,14 @@
 <script lang="ts">
-  import LL, { locale } from '$i18n/i18n-svelte';
-  import { baseLocale, locales } from '$i18n/i18n-util';
-  import { cn } from '$lib';
-  import Entry from '$lib/components/entry.svelte';
-  import Note from '$lib/components/note.svelte';
-  import SocialMedia from '$lib/components/social-media.svelte';
+import LL, { locale } from "$i18n/i18n-svelte";
+import { baseLocale, locales } from "$i18n/i18n-util";
+import { cn } from "$lib";
+import Entry from "$lib/components/entry.svelte";
+import Note from "$lib/components/note.svelte";
+import SocialMedia from "$lib/components/social-media.svelte";
 
-  const currentPageLocale = $locale;
+const currentPageLocale = $locale;
 
-  const { data } = $props();
+const { data } = $props();
 </script>
 
 <svelte:head>

@@ -1,29 +1,29 @@
 <script lang="ts">
-  import { locale } from '$i18n/i18n-svelte';
-  import { baseLocale } from '$i18n/i18n-util';
-  import { Calendar, TagIcon } from 'lucide-svelte';
-  import Tag from './tag.svelte';
-  import { formatDate } from '$lib/utils';
+import { locale } from "$i18n/i18n-svelte";
+import { baseLocale } from "$i18n/i18n-util";
+import { formatDate } from "$lib/utils";
+import { Calendar, TagIcon } from "lucide-svelte";
+import Tag from "./tag.svelte";
 
-  interface Props {
-    title?: string;
-    description?: string;
-    date: string;
-    tags?: string[];
-    slug?: string;
-    previewImageUrl?: string | null;
-  }
+interface Props {
+	title?: string;
+	description?: string;
+	date: string;
+	tags?: string[];
+	slug?: string;
+	previewImageUrl?: string | null;
+}
 
-  const {
-    title = '',
-    description = '',
-    date,
-    tags = [],
-    slug = '',
-    previewImageUrl = '',
-  }: Props = $props();
+const {
+	title = "",
+	description = "",
+	date,
+	tags = [],
+	slug = "",
+	previewImageUrl = "",
+}: Props = $props();
 
-  const baseLocaleUrl = $locale === baseLocale ? '' : `/${$locale}`;
+const baseLocaleUrl = $locale === baseLocale ? "" : `/${$locale}`;
 </script>
 
 <li class="mb-4 md:mb-0 last-of-type:mb-0">

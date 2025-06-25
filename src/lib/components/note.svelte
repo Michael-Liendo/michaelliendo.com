@@ -1,18 +1,18 @@
 <script lang="ts">
-  import { formatDate } from '$lib/utils';
-  import LL, { locale } from '$i18n/i18n-svelte';
-  import { CalendarIcon, ChevronRightIcon, TagIcon } from 'lucide-svelte';
-  import Tag from './tag.svelte';
+import LL, { locale } from "$i18n/i18n-svelte";
+import { formatDate } from "$lib/utils";
+import { CalendarIcon, ChevronRightIcon, TagIcon } from "lucide-svelte";
+import Tag from "./tag.svelte";
 
-  const { title, description, date, tags, slug } = $props();
+const { title, description, date, tags, slug } = $props();
 
-  const note = { title, description, date, tags, slug };
+const note = { title, description, date, tags, slug };
 
-  const langTags = ['python', 'rust', 'svelte', 'typescript'];
+const langTags = ["python", "rust", "svelte", "typescript"];
 
-  const displayTags = tags
-    .sort((a: string, _: string) => (langTags.includes(a) ? 0 : 1))
-    .slice(0, 3);
+const displayTags = tags
+	.sort((a: string, _: string) => (langTags.includes(a) ? 0 : 1))
+	.slice(0, 3);
 </script>
 
 <article

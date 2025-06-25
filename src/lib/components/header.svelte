@@ -1,45 +1,44 @@
 <script lang="ts">
-  import { Home, Languages, Notebook, Trophy } from 'lucide-svelte';
+import { page } from "$app/state";
 
-  import LL, { locale, setLocale } from '$i18n/i18n-svelte';
-  import { removeLocaleFromPath, replaceLocaleInUrl } from '$lib/utils/locale';
-  import { baseLocale } from '$i18n/i18n-util';
+import LL, { locale, setLocale } from "$i18n/i18n-svelte";
+import type { Locales } from "$i18n/i18n-types";
+import { baseLocale } from "$i18n/i18n-util";
+import { cn } from "$lib";
+import { clickOutside } from "$lib/actions/clickOutside";
+import { removeLocaleFromPath, replaceLocaleInUrl } from "$lib/utils/locale";
+import { PublicRoutesEnum } from "$lib/utils/routes";
+import { Home, Languages, Notebook, Trophy } from "lucide-svelte";
 
-  import type { Locales } from '$i18n/i18n-types';
-  import { clickOutside } from '$lib/actions/clickOutside';
-  import { PublicRoutesEnum } from '$lib/utils/routes';
-  import { cn } from '$lib';
-  import { page } from '$app/state';
+let currentUrl = $state(removeLocaleFromPath(page.url.pathname));
 
-  let currentUrl = $state(removeLocaleFromPath(page.url.pathname));
+$effect(() => {
+	currentUrl = removeLocaleFromPath(page.url.pathname);
+});
 
-  $effect(() => {
-    currentUrl = removeLocaleFromPath(page.url.pathname);
-  });
+const activeLocale = $locale;
 
-  const activeLocale = $locale;
+const baseLocaleUrl = $locale === baseLocale ? "" : `/${$locale}`;
 
-  const baseLocaleUrl = $locale === baseLocale ? '' : `/${$locale}`;
+let isLangMenuOpen = $state(false);
 
-  let isLangMenuOpen = $state(false);
+function toggleLanguageMenu(): void {
+	isLangMenuOpen = !isLangMenuOpen;
+}
 
-  function toggleLanguageMenu(): void {
-    isLangMenuOpen = !isLangMenuOpen;
-  }
+function changeLanguage(locale: Locales): void {
+	const lang = activeLocale;
 
-  function changeLanguage(locale: Locales): void {
-    const lang = activeLocale;
+	if (lang === locale) {
+		isLangMenuOpen = false;
+		return;
+	}
 
-    if (lang === locale) {
-      isLangMenuOpen = false;
-      return;
-    }
+	const next = replaceLocaleInUrl(new URL(window.location.href), locale);
 
-    const next = replaceLocaleInUrl(new URL(window.location.href), locale);
-
-    setLocale(locale);
-    window.location.href = next;
-  }
+	setLocale(locale);
+	window.location.href = next;
+}
 </script>
 
 <header class="py-4 flex justify-between items-center">
