@@ -39,7 +39,7 @@ const en = {
 	},
 	HOMEPAGE: {
 		HI: `Hi I'm {name:string} {surname:string},`,
-		ABOUT: `I'm a <strong>Software Developer</strong> focused on React.js and TypeScript with a passion for <strong>Mobile Development and Websites</strong>. I enjoy working on challenging projects, value collaboration and problem-solving.`,
+		ABOUT: `I'm a <strong>Software Developer</strong> focused on React.js and TypeScript with a passion for <strong>Development of Mobile Applications, Servers, AI, Automations and Web Pages</strong>. I enjoy working on challenging projects, value collaboration and problem-solving.`,
 		CTA_LABEL: 'Are you interested in working with me or collaborating on a project? hello@michaelliendo.com',
 		CTA_BUTTON:'Contact me',
 		LATEST_NOTES: "Latest Notes",

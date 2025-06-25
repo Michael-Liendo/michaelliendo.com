@@ -40,7 +40,7 @@ const es = {
 	HOMEPAGE: {
 		HI: "Hola soy {name:string} {surname:string},",
 		ABOUT:
-			"Soy un <strong>Desarrollador de Software</strong> enfocado en React.js y TypeScript apasionado por el <strong>Desarrollo de Aplicaciones Móviles y Páginas Web</strong>. Disfruto trabajar en proyectos desafiantes, valoro la colaboración y la resolución de problemas.",
+			"Soy un <strong>Desarrollador de Software</strong> enfocado en React.js y TypeScript apasionado por el <strong>Desarrollo de Aplicaciones Móviles, Servidores, AI, Automatizaciones y Páginas Web</strong>. Disfruto trabajar en proyectos desafiantes, valoro la colaboración y la resolución de problemas.",
 		CTA_LABEL: '¿Te interesa trabajar conmigo o colaborar en un proyecto? hola@michaelliendo.com',
 		CTA_BUTTON:'Contácteme por email',
 		LATEST_NOTES: "Últimas notas",
