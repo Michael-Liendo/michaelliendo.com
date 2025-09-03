@@ -7,7 +7,7 @@ export default [
 			"Aplicación de contabilidad basada en web construida con TypeScript, diseñada para gestionar múltiples empresas, mantener planes de cuentas, registrar asientos y generar informes financieros como balances de prueba con funcionalidad de exportación a Excel.",
 		repo_url: "https://github.com/Michael-Liendo/contapp",
 		preview_url: "https://contapp.michaelliendo.com/",
-		tags: ["svelte", "fastify", "typescript", "sveltekit", "accounting"],
+		tags: ["react", "fastify", "typescript", "accounting"],
 		date: "2025-02-10",
 	},
 	{
