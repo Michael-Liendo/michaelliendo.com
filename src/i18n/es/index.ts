@@ -4,9 +4,9 @@ const es = {
 	SEO: {
 		TITLE: "Michael Liendo | Desarrollador de Software",
 		DESCRIPTION:
-			"Michael Liendo — desarrolla software web y móvil con React y TypeScript, e integra IA y automatizaciones para que equipos trabajen más rápido y con menos fricción. Notas técnicas y proyectos. hola@michaelliendo.com",
+			"Michael Liendo — desarrollador de software enfocado en React, TypeScript, apps móviles, backends y web. Notas técnicas sobre ingeniería, Svelte y herramientas. Colaboraciones: hola@michaelliendo.com.",
 		KEYWORDS:
-			"michael liendo, desarrollador software, react, typescript, ia, automatización, desarrollo web, apps móviles, backend, productividad, colaboración",
+			"michael liendo, inicio, notas, portafolio, desarrollador de software, svelte, typescript, desarrollo web, proyectos desafiantes, colaboración, resolución de problemas",
 		IMAGE: "https://avatars.githubusercontent.com/u/70660410?v=4",
 		NOTES: {
 			TITLE: "Notas | Michael Liendo",
@@ -41,16 +41,16 @@ const es = {
 	},
 	HOMEPAGE: {
 		HI: "Hola soy {name:string} {surname:string},",
-		HERO_HEADLINE: "Soy Michael Liendo — desarrollo software que elimina trabajo repetitivo",
+		HERO_HEADLINE: "Soy Michael Liendo, desarrollador de software",
 		HERO_LEAD:
-			"React, TypeScript, apps móviles y backends, con IA y automatizaciones cuando de verdad simplifican el día a día de equipos y negocios. Me mueven los retos difíciles, la comunicación clara y el código que sigue siendo útil dentro de un año.",
+			"Enfocado en React, TypeScript, apps móviles, backends y web. Me gustan los retos difíciles, la colaboración clara y entregar software mantenible.",
 		LOCATION: "Remoto",
 		TIMEZONE: "UTC−5",
 		STACK_TITLE: "Stack principal",
 		ABOUT:
-			"Soy <strong>desarrollador de software</strong> con foco en React y TypeScript. Construyo <strong>aplicaciones web y móviles, backends, integraciones con IA y automatizaciones</strong> para que la gente dedique menos tiempo a tareas manuales y más a crear valor. Me gustan los proyectos exigentes, trabajar en equipo con claridad y resolver problemas de fondo.",
+			"Soy un <strong>Desarrollador de Software</strong> enfocado en React.js y TypeScript apasionado por el <strong>Desarrollo de Aplicaciones Móviles, Servidores, AI, Automatizaciones y Páginas Web</strong>. Disfruto trabajar en proyectos desafiantes, valoro la colaboración y la resolución de problemas.",
 		CTA_LABEL:
-			"¿Producto nuevo, IA o automatizar un proceso? Escríbeme: hola@michaelliendo.com",
+			"¿Te interesa trabajar conmigo o colaborar en un proyecto? hola@michaelliendo.com",
 		CTA_BUTTON: "Contácteme por email",
 		LATEST_NOTES: "Últimas notas",
 	},

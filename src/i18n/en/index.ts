@@ -4,9 +4,9 @@ const en = {
 	SEO: {
 		TITLE: "Michael Liendo | Software Developer",
 		DESCRIPTION:
-			"Michael Liendo builds web and mobile software with React and TypeScript, plus AI-powered automations that help teams move faster with less busywork. Technical notes and projects. hello@michaelliendo.com",
+			"Michael Liendo — software developer focused on React, TypeScript, mobile apps, backends and web. Technical notes on engineering, Svelte and tooling. Open to collaboration; contact hello@michaelliendo.com.",
 		KEYWORDS:
-			"michael liendo, software developer, react, typescript, ai, automation, web development, mobile apps, backend, productivity, collaboration",
+			"michael liendo, home, notes, portfolio, software developer, svelte, typescript, web development, challenging projects, collaboration, problem-solving",
 		IMAGE: "https://avatars.githubusercontent.com/u/70660410?v=4",
 		NOTES: {
 			TITLE: "Notes | Michael Liendo",
@@ -41,15 +41,15 @@ const en = {
 	},
 	HOMEPAGE: {
 		HI: `Hi I'm {name:string} {surname:string},`,
-		HERO_HEADLINE: "I'm Michael Liendo — I build software that removes busywork",
+		HERO_HEADLINE: "I'm Michael Liendo, a Software Developer",
 		HERO_LEAD:
-			"React, TypeScript, mobile apps, and backends—with AI and automations where they actually make day-to-day work easier for teams and businesses. I thrive on hard problems, straight talk, and code that still makes sense a year from now.",
+			"Focused on React, TypeScript, mobile apps, backends and the web. I like tough problems, clear collaboration and shipping maintainable software.",
 		LOCATION: "Remote",
 		TIMEZONE: "UTC−5",
 		STACK_TITLE: "Core stack",
-		ABOUT: `I'm a <strong>software developer</strong> focused on React and TypeScript. I build <strong>web and mobile apps, backends, AI integrations, and automations</strong> so people spend less time on manual tasks and more on work that matters. I like demanding projects, clear teamwork, and fixing root causes—not symptoms.`,
+		ABOUT: `I'm a <strong>Software Developer</strong> focused on React.js and TypeScript with a passion for <strong>Development of Mobile Applications, Servers, AI, Automations and Web Pages</strong>. I enjoy working on challenging projects, value collaboration and problem-solving.`,
 		CTA_LABEL:
-			"New product, AI, or need to automate a workflow? Email hello@michaelliendo.com",
+			"Are you interested in working with me or collaborating on a project? hello@michaelliendo.com",
 		CTA_BUTTON: "Contact me",
 		LATEST_NOTES: "Latest Notes",
 	},

@@ -20,11 +20,11 @@ type RootTranslation = {
 		 */
 		TITLE: string
 		/**
-		 * M​i​c​h​a​e​l​ ​L​i​e​n​d​o​ ​—​ ​d​e​s​a​r​r​o​l​l​a​ ​s​o​f​t​w​a​r​e​ ​w​e​b​ ​y​ ​m​ó​v​i​l​ ​c​o​n​ ​R​e​a​c​t​ ​y​ ​T​y​p​e​S​c​r​i​p​t​,​ ​e​ ​i​n​t​e​g​r​a​ ​I​A​ ​y​ ​a​u​t​o​m​a​t​i​z​a​c​i​o​n​e​s​ ​p​a​r​a​ ​q​u​e​ ​e​q​u​i​p​o​s​ ​t​r​a​b​a​j​e​n​ ​m​á​s​ ​r​á​p​i​d​o​ ​y​ ​c​o​n​ ​m​e​n​o​s​ ​f​r​i​c​c​i​ó​n​.​ ​N​o​t​a​s​ ​t​é​c​n​i​c​a​s​ ​y​ ​p​r​o​y​e​c​t​o​s​.​ ​h​o​l​a​@​m​i​c​h​a​e​l​l​i​e​n​d​o​.​c​o​m
+		 * M​i​c​h​a​e​l​ ​L​i​e​n​d​o​ ​—​ ​d​e​s​a​r​r​o​l​l​a​d​o​r​ ​d​e​ ​s​o​f​t​w​a​r​e​ ​e​n​f​o​c​a​d​o​ ​e​n​ ​R​e​a​c​t​,​ ​T​y​p​e​S​c​r​i​p​t​,​ ​a​p​p​s​ ​m​ó​v​i​l​e​s​,​ ​b​a​c​k​e​n​d​s​ ​y​ ​w​e​b​.​ ​N​o​t​a​s​ ​t​é​c​n​i​c​a​s​ ​s​o​b​r​e​ ​i​n​g​e​n​i​e​r​í​a​,​ ​S​v​e​l​t​e​ ​y​ ​h​e​r​r​a​m​i​e​n​t​a​s​.​ ​C​o​l​a​b​o​r​a​c​i​o​n​e​s​:​ ​h​o​l​a​@​m​i​c​h​a​e​l​l​i​e​n​d​o​.​c​o​m​.
 		 */
 		DESCRIPTION: string
 		/**
-		 * m​i​c​h​a​e​l​ ​l​i​e​n​d​o​,​ ​d​e​s​a​r​r​o​l​l​a​d​o​r​ ​s​o​f​t​w​a​r​e​,​ ​r​e​a​c​t​,​ ​t​y​p​e​s​c​r​i​p​t​,​ ​i​a​,​ ​a​u​t​o​m​a​t​i​z​a​c​i​ó​n​,​ ​d​e​s​a​r​r​o​l​l​o​ ​w​e​b​,​ ​a​p​p​s​ ​m​ó​v​i​l​e​s​,​ ​b​a​c​k​e​n​d​,​ ​p​r​o​d​u​c​t​i​v​i​d​a​d​,​ ​c​o​l​a​b​o​r​a​c​i​ó​n
+		 * m​i​c​h​a​e​l​ ​l​i​e​n​d​o​,​ ​i​n​i​c​i​o​,​ ​n​o​t​a​s​,​ ​p​o​r​t​a​f​o​l​i​o​,​ ​d​e​s​a​r​r​o​l​l​a​d​o​r​ ​d​e​ ​s​o​f​t​w​a​r​e​,​ ​s​v​e​l​t​e​,​ ​t​y​p​e​s​c​r​i​p​t​,​ ​d​e​s​a​r​r​o​l​l​o​ ​w​e​b​,​ ​p​r​o​y​e​c​t​o​s​ ​d​e​s​a​f​i​a​n​t​e​s​,​ ​c​o​l​a​b​o​r​a​c​i​ó​n​,​ ​r​e​s​o​l​u​c​i​ó​n​ ​d​e​ ​p​r​o​b​l​e​m​a​s
 		 */
 		KEYWORDS: string
 		/**
@@ -109,11 +109,11 @@ type RootTranslation = {
 		 */
 		HI: RequiredParams<'name' | 'surname'>
 		/**
-		 * S​o​y​ ​M​i​c​h​a​e​l​ ​L​i​e​n​d​o​ ​—​ ​d​e​s​a​r​r​o​l​l​o​ ​s​o​f​t​w​a​r​e​ ​q​u​e​ ​e​l​i​m​i​n​a​ ​t​r​a​b​a​j​o​ ​r​e​p​e​t​i​t​i​v​o
+		 * S​o​y​ ​M​i​c​h​a​e​l​ ​L​i​e​n​d​o​,​ ​d​e​s​a​r​r​o​l​l​a​d​o​r​ ​d​e​ ​s​o​f​t​w​a​r​e
 		 */
 		HERO_HEADLINE: string
 		/**
-		 * R​e​a​c​t​,​ ​T​y​p​e​S​c​r​i​p​t​,​ ​a​p​p​s​ ​m​ó​v​i​l​e​s​ ​y​ ​b​a​c​k​e​n​d​s​,​ ​c​o​n​ ​I​A​ ​y​ ​a​u​t​o​m​a​t​i​z​a​c​i​o​n​e​s​ ​c​u​a​n​d​o​ ​d​e​ ​v​e​r​d​a​d​ ​s​i​m​p​l​i​f​i​c​a​n​ ​e​l​ ​d​í​a​ ​a​ ​d​í​a​ ​d​e​ ​e​q​u​i​p​o​s​ ​y​ ​n​e​g​o​c​i​o​s​.​ ​M​e​ ​m​u​e​v​e​n​ ​l​o​s​ ​r​e​t​o​s​ ​d​i​f​í​c​i​l​e​s​,​ ​l​a​ ​c​o​m​u​n​i​c​a​c​i​ó​n​ ​c​l​a​r​a​ ​y​ ​e​l​ ​c​ó​d​i​g​o​ ​q​u​e​ ​s​i​g​u​e​ ​s​i​e​n​d​o​ ​ú​t​i​l​ ​d​e​n​t​r​o​ ​d​e​ ​u​n​ ​a​ñ​o​.
+		 * E​n​f​o​c​a​d​o​ ​e​n​ ​R​e​a​c​t​,​ ​T​y​p​e​S​c​r​i​p​t​,​ ​a​p​p​s​ ​m​ó​v​i​l​e​s​,​ ​b​a​c​k​e​n​d​s​ ​y​ ​w​e​b​.​ ​M​e​ ​g​u​s​t​a​n​ ​l​o​s​ ​r​e​t​o​s​ ​d​i​f​í​c​i​l​e​s​,​ ​l​a​ ​c​o​l​a​b​o​r​a​c​i​ó​n​ ​c​l​a​r​a​ ​y​ ​e​n​t​r​e​g​a​r​ ​s​o​f​t​w​a​r​e​ ​m​a​n​t​e​n​i​b​l​e​.
 		 */
 		HERO_LEAD: string
 		/**
@@ -129,11 +129,11 @@ type RootTranslation = {
 		 */
 		STACK_TITLE: string
 		/**
-		 * S​o​y​ ​<​s​t​r​o​n​g​>​d​e​s​a​r​r​o​l​l​a​d​o​r​ ​d​e​ ​s​o​f​t​w​a​r​e​<​/​s​t​r​o​n​g​>​ ​c​o​n​ ​f​o​c​o​ ​e​n​ ​R​e​a​c​t​ ​y​ ​T​y​p​e​S​c​r​i​p​t​.​ ​C​o​n​s​t​r​u​y​o​ ​<​s​t​r​o​n​g​>​a​p​l​i​c​a​c​i​o​n​e​s​ ​w​e​b​ ​y​ ​m​ó​v​i​l​e​s​,​ ​b​a​c​k​e​n​d​s​,​ ​i​n​t​e​g​r​a​c​i​o​n​e​s​ ​c​o​n​ ​I​A​ ​y​ ​a​u​t​o​m​a​t​i​z​a​c​i​o​n​e​s​<​/​s​t​r​o​n​g​>​ ​p​a​r​a​ ​q​u​e​ ​l​a​ ​g​e​n​t​e​ ​d​e​d​i​q​u​e​ ​m​e​n​o​s​ ​t​i​e​m​p​o​ ​a​ ​t​a​r​e​a​s​ ​m​a​n​u​a​l​e​s​ ​y​ ​m​á​s​ ​a​ ​c​r​e​a​r​ ​v​a​l​o​r​.​ ​M​e​ ​g​u​s​t​a​n​ ​l​o​s​ ​p​r​o​y​e​c​t​o​s​ ​e​x​i​g​e​n​t​e​s​,​ ​t​r​a​b​a​j​a​r​ ​e​n​ ​e​q​u​i​p​o​ ​c​o​n​ ​c​l​a​r​i​d​a​d​ ​y​ ​r​e​s​o​l​v​e​r​ ​p​r​o​b​l​e​m​a​s​ ​d​e​ ​f​o​n​d​o​.
+		 * S​o​y​ ​u​n​ ​<​s​t​r​o​n​g​>​D​e​s​a​r​r​o​l​l​a​d​o​r​ ​d​e​ ​S​o​f​t​w​a​r​e​<​/​s​t​r​o​n​g​>​ ​e​n​f​o​c​a​d​o​ ​e​n​ ​R​e​a​c​t​.​j​s​ ​y​ ​T​y​p​e​S​c​r​i​p​t​ ​a​p​a​s​i​o​n​a​d​o​ ​p​o​r​ ​e​l​ ​<​s​t​r​o​n​g​>​D​e​s​a​r​r​o​l​l​o​ ​d​e​ ​A​p​l​i​c​a​c​i​o​n​e​s​ ​M​ó​v​i​l​e​s​,​ ​S​e​r​v​i​d​o​r​e​s​,​ ​A​I​,​ ​A​u​t​o​m​a​t​i​z​a​c​i​o​n​e​s​ ​y​ ​P​á​g​i​n​a​s​ ​W​e​b​<​/​s​t​r​o​n​g​>​.​ ​D​i​s​f​r​u​t​o​ ​t​r​a​b​a​j​a​r​ ​e​n​ ​p​r​o​y​e​c​t​o​s​ ​d​e​s​a​f​i​a​n​t​e​s​,​ ​v​a​l​o​r​o​ ​l​a​ ​c​o​l​a​b​o​r​a​c​i​ó​n​ ​y​ ​l​a​ ​r​e​s​o​l​u​c​i​ó​n​ ​d​e​ ​p​r​o​b​l​e​m​a​s​.
 		 */
 		ABOUT: string
 		/**
-		 * ¿​P​r​o​d​u​c​t​o​ ​n​u​e​v​o​,​ ​I​A​ ​o​ ​a​u​t​o​m​a​t​i​z​a​r​ ​u​n​ ​p​r​o​c​e​s​o​?​ ​E​s​c​r​í​b​e​m​e​:​ ​h​o​l​a​@​m​i​c​h​a​e​l​l​i​e​n​d​o​.​c​o​m
+		 * ¿​T​e​ ​i​n​t​e​r​e​s​a​ ​t​r​a​b​a​j​a​r​ ​c​o​n​m​i​g​o​ ​o​ ​c​o​l​a​b​o​r​a​r​ ​e​n​ ​u​n​ ​p​r​o​y​e​c​t​o​?​ ​h​o​l​a​@​m​i​c​h​a​e​l​l​i​e​n​d​o​.​c​o​m
 		 */
 		CTA_LABEL: string
 		/**
@@ -198,11 +198,11 @@ export type TranslationFunctions = {
 		 */
 		TITLE: () => LocalizedString
 		/**
-		 * Michael Liendo — desarrolla software web y móvil con React y TypeScript, e integra IA y automatizaciones para que equipos trabajen más rápido y con menos fricción. Notas técnicas y proyectos. hola@michaelliendo.com
+		 * Michael Liendo — desarrollador de software enfocado en React, TypeScript, apps móviles, backends y web. Notas técnicas sobre ingeniería, Svelte y herramientas. Colaboraciones: hola@michaelliendo.com.
 		 */
 		DESCRIPTION: () => LocalizedString
 		/**
-		 * michael liendo, desarrollador software, react, typescript, ia, automatización, desarrollo web, apps móviles, backend, productividad, colaboración
+		 * michael liendo, inicio, notas, portafolio, desarrollador de software, svelte, typescript, desarrollo web, proyectos desafiantes, colaboración, resolución de problemas
 		 */
 		KEYWORDS: () => LocalizedString
 		/**
@@ -280,11 +280,11 @@ export type TranslationFunctions = {
 		 */
 		HI: (arg: { name: string, surname: string }) => LocalizedString
 		/**
-		 * Soy Michael Liendo — desarrollo software que elimina trabajo repetitivo
+		 * Soy Michael Liendo, desarrollador de software
 		 */
 		HERO_HEADLINE: () => LocalizedString
 		/**
-		 * React, TypeScript, apps móviles y backends, con IA y automatizaciones cuando de verdad simplifican el día a día de equipos y negocios. Me mueven los retos difíciles, la comunicación clara y el código que sigue siendo útil dentro de un año.
+		 * Enfocado en React, TypeScript, apps móviles, backends y web. Me gustan los retos difíciles, la colaboración clara y entregar software mantenible.
 		 */
 		HERO_LEAD: () => LocalizedString
 		/**
@@ -300,11 +300,11 @@ export type TranslationFunctions = {
 		 */
 		STACK_TITLE: () => LocalizedString
 		/**
-		 * Soy <strong>desarrollador de software</strong> con foco en React y TypeScript. Construyo <strong>aplicaciones web y móviles, backends, integraciones con IA y automatizaciones</strong> para que la gente dedique menos tiempo a tareas manuales y más a crear valor. Me gustan los proyectos exigentes, trabajar en equipo con claridad y resolver problemas de fondo.
+		 * Soy un <strong>Desarrollador de Software</strong> enfocado en React.js y TypeScript apasionado por el <strong>Desarrollo de Aplicaciones Móviles, Servidores, AI, Automatizaciones y Páginas Web</strong>. Disfruto trabajar en proyectos desafiantes, valoro la colaboración y la resolución de problemas.
 		 */
 		ABOUT: () => LocalizedString
 		/**
-		 * ¿Producto nuevo, IA o automatizar un proceso? Escríbeme: hola@michaelliendo.com
+		 * ¿Te interesa trabajar conmigo o colaborar en un proyecto? hola@michaelliendo.com
 		 */
 		CTA_LABEL: () => LocalizedString
 		/**
