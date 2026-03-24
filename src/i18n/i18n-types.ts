@@ -169,9 +169,17 @@ type RootTranslation = {
 		 */
 		PROJECTS: string
 		/**
-		 * P​r​o​y​e​c​t​o​s​ ​e​n​ ​l​o​s​ ​q​u​e​ ​h​e​ ​t​r​a​b​a​j​a​d​o​.
+		 * T​r​a​b​a​j​o​ ​r​e​c​i​e​n​t​e​ ​e​n​ ​p​r​o​d​u​c​t​o​,​ ​I​A​ ​y​ ​f​u​l​l​ ​s​t​a​c​k​;​ ​m​á​s​ ​a​b​a​j​o​,​ ​o​p​e​n​ ​s​o​u​r​c​e​,​ ​p​r​á​c​t​i​c​a​s​ ​y​ ​p​r​o​y​e​c​t​o​s​ ​a​n​t​e​r​i​o​r​e​s​.
 		 */
 		DESCRIPTION: string
+		/**
+		 * D​e​s​t​a​c​a​d​o​s
+		 */
+		FEATURED: string
+		/**
+		 * M​á​s​ ​p​r​o​y​e​c​t​o​s
+		 */
+		MORE: string
 		/**
 		 * V​i​s​i​t​a​r​ ​s​i​t​i​o
 		 */
@@ -332,9 +340,17 @@ export type TranslationFunctions = {
 		 */
 		PROJECTS: () => LocalizedString
 		/**
-		 * Proyectos en los que he trabajado.
+		 * Trabajo reciente en producto, IA y full stack; más abajo, open source, prácticas y proyectos anteriores.
 		 */
 		DESCRIPTION: () => LocalizedString
+		/**
+		 * Destacados
+		 */
+		FEATURED: () => LocalizedString
+		/**
+		 * Más proyectos
+		 */
+		MORE: () => LocalizedString
 		/**
 		 * Visitar sitio
 		 */

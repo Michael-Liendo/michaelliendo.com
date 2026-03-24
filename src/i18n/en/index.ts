@@ -62,7 +62,10 @@ const en = {
 	},
 	PROJECTS: {
 		PROJECTS: "Projects",
-		DESCRIPTION: "Projects I've worked on.",
+		DESCRIPTION:
+			"Recent product, AI, and full-stack work; below that, open source, learning projects, and earlier pieces.",
+		FEATURED: "Selected work",
+		MORE: "More projects",
 		LIVE_SITE: "Visit site",
 		SOURCE_CODE: "Source code",
 	},

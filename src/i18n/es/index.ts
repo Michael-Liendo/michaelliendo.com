@@ -63,7 +63,10 @@ const es = {
 	},
 	PROJECTS: {
 		PROJECTS: "Proyectos",
-		DESCRIPTION: "Proyectos en los que he trabajado.",
+		DESCRIPTION:
+			"Trabajo reciente en producto, IA y full stack; más abajo, open source, prácticas y proyectos anteriores.",
+		FEATURED: "Destacados",
+		MORE: "Más proyectos",
 		LIVE_SITE: "Visitar sitio",
 		SOURCE_CODE: "Código fuente",
 	},

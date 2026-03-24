@@ -12,4 +12,6 @@ export interface Project {
 	date: string;
 	/** Human-readable date range, e.g. LinkedIn-style “Nov 2025 – Present”. */
 	period?: string;
+	/** Shown in the first section on the projects page (client and product work). */
+	featured?: boolean;
 }
