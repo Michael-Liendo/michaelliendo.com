@@ -3,7 +3,7 @@ import en_projects from "$i18n/en/project";
 import es_projects from "$i18n/es/project";
 import LL, { locale } from "$i18n/i18n-svelte";
 import Tag from "$lib/components/tag.svelte";
-import { Github } from "lucide-svelte";
+import { GitBranch } from "@lucide/svelte";
 
 const projects = $locale === "en" ? en_projects : es_projects;
 </script>
@@ -69,7 +69,7 @@ const projects = $locale === "en" ? en_projects : es_projects;
             class="text-sm font-medium text-indigo-600 hover:text-indigo-500"
             aria-label="GitHub Repository"
           >
-            <Github aria-hidden="true" />
+            <GitBranch aria-hidden="true" />
             <span class="sr-only">GitHub Repository</span>
           </a>
         {/if}

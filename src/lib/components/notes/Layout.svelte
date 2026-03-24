@@ -12,7 +12,7 @@ export { a, blockquote, h2, h3, img, table, th, td };
 </script>
 
 <script lang="ts">
-  import { CalendarIcon, TagIcon } from 'lucide-svelte';
+  import { CalendarIcon, TagIcon } from '@lucide/svelte';
   import { locale } from '$i18n/i18n-svelte';
   import Tag from '../tag.svelte';
 

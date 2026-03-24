@@ -1,3 +1,5 @@
+@reference "tailwindcss";
+
 .note-container p code,
 .note-container ul li code {
 	@apply bg-white rounded;

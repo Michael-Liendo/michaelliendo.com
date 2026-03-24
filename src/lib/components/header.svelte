@@ -8,7 +8,7 @@ import { cn } from "$lib";
 import { clickOutside } from "$lib/actions/clickOutside";
 import { removeLocaleFromPath, replaceLocaleInUrl } from "$lib/utils/locale";
 import { PublicRoutesEnum } from "$lib/utils/routes";
-import { Home, Languages, Notebook, Trophy } from "lucide-svelte";
+import { Home, Languages, Notebook, Trophy } from "@lucide/svelte";
 
 let currentUrl = $state(removeLocaleFromPath(page.url.pathname));
 

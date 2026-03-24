@@ -2,7 +2,7 @@
 import { locale } from "$i18n/i18n-svelte";
 import { baseLocale } from "$i18n/i18n-util";
 import { formatDate } from "$lib/utils";
-import { Calendar, TagIcon } from "lucide-svelte";
+import { Calendar, TagIcon } from "@lucide/svelte";
 import Tag from "./tag.svelte";
 
 interface Props {

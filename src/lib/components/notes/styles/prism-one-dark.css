@@ -28,6 +28,8 @@
  * --syntax-cursor-line: hsla(220, 100%, 80%, 0.04);
  */
 
+@reference "tailwindcss";
+
 code[class*="language-"],
 pre[class*="language-"] {
 	@apply font-mono;
