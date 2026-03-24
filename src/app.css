@@ -1,3 +1,68 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
+
 @custom-variant dark (&:where(.dark, .dark *));
+
+/* Dark UI palette (~#121212 / #1c1c1c) inspired by modern portfolio references */
+@theme {
+	--font-sans:
+		"Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+		"Segoe UI Emoji";
+	--font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, monospace;
+
+	/* Teal accent — legible on charcoal */
+	--color-accent: oklch(0.72 0.13 195);
+	--color-accent-foreground: oklch(0.16 0.04 200);
+	--color-accent-muted: oklch(0.24 0.035 200);
+
+	--color-surface: oklch(0.145 0.006 265);
+	--color-surface-elevated: oklch(0.195 0.006 265);
+	--color-ink: oklch(0.985 0.002 265);
+	--color-ink-muted: oklch(0.68 0.02 265);
+	--color-border: oklch(0.28 0.01 265);
+
+	--color-link: oklch(0.75 0.11 195);
+	--color-link-hover: oklch(0.82 0.1 195);
+
+	--shadow-soft:
+		0 1px 0 oklch(1 0 0 / 0.05), 0 4px 20px oklch(0 0 0 / 0.35);
+	--shadow-soft-lg:
+		0 1px 0 oklch(1 0 0 / 0.06), 0 12px 40px oklch(0 0 0 / 0.45);
+}
+
+@keyframes fade-in-up {
+	from {
+		opacity: 0;
+		transform: translateY(0.6rem);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@utility animate-fade-in-up {
+	animation: fade-in-up 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@layer base {
+	html {
+		@apply scroll-smooth antialiased;
+		font-family: var(--font-sans);
+		color-scheme: dark;
+	}
+
+	body {
+		@apply bg-surface text-ink;
+	}
+
+	strong {
+		color: var(--color-ink);
+		font-weight: 600;
+	}
+
+	::selection {
+		background-color: color-mix(in oklch, var(--color-accent) 45%, transparent);
+		color: var(--color-ink);
+	}
+}

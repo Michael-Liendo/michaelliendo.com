@@ -1,128 +1,153 @@
 <script lang="ts">
   import LL, { locale } from '$i18n/i18n-svelte';
-  import { baseLocale, locales } from '$i18n/i18n-util';
-  import { cn } from '$lib';
-  import Note from '$lib/components/note.svelte';
+  import enStackSections from '$i18n/en/home-stack';
+  import esStackSections from '$i18n/es/home-stack';
+  import Entry from '$lib/components/entry.svelte';
+  import HomeStackCard from '$lib/components/home-stack-card.svelte';
   import SocialMedia from '$lib/components/social-media.svelte';
-
-  const currentPageLocale = $locale;
+  import SeoMeta from '$lib/seo/SeoMeta.svelte';
+  import { SAME_AS, SITE_NAME, SITE_ORIGIN } from '$lib/seo/site';
+  import { Clock, MapPin } from '@lucide/svelte';
 
   const { data } = $props();
+
+  const stackSections = $derived(
+    $locale === 'en' ? enStackSections : esStackSections,
+  );
+
+  const homeJsonLd = $derived({
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'Person',
+        name: 'Michael Liendo',
+        url: `${SITE_ORIGIN}/`,
+        image: $LL.SEO.IMAGE(),
+        sameAs: [...SAME_AS],
+        jobTitle: 'Software Developer',
+        email: 'hello@michaelliendo.com',
+      },
+      {
+        '@type': 'WebSite',
+        name: SITE_NAME,
+        url: `${SITE_ORIGIN}/`,
+        description: $LL.SEO.DESCRIPTION(),
+        inLanguage: ['es', 'en'],
+        publisher: { '@type': 'Person', name: 'Michael Liendo' },
+      },
+    ],
+  });
 </script>
 
-<svelte:head>
-  <title>{$LL.SEO.TITLE()}</title>
-  <meta name="description" content={$LL.SEO.DESCRIPTION()} />
-  <meta name="keywords" content={$LL.SEO.KEYWORDS()} />
-  <link rel="canonical" href={`https://michaelliendo.com/`} />
-  <!-- Schema.org markup for Google+ -->
-  <meta itemprop="name" content={$LL.SEO.TITLE()} />
-  <meta itemprop="description" content={$LL.SEO.DESCRIPTION()} />
-  <meta itemprop="image" content={$LL.SEO.IMAGE()} />
-  <!-- Open Graph data -->
-  <meta property="og:title" content={$LL.SEO.TITLE()} />
-  <meta property="og:type" content="article" />
-  <meta property="og:url" content="https://michaelliendo.com/" />
-  <meta property="og:image" content={$LL.SEO.IMAGE()} />
-  <meta property="og:description" content={$LL.SEO.DESCRIPTION()} />
-  <meta property="og:site_name" content="Michael Liendo" />
-  <!-- Twitter Card data -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:site" content="@mykeliendo" />
-  <meta name="twitter:title" content={$LL.SEO.TITLE()} />
-  <meta name="twitter:description" content={$LL.SEO.DESCRIPTION()} />
-  <meta name="twitter:creator" content="@mykeliendo" />
-  <meta name="twitter:image:src" content={$LL.SEO.IMAGE()} />
+<SeoMeta
+  title={$LL.SEO.TITLE()}
+  description={$LL.SEO.DESCRIPTION()}
+  image={$LL.SEO.IMAGE()}
+  ogType="website"
+  keywords={$LL.SEO.KEYWORDS()}
+  locale={$locale}
+  imageAlt="Michael Liendo"
+  jsonLd={homeJsonLd}
+/>
 
-  {#each locales as locale}
-    {#if currentPageLocale !== locale}
-      <link
-        rel="alternate"
-        hreflang={locale}
-        href={`https://michaelliendo.com/${locale === baseLocale ? '' : locale}`}
-      />
-    {/if}
-  {/each}
-</svelte:head>
 <section
   id="about"
-  class="relative z-10 flex flex-col-reverse md:flex-row md:justify-between md:items-center mt-5 md:mt-10"
+  class="relative z-10 mt-8 md:mt-14"
   itemscope
-  itemtype="http://schema.org/Person"
+  itemtype="https://schema.org/Person"
 >
-  <div class="space-y-3 w-full">
+  <div class="flex flex-col items-start gap-5">
+    <img
+      src={$LL.SEO.IMAGE()}
+      width="56"
+      height="56"
+      loading="eager"
+      decoding="async"
+      alt="Michael Liendo"
+      itemprop="image"
+      class="h-14 w-14 rounded-full object-cover ring-2 ring-border shadow-soft"
+    />
+
     <h1
-      class="mt-4 md:mt-0 text-4xl xl:text-7xl text-ellipsis font-bold"
+      class="max-w-3xl text-pretty text-3xl font-bold tracking-tight text-ink sm:text-4xl md:text-[2.5rem] md:leading-tight"
       itemprop="name"
     >
-      Michael Liendo
+      {$LL.HOMEPAGE.HERO_HEADLINE()}
     </h1>
+
     <p
-      class="md:text-xl xl:text-2xl xl:w-[50rem] text-pretty"
+      class="max-w-2xl text-pretty text-base leading-relaxed text-ink-muted sm:text-lg"
       itemprop="description"
     >
-      {@html $LL.HOMEPAGE.ABOUT()}
+      {$LL.HOMEPAGE.HERO_LEAD()}
     </p>
 
-    <p class="text-sm font-medium text-gray-700">
+    <div
+      class="flex w-full max-w-2xl flex-col gap-4 border-b border-border pb-8 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between sm:gap-6"
+    >
+      <div class="flex flex-wrap items-center gap-x-4 gap-y-2">
+        <SocialMedia />
+      </div>
+      <ul
+        class="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-ink-muted"
+        aria-label="Location and time"
+      >
+        <!--  <li class="flex items-center gap-1.5">
+          <MapPin class="h-3.5 w-3.5 shrink-0 opacity-80" aria-hidden="true" />
+          <span>{$LL.HOMEPAGE.LOCATION()}</span>
+        </li> -->
+        <!--         <li class="flex items-center gap-1.5">
+          <Clock class="h-3.5 w-3.5 shrink-0 opacity-80" aria-hidden="true" />
+          <span>{$LL.HOMEPAGE.TIMEZONE()}</span>
+        </li> -->
+      </ul>
+    </div>
+
+    <p class="text-xs font-medium uppercase tracking-wider text-ink-muted">
       {$LL.HOMEPAGE.CTA_LABEL()}
     </p>
-    <div class="flex w-full">
-      <a
-        href="mailto:hello@michaelliendo.com"
-        class="mt-1.5 inline-block w-full md:w-auto text-center px-6 py-3 bg-blue-600 text-white rounded-xl shadow-md hover:bg-blue-700 transition"
-      >
-        {$LL.HOMEPAGE.CTA_BUTTON()}
-      </a>
-    </div>
-    <div class="flex justify-between">
-      <SocialMedia />
-    </div>
+    <a
+      href="mailto:hello@michaelliendo.com"
+      class="text-sm font-semibold text-link underline-offset-4 transition hover:text-link-hover hover:underline"
+    >
+      {$LL.HOMEPAGE.CTA_BUTTON()}
+    </a>
   </div>
-  <div class="w-full md:flex justify-end">
-    <figure itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
-      <img
-        src={$LL.SEO.IMAGE()}
-        loading="lazy"
-        alt="Michael Liendo Avatar"
-        title="Michael Liendo profile picture at GitHub."
-        class="rounded-2xl w-full xl:w-96 h-96 object-cover"
-      />
-    </figure>
-  </div>
-  <div
-    class="gradient absolute bottom-40 left-0 w-1/5 h-1/3 -z-20 bg-[rgba(102,199,216,0.47)] dark:bg-[rgba(65,153,211,0.3)] -rotate-12"
-  ></div>
-  <div
-    class="gradient absolute bottom-20 left-64 w-1/5 h-1/3 -z-20 bg-[rgba(100,202,233,0.3)] dark:bg-[rgba(48,96,136,0.3)] -rotate-12"
-  ></div>
 </section>
 
-<section>
-  <h2 class="text-3xl sm:text-4xl font-bold my-7">
-    {$LL.HOMEPAGE.LATEST_NOTES()}
-  </h2>
+<section
+  class="mt-14 grid gap-12 lg:mt-20 lg:grid-cols-[minmax(0,1fr)_min(22rem,38%)] lg:items-start lg:gap-14 xl:gap-16"
+  aria-labelledby="recent-notes-heading"
+>
+  <div class="min-w-0">
+    <h2
+      id="recent-notes-heading"
+      class="mb-8 text-xl font-bold tracking-tight text-ink sm:text-2xl"
+    >
+      {$LL.HOMEPAGE.LATEST_NOTES()}
+    </h2>
+    <ul class="animate-fade-in-up [animation-delay:80ms]">
+      {#each data.notes as note (note.slug)}
+        <Entry
+          title={note.title}
+          description={note.description}
+          date={note.date}
+          slug={note.slug!}
+        />
+      {/each}
+    </ul>
+  </div>
 
-  <section
-    class={cn(
-      'flex flex-col space-y-4',
-      'delay-300 duration-500 animate-in fade-in slide-in-from-bottom-4 fill-mode-backwards',
-    )}
+  <div
+    class="flex flex-col gap-5 lg:sticky lg:top-28 lg:max-h-[calc(100dvh-7rem)] lg:overflow-y-auto lg:overscroll-contain lg:pr-1"
+    aria-label={$LL.HOMEPAGE.STACK_TITLE()}
   >
-    {#each data.notes as note}
-      <Note
-        title={note.title}
-        description={note.description}
-        date={note.date}
-        tags={note.tags}
-        slug={note.slug!}
+    {#each stackSections as section (section.title)}
+      <HomeStackCard
+        title={section.title}
+        icon={section.icon}
+        items={section.items}
       />
     {/each}
-  </section>
+  </div>
 </section>
-
-<style>
-  .gradient {
-    filter: blur(100px);
-  }
-</style>

@@ -1,91 +1,125 @@
-<script>
+<script lang="ts">
+import { page } from "$app/state";
 import en_projects from "$i18n/en/project";
 import es_projects from "$i18n/es/project";
 import LL, { locale } from "$i18n/i18n-svelte";
 import Tag from "$lib/components/tag.svelte";
+import type { Project } from "$lib/types/Project";
+import SeoMeta from "$lib/seo/SeoMeta.svelte";
+import { SITE_NAME, SITE_ORIGIN } from "$lib/seo/site";
 import { GitBranch } from "@lucide/svelte";
 
-const projects = $locale === "en" ? en_projects : es_projects;
+const projects = $derived(
+	[...(($locale === "en" ? en_projects : es_projects) as Project[])].sort(
+		(a, b) => b.date.localeCompare(a.date),
+	),
+);
+
+const projectsJsonLd = $derived({
+	"@context": "https://schema.org",
+	"@type": "CollectionPage",
+	name: $LL.SEO.PROJECT.TITLE(),
+	description: $LL.SEO.PROJECT.DESCRIPTION(),
+	url: `${SITE_ORIGIN}${page.url.pathname}`,
+	isPartOf: { "@type": "WebSite", name: SITE_NAME, url: `${SITE_ORIGIN}/` },
+});
 </script>
 
-<svelte:head>
-  <title>{$LL.SEO.PROJECT.TITLE()}</title>
-  <meta name="description" content={$LL.SEO.PROJECT.DESCRIPTION()} />
-  <meta name="keywords" content={$LL.SEO.PROJECT.KEYWORDS()} />
-  <link rel="canonical" href={`https://michaelliendo.com/projects`} />
+<SeoMeta
+	title={$LL.SEO.PROJECT.TITLE()}
+	description={$LL.SEO.PROJECT.DESCRIPTION()}
+	image={$LL.SEO.IMAGE()}
+	ogType="website"
+	keywords={$LL.SEO.PROJECT.KEYWORDS()}
+	locale={$locale}
+	imageAlt={$LL.SEO.PROJECT.TITLE()}
+	jsonLd={projectsJsonLd}
+/>
 
-  <!-- Schema.org markup for Google+ -->
-  <meta itemprop="name" content={$LL.SEO.PROJECT.TITLE()} />
-  <meta itemprop="description" content={$LL.SEO.PROJECT.DESCRIPTION()} />
-  <meta itemprop="image" content={$LL.SEO.IMAGE()} />
-  <!-- Open Graph data -->
-  <meta property="og:title" content={$LL.SEO.PROJECT.TITLE()} />
-  <meta property="og:type" content="article" />
-  <meta property="og:url" content="https://michaelliendo.com/projects" />
-  <meta property="og:image" content={$LL.SEO.IMAGE()} />
-  <meta property="og:description" content={$LL.SEO.PROJECT.DESCRIPTION()} />
-  <meta property="og:site_name" content="Michael Liendo" />
-  <!-- Twitter Card data -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:site" content="@mykeliendo" />
-  <meta name="twitter:title" content={$LL.SEO.PROJECT.TITLE()} />
-  <meta name="twitter:description" content={$LL.SEO.PROJECT.DESCRIPTION()} />
-  <meta name="twitter:creator" content="@mykeliendo" />
-  <meta name="twitter:image:src" content={$LL.SEO.IMAGE()} />
-</svelte:head>
-
-<h1 class="text-2xl sm:text-3xl font-bold mt-5">
+<h1 class="mt-6 text-2xl font-bold tracking-tight text-ink sm:text-3xl md:text-4xl">
   {$LL.PROJECTS.PROJECTS()}
 </h1>
 
-<p class="mt-1 text-sm text-gray-600">
+<p class="mt-2 max-w-2xl text-sm leading-relaxed text-ink-muted md:text-base">
   {$LL.PROJECTS.DESCRIPTION()}
 </p>
 
-<div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mt-5">
-  {#each projects as project}
-    <div class="bg-white shadow rounded-lg overflow-hidden">
-      <div class="px-4 py-5 sm:p-6">
-        <h2 class="text-lg leading-6 font-medium text-gray-900">
-          {project.name}
-        </h2>
-        <p class="mt-1 text-sm text-gray-600">
+<div class="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+  {#each projects as project (project.name + project.date + (project.role ?? ""))}
+    <article
+      class="group flex flex-col overflow-hidden rounded-2xl border border-border bg-surface-elevated shadow-soft transition hover:-translate-y-0.5 hover:border-accent/25 hover:shadow-soft-lg"
+    >
+      <div class="flex flex-1 flex-col px-5 py-6 sm:px-6 sm:py-7">
+        <div class="flex gap-3">
+          {#if project.image_url}
+            <img
+              src={project.image_url}
+              alt=""
+              width="40"
+              height="40"
+              class="mt-0.5 size-10 shrink-0 rounded-lg border border-border bg-surface object-contain p-1"
+              loading="lazy"
+              decoding="async"
+            />
+          {/if}
+          <div class="min-w-0 flex-1">
+            <h2 class="text-lg font-semibold leading-snug text-ink">
+              {project.name}
+            </h2>
+            {#if project.role}
+              <p class="mt-0.5 text-xs font-medium text-ink-muted">
+                {project.role}
+              </p>
+            {/if}
+            {#if project.period}
+              <p class="mt-1 text-xs tabular-nums text-ink-muted/90">
+                {project.period}
+              </p>
+            {/if}
+          </div>
+        </div>
+        <p class="mt-3 flex-1 text-sm leading-relaxed text-ink-muted">
           {project.description}
         </p>
-        <ul class="mt-4 flex flex-wrap gap-2">
-          {#each project.tags as tag}
-            <Tag>
-              {tag}
-            </Tag>
+        <ul class="mt-5 flex list-none flex-wrap gap-2 p-0">
+          {#each project.tags as tag (tag)}
+            <li>
+              <Tag>
+                {tag}
+              </Tag>
+            </li>
           {/each}
         </ul>
       </div>
-      <div class="px-4 py-4 sm:px-6 flex justify-between">
+      <div
+        class="flex items-center justify-between gap-3 border-t border-border bg-accent-muted/20 px-5 py-4 sm:px-6"
+      >
         {#if project.repo_url}
           <a
             href={project.repo_url}
             target="_blank"
             rel="noopener noreferrer"
-            class="text-sm font-medium text-indigo-600 hover:text-indigo-500"
-            aria-label="GitHub Repository"
+            class="inline-flex items-center gap-1.5 text-sm font-medium text-link transition hover:text-link-hover"
+            aria-label={$LL.PROJECTS.SOURCE_CODE()}
           >
-            <GitBranch aria-hidden="true" />
-            <span class="sr-only">GitHub Repository</span>
+            <GitBranch class="h-4 w-4" aria-hidden="true" />
+            <span class="sr-only">{$LL.PROJECTS.SOURCE_CODE()}</span>
           </a>
+        {:else}
+          <span></span>
         {/if}
         {#if project.preview_url}
           <a
             href={project.preview_url}
             target="_blank"
             rel="noopener noreferrer"
-            class="text-sm font-medium text-indigo-600 hover:text-indigo-500"
-            aria-label="Live Demo"
+            class="text-sm font-semibold text-link underline-offset-4 transition hover:text-link-hover hover:underline"
+            aria-label={$LL.PROJECTS.LIVE_SITE()}
           >
-            Live Demo
-            <span class="sr-only">opens in a new tab</span>
+            {$LL.PROJECTS.LIVE_SITE()}
           </a>
         {/if}
       </div>
-    </div>
+    </article>
   {/each}
 </div>

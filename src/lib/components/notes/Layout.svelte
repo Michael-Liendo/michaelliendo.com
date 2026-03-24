@@ -24,45 +24,28 @@ export { a, blockquote, h2, h3, img, table, th, td };
     $props();
 </script>
 
-<svelte:head>
-  <title>{title} | Michael Liendo</title>
-  <meta name="description" content={description} />
-  <!-- Schema.org markup for Google+ -->
-  <meta itemprop="name" content={title} />
-  <meta itemprop="description" content={description} />
-  <meta itemprop="image" content={preview_image_url} />
-  <!-- Open Graph data -->
-  <meta property="og:title" content={title} />
-  <meta property="og:type" content="article" />
-  <meta property="og:url" content="https://michaelliendo.com/" />
-  <meta property="og:image" content={preview_image_url} />
-  <meta property="og:description" content={description} />
-  <meta property="og:site_name" content="Michael Liendo" />
-  <meta property="article:published_time" content={formatDate(date)} />
-  <meta property="article:modified_time" content={formatDate(date)} />
-  <!-- Twitter Card data -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:site" content="@mykeliendo" />
-  <meta name="twitter:title" content={title} />
-  <meta name="twitter:description" content={description} />
-  <meta name="twitter:creator" content="@mykeliendo" />
-  <meta name="twitter:image:src" content={preview_image_url} />
-</svelte:head>
-
-<div class="w-full md:max-w-[800px] mx-auto pb-6">
+<div class="mx-auto w-full pb-12 pt-2">
   {#if preview_image_url}
     <figure
-      class="flex justify-center items-center overflow-hidden rounded h-[300px]"
+      class="mb-8 flex max-h-[320px] justify-center overflow-hidden rounded-2xl shadow-soft ring-1 ring-border md:max-h-[380px]"
     >
-      <img class="w-full" src={preview_image_url} alt={title} />
+      <img
+        class="h-full w-full object-cover"
+        src={preview_image_url}
+        alt={title}
+      />
     </figure>
   {/if}
   <header
-    class="border-b border-neutral-300 py-3 dark:border-neutral-800 md:py-5"
+    class="border-b border-border pb-8 md:pb-10"
   >
-    <h1 class="text-3xl py-4 font-semibold text-pretty">{title}</h1>
+    <h1 class="py-2 text-balance text-3xl font-bold tracking-tight text-ink md:text-4xl">
+      {title}
+    </h1>
 
-    <p class="text-neutral-800 dark:text-neutral-400">{description}</p>
+    <p class="mt-3 text-lg leading-relaxed text-ink-muted">
+      {description}
+    </p>
 
     <div class="space-y-3 mt-2">
       <Tag>
@@ -82,7 +65,9 @@ export { a, blockquote, h2, h3, img, table, th, td };
     </div>
   </header>
 
-  <article class="mt-3 prose w-full md:max-w-[1000px] note-container">
+  <article
+    class="note-container prose prose-invert prose-lg mt-8 max-w-none text-ink prose-headings:font-semibold prose-headings:tracking-tight prose-p:text-ink-muted prose-strong:text-ink prose-a:text-link prose-a:no-underline hover:prose-a:underline"
+  >
     {@render children()}
   </article>
 </div>

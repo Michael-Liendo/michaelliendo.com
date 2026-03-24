@@ -18,25 +18,25 @@ const displayTags = $derived(
 </script>
 
 <article
-  class="w-full rounded-md border border-neutral-300 p-3 dark:border-neutral-800"
+  class="w-full rounded-2xl border border-border bg-surface-elevated p-4 shadow-soft transition hover:border-accent/35 hover:shadow-soft-lg md:p-5"
 >
-  <div class="mb-3 flex flex-col space-y-1">
+  <div class="mb-3 flex flex-col gap-1">
     <a
       href="/{$locale}/notes/{slug}"
-      class="text-md flex items-center space-x-2 font-medium decoration-neutral-500 decoration-dotted underline-offset-[5px] duration-150 hover:underline hover:opacity-80 md:text-lg"
+      class="text-md group/title flex items-center gap-2 font-semibold text-ink decoration-dotted underline-offset-4 transition hover:text-link hover:underline md:text-lg"
     >
       <span>{note.title}</span>
       <ChevronRightIcon
         size={14}
-        class="block flex-shrink-0 text-neutral-500 dark:text-neutral-400 md:hidden"
+        class="block shrink-0 text-ink-muted transition group-hover/title:translate-x-0.5 md:hidden"
       />
     </a>
-    <p class="text-pretty text-sm dark:text-neutral-400">
+    <p class="text-pretty text-sm leading-relaxed text-ink-muted">
       {note.description}
     </p>
   </div>
-  <div class="flex w-full items-center justify-between">
-    <div class="flex items-center space-x-1.5">
+  <div class="flex w-full items-center justify-between gap-3">
+    <div class="flex min-w-0 flex-wrap items-center gap-1.5">
       {#each displayTags as tag}
         <Tag>
           <TagIcon size={12} />
@@ -53,12 +53,12 @@ const displayTags = $derived(
     </div>
     <a
       href="/{$locale}/notes/{slug}"
-      class="group hidden items-center space-x-[4px] text-sm tracking-tight opacity-70 transition-opacity duration-100 hover:opacity-100 md:flex"
+      class="group hidden shrink-0 items-center gap-1 text-sm font-medium text-link transition hover:text-link-hover md:flex"
     >
       <span>{$LL.NOTES.READ_MORE()}</span>
       <ChevronRightIcon
         size={16}
-        class="duration-150 group-hover:translate-x-[2px]"
+        class="transition group-hover:translate-x-0.5"
       />
     </a>
   </div>

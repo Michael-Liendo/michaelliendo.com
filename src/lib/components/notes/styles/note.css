@@ -2,18 +2,16 @@
 
 .note-container p code,
 .note-container ul li code {
-	@apply bg-white rounded;
-	@apply border-2 border-red-100;
+	@apply rounded-md border border-neutral-600 bg-neutral-800/90 px-1.5 py-0.5 font-mono text-[0.9em];
 
-	color: #4fb0f0;
-	padding: 0.2rem;
+	color: oklch(0.78 0.09 195);
+	padding-block: 0.15rem;
 }
 
 .note-container h2 code {
-	@apply bg-white rounded;
+	@apply rounded-md border border-neutral-600 bg-neutral-800/90 px-1.5 py-0.5 font-mono text-[0.85em];
 
-	color: #4fb0f0;
-	padding: 0.2rem;
+	color: oklch(0.78 0.09 195);
 }
 
 .note-container a code {

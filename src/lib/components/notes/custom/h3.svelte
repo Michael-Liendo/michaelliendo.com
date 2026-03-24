@@ -24,7 +24,7 @@ const focusElement = () => {
       {@render children()}
     </span>
     <span
-      class="h-8 w-8 invisible flex justify-center items-center group-hover:visible bg-gray-200 font-bold rounded-full dark:bg-gray-600 dark:text-gray-200"
+      class="flex h-8 w-8 items-center justify-center rounded-full bg-neutral-700 font-bold text-neutral-200 invisible group-hover:visible"
       >#
     </span>
   </a>
