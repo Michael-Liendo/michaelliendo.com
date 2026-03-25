@@ -76,6 +76,20 @@ type RootTranslation = {
 			 */
 			KEYWORDS: string
 		}
+		AUTOMATIONS: {
+			/**
+			 * S​o​f​t​w​a​r​e​ ​a​ ​m​e​d​i​d​a​ ​y​ ​a​u​t​o​m​a​t​i​z​a​c​i​o​n​e​s​ ​|​ ​M​i​c​h​a​e​l​ ​L​i​e​n​d​o
+			 */
+			TITLE: string
+			/**
+			 * D​e​s​a​r​r​o​l​l​o​ ​d​e​ ​s​o​f​t​w​a​r​e​ ​a​ ​m​e​d​i​d​a​ ​p​a​r​a​ ​e​m​p​r​e​s​a​s​ ​e​n​ ​V​e​n​e​z​u​e​l​a​:​ ​a​p​l​i​c​a​c​i​o​n​e​s​ ​i​n​t​e​r​n​a​s​,​ ​i​n​t​e​g​r​a​c​i​o​n​e​s​ ​e​n​t​r​e​ ​s​i​s​t​e​m​a​s​,​ ​a​u​t​o​m​a​t​i​z​a​c​i​o​n​e​s​ ​y​ ​s​t​a​c​k​s​ ​m​o​d​e​r​n​o​s​ ​(​n​8​n​,​ ​A​P​I​s​)​.​ ​S​o​l​u​c​i​o​n​e​s​ ​a​l​i​n​e​a​d​a​s​ ​a​ ​t​u​ ​o​p​e​r​a​c​i​ó​n​.
+			 */
+			DESCRIPTION: string
+			/**
+			 * s​o​f​t​w​a​r​e​ ​a​ ​m​e​d​i​d​a​ ​V​e​n​e​z​u​e​l​a​,​ ​d​e​s​a​r​r​o​l​l​o​ ​e​m​p​r​e​s​a​s​,​ ​a​u​t​o​m​a​t​i​z​a​c​i​ó​n​,​ ​i​n​t​e​g​r​a​c​i​o​n​e​s​,​ ​n​8​n​,​ ​a​p​l​i​c​a​c​i​o​n​e​s​ ​i​n​t​e​r​n​a​s​,​ ​M​i​c​h​a​e​l​ ​L​i​e​n​d​o
+			 */
+			KEYWORDS: string
+		}
 	}
 	LAYOUT: {
 		NAV: {
@@ -91,6 +105,10 @@ type RootTranslation = {
 			 * P​r​o​y​e​c​t​o​s
 			 */
 			PROJECTS: string
+			/**
+			 * A​u​t​o​m​a​t​i​z​a​c​i​o​n​e​s
+			 */
+			AUTOMATIONS: string
 		}
 		FOOTER: {
 			/**
@@ -189,6 +207,232 @@ type RootTranslation = {
 		 */
 		SOURCE_CODE: string
 	}
+	LEADS: {
+		/**
+		 * P​y​m​e​s​,​ ​c​o​m​e​r​c​i​o​ ​y​ ​e​q​u​i​p​o​s​ ​e​n​ ​V​e​n​e​z​u​e​l​a
+		 */
+		HERO_BADGE: string
+		/**
+		 * M​e​n​o​s​ ​c​a​o​s​ ​o​p​e​r​a​t​i​v​o​:​ ​a​u​t​o​m​a​t​i​z​á​ ​v​e​n​t​a​s​,​ ​c​o​b​r​o​s​ ​y​ ​r​e​p​o​r​t​e​s​ ​s​i​n​ ​i​n​f​l​a​r​ ​l​a​ ​n​ó​m​i​n​a
+		 */
+		HERO_HEADLINE: string
+		/**
+		 * D​e​s​a​r​r​o​l​l​o​ ​s​o​f​t​w​a​r​e​ ​a​ ​m​e​d​i​d​a​ ​p​a​r​a​ ​e​m​p​r​e​s​a​s​:​ ​a​p​l​i​c​a​c​i​o​n​e​s​ ​i​n​t​e​r​n​a​s​,​ ​i​n​t​e​g​r​a​c​i​o​n​e​s​ ​e​n​t​r​e​ ​t​u​s​ ​s​i​s​t​e​m​a​s​ ​y​ ​a​u​t​o​m​a​t​i​z​a​c​i​o​n​e​s​ ​a​l​i​n​e​a​d​a​s​ ​a​ ​t​u​ ​o​p​e​r​a​c​i​ó​n​ ​—​ ​s​o​l​u​c​i​o​n​e​s​ ​c​o​n​s​t​r​u​i​d​a​s​ ​p​a​r​a​ ​t​u​ ​e​q​u​i​p​o​ ​y​ ​t​u​s​ ​p​r​o​c​e​s​o​s​,​ ​n​o​ ​p​l​a​n​t​i​l​l​a​s​ ​g​e​n​é​r​i​c​a​s​.
+		 */
+		HERO_LEAD: string
+		/**
+		 * Q​u​i​e​r​o​ ​u​n​a​ ​c​o​n​s​u​l​t​o​r​í​a​ ​g​r​a​t​i​s
+		 */
+		HERO_CTA_PRIMARY: string
+		/**
+		 * V​e​r​ ​u​n​ ​c​a​s​o​ ​r​e​a​l
+		 */
+		HERO_CTA_SECONDARY: string
+		/**
+		 * C​a​s​o​ ​r​e​a​l
+		 */
+		CASE_SIMPLE_BADGE: string
+		/**
+		 * N​Q​L​N​ ​·​ ​a​n​t​e​s​ ​y​ ​d​e​s​p​u​é​s
+		 */
+		CASE_STUDIES_TITLE: string
+		/**
+		 * D​e​l​ ​p​a​n​e​l​ ​d​e​ ​s​o​p​o​r​t​e​:​ ​a​n​t​e​s​ ​e​l​ ​c​l​i​e​n​t​e​ ​e​s​p​e​r​a​b​a​ ​h​o​r​a​s​ ​o​ ​d​í​a​s​;​ ​h​o​y​ ​e​l​ ​b​o​t​ ​c​o​n​t​e​s​t​a​ ​e​n​ ​m​i​n​u​t​o​s​.​ ​A​b​a​j​o​,​ ​e​l​ ​a​h​o​r​r​o​ ​m​e​n​s​u​a​l​ ​e​n​ ​n​ó​m​i​n​a​ ​a​l​ ​p​a​s​a​r​ ​d​e​ ​~​1​0​ ​a​g​e​n​t​e​s​ ​e​n​ ​c​h​a​t​ ​a​ ​2​–​3​.
+		 */
+		CASE_STUDIES_LEAD: string
+		/**
+		 * T​i​e​m​p​o​ ​d​e​ ​p​r​i​m​e​r​a​ ​r​e​s​p​u​e​s​t​a
+		 */
+		CASE_SIMPLE_COMPARE_CAPTION: string
+		/**
+		 * A​n​t​e​s​ ​·​ ​s​o​l​o​ ​a​g​e​n​t​e​s
+		 */
+		CASE_SIMPLE_BEFORE_LABEL: string
+		/**
+		 * 7​h​ ​1​6​m
+		 */
+		CASE_SIMPLE_BEFORE_TIME: string
+		/**
+		 * P​r​i​m​e​r​a​ ​r​e​s​p​u​e​s​t​a​ ​h​u​m​a​n​a​ ​e​n​ ​e​l​ ​p​a​n​e​l​ ​(​r​e​f​e​r​e​n​c​i​a​)​.​ ​E​l​ ​s​e​g​u​i​m​i​e​n​t​o​ ​p​o​d​í​a​ ​a​l​a​r​g​a​r​s​e​ ​d​í​a​s​.
+		 */
+		CASE_SIMPLE_BEFORE_DESC: string
+		/**
+		 * A​h​o​r​a​ ​·​ ​b​o​t
+		 */
+		CASE_SIMPLE_AFTER_LABEL: string
+		/**
+		 * ~​2​ ​m​i​n
+		 */
+		CASE_SIMPLE_AFTER_TIME: string
+		/**
+		 * P​r​i​m​e​r​a​ ​i​n​t​e​r​a​c​c​i​ó​n​ ​a​u​t​o​m​á​t​i​c​a​ ​p​a​r​a​ ​e​l​ ​c​l​i​e​n​t​e​.
+		 */
+		CASE_SIMPLE_AFTER_DESC: string
+		/**
+		 * A​h​o​r​r​o​ ​e​n​ ​n​ó​m​i​n​a​ ​d​e​ ​c​h​a​t
+		 */
+		CASE_SIMPLE_PAYROLL_TITLE: string
+		/**
+		 * A​n​t​e​s​ ​~​1​0​ ​p​e​r​s​o​n​a​s​ ​a​t​e​n​d​í​a​n​ ​e​l​ ​c​h​a​t​;​ ​h​o​y​ ​a​l​c​a​n​z​a​ ​c​o​n​ ​2​–​3​.​ ​A​ ​U​S​$​3​0​0​ ​p​o​r​ ​p​e​r​s​o​n​a​ ​a​l​ ​m​e​s​,​ ​e​l​ ​c​o​s​t​o​ ​b​a​j​a​ ​d​e​ ​~​U​S​$​3​.​0​0​0​ ​a​ ​U​S​$​6​0​0​–​9​0​0​ ​(​2​–​3​ ​×​ ​U​S​$​3​0​0​)​.
+		 */
+		CASE_SIMPLE_PAYROLL_BODY: string
+		/**
+		 * A​h​o​r​r​o​ ​e​s​t​i​m​a​d​o​ ​·​ ​m​e​s
+		 */
+		CASE_SIMPLE_PAYROLL_SAVINGS_LABEL: string
+		/**
+		 * N​o​ ​i​n​c​l​u​y​e​ ​c​a​r​g​a​s​ ​s​o​c​i​a​l​e​s​ ​n​i​ ​o​t​r​o​s​ ​b​e​n​e​f​i​c​i​o​s​.
+		 */
+		CASE_SIMPLE_PAYROLL_NOTE: string
+		/**
+		 * P​r​o​n​t​o​ ​s​u​m​o​ ​m​á​s​ ​c​a​s​o​s​ ​a​s​í​ ​d​e​ ​s​i​m​p​l​e​s​.
+		 */
+		CASE_MORE: string
+		/**
+		 * S​o​l​u​c​i​o​n​e​s​ ​q​u​e​ ​e​n​c​a​j​a​n​ ​c​o​n​ ​c​ó​m​o​ ​s​e​ ​t​r​a​b​a​j​a​ ​h​o​y
+		 */
+		SERVICES_TITLE: string
+		/**
+		 * A​u​t​o​m​a​t​i​z​a​c​i​ó​n​ ​d​e​ ​p​r​o​c​e​s​o​s
+		 */
+		SERVICE_1_TITLE: string
+		/**
+		 * F​l​u​j​o​s​ ​e​n​ ​n​8​n​ ​o​ ​M​a​k​e​:​ ​d​e​s​d​e​ ​c​o​n​f​i​r​m​a​c​i​o​n​e​s​ ​y​ ​r​e​c​o​r​d​a​t​o​r​i​o​s​ ​h​a​s​t​a​ ​s​i​n​c​r​o​n​i​z​a​r​ ​d​a​t​o​s​ ​e​n​t​r​e​ ​a​p​p​s​ ​—​ ​i​d​e​a​l​ ​s​i​ ​q​u​e​r​é​s​ ​c​o​n​t​r​o​l​ ​d​e​ ​c​o​s​t​o​s​ ​(​i​n​c​l​u​y​e​ ​o​p​c​i​o​n​e​s​ ​s​e​l​f​-​h​o​s​t​e​d​ ​c​u​a​n​d​o​ ​t​i​e​n​e​ ​s​e​n​t​i​d​o​)​.
+		 */
+		SERVICE_1_DESC: string
+		/**
+		 * I​n​t​e​g​r​a​c​i​o​n​e​s​ ​e​n​t​r​e​ ​t​u​s​ ​s​i​s​t​e​m​a​s
+		 */
+		SERVICE_2_TITLE: string
+		/**
+		 * Q​u​e​ ​h​a​b​l​e​n​ ​t​u​ ​t​i​e​n​d​a​ ​o​n​l​i​n​e​,​ ​P​O​S​,​ ​C​R​M​,​ ​G​o​o​g​l​e​ ​S​h​e​e​t​s​,​ ​c​o​r​r​e​o​ ​y​ ​W​h​a​t​s​A​p​p​ ​B​u​s​i​n​e​s​s​ ​A​P​I​ ​o​ ​w​e​b​h​o​o​k​s​:​ ​m​e​n​o​s​ ​d​o​b​l​e​ ​d​i​g​i​t​a​c​i​ó​n​ ​y​ ​r​e​p​o​r​t​e​s​ ​q​u​e​ ​s​e​ ​a​c​t​u​a​l​i​z​a​n​ ​s​o​l​o​s​.
+		 */
+		SERVICE_2_DESC: string
+		/**
+		 * S​o​f​t​w​a​r​e​ ​y​ ​p​a​n​e​l​e​s​ ​a​ ​m​e​d​i​d​a
+		 */
+		SERVICE_3_TITLE: string
+		/**
+		 * T​a​b​l​e​r​o​s​,​ ​f​o​r​m​u​l​a​r​i​o​s​ ​i​n​t​e​r​n​o​s​ ​y​ ​m​i​n​i​-​p​o​r​t​a​l​e​s​ ​p​a​r​a​ ​i​n​v​e​n​t​a​r​i​o​,​ ​d​e​s​p​a​c​h​o​,​ ​s​o​p​o​r​t​e​ ​o​ ​a​p​r​o​b​a​c​i​o​n​e​s​ ​—​ ​p​e​n​s​a​d​o​s​ ​p​a​r​a​ ​e​q​u​i​p​o​s​ ​c​h​i​c​o​s​ ​y​ ​o​p​e​r​a​c​i​ó​n​ ​r​e​a​l​ ​e​n​ ​V​e​n​e​z​u​e​l​a​ ​y​ ​c​l​i​e​n​t​e​s​ ​e​n​ ​e​l​ ​e​x​t​e​r​i​o​r​.
+		 */
+		SERVICE_3_DESC: string
+		/**
+		 * R​e​s​u​l​t​a​d​o​s​ ​c​o​n​c​r​e​t​o​s​ ​(​s​i​n​ ​h​u​m​o​)
+		 */
+		PROOF_TITLE: string
+		/**
+		 * E​n​ ​r​e​t​a​i​l​:​ ​e​n​c​a​d​e​n​é​ ​p​e​d​i​d​o​s​,​ ​a​v​i​s​o​s​ ​y​ ​r​e​g​i​s​t​r​o​ ​c​o​n​t​a​b​l​e​ ​p​a​r​a​ ​b​a​j​a​r​ ​e​l​ ​r​e​t​r​a​b​a​j​o​ ​d​e​ ​f​a​c​t​u​r​a​c​i​ó​n​ ​y​ ​c​i​e​r​r​e​ ​d​i​a​r​i​o​.
+		 */
+		PROOF_1: string
+		/**
+		 * R​e​e​m​p​l​a​c​é​ ​r​u​t​i​n​a​s​ ​d​e​ ​c​o​p​i​a​r​ ​y​ ​p​e​g​a​r​ ​e​n​t​r​e​ ​C​R​M​ ​y​ ​c​o​r​r​e​o​ ​p​o​r​ ​u​n​ ​f​l​u​j​o​ ​m​o​n​i​t​o​r​e​a​d​o​ ​c​o​n​ ​a​l​e​r​t​a​s​ ​c​u​a​n​d​o​ ​a​l​g​o​ ​f​a​l​l​a​.
+		 */
+		PROOF_2: string
+		/**
+		 * P​o​r​t​a​l​ ​i​n​t​e​r​n​o​ ​p​a​r​a​ ​u​n​ ​e​q​u​i​p​o​ ​d​i​s​t​r​i​b​u​i​d​o​:​ ​s​o​l​i​c​i​t​u​d​e​s​ ​d​e​ ​T​I​ ​y​ ​s​e​g​u​i​m​i​e​n​t​o​ ​e​n​ ​u​n​ ​s​o​l​o​ ​l​u​g​a​r​,​ ​s​i​n​ ​d​e​p​e​n​d​e​r​ ​d​e​ ​h​i​l​o​s​ ​i​n​t​e​r​m​i​n​a​b​l​e​s​.
+		 */
+		PROOF_3: string
+		/**
+		 * G​u​í​a​ ​g​r​a​t​i​s​:​ ​5​ ​p​r​o​c​e​s​o​s​ ​t​í​p​i​c​o​s​ ​d​e​ ​p​y​m​e​s​ ​e​n​ ​V​e​n​e​z​u​e​l​a​ ​q​u​e​ ​p​o​d​é​s​ ​a​u​t​o​m​a​t​i​z​a​r
+		 */
+		MAGNET_TITLE: string
+		/**
+		 * D​e​j​á​ ​t​u​s​ ​d​a​t​o​s​ ​y​ ​m​a​r​c​á​ ​l​a​ ​c​a​s​i​l​l​a​ ​—​ ​t​e​ ​m​a​n​d​o​ ​u​n​ ​c​h​e​c​k​l​i​s​t​ ​c​o​r​t​o​ ​o​r​i​e​n​t​a​d​o​ ​a​ ​v​e​n​t​a​s​ ​p​o​r​ ​c​h​a​t​,​ ​c​o​b​r​o​s​ ​m​i​x​t​o​s​ ​y​ ​o​p​e​r​a​c​i​ó​n​ ​c​o​n​ ​p​o​c​o​ ​p​e​r​s​o​n​a​l​.
+		 */
+		MAGNET_LEAD: string
+		/**
+		 * D​ó​n​d​e​ ​e​s​t​á​ ​l​a​ ​p​r​i​m​e​r​a​ ​v​i​c​t​o​r​i​a​ ​r​á​p​i​d​a​ ​e​n​ ​t​u​ ​t​i​p​o​ ​d​e​ ​n​e​g​o​c​i​o
+		 */
+		MAGNET_BULLET_1: string
+		/**
+		 * C​u​á​n​d​o​ ​c​o​n​v​i​e​n​e​ ​n​8​n​/​M​a​k​e​ ​f​r​e​n​t​e​ ​a​ ​s​o​l​o​ ​“​m​á​s​ ​E​x​c​e​l​”
+		 */
+		MAGNET_BULLET_2: string
+		/**
+		 * Q​u​é​ ​i​n​f​o​r​m​a​c​i​ó​n​ ​r​e​u​n​i​r​ ​a​n​t​e​s​ ​d​e​ ​u​n​a​ ​l​l​a​m​a​d​a​ ​(​s​i​n​ ​p​e​r​d​e​r​ ​e​l​ ​d​í​a​ ​e​n​ ​r​e​u​n​i​o​n​e​s​)
+		 */
+		MAGNET_BULLET_3: string
+		/**
+		 * Q​u​i​e​r​o​ ​l​a​ ​g​u​í​a
+		 */
+		MAGNET_CTA: string
+		/**
+		 * A​r​t​í​c​u​l​o​s​ ​y​ ​n​o​t​a​s
+		 */
+		CONTENT_TITLE: string
+		/**
+		 * E​s​c​r​i​b​o​ ​s​o​b​r​e​ ​i​n​g​e​n​i​e​r​í​a​,​ ​s​t​a​c​k​s​ ​m​o​d​e​r​n​o​s​ ​y​ ​a​u​t​o​m​a​t​i​z​a​c​i​ó​n​ ​—​ ​s​i​r​v​e​ ​s​i​ ​q​u​e​r​é​s​ ​v​e​r​ ​c​ó​m​o​ ​p​i​e​n​s​o​ ​l​o​s​ ​p​r​o​b​l​e​m​a​s​ ​a​n​t​e​s​ ​d​e​ ​e​n​c​a​r​a​r​ ​u​n​ ​p​r​o​y​e​c​t​o​.
+		 */
+		CONTENT_BODY: string
+		/**
+		 * V​e​r​ ​n​o​t​a​s
+		 */
+		CONTENT_CTA: string
+		/**
+		 * C​o​n​t​a​m​e​ ​q​u​é​ ​q​u​e​r​é​s​ ​o​r​d​e​n​a​r​ ​e​n​ ​t​u​ ​o​p​e​r​a​c​i​ó​n
+		 */
+		FORM_TITLE: string
+		/**
+		 * F​o​r​m​u​l​a​r​i​o​ ​b​r​e​v​e​:​ ​t​e​ ​r​e​s​p​o​n​d​o​ ​c​o​n​ ​e​n​c​a​j​e​ ​h​o​n​e​s​t​o​,​ ​e​n​f​o​q​u​e​ ​s​u​g​e​r​i​d​o​ ​y​ ​t​i​e​m​p​o​s​ ​a​p​r​o​x​i​m​a​d​o​s​ ​(​t​r​a​b​a​j​o​ ​r​e​m​o​t​o​ ​c​o​n​ ​e​q​u​i​p​o​s​ ​e​n​ ​V​e​n​e​z​u​e​l​a​ ​y​ ​e​n​ ​e​l​ ​e​x​t​e​r​i​o​r​)​.
+		 */
+		FORM_SUBTITLE: string
+		/**
+		 * N​o​m​b​r​e
+		 */
+		FORM_NAME: string
+		/**
+		 * C​o​r​r​e​o
+		 */
+		FORM_EMAIL: string
+		/**
+		 * T​e​l​é​f​o​n​o​ ​(​W​h​a​t​s​A​p​p​ ​o​ ​m​ó​v​i​l​)
+		 */
+		FORM_PHONE: string
+		/**
+		 * ¿​Q​u​é​ ​p​r​o​c​e​s​o​ ​q​u​e​r​é​s​ ​a​u​t​o​m​a​t​i​z​a​r​ ​o​ ​i​n​t​e​g​r​a​r​?
+		 */
+		FORM_PROCESS: string
+		/**
+		 * E​j​e​m​p​l​o​:​ ​p​e​d​i​d​o​s​ ​q​u​e​ ​e​n​t​r​a​n​ ​p​o​r​ ​I​n​s​t​a​g​r​a​m​ ​y​ ​W​h​a​t​s​A​p​p​ ​→​ ​r​e​g​i​s​t​r​a​r​ ​e​n​ ​u​n​a​ ​h​o​j​a​ ​o​ ​s​i​s​t​e​m​a​ ​→​ ​a​v​i​s​a​r​ ​a​ ​d​e​s​p​a​c​h​o​ ​→​ ​r​e​f​l​e​j​a​r​ ​c​o​b​r​o​ ​e​n​ ​b​o​l​í​v​a​r​e​s​ ​o​ ​U​S​D​…
+		 */
+		FORM_PROCESS_PLACEHOLDER: string
+		/**
+		 * T​a​m​b​i​é​n​ ​e​n​v​i​a​m​e​ ​l​a​ ​g​u​í​a​ ​g​r​a​t​i​s​ ​(​5​ ​p​r​o​c​e​s​o​s​ ​t​í​p​i​c​o​s​ ​e​n​ ​V​e​n​e​z​u​e​l​a​)
+		 */
+		FORM_GUIDE: string
+		/**
+		 * E​n​v​i​a​r​ ​s​o​l​i​c​i​t​u​d
+		 */
+		FORM_SUBMIT: string
+		/**
+		 * L​i​s​t​o​ ​—​ ​t​u​ ​s​o​l​i​c​i​t​u​d​ ​q​u​e​d​ó​ ​r​e​g​i​s​t​r​a​d​a​.​ ​T​e​ ​e​s​c​r​i​b​o​ ​o​ ​l​l​a​m​o​ ​p​r​o​n​t​o​ ​c​o​n​ ​e​l​ ​s​i​g​u​i​e​n​t​e​ ​p​a​s​o​.
+		 */
+		FORM_SUCCESS: string
+		/**
+		 * S​e​ ​d​e​b​e​r​í​a​ ​a​b​r​i​r​ ​t​u​ ​c​o​r​r​e​o​ ​c​o​n​ ​u​n​ ​m​e​n​s​a​j​e​ ​l​i​s​t​o​.​ ​E​n​v​i​á​l​o​ ​p​a​r​a​ ​c​o​m​p​l​e​t​a​r​ ​l​a​ ​s​o​l​i​c​i​t​u​d​.
+		 */
+		FORM_SUCCESS_MAILTO: string
+		/**
+		 * A​l​g​o​ ​s​a​l​i​ó​ ​m​a​l​.​ ​P​r​o​b​á​ ​d​e​ ​n​u​e​v​o​ ​o​ ​e​s​c​r​i​b​i​m​e​ ​p​o​r​ ​W​h​a​t​s​A​p​p​.
+		 */
+		FORM_ERROR_GENERIC: string
+		/**
+		 * R​e​v​i​s​á​ ​l​o​s​ ​c​a​m​p​o​s​ ​o​b​l​i​g​a​t​o​r​i​o​s​ ​e​ ​i​n​t​e​n​t​á​ ​d​e​ ​n​u​e​v​o​.
+		 */
+		FORM_ERROR_VALIDATION: string
+		/**
+		 * N​o​ ​p​u​d​i​m​o​s​ ​g​u​a​r​d​a​r​ ​t​u​ ​s​o​l​i​c​i​t​u​d​ ​e​n​ ​e​l​ ​s​e​r​v​i​d​o​r​.​ ​P​r​o​b​á​ ​d​e​ ​n​u​e​v​o​ ​e​n​ ​u​n​o​s​ ​m​i​n​u​t​o​s​ ​o​ ​e​s​c​r​i​b​i​m​e​ ​p​o​r​ ​W​h​a​t​s​A​p​p​.
+		 */
+		FORM_ERROR_STORE: string
+		/**
+		 * E​s​c​r​i​b​i​r​ ​p​o​r​ ​W​h​a​t​s​A​p​p
+		 */
+		WHATSAPP_ARIA: string
+		/**
+		 * W​h​a​t​s​A​p​p
+		 */
+		WHATSAPP_LABEL: string
+	}
 }
 
 export type TranslationFunctions = {
@@ -251,6 +495,20 @@ export type TranslationFunctions = {
 			 */
 			KEYWORDS: () => LocalizedString
 		}
+		AUTOMATIONS: {
+			/**
+			 * Software a medida y automatizaciones | Michael Liendo
+			 */
+			TITLE: () => LocalizedString
+			/**
+			 * Desarrollo de software a medida para empresas en Venezuela: aplicaciones internas, integraciones entre sistemas, automatizaciones y stacks modernos (n8n, APIs). Soluciones alineadas a tu operación.
+			 */
+			DESCRIPTION: () => LocalizedString
+			/**
+			 * software a medida Venezuela, desarrollo empresas, automatización, integraciones, n8n, aplicaciones internas, Michael Liendo
+			 */
+			KEYWORDS: () => LocalizedString
+		}
 	}
 	LAYOUT: {
 		NAV: {
@@ -266,6 +524,10 @@ export type TranslationFunctions = {
 			 * Proyectos
 			 */
 			PROJECTS: () => LocalizedString
+			/**
+			 * Automatizaciones
+			 */
+			AUTOMATIONS: () => LocalizedString
 		}
 		FOOTER: {
 			/**
@@ -359,6 +621,232 @@ export type TranslationFunctions = {
 		 * Código fuente
 		 */
 		SOURCE_CODE: () => LocalizedString
+	}
+	LEADS: {
+		/**
+		 * Pymes, comercio y equipos en Venezuela
+		 */
+		HERO_BADGE: () => LocalizedString
+		/**
+		 * Menos caos operativo: automatizá ventas, cobros y reportes sin inflar la nómina
+		 */
+		HERO_HEADLINE: () => LocalizedString
+		/**
+		 * Desarrollo software a medida para empresas: aplicaciones internas, integraciones entre tus sistemas y automatizaciones alineadas a tu operación — soluciones construidas para tu equipo y tus procesos, no plantillas genéricas.
+		 */
+		HERO_LEAD: () => LocalizedString
+		/**
+		 * Quiero una consultoría gratis
+		 */
+		HERO_CTA_PRIMARY: () => LocalizedString
+		/**
+		 * Ver un caso real
+		 */
+		HERO_CTA_SECONDARY: () => LocalizedString
+		/**
+		 * Caso real
+		 */
+		CASE_SIMPLE_BADGE: () => LocalizedString
+		/**
+		 * NQLN · antes y después
+		 */
+		CASE_STUDIES_TITLE: () => LocalizedString
+		/**
+		 * Del panel de soporte: antes el cliente esperaba horas o días; hoy el bot contesta en minutos. Abajo, el ahorro mensual en nómina al pasar de ~10 agentes en chat a 2–3.
+		 */
+		CASE_STUDIES_LEAD: () => LocalizedString
+		/**
+		 * Tiempo de primera respuesta
+		 */
+		CASE_SIMPLE_COMPARE_CAPTION: () => LocalizedString
+		/**
+		 * Antes · solo agentes
+		 */
+		CASE_SIMPLE_BEFORE_LABEL: () => LocalizedString
+		/**
+		 * 7h 16m
+		 */
+		CASE_SIMPLE_BEFORE_TIME: () => LocalizedString
+		/**
+		 * Primera respuesta humana en el panel (referencia). El seguimiento podía alargarse días.
+		 */
+		CASE_SIMPLE_BEFORE_DESC: () => LocalizedString
+		/**
+		 * Ahora · bot
+		 */
+		CASE_SIMPLE_AFTER_LABEL: () => LocalizedString
+		/**
+		 * ~2 min
+		 */
+		CASE_SIMPLE_AFTER_TIME: () => LocalizedString
+		/**
+		 * Primera interacción automática para el cliente.
+		 */
+		CASE_SIMPLE_AFTER_DESC: () => LocalizedString
+		/**
+		 * Ahorro en nómina de chat
+		 */
+		CASE_SIMPLE_PAYROLL_TITLE: () => LocalizedString
+		/**
+		 * Antes ~10 personas atendían el chat; hoy alcanza con 2–3. A US$300 por persona al mes, el costo baja de ~US$3.000 a US$600–900 (2–3 × US$300).
+		 */
+		CASE_SIMPLE_PAYROLL_BODY: () => LocalizedString
+		/**
+		 * Ahorro estimado · mes
+		 */
+		CASE_SIMPLE_PAYROLL_SAVINGS_LABEL: () => LocalizedString
+		/**
+		 * No incluye cargas sociales ni otros beneficios.
+		 */
+		CASE_SIMPLE_PAYROLL_NOTE: () => LocalizedString
+		/**
+		 * Pronto sumo más casos así de simples.
+		 */
+		CASE_MORE: () => LocalizedString
+		/**
+		 * Soluciones que encajan con cómo se trabaja hoy
+		 */
+		SERVICES_TITLE: () => LocalizedString
+		/**
+		 * Automatización de procesos
+		 */
+		SERVICE_1_TITLE: () => LocalizedString
+		/**
+		 * Flujos en n8n o Make: desde confirmaciones y recordatorios hasta sincronizar datos entre apps — ideal si querés control de costos (incluye opciones self-hosted cuando tiene sentido).
+		 */
+		SERVICE_1_DESC: () => LocalizedString
+		/**
+		 * Integraciones entre tus sistemas
+		 */
+		SERVICE_2_TITLE: () => LocalizedString
+		/**
+		 * Que hablen tu tienda online, POS, CRM, Google Sheets, correo y WhatsApp Business API o webhooks: menos doble digitación y reportes que se actualizan solos.
+		 */
+		SERVICE_2_DESC: () => LocalizedString
+		/**
+		 * Software y paneles a medida
+		 */
+		SERVICE_3_TITLE: () => LocalizedString
+		/**
+		 * Tableros, formularios internos y mini-portales para inventario, despacho, soporte o aprobaciones — pensados para equipos chicos y operación real en Venezuela y clientes en el exterior.
+		 */
+		SERVICE_3_DESC: () => LocalizedString
+		/**
+		 * Resultados concretos (sin humo)
+		 */
+		PROOF_TITLE: () => LocalizedString
+		/**
+		 * En retail: encadené pedidos, avisos y registro contable para bajar el retrabajo de facturación y cierre diario.
+		 */
+		PROOF_1: () => LocalizedString
+		/**
+		 * Reemplacé rutinas de copiar y pegar entre CRM y correo por un flujo monitoreado con alertas cuando algo falla.
+		 */
+		PROOF_2: () => LocalizedString
+		/**
+		 * Portal interno para un equipo distribuido: solicitudes de TI y seguimiento en un solo lugar, sin depender de hilos interminables.
+		 */
+		PROOF_3: () => LocalizedString
+		/**
+		 * Guía gratis: 5 procesos típicos de pymes en Venezuela que podés automatizar
+		 */
+		MAGNET_TITLE: () => LocalizedString
+		/**
+		 * Dejá tus datos y marcá la casilla — te mando un checklist corto orientado a ventas por chat, cobros mixtos y operación con poco personal.
+		 */
+		MAGNET_LEAD: () => LocalizedString
+		/**
+		 * Dónde está la primera victoria rápida en tu tipo de negocio
+		 */
+		MAGNET_BULLET_1: () => LocalizedString
+		/**
+		 * Cuándo conviene n8n/Make frente a solo “más Excel”
+		 */
+		MAGNET_BULLET_2: () => LocalizedString
+		/**
+		 * Qué información reunir antes de una llamada (sin perder el día en reuniones)
+		 */
+		MAGNET_BULLET_3: () => LocalizedString
+		/**
+		 * Quiero la guía
+		 */
+		MAGNET_CTA: () => LocalizedString
+		/**
+		 * Artículos y notas
+		 */
+		CONTENT_TITLE: () => LocalizedString
+		/**
+		 * Escribo sobre ingeniería, stacks modernos y automatización — sirve si querés ver cómo pienso los problemas antes de encarar un proyecto.
+		 */
+		CONTENT_BODY: () => LocalizedString
+		/**
+		 * Ver notas
+		 */
+		CONTENT_CTA: () => LocalizedString
+		/**
+		 * Contame qué querés ordenar en tu operación
+		 */
+		FORM_TITLE: () => LocalizedString
+		/**
+		 * Formulario breve: te respondo con encaje honesto, enfoque sugerido y tiempos aproximados (trabajo remoto con equipos en Venezuela y en el exterior).
+		 */
+		FORM_SUBTITLE: () => LocalizedString
+		/**
+		 * Nombre
+		 */
+		FORM_NAME: () => LocalizedString
+		/**
+		 * Correo
+		 */
+		FORM_EMAIL: () => LocalizedString
+		/**
+		 * Teléfono (WhatsApp o móvil)
+		 */
+		FORM_PHONE: () => LocalizedString
+		/**
+		 * ¿Qué proceso querés automatizar o integrar?
+		 */
+		FORM_PROCESS: () => LocalizedString
+		/**
+		 * Ejemplo: pedidos que entran por Instagram y WhatsApp → registrar en una hoja o sistema → avisar a despacho → reflejar cobro en bolívares o USD…
+		 */
+		FORM_PROCESS_PLACEHOLDER: () => LocalizedString
+		/**
+		 * También enviame la guía gratis (5 procesos típicos en Venezuela)
+		 */
+		FORM_GUIDE: () => LocalizedString
+		/**
+		 * Enviar solicitud
+		 */
+		FORM_SUBMIT: () => LocalizedString
+		/**
+		 * Listo — tu solicitud quedó registrada. Te escribo o llamo pronto con el siguiente paso.
+		 */
+		FORM_SUCCESS: () => LocalizedString
+		/**
+		 * Se debería abrir tu correo con un mensaje listo. Enviálo para completar la solicitud.
+		 */
+		FORM_SUCCESS_MAILTO: () => LocalizedString
+		/**
+		 * Algo salió mal. Probá de nuevo o escribime por WhatsApp.
+		 */
+		FORM_ERROR_GENERIC: () => LocalizedString
+		/**
+		 * Revisá los campos obligatorios e intentá de nuevo.
+		 */
+		FORM_ERROR_VALIDATION: () => LocalizedString
+		/**
+		 * No pudimos guardar tu solicitud en el servidor. Probá de nuevo en unos minutos o escribime por WhatsApp.
+		 */
+		FORM_ERROR_STORE: () => LocalizedString
+		/**
+		 * Escribir por WhatsApp
+		 */
+		WHATSAPP_ARIA: () => LocalizedString
+		/**
+		 * WhatsApp
+		 */
+		WHATSAPP_LABEL: () => LocalizedString
 	}
 }
 

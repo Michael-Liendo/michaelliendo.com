@@ -8,7 +8,7 @@ import { cn } from "$lib";
 import { clickOutside } from "$lib/actions/clickOutside";
 import { removeLocaleFromPath, replaceLocaleInUrl } from "$lib/utils/locale";
 import { PublicRoutesEnum } from "$lib/utils/routes";
-import { Home, Languages, Notebook, Trophy } from "@lucide/svelte";
+import { Briefcase, Home, Languages, Notebook, Trophy } from "@lucide/svelte";
 
 let currentUrl = $state(removeLocaleFromPath(page.url.pathname));
 
@@ -94,6 +94,18 @@ function changeLanguage(locale: Locales): void {
             )}>{$LL.LAYOUT.NAV.PROJECTS()}</a
           >
         </li>
+        <li>
+          <a
+            title="Automations for teams"
+            href="{baseLocaleUrl}{PublicRoutesEnum.Automations}"
+            class={cn(
+              'rounded-full px-3 py-1.5 text-sm font-medium transition',
+              currentUrl === PublicRoutesEnum.Automations
+                ? 'bg-accent-muted text-ink shadow-sm'
+                : 'text-ink-muted hover:bg-accent-muted/50 hover:text-ink',
+            )}>{$LL.LAYOUT.NAV.AUTOMATIONS()}</a
+          >
+        </li>
       </ul>
       <!-- MOBILE -->
       <ul
@@ -137,6 +149,20 @@ function changeLanguage(locale: Locales): void {
                 : 'text-ink-muted hover:bg-accent-muted/50 hover:text-ink',
             )}
             aria-label="Projects"><Trophy class="h-5 w-5" /></a
+          >
+        </li>
+        <li>
+          <a
+            title="Automations for teams"
+            href="{baseLocaleUrl}{PublicRoutesEnum.Automations}"
+            class={cn(
+              'flex rounded-full p-2.5 transition',
+              currentUrl === PublicRoutesEnum.Automations
+                ? 'bg-accent-muted text-ink'
+                : 'text-ink-muted hover:bg-accent-muted/50 hover:text-ink',
+            )}
+            aria-label={$LL.LAYOUT.NAV.AUTOMATIONS()}
+            ><Briefcase class="h-5 w-5" /></a
           >
         </li>
       </ul>
