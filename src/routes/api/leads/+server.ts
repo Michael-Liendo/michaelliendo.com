@@ -4,8 +4,8 @@ import { env } from "$env/dynamic/private";
 import { isLeadsDatabaseConfigured, selectLeadsDesc } from "$lib/server/leads-db";
 
 import type { RequestHandler } from "./$types";
-
-/** GET JSON list of leads. Header: Authorization: Bearer <ADMIN_LEADS_TOKEN> */
+/* 
+ GET JSON list of leads. Header: Authorization: Bearer <ADMIN_LEADS_TOKEN> 
 export const GET: RequestHandler = async ({ request }) => {
 	const token = env.ADMIN_LEADS_TOKEN?.trim();
 	if (!token) {
@@ -18,10 +18,7 @@ export const GET: RequestHandler = async ({ request }) => {
 	}
 
 	if (!isLeadsDatabaseConfigured()) {
-		throw error(
-			503,
-			"Database not configured (set TURSO_DATABASE_URL and TURSO_AUTH_TOKEN)",
-		);
+		throw error(503, "Database not configured (set DATABASE_URL)");
 	}
 
 	const leads = await selectLeadsDesc(500);
@@ -38,3 +35,4 @@ export const GET: RequestHandler = async ({ request }) => {
 		})),
 	});
 };
+ */

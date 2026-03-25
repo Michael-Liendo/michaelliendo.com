@@ -1,29 +1,14 @@
-import { createClient } from "@libsql/client";
+import { neon } from "@neondatabase/serverless";
 import { env } from "$env/dynamic/private";
 
-const CREATE_LEADS_TABLE = `
-CREATE TABLE IF NOT EXISTS leads (
-	id INTEGER PRIMARY KEY AUTOINCREMENT,
-	name TEXT NOT NULL,
-	email TEXT NOT NULL,
-	phone TEXT NOT NULL,
-	process TEXT NOT NULL,
-	wants_guide INTEGER NOT NULL,
-	locale TEXT NOT NULL,
-	created_at TEXT NOT NULL
-)`;
-
-function getTursoClient() {
-	const url = env.TURSO_DATABASE_URL?.trim();
-	const authToken = env.TURSO_AUTH_TOKEN?.trim();
-	if (!url || !authToken) return null;
-	return createClient({ url, authToken });
+function getSql() {
+	const url = env.DATABASE_URL?.trim();
+	if (!url) return null;
+	return neon(url);
 }
 
 export function isLeadsDatabaseConfigured(): boolean {
-	const url = env.TURSO_DATABASE_URL?.trim();
-	const authToken = env.TURSO_AUTH_TOKEN?.trim();
-	return Boolean(url && authToken);
+	return Boolean(env.DATABASE_URL?.trim());
 }
 
 export type LeadRow = {
@@ -46,39 +31,61 @@ export async function insertLead(payload: {
 	locale: string;
 	submittedAt: string;
 }): Promise<void> {
-	const client = getTursoClient();
-	if (!client) {
-		throw new Error("Turso not configured");
+	const sql = getSql();
+	if (!sql) {
+		throw new Error("DATABASE_URL not configured");
 	}
 
-	await client.execute(CREATE_LEADS_TABLE);
-	await client.execute({
-		sql: `INSERT INTO leads (name, email, phone, process, wants_guide, locale, created_at)
-			VALUES (?, ?, ?, ?, ?, ?, ?)`,
-		args: [
-			payload.name,
-			payload.email,
-			payload.phone,
-			payload.process,
-			payload.wantsGuide ? 1 : 0,
-			payload.locale,
-			payload.submittedAt,
-		],
-	});
+	await sql`
+		CREATE TABLE IF NOT EXISTS leads (
+			id SERIAL PRIMARY KEY,
+			name TEXT NOT NULL,
+			email TEXT NOT NULL,
+			phone TEXT NOT NULL,
+			process TEXT NOT NULL,
+			wants_guide SMALLINT NOT NULL,
+			locale TEXT NOT NULL,
+			created_at TEXT NOT NULL
+		)
+	`;
+
+	await sql`
+		INSERT INTO leads (name, email, phone, process, wants_guide, locale, created_at)
+		VALUES (
+			${payload.name},
+			${payload.email},
+			${payload.phone},
+			${payload.process},
+			${payload.wantsGuide ? 1 : 0},
+			${payload.locale},
+			${payload.submittedAt}
+		)
+	`;
 }
 
 export async function selectLeadsDesc(limit: number): Promise<LeadRow[]> {
-	const client = getTursoClient();
-	if (!client) return [];
+	const sql = getSql();
+	if (!sql) return [];
 
-	await client.execute(CREATE_LEADS_TABLE);
-	const result = await client.execute({
-		sql: `SELECT id, name, email, phone, process, wants_guide, locale, created_at
-			FROM leads ORDER BY id DESC LIMIT ?`,
-		args: [limit],
-	});
+	await sql`
+		CREATE TABLE IF NOT EXISTS leads (
+			id SERIAL PRIMARY KEY,
+			name TEXT NOT NULL,
+			email TEXT NOT NULL,
+			phone TEXT NOT NULL,
+			process TEXT NOT NULL,
+			wants_guide SMALLINT NOT NULL,
+			locale TEXT NOT NULL,
+			created_at TEXT NOT NULL
+		)
+	`;
 
-	return result.rows.map((row) => ({
+	const rows = await sql`
+		SELECT id, name, email, phone, process, wants_guide, locale, created_at
+		FROM leads ORDER BY id DESC LIMIT ${limit}
+	`;
+
+	return rows.map((row) => ({
 		id: Number(row.id),
 		name: String(row.name),
 		email: String(row.email),

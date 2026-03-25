@@ -550,11 +550,6 @@
           {$LL.LEADS.FORM_ERROR_VALIDATION()}
         </p>
       {/if}
-      {#if form?.webhookFailed}
-        <p class="text-sm text-red-400" role="alert">
-          {$LL.LEADS.FORM_ERROR_GENERIC()}
-        </p>
-      {/if}
       {#if form?.storeFailed}
         <p class="text-sm text-red-400" role="alert">
           {$LL.LEADS.FORM_ERROR_STORE()}

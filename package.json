@@ -26,8 +26,8 @@
 		"vite": "^8.0.2"
 	},
 	"dependencies": {
-		"@libsql/client": "^0.17.2",
 		"@lucide/svelte": "^1.6.0",
+		"@neondatabase/serverless": "^1.0.2",
 		"tailwind-merge": "^3.5.0",
 		"typesafe-i18n": "^5.27.1"
 	}
