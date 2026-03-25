@@ -48,6 +48,9 @@
 
   let { form } = $props();
 
+  /** Evita doble envío mientras la petición está en curso */
+  let submitting = $state(false);
+
   const baseLocaleUrl = $derived($locale === "es" ? "" : `/${$locale}`);
 
   const whatsappE164 = $derived(
@@ -533,14 +536,22 @@
       method="POST"
       class="mt-8 max-w-xl space-y-5"
       use:enhance={() => {
-        return async ({ result }) => {
-          if (
-            result.type === "success" &&
-            result.data &&
-            "mailtoHref" in result.data &&
-            typeof result.data.mailtoHref === "string"
-          ) {
-            window.location.href = result.data.mailtoHref;
+        submitting = true;
+        return async ({ result, update }) => {
+          try {
+            if (
+              result.type === "success" &&
+              result.data &&
+              "mailtoHref" in result.data &&
+              typeof result.data.mailtoHref === "string"
+            ) {
+              window.location.href = result.data.mailtoHref;
+              return;
+            }
+            // Sin esto, `form` no se actualiza y no ves el mensaje de éxito ni los errores
+            await update();
+          } finally {
+            submitting = false;
           }
         };
       }}
@@ -626,7 +637,9 @@
 
       <button
         type="submit"
-        class="inline-flex w-full items-center justify-center gap-2 rounded-full bg-accent px-5 py-3 text-sm font-semibold text-accent-foreground shadow-soft transition hover:brightness-110 sm:w-auto"
+        disabled={submitting}
+        aria-busy={submitting}
+        class="inline-flex w-full items-center justify-center gap-2 rounded-full bg-accent px-5 py-3 text-sm font-semibold text-accent-foreground shadow-soft transition hover:brightness-110 enabled:hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
       >
         {$LL.LEADS.FORM_SUBMIT()}
         <ArrowRight class="h-4 w-4" aria-hidden="true" />
