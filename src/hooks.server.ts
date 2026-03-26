@@ -9,6 +9,15 @@ loadAllLocales();
 const L = i18n();
 
 export const handle: Handle = async ({ event, resolve }) => {
+	// Avoid duplicate Spanish URLs: /es/* and /* serving same content.
+	if (event.url.pathname === "/es" || event.url.pathname.startsWith("/es/")) {
+		const pathname = event.url.pathname.replace(/^\/es(?=\/|$)/, "") || "/";
+		const url = new URL(event.url.toString());
+		url.pathname = pathname;
+
+		return Response.redirect(url, 308);
+	}
+
 	// read language slug
 	const [, lang] = event.url.pathname.split("/");
 

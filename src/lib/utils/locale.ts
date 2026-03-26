@@ -14,19 +14,21 @@ export const replaceLocaleInUrl = (
 	full = false,
 ): string => {
 	const [, ...rest] = url.pathname.split("/");
+	const restPath = rest.filter(Boolean).join("/");
 
 	let new_pathname: string;
 	if (locale === baseLocale) {
 		if ((locales as string[]).includes(rest[0])) {
-			new_pathname = `/${rest.slice(1).join("/")}`;
+			const withoutLocale = rest.slice(1).filter(Boolean).join("/");
+			new_pathname = withoutLocale ? `/${withoutLocale}` : "/";
 		} else {
-			new_pathname = `/${rest.join("/")}`;
+			new_pathname = restPath ? `/${restPath}` : "/";
 		}
 	} else {
 		if (rest[0] === locale) {
-			new_pathname = `/${rest.join("/")}`;
+			new_pathname = restPath ? `/${restPath}` : `/${locale}`;
 		} else {
-			new_pathname = `/${locale}/${rest.join("/")}`;
+			new_pathname = restPath ? `/${locale}/${restPath}` : `/${locale}`;
 		}
 	}
 
