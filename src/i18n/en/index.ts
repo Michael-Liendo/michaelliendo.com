@@ -2,16 +2,16 @@ import type { BaseTranslation } from "../i18n-types";
 
 const en = {
 	SEO: {
-		TITLE: "Michael Liendo · Full Stack Developer | TypeScript & AI",
+		TITLE: "Michael Liendo · Full Stack Developer | AI WhatsApp Bots",
 		DESCRIPTION:
-			"Full stack developer based in Caracas, Venezuela. I build web and mobile apps with TypeScript, React, Node.js and PostgreSQL, plus AI WhatsApp bots that cut first reply time from 7 hours to 2 minutes.",
+			"Full stack developer in Caracas, Venezuela. I automate customer service on WhatsApp with AI and build custom web and mobile apps with TypeScript, React and Node.js.",
 		KEYWORDS:
-			"michael liendo, full stack developer venezuela, remote typescript developer, react developer, node.js developer, ai whatsapp bot, whatsapp automation, freelance developer latam, ionic, sveltekit",
+			"michael liendo, full stack developer venezuela, remote typescript developer, whatsapp automation, ai whatsapp bot, custom software development, react developer, node.js developer, freelance developer latam",
 		IMAGE: "https://michaelliendo.com/og/home-en.png",
 		NOTES: {
-			TITLE: "Notes | Michael Liendo",
+			TITLE: "Development notes | Michael Liendo",
 			DESCRIPTION:
-				"Articles and tutorials by Michael Liendo on software engineering, Git, React Native, Expo, TypeScript, SvelteKit and developer workflows — practical notes from real projects.",
+				"Tutorials and notes by Michael Liendo on Git, TypeScript, React Native, Expo and SvelteKit, written from real projects.",
 			KEYWORDS:
 				"michael liendo, notes, learnings, experiences, svelte, typescript, web development, collaboration, problem-solving",
 		},
@@ -21,7 +21,7 @@ const en = {
 			KEYWORDS: "{keywords:string}",
 		},
 		PROJECT: {
-			TITLE: "Projects | Michael Liendo",
+			TITLE: "Projects and case studies | Michael Liendo",
 			DESCRIPTION:
 				"Projects by Michael Liendo: AI WhatsApp bots for retail, an education platform with an AI tutor, Next.js ERPs, Ionic mobile apps and open source tools in Rust.",
 			KEYWORDS:
