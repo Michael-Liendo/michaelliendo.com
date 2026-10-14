@@ -24,6 +24,15 @@ export const handle: Handle = async ({ event, resolve }) => {
 		return Response.redirect(new URL(removedPage[1] || "/", event.url), 301);
 	}
 
+	// Notes moved to a new slug.
+	const movedNote = event.url.pathname.match(
+		/^(\/en)?\/notes\/esm-cjs-librery\/?$/,
+	);
+	if (movedNote) {
+		const target = `${movedNote[1] ?? ""}/notes/esm-vs-cjs-typescript-monorepo`;
+		return Response.redirect(new URL(target, event.url), 301);
+	}
+
 	// read language slug
 	const [, lang] = event.url.pathname.split("/");
 

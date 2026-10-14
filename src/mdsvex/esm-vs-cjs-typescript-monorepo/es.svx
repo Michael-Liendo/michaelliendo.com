@@ -1,0 +1,170 @@
+---
+title: "ESM vs CommonJS: cómo compartir un paquete TypeScript en un monorepo"
+description: "Por qué tu paquete compartido falla al importarlo desde otra app del monorepo, y cómo configurarlo bien: extensiones .js, type module, exports para ESM y CJS, moduleResolution, tsup o swc y el type stripping de Node."
+date: 2026-10-14
+icon: typescript
+tags: [typescript, nodejs, esm, monorepo]
+published: true
+---
+
+Tienes un monorepo con un paquete compartido, por ejemplo `packages/shared`, escrito en TypeScript. Lo importas desde una API en Node y todo compila, pero al ejecutar aparece algo así:
+
+```
+Error [ERR_MODULE_NOT_FOUND]: Cannot find module '/repo/packages/shared/dist/utils' imported from /repo/packages/shared/dist/index.js
+```
+
+O al revés: funciona en Node pero tu app con Vite o Next.js no encuentra los tipos. Casi siempre el problema es la mezcla entre ESM y CommonJS y cómo TypeScript resuelve los módulos. En esta nota explico qué está pasando y cómo dejarlo bien configurado.
+
+## ESM y CommonJS en dos líneas
+
+- **CommonJS (CJS)** es el sistema histórico de Node: `require()` y `module.exports`. Al resolver `require("./utils")`, Node prueba `./utils.js`, `./utils/index.js`, etc.
+- **ES Modules (ESM)** es el estándar de JavaScript: `import` y `export`. En Node, ESM **no adivina extensiones**: `import "./utils"` falla; tienes que escribir `import "./utils.js"`.
+
+Esa segunda regla es la que rompe la mayoría de los paquetes compartidos.
+
+## Por qué TypeScript no reescribe las extensiones
+
+Cuando escribes en `src/index.ts`:
+
+```ts
+export * from "./utils";
+```
+
+TypeScript compila a `dist/index.js` con exactamente el mismo import: `"./utils"`. TypeScript no cambia las rutas de los imports; es una decisión de diseño: lo que escribes en el especificador es lo que llega al JavaScript final.
+
+- Si compilas a CommonJS, no pasa nada: `require("./utils")` encuentra `utils.js`.
+- Si compilas a ESM, Node busca un archivo llamado literalmente `utils`, no lo encuentra y falla.
+
+## La solución: importar con `.js`
+
+En código ESM, escribe los imports relativos con la extensión **del archivo que existirá en tiempo de ejecución**:
+
+```ts
+// src/index.ts
+export * from "./utils.js"; // aunque el archivo sea utils.ts
+```
+
+Parece raro importar un `.js` que no existe en `src`, pero TypeScript lo entiende: sabe que `./utils.js` corresponde a `./utils.ts` y usa sus tipos. Al compilar, el import queda igual y en `dist` sí existe `utils.js`.
+
+Desde TypeScript 5.7 existe otra opción, `rewriteRelativeImportExtensions`: escribes `./utils.ts` y el compilador lo convierte en `./utils.js` al emitir. Sirve si quieres que el mismo código corra directo con Node (ver el final), pero solo con `tsc`; muchos empaquetadores no aplican esa reescritura.
+
+## Decirle a Node que el paquete es ESM: `"type": "module"`
+
+Node decide si un `.js` es ESM o CommonJS mirando el `package.json` más cercano:
+
+```json
+{
+  "name": "@repo/shared",
+  "type": "module"
+}
+```
+
+Con `"type": "module"`, los `.js` se tratan como ESM y los `.cjs` como CommonJS. Sin él, es al revés: `.js` es CommonJS y necesitas `.mjs` para ESM.
+
+## Configurar TypeScript: `NodeNext` o `Bundler`
+
+`moduleResolution` le dice a TypeScript cómo va a resolver los imports quien ejecute tu código. Hay dos opciones modernas:
+
+**`NodeNext`**: para código que ejecuta Node directamente (APIs, CLIs, paquetes publicados). Aplica las mismas reglas que Node, así que te obliga a poner `.js` en los imports de archivos ESM y respeta `"type"` y `exports`.
+
+```json
+{
+  "compilerOptions": {
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "target": "ES2022",
+    "declaration": true,
+    "outDir": "dist",
+    "strict": true
+  }
+}
+```
+
+**`Bundler`**: para código que siempre pasa por un empaquetador (Vite, Next.js, esbuild). Permite imports sin extensión porque el empaquetador los resuelve. Se usa con `"module": "ESNext"` o `"Preserve"`.
+
+Para un paquete compartido que consume tanto Node como una app con Vite, usa **`NodeNext`**: si funciona en Node, también funciona en el empaquetador. Al revés no siempre es cierto.
+
+## `exports`: un paquete que sirve para ESM y CommonJS
+
+Si parte del monorepo sigue en CommonJS (por ejemplo, una API vieja o una herramienta que solo usa `require`), puedes publicar el paquete en los dos formatos y dejar que el campo `exports` elija:
+
+```json
+{
+  "name": "@repo/shared",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "main": "./dist/index.cjs",
+  "types": "./dist/index.d.ts",
+  "files": ["dist"]
+}
+```
+
+Detalles que importan:
+
+- `types` va **primero** dentro de cada condición; TypeScript usa la primera que coincide.
+- Cada formato tiene sus propios tipos (`.d.ts` para ESM, `.d.cts` para CJS). Si compartes un solo `.d.ts`, TypeScript puede creer que el paquete es ESM cuando lo cargas con `require`.
+- `exports` es estricto: solo se puede importar lo que declares. Si quieres permitir `@repo/shared/utils`, añade una entrada `"./utils"`.
+- `main` y `types` en la raíz quedan como respaldo para herramientas antiguas.
+
+Ojo: desde Node 20.19 y 22.12, `require()` puede cargar módulos ESM sin flags (siempre que no usen `await` en el nivel superior). Si todo tu monorepo corre en esas versiones, quizá te baste con publicar solo ESM.
+
+## Compilar con tsup o swc
+
+`tsc` puede generar ESM o CJS, pero no los dos a la vez sin dos configuraciones. Para paquetes duales es más cómodo usar una herramienta de build.
+
+**tsup** (basado en esbuild) genera los dos formatos y sus tipos en un comando:
+
+```ts
+// tsup.config.ts
+import { defineConfig } from "tsup";
+
+export default defineConfig({
+  entry: ["src/index.ts"],
+  format: ["esm", "cjs"],
+  dts: true,
+  clean: true,
+});
+```
+
+Con `"type": "module"` en el `package.json`, tsup genera `index.js` (ESM), `index.cjs` (CommonJS), `index.d.ts` e `index.d.cts`, que es justo lo que espera el `exports` de arriba. Como tsup empaqueta todo en un archivo, el problema de las extensiones de los imports internos desaparece.
+
+**swc** es muy rápido y compila archivo por archivo, sin empaquetar. En ese caso los imports internos sí necesitan su extensión: escríbelos con `.js` o activa `module.resolveFully` en `.swcrc` para que swc los complete. swc no genera `.d.ts`, así que los tipos los sigues sacando con `tsc --emitDeclarationOnly`.
+
+Para la mayoría de los paquetes internos, tsup es lo más simple.
+
+## El futuro: Node ejecutando TypeScript
+
+Node ya puede ejecutar archivos `.ts` quitando los tipos (*type stripping*). Llegó en Node 22.6 detrás de `--experimental-strip-types` y está activado por defecto desde Node 23.6 y 22.18:
+
+```bash
+node src/index.ts
+```
+
+Esto cambia las reglas del juego para paquetes internos, con algunas condiciones:
+
+- Los imports deben usar la extensión real: `./utils.ts`. Node no reescribe nada. Para que TypeScript lo acepte, activa `allowImportingTsExtensions` (con `noEmit`) o `rewriteRelativeImportExtensions` si además compilas.
+- Solo se admite sintaxis que se pueda borrar sin generar código: nada de `enum`, `namespace` con valores ni *parameter properties*. La opción `erasableSyntaxOnly` (TypeScript 5.8) te avisa si usas algo así.
+- Node no quita tipos de archivos dentro de `node_modules`. Un paquete que publicas en npm tiene que seguir llevando JavaScript compilado.
+
+En un monorepo, esto apunta a un esquema más simple: paquetes internos que exportan `.ts` directamente, sin paso de build, y compilación solo para lo que publicas. Prueba que funcione con tu gestor de paquetes y tu versión de Node antes de quitar el build.
+
+## Resumen
+
+1. En código ESM, importa archivos relativos con `.js` (o `.ts` con `rewriteRelativeImportExtensions`).
+2. Pon `"type": "module"` en el `package.json` del paquete.
+3. Usa `moduleResolution: NodeNext` para paquetes que corren en Node; `Bundler` solo para apps que siempre pasan por un empaquetador.
+4. Si necesitas CommonJS, declara `exports` con `import` y `require`, cada uno con sus tipos, y compila con tsup.
+5. Ten en el radar el type stripping de Node: para paquetes internos puede eliminar el paso de build.
+
+Más contexto en la discusión de TypeScript sobre [reescritura de extensiones](https://github.com/microsoft/TypeScript/issues/59597) y en la [documentación de módulos de TypeScript](https://www.typescriptlang.org/docs/handbook/modules/introduction.html).

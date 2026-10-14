@@ -1,0 +1,170 @@
+---
+title: "ESM vs CommonJS: how to share a TypeScript package in a monorepo"
+description: "Why your shared package breaks when another app in the monorepo imports it, and how to set it up properly: .js extensions, type module, exports for ESM and CJS, moduleResolution, tsup or swc, and Node's type stripping."
+date: 2026-10-14
+icon: typescript
+tags: [typescript, nodejs, esm, monorepo]
+published: true
+---
+
+You have a monorepo with a shared package, say `packages/shared`, written in TypeScript. You import it from a Node API and everything compiles, but at runtime you get something like:
+
+```
+Error [ERR_MODULE_NOT_FOUND]: Cannot find module '/repo/packages/shared/dist/utils' imported from /repo/packages/shared/dist/index.js
+```
+
+Or the other way around: it works in Node, but your Vite or Next.js app can't find the types. The cause is almost always the mix of ESM and CommonJS and how TypeScript resolves modules. In this note I explain what's going on and how to set it up properly.
+
+## ESM and CommonJS in two lines
+
+- **CommonJS (CJS)** is Node's original module system: `require()` and `module.exports`. When resolving `require("./utils")`, Node tries `./utils.js`, `./utils/index.js`, and so on.
+- **ES Modules (ESM)** is the JavaScript standard: `import` and `export`. In Node, ESM **doesn't guess extensions**: `import "./utils"` fails; you have to write `import "./utils.js"`.
+
+That second rule is what breaks most shared packages.
+
+## Why TypeScript doesn't rewrite extensions
+
+When you write this in `src/index.ts`:
+
+```ts
+export * from "./utils";
+```
+
+TypeScript compiles it to `dist/index.js` with the exact same import: `"./utils"`. TypeScript doesn't change import paths; it's a design decision: whatever you write in the specifier is what ends up in the output JavaScript.
+
+- If you compile to CommonJS, nothing breaks: `require("./utils")` finds `utils.js`.
+- If you compile to ESM, Node looks for a file literally named `utils`, doesn't find it, and fails.
+
+## The fix: import with `.js`
+
+In ESM code, write relative imports with the extension **of the file that will exist at runtime**:
+
+```ts
+// src/index.ts
+export * from "./utils.js"; // even though the file is utils.ts
+```
+
+It looks odd to import a `.js` file that doesn't exist in `src`, but TypeScript understands it: it knows `./utils.js` maps to `./utils.ts` and uses its types. When compiling, the import stays the same, and `utils.js` does exist in `dist`.
+
+Since TypeScript 5.7 there's another option, `rewriteRelativeImportExtensions`: you write `./utils.ts` and the compiler turns it into `./utils.js` on emit. It's useful if you want the same code to run directly in Node (see the end), but only with `tsc`; many bundlers don't apply that rewrite.
+
+## Tell Node the package is ESM: `"type": "module"`
+
+Node decides whether a `.js` file is ESM or CommonJS by looking at the nearest `package.json`:
+
+```json
+{
+  "name": "@repo/shared",
+  "type": "module"
+}
+```
+
+With `"type": "module"`, `.js` files are treated as ESM and `.cjs` files as CommonJS. Without it, it's the opposite: `.js` is CommonJS and you need `.mjs` for ESM.
+
+## Configure TypeScript: `NodeNext` or `Bundler`
+
+`moduleResolution` tells TypeScript how whatever runs your code will resolve imports. There are two modern options:
+
+**`NodeNext`**: for code Node runs directly (APIs, CLIs, published packages). It applies the same rules as Node, so it forces `.js` in imports from ESM files and respects `"type"` and `exports`.
+
+```json
+{
+  "compilerOptions": {
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "target": "ES2022",
+    "declaration": true,
+    "outDir": "dist",
+    "strict": true
+  }
+}
+```
+
+**`Bundler`**: for code that always goes through a bundler (Vite, Next.js, esbuild). It allows extensionless imports because the bundler resolves them. Use it with `"module": "ESNext"` or `"Preserve"`.
+
+For a shared package consumed by both Node and a Vite app, use **`NodeNext`**: if it works in Node, it also works in the bundler. The reverse isn't always true.
+
+## `exports`: one package for both ESM and CommonJS
+
+If part of the monorepo is still CommonJS (an older API, or a tool that only uses `require`), you can ship the package in both formats and let the `exports` field pick:
+
+```json
+{
+  "name": "@repo/shared",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "main": "./dist/index.cjs",
+  "types": "./dist/index.d.ts",
+  "files": ["dist"]
+}
+```
+
+Details that matter:
+
+- `types` goes **first** inside each condition; TypeScript uses the first one that matches.
+- Each format gets its own types (`.d.ts` for ESM, `.d.cts` for CJS). If you share a single `.d.ts`, TypeScript may think the package is ESM when you load it with `require`.
+- `exports` is strict: only what you declare can be imported. If you want to allow `@repo/shared/utils`, add a `"./utils"` entry.
+- Top-level `main` and `types` stay as a fallback for older tools.
+
+Note: since Node 20.19 and 22.12, `require()` can load ESM modules without flags (as long as they don't use top-level `await`). If your whole monorepo runs on those versions, shipping ESM only may be enough.
+
+## Build with tsup or swc
+
+`tsc` can emit ESM or CJS, but not both at once without two configs. For dual packages a build tool is more convenient.
+
+**tsup** (built on esbuild) emits both formats and their types in one command:
+
+```ts
+// tsup.config.ts
+import { defineConfig } from "tsup";
+
+export default defineConfig({
+  entry: ["src/index.ts"],
+  format: ["esm", "cjs"],
+  dts: true,
+  clean: true,
+});
+```
+
+With `"type": "module"` in `package.json`, tsup outputs `index.js` (ESM), `index.cjs` (CommonJS), `index.d.ts` and `index.d.cts`, which is exactly what the `exports` above expects. Since tsup bundles everything into one file, the internal import extension problem goes away.
+
+**swc** is very fast and compiles file by file, without bundling. In that case internal imports do need their extension: write them with `.js` or enable `module.resolveFully` in `.swcrc` so swc fills them in. swc doesn't emit `.d.ts` files, so you still get types from `tsc --emitDeclarationOnly`.
+
+For most internal packages, tsup is the simplest choice.
+
+## The future: Node running TypeScript
+
+Node can now run `.ts` files by stripping the types (*type stripping*). It arrived in Node 22.6 behind `--experimental-strip-types` and is enabled by default since Node 23.6 and 22.18:
+
+```bash
+node src/index.ts
+```
+
+This changes the game for internal packages, with a few conditions:
+
+- Imports must use the real extension: `./utils.ts`. Node doesn't rewrite anything. For TypeScript to accept it, enable `allowImportingTsExtensions` (with `noEmit`), or `rewriteRelativeImportExtensions` if you also compile.
+- Only syntax that can be erased without generating code is supported: no `enum`, no `namespace` with values, no parameter properties. The `erasableSyntaxOnly` option (TypeScript 5.8) warns you if you use any of them.
+- Node doesn't strip types from files inside `node_modules`. A package you publish to npm still has to ship compiled JavaScript.
+
+In a monorepo, this points to a simpler setup: internal packages that export `.ts` directly, with no build step, and compiling only what you publish. Check that it works with your package manager and Node version before removing the build.
+
+## Summary
+
+1. In ESM code, import relative files with `.js` (or `.ts` with `rewriteRelativeImportExtensions`).
+2. Add `"type": "module"` to the package's `package.json`.
+3. Use `moduleResolution: NodeNext` for packages that run in Node; `Bundler` only for apps that always go through a bundler.
+4. If you need CommonJS, declare `exports` with `import` and `require`, each with its own types, and build with tsup.
+5. Keep Node's type stripping on your radar: for internal packages it can remove the build step.
+
+More context in TypeScript's discussion on [rewriting extensions](https://github.com/microsoft/TypeScript/issues/59597) and in the [TypeScript modules documentation](https://www.typescriptlang.org/docs/handbook/modules/introduction.html).
