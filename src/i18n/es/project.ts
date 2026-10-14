@@ -75,6 +75,7 @@ export default [
 		role: "Líder de frontend · Tiempo completo",
 		description:
 			"Sistema de gestión para llevar inventario, compras, ventas y finanzas desde una interfaz clara, pensado para crecer junto con el negocio.",
+		image_url: "/images/logos/soluciones-jm.png",
 		tags: ["Sistema de gestión", "Inventario", "Web"],
 		date: "2024-08-01",
 		period: "ago 2024 – feb 2025 · 7 meses",
@@ -86,6 +87,7 @@ export default [
 		description:
 			"Interfaz de un asistente con IA para una cooperativa: responde en tiempo real dudas sobre productos, políticas y procedimientos, con inicio de sesión para cada usuario.",
 		preview_url: "https://www.oriencoop.cl/",
+		image_url: "/images/logos/oriencoop.png",
 		tags: ["IA", "Chatbot", "Web"],
 		date: "2024-12-01",
 		period: "dic 2024 – ene 2025 · 2 meses",

@@ -15,9 +15,9 @@ export default {
 		{ name: "NQLN", logo: "/images/nqln-icon.png" },
 		{ name: "Tizza", logo: "/images/tizza-icon.png" },
 		{ name: "La Victoria" },
-		{ name: "Soluciones JM" },
-		{ name: "Petch" },
-		{ name: "Oriencoop" },
+		{ name: "Soluciones JM", logo: "/images/logos/soluciones-jm.png" },
+		{ name: "Petch", logo: "/images/logos/petch.png" },
+		{ name: "Oriencoop", logo: "/images/logos/oriencoop.png" },
 	],
 	cases: {
 		label: "Casos",
@@ -78,12 +78,14 @@ export default {
 			},
 			{
 				name: "Engrana",
+				logo: "/images/logos/engrana.png",
 				description: "Mi SaaS: un agente de ventas por WhatsApp para comercios.",
 				meta: "Producto propio · 2026",
 				href: "https://engrana.ai",
 			},
 			{
 				name: "Soluciones JM",
+				logo: "/images/logos/soluciones-jm.png",
 				description:
 					"ERP en Next.js para un cliente de EE. UU.: inventario, compras y contabilidad.",
 				meta: "Frontend lead · 2024",
@@ -140,11 +142,21 @@ export default {
 		stack: [
 			{ name: "TypeScript", icon: "/icons/typescript-original.svg" },
 			{ name: "React y Next.js", icon: "/icons/react-original.svg" },
+			{ name: "React Native", icon: "/icons/react-original.svg" },
 			{ name: "Node.js", icon: "/icons/nodejs-original.svg" },
 			{ name: "PostgreSQL", icon: "/icons/postgresql-original.svg" },
 			{ name: "Ionic", icon: "/icons/ionic-original.svg" },
 			{ name: "SvelteKit", icon: "/icons/svelte-original.svg" },
 			{ name: "Rust", icon: "/icons/rust-original.svg" },
+		],
+		integrationsLabel: "Conecto con lo que ya usas:",
+		integrations: [
+			{ name: "WhatsApp Business", icon: "/icons/whatsapp.svg" },
+			{ name: "Shopify", icon: "/icons/shopify.svg" },
+			{ name: "Odoo", icon: "/icons/odoo.svg" },
+			{ name: "n8n y Make", icon: "/icons/n8n.svg" },
+			{ name: "IA con OpenAI", icon: "/icons/ai.svg" },
+			{ name: "APIs y webhooks", icon: "/icons/api.svg" },
 		],
 	},
 	notes: {
