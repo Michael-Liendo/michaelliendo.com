@@ -1,9 +1,6 @@
 import type { Project } from "$lib/types/Project";
 
 /** Favicon-sized logo via Google’s favicon service (by site domain). */
-const icon = (domain: string) =>
-	`https://www.google.com/s2/favicons?domain=${encodeURIComponent(domain)}&sz=128`;
-
 export default [
 	{
 		name: "Necesitas Bot",
@@ -11,7 +8,7 @@ export default [
 		description:
 			"Retail customer automation on WhatsApp: Fastify + PostgreSQL, React 19 admin, payment portal, and shared Zod schemas end to end. Integrates Callbell, Shopify (catalog through fulfillment), and multimodal AI (OpenAI, Gemini). In production: payment validation (incl. Banesco), FX, couriers, cart and conversation lifecycle, multi-tenant prompts. Built and owned the platform solo.",
 		preview_url: "https://www.nqlnstore.com/",
-		image_url: icon("nqlnstore.com"),
+		image_url: "/images/nqln-icon.png",
 		tags: [
 			"typescript",
 			"node.js",
@@ -31,7 +28,7 @@ export default [
 		description:
 			"AI-assisted STEM learning for students, teachers, and schools. TypeScript monorepo: Ionic + React + Vite, Fastify + PostgreSQL, shared Zod schemas. Adaptive study (flashcards, quizzes), RAG tutoring with Gemini File Search, and teacher flows—orgs, classes, eval plans from natural language. Also Capacitor, auth, S3, Astro marketing site. Own APIs, AI guardrails, observability, and UI end to end.",
 		preview_url: "https://tizza.app",
-		image_url: icon("tizza.app"),
+		image_url: "/images/tizza-icon.png",
 		tags: [
 			"typescript",
 			"react",
@@ -78,7 +75,7 @@ export default [
 		description:
 			"Pet-care product at petch.ai. Full-time (Sep 2023–Aug 2024): Ionic/React mobile UI, Google Maps, and features on Express.js and MongoDB. Follow-up freelance sprint (Mar 2025): front-end and back-end improvements on the same stack.",
 		preview_url: "https://petch.ai",
-		image_url: icon("petch.ai"),
+		image_url: "/images/logos/petch.png",
 		tags: ["react", "ionic", "express", "mongodb", "mobile"],
 		date: "2025-03-01",
 		period: "Sep 2023 – Aug 2024 · 1 yr full-time; Mar 2025 · 1 mo freelance",
@@ -90,7 +87,7 @@ export default [
 		description:
 			"TypeScript data processor for supplier performance inside Power BI: total orders, on-time delivery, average lead time, defect rate, and risk score. ChatGPT for narrative summaries and text-to-speech so stakeholders can listen to analyses in executive and ops settings.",
 		preview_url: "https://astralinsights.ai/",
-		image_url: icon("astralinsights.ai"),
+		image_url: "/images/logos/astral-insights.png",
 		tags: ["typescript", "power bi", "ai", "analytics"],
 		date: "2025-02-01",
 		period: "Feb 2025 · 1 mo",
@@ -112,7 +109,6 @@ export default [
 		description:
 			"Svelte frontend for a real-time AI assistant on policies, procedures, and products: responsive UI, auth and chat integration, reusable components, typing indicators and suggested replies, navigation gated by authentication.",
 		preview_url: "https://www.oriencoop.cl/",
-		image_url: icon("oriencoop.cl"),
 		tags: ["svelte", "ai", "api", "frontend"],
 		date: "2024-12-01",
 		period: "Dec 2024 – Jan 2025 · 2 mos",
@@ -183,7 +179,6 @@ export default [
 		description:
 			"Routing, page layout, and wiring a JavaScript API into the school’s public site.",
 		preview_url: "https://uedomingosavio.edu.ve/",
-		image_url: icon("uedomingosavio.edu.ve"),
 		tags: ["javascript", "html", "css"],
 		date: "2022-10-01",
 		period: "Oct 2022 – Dec 2022 · 3 mos",

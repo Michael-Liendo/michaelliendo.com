@@ -1,8 +1,5 @@
 import type { Project } from "$lib/types/Project";
 
-const icon = (domain: string) =>
-	`https://www.google.com/s2/favicons?domain=${encodeURIComponent(domain)}&sz=128`;
-
 export default [
 	{
 		name: "Necesitas Bot",
@@ -10,7 +7,7 @@ export default [
 		description:
 			"Automatización retail por WhatsApp: Fastify y PostgreSQL, panel en React 19, portal de pagos y schemas Zod compartidos de punta a punta. Integra Callbell, Shopify (catálogo a fulfillment) e IA multimodal (OpenAI, Gemini). En producción: validación de pagos (incl. Banesco), divisas, envíos, carritos y conversaciones, prompts multi-marca. Desarrollo y operación de la plataforma a mi cargo.",
 		preview_url: "https://www.nqlnstore.com/",
-		image_url: icon("nqlnstore.com"),
+		image_url: "/images/nqln-icon.png",
 		tags: [
 			"typescript",
 			"node.js",
@@ -30,7 +27,7 @@ export default [
 		description:
 			"Aprendizaje con IA en matemáticas, física y química para alumnos, docentes e instituciones. Monorepo TypeScript: Ionic + React + Vite, Fastify + PostgreSQL, schemas Zod compartidos. Estudio adaptativo (flashcards, quizzes), tutoría con RAG (Gemini File Search) y flujos docentes: organizaciones, aulas, planes de evaluación desde lenguaje natural. También Capacitor, auth, S3 y marketing en Astro. APIs, guardrails de IA, observabilidad y UI de punta a punta.",
 		preview_url: "https://tizza.app",
-		image_url: icon("tizza.app"),
+		image_url: "/images/tizza-icon.png",
 		tags: [
 			"typescript",
 			"react",
@@ -77,7 +74,7 @@ export default [
 		description:
 			"Producto de cuidado de mascotas (petch.ai). Tiempo completo (sep 2023–ago 2024): interfaz móvil Ionic/React, Google Maps y funcionalidades sobre Express.js y MongoDB. Sprint freelance (mar 2025): mejoras de front y back sobre el mismo stack.",
 		preview_url: "https://petch.ai",
-		image_url: icon("petch.ai"),
+		image_url: "/images/logos/petch.png",
 		tags: ["react", "ionic", "express", "mongodb", "mobile"],
 		date: "2025-03-01",
 		period: "sep 2023 – ago 2024 · 1 año tiempo completo; mar 2025 · 1 mes freelance",
@@ -89,7 +86,7 @@ export default [
 		description:
 			"Procesador de datos en TypeScript para desempeño de proveedores dentro de Power BI: pedidos totales, entregas a tiempo, lead time promedio, tasa de defectos y score de riesgo. ChatGPT para resúmenes y texto a voz para escuchar el análisis en contextos ejecutivos y operativos.",
 		preview_url: "https://astralinsights.ai/",
-		image_url: icon("astralinsights.ai"),
+		image_url: "/images/logos/astral-insights.png",
 		tags: ["typescript", "power bi", "ia", "analytics"],
 		date: "2025-02-01",
 		period: "feb 2025 · 1 mes",
@@ -111,7 +108,6 @@ export default [
 		description:
 			"Frontend en Svelte para asistente de IA en tiempo real sobre políticas, procedimientos y productos: UI responsive, integración de auth y chat, componentes reutilizables, indicadores de escritura y sugerencias, navegación según autenticación.",
 		preview_url: "https://www.oriencoop.cl/",
-		image_url: icon("oriencoop.cl"),
 		tags: ["svelte", "ia", "api", "frontend"],
 		date: "2024-12-01",
 		period: "dic 2024 – ene 2025 · 2 meses",
@@ -182,7 +178,6 @@ export default [
 		description:
 			"Enrutamiento, maquetación e integración de una API en JavaScript para el sitio público del colegio.",
 		preview_url: "https://uedomingosavio.edu.ve/",
-		image_url: icon("uedomingosavio.edu.ve"),
 		tags: ["javascript", "html", "css"],
 		date: "2022-10-01",
 		period: "oct 2022 – dic 2022 · 3 meses",

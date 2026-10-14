@@ -18,6 +18,7 @@ export const SAME_AS = [
 	"https://www.linkedin.com/in/michaelliendo/",
 	"https://x.com/mykeliendo",
 	"https://twitter.com/mykeliendo",
+	"https://www.instagram.com/michaelliendo_/",
 ] as const;
 
 export const KNOWS_ABOUT = [
