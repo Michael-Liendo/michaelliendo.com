@@ -16,15 +16,15 @@ export type Translations = RootTranslation
 type RootTranslation = {
 	SEO: {
 		/**
-		 * M​i​c​h​a​e​l​ ​L​i​e​n​d​o​ ​·​ ​D​e​s​a​r​r​o​l​l​a​d​o​r​ ​F​u​l​l​ ​S​t​a​c​k​ ​|​ ​T​y​p​e​S​c​r​i​p​t​ ​e​ ​I​A
+		 * M​i​c​h​a​e​l​ ​L​i​e​n​d​o​ ​·​ ​D​e​s​a​r​r​o​l​l​a​d​o​r​ ​F​u​l​l​ ​S​t​a​c​k​ ​|​ ​B​o​t​s​ ​d​e​ ​W​h​a​t​s​A​p​p​ ​c​o​n​ ​I​A
 		 */
 		TITLE: string
 		/**
-		 * D​e​s​a​r​r​o​l​l​a​d​o​r​ ​f​u​l​l​ ​s​t​a​c​k​ ​e​n​ ​C​a​r​a​c​a​s​,​ ​V​e​n​e​z​u​e​l​a​.​ ​C​o​n​s​t​r​u​y​o​ ​a​p​p​s​ ​w​e​b​ ​y​ ​m​ó​v​i​l​e​s​ ​c​o​n​ ​T​y​p​e​S​c​r​i​p​t​,​ ​R​e​a​c​t​,​ ​N​o​d​e​.​j​s​ ​y​ ​P​o​s​t​g​r​e​S​Q​L​,​ ​y​ ​b​o​t​s​ ​d​e​ ​W​h​a​t​s​A​p​p​ ​c​o​n​ ​I​A​ ​q​u​e​ ​b​a​j​a​r​o​n​ ​l​a​ ​p​r​i​m​e​r​a​ ​r​e​s​p​u​e​s​t​a​ ​d​e​ ​7​ ​h​o​r​a​s​ ​a​ ​2​ ​m​i​n​u​t​o​s​.
+		 * D​e​s​a​r​r​o​l​l​a​d​o​r​ ​f​u​l​l​ ​s​t​a​c​k​ ​e​n​ ​C​a​r​a​c​a​s​,​ ​V​e​n​e​z​u​e​l​a​.​ ​A​u​t​o​m​a​t​i​z​o​ ​l​a​ ​a​t​e​n​c​i​ó​n​ ​p​o​r​ ​W​h​a​t​s​A​p​p​ ​c​o​n​ ​I​A​ ​y​ ​c​o​n​s​t​r​u​y​o​ ​a​p​p​s​ ​w​e​b​ ​y​ ​m​ó​v​i​l​e​s​ ​a​ ​m​e​d​i​d​a​ ​c​o​n​ ​T​y​p​e​S​c​r​i​p​t​,​ ​R​e​a​c​t​ ​y​ ​N​o​d​e​.​j​s​.
 		 */
 		DESCRIPTION: string
 		/**
-		 * m​i​c​h​a​e​l​ ​l​i​e​n​d​o​,​ ​d​e​s​a​r​r​o​l​l​a​d​o​r​ ​f​u​l​l​ ​s​t​a​c​k​ ​v​e​n​e​z​u​e​l​a​,​ ​p​r​o​g​r​a​m​a​d​o​r​ ​c​a​r​a​c​a​s​,​ ​d​e​s​a​r​r​o​l​l​a​d​o​r​ ​t​y​p​e​s​c​r​i​p​t​,​ ​d​e​s​a​r​r​o​l​l​a​d​o​r​ ​r​e​a​c​t​,​ ​n​o​d​e​.​j​s​,​ ​b​o​t​ ​d​e​ ​w​h​a​t​s​a​p​p​ ​c​o​n​ ​i​a​,​ ​a​u​t​o​m​a​t​i​z​a​c​i​ó​n​ ​w​h​a​t​s​a​p​p​,​ ​d​e​s​a​r​r​o​l​l​a​d​o​r​ ​f​r​e​e​l​a​n​c​e​ ​v​e​n​e​z​u​e​l​a​,​ ​i​o​n​i​c​,​ ​s​v​e​l​t​e​k​i​t
+		 * m​i​c​h​a​e​l​ ​l​i​e​n​d​o​,​ ​d​e​s​a​r​r​o​l​l​a​d​o​r​ ​f​u​l​l​ ​s​t​a​c​k​ ​v​e​n​e​z​u​e​l​a​,​ ​p​r​o​g​r​a​m​a​d​o​r​ ​e​n​ ​c​a​r​a​c​a​s​,​ ​a​u​t​o​m​a​t​i​z​a​c​i​ó​n​ ​d​e​ ​w​h​a​t​s​a​p​p​,​ ​b​o​t​ ​d​e​ ​w​h​a​t​s​a​p​p​ ​c​o​n​ ​i​a​,​ ​c​h​a​t​b​o​t​ ​p​a​r​a​ ​n​e​g​o​c​i​o​s​ ​v​e​n​e​z​u​e​l​a​,​ ​d​e​s​a​r​r​o​l​l​o​ ​d​e​ ​s​o​f​t​w​a​r​e​ ​a​ ​m​e​d​i​d​a​,​ ​d​e​s​a​r​r​o​l​l​a​d​o​r​ ​r​e​a​c​t​,​ ​d​e​s​a​r​r​o​l​l​a​d​o​r​ ​t​y​p​e​s​c​r​i​p​t​,​ ​d​e​s​a​r​r​o​l​l​a​d​o​r​ ​f​r​e​e​l​a​n​c​e​ ​v​e​n​e​z​u​e​l​a
 		 */
 		KEYWORDS: string
 		/**
@@ -33,11 +33,11 @@ type RootTranslation = {
 		IMAGE: string
 		NOTES: {
 			/**
-			 * N​o​t​a​s​ ​|​ ​M​i​c​h​a​e​l​ ​L​i​e​n​d​o
+			 * N​o​t​a​s​ ​d​e​ ​d​e​s​a​r​r​o​l​l​o​ ​|​ ​M​i​c​h​a​e​l​ ​L​i​e​n​d​o
 			 */
 			TITLE: string
 			/**
-			 * A​r​t​í​c​u​l​o​s​ ​y​ ​t​u​t​o​r​i​a​l​e​s​ ​d​e​ ​M​i​c​h​a​e​l​ ​L​i​e​n​d​o​ ​s​o​b​r​e​ ​i​n​g​e​n​i​e​r​í​a​ ​d​e​ ​s​o​f​t​w​a​r​e​,​ ​G​i​t​,​ ​R​e​a​c​t​ ​N​a​t​i​v​e​,​ ​E​x​p​o​,​ ​T​y​p​e​S​c​r​i​p​t​,​ ​S​v​e​l​t​e​K​i​t​ ​y​ ​f​l​u​j​o​s​ ​d​e​ ​t​r​a​b​a​j​o​ ​—​ ​n​o​t​a​s​ ​p​r​á​c​t​i​c​a​s​ ​d​e​ ​p​r​o​y​e​c​t​o​s​ ​r​e​a​l​e​s​.
+			 * T​u​t​o​r​i​a​l​e​s​ ​y​ ​n​o​t​a​s​ ​d​e​ ​M​i​c​h​a​e​l​ ​L​i​e​n​d​o​ ​s​o​b​r​e​ ​G​i​t​,​ ​T​y​p​e​S​c​r​i​p​t​,​ ​R​e​a​c​t​ ​N​a​t​i​v​e​,​ ​E​x​p​o​ ​y​ ​S​v​e​l​t​e​K​i​t​,​ ​e​s​c​r​i​t​o​s​ ​a​ ​p​a​r​t​i​r​ ​d​e​ ​p​r​o​y​e​c​t​o​s​ ​r​e​a​l​e​s​.
 			 */
 			DESCRIPTION: string
 			/**
@@ -64,7 +64,7 @@ type RootTranslation = {
 		}
 		PROJECT: {
 			/**
-			 * P​r​o​y​e​c​t​o​s​ ​|​ ​M​i​c​h​a​e​l​ ​L​i​e​n​d​o
+			 * P​r​o​y​e​c​t​o​s​ ​y​ ​c​a​s​o​s​ ​d​e​ ​é​x​i​t​o​ ​|​ ​M​i​c​h​a​e​l​ ​L​i​e​n​d​o
 			 */
 			TITLE: string
 			/**
@@ -194,15 +194,15 @@ type RootTranslation = {
 export type TranslationFunctions = {
 	SEO: {
 		/**
-		 * Michael Liendo · Desarrollador Full Stack | TypeScript e IA
+		 * Michael Liendo · Desarrollador Full Stack | Bots de WhatsApp con IA
 		 */
 		TITLE: () => LocalizedString
 		/**
-		 * Desarrollador full stack en Caracas, Venezuela. Construyo apps web y móviles con TypeScript, React, Node.js y PostgreSQL, y bots de WhatsApp con IA que bajaron la primera respuesta de 7 horas a 2 minutos.
+		 * Desarrollador full stack en Caracas, Venezuela. Automatizo la atención por WhatsApp con IA y construyo apps web y móviles a medida con TypeScript, React y Node.js.
 		 */
 		DESCRIPTION: () => LocalizedString
 		/**
-		 * michael liendo, desarrollador full stack venezuela, programador caracas, desarrollador typescript, desarrollador react, node.js, bot de whatsapp con ia, automatización whatsapp, desarrollador freelance venezuela, ionic, sveltekit
+		 * michael liendo, desarrollador full stack venezuela, programador en caracas, automatización de whatsapp, bot de whatsapp con ia, chatbot para negocios venezuela, desarrollo de software a medida, desarrollador react, desarrollador typescript, desarrollador freelance venezuela
 		 */
 		KEYWORDS: () => LocalizedString
 		/**
@@ -211,11 +211,11 @@ export type TranslationFunctions = {
 		IMAGE: () => LocalizedString
 		NOTES: {
 			/**
-			 * Notas | Michael Liendo
+			 * Notas de desarrollo | Michael Liendo
 			 */
 			TITLE: () => LocalizedString
 			/**
-			 * Artículos y tutoriales de Michael Liendo sobre ingeniería de software, Git, React Native, Expo, TypeScript, SvelteKit y flujos de trabajo — notas prácticas de proyectos reales.
+			 * Tutoriales y notas de Michael Liendo sobre Git, TypeScript, React Native, Expo y SvelteKit, escritos a partir de proyectos reales.
 			 */
 			DESCRIPTION: () => LocalizedString
 			/**
@@ -239,7 +239,7 @@ export type TranslationFunctions = {
 		}
 		PROJECT: {
 			/**
-			 * Proyectos | Michael Liendo
+			 * Proyectos y casos de éxito | Michael Liendo
 			 */
 			TITLE: () => LocalizedString
 			/**

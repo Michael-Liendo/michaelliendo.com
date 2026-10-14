@@ -2,16 +2,16 @@ import type { BaseTranslation } from "../i18n-types";
 
 const es = {
 	SEO: {
-		TITLE: "Michael Liendo · Desarrollador Full Stack | TypeScript e IA",
+		TITLE: "Michael Liendo · Desarrollador Full Stack | Bots de WhatsApp con IA",
 		DESCRIPTION:
-			"Desarrollador full stack en Caracas, Venezuela. Construyo apps web y móviles con TypeScript, React, Node.js y PostgreSQL, y bots de WhatsApp con IA que bajaron la primera respuesta de 7 horas a 2 minutos.",
+			"Desarrollador full stack en Caracas, Venezuela. Automatizo la atención por WhatsApp con IA y construyo apps web y móviles a medida con TypeScript, React y Node.js.",
 		KEYWORDS:
-			"michael liendo, desarrollador full stack venezuela, programador caracas, desarrollador typescript, desarrollador react, node.js, bot de whatsapp con ia, automatización whatsapp, desarrollador freelance venezuela, ionic, sveltekit",
+			"michael liendo, desarrollador full stack venezuela, programador en caracas, automatización de whatsapp, bot de whatsapp con ia, chatbot para negocios venezuela, desarrollo de software a medida, desarrollador react, desarrollador typescript, desarrollador freelance venezuela",
 		IMAGE: "https://michaelliendo.com/og/home-es.png",
 		NOTES: {
-			TITLE: "Notas | Michael Liendo",
+			TITLE: "Notas de desarrollo | Michael Liendo",
 			DESCRIPTION:
-				"Artículos y tutoriales de Michael Liendo sobre ingeniería de software, Git, React Native, Expo, TypeScript, SvelteKit y flujos de trabajo — notas prácticas de proyectos reales.",
+				"Tutoriales y notas de Michael Liendo sobre Git, TypeScript, React Native, Expo y SvelteKit, escritos a partir de proyectos reales.",
 			KEYWORDS:
 				"michael liendo, notas, aprendizajes, experiencias, svelte, typescript, desarrollo web, colaboración, resolución de problemas",
 		},
@@ -21,7 +21,7 @@ const es = {
 			KEYWORDS: "{keywords:string}",
 		},
 		PROJECT: {
-			TITLE: "Proyectos | Michael Liendo",
+			TITLE: "Proyectos y casos de éxito | Michael Liendo",
 			DESCRIPTION:
 				"Proyectos de Michael Liendo: bots de WhatsApp con IA para retail, una plataforma educativa con tutor de IA, ERPs en Next.js, apps móviles con Ionic y herramientas open source en Rust.",
 			KEYWORDS:

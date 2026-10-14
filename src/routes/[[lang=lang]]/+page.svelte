@@ -31,6 +31,20 @@
     }).format(new Date(date));
   }
 
+  // Services described on the page, exposed to search engines as offers.
+  const SERVICES = {
+    es: [
+      'Automatización de atención al cliente por WhatsApp con IA',
+      'Desarrollo de software a medida para negocios',
+      'Desarrollo de aplicaciones web y móviles',
+    ],
+    en: [
+      'AI customer service automation on WhatsApp',
+      'Custom software development for businesses',
+      'Web and mobile app development',
+    ],
+  } as const;
+
   const homeUrl = $derived(`${SITE_ORIGIN}${prefix}/`);
 
   const homeJsonLd = $derived({
@@ -65,6 +79,14 @@
           name: 'Engrana',
           url: 'https://engrana.ai',
         },
+        alumniOf: [
+          { '@type': 'EducationalOrganization', name: 'Platzi', url: 'https://platzi.com' },
+          { '@type': 'EducationalOrganization', name: 'freeCodeCamp', url: 'https://www.freecodecamp.org' },
+        ],
+        makesOffer: SERVICES[$locale].map((name) => ({
+          '@type': 'Offer',
+          itemOffered: { '@type': 'Service', name, areaServed: ['VE', 'Worldwide'] },
+        })),
       },
       {
         '@type': 'ProfilePage',
