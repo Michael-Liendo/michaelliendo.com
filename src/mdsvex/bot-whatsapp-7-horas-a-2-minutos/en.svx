@@ -1,0 +1,117 @@
+---
+title: "How we cut response time from 7 hours to 2 minutes with a WhatsApp bot"
+description: "A real case from a Caracas store that sells on WhatsApp: the bot we built, how first response went from 7 hours to 2 minutes, and how the support team went from about 10 people to 2 or 3."
+date: 2026-10-14
+icon: whatsapp
+tags: [whatsapp, automation, case-study, ai]
+published: true
+---
+
+From November 2025 to July 2026 I was Tech Lead at Vitrina Online / NQLN ([nqlnstore.com](https://nqlnstore.com)), a retail store in Caracas that sells almost everything through WhatsApp. There we built **Necesitas Bot**, an assistant that serves customers in the same chat where they were already buying.
+
+This article is for business owners who sell on WhatsApp and feel the chat is getting away from them. I'll cover the problem, what we built, the results we measured, and what I'd do the same (and differently) if I started today. At the end there's a short technical section for developers.
+
+## The problem: customers waiting more than 7 hours
+
+In Venezuela, a lot of people shop through WhatsApp. They write in, ask if a size or color is available, ask for the price in bolívares, send a screenshot of their Pago Móvil transfer, and wait for someone to confirm. For the store, each of those conversations is a possible sale.
+
+The problem was that a person handled all of it, message by message. When we looked at the support panel, the average time to the **first human reply was 7 hours and 16 minutes**. And it wasn't for lack of people: about **10 people were answering the chat**.
+
+Seven hours is a long time on WhatsApp. By then the customer has already written to another store, lost interest, or simply forgotten. On top of that, most questions were the same ones:
+
+- Do you have this product? In what size?
+- How much is it in bolívares?
+- I already paid, can you confirm?
+- Do you ship to my city? How much is it with MRW?
+
+All of these have an answer in some system: the inventory, the day's exchange rate, the bank, the shipping table. Whoever was answering had to look up each piece of data, go back to the chat and type it. Multiply that by hundreds of conversations and you get 7 hours.
+
+## What we built: Necesitas Bot
+
+The idea was not a "press 1 for sales" menu. We wanted customers to write the way they always did, and get a fast answer based on real data.
+
+Necesitas Bot does the following:
+
+**It understands how people actually write.** It reads text messages, listens to voice notes and looks at photos. If a customer sends a photo of a product and asks "do you have this one?", the bot understands it.
+
+**It checks real inventory.** It looks up stock in Shopify and Odoo, the systems where the store already kept its products. It doesn't make up availability: if something is out of stock, it says so.
+
+**It validates payments.** The customer sends the receipt, including Pago Móvil with Banesco, and the bot checks the payment. This was one of the tasks that took the most time from the team.
+
+**It handles currency and shipping.** It gives prices in the right currency, works out shipping (for example, with MRW), and builds the cart and the order inside the same conversation.
+
+**It hands the chat to a person when it isn't sure.** This was key. When the bot isn't confident in its answer, or the customer has an unusual case, it passes the conversation to someone on the team. The customer doesn't get stuck going in circles with a machine that doesn't understand them.
+
+**It works for several brands.** The company runs more than one brand, and each has its own tone and rules. The bot uses different instructions for each one, on the same foundation.
+
+<!-- CONFIRMAR: how many brands did the bot serve, and which ones can be named publicly? -->
+
+## The results
+
+These are the numbers we measured:
+
+| Metric | Before | After |
+| --- | --- | --- |
+| First response | 7 h 16 min (human, average) | ~2 minutes (automated) |
+| People answering chat | ~10 | 2 to 3 |
+
+First response went from more than 7 hours to about 2 minutes. A note on the comparison: before, we measured the first human reply; now, the first automated reply. But for the customer what matters is the same: someone answers with useful information almost right away.
+
+The support team went from about 10 people to 2 or 3. At a reference cost of US$300 per person per month, that's **more than US$2,100 per month** saved, not counting social charges or other costs tied to each position.
+
+The people who stayed don't do the repetitive work. They handle the cases the bot passes to them: complaints, special orders, customers who prefer to talk to someone. That's more useful work than copying prices from the inventory into the chat.
+
+<!-- CONFIRMAR: is there before/after sales or conversion data that can be published? If not, keep only response time and team size. -->
+
+## How we did it, without the code
+
+We didn't build it all at once. Roughly, the order was:
+
+<!-- CONFIRMAR: does the order below reflect what actually happened? -->
+
+1. **Understand the conversations.** Before writing code, we looked at what customers asked and what the team did to answer. That gave us the list of repetitive tasks: stock, price, payment, shipping.
+2. **Connect the systems that already existed.** The store didn't change its inventory or its channel. The bot plugged into what they already used: WhatsApp Business, Shopify, Odoo and the bank.
+3. **Give the bot a way out.** From the start, the bot knew how to hand the conversation to a person. That let us launch earlier, because a mistake didn't turn into a lost customer.
+4. **A panel for the team.** We built a web panel where the team sees conversations, picks up the ones the bot hands over, and reviews orders.
+
+<!-- CONFIRMAR: dates or duration of each phase (when the first version shipped, when results were measured). -->
+
+## What I'd do again
+
+**Measure before building.** Having the 7 h 16 min written down from the start is what let us show with numbers that the bot worked. If you're going to automate your WhatsApp, first measure how long you take to reply today.
+
+**Connect to the real systems.** A bot that replies "let me check and get back to you" isn't worth much. The value is that it actually checks stock, price and payment, right then.
+
+**Let the bot say "I don't know".** Handing the conversation to a person when in doubt made the team trust the bot and kept customers from getting frustrated.
+
+**Accept voice notes and photos.** In Venezuela many people prefer to send an audio or a screenshot instead of typing. If the bot only understood text, a good share of messages would still end up with a person.
+
+**Respect how the store works.** We didn't ask the team or the customers to switch tools. The bot fit into the flow that already existed.
+
+## For developers: the stack
+
+If you're a developer and curious how it's put together:
+
+- **TypeScript** across the whole project.
+- **Node.js with Fastify** for the backend: it receives WhatsApp webhooks and orchestrates calls to the models and external systems.
+- **PostgreSQL** for conversations, carts, orders and bot state.
+- **React 19** for the team's dashboard.
+- **Zod** for schemas, shared end to end: the same schema validates the model's output, the API and the dashboard forms. This prevented a lot of bugs when passing data between the AI model and the rest of the system.
+- **Callbell** as the WhatsApp Business provider.
+- **Shopify and Odoo** for inventory and orders.
+- **OpenAI and Gemini** to understand text, audio and images.
+
+A few decisions I think matter:
+
+- **Structured outputs.** The model doesn't reply with free text that then has to be interpreted; it returns data with a fixed shape (validated with Zod) that the backend turns into actions: check stock, create a cart, validate a payment or hand off to a human.
+- **Per-brand instructions.** Each brand has its own prompt on top of the same logic, so adding a brand doesn't mean copying the bot.
+
+- **Hand-off to a human is just another action.** It isn't an error case; it's a normal exit from the flow that the model can choose.
+
+<!-- CONFIRMAR: is this an accurate description of the structured outputs and of hand-off as a model action? -->
+
+<!-- CONFIRMAR: which model is used for which task (OpenAI vs Gemini), and can it be mentioned? -->
+
+## Do you sell on WhatsApp?
+
+If your business sells on WhatsApp and your customers wait hours for a reply, we can look at whether a bot like this makes sense for you. Message me on [WhatsApp](https://wa.me/584149409930) and tell me how you handle support today.
