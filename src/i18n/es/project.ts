@@ -29,7 +29,7 @@ export default [
 		name: "La Victoria — Reports",
 		role: "Tech lead · Freelance",
 		description:
-			"Asistente de WhatsApp con IA que verifica pagos y lleva el flujo de caja en tiempo real: la operación pasó de 9 personas a 3, US$1.200 menos en nómina cada mes con unos US$150 al mes de IA. Lideré a 2 desarrolladores hasta la entrega.",
+			"Asistente de WhatsApp con IA que verifica pagos y lleva el flujo de caja en tiempo real: la operación pasó de 9 personas a 3, US$1.800 menos en nómina cada mes con unos US$150 al mes de IA. Lideré a 2 desarrolladores hasta la entrega.",
 		tags: ["WhatsApp", "IA", "Pagos", "Automatización"],
 		date: "2025-06-01",
 		period: "jun 2025 – ago 2025 · 3 meses",
