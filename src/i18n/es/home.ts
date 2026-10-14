@@ -6,7 +6,7 @@ export default {
 		availability: "Disponible para proyectos freelance · Caracas, Venezuela",
 		headlineStart: "Automatizo la atención por WhatsApp y construyo ",
 		headlineHighlight: "el software que tu negocio necesita.",
-		lead: "Soy Michael, desarrollador full stack. Bots con IA, paneles internos y apps web y móviles para tiendas, colegios y equipos pequeños.",
+		lead: "Soy Michael. Ayudo a tiendas y equipos pequeños a atender más rápido y a dejar de hacer a mano lo que un sistema puede hacer por ellos: bots de WhatsApp con IA, paneles a medida y apps web y móviles conectadas a lo que ya usan.",
 		ctaPrimary: "Escríbeme por WhatsApp",
 		ctaSecondary: "Ver casos",
 		trustedLabel: "Han confiado en mi trabajo",
@@ -27,7 +27,7 @@ export default {
 				tag: "NQLN · Retail",
 				logo: "/images/nqln-icon.png",
 				title: "De 7 horas a 2 minutos para responder a cada cliente.",
-				body: "Un bot de WhatsApp que entiende texto, notas de voz y fotos, consulta el inventario en Shopify y Odoo y valida pagos. Si duda, le pasa la conversación a una persona.",
+				body: "Un bot de WhatsApp que entiende texto, notas de voz y fotos, consulta el inventario en Shopify y Odoo y valida pagos. Si duda, le pasa la conversación a una persona. Antes, en los días de más movimiento, algunos clientes esperaban hasta una semana.",
 				metrics: [
 					{ value: "2 min", label: "primera respuesta" },
 					{ value: "10→3", label: "personas en el chat" },
