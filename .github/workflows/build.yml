@@ -23,11 +23,14 @@ jobs:
       - name: Install Dependencies
         run: npm ci
 
+      - name: Run Biome Lint
+        run: npm run lint
+
       - name: Run Check
         run: npm run check
 
   build:
-    name: Build 
+    name: Build
     runs-on: 'ubuntu-latest'
     steps:
       - name: Checkout Source

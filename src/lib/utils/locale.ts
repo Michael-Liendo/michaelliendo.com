@@ -32,8 +32,9 @@ export const replaceLocaleInUrl = (
 		}
 	}
 
+	// Pages are prerendered, so query strings are not part of the URL we can read.
 	if (!full) {
-		return `${new_pathname}${url.search}`;
+		return new_pathname;
 	}
 
 	const newUrl = new URL(url.toString());

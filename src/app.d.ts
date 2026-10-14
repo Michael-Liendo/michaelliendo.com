@@ -17,5 +17,5 @@ declare global {
 	}
 }
 
-// biome-ignore lint/complexity/noUselessEmptyExport: <explanation>
+// biome-ignore lint/complexity/noUselessEmptyExport: keeps this file a module so `declare global` applies
 export {};

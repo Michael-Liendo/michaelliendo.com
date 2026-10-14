@@ -34,25 +34,6 @@ const es = {
 			NOTES: "Notas",
 			PROJECTS: "Proyectos",
 		},
-		FOOTER: {
-			COPYRIGHT:
-				"Hecho con ❤️ por Michael Liendo © {startYear:number} - {currentYear:number}",
-		},
-	},
-	HOMEPAGE: {
-		HI: "Hola soy {name:string} {surname:string},",
-		HERO_HEADLINE: "Soy Michael Liendo, desarrollador de software",
-		HERO_LEAD:
-			"Enfocado en React, TypeScript, apps móviles, backends y web. Me gustan los retos difíciles, la colaboración clara y entregar software mantenible.",
-		LOCATION: "Remoto",
-		TIMEZONE: "UTC−5",
-		STACK_TITLE: "Stack principal",
-		ABOUT:
-			"Soy un <strong>Desarrollador de Software</strong> enfocado en React.js y TypeScript apasionado por el <strong>Desarrollo de Aplicaciones Móviles, Servidores, AI, Automatizaciones y Páginas Web</strong>. Disfruto trabajar en proyectos desafiantes, valoro la colaboración y la resolución de problemas.",
-		CTA_LABEL:
-			"¿Te interesa trabajar conmigo o colaborar en un proyecto? hola@michaelliendo.com",
-		CTA_BUTTON: "Contácteme por email",
-		LATEST_NOTES: "Últimas notas",
 	},
 	NOTES: {
 		NOTES: "Notas",

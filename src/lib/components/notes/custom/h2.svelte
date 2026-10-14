@@ -1,7 +1,6 @@
 <script lang="ts">
 const { children } = $props();
 
-// biome-ignore lint/style/useConst: svelte doesnt support const
 let data = $state<HTMLHeadingElement | null>(null);
 let href = $state("");
 let id = $state("");

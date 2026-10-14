@@ -1,13 +1,5 @@
 @reference "../../../../app.css";
 
-.note-container p code,
-.note-container ul li code {
-	@apply rounded-md border border-border bg-surface-sunken px-1.5 py-0.5 font-mono text-[0.9em];
-
-	color: var(--color-accent);
-	padding-block: 0.15rem;
-}
-
 .note-container h2 code {
 	@apply rounded-md border border-border bg-surface-sunken px-1.5 py-0.5 font-mono text-[0.85em];
 
@@ -37,6 +29,15 @@
 
 .note-container pre code {
 	@apply text-base;
+}
+
+/* Higher specificity than the rules above, so it comes after them (noDescendingSpecificity). */
+.note-container p code,
+.note-container ul li code {
+	@apply rounded-md border border-border bg-surface-sunken px-1.5 py-0.5 font-mono text-[0.9em];
+
+	color: var(--color-accent);
+	padding-block: 0.15rem;
 }
 
 .note-container .note-quote-content a {

@@ -41,7 +41,7 @@ const links = $derived([
     aria-current={currentUrl === PublicRoutesEnum.Home ? 'page' : undefined}
   >
     <img
-      src="/images/michael-liendo.jpg"
+      src="/images/michael-liendo.webp"
       alt=""
       width="34"
       height="34"

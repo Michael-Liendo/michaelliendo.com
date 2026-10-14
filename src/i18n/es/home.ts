@@ -62,7 +62,7 @@ export default {
 				],
 				link: { href: "https://tizza.app", label: "tizza.app" },
 				image: {
-					src: "/images/tizza.jpg",
+					src: "/images/tizza.webp",
 					alt: "Pantalla de Tizza: un estudiante resolviendo un ejercicio con el tutor de IA",
 					width: 1470,
 					height: 786,

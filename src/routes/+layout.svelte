@@ -5,6 +5,21 @@ import Header from "$lib/components/header.svelte";
 import { cn } from "$lib";
 import { removeLocaleFromPath } from "$lib/utils/locale";
 import { PublicRoutesEnum } from "$lib/utils/routes";
+// Self-hosted fonts (latin + latin-ext covers es/en).
+import "@fontsource/inter-tight/latin-400.css";
+import "@fontsource/inter-tight/latin-ext-400.css";
+import "@fontsource/inter-tight/latin-500.css";
+import "@fontsource/inter-tight/latin-ext-500.css";
+import "@fontsource/inter-tight/latin-600.css";
+import "@fontsource/inter-tight/latin-ext-600.css";
+import "@fontsource/inter-tight/latin-700.css";
+import "@fontsource/inter-tight/latin-ext-700.css";
+import "@fontsource/inter-tight/latin-400-italic.css";
+import "@fontsource/inter-tight/latin-ext-400-italic.css";
+import "@fontsource/jetbrains-mono/latin-400.css";
+import "@fontsource/jetbrains-mono/latin-ext-400.css";
+import "@fontsource/jetbrains-mono/latin-500.css";
+import "@fontsource/jetbrains-mono/latin-ext-500.css";
 import "../app.css";
 const { children } = $props();
 
@@ -16,12 +31,6 @@ const wide = $derived(
 
 <svelte:head>
   <meta name="theme-color" content="#FFFFFF" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap"
-    rel="stylesheet"
-  />
 
   <meta name="author" content="Michael Liendo" />
   <meta name="publisher" content="Michael Liendo" />

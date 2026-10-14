@@ -1,38 +1,26 @@
-# sv
+# michaelliendo.com
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+Personal portfolio and notes of Michael Liendo. Built with SvelteKit 2, Svelte 5, Tailwind CSS v4, mdsvex (notes in `src/mdsvex`) and typesafe-i18n (Spanish at `/`, English at `/en`).
 
-## Creating a project
+## Develop
 
-If you're seeing this, you've probably already done this step. Congrats!
-
-```bash
-# create a new project in the current directory
-npx sv create
-
-# create a new project in my-app
-npx sv create my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+Requires the Node version in `.nvmrc`.
 
 ```bash
+npm install
 npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
 ```
 
-## Building
-
-To create a production version of your app:
+## Check and build
 
 ```bash
-npm run build
+npm run lint    # Biome
+npm run check   # svelte-check
+npm run build   # Cloudflare build (pages are prerendered)
 ```
 
-You can preview the production build with `npm run preview`.
+After editing translations in `src/i18n/{es,en}`, regenerate the types with `npx typesafe-i18n --no-watch`.
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+## Deploy
+
+Cloudflare builds and deploys automatically from `main` through the dashboard Git integration. Security and cache headers live in `_headers` (the Cloudflare adapter copies it into the build).
