@@ -76,7 +76,7 @@ export default {
 			{
 				name: "La Victoria",
 				description:
-					"WhatsApp bot and cash-flow dashboard with bank reconciliation. Operations went from 9 people to 2.",
+					"WhatsApp bot and cash-flow dashboard with bank reconciliation. Operations went from 9 people to 3: about US$1,200 less in payroll a month.",
 				meta: "Tech lead · 2025",
 			},
 			{
