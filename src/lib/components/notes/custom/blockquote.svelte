@@ -3,7 +3,7 @@ const { children } = $props();
 </script>
 
 <blockquote
-  class="p-2 text-black bg-yellow-100 border-l-yellow-600 border-l-[4px] rounded-tr-md rounded-br-md my-4"
+  class="my-6 rounded-r-xl border-l-[3px] border-accent bg-surface-sunken px-5 py-4 text-ink not-italic [&_p]:m-0 [&_p]:text-ink"
 >
   {@render children()}
 </blockquote>
