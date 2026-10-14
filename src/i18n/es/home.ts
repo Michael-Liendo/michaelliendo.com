@@ -6,7 +6,7 @@ export default {
 		availability: "Disponible para proyectos freelance · Caracas, Venezuela",
 		headlineStart: "Automatizo la atención por WhatsApp y construyo ",
 		headlineHighlight: "el software que tu negocio necesita.",
-		lead: "Soy Michael. Ayudo a tiendas y equipos pequeños a atender más rápido y a dejar de hacer a mano lo que un sistema puede hacer por ellos: bots de WhatsApp con IA, paneles a medida y apps web y móviles conectadas a lo que ya usan.",
+		lead: "Soy Michael. Ayudo a empresas pequeñas, medianas y grandes a atender más rápido y a dejar de hacer a mano lo que un sistema puede hacer: bots de WhatsApp con IA, paneles a medida y apps web y móviles conectadas a lo que ya usan.",
 		ctaPrimary: "Escríbeme por WhatsApp",
 		ctaSecondary: "Ver casos",
 		trustedLabel: "Han confiado en mi trabajo",
@@ -73,7 +73,7 @@ export default {
 			{
 				name: "La Victoria",
 				description:
-					"Bot de WhatsApp y panel de caja con conciliación bancaria. Operaciones pasó de 9 personas a 3: US$1.200 menos en nómina al mes, con unos US$150 al mes de IA.",
+					"Bot de WhatsApp y panel de caja con conciliación bancaria. Operaciones pasó de 9 personas a 3: US$1.800 menos en nómina al mes, con unos US$150 al mes de IA.",
 				meta: "Tech lead · 2025",
 			},
 			{

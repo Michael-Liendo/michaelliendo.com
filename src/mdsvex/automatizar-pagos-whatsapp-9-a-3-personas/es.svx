@@ -1,0 +1,103 @@
+---
+title: "De 9 personas a 3: cómo automatizamos pagos y conciliación por WhatsApp"
+description: "Caso real de una empresa venezolana que recibía pedidos y pagos por WhatsApp: hoy mueve 2,6 veces más dinero y gana 75% más, con 3 personas en lugar de 9 y unos US$150 al mes de IA."
+date: 2026-10-14
+icon: whatsapp
+tags: [whatsapp, automatizacion, pagos, caso-de-estudio, ia]
+published: true
+---
+
+Este es el caso de una empresa venezolana que vende y cobra casi todo por WhatsApp. Por privacidad no doy su nombre ni su rubro, pero el problema seguro te suena si tu negocio recibe muchos pagos por transferencia y Pago Móvil.
+
+En 2025 lideré el equipo que construyó su sistema: un asistente de WhatsApp con IA conectado a un panel de caja, validación de pagos y conciliación bancaria. Aquí cuento cuál era el problema, cómo funciona el sistema sin entrar en código y qué cambió en los números.
+
+## El problema: nueve personas leyendo capturas
+
+Cada día llegaban por WhatsApp miles de mensajes con pedidos y capturas de transferencias. Detrás había **9 personas**, con un sueldo de unos US$300 al mes cada una, haciendo el mismo trabajo a mano:
+
+- Leer cada mensaje y cada captura de pago.
+- Entrar al banco y buscar si la transferencia de verdad había llegado.
+- Anotar el pedido y el saldo de cada cliente en hojas de cálculo.
+- Al final del día, cuadrar la caja y rezar para que todo coincidiera.
+
+Era lento, caro y frágil. Una referencia mal copiada, un pago registrado dos veces o una captura repetida se convertían en dinero perdido o en horas buscando el error. Y el negocio no podía crecer sin contratar más gente.
+
+## Lo que construimos
+
+### Un asistente de WhatsApp que lee los pagos
+
+El cliente sigue haciendo lo mismo: escribe su pedido y manda la captura de la transferencia. La diferencia es que ahora lo lee un asistente con IA:
+
+1. Reconoce al cliente y busca su saldo actual.
+2. Lee la captura y saca la referencia, el monto, la fecha y el banco.
+3. Revisa que esa transferencia no se haya usado antes. El sistema rechaza cualquier pago repetido, aunque llegue por otro chat.
+4. Registra el pedido y el pago, y le confirma al cliente en segundos.
+5. Si algo no cuadra, no adivina: lo manda a un grupo interno para que una persona lo revise.
+
+El asistente también atiende a los clientes uno a uno: responde las preguntas frecuentes, muestra sus pedidos, los modifica dentro de los límites permitidos y pasa la conversación a una persona cuando hace falta.
+
+### Conciliación bancaria automática
+
+Una vez al día, el equipo sube el estado de cuenta del banco, desde el panel o mandándolo por el mismo chat. El sistema cruza cada movimiento con los pagos pendientes por referencia y monto exacto. Lo que coincide queda conciliado solo; lo que no, aparece marcado en el panel para revisarlo.
+
+Funciona con los principales bancos del país y con Pago Móvil.
+
+### Un panel de caja para el equipo
+
+El panel reemplazó las hojas de cálculo:
+
+- Saldos de cada cliente con su historial completo.
+- Pagos, gastos, devoluciones y transferencias entre cuentas.
+- Una jornada diaria con saldo inicial, cierre automático y reporte de caja.
+- Reportes con gráficos y control de lo que cuesta la IA cada mes.
+- Tres roles (administrador, supervisor y operador), para que cada quien vea solo lo que le toca.
+
+### Trabajo en segundo plano
+
+Unas veinte tareas automáticas hacen lo que antes alguien tenía que recordar: calcular saldos, revisar cada hora que todo cuadre, cerrar el día, mandar el resumen de la noche y recordar que falta subir el estado de cuenta.
+
+## Los resultados
+
+Para comparar usé el **primer mes con el sistema** (octubre de 2025) y **un mes de octubre de 2026**, ya con la operación en marcha. Los montos están en dólares a la tasa BCV de cada día y redondeados.
+
+| Métrica | Antes | Ahora | Cambio |
+| --- | --- | --- | --- |
+| Dinero que mueve al mes | ~US$27.000 | ~US$70.000 | ×2,6 |
+| Operaciones al mes | ~45.000 | ~72.000 | +60% |
+| Ganancia al mes | ~US$10.500 | ~US$18.400 | +75% |
+| Personas en operaciones | 9 | 3 | −6 |
+
+Y lo que cuesta mantenerlo:
+
+| Costo | Antes | Ahora |
+| --- | --- | --- |
+| Nómina de operaciones | ~US$2.700 al mes | ~US$900 al mes |
+| IA | — | ~US$150 al mes |
+| Servidor | — | un servidor propio |
+
+En resumen: **procesa mucho más volumen con un tercio del equipo**, ahorra unos **US$1.800 al mes en nómina** y gana más dinero que antes. El crecimiento es real en dólares, no un efecto de la devaluación del bolívar.
+
+Las tres personas que quedaron no copian referencias: revisan los casos que el sistema marca, atienden a los clientes que lo necesitan y toman decisiones.
+
+## Lo que aprendí
+
+**El dinero no se le deja al modelo.** La IA lee la captura, pero la regla que decide si un pago es válido está en el código: referencia, monto, fecha y que no se haya usado antes. Si la IA se equivoca, el pago no pasa.
+
+**Los duplicados se cortan en dos lugares.** El sistema revisa que un pago no esté repetido, y la base de datos tampoco acepta registrarlo dos veces. Con miles de capturas al día, una sola protección no alcanza.
+
+**Lo importante es que nunca se caiga.** Cada número de WhatsApp tiene uno de respaldo que toma el control si el principal se desconecta, y los mensajes que llegan mientras tanto no se pierden.
+
+**Medir lo que cuesta la IA.** El panel muestra cuánto se gasta en IA cada mes. Saber que son unos US$150 frente a una nómina de miles hizo fácil decidir.
+
+## Para desarrolladores: el stack
+
+- **TypeScript** en todo el proyecto: servidor, panel y código compartido.
+- **Node.js con Fastify** y **PostgreSQL**.
+- **React 19**, Vite, Tailwind y shadcn/ui para el panel.
+- **IA a través del AI SDK de Vercel**, con varios proveedores (entre ellos ChatGPT) y cambio automático si uno falla.
+- **WhatsApp** en grupos y en la API oficial de WhatsApp Business para la atención uno a uno.
+- Más de un centenar de pruebas automáticas en el servidor e integración continua.
+
+## ¿Tu equipo pasa el día validando pagos?
+
+Si en tu negocio hay personas leyendo capturas, buscando transferencias en el banco o cuadrando la caja a mano, podemos ver cuánto de eso se puede automatizar. Escríbeme por [WhatsApp](https://wa.me/584149409930) y cuéntame cómo lo hacen hoy.

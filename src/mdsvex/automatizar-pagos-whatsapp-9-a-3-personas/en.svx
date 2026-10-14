@@ -1,0 +1,103 @@
+---
+title: "From 9 people to 3: how we automated payments and reconciliation over WhatsApp"
+description: "A real case from a Venezuelan company that took orders and payments over WhatsApp: it now moves 2.6 times more money and earns 75% more, with 3 people instead of 9 and about US$150 a month in AI."
+date: 2026-10-14
+icon: whatsapp
+tags: [whatsapp, automation, payments, case-study, ai]
+published: true
+---
+
+This is the story of a Venezuelan company that sells and collects almost everything over WhatsApp. For privacy I won't name it or its industry, but the problem will sound familiar if your business receives a lot of bank transfers and mobile payments.
+
+In 2025 I led the team that built its system: an AI WhatsApp assistant connected to a cash dashboard, payment validation and bank reconciliation. Here I explain what the problem was, how the system works without going into code, and what changed in the numbers.
+
+## The problem: nine people reading screenshots
+
+Every day, thousands of WhatsApp messages arrived with orders and screenshots of transfers. Behind them were **9 people**, each paid about US$300 a month, doing the same work by hand:
+
+- Reading every message and every payment screenshot.
+- Logging into the bank to check whether the transfer had really arrived.
+- Writing down each order and each customer's balance in spreadsheets.
+- At the end of the day, balancing the cash and hoping everything matched.
+
+It was slow, expensive and fragile. A mistyped reference, a payment recorded twice or a reused screenshot turned into lost money or hours spent hunting for the error. And the business couldn't grow without hiring more people.
+
+## What we built
+
+### A WhatsApp assistant that reads payments
+
+The customer still does the same thing: writes the order and sends the transfer screenshot. The difference is that an AI assistant now reads it:
+
+1. It recognizes the customer and looks up their current balance.
+2. It reads the screenshot and extracts the reference, amount, date and bank.
+3. It checks that the transfer hasn't been used before. The system rejects any repeated payment, even if it arrives through another chat.
+4. It records the order and the payment, and confirms to the customer within seconds.
+5. If something doesn't add up, it doesn't guess: it sends the case to an internal group for a person to review.
+
+The assistant also serves customers one to one: it answers frequent questions, shows their orders, changes them within allowed limits and hands the conversation to a person when needed.
+
+### Automatic bank reconciliation
+
+Once a day, the team uploads the bank statement, from the dashboard or by sending it through the same chat. The system matches each bank movement to pending payments by reference and exact amount. What matches is reconciled automatically; what doesn't is flagged in the dashboard for review.
+
+It works with the country's main banks and with mobile payments.
+
+### A cash dashboard for the team
+
+The dashboard replaced the spreadsheets:
+
+- Each customer's balance with its full history.
+- Payments, expenses, refunds and transfers between accounts.
+- A daily business day with an opening balance, an automatic close and a cash report.
+- Reports with charts and a view of what the AI costs each month.
+- Three roles (administrator, supervisor and operator), so everyone sees only what they need.
+
+### Work in the background
+
+About twenty scheduled tasks do what someone used to have to remember: calculate balances, check every hour that everything adds up, close the day, send the nightly summary and remind the team to upload the bank statement.
+
+## The results
+
+To compare, I used the **first month with the system** (October 2025) and **a month in October 2026**, with the operation running. Amounts are in US dollars at each day's official BCV rate, rounded.
+
+| Metric | Before | Now | Change |
+| --- | --- | --- | --- |
+| Money moved per month | ~US$27,000 | ~US$70,000 | ×2.6 |
+| Operations per month | ~45,000 | ~72,000 | +60% |
+| Profit per month | ~US$10,500 | ~US$18,400 | +75% |
+| People in operations | 9 | 3 | −6 |
+
+And what it costs to run:
+
+| Cost | Before | Now |
+| --- | --- | --- |
+| Operations payroll | ~US$2,700 a month | ~US$900 a month |
+| AI | — | ~US$150 a month |
+| Server | — | one server of its own |
+
+In short: **it processes far more volume with a third of the team**, saves about **US$1,800 a month in payroll** and earns more money than before. The growth is real in dollars, not an effect of the bolívar's devaluation.
+
+The three people who stayed don't copy references anymore: they review the cases the system flags, help customers who need it and make decisions.
+
+## What I learned
+
+**Money isn't left to the model.** The AI reads the screenshot, but the rule that decides whether a payment is valid lives in the code: reference, amount, date and that it hasn't been used before. If the AI gets it wrong, the payment doesn't go through.
+
+**Duplicates are stopped in two places.** The system checks that a payment isn't repeated, and the database refuses to record it twice as well. With thousands of screenshots a day, one safeguard isn't enough.
+
+**What matters is that it never goes down.** Each WhatsApp number has a backup that takes over if the main one disconnects, and messages that arrive in the meantime aren't lost.
+
+**Measure what the AI costs.** The dashboard shows how much is spent on AI each month. Knowing it's about US$150 against a payroll in the thousands made the decision easy.
+
+## For developers: the stack
+
+- **TypeScript** across the project: server, dashboard and shared code.
+- **Node.js with Fastify** and **PostgreSQL**.
+- **React 19**, Vite, Tailwind and shadcn/ui for the dashboard.
+- **AI through the Vercel AI SDK**, with several providers (ChatGPT among them) and automatic fallback if one fails.
+- **WhatsApp** in groups, plus the official WhatsApp Business API for one-to-one support.
+- More than a hundred automated tests on the server and continuous integration.
+
+## Does your team spend the day validating payments?
+
+If people in your business are reading screenshots, looking up transfers in the bank or balancing the cash by hand, we can look at how much of that can be automated. Message me on [WhatsApp](https://wa.me/584149409930) and tell me how you do it today.

@@ -6,7 +6,7 @@ export default {
 		availability: "Available for freelance work · Caracas, Venezuela",
 		headlineStart: "I automate customer service on WhatsApp and build ",
 		headlineHighlight: "the software your business needs.",
-		lead: "I'm Michael. I help shops and small teams reply faster and stop doing by hand what a system can do for them: AI WhatsApp bots, custom dashboards, and web and mobile apps connected to the tools they already use.",
+		lead: "I'm Michael. I help small, mid-sized and large companies reply faster and stop doing by hand what a system can do: AI WhatsApp bots, custom dashboards, and web and mobile apps connected to the tools they already use.",
 		ctaPrimary: "Message me on WhatsApp",
 		ctaSecondary: "See case studies",
 		trustedLabel: "Trusted by",
@@ -76,7 +76,7 @@ export default {
 			{
 				name: "La Victoria",
 				description:
-					"WhatsApp bot and cash-flow dashboard with bank reconciliation. Operations went from 9 people to 3: US$1,200 less in payroll a month, for about US$150 a month in AI.",
+					"WhatsApp bot and cash-flow dashboard with bank reconciliation. Operations went from 9 people to 3: US$1,800 less in payroll a month, for about US$150 a month in AI.",
 				meta: "Tech lead · 2025",
 			},
 			{
