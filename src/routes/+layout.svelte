@@ -8,18 +8,18 @@ import { PublicRoutesEnum } from "$lib/utils/routes";
 import "../app.css";
 const { children } = $props();
 
-// Reading pages use a narrow editorial column; the projects catalog needs more room.
+// Notes are read in a narrow column; home and projects use the full width.
 const wide = $derived(
-	removeLocaleFromPath(page.url.pathname) === PublicRoutesEnum.Projects,
+	!removeLocaleFromPath(page.url.pathname).startsWith(PublicRoutesEnum.Notes),
 );
 </script>
 
 <svelte:head>
-  <meta name="theme-color" content="#FBFAF7" />
+  <meta name="theme-color" content="#FFFFFF" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
   <link
-    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Schibsted+Grotesk:wght@400;500;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap"
     rel="stylesheet"
   />
 
@@ -44,11 +44,11 @@ const wide = $derived(
   >Skip to content</a
 >
 
-<div class="flex min-h-screen flex-col bg-surface text-[17px] leading-[1.65] text-ink">
+<div class="flex min-h-screen flex-col bg-surface text-[17px] leading-[1.6] text-ink">
   <div
     class={cn(
       'mx-auto w-full flex-1 px-6',
-      wide ? 'max-w-5xl' : 'max-w-[760px]',
+      wide ? 'max-w-[1080px]' : 'max-w-[760px]',
     )}
   >
     <Header />

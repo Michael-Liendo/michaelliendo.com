@@ -46,7 +46,7 @@ const projectsJsonLd = $derived({
 	jsonLd={projectsJsonLd}
 />
 
-<h1 class="mt-12 font-serif text-4xl font-normal tracking-tight text-ink sm:text-5xl">
+<h1 class="mt-12 text-4xl font-semibold tracking-[-0.04em] text-ink sm:text-5xl">
   {$LL.PROJECTS.PROJECTS()}
 </h1>
 
