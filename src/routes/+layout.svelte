@@ -8,11 +8,9 @@ import { PublicRoutesEnum } from "$lib/utils/routes";
 import "../app.css";
 const { children } = $props();
 
-// Reading pages use a narrow editorial column; catalog pages need more room.
+// Reading pages use a narrow editorial column; the projects catalog needs more room.
 const wide = $derived(
-	[PublicRoutesEnum.Projects, PublicRoutesEnum.Automations].includes(
-		removeLocaleFromPath(page.url.pathname) as PublicRoutesEnum,
-	),
+	removeLocaleFromPath(page.url.pathname) === PublicRoutesEnum.Projects,
 );
 </script>
 

@@ -77,7 +77,6 @@ async function generateEntries(): Promise<SitemapEntry[]> {
 	const both: ("es" | "en")[] = ["es", "en"];
 	const entries: SitemapEntry[] = [
 		{ path: "/", priority: "1.0", changefreq: "monthly", lastmod: PAGES_UPDATED, locales: both },
-		{ path: "/automations", priority: "0.9", changefreq: "monthly", lastmod: PAGES_UPDATED, locales: both },
 		{ path: "/projects", priority: "0.8", changefreq: "monthly", lastmod: PAGES_UPDATED, locales: both },
 		{ path: "/notes", priority: "0.7", changefreq: "monthly", lastmod: PAGES_UPDATED, locales: both },
 	];

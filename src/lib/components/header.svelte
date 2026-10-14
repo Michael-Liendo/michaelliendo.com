@@ -16,7 +16,6 @@ const otherLocaleHref = $derived(replaceLocaleInUrl(page.url, otherLocale));
 const links = $derived([
 	{ href: PublicRoutesEnum.Projects, label: $LL.LAYOUT.NAV.PROJECTS() },
 	{ href: PublicRoutesEnum.Notes, label: $LL.LAYOUT.NAV.NOTES() },
-	{ href: PublicRoutesEnum.Automations, label: $LL.LAYOUT.NAV.AUTOMATIONS() },
 ]);
 </script>
 
