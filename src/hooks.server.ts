@@ -8,6 +8,13 @@ import { initAcceptLanguageHeaderDetector } from "typesafe-i18n/detectors";
 loadAllLocales();
 const L = i18n();
 
+/** Old note slug → current slug. Both languages share the slug. */
+const MOVED_NOTES: Record<string, string> = {
+	"esm-cjs-librery": "esm-vs-cjs-typescript-monorepo",
+	"automatizar-pagos-whatsapp-9-a-3-personas":
+		"automatizar-pagos-whatsapp-12-a-3-personas",
+};
+
 export const handle: Handle = async ({ event, resolve }) => {
 	// Avoid duplicate Spanish URLs: /es/* and /* serving same content.
 	if (event.url.pathname === "/es" || event.url.pathname.startsWith("/es/")) {
@@ -25,11 +32,10 @@ export const handle: Handle = async ({ event, resolve }) => {
 	}
 
 	// Notes moved to a new slug.
-	const movedNote = event.url.pathname.match(
-		/^(\/en)?\/notes\/esm-cjs-librery\/?$/,
-	);
-	if (movedNote) {
-		const target = `${movedNote[1] ?? ""}/notes/esm-vs-cjs-typescript-monorepo`;
+	const movedNote = event.url.pathname.match(/^(\/en)?\/notes\/([\w-]+)\/?$/);
+	const newSlug = movedNote && MOVED_NOTES[movedNote[2]];
+	if (newSlug) {
+		const target = `${movedNote[1] ?? ""}/notes/${newSlug}`;
 		return Response.redirect(new URL(target, event.url), 301);
 	}
 
