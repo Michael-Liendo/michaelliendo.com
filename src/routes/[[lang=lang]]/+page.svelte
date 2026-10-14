@@ -22,6 +22,16 @@
   const t: HomeContent = $derived($locale === 'en' ? enHome : esHome);
   const prefix = $derived($locale === baseLocale ? '' : `/${$locale}`);
   const notes = $derived(data.notes.slice(0, 3));
+  const testimonials = $derived(t.testimonials.items);
+
+  function initials(name: string) {
+    return name
+      .split(/\s+/)
+      .filter(Boolean)
+      .slice(0, 2)
+      .map((part) => part[0].toUpperCase())
+      .join('');
+  }
 
   function noteDate(date: string) {
     return new Intl.DateTimeFormat($locale, {
@@ -276,6 +286,53 @@
     class="btn btn-light mt-6">{t.cases.allProjects} →</a
   >
 </section>
+
+<!-- Testimonials: hidden until src/i18n/*/home.ts has items -->
+{#if testimonials.length}
+  <section id="testimonios" class="pt-28" aria-labelledby="testimonios-t">
+    <p class="label">{t.testimonials.label}</p>
+    <h2 id="testimonios-t" class="section-title">{t.testimonials.title}</h2>
+    <ul
+      class="m-0 mt-11 grid list-none grid-cols-1 gap-4 p-0 {testimonials.length === 2 ||
+      testimonials.length === 4
+        ? 'md:grid-cols-2'
+        : 'md:grid-cols-2 lg:grid-cols-3'}"
+    >
+      {#each testimonials as item (item.name)}
+        <li class="flex">
+          <figure class="m-0 flex w-full flex-col rounded-[24px] bg-surface-sunken p-7 sm:p-8">
+            <span aria-hidden="true" class="text-[40px] font-semibold leading-none text-accent">“</span>
+            <blockquote class="m-0 mt-2 text-[20px] leading-[1.45] tracking-[-0.01em] text-ink">
+              {item.quote}
+            </blockquote>
+            <figcaption class="mt-auto flex items-center gap-3 pt-7">
+              {#if item.photo || item.logo}
+                <img
+                  src={item.photo ?? item.logo}
+                  alt=""
+                  width="44"
+                  height="44"
+                  loading="lazy"
+                  class="size-11 shrink-0 bg-white object-cover {item.photo ? 'rounded-full' : 'rounded-[12px]'}"
+                />
+              {:else}
+                <span
+                  aria-hidden="true"
+                  class="inline-grid size-11 shrink-0 place-items-center rounded-[12px] bg-white text-[15px] font-semibold text-accent"
+                  >{initials(item.name)}</span
+                >
+              {/if}
+              <span class="leading-tight">
+                <span class="block font-semibold">{item.name}</span>
+                <span class="mt-1 block text-[14px] text-ink-muted">{item.role} · {item.company}</span>
+              </span>
+            </figcaption>
+          </figure>
+        </li>
+      {/each}
+    </ul>
+  </section>
+{/if}
 
 <!-- Process -->
 <section id="proceso" class="pt-28" aria-labelledby="proceso-t">

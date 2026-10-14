@@ -94,6 +94,26 @@ export default {
 		],
 		allProjects: "See all projects",
 	},
+	// Client testimonials. The section (#testimonios) only shows on the home page
+	// once `items` has at least one entry. Shape: { quote, name, role, company,
+	// logo?, photo? }. Without logo or photo, initials are shown.
+	// Keep the same entries in src/i18n/es/home.ts.
+	// FAKE EXAMPLE, copy and edit:
+	// items: [
+	// 	{
+	// 		quote: "Sample text: the bot answers our customers in minutes and the team can finally focus on selling.",
+	// 		name: "First Last",
+	// 		role: "Operations manager",
+	// 		company: "NQLN",
+	// 		logo: "/images/nqln-icon.png", // optional
+	// 		photo: "/images/testimonials/name.webp", // optional, wins over the logo
+	// 	},
+	// ],
+	testimonials: {
+		label: "Testimonials",
+		title: "What clients say.",
+		items: [],
+	},
 	process: {
 		label: "Process",
 		title: "Simple and transparent from day one.",
