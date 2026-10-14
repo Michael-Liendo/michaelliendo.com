@@ -6,7 +6,7 @@ export default {
 		availability: "Available for freelance work · Caracas, Venezuela",
 		headlineStart: "I automate customer service on WhatsApp and build ",
 		headlineHighlight: "the software your business needs.",
-		lead: "I'm Michael, a full stack developer. AI bots, internal dashboards and web and mobile apps for shops, schools and small teams.",
+		lead: "I'm Michael. I help shops and small teams reply faster and stop doing by hand what a system can do for them: AI WhatsApp bots, custom dashboards, and web and mobile apps connected to the tools they already use.",
 		ctaPrimary: "Message me on WhatsApp",
 		ctaSecondary: "See case studies",
 		trustedLabel: "Trusted by",
@@ -27,7 +27,7 @@ export default {
 				tag: "NQLN · Retail",
 				logo: "/images/nqln-icon.png",
 				title: "From 7 hours to 2 minutes to answer every customer.",
-				body: "A WhatsApp bot that understands text, voice notes and photos, checks stock in Shopify and Odoo and validates payments. When it isn't sure, it hands the conversation to a person.",
+				body: "A WhatsApp bot that understands text, voice notes and photos, checks stock in Shopify and Odoo and validates payments. When it isn't sure, it hands the conversation to a person. Before, on the busiest days, some customers waited up to a week.",
 				metrics: [
 					{ value: "2 min", label: "first reply" },
 					{ value: "10→3", label: "people on chat" },

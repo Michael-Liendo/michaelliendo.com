@@ -1,6 +1,6 @@
 ---
 title: "How we cut response time from 7 hours to 2 minutes with a WhatsApp bot"
-description: "A real case from a Caracas store that sells on WhatsApp: the bot we built, how first response went from 7 hours to 2 minutes, and how the support team went from about 10 people to 2 or 3."
+description: "A real case from a Caracas store that sells on WhatsApp: customers who waited 7 hours on average, and up to a week, now get a reply in 2 minutes. Here is how we built it."
 date: 2026-10-14
 icon: whatsapp
 tags: [whatsapp, automation, case-study, ai]
@@ -11,13 +11,13 @@ From November 2025 to July 2026 I was Tech Lead at Vitrina Online / NQLN ([nqlns
 
 This article is for business owners who sell on WhatsApp and feel the chat is getting away from them. I'll cover the problem, what we built, the results we measured, and what I'd do the same way if I started today. At the end there's a short technical section for developers.
 
-## The problem: customers waiting more than 7 hours
+## The problem: customers waiting hours, sometimes days
 
 In Venezuela, a lot of people shop through WhatsApp. They write in, ask if a size or color is available, ask for the price in bolívares, send a screenshot of their Pago Móvil transfer, and wait for someone to confirm. For the store, each of those conversations is a possible sale.
 
-The problem was that a person handled all of it, message by message. When we looked at the support panel, the average time to the **first human reply was 7 hours and 16 minutes**. And it wasn't for lack of people: about **10 people were answering the chat**.
+The problem was that a person handled all of it, message by message. When we looked at the support panel, the average time to the **first human reply was 7 hours and 16 minutes**. And that was the average: on the busiest days, some customers **waited up to a week** for a reply. It wasn't for lack of people: about **10 people were answering the chat**.
 
-Seven hours is a long time on WhatsApp. By then the customer has already written to another store, lost interest, or simply forgotten. On top of that, most questions were the same ones:
+Seven hours is a long time on WhatsApp; a week is a lost sale. By then the customer has already written to another store, lost interest, or simply forgotten. On top of that, most questions were the same ones:
 
 - Do you have this product? In what size?
 - How much is it in bolívares?
@@ -42,6 +42,8 @@ Necesitas Bot does the following:
 
 **It asks for help only when it needs it.** The bot answers almost everything on its own. When a case is beyond it (a complaint, a cancellation, a question it can't solve, or a customer who asks to talk to someone), it hands the conversation to a person on the team and stays quiet in that chat. I explain how below.
 
+**It recovers sales that were slipping away.** It messages people who left a cart halfway, cancels only the orders that were never paid to free up stock, and closes finished conversations, so the team only sees what is actually pending.
+
 **It works for several brands.** During my time on the project, the bot served five brands in the group: **NQLN, Levni Care, Pictorys, Enlazados and Vauli**. On WhatsApp it sold for the first four, each with its own tone, rules and assistant. Vauli, which sells wholesale, used the automatic price replies on Instagram and Facebook comments and messages.
 
 ## The results
@@ -50,10 +52,11 @@ These are the numbers we measured:
 
 | Metric | Before | After |
 | --- | --- | --- |
-| First response | 7 h 16 min (human, average) | ~2 minutes (automated) |
+| First response (average) | 7 h 16 min (human) | ~2 minutes (automated) |
+| First response (worst case) | up to 1 week | ~2 minutes |
 | People answering chat | ~10 | 2 to 3 |
 
-First response went from more than 7 hours to about 2 minutes. A note on the comparison: before, we measured the first human reply; now, the first automated reply. But for the customer what matters is the same: someone answers with useful information almost right away.
+First response went from more than 7 hours on average, and up to a week on the worst days, to about 2 minutes, at any hour. A note on the comparison: before, we measured the first human reply; now, the first automated reply. But for the customer what matters is the same: someone answers with useful information almost right away.
 
 The support team went from about 10 people to 2 or 3. At a reference cost of US$300 per person per month, that's **more than US$2,100 per month** in payroll, not counting social charges or other costs tied to each position.
 
@@ -121,4 +124,4 @@ A few decisions I think matter:
 
 ## Do you sell on WhatsApp?
 
-If your business sells on WhatsApp and your customers wait hours for a reply, we can look at whether a bot like this makes sense for you. Message me on [WhatsApp](https://wa.me/584149409930) and tell me how you handle support today.
+If your business sells on WhatsApp and your customers wait hours or days for a reply, we can look at whether a bot like this makes sense for you. Message me on [WhatsApp](https://wa.me/584149409930) and tell me how you handle support today.

@@ -1,6 +1,6 @@
 ---
 title: "Cómo bajamos la respuesta de 7 horas a 2 minutos con un bot de WhatsApp"
-description: "Caso real de una tienda en Caracas que vende por WhatsApp: el bot que construimos, cómo pasamos de 7 horas a 2 minutos en la primera respuesta y de unas 10 personas a 2 o 3 en atención."
+description: "Caso real de una tienda en Caracas que vende por WhatsApp: clientes que esperaban 7 horas en promedio, y hasta una semana, ahora reciben respuesta en 2 minutos. Así lo construimos."
 date: 2026-10-14
 icon: whatsapp
 tags: [whatsapp, automatizacion, caso-de-estudio, ia]
@@ -11,13 +11,13 @@ Entre noviembre de 2025 y julio de 2026 fui Tech Lead en Vitrina Online / NQLN (
 
 Este artículo es para dueños de negocio que venden por WhatsApp y sienten que el chat se les va de las manos. Cuento cuál era el problema, qué construimos, qué resultados medimos y qué haría igual si empezara hoy. Al final hay una sección técnica corta para desarrolladores.
 
-## El problema: clientes esperando más de 7 horas
+## El problema: clientes esperando horas, a veces días
 
 En Venezuela mucha gente compra por WhatsApp. Escribe, pregunta si hay talla o color, pide el precio en bolívares, manda la captura del Pago Móvil y espera que alguien le confirme. Para la tienda, cada una de esas conversaciones es una venta posible.
 
-El problema es que todo eso lo hacía una persona, mensaje por mensaje. Cuando revisamos el panel de soporte, el tiempo promedio hasta la **primera respuesta humana era de 7 horas y 16 minutos**. Y no era por falta de gente: había alrededor de **10 personas contestando el chat**.
+El problema es que todo eso lo hacía una persona, mensaje por mensaje. Cuando revisamos el panel de soporte, el tiempo promedio hasta la **primera respuesta humana era de 7 horas y 16 minutos**. Y ese era el promedio: en los días de más movimiento, algunos clientes **esperaban hasta una semana** por una respuesta. No era por falta de gente: había alrededor de **10 personas contestando el chat**.
 
-Siete horas en WhatsApp es mucho. En ese tiempo el cliente ya le escribió a otra tienda, se le pasaron las ganas o simplemente se olvidó. Además, la mayoría de las preguntas se repetían:
+Siete horas en WhatsApp es mucho; una semana es una venta perdida. En ese tiempo el cliente ya le escribió a otra tienda, se le pasaron las ganas o simplemente se olvidó. Además, la mayoría de las preguntas se repetían:
 
 - ¿Tienen este producto? ¿En qué talla?
 - ¿Cuánto cuesta en bolívares?
@@ -42,6 +42,8 @@ Necesitas Bot hace lo siguiente:
 
 **Pide ayuda solo cuando la necesita.** El bot contesta casi todo por su cuenta. Cuando un caso lo supera (un reclamo, una cancelación, una pregunta que no puede resolver o un cliente que pide hablar con alguien) le pasa la conversación a una persona del equipo y se queda callado en ese chat. Más abajo explico cómo.
 
+**Recupera ventas que se perdían.** Le escribe a quien dejó un carrito a medias, cancela solo los pedidos que nunca se pagaron para liberar el inventario y cierra las conversaciones terminadas, así el equipo solo ve lo que de verdad está pendiente.
+
 **Sirve para varias marcas.** Durante mi tiempo en el proyecto, el bot atendía cinco marcas del grupo: **NQLN, Levni Care, Pictorys, Enlazados y Vauli**. En WhatsApp vendía para las cuatro primeras, cada una con su tono, sus reglas y su propio asistente. Vauli, que vende al mayor, usaba las respuestas automáticas con precios en los comentarios y mensajes de Instagram y Facebook.
 
 ## Los resultados
@@ -50,10 +52,11 @@ Estos son los números que medimos:
 
 | Métrica | Antes | Después |
 | --- | --- | --- |
-| Primera respuesta | 7 h 16 min (humana, promedio) | ~2 minutos (automática) |
+| Primera respuesta (promedio) | 7 h 16 min (humana) | ~2 minutos (automática) |
+| Primera respuesta (peor caso) | hasta 1 semana | ~2 minutos |
 | Personas atendiendo el chat | ~10 | 2 a 3 |
 
-La primera respuesta pasó de más de 7 horas a unos 2 minutos. Ojo con la comparación: antes medíamos la primera respuesta humana y ahora la primera respuesta automática. Pero para el cliente lo que importa es lo mismo: alguien le contesta con información útil casi de inmediato.
+La primera respuesta pasó de más de 7 horas en promedio, y hasta una semana en los peores días, a unos 2 minutos, a cualquier hora. Ojo con la comparación: antes medíamos la primera respuesta humana y ahora la primera respuesta automática. Pero para el cliente lo que importa es lo mismo: alguien le contesta con información útil casi de inmediato.
 
 El equipo de atención pasó de unas 10 personas a 2 o 3. Con un costo de referencia de US$300 por persona al mes, eso son **más de US$2.100 al mes** en nómina, sin contar cargas sociales ni otros costos asociados a cada puesto.
 
@@ -121,4 +124,4 @@ Algunas decisiones que me parecen importantes:
 
 ## ¿Vendes por WhatsApp?
 
-Si tu negocio vende por WhatsApp y tus clientes esperan horas por una respuesta, podemos ver si un bot como este tiene sentido para ti. Escríbeme por [WhatsApp](https://wa.me/584149409930) y cuéntame cómo atiendes hoy.
+Si tu negocio vende por WhatsApp y tus clientes esperan horas o días por una respuesta, podemos ver si un bot como este tiene sentido para ti. Escríbeme por [WhatsApp](https://wa.me/584149409930) y cuéntame cómo atiendes hoy.
