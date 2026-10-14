@@ -91,6 +91,26 @@ export default {
 		],
 		allProjects: "Ver todos los proyectos",
 	},
+	// Testimonios de clientes. La sección (#testimonios) solo aparece en la home
+	// cuando `items` tiene al menos uno. Forma: { quote, name, role, company,
+	// logo?, photo? }. Sin logo ni foto se muestran las iniciales.
+	// Mantén las mismas entradas en src/i18n/en/home.ts.
+	// EJEMPLO FALSO, solo para copiar:
+	// items: [
+	// 	{
+	// 		quote: "Texto de ejemplo: el bot responde a nuestros clientes en minutos y el equipo por fin puede enfocarse en vender.",
+	// 		name: "Nombre Apellido",
+	// 		role: "Gerente de operaciones",
+	// 		company: "NQLN",
+	// 		logo: "/images/nqln-icon.png", // opcional
+	// 		photo: "/images/testimonials/nombre.webp", // opcional, tiene prioridad sobre el logo
+	// 	},
+	// ],
+	testimonials: {
+		label: "Testimonios",
+		title: "Lo que dicen los clientes.",
+		items: [],
+	},
 	process: {
 		label: "Proceso",
 		title: "Simple y transparente desde el primer día.",

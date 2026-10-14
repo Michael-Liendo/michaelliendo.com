@@ -33,6 +33,17 @@ export interface HomeMoreItem {
 	href?: string;
 }
 
+export interface HomeTestimonial {
+	quote: string;
+	name: string;
+	role: string;
+	company: string;
+	/** Company logo path under /static, shown instead of initials. */
+	logo?: string;
+	/** Person's photo path under /static; takes precedence over the logo. */
+	photo?: string;
+}
+
 export interface HomeContent {
 	email: string;
 	hero: {
@@ -51,6 +62,11 @@ export interface HomeContent {
 		items: HomeCase[];
 		more: HomeMoreItem[];
 		allProjects: string;
+	};
+	testimonials: {
+		label: string;
+		title: string;
+		items: HomeTestimonial[];
 	};
 	process: {
 		label: string;
