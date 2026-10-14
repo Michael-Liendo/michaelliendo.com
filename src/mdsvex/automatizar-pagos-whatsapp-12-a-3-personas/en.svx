@@ -1,6 +1,6 @@
 ---
-title: "From 9 people to 3: how we automated payments and reconciliation over WhatsApp"
-description: "A real case from a Venezuelan company that took orders and payments over WhatsApp: it now moves 2.6 times more money and earns 75% more, with 3 people instead of 9 and about US$150 a month in AI."
+title: "From 12 people to 3: how we automated payments and reconciliation over WhatsApp"
+description: "A real case from a Venezuelan company that took orders and payments over WhatsApp: it now moves 2.6 times more money and earns 75% more, with 3 people instead of 12, serves twice as many customers and pays about US$150 a month in AI."
 date: 2026-10-14
 icon: whatsapp
 tags: [whatsapp, automation, payments, case-study, ai]
@@ -11,16 +11,16 @@ This is the story of a Venezuelan company that sells and collects almost everyth
 
 In 2025 I led the team that built its system: an AI WhatsApp assistant connected to a cash dashboard, payment validation and bank reconciliation. Here I explain what the problem was, how the system works without going into code, and what changed in the numbers.
 
-## The problem: nine people reading screenshots
+## The problem: twelve people reading screenshots
 
-Every day, thousands of WhatsApp messages arrived with orders and screenshots of transfers. Behind them were **9 people**, each paid about US$300 a month, doing the same work by hand:
+Every day, thousands of WhatsApp messages arrived with orders and screenshots of transfers. Behind them were **about 12 people**, each paid about US$300 a month, doing the same work by hand:
 
 - Reading every message and every payment screenshot.
 - Logging into the bank to check whether the transfer had really arrived.
 - Writing down each order and each customer's balance in spreadsheets.
 - At the end of the day, balancing the cash and hoping everything matched.
 
-It was slow, expensive and fragile. A mistyped reference, a payment recorded twice or a reused screenshot turned into lost money or hours spent hunting for the error. And the business couldn't grow without hiring more people.
+It was slow, expensive and fragile. A mistyped reference, a payment recorded twice or a reused screenshot turned into lost money or hours spent hunting for the error. And the business couldn't grow without hiring more people: with that whole team, they served half the customers they serve today.
 
 ## What we built
 
@@ -65,17 +65,22 @@ To compare, I used the **first month with the system** (October 2025) and **a mo
 | Money moved per month | ~US$27,000 | ~US$70,000 | ×2.6 |
 | Operations per month | ~45,000 | ~72,000 | +60% |
 | Profit per month | ~US$10,500 | ~US$18,400 | +75% |
-| People in operations | 9 | 3 | −6 |
+| People in operations | ~12 | 3 | −9 |
+| Customers served | half | twice as many | ×2 |
 
 And what it costs to run:
 
 | Cost | Before | Now |
 | --- | --- | --- |
-| Operations payroll | ~US$2,700 a month | ~US$900 a month |
+| Operations payroll | ~US$3,600 a month | ~US$900 a month |
 | AI | — | ~US$150 a month |
 | Server | — | one server of its own |
 
-In short: **it processes far more volume with a third of the team**, saves about **US$1,800 a month in payroll** and earns more money than before. The growth is real in dollars, not an effect of the bolívar's devaluation.
+In short: **it serves twice as many customers with a quarter of the team**, saves about **US$2,700 a month in payroll** and earns more money than before. Today almost **two operations come in every minute**, at any hour, and the system processes them without anyone copying a reference. The growth is real in dollars, not an effect of the bolívar's devaluation.
+
+In the client's own words:
+
+> We went from 12 employees to 3, and we serve twice as many people as before, faster. Processing what comes in is now extremely easy.
 
 The three people who stayed don't copy references anymore: they review the cases the system flags, help customers who need it and make decisions.
 

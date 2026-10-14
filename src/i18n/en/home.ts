@@ -76,7 +76,7 @@ export default {
 			{
 				name: "La Victoria",
 				description:
-					"WhatsApp bot and cash-flow dashboard with bank reconciliation. Operations went from 9 people to 3: US$1,800 less in payroll a month, for about US$150 a month in AI.",
+					"WhatsApp bot and cash-flow dashboard with bank reconciliation. Operations went from 12 people to 3 while serving twice as many customers: US$2,700 less in payroll a month, for about US$150 a month in AI.",
 				meta: "Tech lead · 2025",
 			},
 			{
