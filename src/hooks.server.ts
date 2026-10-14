@@ -18,6 +18,12 @@ export const handle: Handle = async ({ event, resolve }) => {
 		return Response.redirect(url, 308);
 	}
 
+	// The automations page was removed; keep its indexed URLs pointing somewhere useful.
+	const removedPage = event.url.pathname.match(/^(\/en)?\/automations\/?$/);
+	if (removedPage) {
+		return Response.redirect(new URL(removedPage[1] || "/", event.url), 301);
+	}
+
 	// read language slug
 	const [, lang] = event.url.pathname.split("/");
 
