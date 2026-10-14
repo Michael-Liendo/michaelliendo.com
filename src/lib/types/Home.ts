@@ -1,97 +1,73 @@
-/** Static copy for the landing page. Strings marked `Html` may contain trusted inline markup (links, em). */
-
-export interface HomeChatMessage {
-	from: "customer" | "bot";
-	time: string;
-	text?: string;
-	/** Renders a photo placeholder bubble with this label instead of text. */
-	attachment?: string;
-}
+/** Static copy for the landing page, one object per locale. */
 
 export interface HomeMetric {
 	value: string;
 	label: string;
 }
 
-export interface HomeFeatured {
-	/** Small square brand mark shown next to the title. */
-	logo: string;
-	title: string;
-	meta: string;
-	body: string;
-	stack: string;
-	link: { href: string; label: string };
-	metrics?: HomeMetric[];
-	image?: { src: string; alt: string; width: number; height: number };
-	chat?: {
-		avatar: string;
-		name: string;
-		status: string;
-		typing: string;
-		messages: HomeChatMessage[];
-		caption: string;
-	};
+export interface HomeChatMessage {
+	from: "customer" | "bot";
+	text: string;
 }
 
-export interface HomeListItem {
+export interface HomeCase {
+	tag: string;
+	logo: string;
+	title: string;
+	body: string;
+	metrics: HomeMetric[];
+	link: { href: string; label: string };
+	/** Visual shown next to the copy: a chat mockup or a screenshot. */
+	chat?: {
+		name: string;
+		status: string;
+		messages: HomeChatMessage[];
+	};
+	image?: { src: string; alt: string; width: number; height: number };
+}
+
+export interface HomeMoreItem {
 	name: string;
 	description: string;
 	meta: string;
 	href?: string;
 }
 
-export interface HomeSkill {
-	/** Logo path under /static/icons. */
-	icon: string;
-	name: string;
-	description: string;
-	badge: string;
-}
-
 export interface HomeContent {
+	email: string;
 	hero: {
-		role: string;
+		availability: string;
+		headlineStart: string;
+		headlineHighlight: string;
+		lead: string;
 		ctaPrimary: string;
 		ctaSecondary: string;
-		stats: HomeMetric[];
-		headlineStart: string;
-		headlineEm: string;
-		headlineEnd: string;
+		trustedLabel: string;
+	};
+	clients: { name: string; logo?: string }[];
+	cases: {
+		label: string;
+		title: string;
+		items: HomeCase[];
+		more: HomeMoreItem[];
+		allProjects: string;
+	};
+	process: {
+		label: string;
+		title: string;
+		steps: { title: string; body: string }[];
+	};
+	about: {
+		label: string;
+		title: string;
 		paragraphs: string[];
 		photoAlt: string;
-		emailLabel: string;
-		location: string;
-		availability: string;
+		stack: { name: string; icon: string }[];
 	};
-	labels: {
-		now: string;
-		work: string;
-		experience: string;
-		how: string;
-		languages: string;
-		frameworks: string;
-		tech: string;
-		spoken: string;
-		notes: string;
-		allProjects: string;
-		allNotes: string;
-	};
-	nowHtml: string[];
-	featured: HomeFeatured[];
-	more: HomeListItem[];
-	experience: { role: string; org: string; period: string }[];
-	experienceBefore: string;
-	how: string[];
-	languages: HomeSkill[];
-	frameworks: HomeSkill[];
-	tech: { name: string; description: string }[];
-	spoken: { name: string; level: string; note: string }[];
+	notes: { label: string; title: string; all: string };
 	contact: {
 		title: string;
-		bodyHtml: string;
-		emailCta: string;
+		body: string;
 		whatsappCta: string;
-		reply: string;
 	};
-	email: string;
 }

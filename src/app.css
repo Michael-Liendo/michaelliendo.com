@@ -3,34 +3,35 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-/* Warm editorial palette: paper background, ink text, terracotta accent */
+/* Clean white palette with an electric blue accent */
 @theme {
 	--font-sans:
-		"Schibsted Grotesk", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+		"Inter Tight", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
 		"Segoe UI Emoji";
-	--font-serif: "Newsreader", Georgia, "Times New Roman", serif;
+	/* Display text shares the sans family; kept as a token for existing usages */
+	--font-serif: "Inter Tight", ui-sans-serif, system-ui, sans-serif;
 	--font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, monospace;
 
-	--color-accent: #b8431f;
-	--color-accent-foreground: #fbfaf7;
-	--color-accent-muted: #f1eee7;
+	--color-accent: #2b59ff;
+	--color-accent-foreground: #ffffff;
+	--color-accent-muted: #eef2ff;
 
-	--color-surface: #fbfaf7;
+	--color-surface: #ffffff;
 	--color-surface-elevated: #ffffff;
-	--color-surface-sunken: #f1eee7;
-	--color-ink: #1a1a1a;
-	--color-ink-soft: #3a3a38;
-	--color-ink-muted: #6b6862;
-	--color-ink-faint: #9a958b;
-	--color-border: #e4e0d6;
-	--color-border-soft: #eeebe3;
-	--color-success: #2f8f5b;
+	--color-surface-sunken: #f4f4f2;
+	--color-ink: #0b0b0b;
+	--color-ink-soft: #3a3a37;
+	--color-ink-muted: #6b6b66;
+	--color-ink-faint: #a3a39d;
+	--color-border: #e7e7e3;
+	--color-border-soft: #efefeb;
+	--color-success: #22c55e;
 
-	--color-link: #1a1a1a;
-	--color-link-hover: #b8431f;
+	--color-link: #0b0b0b;
+	--color-link-hover: #2b59ff;
 
-	--shadow-soft: 0 1px 2px rgb(26 26 26 / 0.04), 0 4px 16px rgb(26 26 26 / 0.05);
-	--shadow-soft-lg: 0 2px 4px rgb(26 26 26 / 0.04), 0 18px 40px rgb(26 26 26 / 0.08);
+	--shadow-soft: 0 1px 2px rgb(0 0 0 / 0.04), 0 4px 16px rgb(0 0 0 / 0.04);
+	--shadow-soft-lg: 0 1px 2px rgb(0 0 0 / 0.04), 0 20px 50px rgb(0 0 0 / 0.06);
 }
 
 @keyframes fade-in-up {
@@ -52,7 +53,7 @@
 @utility link-underline {
 	color: var(--color-ink);
 	text-decoration-line: underline;
-	text-decoration-color: #c9c4b8;
+	text-decoration-color: #d4d4cf;
 	text-decoration-thickness: 1px;
 	text-underline-offset: 3px;
 	transition:
@@ -70,11 +71,12 @@
 		@apply scroll-smooth antialiased;
 		font-family: var(--font-sans);
 		color-scheme: light;
-		scroll-padding-top: 1.5rem;
+		scroll-padding-top: 5.5rem;
 	}
 
 	body {
 		@apply bg-surface text-ink;
+		font-feature-settings: "ss01", "cv11";
 	}
 
 	strong {

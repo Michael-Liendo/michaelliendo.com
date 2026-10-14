@@ -24,7 +24,7 @@ export { a, blockquote, h2, h3, img, table, th, td };
     $props();
 </script>
 
-<div class="mx-auto w-full pb-12 pt-2">
+<div class="mx-auto w-full pb-12 pt-10">
   {#if preview_image_url}
     <figure
       class="mb-8 flex max-h-[320px] justify-center overflow-hidden rounded-2xl shadow-soft ring-1 ring-border md:max-h-[380px]"
@@ -39,7 +39,7 @@ export { a, blockquote, h2, h3, img, table, th, td };
   <header
     class="border-b border-border pb-8 md:pb-10"
   >
-    <h1 class="py-2 text-balance font-serif text-4xl font-normal leading-tight tracking-tight text-ink md:text-[2.75rem]">
+    <h1 class="py-2 text-balance text-4xl font-semibold leading-tight tracking-[-0.04em] text-ink md:text-[2.75rem]">
       {title}
     </h1>
 
@@ -66,7 +66,7 @@ export { a, blockquote, h2, h3, img, table, th, td };
   </header>
 
   <article
-    class="note-container prose prose-lg mt-8 max-w-none text-ink prose-headings:tracking-tight prose-p:text-ink-soft prose-headings:font-serif prose-headings:font-medium prose-strong:text-ink prose-a:text-ink prose-a:decoration-[#C9C4B8] prose-a:underline-offset-[3px] hover:prose-a:text-accent"
+    class="note-container prose prose-lg mt-8 max-w-none text-ink prose-headings:tracking-tight prose-p:text-ink-soft prose-headings:font-semibold prose-strong:text-ink prose-a:text-ink prose-a:decoration-[#D4D4CF] prose-a:underline-offset-[3px] hover:prose-a:text-accent"
   >
     {@render children()}
   </article>

@@ -14,53 +14,74 @@ const otherLocale = $derived($locale === "en" ? "es" : "en");
 const otherLocaleHref = $derived(replaceLocaleInUrl(page.url, otherLocale));
 
 const links = $derived([
-	{ href: PublicRoutesEnum.Projects, label: $LL.LAYOUT.NAV.PROJECTS() },
-	{ href: PublicRoutesEnum.Notes, label: $LL.LAYOUT.NAV.NOTES() },
+	{
+		href: `${prefix}/#casos`,
+		label: $locale === "en" ? "Work" : "Casos",
+		active: false,
+	},
+	{
+		href: `${prefix}${PublicRoutesEnum.Projects}`,
+		label: $LL.LAYOUT.NAV.PROJECTS(),
+		active: currentUrl.startsWith(PublicRoutesEnum.Projects),
+	},
+	{
+		href: `${prefix}${PublicRoutesEnum.Notes}`,
+		label: $LL.LAYOUT.NAV.NOTES(),
+		active: currentUrl.startsWith(PublicRoutesEnum.Notes),
+	},
 ]);
 </script>
 
 <header
-  class="flex flex-wrap items-center justify-between gap-x-6 gap-y-3 pt-8"
+  class="sticky top-0 z-30 -mx-6 flex items-center justify-between gap-4 bg-white/85 px-6 py-4 backdrop-blur-md"
 >
   <a
     href="{prefix}{PublicRoutesEnum.Home}"
-    class="font-semibold text-ink no-underline transition-colors hover:text-accent"
+    class="flex shrink-0 items-center gap-2.5 font-semibold text-ink no-underline"
     aria-current={currentUrl === PublicRoutesEnum.Home ? 'page' : undefined}
   >
-    Michael Liendo
+    <img
+      src="/images/michael-liendo.jpg"
+      alt=""
+      width="34"
+      height="34"
+      class="size-[34px] rounded-full object-cover"
+    />
+    <span class="hidden sm:inline">Michael Liendo</span>
   </a>
 
   <nav aria-label={$locale === 'en' ? 'Main' : 'Principal'}>
-    <ul class="flex flex-wrap items-center gap-x-[22px] gap-y-1 text-[15px]">
+    <ul
+      class="flex items-center gap-1 rounded-full bg-surface-sunken p-1 text-[14.5px]"
+    >
       {#each links as link (link.href)}
         <li>
           <a
-            href="{prefix}{link.href}"
-            aria-current={currentUrl.startsWith(link.href) ? 'page' : undefined}
+            href={link.href}
+            aria-current={link.active ? 'page' : undefined}
             class={cn(
-              'link-underline',
-              currentUrl.startsWith(link.href) &&
-                'text-accent decoration-accent',
+              'block rounded-full px-3 py-1.5 text-ink-muted no-underline transition-colors hover:bg-white hover:text-ink sm:px-3.5',
+              link.active && 'bg-white text-ink shadow-[0_1px_2px_rgb(0_0_0/0.06)]',
             )}>{link.label}</a
           >
         </li>
       {/each}
-      <li>
-        <a href="{prefix}/#contacto" class="link-underline"
-          >{$locale === 'en' ? 'Contact' : 'Contacto'}</a
-        >
-      </li>
-      <li>
-        <a
-          href={otherLocaleHref}
-          hreflang={otherLocale}
-          lang={otherLocale}
-          class="rounded-md border border-border px-2 py-0.5 font-mono text-[13px] text-ink-muted no-underline transition-colors hover:border-accent hover:text-accent"
-          title={otherLocale === 'en' ? 'Read in English' : 'Leer en español'}
-          data-sveltekit-reload
-          >{otherLocale.toUpperCase()}</a
-        >
-      </li>
     </ul>
   </nav>
+
+  <div class="flex shrink-0 items-center gap-2">
+    <a
+      href={otherLocaleHref}
+      hreflang={otherLocale}
+      lang={otherLocale}
+      class="rounded-lg px-2 py-1.5 text-[13.5px] font-medium text-ink-muted no-underline transition-colors hover:text-ink"
+      title={otherLocale === 'en' ? 'Read in English' : 'Leer en español'}
+      data-sveltekit-reload>{otherLocale.toUpperCase()}</a
+    >
+    <a
+      href="{prefix}/#contacto"
+      class="hidden rounded-xl bg-ink px-4 py-2.5 text-[14.5px] font-medium text-white no-underline transition-colors hover:bg-accent sm:inline-flex"
+      >{$locale === 'en' ? "Let's talk" : 'Hablemos'}</a
+    >
+  </div>
 </header>
