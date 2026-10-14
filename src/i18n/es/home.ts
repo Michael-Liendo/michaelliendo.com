@@ -73,7 +73,7 @@ export default {
 			{
 				name: "La Victoria",
 				description:
-					"Bot de WhatsApp y panel de caja con conciliación bancaria. Operaciones pasó de 9 personas a 3: unos US$1.200 menos en nómina al mes.",
+					"Bot de WhatsApp y panel de caja con conciliación bancaria. Operaciones pasó de 9 personas a 3: US$1.200 menos en nómina al mes, con unos US$150 al mes de IA.",
 				meta: "Tech lead · 2025",
 			},
 			{
