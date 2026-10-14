@@ -26,7 +26,7 @@ let {
 	title: string;
 	description: string;
 	image?: string;
-	ogType?: "website" | "article";
+	ogType?: "website" | "article" | "profile";
 	keywords?: string;
 	publishedTime?: string;
 	modifiedTime?: string;
@@ -36,8 +36,10 @@ let {
 	locale: Locales;
 } = $props();
 
-const ogLocale = $derived(locale === "es" ? "es_ES" : "en_US");
-const ogLocaleAlternate = $derived(locale === "es" ? "en_US" : "es_ES");
+const ogLocale = $derived(locale === "es" ? "es_VE" : "en_US");
+const ogLocaleAlternate = $derived(locale === "es" ? "en_US" : "es_VE");
+// Generated share cards are 1200×630; other images (e.g. note covers) have unknown size.
+const isShareCard = $derived(image.startsWith(`${SITE_ORIGIN}/og/`));
 
 const pathname = $derived(
 	page.url.pathname === "" ? "/" : page.url.pathname,
@@ -81,12 +83,23 @@ function safeJsonLd(data: object | object[]): string {
   <meta property="og:type" content={ogType} />
   <meta property="og:url" content={canonical} />
   <meta property="og:image" content={image} />
+  {#if isShareCard}
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/png" />
+  {/if}
   {#if imageAlt}
     <meta property="og:image:alt" content={imageAlt} />
   {/if}
   <meta property="og:site_name" content={SITE_NAME} />
   <meta property="og:locale" content={ogLocale} />
   <meta property="og:locale:alternate" content={ogLocaleAlternate} />
+
+  {#if ogType === "profile"}
+    <meta property="profile:first_name" content="Michael" />
+    <meta property="profile:last_name" content="Liendo" />
+    <meta property="profile:username" content="michaelliendo" />
+  {/if}
 
   {#if publishedTime}
     <meta property="article:published_time" content={publishedTime} />

@@ -31,7 +31,7 @@ const notesJsonLd = $derived({
 
 <div class="mt-4 w-full">
   <h1
-    class="text-3xl font-bold tracking-tight text-ink sm:text-4xl md:text-5xl"
+    class="mt-12 font-serif text-4xl font-normal tracking-tight text-ink sm:text-5xl"
   >
     {$LL.NOTES.NOTES()}
   </h1>

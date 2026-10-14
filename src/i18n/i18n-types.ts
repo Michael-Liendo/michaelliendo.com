@@ -16,19 +16,19 @@ export type Translations = RootTranslation
 type RootTranslation = {
 	SEO: {
 		/**
-		 * M​i​c​h​a​e​l​ ​L​i​e​n​d​o​ ​|​ ​D​e​s​a​r​r​o​l​l​a​d​o​r​ ​d​e​ ​S​o​f​t​w​a​r​e
+		 * M​i​c​h​a​e​l​ ​L​i​e​n​d​o​ ​·​ ​D​e​s​a​r​r​o​l​l​a​d​o​r​ ​F​u​l​l​ ​S​t​a​c​k​ ​|​ ​T​y​p​e​S​c​r​i​p​t​ ​e​ ​I​A
 		 */
 		TITLE: string
 		/**
-		 * M​i​c​h​a​e​l​ ​L​i​e​n​d​o​ ​—​ ​d​e​s​a​r​r​o​l​l​a​d​o​r​ ​d​e​ ​s​o​f​t​w​a​r​e​ ​e​n​f​o​c​a​d​o​ ​e​n​ ​R​e​a​c​t​,​ ​T​y​p​e​S​c​r​i​p​t​,​ ​a​p​p​s​ ​m​ó​v​i​l​e​s​,​ ​b​a​c​k​e​n​d​s​ ​y​ ​w​e​b​.​ ​N​o​t​a​s​ ​t​é​c​n​i​c​a​s​ ​s​o​b​r​e​ ​i​n​g​e​n​i​e​r​í​a​,​ ​S​v​e​l​t​e​ ​y​ ​h​e​r​r​a​m​i​e​n​t​a​s​.​ ​C​o​l​a​b​o​r​a​c​i​o​n​e​s​:​ ​h​o​l​a​@​m​i​c​h​a​e​l​l​i​e​n​d​o​.​c​o​m​.
+		 * D​e​s​a​r​r​o​l​l​a​d​o​r​ ​f​u​l​l​ ​s​t​a​c​k​ ​e​n​ ​C​a​r​a​c​a​s​,​ ​V​e​n​e​z​u​e​l​a​.​ ​C​o​n​s​t​r​u​y​o​ ​a​p​p​s​ ​w​e​b​ ​y​ ​m​ó​v​i​l​e​s​ ​c​o​n​ ​T​y​p​e​S​c​r​i​p​t​,​ ​R​e​a​c​t​,​ ​N​o​d​e​.​j​s​ ​y​ ​P​o​s​t​g​r​e​S​Q​L​,​ ​y​ ​b​o​t​s​ ​d​e​ ​W​h​a​t​s​A​p​p​ ​c​o​n​ ​I​A​ ​q​u​e​ ​b​a​j​a​r​o​n​ ​l​a​ ​p​r​i​m​e​r​a​ ​r​e​s​p​u​e​s​t​a​ ​d​e​ ​7​ ​h​o​r​a​s​ ​a​ ​2​ ​m​i​n​u​t​o​s​.
 		 */
 		DESCRIPTION: string
 		/**
-		 * m​i​c​h​a​e​l​ ​l​i​e​n​d​o​,​ ​i​n​i​c​i​o​,​ ​n​o​t​a​s​,​ ​p​o​r​t​a​f​o​l​i​o​,​ ​d​e​s​a​r​r​o​l​l​a​d​o​r​ ​d​e​ ​s​o​f​t​w​a​r​e​,​ ​s​v​e​l​t​e​,​ ​t​y​p​e​s​c​r​i​p​t​,​ ​d​e​s​a​r​r​o​l​l​o​ ​w​e​b​,​ ​p​r​o​y​e​c​t​o​s​ ​d​e​s​a​f​i​a​n​t​e​s​,​ ​c​o​l​a​b​o​r​a​c​i​ó​n​,​ ​r​e​s​o​l​u​c​i​ó​n​ ​d​e​ ​p​r​o​b​l​e​m​a​s
+		 * m​i​c​h​a​e​l​ ​l​i​e​n​d​o​,​ ​d​e​s​a​r​r​o​l​l​a​d​o​r​ ​f​u​l​l​ ​s​t​a​c​k​ ​v​e​n​e​z​u​e​l​a​,​ ​p​r​o​g​r​a​m​a​d​o​r​ ​c​a​r​a​c​a​s​,​ ​d​e​s​a​r​r​o​l​l​a​d​o​r​ ​t​y​p​e​s​c​r​i​p​t​,​ ​d​e​s​a​r​r​o​l​l​a​d​o​r​ ​r​e​a​c​t​,​ ​n​o​d​e​.​j​s​,​ ​b​o​t​ ​d​e​ ​w​h​a​t​s​a​p​p​ ​c​o​n​ ​i​a​,​ ​a​u​t​o​m​a​t​i​z​a​c​i​ó​n​ ​w​h​a​t​s​a​p​p​,​ ​d​e​s​a​r​r​o​l​l​a​d​o​r​ ​f​r​e​e​l​a​n​c​e​ ​v​e​n​e​z​u​e​l​a​,​ ​i​o​n​i​c​,​ ​s​v​e​l​t​e​k​i​t
 		 */
 		KEYWORDS: string
 		/**
-		 * h​t​t​p​s​:​/​/​a​v​a​t​a​r​s​.​g​i​t​h​u​b​u​s​e​r​c​o​n​t​e​n​t​.​c​o​m​/​u​/​7​0​6​6​0​4​1​0​?​v​=​4
+		 * h​t​t​p​s​:​/​/​m​i​c​h​a​e​l​l​i​e​n​d​o​.​c​o​m​/​o​g​/​h​o​m​e​-​e​s​.​p​n​g
 		 */
 		IMAGE: string
 		NOTES: {
@@ -68,7 +68,7 @@ type RootTranslation = {
 			 */
 			TITLE: string
 			/**
-			 * P​r​o​y​e​c​t​o​s​ ​d​e​ ​s​o​f​t​w​a​r​e​ ​s​e​l​e​c​c​i​o​n​a​d​o​s​ ​d​e​ ​M​i​c​h​a​e​l​ ​L​i​e​n​d​o​:​ ​c​ó​d​i​g​o​ ​a​b​i​e​r​t​o​,​ ​w​e​b​ ​y​ ​m​ó​v​i​l​ ​c​o​n​ ​s​t​a​c​k​s​ ​m​o​d​e​r​n​o​s​.​ ​E​n​l​a​c​e​s​ ​a​ ​d​e​m​o​s​ ​y​ ​r​e​p​o​s​i​t​o​r​i​o​s​.
+			 * P​r​o​y​e​c​t​o​s​ ​d​e​ ​M​i​c​h​a​e​l​ ​L​i​e​n​d​o​:​ ​b​o​t​s​ ​d​e​ ​W​h​a​t​s​A​p​p​ ​c​o​n​ ​I​A​ ​p​a​r​a​ ​r​e​t​a​i​l​,​ ​u​n​a​ ​p​l​a​t​a​f​o​r​m​a​ ​e​d​u​c​a​t​i​v​a​ ​c​o​n​ ​t​u​t​o​r​ ​d​e​ ​I​A​,​ ​E​R​P​s​ ​e​n​ ​N​e​x​t​.​j​s​,​ ​a​p​p​s​ ​m​ó​v​i​l​e​s​ ​c​o​n​ ​I​o​n​i​c​ ​y​ ​h​e​r​r​a​m​i​e​n​t​a​s​ ​o​p​e​n​ ​s​o​u​r​c​e​ ​e​n​ ​R​u​s​t​.
 			 */
 			DESCRIPTION: string
 			/**
@@ -438,19 +438,19 @@ type RootTranslation = {
 export type TranslationFunctions = {
 	SEO: {
 		/**
-		 * Michael Liendo | Desarrollador de Software
+		 * Michael Liendo · Desarrollador Full Stack | TypeScript e IA
 		 */
 		TITLE: () => LocalizedString
 		/**
-		 * Michael Liendo — desarrollador de software enfocado en React, TypeScript, apps móviles, backends y web. Notas técnicas sobre ingeniería, Svelte y herramientas. Colaboraciones: hola@michaelliendo.com.
+		 * Desarrollador full stack en Caracas, Venezuela. Construyo apps web y móviles con TypeScript, React, Node.js y PostgreSQL, y bots de WhatsApp con IA que bajaron la primera respuesta de 7 horas a 2 minutos.
 		 */
 		DESCRIPTION: () => LocalizedString
 		/**
-		 * michael liendo, inicio, notas, portafolio, desarrollador de software, svelte, typescript, desarrollo web, proyectos desafiantes, colaboración, resolución de problemas
+		 * michael liendo, desarrollador full stack venezuela, programador caracas, desarrollador typescript, desarrollador react, node.js, bot de whatsapp con ia, automatización whatsapp, desarrollador freelance venezuela, ionic, sveltekit
 		 */
 		KEYWORDS: () => LocalizedString
 		/**
-		 * https://avatars.githubusercontent.com/u/70660410?v=4
+		 * https://michaelliendo.com/og/home-es.png
 		 */
 		IMAGE: () => LocalizedString
 		NOTES: {
@@ -487,7 +487,7 @@ export type TranslationFunctions = {
 			 */
 			TITLE: () => LocalizedString
 			/**
-			 * Proyectos de software seleccionados de Michael Liendo: código abierto, web y móvil con stacks modernos. Enlaces a demos y repositorios.
+			 * Proyectos de Michael Liendo: bots de WhatsApp con IA para retail, una plataforma educativa con tutor de IA, ERPs en Next.js, apps móviles con Ionic y herramientas open source en Rust.
 			 */
 			DESCRIPTION: () => LocalizedString
 			/**
