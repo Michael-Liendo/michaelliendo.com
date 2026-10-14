@@ -43,3 +43,7 @@ export const KNOWS_ABOUT = [
 	"Make",
 	"Business process automation",
 ] as const;
+
+/** WhatsApp contact, digits only for wa.me links. */
+export const WHATSAPP_NUMBER = "584149409930";
+export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}`;
