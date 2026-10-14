@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { env as publicEnv } from '$env/dynamic/public';
   import LL, { locale } from '$i18n/i18n-svelte';
   import { baseLocale } from '$i18n/i18n-util';
   import enHome from '$i18n/en/home';
@@ -13,6 +12,8 @@
     SAME_AS,
     SITE_NAME,
     SITE_ORIGIN,
+    WHATSAPP_NUMBER,
+    WHATSAPP_URL,
   } from '$lib/seo/site';
   import type {
     HomeContent,
@@ -26,10 +27,6 @@
 
   const t: HomeContent = $derived($locale === 'en' ? enHome : esHome);
   const prefix = $derived($locale === baseLocale ? '' : `/${$locale}`);
-  // Fallback keeps the button working when the env var isn't set on the host.
-  const whatsapp = $derived(
-    (publicEnv.PUBLIC_WHATSAPP_E164 || '584149409930').replace(/\D/g, ''),
-  );
 
   const notes = $derived(data.notes.slice(0, 4));
 
@@ -55,6 +52,7 @@
         url: `${SITE_ORIGIN}/`,
         image: PROFILE_IMAGE,
         email: `mailto:${t.email}`,
+        telephone: `+${WHATSAPP_NUMBER}`,
         jobTitle:
           $locale === 'en' ? 'Full Stack Developer' : 'Desarrollador Full Stack',
         description: $LL.SEO.DESCRIPTION(),
@@ -242,6 +240,10 @@
       {t.hero.ctaPrimary}
       <span aria-hidden="true">→</span>
     </a>
+    <a href={WHATSAPP_URL} rel="noreferrer" class="pill pill-whatsapp">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.6-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.42.25-.7.25-1.29.17-1.42-.07-.12-.27-.2-.57-.35M12.05 21.5h-.01a9.4 9.4 0 0 1-4.8-1.32l-.34-.2-3.57.94.95-3.48-.22-.36a9.4 9.4 0 0 1-1.44-5.02c0-5.2 4.24-9.44 9.45-9.44a9.4 9.4 0 0 1 6.68 2.77 9.38 9.38 0 0 1 2.76 6.68c0 5.21-4.24 9.45-9.45 9.45m8.04-17.49A11.3 11.3 0 0 0 12.05.68C5.78.68.68 5.78.68 12.05c0 2 .52 3.96 1.52 5.68L.58 23.32l5.73-1.5a11.33 11.33 0 0 0 5.73 1.47h.01c6.27 0 11.37-5.1 11.37-11.37 0-3.04-1.18-5.9-3.33-8.04"/></svg>
+      WhatsApp
+    </a>
     <a href="#trabajo" class="pill">{t.hero.ctaSecondary}</a>
     <span class="mx-1 hidden h-6 w-px bg-border sm:block" aria-hidden="true"></span>
     <a
@@ -270,15 +272,6 @@
       title="X"
     >
       <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
-    </a>
-    <a
-      href="https://wa.me/{whatsapp}"
-      rel="noreferrer"
-      class="pill pill-icon"
-      aria-label="WhatsApp"
-      title="WhatsApp"
-    >
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21l1.7-5A8.5 8.5 0 1 1 8 19.4z"></path><path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1"></path></svg>
     </a>
   </div>
 
@@ -588,8 +581,8 @@
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg>
       {t.contact.emailCta}
     </a>
-    <a href="https://wa.me/{whatsapp}" class="pill" rel="noreferrer">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21l1.7-5A8.5 8.5 0 1 1 8 19.4z"></path></svg>
+    <a href={WHATSAPP_URL} class="pill pill-whatsapp" rel="noreferrer">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.6-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.42.25-.7.25-1.29.17-1.42-.07-.12-.27-.2-.57-.35M12.05 21.5h-.01a9.4 9.4 0 0 1-4.8-1.32l-.34-.2-3.57.94.95-3.48-.22-.36a9.4 9.4 0 0 1-1.44-5.02c0-5.2 4.24-9.44 9.45-9.44a9.4 9.4 0 0 1 6.68 2.77 9.38 9.38 0 0 1 2.76 6.68c0 5.21-4.24 9.45-9.45 9.45m8.04-17.49A11.3 11.3 0 0 0 12.05.68C5.78.68.68 5.78.68 12.05c0 2 .52 3.96 1.52 5.68L.58 23.32l5.73-1.5a11.33 11.33 0 0 0 5.73 1.47h.01c6.27 0 11.37-5.1 11.37-11.37 0-3.04-1.18-5.9-3.33-8.04"/></svg>
       {t.contact.whatsappCta}
     </a>
   </div>
@@ -621,6 +614,12 @@
   .pill:hover {
     border-color: var(--color-accent);
     color: var(--color-accent);
+  }
+  .pill-whatsapp svg {
+    color: #25d366;
+  }
+  .pill-whatsapp:hover svg {
+    color: currentColor;
   }
   .pill-icon {
     width: 44px;
