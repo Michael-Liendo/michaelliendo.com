@@ -9,7 +9,7 @@ published: true
 
 Entre noviembre de 2025 y julio de 2026 fui Tech Lead en Vitrina Online / NQLN ([nqlnstore.com](https://nqlnstore.com)), una tienda de Caracas que vende casi todo por WhatsApp. Allí construimos **Necesitas Bot**, un asistente que atiende a los clientes en el mismo chat donde ya compraban.
 
-Este artículo es para dueños de negocio que venden por WhatsApp y sienten que el chat se les va de las manos. Cuento cuál era el problema, qué construimos, qué resultados medimos y qué haría igual (y distinto) si empezara hoy. Al final hay una sección técnica corta para desarrolladores.
+Este artículo es para dueños de negocio que venden por WhatsApp y sienten que el chat se les va de las manos. Cuento cuál era el problema, qué construimos, qué resultados medimos y qué haría igual si empezara hoy. Al final hay una sección técnica corta para desarrolladores.
 
 ## El problema: clientes esperando más de 7 horas
 
@@ -28,23 +28,21 @@ Son preguntas que tienen respuesta en algún sistema: el inventario, la tasa del
 
 ## Lo que construimos: Necesitas Bot
 
-La idea no era poner un menú de "presione 1 para ventas". Queríamos que el cliente escribiera como siempre, y que alguien (o algo) le contestara rápido y con datos reales.
+La idea no era poner un menú de "presione 1 para ventas". Queríamos que el cliente escribiera como siempre y recibiera una respuesta rápida, con datos reales.
 
 Necesitas Bot hace lo siguiente:
 
-**Entiende cómo escribe la gente de verdad.** Lee mensajes de texto, escucha notas de voz y mira fotos. Si un cliente manda la foto de un producto y pregunta "¿tienen este?", el bot lo entiende.
+**Entiende cómo escribe la gente de verdad.** Lee mensajes de texto, escucha notas de voz y mira fotos. Si un cliente manda la foto de un producto y pregunta "¿tienen este?", el bot lo entiende. Si manda varios mensajes seguidos, espera a que termine de escribir y contesta todo junto.
 
-**Consulta el inventario real.** Revisa el stock en Shopify y en Odoo, que eran los sistemas donde la tienda ya tenía sus productos. No inventa disponibilidad: si no hay, lo dice.
+**Consulta la tienda real.** Busca productos y revisa el stock en Shopify, donde la tienda ya tenía su catálogo, y consulta el estado de los pedidos del cliente. No inventa disponibilidad: si no hay, lo dice.
 
-**Valida pagos.** El cliente manda el comprobante, incluido Pago Móvil con Banesco, y el bot verifica el pago. Esta era una de las tareas que más tiempo le quitaba al equipo.
+**Valida pagos.** El bot le manda al cliente un enlace donde anota la referencia, el banco y la fecha de su pago. El sistema busca ese pago en Banesco, incluido el Pago Móvil, y si está completo marca el pedido como pagado. Si no lo encuentra, el pago pasa a revisión manual. Esta era una de las tareas que más tiempo le quitaba al equipo.
 
-**Maneja moneda y envíos.** Da precios en la moneda que corresponde, calcula el envío (por ejemplo, por MRW) y arma el carrito y el pedido dentro de la misma conversación.
+**Maneja moneda y envíos.** Convierte precios a bolívares con la tasa oficial del BCV y, en el mismo enlace de pago, recoge los datos de envío: agencia de MRW o de Zoom, o entrega en Caracas.
 
-**Pasa el chat a una persona cuando no está seguro.** Esto fue clave. Cuando el bot no tiene confianza en su respuesta, o el cliente tiene un caso raro, le pasa la conversación a alguien del equipo. El cliente no se queda dando vueltas con una máquina que no lo entiende.
+**Pide ayuda solo cuando la necesita.** El bot contesta casi todo por su cuenta. Cuando un caso lo supera (un reclamo, una cancelación, una pregunta que no puede resolver o un cliente que pide hablar con alguien) le pasa la conversación a una persona del equipo y se queda callado en ese chat. Más abajo explico cómo.
 
-**Sirve para varias marcas.** La empresa maneja más de una marca, y cada una tiene su tono y sus reglas. El bot usa instrucciones distintas para cada una, sobre la misma base.
-
-<!-- CONFIRMAR: ¿cuántas marcas atendía el bot y cuáles se pueden nombrar públicamente? -->
+**Sirve para varias marcas.** Durante mi tiempo en el proyecto, el bot atendía cinco marcas del grupo: **NQLN, Levni Care, Pictorys, Enlazados y Vauli**. En WhatsApp vendía para las cuatro primeras, cada una con su tono, sus reglas y su propio asistente. Vauli, que vende al mayor, usaba las respuestas automáticas con precios en los comentarios y mensajes de Instagram y Facebook.
 
 ## Los resultados
 
@@ -57,59 +55,69 @@ Estos son los números que medimos:
 
 La primera respuesta pasó de más de 7 horas a unos 2 minutos. Ojo con la comparación: antes medíamos la primera respuesta humana y ahora la primera respuesta automática. Pero para el cliente lo que importa es lo mismo: alguien le contesta con información útil casi de inmediato.
 
-El equipo de atención pasó de unas 10 personas a 2 o 3. Con un costo de referencia de US$300 por persona al mes, eso son **más de US$2.100 al mes** de ahorro, sin contar cargas sociales ni otros costos asociados a cada puesto.
+El equipo de atención pasó de unas 10 personas a 2 o 3. Con un costo de referencia de US$300 por persona al mes, eso son **más de US$2.100 al mes** en nómina, sin contar cargas sociales ni otros costos asociados a cada puesto.
 
-Las personas que quedaron no hacen el trabajo repetitivo. Atienden los casos que el bot les pasa: reclamos, pedidos especiales, clientes que prefieren hablar con alguien. Es un trabajo más útil que copiar precios del inventario al chat.
+Las personas que quedaron no hacen el trabajo repetitivo. Atienden los casos que el bot les pasa: reclamos, cancelaciones, pedidos especiales, clientes que prefieren hablar con alguien. Es un trabajo más útil que copiar precios del inventario al chat.
 
-<!-- CONFIRMAR: ¿hay datos de ventas o conversión antes/después que se puedan publicar? Si no, dejar solo tiempo de respuesta y equipo. -->
+## Cómo pasa el chat a una persona
+
+Esta parte es la que más preguntan, así que la explico con detalle.
+
+El bot tiene una herramienta para pedir ayuda humana y la usa cuando el cliente lo pide, cuando hay un reclamo, cuando quiere cancelar un pedido (el bot no cancela pedidos), cuando falta información o cuando la pregunta es demasiado compleja. También pide ayuda si un pago no cuadra con el pedido: por ejemplo, si el pedido ya estaba pagado o cancelado.
+
+Cuando eso pasa, en este orden:
+
+1. La conversación se asigna a una persona en el panel del equipo y el bot deja de responder en ese chat.
+2. Un supervisor recibe un aviso.
+3. El chat queda etiquetado para encontrarlo rápido.
+4. En WhatsApp Business queda una nota interna con el motivo, para que quien lo tome no tenga que leer todo desde el principio.
+
+El bot se queda callado un tiempo después de que una persona interviene. Vuelve a atender cuando se cumple ese tiempo, cuando alguien del equipo lo reactiva o cuando el cliente hace un pedido o un pago nuevo. Cada tienda también puede elegir un modo más suave, en el que el bot avisa y etiqueta pero sigue contestando.
+
+Y si el bot falla por algo técnico, deja una nota en la conversación con el motivo y la hora, así ningún chat queda sin respuesta sin que nadie se entere.
 
 ## Cómo lo hicimos, sin entrar en código
 
-No lo construimos todo de una vez. A grandes rasgos, el orden fue este:
+No lo construimos todo de una vez. El orden fue más o menos este:
 
-<!-- CONFIRMAR: ¿el orden de trabajo de abajo refleja lo que pasó? -->
+1. **Primera semana (noviembre de 2025):** respuestas con IA usando el catálogo de Shopify, notas de voz, fotos y la herramienta para pasar el chat a una persona. Con eso el bot ya podía atender sin riesgo de dejar a un cliente atascado.
+2. **Diciembre de 2025:** validación de pagos con Banesco, incluido el Pago Móvil.
+3. **Enero de 2026:** el enlace de pago donde el cliente valida su pago y deja sus datos de envío.
+4. **De febrero de 2026 en adelante:** más marcas sobre la misma base, envíos por Zoom y, más tarde, las respuestas con precios en Instagram y Facebook.
 
-1. **Entender las conversaciones.** Antes de escribir código, revisamos qué preguntaban los clientes y qué hacía el equipo para responder. Ahí salió la lista de tareas repetitivas: stock, precio, pago, envío.
-2. **Conectar los sistemas que ya existían.** La tienda no cambió de inventario ni de canal. El bot se conectó a lo que ya usaban: WhatsApp Business, Shopify, Odoo y el banco.
-3. **Darle una salida al bot.** Desde el principio, el bot sabía pasarle la conversación a una persona. Eso nos dejó lanzarlo antes, porque un error no se convertía en un cliente perdido.
-4. **Un panel para el equipo.** Construimos un panel web donde el equipo ve las conversaciones, toma las que el bot le pasa y revisa pedidos.
-
-<!-- CONFIRMAR: fechas o duración de cada fase (cuándo salió la primera versión, cuándo se midieron los resultados). -->
+En paralelo construimos un panel web donde el equipo ve las conversaciones, toma las que el bot le pasa y revisa pedidos y pagos.
 
 ## Lo que volvería a hacer
 
 **Medir antes de construir.** Tener el 7 h 16 min anotado desde el principio fue lo que nos permitió decir con números que el bot funcionaba. Si vas a automatizar tu WhatsApp, mide primero cuánto tardas hoy en responder.
 
-**Conectarse a los sistemas reales.** Un bot que responde "déjame consultar y te aviso" no sirve de mucho. El valor está en que consulta el stock, el precio y el pago de verdad, en el momento.
+**Conectarse a los sistemas reales.** Un bot que responde "déjame consultar y te aviso" no sirve de mucho. El valor está en que consulta el stock, la tasa y el pago de verdad, en el momento.
 
-**Dejar que el bot diga "no sé".** Pasar la conversación a una persona cuando hay dudas hizo que el equipo confiara en el bot y que los clientes no se frustraran.
+**Dejar que el bot diga "esto no es para mí".** Pasar la conversación a una persona cuando hace falta hizo que el equipo confiara en el bot y que los clientes no se frustraran.
+
+**No dejar los datos sensibles en manos del modelo.** Los datos bancarios que el bot puede dar a un cliente los revisa el código antes de enviar el mensaje, no la IA. Si el modelo se equivoca, el mensaje no sale con una cuenta incorrecta.
 
 **Aceptar notas de voz y fotos.** En Venezuela mucha gente prefiere mandar un audio o una captura en lugar de escribir. Si el bot solo entendiera texto, una buena parte de los mensajes terminaría igual en manos de una persona.
-
-**Respetar cómo trabaja la tienda.** No le pedimos al equipo ni a los clientes que cambiaran de herramienta. El bot se metió en el flujo que ya existía.
 
 ## Para desarrolladores: el stack
 
 Si eres desarrollador y te interesa cómo está armado:
 
-- **TypeScript** en todo el proyecto.
-- **Node.js con Fastify** para el backend: recibe los webhooks de WhatsApp, orquesta las llamadas a los modelos y a los sistemas externos.
-- **PostgreSQL** para conversaciones, carritos, pedidos y estado del bot.
-- **React 19** para el panel del equipo.
-- **Zod** para los esquemas, compartidos de punta a punta: el mismo esquema valida la respuesta del modelo, la API y los formularios del panel. Esto evitó muchos errores al pasar datos entre el modelo de IA y el resto del sistema.
+- **TypeScript** en todo el proyecto, organizado como monorepo.
+- **Node.js con Fastify** para el backend: recibe los webhooks de WhatsApp y orquesta las llamadas a la IA y a los sistemas externos.
+- **PostgreSQL** para conversaciones, estado del bot, pedidos y pagos.
+- **React 19** para el panel del equipo y para la página de pago del cliente.
+- **Zod** en un paquete compartido entre servidor y cliente: los mismos esquemas validan la API, los formularios del panel y las entradas de las herramientas de la IA.
 - **Callbell** como proveedor de WhatsApp Business.
-- **Shopify y Odoo** para inventario y pedidos.
-- **OpenAI y Gemini** para entender texto, audio e imágenes.
+- **Shopify** para catálogo, stock y pedidos.
+- **OpenAI**, a través del AI SDK de Vercel, para las respuestas y para entender audios e imágenes.
 
 Algunas decisiones que me parecen importantes:
 
-- **Salidas estructuradas.** El modelo no responde texto libre que luego hay que interpretar; devuelve datos con forma fija (validados con Zod) que el backend convierte en acciones: consultar stock, crear carrito, validar pago o pasar a humano.
-- **Instrucciones por marca.** Cada marca tiene su propio prompt sobre la misma lógica, así agregar una marca no significa copiar el bot.
-- **El traspaso a humano es una acción más.** No es un caso de error, es una salida normal del flujo que el modelo puede elegir.
-
-<!-- CONFIRMAR: ¿es correcto describir así las salidas estructuradas y el traspaso a humano como acción del modelo? -->
-
-<!-- CONFIRMAR: ¿qué modelo se usa para cada tarea (OpenAI vs Gemini) y se puede mencionar? -->
+- **Herramientas en lugar de texto que hay que interpretar.** El modelo responde en texto normal, pero para hacer cosas llama a herramientas con entradas validadas por Zod: buscar productos, revisar inventario, consultar pedidos, convertir a bolívares, registrar un pago, actualizar la dirección de envío o pedir ayuda humana. El backend ejecuta la herramienta y le devuelve el resultado.
+- **Salida estructurada solo donde hace falta.** Para leer comprobantes de pago sí usamos una salida con forma fija, validada con un esquema, porque ahí cada campo importa.
+- **El traspaso a humano es una herramienta más.** No es un caso de error: es una acción normal que el modelo puede elegir, con un motivo de una lista cerrada. El silencio del bot después del traspaso lo maneja el backend, no el modelo.
+- **Instrucciones por marca.** Cada marca tiene su propio prompt y su propia configuración sobre la misma lógica, así agregar una marca no significa copiar el bot.
 
 ## ¿Vendes por WhatsApp?
 
