@@ -1,5 +1,5 @@
 {
-	"$schema": "https://biomejs.dev/schemas/2.0.5/schema.json",
+	"$schema": "https://biomejs.dev/schemas/2.5.15/schema.json",
 	"vcs": {
 		"enabled": false,
 		"clientKind": "git",
@@ -7,7 +7,11 @@
 	},
 	"files": {
 		"ignoreUnknown": false,
-		"includes": ["src/**", "!src/i18n/**"]
+		"includes": [
+			"src/**",
+			"!src/i18n",
+			"!src/app.html"
+		]
 	},
 	"formatter": {
 		"enabled": true,
@@ -16,7 +20,6 @@
 	"linter": {
 		"enabled": true,
 		"rules": {
-			"recommended": true,
 			"correctness": {
 				"noUnusedVariables": "off"
 			}
@@ -33,6 +36,30 @@
 			"source": {
 				"organizeImports": "on"
 			}
+		}
+	},
+	"overrides": [
+		{
+			"includes": [
+				"**/*.svelte"
+			],
+			"linter": {
+				"rules": {
+					"style": {
+						"useConst": "off",
+						"useImportType": "off"
+					},
+					"correctness": {
+						"noUnusedVariables": "off",
+						"noUnusedImports": "off"
+					}
+				}
+			}
+		}
+	],
+	"css": {
+		"parser": {
+			"tailwindDirectives": true
 		}
 	}
 }

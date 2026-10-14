@@ -1,7 +1,7 @@
 <script lang="ts">
 import LL, { locale } from "$i18n/i18n-svelte";
 import { baseLocale } from "$i18n/i18n-util";
-import { formatDate } from "$lib/utils";
+import { formatDate, toIsoDate } from "$lib/utils";
 import { ChevronRight } from "@lucide/svelte";
 
 interface Props {
@@ -33,7 +33,7 @@ const href = $derived(
     >
       <time
         class="shrink-0 text-xs font-normal tabular-nums text-ink-muted sm:w-24 sm:pt-1 sm:text-right sm:text-sm"
-        datetime={formatDate(date, undefined, $locale)}
+        datetime={toIsoDate(date)}
       >
         {formatDate(date, undefined, $locale)}
       </time>

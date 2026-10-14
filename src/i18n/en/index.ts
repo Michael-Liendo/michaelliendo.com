@@ -34,24 +34,6 @@ const en = {
 			NOTES: "Notes",
 			PROJECTS: "Projects",
 		},
-		FOOTER: {
-			COPYRIGHT:
-				"Made with ❤️ by Michael Liendo © {startYear:number} - {currentYear:number}",
-		},
-	},
-	HOMEPAGE: {
-		HI: `Hi I'm {name:string} {surname:string},`,
-		HERO_HEADLINE: "I'm Michael Liendo, a Software Developer",
-		HERO_LEAD:
-			"Focused on React, TypeScript, mobile apps, backends and the web. I like tough problems, clear collaboration and shipping maintainable software.",
-		LOCATION: "Remote",
-		TIMEZONE: "UTC−5",
-		STACK_TITLE: "Core stack",
-		ABOUT: `I'm a <strong>Software Developer</strong> focused on React.js and TypeScript with a passion for <strong>Development of Mobile Applications, Servers, AI, Automations and Web Pages</strong>. I enjoy working on challenging projects, value collaboration and problem-solving.`,
-		CTA_LABEL:
-			"Are you interested in working with me or collaborating on a project? hello@michaelliendo.com",
-		CTA_BUTTON: "Contact me",
-		LATEST_NOTES: "Latest Notes",
 	},
 	NOTES: {
 		NOTES: "Notes",

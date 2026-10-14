@@ -102,7 +102,9 @@
 		*,
 		*::before,
 		*::after {
+			/* biome-ignore lint/complexity/noImportantStyles: reduced-motion must beat component styles */
 			animation-duration: 0.01ms !important;
+			/* biome-ignore lint/complexity/noImportantStyles: reduced-motion must beat component styles */
 			transition-duration: 0.01ms !important;
 		}
 	}

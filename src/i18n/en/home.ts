@@ -65,7 +65,7 @@ export default {
 				],
 				link: { href: "https://tizza.app", label: "tizza.app" },
 				image: {
-					src: "/images/tizza.jpg",
+					src: "/images/tizza.webp",
 					alt: "Tizza screen: a student solving an exercise with the AI tutor",
 					width: 1470,
 					height: 786,

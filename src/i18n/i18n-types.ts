@@ -92,58 +92,6 @@ type RootTranslation = {
 			 */
 			PROJECTS: string
 		}
-		FOOTER: {
-			/**
-			 * H​e​c​h​o​ ​c​o​n​ ​❤​️​ ​p​o​r​ ​M​i​c​h​a​e​l​ ​L​i​e​n​d​o​ ​©​ ​{​s​t​a​r​t​Y​e​a​r​}​ ​-​ ​{​c​u​r​r​e​n​t​Y​e​a​r​}
-			 * @param {number} currentYear
-			 * @param {number} startYear
-			 */
-			COPYRIGHT: RequiredParams<'currentYear' | 'startYear'>
-		}
-	}
-	HOMEPAGE: {
-		/**
-		 * H​o​l​a​ ​s​o​y​ ​{​n​a​m​e​}​ ​{​s​u​r​n​a​m​e​}​,
-		 * @param {string} name
-		 * @param {string} surname
-		 */
-		HI: RequiredParams<'name' | 'surname'>
-		/**
-		 * S​o​y​ ​M​i​c​h​a​e​l​ ​L​i​e​n​d​o​,​ ​d​e​s​a​r​r​o​l​l​a​d​o​r​ ​d​e​ ​s​o​f​t​w​a​r​e
-		 */
-		HERO_HEADLINE: string
-		/**
-		 * E​n​f​o​c​a​d​o​ ​e​n​ ​R​e​a​c​t​,​ ​T​y​p​e​S​c​r​i​p​t​,​ ​a​p​p​s​ ​m​ó​v​i​l​e​s​,​ ​b​a​c​k​e​n​d​s​ ​y​ ​w​e​b​.​ ​M​e​ ​g​u​s​t​a​n​ ​l​o​s​ ​r​e​t​o​s​ ​d​i​f​í​c​i​l​e​s​,​ ​l​a​ ​c​o​l​a​b​o​r​a​c​i​ó​n​ ​c​l​a​r​a​ ​y​ ​e​n​t​r​e​g​a​r​ ​s​o​f​t​w​a​r​e​ ​m​a​n​t​e​n​i​b​l​e​.
-		 */
-		HERO_LEAD: string
-		/**
-		 * R​e​m​o​t​o
-		 */
-		LOCATION: string
-		/**
-		 * U​T​C​−​5
-		 */
-		TIMEZONE: string
-		/**
-		 * S​t​a​c​k​ ​p​r​i​n​c​i​p​a​l
-		 */
-		STACK_TITLE: string
-		/**
-		 * S​o​y​ ​u​n​ ​<​s​t​r​o​n​g​>​D​e​s​a​r​r​o​l​l​a​d​o​r​ ​d​e​ ​S​o​f​t​w​a​r​e​<​/​s​t​r​o​n​g​>​ ​e​n​f​o​c​a​d​o​ ​e​n​ ​R​e​a​c​t​.​j​s​ ​y​ ​T​y​p​e​S​c​r​i​p​t​ ​a​p​a​s​i​o​n​a​d​o​ ​p​o​r​ ​e​l​ ​<​s​t​r​o​n​g​>​D​e​s​a​r​r​o​l​l​o​ ​d​e​ ​A​p​l​i​c​a​c​i​o​n​e​s​ ​M​ó​v​i​l​e​s​,​ ​S​e​r​v​i​d​o​r​e​s​,​ ​A​I​,​ ​A​u​t​o​m​a​t​i​z​a​c​i​o​n​e​s​ ​y​ ​P​á​g​i​n​a​s​ ​W​e​b​<​/​s​t​r​o​n​g​>​.​ ​D​i​s​f​r​u​t​o​ ​t​r​a​b​a​j​a​r​ ​e​n​ ​p​r​o​y​e​c​t​o​s​ ​d​e​s​a​f​i​a​n​t​e​s​,​ ​v​a​l​o​r​o​ ​l​a​ ​c​o​l​a​b​o​r​a​c​i​ó​n​ ​y​ ​l​a​ ​r​e​s​o​l​u​c​i​ó​n​ ​d​e​ ​p​r​o​b​l​e​m​a​s​.
-		 */
-		ABOUT: string
-		/**
-		 * ¿​T​e​ ​i​n​t​e​r​e​s​a​ ​t​r​a​b​a​j​a​r​ ​c​o​n​m​i​g​o​ ​o​ ​c​o​l​a​b​o​r​a​r​ ​e​n​ ​u​n​ ​p​r​o​y​e​c​t​o​?​ ​h​o​l​a​@​m​i​c​h​a​e​l​l​i​e​n​d​o​.​c​o​m
-		 */
-		CTA_LABEL: string
-		/**
-		 * C​o​n​t​á​c​t​e​m​e​ ​p​o​r​ ​e​m​a​i​l
-		 */
-		CTA_BUTTON: string
-		/**
-		 * Ú​l​t​i​m​a​s​ ​n​o​t​a​s
-		 */
-		LATEST_NOTES: string
 	}
 	NOTES: {
 		/**
@@ -267,54 +215,6 @@ export type TranslationFunctions = {
 			 */
 			PROJECTS: () => LocalizedString
 		}
-		FOOTER: {
-			/**
-			 * Hecho con ❤️ por Michael Liendo © {startYear} - {currentYear}
-			 */
-			COPYRIGHT: (arg: { currentYear: number, startYear: number }) => LocalizedString
-		}
-	}
-	HOMEPAGE: {
-		/**
-		 * Hola soy {name} {surname},
-		 */
-		HI: (arg: { name: string, surname: string }) => LocalizedString
-		/**
-		 * Soy Michael Liendo, desarrollador de software
-		 */
-		HERO_HEADLINE: () => LocalizedString
-		/**
-		 * Enfocado en React, TypeScript, apps móviles, backends y web. Me gustan los retos difíciles, la colaboración clara y entregar software mantenible.
-		 */
-		HERO_LEAD: () => LocalizedString
-		/**
-		 * Remoto
-		 */
-		LOCATION: () => LocalizedString
-		/**
-		 * UTC−5
-		 */
-		TIMEZONE: () => LocalizedString
-		/**
-		 * Stack principal
-		 */
-		STACK_TITLE: () => LocalizedString
-		/**
-		 * Soy un <strong>Desarrollador de Software</strong> enfocado en React.js y TypeScript apasionado por el <strong>Desarrollo de Aplicaciones Móviles, Servidores, AI, Automatizaciones y Páginas Web</strong>. Disfruto trabajar en proyectos desafiantes, valoro la colaboración y la resolución de problemas.
-		 */
-		ABOUT: () => LocalizedString
-		/**
-		 * ¿Te interesa trabajar conmigo o colaborar en un proyecto? hola@michaelliendo.com
-		 */
-		CTA_LABEL: () => LocalizedString
-		/**
-		 * Contácteme por email
-		 */
-		CTA_BUTTON: () => LocalizedString
-		/**
-		 * Últimas notas
-		 */
-		LATEST_NOTES: () => LocalizedString
 	}
 	NOTES: {
 		/**
