@@ -272,9 +272,19 @@
             ? 'hover:border-ink'
             : ''}"
         >
-          <span class="mb-2 text-[19px] font-semibold tracking-[-0.02em]"
-            >{item.name}{item.href ? ' ↗' : ''}</span
-          >
+          <span class="mb-2 flex items-center gap-2.5 text-[19px] font-semibold tracking-[-0.02em]">
+            {#if item.logo}
+              <img
+                src={item.logo}
+                alt=""
+                width="28"
+                height="28"
+                loading="lazy"
+                class="size-7 rounded-lg border border-border bg-white object-contain"
+              />
+            {/if}
+            {item.name}{item.href ? ' ↗' : ''}
+          </span>
           <span class="text-[15.5px] leading-[1.5] text-ink-muted">{item.description}</span>
           <span class="mt-auto pt-5 text-[13.5px] text-ink-muted">{item.meta}</span>
         </svelte:element>
@@ -376,6 +386,17 @@
           >
             <img src={tech.icon} alt="" width="18" height="18" class="size-[18px]" loading="lazy" />
             {tech.name}
+          </li>
+        {/each}
+      </ul>
+      <p class="mb-0 mt-6 text-[15px] font-medium text-ink">{t.about.integrationsLabel}</p>
+      <ul class="m-0 mt-3 flex list-none flex-wrap gap-2 p-0">
+        {#each t.about.integrations as tool (tool.name)}
+          <li
+            class="inline-flex items-center gap-2 rounded-full bg-surface-sunken py-1.5 pl-2 pr-3 text-[14px]"
+          >
+            <img src={tool.icon} alt="" width="18" height="18" class="size-[18px]" loading="lazy" />
+            {tool.name}
           </li>
         {/each}
       </ul>

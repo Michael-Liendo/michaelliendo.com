@@ -28,6 +28,8 @@ export interface HomeCase {
 
 export interface HomeMoreItem {
 	name: string;
+	/** Small square brand mark shown before the name. */
+	logo?: string;
 	description: string;
 	meta: string;
 	href?: string;
@@ -79,6 +81,9 @@ export interface HomeContent {
 		paragraphs: string[];
 		photoAlt: string;
 		stack: { name: string; icon: string }[];
+		/** Business tools Michael connects to, shown as a second row. */
+		integrationsLabel: string;
+		integrations: { name: string; icon: string }[];
 	};
 	notes: { label: string; title: string; all: string };
 	contact: {

@@ -75,6 +75,7 @@ export default [
 		role: "Frontend lead · Full-time",
 		description:
 			"A management system to run inventory, purchasing, sales and finance from one clear interface, built to grow with the business.",
+		image_url: "/images/logos/soluciones-jm.png",
 		tags: ["Management system", "Inventory", "Web"],
 		date: "2024-08-01",
 		period: "Aug 2024 – Feb 2025 · 7 mos",
@@ -86,6 +87,7 @@ export default [
 		description:
 			"The interface for a cooperative's AI assistant: it answers questions about products, policies and procedures in real time, with a personal sign-in for each user.",
 		preview_url: "https://www.oriencoop.cl/",
+		image_url: "/images/logos/oriencoop.png",
 		tags: ["AI", "Chatbot", "Web"],
 		date: "2024-12-01",
 		period: "Dec 2024 – Jan 2025 · 2 mos",
