@@ -29,7 +29,7 @@ export default [
 		name: "La Victoria — Reports",
 		role: "Tech lead · Freelance",
 		description:
-			"A WhatsApp AI assistant that checks payments and tracks cash flow in real time: operations went from 9 people to 2. I led 2 developers through delivery.",
+			"A WhatsApp AI assistant that checks payments and tracks cash flow in real time: operations went from 9 people to 3, about US$1,200 less in payroll every month. I led 2 developers through delivery.",
 		tags: ["WhatsApp", "AI", "Payments", "Automation"],
 		date: "2025-06-01",
 		period: "Jun 2025 – Aug 2025 · 3 mos",
