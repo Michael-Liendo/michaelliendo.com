@@ -21,7 +21,42 @@ import "@fontsource/jetbrains-mono/latin-ext-400.css";
 import "@fontsource/jetbrains-mono/latin-500.css";
 import "@fontsource/jetbrains-mono/latin-ext-500.css";
 import "../app.css";
+import { afterNavigate } from "$app/navigation";
+import { contactLocation, referrerHost, track } from "$lib/analytics";
+import { onMount } from "svelte";
 const { children } = $props();
+
+let firstView = true;
+
+afterNavigate(() => {
+	track("page_viewed", {
+		path: page.url.pathname,
+		// Only the landing view has an external referrer worth recording.
+		referrer_host: firstView ? referrerHost() : null,
+	});
+	firstView = false;
+});
+
+onMount(() => {
+	const onClick = (event: MouseEvent) => {
+		const link = (event.target as Element | null)?.closest?.("a[href]");
+		if (!link) return;
+		const href = link.getAttribute("href") ?? "";
+		const channel = href.startsWith("https://wa.me/")
+			? "whatsapp"
+			: href.startsWith("mailto:")
+				? "email"
+				: null;
+		if (!channel) return;
+		track("contact_clicked", {
+			channel,
+			location: contactLocation(link),
+			path: page.url.pathname,
+		});
+	};
+	document.addEventListener("click", onClick, { capture: true });
+	return () => document.removeEventListener("click", onClick, { capture: true });
+});
 
 // Notes are read in a narrow column; home and projects use the full width.
 const wide = $derived(
