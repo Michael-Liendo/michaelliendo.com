@@ -303,16 +303,22 @@
     <p class="label">{t.testimonials.label}</p>
     <h2 id="testimonios-t" class="section-title">{t.testimonials.title}</h2>
     <ul
-      class="m-0 mt-11 grid list-none grid-cols-1 gap-4 p-0 {testimonials.length === 2 ||
-      testimonials.length === 4
-        ? 'md:grid-cols-2'
-        : 'md:grid-cols-2 lg:grid-cols-3'}"
+      class="m-0 mt-11 grid list-none grid-cols-1 gap-4 p-0 {testimonials.length === 1
+        ? ''
+        : testimonials.length === 2 || testimonials.length === 4
+          ? 'md:grid-cols-2'
+          : 'md:grid-cols-2 lg:grid-cols-3'}"
     >
       {#each testimonials as item (item.name)}
         <li class="flex">
           <figure class="m-0 flex w-full flex-col rounded-[24px] bg-surface-sunken p-7 sm:p-8">
             <span aria-hidden="true" class="text-[40px] font-semibold leading-none text-accent">“</span>
-            <blockquote class="m-0 mt-2 text-[20px] leading-[1.45] tracking-[-0.01em] text-ink">
+            <!-- A single testimonial spans the row, so it gets a larger quote. -->
+            <blockquote
+              class="m-0 mt-2 leading-[1.45] tracking-[-0.01em] text-ink {testimonials.length === 1
+                ? 'max-w-[900px] text-[22px] sm:text-[28px] sm:leading-[1.35]'
+                : 'text-[20px]'}"
+            >
               {item.quote}
             </blockquote>
             <figcaption class="mt-auto flex items-center gap-3 pt-7">

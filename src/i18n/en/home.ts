@@ -114,7 +114,15 @@ export default {
 	testimonials: {
 		label: "Testimonials",
 		title: "What clients say.",
-		items: [],
+		items: [
+			{
+				quote:
+					"We went from 12 employees to 3, and we serve twice as many people as before, faster. Processing everything that comes in is now extremely easy.",
+				name: "Victor",
+				role: "Owner",
+				company: "La Victoria",
+			},
+		],
 	},
 	process: {
 		label: "Process",
