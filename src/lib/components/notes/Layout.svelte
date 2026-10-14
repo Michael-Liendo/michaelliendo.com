@@ -39,7 +39,7 @@ export { a, blockquote, h2, h3, img, table, th, td };
   <header
     class="border-b border-border pb-8 md:pb-10"
   >
-    <h1 class="py-2 text-balance text-3xl font-bold tracking-tight text-ink md:text-4xl">
+    <h1 class="py-2 text-balance font-serif text-4xl font-normal leading-tight tracking-tight text-ink md:text-[2.75rem]">
       {title}
     </h1>
 
@@ -66,7 +66,7 @@ export { a, blockquote, h2, h3, img, table, th, td };
   </header>
 
   <article
-    class="note-container prose prose-invert prose-lg mt-8 max-w-none text-ink prose-headings:font-semibold prose-headings:tracking-tight prose-p:text-ink-muted prose-strong:text-ink prose-a:text-link prose-a:no-underline hover:prose-a:underline"
+    class="note-container prose prose-lg mt-8 max-w-none text-ink prose-headings:tracking-tight prose-p:text-ink-soft prose-headings:font-serif prose-headings:font-medium prose-strong:text-ink prose-a:text-ink prose-a:decoration-[#C9C4B8] prose-a:underline-offset-[3px] hover:prose-a:text-accent"
   >
     {@render children()}
   </article>

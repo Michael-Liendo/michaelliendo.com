@@ -3,31 +3,34 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-/* Dark UI palette (~#121212 / #1c1c1c) inspired by modern portfolio references */
+/* Warm editorial palette: paper background, ink text, terracotta accent */
 @theme {
 	--font-sans:
-		"Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+		"Schibsted Grotesk", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
 		"Segoe UI Emoji";
+	--font-serif: "Newsreader", Georgia, "Times New Roman", serif;
 	--font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, monospace;
 
-	/* Teal accent — legible on charcoal */
-	--color-accent: oklch(0.72 0.13 195);
-	--color-accent-foreground: oklch(0.16 0.04 200);
-	--color-accent-muted: oklch(0.24 0.035 200);
+	--color-accent: #b8431f;
+	--color-accent-foreground: #fbfaf7;
+	--color-accent-muted: #f1eee7;
 
-	--color-surface: oklch(0.145 0.006 265);
-	--color-surface-elevated: oklch(0.195 0.006 265);
-	--color-ink: oklch(0.985 0.002 265);
-	--color-ink-muted: oklch(0.68 0.02 265);
-	--color-border: oklch(0.28 0.01 265);
+	--color-surface: #fbfaf7;
+	--color-surface-elevated: #ffffff;
+	--color-surface-sunken: #f1eee7;
+	--color-ink: #1a1a1a;
+	--color-ink-soft: #3a3a38;
+	--color-ink-muted: #6b6862;
+	--color-ink-faint: #9a958b;
+	--color-border: #e4e0d6;
+	--color-border-soft: #eeebe3;
+	--color-success: #2f8f5b;
 
-	--color-link: oklch(0.75 0.11 195);
-	--color-link-hover: oklch(0.82 0.1 195);
+	--color-link: #1a1a1a;
+	--color-link-hover: #b8431f;
 
-	--shadow-soft:
-		0 1px 0 oklch(1 0 0 / 0.05), 0 4px 20px oklch(0 0 0 / 0.35);
-	--shadow-soft-lg:
-		0 1px 0 oklch(1 0 0 / 0.06), 0 12px 40px oklch(0 0 0 / 0.45);
+	--shadow-soft: 0 1px 2px rgb(26 26 26 / 0.04), 0 4px 16px rgb(26 26 26 / 0.05);
+	--shadow-soft-lg: 0 2px 4px rgb(26 26 26 / 0.04), 0 18px 40px rgb(26 26 26 / 0.08);
 }
 
 @keyframes fade-in-up {
@@ -45,11 +48,29 @@
 	animation: fade-in-up 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
+/* Underlined text link used across the editorial layout */
+@utility link-underline {
+	color: var(--color-ink);
+	text-decoration-line: underline;
+	text-decoration-color: #c9c4b8;
+	text-decoration-thickness: 1px;
+	text-underline-offset: 3px;
+	transition:
+		color 150ms,
+		text-decoration-color 150ms;
+
+	&:hover {
+		color: var(--color-accent);
+		text-decoration-color: var(--color-accent);
+	}
+}
+
 @layer base {
 	html {
 		@apply scroll-smooth antialiased;
 		font-family: var(--font-sans);
-		color-scheme: dark;
+		color-scheme: light;
+		scroll-padding-top: 1.5rem;
 	}
 
 	body {
@@ -61,8 +82,26 @@
 		font-weight: 600;
 	}
 
+	:focus-visible {
+		outline: 2px solid var(--color-accent);
+		outline-offset: 3px;
+		border-radius: 4px;
+	}
+
 	::selection {
-		background-color: color-mix(in oklch, var(--color-accent) 45%, transparent);
+		background-color: color-mix(in oklch, var(--color-accent) 22%, transparent);
 		color: var(--color-ink);
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		html {
+			scroll-behavior: auto;
+		}
+		*,
+		*::before,
+		*::after {
+			animation-duration: 0.01ms !important;
+			transition-duration: 0.01ms !important;
+		}
 	}
 }

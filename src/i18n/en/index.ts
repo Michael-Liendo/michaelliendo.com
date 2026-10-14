@@ -2,12 +2,12 @@ import type { BaseTranslation } from "../i18n-types";
 
 const en = {
 	SEO: {
-		TITLE: "Michael Liendo | Software Developer",
+		TITLE: "Michael Liendo · Full Stack Developer | TypeScript & AI",
 		DESCRIPTION:
-			"Michael Liendo — software developer focused on React, TypeScript, mobile apps, backends and web. Technical notes on engineering, Svelte and tooling. Open to collaboration; contact hello@michaelliendo.com.",
+			"Full stack developer based in Caracas, Venezuela. I build web and mobile apps with TypeScript, React, Node.js and PostgreSQL, plus AI WhatsApp bots that cut first reply time from 7 hours to 2 minutes.",
 		KEYWORDS:
-			"michael liendo, home, notes, portfolio, software developer, svelte, typescript, web development, challenging projects, collaboration, problem-solving",
-		IMAGE: "https://avatars.githubusercontent.com/u/70660410?v=4",
+			"michael liendo, full stack developer venezuela, remote typescript developer, react developer, node.js developer, ai whatsapp bot, whatsapp automation, freelance developer latam, ionic, sveltekit",
+		IMAGE: "https://michaelliendo.com/og/home-en.png",
 		NOTES: {
 			TITLE: "Notes | Michael Liendo",
 			DESCRIPTION:
@@ -23,7 +23,7 @@ const en = {
 		PROJECT: {
 			TITLE: "Projects | Michael Liendo",
 			DESCRIPTION:
-				"Selected software projects by Michael Liendo: open source, web and mobile work built with modern stacks. Links to demos and repositories.",
+				"Projects by Michael Liendo: AI WhatsApp bots for retail, an education platform with an AI tutor, Next.js ERPs, Ionic mobile apps and open source tools in Rust.",
 			KEYWORDS:
 				"michael liendo, projects, software developer, svelte, typescript, web development, collaboration, problem-solving",
 		},

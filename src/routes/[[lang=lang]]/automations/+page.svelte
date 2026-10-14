@@ -111,7 +111,7 @@
 
   <h1
     id="leads-hero-heading"
-    class="mt-5 max-w-3xl text-pretty text-3xl font-bold tracking-tight text-ink sm:text-4xl md:text-[2.35rem] md:leading-tight"
+    class="mt-5 max-w-3xl text-pretty font-serif text-[2.15rem] font-normal leading-[1.15] tracking-tight text-ink sm:text-[2.9rem]"
   >
     {$LL.LEADS.HERO_HEADLINE()}
   </h1>

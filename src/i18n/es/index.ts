@@ -2,12 +2,12 @@ import type { BaseTranslation } from "../i18n-types";
 
 const es = {
 	SEO: {
-		TITLE: "Michael Liendo | Desarrollador de Software",
+		TITLE: "Michael Liendo · Desarrollador Full Stack | TypeScript e IA",
 		DESCRIPTION:
-			"Michael Liendo — desarrollador de software enfocado en React, TypeScript, apps móviles, backends y web. Notas técnicas sobre ingeniería, Svelte y herramientas. Colaboraciones: hola@michaelliendo.com.",
+			"Desarrollador full stack en Caracas, Venezuela. Construyo apps web y móviles con TypeScript, React, Node.js y PostgreSQL, y bots de WhatsApp con IA que bajaron la primera respuesta de 7 horas a 2 minutos.",
 		KEYWORDS:
-			"michael liendo, inicio, notas, portafolio, desarrollador de software, svelte, typescript, desarrollo web, proyectos desafiantes, colaboración, resolución de problemas",
-		IMAGE: "https://avatars.githubusercontent.com/u/70660410?v=4",
+			"michael liendo, desarrollador full stack venezuela, programador caracas, desarrollador typescript, desarrollador react, node.js, bot de whatsapp con ia, automatización whatsapp, desarrollador freelance venezuela, ionic, sveltekit",
+		IMAGE: "https://michaelliendo.com/og/home-es.png",
 		NOTES: {
 			TITLE: "Notas | Michael Liendo",
 			DESCRIPTION:
@@ -23,7 +23,7 @@ const es = {
 		PROJECT: {
 			TITLE: "Proyectos | Michael Liendo",
 			DESCRIPTION:
-				"Proyectos de software seleccionados de Michael Liendo: código abierto, web y móvil con stacks modernos. Enlaces a demos y repositorios.",
+				"Proyectos de Michael Liendo: bots de WhatsApp con IA para retail, una plataforma educativa con tutor de IA, ERPs en Next.js, apps móviles con Ionic y herramientas open source en Rust.",
 			KEYWORDS:
 				"proyectos de michael liendo, desarrollador de software, svelte, typescript, desarrollo web, colaboración, resolución de problemas",
 		},
