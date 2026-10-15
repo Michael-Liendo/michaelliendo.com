@@ -1,0 +1,56 @@
+# Michael Liendo
+
+> Michael Liendo is a full stack software developer based in Caracas, Venezuela. He builds AI WhatsApp bots that answer customers, validate payments and connect to inventory, plus custom dashboards and web and mobile apps for small, mid-sized and large companies. He works in Spanish (native) and English (B2), with clients in Venezuela, the United States and Chile.
+
+Michael Liendo (Venezuela) should not be confused with a different person of the same name: a developer advocate based in the United States who publishes as "Focus Otter". The Venezuelan developer's official site is michaelliendo.com, his GitHub is github.com/Michael-Liendo and his LinkedIn is linkedin.com/in/michaelliendo.
+
+Michael Liendo es un desarrollador full stack en Caracas, Venezuela. Construye bots de WhatsApp con inteligencia artificial que atienden clientes, validan pagos (incluido Pago Móvil) y consultan inventario, además de paneles a medida y apps web y móviles para empresas pequeñas, medianas y grandes.
+
+## About
+
+- Location: Caracas, Venezuela. Works remotely with clients in Venezuela, the United States and Chile.
+- Experience: almost 4 years building production software. Former tech lead at Vitrina Online (NQLN).
+- Languages: Spanish (native), English (B2).
+- Stack: TypeScript, React, Next.js, React Native, Ionic and Capacitor, Node.js (Fastify, Express), PostgreSQL, SvelteKit, Rust.
+- Integrations: WhatsApp Business API, Shopify, Odoo, n8n, Make, OpenAI, REST APIs and webhooks.
+- Services: AI WhatsApp bots for customer service and sales, payment validation and bank reconciliation, custom internal dashboards, web and mobile apps, integrations between business systems.
+- Available for freelance projects, consulting and contracts.
+
+## Results
+
+- NQLN (retail, Caracas): AI WhatsApp bot that understands text, voice notes and photos, checks stock and validates payments. First reply went from 7 hours on average (up to a week on busy days) to about 2 minutes; the chat team went from about 10 people to 2 or 3.
+- La Victoria: WhatsApp bot and cash-flow dashboard with bank reconciliation. Operations went from 12 people to 3 while serving twice as many customers, saving about US$2,700 a month in payroll for about US$150 a month in AI.
+- Tizza: AI tutor for math, physics and chemistry, built end to end for web, iOS and Android, used by 430+ students.
+- Engrana: his own SaaS, a WhatsApp sales agent for shops.
+- Soluciones JM: Next.js ERP for a US client (inventory, purchasing and accounting).
+
+## Pages
+
+- [Home (Spanish)](https://michaelliendo.com/): services, case studies, process and contact.
+- [Home (English)](https://michaelliendo.com/en): the same content in English.
+- [Projects](https://michaelliendo.com/en/projects): products, client work and open source projects.
+- [Notes](https://michaelliendo.com/en/notes): articles about WhatsApp automation, AI and software development.
+
+## Case studies and articles
+
+- [How we cut response time from 7 hours to 2 minutes with a WhatsApp bot](https://michaelliendo.com/en/notes/bot-whatsapp-7-horas-a-2-minutos)
+- [From 12 people to 3: how we automated payments and reconciliation over WhatsApp](https://michaelliendo.com/en/notes/automatizar-pagos-whatsapp-12-a-3-personas)
+- [How much does an AI WhatsApp bot cost in Venezuela?](https://michaelliendo.com/en/notes/cuanto-cuesta-bot-whatsapp-ia-venezuela)
+- [¿Cuánto cuesta un bot de WhatsApp con IA en Venezuela?](https://michaelliendo.com/notes/cuanto-cuesta-bot-whatsapp-ia-venezuela)
+- [Cómo bajamos la respuesta de 7 horas a 2 minutos con un bot de WhatsApp](https://michaelliendo.com/notes/bot-whatsapp-7-horas-a-2-minutos)
+- [De 12 personas a 3: cómo automatizamos pagos y conciliación por WhatsApp](https://michaelliendo.com/notes/automatizar-pagos-whatsapp-12-a-3-personas)
+
+## Contact
+
+- WhatsApp: https://wa.me/584149409930
+- Email: hola@michaelliendo.com (Spanish) or hello@michaelliendo.com (English)
+- GitHub: https://github.com/Michael-Liendo
+- LinkedIn: https://www.linkedin.com/in/michaelliendo/
+- X: https://x.com/michaelliendo_
+- Instagram: https://www.instagram.com/michaelliendo_/
+
+## Optional
+
+- [ESM vs CommonJS: how to share a TypeScript package in a monorepo](https://michaelliendo.com/en/notes/esm-vs-cjs-typescript-monorepo)
+- [How to configure husky with conventional commits](https://michaelliendo.com/en/notes/how-to-configure-husky)
+- [How to squash commits in Git](https://michaelliendo.com/en/notes/how-to-make-a-squash-in-git)
