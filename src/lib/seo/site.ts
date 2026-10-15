@@ -19,6 +19,8 @@ export const SAME_AS = [
 	"https://x.com/michaelliendo_",
 	"https://twitter.com/michaelliendo_",
 	"https://www.instagram.com/michaelliendo_/",
+	// Google Business Profile
+	"https://www.google.com/maps?cid=18004203306599716897",
 ] as const;
 
 export const KNOWS_ABOUT = [

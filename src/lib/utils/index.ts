@@ -6,7 +6,11 @@ export function formatDate(
 	locales = "es",
 ) {
 	const dateToFormat = new Date(date); // Pass the date directly
-	const dateFormatter = new Intl.DateTimeFormat(locales, { dateStyle });
+	// Note dates are calendar days parsed as UTC; format them in UTC so they don't shift a day back.
+	const dateFormatter = new Intl.DateTimeFormat(locales, {
+		dateStyle,
+		timeZone: "UTC",
+	});
 	return dateFormatter.format(dateToFormat);
 }
 
