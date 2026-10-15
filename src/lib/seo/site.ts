@@ -3,7 +3,7 @@ export const SITE_ORIGIN = "https://michaelliendo.com";
 
 export const SITE_NAME = "Michael Liendo";
 
-export const TWITTER_SITE = "@mykeliendo";
+export const TWITTER_SITE = "@michaelliendo_";
 
 export const PROFILE_IMAGE = `${SITE_ORIGIN}/images/michael-liendo.jpg`;
 
@@ -16,8 +16,8 @@ export const OG_IMAGE = {
 export const SAME_AS = [
 	"https://github.com/Michael-Liendo",
 	"https://www.linkedin.com/in/michaelliendo/",
-	"https://x.com/mykeliendo",
-	"https://twitter.com/mykeliendo",
+	"https://x.com/michaelliendo_",
+	"https://twitter.com/michaelliendo_",
 	"https://www.instagram.com/michaelliendo_/",
 ] as const;
 
