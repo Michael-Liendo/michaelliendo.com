@@ -81,7 +81,7 @@ const projectsJsonLd = $derived({
   {:else}
     <span
       aria-hidden="true"
-      class="{size} grid shrink-0 place-items-center rounded-xl bg-ink text-[14px] font-semibold tracking-[-0.02em] text-white"
+      class="{size} grid shrink-0 place-items-center rounded-xl bg-ink text-[14px] font-semibold tracking-[-0.02em] text-surface"
       >{initials(project.name)}</span
     >
   {/if}
@@ -121,7 +121,7 @@ const projectsJsonLd = $derived({
 {#snippet tags(project: Project, max: number)}
   <ul class="m-0 mt-5 flex list-none flex-wrap gap-1.5 p-0">
     {#each project.tags.slice(0, max) as tag (tag)}
-      <li class="rounded-full bg-white px-2.5 py-1 text-[13px] text-ink-soft">{tag}</li>
+      <li class="rounded-full bg-surface-elevated px-2.5 py-1 text-[13px] text-ink-soft">{tag}</li>
     {/each}
   </ul>
 {/snippet}
@@ -184,21 +184,21 @@ const projectsJsonLd = $derived({
 
 <section
   id="contacto-proyectos"
-  class="mt-24 flex flex-col items-start justify-between gap-6 rounded-[28px] bg-ink px-6 py-12 text-white sm:flex-row sm:items-center sm:px-12"
+  class="mt-24 flex flex-col items-start justify-between gap-6 rounded-[28px] bg-panel px-6 py-12 text-white sm:flex-row sm:items-center sm:px-12"
   aria-label={$locale === 'en' ? 'Contact' : 'Contacto'}
 >
   <div>
     <h2 class="m-0 text-[1.75rem] font-semibold leading-tight tracking-[-0.035em] sm:text-[2.1rem]">
       {$locale === 'en' ? 'Want something like this?' : '¿Quieres algo así para tu negocio?'}
     </h2>
-    <p class="m-0 mt-2 text-[#A3A3A3]">
+    <p class="m-0 mt-2 text-panel-muted">
       {$locale === 'en' ? 'Tell me about it. I reply within a day.' : 'Cuéntamelo. Respondo en menos de un día.'}
     </p>
   </div>
   <a
     href={WHATSAPP_URL}
     rel="noreferrer"
-    class="inline-flex min-h-12 shrink-0 items-center gap-2 rounded-xl bg-white px-5 text-[15.5px] font-medium text-ink no-underline transition-colors hover:bg-accent hover:text-white"
+    class="inline-flex min-h-12 shrink-0 items-center gap-2 rounded-xl bg-white px-5 text-[15.5px] font-medium text-[#0b0b0b] no-underline transition-colors hover:bg-accent hover:text-white"
   >
     {$locale === 'en' ? 'Message me on WhatsApp' : 'Escríbeme por WhatsApp'}
   </a>

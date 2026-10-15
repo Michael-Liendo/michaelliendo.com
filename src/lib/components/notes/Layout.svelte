@@ -66,7 +66,7 @@ export { a, blockquote, h2, h3, img, table, th, td };
   </header>
 
   <article
-    class="note-container prose prose-lg mt-8 max-w-none text-ink prose-headings:tracking-tight prose-p:text-ink-soft prose-headings:font-semibold prose-strong:text-ink prose-a:text-ink prose-a:decoration-[#D4D4CF] prose-a:underline-offset-[3px] hover:prose-a:text-accent"
+    class="note-container prose prose-lg mt-8 max-w-none text-ink prose-headings:tracking-tight prose-p:text-ink-soft prose-headings:font-semibold prose-strong:text-ink prose-a:text-ink prose-a:decoration-underline prose-a:underline-offset-[3px] hover:prose-a:text-accent"
   >
     {@render children()}
   </article>

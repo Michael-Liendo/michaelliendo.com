@@ -4,6 +4,7 @@ import { page } from "$app/state";
 import LL, { locale } from "$i18n/i18n-svelte";
 import { baseLocale } from "$i18n/i18n-util";
 import { cn } from "$lib";
+import ThemeToggle from "$lib/components/theme-toggle.svelte";
 import { removeLocaleFromPath, replaceLocaleInUrl } from "$lib/utils/locale";
 import { PublicRoutesEnum } from "$lib/utils/routes";
 
@@ -33,7 +34,7 @@ const links = $derived([
 </script>
 
 <header
-  class="sticky top-0 z-30 -mx-6 flex items-center justify-between gap-4 bg-white/85 px-6 py-4 backdrop-blur-md"
+  class="sticky top-0 z-30 -mx-6 flex items-center justify-between gap-2 bg-surface/85 px-6 py-4 backdrop-blur-md"
 >
   <a
     href="{prefix}{PublicRoutesEnum.Home}"
@@ -60,8 +61,8 @@ const links = $derived([
             href={link.href}
             aria-current={link.active ? 'page' : undefined}
             class={cn(
-              'block rounded-full px-3 py-1.5 text-ink-muted no-underline transition-colors hover:bg-white hover:text-ink sm:px-3.5',
-              link.active && 'bg-white text-ink shadow-[0_1px_2px_rgb(0_0_0/0.06)]',
+              'block rounded-full px-2.5 py-1.5 text-ink-muted no-underline transition-colors hover:bg-surface-elevated hover:text-ink sm:px-3.5',
+              link.active && 'bg-surface-elevated text-ink shadow-[0_1px_2px_rgb(0_0_0/0.06)]',
             )}>{link.label}</a
           >
         </li>
@@ -69,18 +70,19 @@ const links = $derived([
     </ul>
   </nav>
 
-  <div class="flex shrink-0 items-center gap-2">
+  <div class="flex shrink-0 items-center gap-1 sm:gap-2">
     <a
       href={otherLocaleHref}
       hreflang={otherLocale}
       lang={otherLocale}
-      class="rounded-lg px-2 py-1.5 text-[13.5px] font-medium text-ink-muted no-underline transition-colors hover:text-ink"
+      class="rounded-lg px-1.5 py-1.5 text-[13.5px] sm:px-2 font-medium text-ink-muted no-underline transition-colors hover:text-ink"
       title={otherLocale === 'en' ? 'Read in English' : 'Leer en español'}
       data-sveltekit-reload>{otherLocale.toUpperCase()}</a
     >
+    <ThemeToggle />
     <a
       href="{prefix}/#contacto"
-      class="hidden rounded-xl bg-ink px-4 py-2.5 text-[14.5px] font-medium text-white no-underline transition-colors hover:bg-accent sm:inline-flex"
+      class="hidden rounded-xl bg-ink px-4 py-2.5 text-[14.5px] font-medium text-surface no-underline transition-colors hover:bg-accent hover:text-white sm:inline-flex"
       >{$locale === 'en' ? "Let's talk" : 'Hablemos'}</a
     >
   </div>

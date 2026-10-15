@@ -2,6 +2,6 @@
 const { href, children } = $props();
 </script>
 
-<a class="text-blue-600" {href}>
+<a class="text-accent" {href}>
   {@render children()}
 </a>

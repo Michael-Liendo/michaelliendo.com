@@ -46,18 +46,18 @@ const body = $derived(
   <div class="mt-9 flex flex-wrap gap-2.5">
     <a
       href="{prefix}{PublicRoutesEnum.Home}"
-      class="inline-flex min-h-12 items-center rounded-xl bg-ink px-5 text-[15.5px] font-medium text-white no-underline transition-colors hover:bg-accent"
+      class="inline-flex min-h-12 items-center rounded-xl bg-ink px-5 text-[15.5px] font-medium text-surface no-underline transition-colors hover:bg-accent hover:text-white"
       >{en ? 'Go to the home page' : 'Ir al inicio'}</a
     >
     <a
       href="{prefix}{PublicRoutesEnum.Projects}"
-      class="inline-flex min-h-12 items-center rounded-xl bg-surface-sunken px-5 text-[15.5px] font-medium text-ink no-underline transition-colors hover:bg-[#e9e9e5]"
+      class="inline-flex min-h-12 items-center rounded-xl bg-surface-sunken px-5 text-[15.5px] font-medium text-ink no-underline transition-colors hover:bg-sunken-hover"
       >{en ? 'See projects' : 'Ver proyectos'}</a
     >
     <a
       href={WHATSAPP_URL}
       rel="noreferrer"
-      class="inline-flex min-h-12 items-center rounded-xl bg-surface-sunken px-5 text-[15.5px] font-medium text-ink no-underline transition-colors hover:bg-[#e9e9e5]"
+      class="inline-flex min-h-12 items-center rounded-xl bg-surface-sunken px-5 text-[15.5px] font-medium text-ink no-underline transition-colors hover:bg-sunken-hover"
       >WhatsApp</a
     >
   </div>
