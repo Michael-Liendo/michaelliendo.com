@@ -2,7 +2,7 @@ import type { BaseTranslation } from "../i18n-types";
 
 const es = {
 	SEO: {
-		TITLE: "Michael Liendo · Desarrollador Full Stack | Bots de WhatsApp con IA",
+		TITLE: "Michael Liendo · Desarrollador en Venezuela | Bots de WhatsApp con IA",
 		DESCRIPTION:
 			"Desarrollador full stack en Caracas, Venezuela. Automatizo la atención por WhatsApp con IA y construyo apps web y móviles a medida con TypeScript, React y Node.js.",
 		KEYWORDS:
