@@ -1,0 +1,76 @@
+---
+title: "How I landed my first Upwork client (and what it cost me)"
+description: "Five days, sixteen proposals and about US$50 invested. My first client paid me US$150 for a WhatsApp bot I delivered in a day, and left a 5-star review. Here's what I did and what I'd do differently."
+date: 2026-10-16
+icon: whatsapp
+tags: [upwork, freelance, whatsapp, case-study]
+published: true
+---
+
+I've spent almost four years building software for clients who came through referrals. I had never landed one on a freelance platform. Upwork has a well-known trap: without reviews nobody hires you, and without contracts there are no reviews.
+
+This week I broke that loop. Here's how, with real numbers.
+
+## The problem: a profile with no history
+
+A new Upwork profile competes against people with hundreds of jobs and years of reviews. On top of that, every proposal costs "Connects", the platform's currency, and good job posts get more than 50 proposals in the first hour.
+
+So the challenge wasn't just writing good proposals. It was choosing well where to spend them.
+
+## What I did
+
+**1. A profile with proof, not adjectives.** No "passionate about technology". I added case studies with numbers: a [WhatsApp bot that cut response time from 7 hours to 2 minutes](/en/notes/bot-whatsapp-7-horas-a-2-minutos), and a [payments system that took operations from 12 people to 3](/en/notes/automatizar-pagos-whatsapp-12-a-3-personas).
+
+**2. Honest proposals.** When I lacked experience in something they asked for, I said so. And instead of hiding that I was new to the platform, I used it in my favor: _"you're my first client here, I want this to be my first review and I'll give it everything"_.
+
+**3. Fast replies.** The client who hired me wrote with questions. I answered within minutes, asked specific questions about their case and suggested splitting the work into two deliveries.
+
+## The project
+
+A UK company used a single WhatsApp number for everything its employees wrote about: holidays, sick leave, delays, tech support. It all landed in the same inbox, and someone had to sort it by hand.
+
+I built a bot that:
+
+- Shows a six-option menu and understands whether you reply with the number or in words.
+- Asks the questions each case needs. For example, for sick leave it asks for the reason and the return date.
+- Assigns the conversation to the right department and leaves an internal note with a summary.
+- Goes quiet when a person takes over the conversation, and comes back when it's closed.
+
+I delivered the first part within hours, with a demo video. The second came the next day, with a PDF user guide. The client approved both deliveries the same day.
+
+## The numbers
+
+| Metric | Result |
+| --- | --- |
+| Days to first client | 5 |
+| Proposals sent | 16 |
+| Investment (membership + Connects) | ~US$51 |
+| Paid for the project | US$150 |
+| After Upwork's fee | US$127.50 |
+| Delivery time | 1 day |
+| Review | ⭐ 5.0 |
+
+What mattered most wasn't the money, it was the review. It says the client _"was hesitant to hire someone with no Upwork history"_ and is glad they did. That line answers the doubt the next client has.
+
+## What I learned
+
+**Don't compete where there are already 50 proposals.** The best openings are job posts published less than an hour ago, with fewer than 10 proposals and a verified payment method.
+
+**Read the client's preferences before spending.** Some posts ask for a specific location or English level. If you don't meet them, Upwork shows that to the client, and those Connects are wasted.
+
+**Don't make up experience.** If you get hired for something you can't do, your first review may be your last.
+
+**Deliver in parts and show progress.** A short video of what already works builds more trust than any message.
+
+**The work doesn't end at delivery.** Afterwards I moved the bot to the client's account and proposed a next automation. Now they keep me in mind for future work.
+
+## For developers: the stack
+
+- **TypeScript** on **Cloudflare Workers**, with **Durable Objects** to store each conversation's state.
+- **Wassenger** as the bridge to WhatsApp, using webhooks for new messages and chat status changes.
+- A list of test numbers to validate everything before turning it on for the whole company.
+- Infrastructure cost: within Cloudflare's free plan.
+
+## Want something similar?
+
+If your team gets requests on WhatsApp that someone has to read and route by hand, that can be automated. Message me on [WhatsApp](https://wa.me/584149409930) and tell me how you handle it today.

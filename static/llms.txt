@@ -36,9 +36,11 @@ Michael Liendo es un desarrollador full stack en Caracas, Venezuela. Construye b
 - [How we cut response time from 7 hours to 2 minutes with a WhatsApp bot](https://michaelliendo.com/en/notes/bot-whatsapp-7-horas-a-2-minutos)
 - [From 12 people to 3: how we automated payments and reconciliation over WhatsApp](https://michaelliendo.com/en/notes/automatizar-pagos-whatsapp-12-a-3-personas)
 - [How much does an AI WhatsApp bot cost in Venezuela?](https://michaelliendo.com/en/notes/cuanto-cuesta-bot-whatsapp-ia-venezuela)
+- [How I landed my first Upwork client (and what it cost me)](https://michaelliendo.com/en/notes/primer-cliente-upwork)
 - [¿Cuánto cuesta un bot de WhatsApp con IA en Venezuela?](https://michaelliendo.com/notes/cuanto-cuesta-bot-whatsapp-ia-venezuela)
 - [Cómo bajamos la respuesta de 7 horas a 2 minutos con un bot de WhatsApp](https://michaelliendo.com/notes/bot-whatsapp-7-horas-a-2-minutos)
 - [De 12 personas a 3: cómo automatizamos pagos y conciliación por WhatsApp](https://michaelliendo.com/notes/automatizar-pagos-whatsapp-12-a-3-personas)
+- [Cómo conseguí mi primer cliente en Upwork (y cuánto me costó)](https://michaelliendo.com/notes/primer-cliente-upwork)
 
 ## Contact
 

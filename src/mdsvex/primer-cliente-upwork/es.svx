@@ -1,0 +1,76 @@
+---
+title: "Cómo conseguí mi primer cliente en Upwork (y cuánto me costó)"
+description: "Cinco días, dieciséis propuestas y unos US$50 invertidos. El primer cliente me pagó US$150 por un bot de WhatsApp que entregué en un día y me dejó 5 estrellas. Esto es lo que hice y lo que haría distinto."
+date: 2026-10-16
+icon: whatsapp
+tags: [upwork, freelance, whatsapp, caso-de-estudio]
+published: true
+---
+
+Llevo casi cuatro años construyendo software para clientes que llegaron por recomendación. Nunca había conseguido uno en una plataforma de freelance. Upwork tiene una trampa conocida: sin reseñas nadie te contrata, y sin contratos no hay reseñas.
+
+Esta semana rompí ese círculo. Te cuento cómo, con números reales.
+
+## El problema: un perfil sin historial
+
+Un perfil nuevo en Upwork compite contra gente con cientos de trabajos y años de reseñas. Encima, cada propuesta cuesta "Connects", la moneda de la plataforma, y las ofertas buenas reciben más de 50 propuestas en la primera hora.
+
+Así que el reto no era solo escribir buenas propuestas. Era elegir bien dónde gastarlas.
+
+## Lo que hice
+
+**1. Un perfil con pruebas, no con adjetivos.** Nada de "apasionado por la tecnología". Puse casos con números: un [bot de WhatsApp que bajó la respuesta de 7 horas a 2 minutos](/notes/bot-whatsapp-7-horas-a-2-minutos), y un [sistema de pagos con el que la operación pasó de 12 personas a 3](/notes/automatizar-pagos-whatsapp-12-a-3-personas).
+
+**2. Propuestas honestas.** Cuando me faltaba experiencia en algo que pedían, lo decía. Y en vez de esconder que era nuevo en la plataforma, lo usé a mi favor: _"eres mi primer cliente aquí, quiero que esta sea mi primera reseña y voy a darlo todo"_.
+
+**3. Responder rápido.** El cliente que me contrató me escribió con preguntas. Le respondí en minutos, le hice preguntas concretas sobre su caso y le propuse dividir el trabajo en dos entregas.
+
+## El proyecto
+
+Una empresa del Reino Unido usaba un solo número de WhatsApp para todo lo que escribían sus empleados: vacaciones, enfermedad, retrasos, soporte técnico. Todo caía en el mismo buzón y alguien tenía que repartirlo a mano.
+
+Construí un bot que:
+
+- Muestra un menú de seis opciones y entiende si respondes con el número o con palabras.
+- Hace las preguntas necesarias según el caso. Por ejemplo, ante una baja por enfermedad pide el motivo y la fecha de regreso.
+- Asigna la conversación al departamento correcto y deja una nota interna con el resumen.
+- Se calla cuando una persona toma la conversación, y vuelve a aparecer cuando se cierra.
+
+La primera parte la entregué en horas, con un video de demostración. La segunda, al día siguiente, con una guía de uso en PDF. El cliente aprobó las dos entregas el mismo día.
+
+## Los números
+
+| Métrica | Resultado |
+| --- | --- |
+| Días hasta el primer cliente | 5 |
+| Propuestas enviadas | 16 |
+| Inversión (membresía + Connects) | ~US$51 |
+| Cobrado por el proyecto | US$150 |
+| Después de la comisión de Upwork | US$127,50 |
+| Tiempo de entrega | 1 día |
+| Reseña | ⭐ 5.0 |
+
+Lo que más valió no fue el dinero, sino la reseña. Dice textual que _"dudaba en contratar a alguien sin historial en Upwork"_ y que se alegra de haberlo hecho. Esa frase responde la duda que tiene el siguiente cliente.
+
+## Lo que aprendí
+
+**No compitas donde ya hay 50 propuestas.** Las ofertas con más oportunidad son las publicadas hace menos de una hora, con menos de 10 propuestas y con el pago del cliente verificado.
+
+**Lee las preferencias del cliente antes de gastar.** Algunas ofertas piden ubicación o nivel de inglés específicos. Si no cumples, Upwork se lo muestra al cliente, y esos Connects se pierden.
+
+**No inventes experiencia.** Si te contratan por algo que no sabes hacer, la primera reseña puede ser la última.
+
+**Entrega por partes y muestra el avance.** Un video corto de lo que ya funciona genera más confianza que cualquier mensaje.
+
+**El trabajo no termina al entregar.** Después pasé el bot a la cuenta del cliente y le propuse una siguiente automatización. Ahora me tiene en cuenta para trabajos futuros.
+
+## Para desarrolladores: el stack
+
+- **TypeScript** sobre **Cloudflare Workers**, con **Durable Objects** para guardar el estado de cada conversación.
+- **Wassenger** como puente con WhatsApp, usando webhooks para mensajes nuevos y cambios de estado del chat.
+- Lista de números de prueba para validar todo antes de activarlo para la empresa entera.
+- Costo de infraestructura: dentro del plan gratuito de Cloudflare.
+
+## ¿Quieres algo parecido?
+
+Si tu equipo recibe por WhatsApp solicitudes que alguien tiene que leer y repartir a mano, se puede automatizar. Escríbeme por [WhatsApp](https://wa.me/584149409930) y cuéntame cómo lo hacen hoy.
