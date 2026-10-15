@@ -33,6 +33,9 @@
       .join('');
   }
 
+  // Black single-color icons; inverted in dark mode so they stay visible.
+  const MONO_ICONS = new Set(['/icons/rust-original.svg', '/icons/ai.svg']);
+
   function noteDate(date: string) {
     return new Intl.DateTimeFormat($locale, {
       month: 'short',
@@ -197,7 +200,7 @@
       >
         <div class={i % 2 === 1 ? 'md:order-2' : ''}>
           <span
-            class="inline-flex items-center gap-2 rounded-full bg-white py-1.5 pl-1.5 pr-3 text-[14px] font-medium"
+            class="inline-flex items-center gap-2 rounded-full bg-surface-elevated py-1.5 pl-1.5 pr-3 text-[14px] font-medium"
           >
             <img src={item.logo} alt="" width="24" height="24" class="size-6 rounded-full" />
             {item.tag}
@@ -229,7 +232,7 @@
         </div>
 
         <div
-          class="overflow-hidden rounded-[18px] bg-white shadow-soft-lg {i % 2 === 1
+          class="overflow-hidden rounded-[18px] bg-white text-[#0b0b0b] shadow-soft-lg {i % 2 === 1
             ? 'md:order-1'
             : ''}"
         >
@@ -341,7 +344,7 @@
               {:else}
                 <span
                   aria-hidden="true"
-                  class="inline-grid size-11 shrink-0 place-items-center rounded-[12px] bg-white text-[15px] font-semibold text-accent"
+                  class="inline-grid size-11 shrink-0 place-items-center rounded-[12px] bg-surface-elevated text-[15px] font-semibold text-accent"
                   >{initials(item.name)}</span
                 >
               {/if}
@@ -397,7 +400,7 @@
           <li
             class="inline-flex items-center gap-2 rounded-full border border-border py-1.5 pl-2 pr-3 text-[14px]"
           >
-            <img src={tech.icon} alt="" width="18" height="18" class="size-[18px]" loading="lazy" />
+            <img src={tech.icon} alt="" width="18" height="18" class="size-[18px] {MONO_ICONS.has(tech.icon) ? 'dark:invert' : ''}" loading="lazy" />
             {tech.name}
           </li>
         {/each}
@@ -408,7 +411,7 @@
           <li
             class="inline-flex items-center gap-2 rounded-full bg-surface-sunken py-1.5 pl-2 pr-3 text-[14px]"
           >
-            <img src={tool.icon} alt="" width="18" height="18" class="size-[18px]" loading="lazy" />
+            <img src={tool.icon} alt="" width="18" height="18" class="size-[18px] {MONO_ICONS.has(tool.icon) ? 'dark:invert' : ''}" loading="lazy" />
             {tool.name}
           </li>
         {/each}
@@ -446,17 +449,17 @@
 <!-- Contact -->
 <section
   id="contacto"
-  class="mt-28 rounded-[32px] bg-ink px-6 py-16 text-center text-white sm:px-14 sm:py-20"
+  class="mt-28 rounded-[32px] bg-panel px-6 py-16 text-center text-white sm:px-14 sm:py-20"
   aria-labelledby="contacto-t"
 >
   <h2 id="contacto-t" class="section-title mx-auto text-white">{t.contact.title}</h2>
-  <p class="mx-auto mb-8 mt-[18px] max-w-[520px] leading-[1.55] text-[#A3A3A3]">{t.contact.body}</p>
+  <p class="mx-auto mb-8 mt-[18px] max-w-[520px] leading-[1.55] text-panel-muted">{t.contact.body}</p>
   <div class="flex flex-wrap justify-center gap-2.5">
-    <a href={WHATSAPP_URL} rel="noreferrer" class="btn bg-white text-ink hover:bg-accent hover:text-white">
+    <a href={WHATSAPP_URL} rel="noreferrer" class="btn bg-white text-[#0b0b0b] hover:bg-accent hover:text-white">
       <span class="text-[#25D366]">{@render whatsappIcon(18)}</span>
       {t.contact.whatsappCta}
     </a>
-    <a href="mailto:{t.email}" class="btn bg-[#222] text-white hover:bg-[#333]">{t.email}</a>
+    <a href="mailto:{t.email}" class="btn bg-panel-button text-white hover:bg-panel-button-hover">{t.email}</a>
   </div>
 </section>
 
@@ -495,16 +498,17 @@
   }
   .btn-dark {
     background: var(--color-ink);
-    color: #fff;
+    color: var(--color-surface);
   }
   .btn-dark:hover {
     background: var(--color-accent);
+    color: #fff;
   }
   .btn-light {
     background: var(--color-surface-sunken);
     color: var(--color-ink);
   }
   .btn-light:hover {
-    background: #e9e9e5;
+    background: var(--color-sunken-hover);
   }
 </style>

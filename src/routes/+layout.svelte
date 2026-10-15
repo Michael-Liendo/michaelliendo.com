@@ -65,8 +65,6 @@ const wide = $derived(
 </script>
 
 <svelte:head>
-  <meta name="theme-color" content="#FFFFFF" />
-
   <meta name="author" content="Michael Liendo" />
   <meta name="publisher" content="Michael Liendo" />
   <meta name="copyright" content="Michael Liendo" />

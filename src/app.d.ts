@@ -15,6 +15,11 @@ declare global {
 		} // interface PageState {}
 		// interface Platform {}
 	}
+
+	interface Window {
+		/** Re-applies the theme; defined by the inline script in app.html. */
+		__applyTheme?: () => void;
+	}
 }
 
 // biome-ignore lint/complexity/noUselessEmptyExport: keeps this file a module so `declare global` applies

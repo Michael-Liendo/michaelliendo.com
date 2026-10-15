@@ -1,7 +1,7 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
-@custom-variant dark (&:where(.dark, .dark *));
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
 
 /* Clean white palette with an electric blue accent */
 @theme {
@@ -29,9 +29,74 @@
 
 	--color-link: #0b0b0b;
 	--color-link-hover: #2b59ff;
+	--color-underline: #d4d4cf;
+	/* Hover fill for sunken buttons */
+	--color-sunken-hover: #e9e9e5;
+
+	/* Contact panels: dark in both themes, white text on top */
+	--color-panel: #0b0b0b;
+	--color-panel-muted: #a3a3a3;
+	--color-panel-button: #222222;
+	--color-panel-button-hover: #333333;
 
 	--shadow-soft: 0 1px 2px rgb(0 0 0 / 0.04), 0 4px 16px rgb(0 0 0 / 0.04);
 	--shadow-soft-lg: 0 1px 2px rgb(0 0 0 / 0.04), 0 20px 50px rgb(0 0 0 / 0.06);
+}
+
+/*
+ * Dark palette. The inline script in app.html sets data-theme on <html> from the
+ * saved choice or the device setting; the media query covers visitors without JS.
+ */
+@layer base {
+	:root[data-theme="dark"] {
+		--color-accent: #5b7fff;
+		--color-accent-muted: #1a2140;
+		--color-surface: #0e0e0d;
+		--color-surface-elevated: #191918;
+		--color-surface-sunken: #1c1c1a;
+		--color-ink: #f2f2ef;
+		--color-ink-soft: #cfcfc9;
+		--color-ink-muted: #9b9b94;
+		--color-ink-faint: #6b6b66;
+		--color-border: #2b2b29;
+		--color-border-soft: #232321;
+		--color-link: #f2f2ef;
+		--color-link-hover: #5b7fff;
+		--color-underline: #4a4a46;
+		--color-sunken-hover: #262624;
+		--color-panel: #191918;
+		--color-panel-button: #2a2a28;
+		--color-panel-button-hover: #363633;
+		--shadow-soft: 0 1px 2px rgb(0 0 0 / 0.4), 0 4px 16px rgb(0 0 0 / 0.3);
+		--shadow-soft-lg: 0 1px 2px rgb(0 0 0 / 0.4), 0 20px 50px rgb(0 0 0 / 0.45);
+		color-scheme: dark;
+	}
+
+	@media (prefers-color-scheme: dark) {
+		:root:not([data-theme]) {
+			--color-accent: #5b7fff;
+			--color-accent-muted: #1a2140;
+			--color-surface: #0e0e0d;
+			--color-surface-elevated: #191918;
+			--color-surface-sunken: #1c1c1a;
+			--color-ink: #f2f2ef;
+			--color-ink-soft: #cfcfc9;
+			--color-ink-muted: #9b9b94;
+			--color-ink-faint: #6b6b66;
+			--color-border: #2b2b29;
+			--color-border-soft: #232321;
+			--color-link: #f2f2ef;
+			--color-link-hover: #5b7fff;
+			--color-underline: #4a4a46;
+			--color-sunken-hover: #262624;
+			--color-panel: #191918;
+			--color-panel-button: #2a2a28;
+			--color-panel-button-hover: #363633;
+			--shadow-soft: 0 1px 2px rgb(0 0 0 / 0.4), 0 4px 16px rgb(0 0 0 / 0.3);
+			--shadow-soft-lg: 0 1px 2px rgb(0 0 0 / 0.4), 0 20px 50px rgb(0 0 0 / 0.45);
+			color-scheme: dark;
+		}
+	}
 }
 
 @keyframes fade-in-up {
@@ -53,7 +118,7 @@
 @utility link-underline {
 	color: var(--color-ink);
 	text-decoration-line: underline;
-	text-decoration-color: #d4d4cf;
+	text-decoration-color: var(--color-underline);
 	text-decoration-thickness: 1px;
 	text-underline-offset: 3px;
 	transition:
@@ -70,7 +135,6 @@
 	html {
 		@apply scroll-smooth antialiased;
 		font-family: var(--font-sans);
-		color-scheme: light;
 		scroll-padding-top: 5.5rem;
 	}
 
