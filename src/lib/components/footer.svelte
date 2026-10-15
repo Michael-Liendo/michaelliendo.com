@@ -10,7 +10,7 @@ const startYear = 2021;
 const links = [
 	{ href: "https://github.com/Michael-Liendo", label: "GitHub" },
 	{ href: "https://www.linkedin.com/in/michaelliendo", label: "LinkedIn" },
-	{ href: "https://x.com/mykeliendo", label: "X" },
+	{ href: "https://x.com/michaelliendo_", label: "X" },
 	{ href: "https://www.instagram.com/michaelliendo_/", label: "Instagram" },
 ];
 </script>
