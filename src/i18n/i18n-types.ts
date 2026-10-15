@@ -16,7 +16,7 @@ export type Translations = RootTranslation
 type RootTranslation = {
 	SEO: {
 		/**
-		 * M​i​c​h​a​e​l​ ​L​i​e​n​d​o​ ​·​ ​D​e​s​a​r​r​o​l​l​a​d​o​r​ ​F​u​l​l​ ​S​t​a​c​k​ ​|​ ​B​o​t​s​ ​d​e​ ​W​h​a​t​s​A​p​p​ ​c​o​n​ ​I​A
+		 * M​i​c​h​a​e​l​ ​L​i​e​n​d​o​ ​·​ ​D​e​s​a​r​r​o​l​l​a​d​o​r​ ​e​n​ ​V​e​n​e​z​u​e​l​a​ ​|​ ​B​o​t​s​ ​d​e​ ​W​h​a​t​s​A​p​p​ ​c​o​n​ ​I​A
 		 */
 		TITLE: string
 		/**
@@ -142,7 +142,7 @@ type RootTranslation = {
 export type TranslationFunctions = {
 	SEO: {
 		/**
-		 * Michael Liendo · Desarrollador Full Stack | Bots de WhatsApp con IA
+		 * Michael Liendo · Desarrollador en Venezuela | Bots de WhatsApp con IA
 		 */
 		TITLE: () => LocalizedString
 		/**

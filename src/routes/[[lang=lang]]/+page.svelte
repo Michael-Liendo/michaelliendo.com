@@ -78,6 +78,13 @@
           addressLocality: 'Caracas',
           addressCountry: 'VE',
         },
+        // Helps search engines tell this Michael Liendo apart from namesakes.
+        disambiguatingDescription:
+          $locale === 'en'
+            ? 'Venezuelan full stack developer based in Caracas who builds AI WhatsApp bots and custom software for businesses.'
+            : 'Desarrollador full stack venezolano, en Caracas, que construye bots de WhatsApp con IA y software a medida para empresas.',
+        nationality: { '@type': 'Country', name: 'Venezuela' },
+        homeLocation: { '@type': 'City', name: 'Caracas' },
         knowsLanguage: [
           { '@type': 'Language', name: 'Spanish', alternateName: 'es' },
           { '@type': 'Language', name: 'English', alternateName: 'en' },
