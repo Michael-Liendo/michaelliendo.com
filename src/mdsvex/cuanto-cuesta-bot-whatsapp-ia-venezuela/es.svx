@@ -1,0 +1,87 @@
+---
+title: "¿Cuánto cuesta un bot de WhatsApp con IA en Venezuela?"
+description: "Lo que de verdad pagas cada mes por un bot de WhatsApp con IA: mensajes de WhatsApp, IA, servidor y mantenimiento, con números reales de dos negocios venezolanos y cómo saber si te conviene."
+date: 2026-10-15
+icon: whatsapp
+tags: [whatsapp, automatizacion, ia, costos]
+published: true
+---
+
+Es la pregunta que más me hacen: ¿cuánto cuesta un bot de WhatsApp con IA? La respuesta corta es que tiene dos partes: lo que cuesta **construirlo** una vez y lo que cuesta **mantenerlo funcionando** cada mes. La segunda suele ser mucho más baja de lo que la gente imagina.
+
+En esta nota explico de dónde sale cada costo, con números de dos sistemas que construí para negocios en Venezuela, y cómo hacer la cuenta para saber si a tu negocio le conviene.
+
+## Lo que pagas cada mes
+
+### 1. Los mensajes de WhatsApp
+
+Para un bot serio se usa la API oficial de WhatsApp Business, no un WhatsApp normal con un truco. Meta cobra **por mensaje enviado con plantilla**, y el precio depende del tipo de mensaje y del país del cliente. Venezuela está en el grupo "Resto de Latinoamérica".
+
+Lo importante para un negocio que atiende clientes:
+
+- **Responder a un cliente que te escribió es gratis.** Cuando un cliente te escribe se abre una ventana de 24 horas, y todo lo que el bot responda en esa ventana no cuesta nada.
+- **Los mensajes que tú inicias se pagan.** Un recordatorio de pago o un aviso de envío (mensajes "de utilidad") cuestan alrededor de **un centavo de dólar**. Una promoción (mensaje "de marketing") cuesta unos **7 centavos**.
+- Los precios cambian cada pocos meses, así que conviene revisar la [tabla oficial de Meta](https://developers.facebook.com/docs/whatsapp/pricing) antes de hacer cuentas finas.
+
+En la práctica, si tu bot sobre todo **responde** a clientes, la factura de WhatsApp es muy baja. Lo que la sube son las campañas masivas.
+
+### 2. La plataforma de WhatsApp
+
+Puedes conectarte directo a la API de Meta o usar un proveedor (como Callbell u otros) que te da una bandeja compartida para que tu equipo vea los chats. Conectarse directo no tiene mensualidad; un proveedor sí cobra un plan mensual, pero te ahorra construir esa bandeja. Depende de si tu equipo necesita ver y tomar conversaciones.
+
+### 3. La IA
+
+Es el costo que más asusta y suele ser el más pequeño. Un dato real: en el [caso de automatización de pagos](/notes/automatizar-pagos-whatsapp-12-a-3-personas), la empresa procesa unas **72.000 operaciones al mes** y paga **unos US$150 al mes de IA**. Eso incluye leer capturas de transferencias, entender mensajes y responder.
+
+El costo depende de cuántos mensajes procesa el bot, si lee imágenes o notas de voz, y qué modelo usa. Un buen sistema mide ese gasto cada mes para que no haya sorpresas.
+
+### 4. El servidor
+
+El bot vive en un servidor que recibe los mensajes, consulta tus sistemas y guarda las conversaciones. Para la mayoría de los negocios, un servidor modesto alcanza, del orden de **decenas de dólares al mes**, no cientos.
+
+### 5. Mantenimiento
+
+Los sistemas cambian: tu catálogo crece, cambias de banco, Meta actualiza su API, aparecen preguntas nuevas. Un bot que nadie mantiene se degrada. Cuenta con un mantenimiento mensual o con horas de soporte cuando hagan falta.
+
+## Lo que cuesta construirlo
+
+Aquí no hay un precio de lista honesto, porque depende de qué tiene que hacer el bot. No cuesta lo mismo uno que responde preguntas frecuentes que uno que:
+
+- Consulta tu inventario real en Shopify, Odoo o tu propio sistema.
+- Valida pagos contra el banco, incluido Pago Móvil.
+- Convierte precios a bolívares con la tasa del día.
+- Le pasa la conversación a una persona cuando hace falta.
+- Trae un panel para que tu equipo vea pedidos, pagos y chats.
+
+Lo que más mueve el precio es **con cuántos sistemas se conecta** y **qué tan delicado es lo que hace**. Un bot que toca dinero necesita más controles que uno que solo informa.
+
+Por eso prefiero ver tu caso y darte un precio cerrado, en vez de un rango que no te sirve para decidir.
+
+## La cuenta que sí importa
+
+La pregunta útil no es “¿cuánto cuesta el bot?”, sino “¿cuánto me cuesta **no** tenerlo?”. Dos ejemplos reales:
+
+- **Una tienda en Caracas** tenía unas 10 personas respondiendo el chat y los clientes esperaban más de 7 horas en promedio, a veces una semana. Con el bot, la primera respuesta llega en unos 2 minutos y el equipo de chat bajó a 2 o 3 personas: **más de US$2.100 al mes** en nómina. [Lee el caso completo](/notes/bot-whatsapp-7-horas-a-2-minutos).
+- **Una empresa que cobra por WhatsApp** pasó de 12 personas en operaciones a 3, con unos US$150 al mes de IA. Ahorra **unos US$2.700 al mes** en nómina y atiende al doble de clientes. [Lee el caso completo](/notes/automatizar-pagos-whatsapp-12-a-3-personas).
+
+Para hacer tu propia cuenta:
+
+1. **Cuántas personas** pasan el día respondiendo lo mismo o validando pagos, y cuánto te cuestan al mes.
+2. **Cuánto tardas** hoy en responder, y cuántas ventas se pierden por eso.
+3. **Cuánto costaría** mantener el bot cada mes: WhatsApp, IA, servidor y mantenimiento.
+
+Si el punto 1 es mucho más grande que el punto 3, el bot se paga solo en pocos meses.
+
+## Cuándo no te conviene
+
+Un bot no siempre es la respuesta. Probablemente no te conviene si:
+
+- Recibes pocos mensajes al día y una persona los atiende sin problema.
+- Cada conversación es distinta y necesita criterio humano de principio a fin.
+- No tienes en ningún sistema los datos que el bot necesitaría consultar (inventario, precios, pedidos).
+
+En esos casos, a veces lo que hace falta es ordenar el proceso o crear un panel interno antes de pensar en un bot.
+
+## ¿Quieres saber cuánto costaría en tu negocio?
+
+Escríbeme por [WhatsApp](https://wa.me/584149409930) y cuéntame cuántos mensajes reciben al día, cuántas personas los atienden y qué sistemas usan. Con eso te digo si un bot tiene sentido para ti y cuánto costaría.
