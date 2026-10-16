@@ -1,116 +1,146 @@
 ---
-title: "Cómo hacer un squash en Git?"
-description: "En este artículo, podrás hacer un squash en Git. Squash es una técnica que nos permite hacer varios commits en un solo commit, haciendo más fácil leer el historial de cambios y mantener el repositorio limpio."
+title: "Cómo hacer squash en Git: unir varios commits en uno (3 formas)"
+description: "Qué es un squash en Git y cómo unir varios commits en uno, paso a paso: con git rebase -i, con git reset --soft y con git merge --squash. Incluye cómo subirlo y cómo deshacerlo."
 tags: [git, git-squash]
 icon: git
 date: 2023-10-23
 published: true
 ---
 
-Hay dos maneras que conozco de hacer squash, en éste post les enseñaré las dos maneras. Pero primero les diré la definición de Squash
+Hacer **squash** en Git es unir varios commits en uno solo. Se usa sobre todo antes de un pull request: en vez de diez commits como "arreglo", "ahora sí" y "typo", tu rama queda con un único commit que describe el cambio completo. El historial se lee mejor y es más fácil revertir una funcionalidad entera si hace falta.
 
-### ¿Qué es Squash?
+En esta nota te explico tres formas de hacerlo, cuándo usar cada una y cómo deshacerlo si algo sale mal.
 
-Hacer squash en Git, (“comprimir”), hace que nuestra rama a mergear (a la que haremos un pull request) se componga de un solo commit de esta manera mergearemos un solo commit de código a nuestra rama de desarrollo que contendrá una funcionalidad completa.
+## Antes de empezar
 
-## Ahora sí, a los pasos
-
-Parado en la branch que queremos hacer squash, ahora en la consola haremos
-
-```jsx
-git log
-```
-
-retornará
-
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/bf781c07-a7c9-4f50-a257-1e7018d93360/Untitled.png)
-
-Algo así, de ahí vamos a copiar el hash que está arriba de `origin/main, main` en mi caso es este `b6adbbcd8f99935113cf1e24943736fb2c501e26`
-
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/005d840a-ba57-4a97-8f85-4e669d2b94e9/Untitled.png)
-
-Luego vamos a hacer rebase
+Supongamos que estás en una rama `feature` que salió de `main` y tiene varios commits:
 
 ```bash
-git rebase -i TU-HASH
+git log --oneline
 ```
 
-en mi caso es
+```
+a1b2c3d fix: typo
+d4e5f6a feat: validación del formulario
+9f8e7d6 feat: formulario de contacto
+b6adbbc (origin/main, main) chore: versión inicial
+```
+
+Quieres que los tres commits de arriba queden en uno solo, encima de `main`.
+
+## Forma 1: git rebase -i (la más común)
+
+El rebase interactivo te deja elegir qué commits unir.
+
+**1. Abre el rebase** desde el punto donde tu rama salió de `main`:
 
 ```bash
-git rebase -i b6adbbcd8f99935113cf1e24943736fb2c501e26
+git rebase -i main
 ```
 
-Te va a mostrar algo así, te abrirá el editor VIM
-
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/9f3067fd-b5a9-4ece-ad4c-ef261a2789ee/Untitled.png)
-
-Tendrás que remplazar todos las lineas que dice `pick`  por `squash` o `s` excepto el la primera línea
-
-> Para escribir en VIM deberás darle a la tecla `i`
-> 
-
-Quedará así
-
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/effebe74-da5b-467c-9805-9298d2b999f0/Untitled.png)
-
-Luego presionaremos dos veces la tecla `Esc`
-
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/53098a7b-f2f9-4b07-b1c3-11fd712a991d/Untitled.png)
-
-al hacer eso, deberás escribir `:wq` y darle `enter`
-
-Ahí pasará a pedirte el mensaje final para el commit comprimido
-
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/d4b0d30c-7d33-4866-bef2-e9244efdbf28/Untitled.png)
-
-Colocas el mensaje, pulsando `i` para escribir, luego presionas dos veces `Esc` y escribes `:wq` 
-
-Y listo, ya hiciste Squash
-
-Ahora debes para subirlo a tu repositorio, basta con escribir
+Si solo quieres unir los últimos commits, también puedes indicar cuántos:
 
 ```bash
-git push -f
+git rebase -i HEAD~3
 ```
 
-Y listo, ya estaría listo
+**2. Marca los commits a unir.** Git abre tu editor con una lista, del más viejo al más nuevo:
 
-### La otra manera de hacer Squash
+```
+pick 9f8e7d6 feat: formulario de contacto
+pick d4e5f6a feat: validación del formulario
+pick a1b2c3d fix: typo
+```
 
-Para ello, parado en la rama para hacer squash, se coloca
+Deja el primero en `pick` y cambia los demás a `squash` (o solo `s`):
+
+```
+pick 9f8e7d6 feat: formulario de contacto
+squash d4e5f6a feat: validación del formulario
+squash a1b2c3d fix: typo
+```
+
+Si en vez de `squash` usas `fixup` (o `f`), Git une el commit pero descarta su mensaje. Es útil para commits tipo "typo".
+
+**3. Guarda y cierra el editor.** Git te pide el mensaje final del commit unido. Escríbelo, guarda y cierra.
+
+> Si se abrió **Vim**: pulsa `i` para escribir, `Esc` para salir del modo de edición y luego escribe `:wq` y `Enter` para guardar y cerrar. Si prefieres VS Code como editor de Git: `git config --global core.editor "code --wait"`.
+
+Listo. Comprueba con `git log --oneline` que ahora tienes un solo commit encima de `main`.
+
+## Forma 2: git reset --soft (la más rápida)
+
+Si quieres unir **todos** los commits de tu rama en uno, sin editar listas:
 
 ```bash
-git reset --soft TU-HASH
+git reset --soft main
+git commit -m "feat: formulario de contacto con validación"
 ```
 
-Anteriormente expliqué como se obtiene el hash
+`git reset --soft` mueve la rama al commit de `main` pero **deja todos tus cambios preparados** (en el stage). Después haces un solo commit con todo.
 
-Luego harás
+> Usa `--soft`, nunca `--hard`. `git reset --hard` borra tus cambios.
+
+Si tu rama `main` local está desactualizada, usa el punto exacto donde se separó tu rama:
 
 ```bash
-git commit --amend
+git reset --soft $(git merge-base HEAD origin/main)
 ```
 
-Se abrirá el editor VIM, para colocar el mensaje final del commit, presiona `i` para escribir
+## Forma 3: git merge --squash (al integrar en main)
 
-Luego presionas `Esc` y escribes `:wq` para guardar y salir
-
-Ahora con 
+Si no quieres tocar tu rama y prefieres unir los commits en el momento de integrarla:
 
 ```bash
-git push -f
+git switch main
+git merge --squash feature
+git commit -m "feat: formulario de contacto con validación"
 ```
 
-Se subiría tus cambios a tu repositorio
+Todos los cambios de `feature` entran en `main` como un solo commit. Tu rama `feature` queda igual.
 
-Si haces `git log` ahora, deberías de tener 1 solo commit encima de `origin/main`
+En GitHub esto mismo es el botón **"Squash and merge"** del pull request. Si tu equipo lo usa, no necesitas hacer squash a mano.
 
-con el nombre que le diste en ammend
+## Cómo subir el squash a GitHub
 
-> Por nada hagas `git reset --hard` al menos de que quieras borrar todo tu progreso
-> 
+Las formas 1 y 2 reescriben el historial de tu rama, así que un `git push` normal será rechazado. Usa:
 
-### Extras
+```bash
+git push --force-with-lease
+```
 
-Recomiendo usar [Conventional Commits](https://www.conventionalcommits.org) para tu mensajes de commit
+`--force-with-lease` es más seguro que `--force`: si alguien subió algo a tu rama que tú no tienes, el push falla en vez de borrarlo.
+
+> Nunca hagas squash de commits que ya están en una rama compartida como `main`. Reescribirías el historial de todo el equipo.
+
+## Cómo deshacer un squash
+
+Git guarda dónde estaba tu rama antes del cambio. Búscalo en el reflog:
+
+```bash
+git reflog
+```
+
+```
+3c4d5e6 HEAD@{0}: rebase (finish): returning to refs/heads/feature
+...
+a1b2c3d HEAD@{4}: commit: fix: typo
+```
+
+Y vuelve a ese punto:
+
+```bash
+git reset --hard HEAD@{4}
+```
+
+Aquí `--hard` sí es lo que quieres: estás volviendo exactamente al estado anterior.
+
+## ¿Cuál uso?
+
+| Situación | Forma |
+| --- | --- |
+| Quiero elegir qué commits unir | `git rebase -i` |
+| Quiero unir toda mi rama en un commit | `git reset --soft` |
+| Quiero unir al integrar, sin tocar mi rama | `git merge --squash` o "Squash and merge" en GitHub |
+
+Un último consejo: si vas a escribir un buen mensaje para el commit unido, usa [Conventional Commits](https://www.conventionalcommits.org). Te explico cómo forzarlo en tu proyecto en [esta nota sobre husky y commitlint](/notes/how-to-configure-husky).

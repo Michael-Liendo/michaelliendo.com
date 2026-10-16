@@ -1,0 +1,118 @@
+---
+title: "How to build an APK with Expo and React Native without paying for EAS"
+description: "Build the APK for your Expo and React Native app on your own computer, for free and without EAS servers: with expo prebuild, Gradle or Android Studio. Step by step, for debug and release."
+date: 2024-07-11
+icon: android
+tags: [expo, react-native, android, apk]
+published: true
+---
+
+If you're learning React Native with Expo, sooner or later you'll want an **APK** to install your app on a phone or share it with someone. The official route is **EAS Build**, Expo's cloud service, but the free plan has a queue and a monthly build limit.
+
+The good news: you can build the APK on your own computer, for free. In this note I'll show you three ways, from the simplest to the most complete.
+
+## What you need
+
+- An Expo project (SDK 50 or later works the same).
+- **Android Studio**, which includes the Android SDK: [download it here](https://developer.android.com/studio/install).
+- **Java 17** (the JDK bundled with Android Studio works).
+- The `ANDROID_HOME` variable pointing to the SDK. On macOS it's usually `~/Library/Android/sdk`.
+
+## Step 1: generate the native code with expo prebuild
+
+Expo creates the native Android folders from your `app.json`:
+
+```bash
+npx expo prebuild --platform android
+```
+
+This creates an `android/` folder with a regular Android project. If you also want iOS, run `npx expo prebuild` without `--platform`.
+
+> Before you do, check that `android.package` in `app.json` has your app's identifier (for example `com.yourcompany.yourapp`). More details in the [prebuild docs](https://docs.expo.dev/workflow/prebuild/).
+
+## Step 2: build the APK
+
+### Option A: with Gradle from the terminal (the fastest)
+
+Go into the `android/` folder and run Gradle:
+
+```bash
+cd android
+./gradlew assembleRelease
+```
+
+On Windows, use `gradlew.bat assembleRelease`.
+
+When it finishes, your APK is at:
+
+```
+android/app/build/outputs/apk/release/app-release.apk
+```
+
+You can install that file on any Android device. By default, the project Expo generates signs the release build with a test (debug) key, so it's fine for testing and sharing, but **not for publishing on Google Play** (see below).
+
+If you only want a development build, use `./gradlew assembleDebug`. The APK ends up in `apk/debug/app-debug.apk`, but it needs the Metro server running to load the JavaScript.
+
+### Option B: with Android Studio
+
+1. Open the `android/` folder in Android Studio (**File → Open**).
+2. Wait for the Gradle sync to finish.
+3. Go to **Build → Generate App Bundles or APKs → Generate APKs**.
+4. When it's done, click **locate** in the notification to open the APK's folder.
+
+To switch between debug and release, use **Build → Select Build Variant**.
+
+### Option C: EAS Build on your own computer
+
+If you already use EAS, you can run the same build on your machine, with no queue and without using up your plan's builds:
+
+```bash
+npm install -g eas-cli
+eas build --platform android --profile preview --local
+```
+
+To get an APK instead of an AAB, the profile in your `eas.json` needs:
+
+```json
+{
+  "build": {
+    "preview": {
+      "android": { "buildType": "apk" }
+    }
+  }
+}
+```
+
+## To publish on Google Play
+
+Google Play doesn't accept APKs signed with the test key, and it asks for the **AAB** format. You need to:
+
+1. Create your own key (keystore):
+
+```bash
+keytool -genkeypair -v -storetype PKCS12 -keystore my-app.keystore -alias my-app -keyalg RSA -keysize 2048 -validity 10000
+```
+
+2. Set it up in `android/app/build.gradle`, under `signingConfigs`, and use it for the `release` build. The exact steps are in the [React Native guide](https://reactnative.dev/docs/signed-apk-android).
+3. Build the bundle:
+
+```bash
+./gradlew bundleRelease
+```
+
+> Keep the keystore and its passwords somewhere safe. If you lose it, you can't publish updates to your app with the same key.
+
+## Common errors
+
+- **"SDK location not found"**: create `android/local.properties` with the line `sdk.dir=/path/to/your/Android/sdk`.
+- **Java version error**: Gradle needs Java 17. Check with `java -version`.
+- **I changed `app.json` and nothing changed**: run `npx expo prebuild --platform android --clean` again. Careful: `--clean` deletes any changes you made by hand in `android/`.
+
+## Summary
+
+| I want... | Command |
+| --- | --- |
+| An APK to test and share | `./gradlew assembleRelease` |
+| To do it with a GUI | Android Studio → Generate APKs |
+| To use my EAS config without paying | `eas build --local` |
+| To publish on Google Play | Own key + `./gradlew bundleRelease` |

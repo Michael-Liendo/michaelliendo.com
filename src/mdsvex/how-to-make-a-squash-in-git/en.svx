@@ -1,117 +1,146 @@
 ---
-title: "How to make Squash in Git?"
-description: "In this article, you'll learn how to squash git. Squash is a technique that allows multiple commits to be merged into one commit, making it easier to read the change history and keeping the repository clean."
+title: "How to squash commits in Git (3 ways, step by step)"
+description: "What git squash is and how to combine several commits into one, step by step: with git rebase -i, git reset --soft and git merge --squash. Plus how to push it and how to undo it."
 tags: [git, git-squash]
 icon: git
 date: 2023-10-23
 published: true
 ---
 
-There are two ways that I know of to make squash, in this post I will show you both ways. But first I will tell you the definition of Squash
+**Squashing** in Git means combining several commits into one. It's mostly done before a pull request: instead of ten commits like "fix", "now it works" and "typo", your branch ends up with a single commit that describes the whole change. The history is easier to read, and it's easier to revert an entire feature if you need to.
 
-### What is Squash?
+In this note I'll show you three ways to squash commits, when to use each one, and how to undo it if something goes wrong.
 
-Git squash, (“compress”), makes our branch to merge (to which we will make a pull request) be composed of a single commit in this way we will merge a single code commit to our development branch that will contain a functionality complete.
+## Before you start
 
-## Now yes, to the steps
+Say you're on a `feature` branch created from `main`, with a few commits:
 
-Standing on the branch we want to squash, now on the console we'll do
-
-```
-git log
+```bash
+git log --oneline
 ```
 
-will return
-
-!https://s3-us-west-2.amazonaws.com/secure.notion-static.com/bf781c07-a7c9-4f50-a257-1e7018d93360/Untitled.png
-
-Something like that, from there we are going to copy the hash that is above `origin/main, main` in my case it is this `b6adbbcd8f99935113cf1e24943736fb2c501e26`
-
-!https://s3-us-west-2.amazonaws.com/secure.notion-static.com/005d840a-ba57-4a97-8f85-4e669d2b94e9/Untitled.png
-
-Then we're going to rebase
-
 ```
-git rebase -i TU-HASH
+a1b2c3d fix: typo
+d4e5f6a feat: form validation
+9f8e7d6 feat: contact form
+b6adbbc (origin/main, main) chore: initial version
 ```
 
-in my case it is
+You want the top three commits to become one, on top of `main`.
 
-```
-git rebase -i b6adbbcd8f99935113cf1e24943736fb2c501e26
-```
+## Method 1: git rebase -i (the most common)
 
-It will show you something like this, it will open the VIM editor
+An interactive rebase lets you choose which commits to combine.
 
-!https://s3-us-west-2.amazonaws.com/secure.notion-static.com/9f3067fd-b5a9-4ece-ad4c-ef261a2789ee/Untitled.png
+**1. Start the rebase** from the point where your branch left `main`:
 
-You will have to replace all the lines that say `pick` with `squash` or `s` except the first line
-
-> To write in VIM you must hit the i key
-> 
-
-it will stay like this
-
-!https://s3-us-west-2.amazonaws.com/secure.notion-static.com/effebe74-da5b-467c-9805-9298d2b999f0/Untitled.png
-
-Then we will press the `Esc` key twice
-
-!https://s3-us-west-2.amazonaws.com/secure.notion-static.com/53098a7b-f2f9-4b07-b1c3-11fd712a991d/Untitled.png
-
-when doing that, you will have to type `:wq` and hit `enter`
-
-There it will ask you for the final message for the compressed commit
-
-!https://s3-us-west-2.amazonaws.com/secure.notion-static.com/d4b0d30c-7d33-4866-bef2-e9244efdbf28/Untitled.png
-
-You place the message, pressing `i` to type, then pressing `Esc` twice and typing `:wq`
-
-And that's it, you already did Squash
-
-Now you must to upload it to your repository, just write
-
-```
-git push -f
+```bash
+git rebase -i main
 ```
 
-And ready, I'd be ready
+If you only want to squash the last few commits, you can also say how many:
 
-### The other way to do Squash
-
-To do this, standing on the branch to make squash, he places
-
-```
-git reset --soft TU-HASH
+```bash
+git rebase -i HEAD~3
 ```
 
-Previously I explained how the hash is obtained
-
-then you will
+**2. Mark the commits to squash.** Git opens your editor with a list, oldest first:
 
 ```
-git commit --amend
-
+pick 9f8e7d6 feat: contact form
+pick d4e5f6a feat: form validation
+pick a1b2c3d fix: typo
 ```
 
-The VIM editor will open, to put the final message of the commit, press `i` to type
-
-Then you press `Esc` and type `:wq` to save and exit
-
-Now with
+Leave the first one as `pick` and change the rest to `squash` (or just `s`):
 
 ```
-git push -f
+pick 9f8e7d6 feat: contact form
+squash d4e5f6a feat: form validation
+squash a1b2c3d fix: typo
 ```
 
-Your changes will be uploaded to your repository
+If you use `fixup` (or `f`) instead of `squash`, Git combines the commit but drops its message. Handy for "typo" commits.
 
-If you do `git log` now, you should have 1 single commit above `origin/main`
+**3. Save and close the editor.** Git asks for the message of the combined commit. Write it, save and close.
 
-with the name you gave him in ammend
+> If **Vim** opened: press `i` to type, `Esc` to leave insert mode, then type `:wq` and `Enter` to save and quit. To use VS Code as Git's editor instead: `git config --global core.editor "code --wait"`.
 
-> Do not do git reset --hard unless you want to erase all your progress
-> 
+Done. Check with `git log --oneline` that you now have a single commit on top of `main`.
 
-### Additional features
+## Method 2: git reset --soft (the fastest)
 
-I recommend using [Conventional Commits](https://www.conventionalcommits.org/) for your commit messages
+If you want to squash **all** the commits on your branch into one, without editing a list:
+
+```bash
+git reset --soft main
+git commit -m "feat: contact form with validation"
+```
+
+`git reset --soft` moves the branch back to `main` but **keeps all your changes staged**. Then you make a single commit with everything.
+
+> Use `--soft`, never `--hard`. `git reset --hard` throws your changes away.
+
+If your local `main` is out of date, use the exact point where your branch split off:
+
+```bash
+git reset --soft $(git merge-base HEAD origin/main)
+```
+
+## Method 3: git merge --squash (when merging into main)
+
+If you'd rather leave your branch alone and squash when you merge it:
+
+```bash
+git switch main
+git merge --squash feature
+git commit -m "feat: contact form with validation"
+```
+
+All the changes from `feature` land on `main` as one commit. Your `feature` branch stays as it was.
+
+On GitHub, this is the **"Squash and merge"** button on a pull request. If your team uses it, you don't need to squash by hand.
+
+## How to push a squash to GitHub
+
+Methods 1 and 2 rewrite your branch's history, so a regular `git push` will be rejected. Use:
+
+```bash
+git push --force-with-lease
+```
+
+`--force-with-lease` is safer than `--force`: if someone pushed something to your branch that you don't have, the push fails instead of overwriting it.
+
+> Never squash commits that are already on a shared branch like `main`. You'd rewrite everyone's history.
+
+## How to undo a squash
+
+Git remembers where your branch was before the change. Find it in the reflog:
+
+```bash
+git reflog
+```
+
+```
+3c4d5e6 HEAD@{0}: rebase (finish): returning to refs/heads/feature
+...
+a1b2c3d HEAD@{4}: commit: fix: typo
+```
+
+And go back to that point:
+
+```bash
+git reset --hard HEAD@{4}
+```
+
+Here `--hard` is exactly what you want: you're going back to the previous state.
+
+## Which one should I use?
+
+| Situation | Method |
+| --- | --- |
+| I want to choose which commits to combine | `git rebase -i` |
+| I want my whole branch as one commit | `git reset --soft` |
+| I want to squash on merge, without touching my branch | `git merge --squash` or "Squash and merge" on GitHub |
+
+One last tip: when you write the message for the combined commit, use [Conventional Commits](https://www.conventionalcommits.org). I explain how to enforce it in your project in [this note on husky and commitlint](/en/notes/how-to-configure-husky).

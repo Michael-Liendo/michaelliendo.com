@@ -1,45 +1,118 @@
 ---
-title: "Como generar un APK en React Native y Expo sin Expo Application Services (EAS)"
-description: "Como generar un APK en React Native y Expo sin Expo Application Services (EAS)"
+title: "Cómo generar un APK con Expo y React Native sin pagar EAS"
+description: "Genera el APK de tu app de Expo y React Native en tu computadora, gratis y sin depender de los servidores de EAS: con expo prebuild, Gradle o Android Studio. Paso a paso, para debug y release."
 date: 2024-07-11
-icon: git
-tags: [expo, android, desarrollo móvil]
+icon: android
+tags: [expo, react-native, android, apk]
 published: true
 ---
 
+Si estás aprendiendo React Native con Expo, tarde o temprano quieres un **APK** para instalar tu app en un teléfono o pasársela a alguien. La vía oficial es **EAS Build**, el servicio en la nube de Expo, pero el plan gratuito tiene cola y límite de builds al mes.
 
+La buena noticia: puedes generar el APK en tu propia computadora, gratis. En esta nota te explico tres formas, de la más simple a la más completa.
 
-## Introducción
+## Lo que necesitas
 
-He visto un gran interés de la comunidad en aprender React Native con expo, pero se que puede ser un poco complicado el hecho de tener un APK sin tener que pagar o depende de una capa gratuita en los servicios de expo
-En esta publicación enseñaré como generar un APK, necesitaremos tener instalado Android Studio para ello y el proyecto de expo al cual generamos el APK de nuestra app.
+- Un proyecto de Expo (SDK 50 o superior funciona igual).
+- **Android Studio** instalado, que trae el Android SDK: [descárgalo aquí](https://developer.android.com/studio/install).
+- **Java 17** (el JDK que viene con Android Studio sirve).
+- La variable `ANDROID_HOME` apuntando al SDK. En macOS suele ser `~/Library/Android/sdk`.
 
-primero nos vamos a nuestra terminar y ejecutamos el comando de expo prebuild eso nos generará dos carpetas IOS y Android, nos centraremos en Android que es la que tienes lo archivos que android puede interpretar 
+## Paso 1: genera el código nativo con expo prebuild
 
-esa carpeta la abriremos con el IDE de android studio.
-
-Para ello hay que tener instalado Android Studio: https://developer.android.com/studio/install
-
-Ya con eso podemos generar las APK’s sin tener que depender de **Expo Application Services** para hacerlo.
-
-El siguiente paso  que se necesita es generar el codigo nativo de tu proyecto, sea para IOS o Android, con Expo CLI genera código nativo de tu proyecto sin tener que de compilarlo de la forma convencional en la Web de Expo ya que no serias dependiente de su servicio de **Expo Application Services** para poder tener tus aplicaciones y distribuirlas
-
-Dentro de la carpeta de tu proyecto donde tienes los archivos de configuración de expo tienes que correr el comando de:
+Expo crea las carpetas nativas de Android a partir de tu `app.json`:
 
 ```bash
 npx expo prebuild --platform android
 ```
 
-Esto generara las carpetas `android/` para ejecutar tu código React.
+Esto crea la carpeta `android/` con un proyecto de Android normal. Si también quieres iOS, ejecuta `npx expo prebuild` sin el `--platform`.
 
-Si deseas tener el codigo nativo de ambas plataformas puedes ejecutar 
+> Antes de hacerlo, revisa en `app.json` que `android.package` tenga el identificador de tu app (por ejemplo `com.tuempresa.tuapp`). Más detalles en la [documentación de prebuild](https://docs.expo.dev/workflow/prebuild/).
+
+## Paso 2: genera el APK
+
+### Opción A: con Gradle desde la terminal (la más rápida)
+
+Entra a la carpeta `android/` y ejecuta Gradle:
 
 ```bash
-npx expo prebuild
+cd android
+./gradlew assembleRelease
 ```
 
-eso creara la carpeta `android/` y `ios/` con el codigo nativo de las plataformas.
+En Windows usa `gradlew.bat assembleRelease`.
 
-si quieres tener mas información sobre el comando prebuilt puedes visitar la documentacion de [Expo](https://docs.expo.dev/workflow/prebuild/#usage-with-eas-build)
+Cuando termine, tu APK está en:
 
-Luego de tener las carpetas de `android/` vamos a abrir con [Android Studio](https://developer.android.com/studio/install) la capeta `android/`
+```
+android/app/build/outputs/apk/release/app-release.apk
+```
+
+Ese archivo ya lo puedes instalar en cualquier Android. Por defecto, el proyecto que genera Expo firma el build de release con una clave de prueba (debug), así que sirve para probar y compartir, pero **no para publicar en Google Play** (ver más abajo).
+
+Si solo quieres un build de desarrollo, usa `./gradlew assembleDebug`. El APK queda en `apk/debug/app-debug.apk`, pero necesita el servidor de Metro corriendo para cargar el JavaScript.
+
+### Opción B: con Android Studio
+
+1. Abre la carpeta `android/` en Android Studio (**File → Open**).
+2. Espera a que termine de sincronizar Gradle.
+3. Ve a **Build → Generate App Bundles or APKs → Generate APKs**.
+4. Cuando termine, haz clic en **locate** en la notificación para abrir la carpeta del APK.
+
+Para cambiar entre debug y release, usa **Build → Select Build Variant**.
+
+### Opción C: EAS Build en tu computadora
+
+Si ya usas EAS, puedes correr el mismo build en tu máquina, sin cola y sin gastar builds del plan:
+
+```bash
+npm install -g eas-cli
+eas build --platform android --profile preview --local
+```
+
+Para que salga un APK y no un AAB, en tu `eas.json` el perfil debe tener:
+
+```json
+{
+  "build": {
+    "preview": {
+      "android": { "buildType": "apk" }
+    }
+  }
+}
+```
+
+## Para publicar en Google Play
+
+Google Play no acepta APKs firmados con la clave de prueba, y pide el formato **AAB**. Necesitas:
+
+1. Crear tu propia clave (keystore):
+
+```bash
+keytool -genkeypair -v -storetype PKCS12 -keystore mi-app.keystore -alias mi-app -keyalg RSA -keysize 2048 -validity 10000
+```
+
+2. Configurarla en `android/app/build.gradle`, en `signingConfigs`, y usarla en el build de `release`. Los pasos exactos están en la [guía de React Native](https://reactnative.dev/docs/signed-apk-android).
+3. Generar el bundle:
+
+```bash
+./gradlew bundleRelease
+```
+
+> Guarda el keystore y sus contraseñas en un lugar seguro. Si lo pierdes, no podrás publicar actualizaciones de tu app con la misma clave.
+
+## Errores comunes
+
+- **"SDK location not found"**: crea `android/local.properties` con la línea `sdk.dir=/ruta/a/tu/Android/sdk`.
+- **Error de versión de Java**: Gradle necesita Java 17. Revisa con `java -version`.
+- **Cambié `app.json` y no se refleja**: vuelve a ejecutar `npx expo prebuild --platform android --clean`. Ojo: `--clean` borra los cambios que hayas hecho a mano en `android/`.
+
+## Resumen
+
+| Quiero... | Comando |
+| --- | --- |
+| Un APK para probar y compartir | `./gradlew assembleRelease` |
+| Hacerlo con interfaz gráfica | Android Studio → Generate APKs |
+| Usar mi configuración de EAS sin pagar | `eas build --local` |
+| Publicar en Google Play | Clave propia + `./gradlew bundleRelease` |
