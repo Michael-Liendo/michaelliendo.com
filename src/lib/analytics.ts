@@ -57,6 +57,8 @@ export function track(event: AnalyticsEvent, properties: Properties = {}): void 
 			$current_url: window.location.href,
 			$host: window.location.host,
 			$pathname: window.location.pathname,
+			// PostHog tells people from bots by this; without it every visit is "Automation".
+			$raw_user_agent: navigator.userAgent,
 			locale: document.documentElement.lang,
 			device: deviceType(),
 			...properties,
