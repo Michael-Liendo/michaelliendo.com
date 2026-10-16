@@ -1,27 +1,32 @@
 ---
-title: "Cómo configurar husky con convenciones de commits? Usando Prettier y ESLint"
-description: "Aquí aprenderé cómo configurar husky con convenciones de commits con eslint y prettier para tener la mejor experiencia de trabajo en tus proyectos."
+title: "Cómo configurar Husky con Conventional Commits, Prettier y ESLint (Husky v9)"
+description: "Configura Husky v9 para revisar tu código con Prettier y ESLint antes de cada commit, y commitlint para obligar a usar Conventional Commits. Paso a paso, con los comandos actuales."
 tags: [git, git-commit, husky, eslint, prettier]
 icon: git
 date: 2023-12-14
 published: true
 ---
 
-Husky es una herramienta que nos permite ejecutar **Git Hooks** de forma sencilla garantizar que se ejecuta las pruebas en nuestro código, y comprobar que no sé envía bug o inconsistencias al repositorio del proyecto.
+**Husky** te deja ejecutar **Git hooks** de forma sencilla: comandos que corren automáticamente antes de un commit o al escribir su mensaje. Con eso puedes impedir que entre al repositorio código sin formatear, con errores de lint o con mensajes de commit desordenados.
 
-Antes de configurar Husky, primero enseñaré a instalar y configurar [Prettier](https://prettier.io) y [ESLint](https://eslint.org)
+En esta nota configuramos, en este orden:
 
-## Como configurar Prettier
+1. **Prettier**, para formatear el código.
+2. **ESLint**, para encontrar errores.
+3. **Husky**, para correr los dos antes de cada commit.
+4. **commitlint**, para obligar a usar [Conventional Commits](https://www.conventionalcommits.org).
 
-para ello es muy sencillo, solo debes de ejecutar este comando:
+> Esta guía usa **Husky v9**. Si ves tutoriales con `npx husky-init` o `npx husky add`, son de versiones anteriores: esos comandos ya no funcionan.
 
-```jsx
+## 1. Prettier
+
+Instálalo:
+
+```bash
 npm install --save-dev --save-exact prettier
 ```
 
-Luego debemos crear un archivo para la configuración de prettier, para más rapidez puedes ejecutar este comando `echo {}> .prettierrc.json` 
-
-Una vez creada ese archivo debes de colocar la configuración, esta es la configuración que yo uso para mis proyectos en javascript
+Crea el archivo de configuración `.prettierrc` en la raíz del proyecto. Esta es la que uso yo:
 
 ```json
 {
@@ -34,78 +39,124 @@ Una vez creada ese archivo debes de colocar la configuración, esta es la config
 }
 ```
 
-Para ejecutar prettier debes de ejercutar este comando
+Para formatear todo el proyecto o solo revisar sin cambiar archivos:
 
 ```bash
-Ahora, formatee todos los archivos con Prettier:
 npx prettier --write .
-
-Si quiere ver los problemas, sin modificar los archvios use:
 npx prettier --check .
 ```
 
-## Como configurar ESLint
+Prettier ignora lo que está en `.gitignore`. Si necesitas ignorar algo más, créalo en un archivo `.prettierignore`.
 
-Es muy fácil, ya que ESLint tiene una forma muy intuitiva de configurarse ejecutando este comando 
+## 2. ESLint
+
+ESLint trae un asistente que crea la configuración por ti:
 
 ```bash
-npm init @eslint/config
+npm init @eslint/config@latest
 ```
 
-Luego de ejecutarlo
+Responde las preguntas (JavaScript o TypeScript, React o no, etc.) y te crea un archivo `eslint.config.mjs`. Para revisar el proyecto:
 
 ```bash
-Con esto verificará todos los archivos
 npx eslint .
 ```
 
-Luego yo lo que hago es agregar algunos comandos en el  `package.json` en la sección de `script`
+Para que ESLint y Prettier no se peleen por el formato, instala `eslint-config-prettier`:
 
 ```bash
-"format": "prettier --ignore-path .gitignore --write .  &&  eslint --ignore-path .gitignore --fix .",
-"lint": "prettier --ignore-path .gitignore --check . && eslint --ignore-path .gitignore .",
+npm install --save-dev eslint-config-prettier
 ```
 
-Quedaría así. Ahora vamos con Husky
+Y agrégalo **al final** de tu `eslint.config.mjs`:
 
-## Configura Husky
+```js
+import eslintConfigPrettier from 'eslint-config-prettier';
 
-Una vez acá tendrás que tener instalado Git y un proyecto inicializado.
-
-Vamos a instalar Git, para ello tienes que ejecutar esté comando.
-
-```bash
-npx husky-init
+export default [
+  // ...tu configuración actual
+  eslintConfigPrettier,
+];
 ```
 
-Ese comando instalará configurará husky, una vez hecho eso tienes que editar el comando que ejecutará antes de hacer commit, para ello tienes que ir a la carpeta `.husky`  al archivo pre-commit, ahí tendrás que remplazar npm test, por el comando deseado en mi **caso** uso comando que configuramos anteriormente, `npm run check` ya tendríamos configurado git, ahora viene conventional commits.
+Por último, agrega dos scripts en tu `package.json`:
 
-### Instalando conventional commits
-
-Tenemos que ejecutar este comando
-
-```bash
-npm install @commitlint/{cli,config-conventional} --save-dev
-```
-
-Para instalar commitlint
-
-Luego crear un archivo .commitlintrc.json para más velocidad ejecutar `touch .commitlintrc.json` para que se cree y luego en su contenido colocar 
-
-```bash
+```json
 {
-  "extends": ["@commitlint/config-conventional"]
+  "scripts": {
+    "format": "prettier --write . && eslint --fix .",
+    "lint": "prettier --check . && eslint ."
+  }
 }
 ```
 
-para configurarlo
+## 3. Husky
 
- Luego agregamos la nueva configuración. Para ello ejecutamos este comando
+Necesitas un repositorio de Git ya inicializado (`git init`). Instala Husky y ejecuta su comando de inicio:
 
 ```bash
-npx husky add .husky/commit-msg 'npx commitlint --edit $1'
+npm install --save-dev husky
+npx husky init
 ```
 
-Y ya estaría. 
+`husky init` hace dos cosas:
 
-Para probarlo intentando hacer un commit con el mensaje “test” daría error ya que no sigue las reglas de conventionalcommits
+- Crea la carpeta `.husky/` con un hook `pre-commit`.
+- Agrega el script `"prepare": "husky"` a tu `package.json`, para que los hooks se instalen solos cuando alguien haga `npm install`.
+
+Ahora edita `.husky/pre-commit` para que corra tu script de lint. El archivo debe quedar solo con esta línea:
+
+```bash
+npm run lint
+```
+
+Desde ahora, si el código no pasa Prettier o ESLint, el commit se cancela.
+
+> Si tu proyecto es grande, revisar todo en cada commit puede ser lento. Con [lint-staged](https://github.com/lint-staged/lint-staged) puedes revisar solo los archivos que vas a commitear.
+
+## 4. commitlint y Conventional Commits
+
+Instala commitlint con la configuración de Conventional Commits:
+
+```bash
+npm install --save-dev @commitlint/cli @commitlint/config-conventional
+```
+
+Crea el archivo `commitlint.config.mjs` en la raíz:
+
+```js
+export default { extends: ['@commitlint/config-conventional'] };
+```
+
+Y crea el hook que revisa el mensaje de cada commit, en `.husky/commit-msg`:
+
+```bash
+npx --no -- commitlint --edit $1
+```
+
+## Pruébalo
+
+Intenta un commit con un mensaje cualquiera:
+
+```bash
+git commit -m "cambios"
+```
+
+commitlint lo rechaza porque no sigue el formato. En cambio, esto sí pasa:
+
+```bash
+git commit -m "feat: agrega formulario de contacto"
+```
+
+Los tipos más usados son `feat` (funcionalidad nueva), `fix` (corrección), `docs`, `refactor`, `test` y `chore`.
+
+## Resumen
+
+| Herramienta | Qué hace | Dónde se configura |
+| --- | --- | --- |
+| Prettier | Formatea el código | `.prettierrc` |
+| ESLint | Encuentra errores | `eslint.config.mjs` |
+| Husky | Corre comandos en cada commit | `.husky/pre-commit`, `.husky/commit-msg` |
+| commitlint | Revisa el mensaje del commit | `commitlint.config.mjs` |
+
+Si además quieres dejar limpio el historial antes de un pull request, mira [cómo hacer squash en Git](/notes/how-to-make-a-squash-in-git).
