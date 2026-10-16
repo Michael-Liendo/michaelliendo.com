@@ -3,6 +3,7 @@
   import { baseLocale } from '$i18n/i18n-util';
   import enHome from '$i18n/en/home';
   import esHome from '$i18n/es/home';
+  import ChatSimulation from '$lib/components/chat-simulation.svelte';
   import SeoMeta from '$lib/seo/SeoMeta.svelte';
   import {
     KNOWS_ABOUT,
@@ -237,24 +238,7 @@
             : ''}"
         >
           {#if item.chat}
-            <div class="flex items-center gap-2.5 border-b border-border px-4 py-3.5 font-medium">
-              <img src={item.logo} alt="" width="30" height="30" class="size-[30px] rounded-full" />
-              <div class="leading-tight">
-                {item.chat.name}
-                <span class="block text-[12.5px] font-normal text-[#22A05A]">{item.chat.status}</span>
-              </div>
-            </div>
-            <div class="flex flex-col gap-2 bg-[#EFEAE2] p-4 text-[14.5px] leading-[1.4]">
-              {#each item.chat.messages as m}
-                <div
-                  class={m.from === 'customer'
-                    ? 'max-w-[80%] self-end rounded-[12px_12px_3px_12px] bg-[#DCF8C6] px-3 py-2'
-                    : 'max-w-[82%] self-start rounded-[12px_12px_12px_3px] bg-white px-3 py-2'}
-                >
-                  {m.text}
-                </div>
-              {/each}
-            </div>
+            <ChatSimulation chat={item.chat} logo={item.logo} />
           {:else if item.image}
             <img
               src={item.image.src}

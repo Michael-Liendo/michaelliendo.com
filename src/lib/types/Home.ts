@@ -6,8 +6,13 @@ export interface HomeMetric {
 }
 
 export interface HomeChatMessage {
-	from: "customer" | "bot";
+	/** "system" lines are what the bot does behind the scenes, shown as centered notes. */
+	from: "customer" | "bot" | "system";
 	text: string;
+	/** Optional attachment drawn above the text. */
+	attachment?: "photo" | "voice" | "link";
+	/** Voice note length or link title, depending on the attachment. */
+	attachmentLabel?: string;
 }
 
 export interface HomeCase {
@@ -21,6 +26,12 @@ export interface HomeCase {
 	chat?: {
 		name: string;
 		status: string;
+		typing: string;
+		/** Button that starts the simulation, and the one that replays it. */
+		start: string;
+		replay: string;
+		/** Small label telling visitors this is a simulation. */
+		note: string;
 		messages: HomeChatMessage[];
 	};
 	image?: { src: string; alt: string; width: number; height: number };
