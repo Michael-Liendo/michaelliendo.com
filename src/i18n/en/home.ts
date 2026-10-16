@@ -37,19 +37,43 @@ export default {
 				chat: {
 					name: "NQLN Store",
 					status: "online",
+					typing: "typing…",
+					start: "Watch the bot in action",
+					replay: "Replay",
+					note: "Simulation",
 					messages: [
-						{ from: "customer", text: "Hi, do you have this bag in black?" },
-						{
-							from: "bot",
-							text: "Hi! Yes, there are 4 left. Shipping or store pickup?",
-						},
 						{
 							from: "customer",
-							text: "Ship it to Maracay. I already sent the payment.",
+							attachment: "photo",
+							text: "Hi, do you have this bag in black?",
+						},
+						{ from: "system", text: "🔎 Searches the Shopify catalog" },
+						{
+							from: "bot",
+							text: "Yes, we do! Black crossbody bag: $24 💚 Only a few left 👀 Shipping by MRW or ZOOM is free. Want it?",
+						},
+						{ from: "customer", attachment: "voice", attachmentLabel: "0:06", text: "" },
+						{
+							from: "system",
+							text: "🎙️ Understands the voice note: “Yes, MRW to Maracay. I'll pay by Pago Móvil”",
 						},
 						{
 							from: "bot",
-							text: "Received and validated. Your order ships tomorrow.",
+							attachment: "link",
+							attachmentLabel: "Pay and confirm your order",
+							text: "Great 🙌 This link shows the amount in bolívares at today's BCV rate. Enter your Pago Móvil reference there and pick your MRW office.",
+						},
+						{ from: "customer", text: "Done, I entered the reference" },
+						{ from: "system", text: "🏦 Checks the payment with the bank" },
+						{
+							from: "bot",
+							text: "✅ Payment confirmed! Your order is paid and ships to your MRW office in Maracay in the next dispatch. I'll send you the tracking number 📦",
+						},
+						{ from: "customer", text: "Can a person help me? I want to add another item" },
+						{ from: "system", text: "👤 Assigns the conversation to a team member" },
+						{
+							from: "bot",
+							text: "Of course, I've passed your chat to someone on the team. They'll message you here shortly 🙌",
 						},
 					],
 				},

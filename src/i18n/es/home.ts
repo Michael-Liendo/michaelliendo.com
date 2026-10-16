@@ -37,16 +37,43 @@ export default {
 				chat: {
 					name: "NQLN Store",
 					status: "en línea",
+					typing: "escribiendo…",
+					start: "Ver cómo atiende el bot",
+					replay: "Repetir",
+					note: "Simulación",
 					messages: [
-						{ from: "customer", text: "Hola, ¿tienen esta cartera en negro?" },
 						{
-							from: "bot",
-							text: "¡Hola! Sí, quedan 4 unidades. ¿Envío o retiro en tienda?",
+							from: "customer",
+							attachment: "photo",
+							text: "Hola, ¿tienen esta cartera en negro?",
 						},
-						{ from: "customer", text: "Envío a Maracay. Ya hice el pago móvil." },
+						{ from: "system", text: "🔎 Busca el producto en el catálogo de Shopify" },
 						{
 							from: "bot",
-							text: "Recibido y validado. Tu pedido sale mañana por MRW.",
+							text: "¡Sí la tenemos! Cartera bandolera negra: $24 💚 Quedan pocas unidades 👀 El envío por MRW o ZOOM te sale gratis. ¿La quieres?",
+						},
+						{ from: "customer", attachment: "voice", attachmentLabel: "0:06", text: "" },
+						{
+							from: "system",
+							text: "🎙️ Entiende la nota de voz: «Sí, por MRW a Maracay. Te pago por Pago Móvil»",
+						},
+						{
+							from: "bot",
+							attachment: "link",
+							attachmentLabel: "Pagar y validar tu pedido",
+							text: "Perfecto 🙌 En este enlace ves el monto en bolívares a la tasa BCV de hoy, cargas la referencia de tu Pago Móvil y eliges tu oficina MRW.",
+						},
+						{ from: "customer", text: "Listo, ya cargué la referencia" },
+						{ from: "system", text: "🏦 Verifica el pago en el banco" },
+						{
+							from: "bot",
+							text: "✅ ¡Pago confirmado! Tu pedido quedó pagado y sale hacia tu oficina MRW en Maracay en el próximo despacho. Te aviso cuando tenga la guía 📦",
+						},
+						{ from: "customer", text: "¿Me atiende una persona? Quiero agregar otro producto" },
+						{ from: "system", text: "👤 Asigna la conversación a una persona del equipo" },
+						{
+							from: "bot",
+							text: "Claro, ya le pasé tu chat a una persona del equipo. Te escribe por aquí en breve 🙌",
 						},
 					],
 				},
