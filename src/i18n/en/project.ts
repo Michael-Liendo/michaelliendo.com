@@ -2,6 +2,18 @@ import type { Project } from "$lib/types/Project";
 
 export default [
 	{
+		name: "Gatekeeper Editorial 30X",
+		role: "30X Hackathon · Team DevGain",
+		description:
+			"AI editorial filter that decides in milliseconds whether each piece of content goes out and, if not, fixes it on its own. JEV (TypeSafe) answers 12 questions per piece, the code applies the brand's policy, the AI fixes what fails and JEV checks it again. 1,000 decisions in 4.5 s, 80–87% accuracy, 42% resolved without a person and 0 risky pieces approved on their own. The same engine segments sign-ups for the sales team. Built in 48 hours with Haron Acosta.",
+		preview_url: "https://gatekeeper-30x.michaelliendo.com",
+		repo_url: "https://github.com/Michael-Liendo/gatekeeper-30x",
+		tags: ["AI", "Hackathon", "Next.js", "Open source"],
+		date: "2026-10-18",
+		period: "Oct 2026 · 48 hours",
+		featured: true,
+	},
+	{
 		name: "Necesitas Bot",
 		role: "Tech lead · Vitrina Online",
 		description:

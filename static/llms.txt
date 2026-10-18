@@ -22,6 +22,7 @@ Michael Liendo es un desarrollador full stack en Caracas, Venezuela. Construye b
 - La Victoria: WhatsApp bot and cash-flow dashboard with bank reconciliation. Operations went from 12 people to 3 while serving twice as many customers, saving about US$2,700 a month in payroll for about US$150 a month in AI.
 - Tizza: AI tutor for math, physics and chemistry, built end to end for web, iOS and Android, used by 430+ students.
 - Engrana: his own SaaS, a WhatsApp sales agent for shops.
+- Gatekeeper Editorial 30X (30X Hackathon, October 2026): AI editorial filter built in 48 hours with TypeSafe's JEV decision model. 1,000 decisions in 4.5 seconds, 80–87% accuracy, 42% resolved without a person, 0 risky pieces approved on their own. Open source: https://github.com/Michael-Liendo/gatekeeper-30x
 - Soluciones JM: Next.js ERP for a US client (inventory, purchasing and accounting).
 
 ## Pages
@@ -36,10 +37,12 @@ Michael Liendo es un desarrollador full stack en Caracas, Venezuela. Construye b
 - [How we cut response time from 7 hours to 2 minutes with a WhatsApp bot](https://michaelliendo.com/en/notes/bot-whatsapp-7-horas-a-2-minutos)
 - [From 12 people to 3: how we automated payments and reconciliation over WhatsApp](https://michaelliendo.com/en/notes/automatizar-pagos-whatsapp-12-a-3-personas)
 - [How much does an AI WhatsApp bot cost in Venezuela?](https://michaelliendo.com/en/notes/cuanto-cuesta-bot-whatsapp-ia-venezuela)
+- [How I built an AI editorial filter in 48 hours](https://michaelliendo.com/en/notes/filtro-editorial-ia-48-horas)
 - [How I landed my first Upwork client (and what it cost me)](https://michaelliendo.com/en/notes/primer-cliente-upwork)
 - [¿Cuánto cuesta un bot de WhatsApp con IA en Venezuela?](https://michaelliendo.com/notes/cuanto-cuesta-bot-whatsapp-ia-venezuela)
 - [Cómo bajamos la respuesta de 7 horas a 2 minutos con un bot de WhatsApp](https://michaelliendo.com/notes/bot-whatsapp-7-horas-a-2-minutos)
 - [De 12 personas a 3: cómo automatizamos pagos y conciliación por WhatsApp](https://michaelliendo.com/notes/automatizar-pagos-whatsapp-12-a-3-personas)
+- [Cómo construí un filtro editorial con IA en 48 horas](https://michaelliendo.com/notes/filtro-editorial-ia-48-horas)
 - [Cómo conseguí mi primer cliente en Upwork (y cuánto me costó)](https://michaelliendo.com/notes/primer-cliente-upwork)
 
 ## Contact
