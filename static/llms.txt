@@ -22,7 +22,7 @@ Michael Liendo es un desarrollador full stack en Caracas, Venezuela. Construye b
 - La Victoria: WhatsApp bot and cash-flow dashboard with bank reconciliation. Operations went from 12 people to 3 while serving twice as many customers, saving about US$2,700 a month in payroll for about US$150 a month in AI.
 - Tizza: AI tutor for math, physics and chemistry, built end to end for web, iOS and Android, used by 430+ students.
 - Engrana: his own SaaS, a WhatsApp sales agent for shops.
-- Gatekeeper Editorial 30X (30X Hackathon, October 2026): AI editorial filter built in 48 hours with TypeSafe's JEV decision model. 1,000 decisions in 4.5 seconds, 80–87% accuracy, 42% resolved without a person, 0 risky pieces approved on their own. Open source: https://github.com/Michael-Liendo/gatekeeper-30x
+- Gatekeeper Editorial 30X (30X Hackathon finalist, October 2026): AI editorial filter built in 48 hours with TypeSafe's JEV decision model. 1,000 decisions in 4.5 seconds, 80–87% accuracy, 42% resolved without a person, 0 risky pieces approved on their own. Open source: https://github.com/Michael-Liendo/gatekeeper-30x
 - Soluciones JM: Next.js ERP for a US client (inventory, purchasing and accounting).
 
 ## Pages

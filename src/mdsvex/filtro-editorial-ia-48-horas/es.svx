@@ -1,6 +1,6 @@
 ---
 title: "Cómo construí un filtro editorial con IA en 48 horas"
-description: "La IA multiplicó lo que produce un equipo de contenido, pero nadie multiplicó la revisión. En el Hackathon 30X construí un filtro que decide en milisegundos si cada pieza sale, y si no, la corrige sola: 1.000 decisiones en 4,5 segundos."
+description: "La IA multiplicó lo que produce un equipo de contenido, pero nadie multiplicó la revisión. Finalista del Hackathon 30X: construí un filtro que decide en milisegundos si cada pieza sale, y si no, la corrige sola: 1.000 decisiones en 4,5 segundos."
 date: 2026-10-18
 icon: ai
 tags: [ia, hackathon, contenido, caso-de-estudio]
@@ -10,6 +10,8 @@ published: true
 La IA multiplicó lo que un equipo de contenido produce; nadie multiplicó la revisión. **El cuello de botella pasó de crear a aprobar.**
 
 Este fin de semana participé en el Hackathon 30X y, en unas 48 horas, construí **Gatekeeper Editorial 30X**: un filtro editorial con IA que decide, en milisegundos, si cada pieza de contenido de una marca sale, se mejora con IA, la revisa una persona o se descarta. Y si no pasa, la IA la corrige sola y la vuelve a revisar.
+
+**Quedamos finalistas del reto** y lo presentamos ante el jurado en el Demo Day del 19 de octubre.
 
 Aquí cuento el problema, cómo funciona, los números y lo que salió mal en el camino.
 

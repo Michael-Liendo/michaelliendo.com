@@ -1,6 +1,6 @@
 ---
 title: "How I built an AI editorial filter in 48 hours"
-description: "AI multiplied what a content team produces, but nobody multiplied the review. At the 30X Hackathon I built a filter that decides in milliseconds whether each piece goes out, and fixes it on its own if it doesn't: 1,000 decisions in 4.5 seconds."
+description: "AI multiplied what a content team produces, but nobody multiplied the review. A 30X Hackathon finalist: I built a filter that decides in milliseconds whether each piece goes out, and fixes it on its own if it doesn't: 1,000 decisions in 4.5 seconds."
 date: 2026-10-18
 icon: ai
 tags: [ai, hackathon, content, case-study]
@@ -10,6 +10,8 @@ published: true
 AI multiplied what a content team produces; nobody multiplied the review. **The bottleneck moved from creating to approving.**
 
 This weekend I took part in the 30X Hackathon and, in about 48 hours, built **Gatekeeper Editorial 30X**: an AI editorial filter that decides, in milliseconds, whether each piece of a brand's content goes out, gets improved by AI, goes to a person for review, or gets discarded. And if it doesn't pass, the AI fixes it on its own and checks it again.
+
+**We made it to the challenge's final** and present it to the jury at Demo Day on October 19.
 
 Here's the problem, how it works, the numbers, and what went wrong along the way.
 

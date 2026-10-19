@@ -3,7 +3,7 @@ import type { Project } from "$lib/types/Project";
 export default [
 	{
 		name: "Gatekeeper Editorial 30X",
-		role: "Hackathon 30X · Equipo DevGain",
+		role: "Finalista · Hackathon 30X · Equipo DevGain",
 		description:
 			"Filtro editorial con IA que decide en milisegundos si cada pieza de contenido sale y, si no, la corrige sola. JEV (TypeSafe) responde 12 preguntas por pieza, el código aplica la política de la marca, la IA corrige lo que falla y JEV lo vuelve a verificar. 1.000 decisiones en 4,5 s, 80–87 % de acierto, 42 % resuelto sin persona y 0 piezas riesgosas aprobadas solas. El mismo motor segmenta inscritos para el equipo comercial. Construido en 48 horas con Haron Acosta.",
 		preview_url: "https://gatekeeper-30x.michaelliendo.com",
