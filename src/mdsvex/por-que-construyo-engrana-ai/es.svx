@@ -7,7 +7,7 @@ tags: [engrana, whatsapp, ia, emprendimiento]
 published: true
 ---
 
-Desde junio de 2026 estoy construyendo [Engrana AI](https://engrana.ai/), un agente de ventas con inteligencia artificial que atiende el WhatsApp de las tiendas en Venezuela. Es mi primera empresa, la hago desde La Guaira, y en esta nota cuento de dónde salió, qué hace y qué decidí no hacer.
+Desde junio de 2026 estoy construyendo [Engrana AI](https://engrana.ai/), un agente de ventas con inteligencia artificial que atiende el WhatsApp de las tiendas en Venezuela. Es mi primer producto propio, lo hago desde La Guaira, y en esta nota cuento de dónde salió, qué hace y qué decidí no hacer.
 
 ## De dónde salió
 

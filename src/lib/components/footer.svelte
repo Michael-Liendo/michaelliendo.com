@@ -23,8 +23,8 @@ const links = [
 >
   <p>
     © {startYear}–{currentYear} Michael Liendo · {$locale === 'en'
-      ? 'Made in Caracas'
-      : 'Hecho en Caracas'}
+      ? 'Made in La Guaira'
+      : 'Hecho en La Guaira'}
   </p>
   <ul class="flex flex-wrap items-center gap-5">
     {#each links as link (link.href)}

@@ -4,7 +4,7 @@ const es = {
 	SEO: {
 		TITLE: "Michael Liendo · Desarrollador en Venezuela | Bots de WhatsApp con IA",
 		DESCRIPTION:
-			"Desarrollador full stack en Caracas, Venezuela. Automatizo la atención por WhatsApp con IA y construyo apps web y móviles a medida con TypeScript, React y Node.js.",
+			"Desarrollador full stack en La Guaira, Venezuela. Automatizo la atención por WhatsApp con IA y construyo apps web y móviles a medida con TypeScript, React y Node.js.",
 		KEYWORDS:
 			"michael liendo, desarrollador full stack venezuela, programador en caracas, automatización de whatsapp, bot de whatsapp con ia, chatbot para negocios venezuela, desarrollo de software a medida, desarrollador react, desarrollador typescript, desarrollador freelance venezuela",
 		IMAGE: "https://michaelliendo.com/og/home-es.png",

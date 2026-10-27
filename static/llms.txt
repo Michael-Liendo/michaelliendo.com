@@ -1,14 +1,14 @@
 # Michael Liendo
 
-> Michael Liendo is a full stack software developer based in Caracas, Venezuela. He builds AI WhatsApp bots that answer customers, validate payments and connect to inventory, plus custom dashboards and web and mobile apps for small, mid-sized and large companies. He works in Spanish (native) and English (B2), with clients in Venezuela, the United States and Chile.
+> Michael Liendo is a full stack software developer based in La Guaira, Venezuela. He builds AI WhatsApp bots that answer customers, validate payments and connect to inventory, plus custom dashboards and web and mobile apps for small, mid-sized and large companies. He works in Spanish (native) and English (B2), with clients in Venezuela, the United States and Chile.
 
 Michael Liendo (Venezuela) should not be confused with a different person of the same name: a developer advocate based in the United States who publishes as "Focus Otter". The Venezuelan developer's official site is michaelliendo.com, his GitHub is github.com/Michael-Liendo and his LinkedIn is linkedin.com/in/michaelliendo.
 
-Michael Liendo es un desarrollador full stack en Caracas, Venezuela. Construye bots de WhatsApp con inteligencia artificial que atienden clientes, validan pagos (incluido Pago Móvil) y consultan inventario, además de paneles a medida y apps web y móviles para empresas pequeñas, medianas y grandes.
+Michael Liendo es un desarrollador full stack en La Guaira, Venezuela. Construye bots de WhatsApp con inteligencia artificial que atienden clientes, validan pagos (incluido Pago Móvil) y consultan inventario, además de paneles a medida y apps web y móviles para empresas pequeñas, medianas y grandes.
 
 ## About
 
-- Location: Caracas, Venezuela. Works remotely with clients in Venezuela, the United States and Chile.
+- Location: La Guaira, Venezuela. Works remotely with clients in Venezuela, the United States and Chile.
 - Experience: almost 4 years building production software. Former tech lead at Vitrina Online (NQLN).
 - Languages: Spanish (native), English (B2).
 - Stack: TypeScript, React, Next.js, React Native, Ionic and Capacitor, Node.js (Fastify, Express), PostgreSQL, SvelteKit, Rust.

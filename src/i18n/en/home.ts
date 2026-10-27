@@ -3,7 +3,7 @@ import type { HomeContent } from "$lib/types/Home";
 export default {
 	email: "hello@michaelliendo.com",
 	hero: {
-		availability: "Available for freelance work · Caracas, Venezuela",
+		availability: "Available for freelance work · La Guaira, Venezuela",
 		headlineStart: "I automate customer service on WhatsApp and build ",
 		headlineHighlight: "the software your business needs.",
 		lead: "I'm Michael. I help small, mid-sized and large companies reply faster and stop doing by hand what a system can do: AI WhatsApp bots, custom dashboards, and web and mobile apps connected to the tools they already use.",

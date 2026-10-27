@@ -3,7 +3,7 @@ import type { HomeContent } from "$lib/types/Home";
 export default {
 	email: "hola@michaelliendo.com",
 	hero: {
-		availability: "Disponible para proyectos freelance · Caracas, Venezuela",
+		availability: "Disponible para proyectos freelance · La Guaira, Venezuela",
 		headlineStart: "Automatizo la atención por WhatsApp y construyo ",
 		headlineHighlight: "el software que tu negocio necesita.",
 		lead: "Soy Michael. Ayudo a empresas pequeñas, medianas y grandes a atender más rápido y a dejar de hacer a mano lo que un sistema puede hacer: bots de WhatsApp con IA, paneles a medida y apps web y móviles conectadas a lo que ya usan.",
