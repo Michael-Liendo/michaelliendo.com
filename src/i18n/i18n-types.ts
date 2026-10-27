@@ -146,7 +146,7 @@ export type TranslationFunctions = {
 		 */
 		TITLE: () => LocalizedString
 		/**
-		 * Desarrollador full stack en Caracas, Venezuela. Automatizo la atención por WhatsApp con IA y construyo apps web y móviles a medida con TypeScript, React y Node.js.
+		 * Desarrollador full stack en La Guaira, Venezuela. Automatizo la atención por WhatsApp con IA y construyo apps web y móviles a medida con TypeScript, React y Node.js.
 		 */
 		DESCRIPTION: () => LocalizedString
 		/**

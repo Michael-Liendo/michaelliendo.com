@@ -72,8 +72,8 @@ const wide = $derived(
     name="robots"
     content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
   />
-  <meta name="geo.region" content="VE-A" />
-  <meta name="geo.placename" content="Caracas" />
+  <meta name="geo.region" content="VE-X" />
+  <meta name="geo.placename" content="La Guaira" />
 
   <link rel="icon" type="image/png" href="/favicon.png" sizes="32x32" />
   <link rel="apple-touch-icon" href="/images/michael-liendo.jpg" />

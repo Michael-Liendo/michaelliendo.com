@@ -7,7 +7,7 @@ tags: [engrana, whatsapp, ai, startups]
 published: true
 ---
 
-Since June 2026 I've been building [Engrana AI](https://engrana.ai/), an AI sales agent that handles the WhatsApp of shops in Venezuela. It's my first company, I run it from La Guaira, and in this note I explain where it came from, what it does and what I decided not to do.
+Since June 2026 I've been building [Engrana AI](https://engrana.ai/), an AI sales agent that handles the WhatsApp of shops in Venezuela. It's my first product of my own, I build it from La Guaira, and in this note I explain where it came from, what it does and what I decided not to do.
 
 ## Where it came from
 
