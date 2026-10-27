@@ -14,6 +14,18 @@ export default [
 		featured: true,
 	},
 	{
+		name: "Engrana AI",
+		role: "Fundador · Producto propio",
+		description:
+			"Agente de ventas con IA para el WhatsApp de las tiendas en Venezuela: contesta con el catálogo y los precios de la tienda, cotiza en bolívares a tasa BCV, pasa los datos de Pago Móvil y deja el pedido anotado en un panel. Con la API oficial de WhatsApp. Lo programo, lo instalo y lo atiendo yo.",
+		preview_url: "https://engrana.ai/",
+		image_url: "/images/logos/engrana.png",
+		tags: ["SaaS", "WhatsApp", "IA", "Venezuela"],
+		date: "2026-06-01",
+		period: "jun 2026 – Actualidad",
+		featured: true,
+	},
+	{
 		name: "Necesitas Bot",
 		role: "Tech lead · Vitrina Online",
 		description:

@@ -1,0 +1,46 @@
+---
+title: "Por qué estoy construyendo Engrana AI, un agente de ventas por WhatsApp para Venezuela"
+description: "Después de hacer bots de WhatsApp a medida para tiendas venezolanas, vi que todas necesitaban lo mismo. Engrana AI es ese bot convertido en producto: contesta, cotiza en bolívares, cobra y anota el pedido, con la API oficial de WhatsApp."
+date: 2026-10-27
+icon: whatsapp
+tags: [engrana, whatsapp, ia, emprendimiento]
+published: true
+---
+
+Desde junio de 2026 estoy construyendo [Engrana AI](https://engrana.ai/), un agente de ventas con inteligencia artificial que atiende el WhatsApp de las tiendas en Venezuela. Es mi primera empresa, la hago desde La Guaira, y en esta nota cuento de dónde salió, qué hace y qué decidí no hacer.
+
+## De dónde salió
+
+Antes de Engrana construí bots de WhatsApp a medida para negocios venezolanos. En una tienda online, [la primera respuesta bajó de 7 horas a unos 2 minutos](/notes/bot-whatsapp-7-horas-a-2-minutos). En otra empresa, [la operación de pagos pasó de 12 personas a 3](/notes/automatizar-pagos-whatsapp-12-a-3-personas).
+
+Cada proyecto era distinto por fuera y casi igual por dentro. Los compradores preguntan lo mismo en todas las tiendas: cuánto cuesta, si hay en tal talla o medida, cuánto es en bolívares, cómo pago y cuándo me llega. Y las tiendas sufren lo mismo: mensajes que se quedan sin respuesta de noche, el fin de semana o cuando el que atiende está despachando.
+
+Un sistema a medida resuelve eso, pero cuesta lo que una tienda mediana no puede pagar. Engrana es la respuesta a esa pregunta: el mismo bot, convertido en un producto que se instala en una videollamada.
+
+## Qué hace
+
+- **Contesta con el catálogo y los precios de la tienda**, a cualquier hora, también de noche y en feriados.
+- **Cotiza en bolívares** a la tasa del BCV del día, en dólar o en euro, la que use la tienda.
+- **Pasa los datos de pago**: Pago Móvil, transferencia, Zelle, efectivo o USDT. Recibe el comprobante y deja el pago anotado con su referencia para que la tienda confirme que cayó.
+- **Anota el pedido** con la dirección de entrega.
+- **Le pasa la conversación a una persona** cuando no está seguro, en vez de inventar. Todo queda en un panel que la tienda ve desde el teléfono.
+
+## Lo que decidí no hacer
+
+**Nada de conectar WhatsApp por código QR.** Es la forma fácil y la que usan muchas herramientas, pero va contra los términos de Meta y termina con el número bloqueado. Engrana usa la API oficial de WhatsApp Business. Perder el número con el que te conocen tus clientes cuesta más que cualquier atajo. Lo explico en [esta guía sobre la API de WhatsApp Business en Venezuela](https://engrana.ai/guias/whatsapp-business-api-en-venezuela/).
+
+**Nada hecho a la medida de un solo cliente.** El catálogo, los precios, las formas de pago, los envíos y hasta la personalidad del agente son datos de cada tienda, no código. Dar de alta a una tienda nueva es llenar su información, no programar de nuevo. Si algo que una tienda necesita no se puede configurar, ese es el error que hay que arreglar.
+
+**Nada de tres mensajes cuando basta uno.** Desde octubre de 2026 Meta cobra cada mensaje que la tienda envía, también las respuestas. Por eso el agente puede contestar completo en un solo mensaje, y cuántos mensajes manda por conversación es la cifra que más miro.
+
+## Quién está detrás
+
+Lo hago yo: programo el producto, instalo cada tienda y la atiendo después. Quien te vende Engrana AI es quien lo construye, y eso me parece una ventaja para una tienda que necesita que algo se arregle rápido.
+
+A finales de octubre, Ecosistema mencionó el proyecto en [una nota sobre el momento tecnológico de Venezuela](https://ecosistemag.com/tech-y-startups-primavera-tecnologica-venezuela/).
+
+## Cómo probarlo
+
+Si tienes una tienda que vende por WhatsApp y te llegan más mensajes de los que alcanzas a contestar, mira [engrana.ai](https://engrana.ai/) o escríbeme. Lo instalamos juntos en una videollamada con tu catálogo, y lo pruebas 7 días gratis con tus clientes reales.
+
+Engrana AI (engrana.ai) es una empresa venezolana. No tiene relación con Engrana (engrana.es), de España.

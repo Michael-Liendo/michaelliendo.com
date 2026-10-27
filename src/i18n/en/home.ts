@@ -104,7 +104,7 @@ export default {
 				meta: "Tech lead · 2025",
 			},
 			{
-				name: "Engrana",
+				name: "Engrana AI",
 				logo: "/images/logos/engrana.png",
 				description: "My SaaS: a WhatsApp sales agent for shops.",
 				meta: "Own product · 2026",

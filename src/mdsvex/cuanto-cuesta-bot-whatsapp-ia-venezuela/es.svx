@@ -15,11 +15,11 @@ En esta nota explico de dónde sale cada costo, con números de dos sistemas que
 
 ### 1. Los mensajes de WhatsApp
 
-Para un bot serio se usa la API oficial de WhatsApp Business, no un WhatsApp normal con un truco. Meta cobra **por mensaje enviado con plantilla**, y el precio depende del tipo de mensaje y del país del cliente. Venezuela está en el grupo "Resto de Latinoamérica".
+Para un bot serio se usa la API oficial de WhatsApp Business, no un WhatsApp normal con un truco. Meta cobra **por mensaje**, y el precio depende del tipo de mensaje y del país del cliente. Venezuela está en el grupo "Resto de Latinoamérica".
 
 Lo importante para un negocio que atiende clientes:
 
-- **Responder a un cliente que te escribió es gratis.** Cuando un cliente te escribe se abre una ventana de 24 horas, y todo lo que el bot responda en esa ventana no cuesta nada.
+- **Responder a un cliente que te escribió es lo más barato.** Cuando un cliente te escribe se abre una ventana de 24 horas para responderle. Hasta septiembre de 2026 esas respuestas eran gratis; desde el 1 de octubre de 2026 Meta cobra cada una a la tarifa de utilidad del país, alrededor de **un centavo de dólar** en Venezuela. Por eso conviene responder completo en un solo mensaje y no en tres cortos.
 - **Los mensajes que tú inicias se pagan.** Un recordatorio de pago o un aviso de envío (mensajes "de utilidad") cuestan alrededor de **un centavo de dólar**. Una promoción (mensaje "de marketing") cuesta unos **7 centavos**.
 - Los precios cambian cada pocos meses, así que conviene revisar la [tabla oficial de Meta](https://developers.facebook.com/docs/whatsapp/pricing) antes de hacer cuentas finas.
 
