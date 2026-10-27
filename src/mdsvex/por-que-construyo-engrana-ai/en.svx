@@ -1,0 +1,46 @@
+---
+title: "Why I'm building Engrana AI, a WhatsApp sales agent for Venezuela"
+description: "After building custom WhatsApp bots for Venezuelan shops, I saw they all needed the same thing. Engrana AI is that bot turned into a product: it answers, quotes in bolívares, collects payment details and logs the order, on the official WhatsApp API."
+date: 2026-10-27
+icon: whatsapp
+tags: [engrana, whatsapp, ai, startups]
+published: true
+---
+
+Since June 2026 I've been building [Engrana AI](https://engrana.ai/), an AI sales agent that handles the WhatsApp of shops in Venezuela. It's my first company, I run it from La Guaira, and in this note I explain where it came from, what it does and what I decided not to do.
+
+## Where it came from
+
+Before Engrana I built custom WhatsApp bots for Venezuelan businesses. At an online store, [the first reply went from 7 hours to about 2 minutes](/en/notes/bot-whatsapp-7-horas-a-2-minutos). At another company, [the payments team went from 12 people to 3](/en/notes/automatizar-pagos-whatsapp-12-a-3-personas).
+
+Every project looked different on the outside and almost the same on the inside. Buyers ask every shop the same things: how much is it, do you have it in this size, how much is it in bolívares, how do I pay and when will it arrive. And shops struggle with the same thing: messages left unanswered at night, on weekends or while whoever answers is busy shipping orders.
+
+A custom system solves that, but it costs more than a mid-sized shop can pay. Engrana is my answer to that: the same bot, turned into a product that gets set up on a video call.
+
+## What it does
+
+- **Answers with the shop's catalog and prices**, at any hour, nights and holidays included.
+- **Quotes in bolívares** at the day's BCV rate, dollar or euro, whichever the shop uses.
+- **Sends the payment details**: Pago Móvil, bank transfer, Zelle, cash or USDT. It receives the receipt and logs the payment with its reference so the shop can confirm it landed.
+- **Logs the order** with the delivery address.
+- **Hands the conversation to a person** when it isn't sure, instead of making things up. Everything stays in a dashboard the shop checks from their phone.
+
+## What I decided not to do
+
+**No connecting WhatsApp through a QR code.** It's the easy way, and many tools do it, but it breaks Meta's terms and ends with the number banned. Engrana uses the official WhatsApp Business API. Losing the number your customers know you by costs more than any shortcut. I explain it in [this guide to the WhatsApp Business API in Venezuela](https://engrana.ai/guias/whatsapp-business-api-en-venezuela/) (in Spanish).
+
+**Nothing built for just one customer.** The catalog, prices, payment methods, shipping and even the agent's personality are each shop's data, not code. Onboarding a new shop means filling in its information, not writing new code. If a shop needs something that can't be configured, that's the bug to fix.
+
+**No three messages when one will do.** Since October 2026 Meta charges for every message a shop sends, replies included. So the agent can answer completely in a single message, and messages sent per conversation is the number I watch most.
+
+## Who's behind it
+
+Me: I build the product, set up each shop and support it afterwards. The person who sells you Engrana AI is the person who builds it, and I think that's an advantage for a shop that needs things fixed fast.
+
+In late October, Ecosistema mentioned the project in [a piece on Venezuela's tech moment](https://ecosistemag.com/tech-y-startups-primavera-tecnologica-venezuela/) (in Spanish).
+
+## How to try it
+
+If you run a shop that sells over WhatsApp and gets more messages than you can answer, take a look at [engrana.ai](https://engrana.ai/) or message me. We set it up together on a video call with your catalog, and you try it free for 7 days with your real customers.
+
+Engrana AI (engrana.ai) is a Venezuelan company. It is not related to Engrana (engrana.es), from Spain.

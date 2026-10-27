@@ -14,6 +14,18 @@ export default [
 		featured: true,
 	},
 	{
+		name: "Engrana AI",
+		role: "Founder · Own product",
+		description:
+			"AI sales agent for the WhatsApp of shops in Venezuela: it answers with the shop's catalog and prices, quotes in bolívares at the BCV rate, sends the Pago Móvil details and leaves the order noted in a dashboard. Built on the official WhatsApp API. I build it, set it up and support it myself.",
+		preview_url: "https://engrana.ai/",
+		image_url: "/images/logos/engrana.png",
+		tags: ["SaaS", "WhatsApp", "AI", "Venezuela"],
+		date: "2026-06-01",
+		period: "Jun 2026 – Present",
+		featured: true,
+	},
+	{
 		name: "Necesitas Bot",
 		role: "Tech lead · Vitrina Online",
 		description:

@@ -15,11 +15,11 @@ In this note I explain where each cost comes from, with numbers from two systems
 
 ### 1. WhatsApp messages
 
-A serious bot uses the official WhatsApp Business API, not a regular WhatsApp account with a workaround. Meta charges **per template message sent**, and the price depends on the type of message and the customer's country. Venezuela is in the "Rest of Latin America" group.
+A serious bot uses the official WhatsApp Business API, not a regular WhatsApp account with a workaround. Meta charges **per message**, and the price depends on the type of message and the customer's country. Venezuela is in the "Rest of Latin America" group.
 
 What matters for a business that serves customers:
 
-- **Replying to a customer who wrote to you is free.** When a customer messages you, a 24-hour window opens, and everything the bot replies in that window costs nothing.
+- **Replying to a customer who wrote to you is the cheapest part.** When a customer messages you, a 24-hour window opens to reply. Until September 2026 those replies were free; since October 1, 2026 Meta charges each one at the country's utility rate, around **one US cent** in Venezuela. That is why it pays to answer in one complete message instead of three short ones.
 - **Messages you start are paid.** A payment reminder or shipping notice ("utility" messages) costs around **one US cent**. A promotion ("marketing" message) costs about **7 cents**.
 - Prices change every few months, so check [Meta's official pricing](https://developers.facebook.com/docs/whatsapp/pricing) before doing precise math.
 

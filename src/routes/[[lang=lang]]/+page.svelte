@@ -95,10 +95,13 @@
         ],
         knowsAbout: [...KNOWS_ABOUT],
         sameAs: [...SAME_AS],
+        // Same id engrana.ai gives the company, so both graphs describe one
+        // organization and search ties the person to it.
         worksFor: {
           '@type': 'Organization',
-          name: 'Engrana',
-          url: 'https://engrana.ai',
+          '@id': 'https://engrana.ai/#organization',
+          name: 'Engrana AI',
+          url: 'https://engrana.ai/',
         },
         alumniOf: [
           { '@type': 'EducationalOrganization', name: 'Platzi', url: 'https://platzi.com' },
