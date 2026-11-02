@@ -1,0 +1,75 @@
+---
+title: "How to validate Pago Móvil payments automatically on WhatsApp"
+description: "Two ways to stop checking Pago Móvil screenshots by hand: the customer enters their reference and the system looks it up at the bank, or an AI reads the screenshot and it's reconciled against the bank statement later. With real examples from two Venezuelan businesses."
+date: 2026-11-02
+icon: whatsapp
+tags: [whatsapp, payments, pago-movil, automation]
+published: true
+---
+
+If you sell on WhatsApp in Venezuela, you know the routine: the customer sends a screenshot of their Pago Móvil transfer, someone on the team logs into the bank, looks for the reference, checks the amount and replies to the customer. With ten payments a day, it's manageable. With hundreds, it becomes a full-time job, and the main source of mistakes.
+
+In this note I explain the two ways I've automated it, with what I learned on two real projects: a store that sells on WhatsApp, and a company that receives thousands of payments a month.
+
+## Why checking by hand doesn't scale
+
+Validating a Pago Móvil payment by hand takes four steps, repeated for every customer:
+
+1. Read the screenshot and find the reference, amount, date and bank.
+2. Log into the bank and check whether that transfer actually arrived.
+3. Record the payment on the order or in the spreadsheet.
+4. Reply to the customer.
+
+Each step is a chance for an error: a mistyped reference, a payment recorded twice, or the same screenshot sent again. And while someone searches the bank, the customer waits.
+
+## Option 1: the customer enters their reference and the system looks it up at the bank
+
+This is how we did it in [NQLN's WhatsApp bot](/en/notes/bot-whatsapp-7-horas-a-2-minutos):
+
+1. When the customer is ready to pay, the bot sends them **a link**.
+2. On that page, the customer enters the **reference, bank and date** of their payment, and their shipping details too.
+3. The system **looks that payment up at the bank**, including Pago Móvil.
+4. If it's there and complete, it **marks the order as paid** and the customer gets a confirmation.
+5. If it can't find it, **the payment goes to manual review**. A payment that didn't show up is never approved.
+
+**When it fits:** when you collect in one or a few accounts and the system can check that bank's transactions. Confirmation is almost instant and nobody has to read screenshots.
+
+**The detail that matters:** having the customer type the reference into a form gives you clean data. A blurry or cropped screenshot doesn't break anything, because the system doesn't depend on reading it.
+
+## Option 2: an AI reads the screenshot, then it's reconciled with the bank statement
+
+This is how we did it in the [payments automation case](/en/notes/automatizar-pagos-whatsapp-12-a-3-personas), where customers were already used to sending the screenshot in the chat:
+
+1. The customer sends the screenshot, as always.
+2. An AI assistant **reads the screenshot** and extracts the reference, amount, date and bank.
+3. The system **checks that the transfer hasn't been used before**, even if it comes in through another chat.
+4. It records the payment and confirms to the customer in seconds.
+5. If something doesn't add up, **it doesn't guess**: it sends it to an internal group for a person to review.
+6. Once a day, the team uploads the **bank statement** and the system matches every transaction with the pending payments, by reference and exact amount. What matches is reconciled on its own; what doesn't is flagged for review.
+
+**When it fits:** when you receive payments in several banks, or when you don't want to change your customers' habits. In that case, the company went from 12 people in operations to 3 and serves twice as many customers.
+
+## What both options have in common
+
+**Money isn't left to the AI.** The AI can read a screenshot or understand a message, but the rule that decides whether a payment is valid lives in code: reference, amount, date, and not used before. If the AI misreads, the payment doesn't go through.
+
+**Duplicates are stopped in two places.** The system checks that a payment isn't repeated, and the database won't accept recording it twice either. With thousands of payments, one safeguard isn't enough.
+
+**Whatever doesn't add up goes to a person.** A payment that doesn't show up, a different amount, or an order that was already paid doesn't get resolved on its own: it goes to the team with the reason. That way the team only sees what really needs their judgment.
+
+**Bank details are checked by code.** If the bot gives the customer the details to pay, the code checks they're correct before the message is sent. If the model gets it wrong, the message doesn't go out with the wrong account.
+
+## Which one should you pick?
+
+| Situation | Option |
+| --- | --- |
+| You collect in one or a few accounts and want instant confirmation | The customer enters the reference and the system checks the bank |
+| You receive payments in several banks | The AI reads the screenshot and you reconcile with the statement |
+| Your customers already send screenshots and you don't want to change that | The AI reads the screenshot and you reconcile with the statement |
+| You want the safest setup possible | Either one, always with the rule in code and human review for what doesn't add up |
+
+You can also combine them: the bot asks for the reference in a form and, if the customer sends the screenshot anyway, the AI reads it as a backup.
+
+## Does your team spend the day looking for payments at the bank?
+
+If someone at your business checks Pago Móvil screenshots one by one, that can be automated. Message me on [WhatsApp](https://wa.me/584149409930) and tell me how many payments you get a day and in which banks. If you want to know what it costs to run something like this, [this note](/en/notes/cuanto-cuesta-bot-whatsapp-ia-venezuela) breaks down every cost.

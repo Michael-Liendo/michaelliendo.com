@@ -1,0 +1,75 @@
+---
+title: "Cómo validar pagos de Pago Móvil automáticamente por WhatsApp"
+description: "Dos formas de dejar de revisar capturas de Pago Móvil a mano: que el cliente cargue su referencia y el sistema la busque en el banco, o que una IA lea la captura y luego se concilie con el estado de cuenta. Con ejemplos reales de dos negocios venezolanos."
+date: 2026-11-02
+icon: whatsapp
+tags: [whatsapp, pagos, pago-movil, automatizacion]
+published: true
+---
+
+Si vendes por WhatsApp en Venezuela, conoces la rutina: el cliente manda la captura del Pago Móvil, alguien del equipo entra al banco, busca la referencia, confirma el monto y le responde al cliente. Con diez pagos al día es manejable. Con cientos, se convierte en un trabajo de tiempo completo, y en la principal fuente de errores.
+
+En esta nota te explico las dos formas que he usado para automatizarlo, con lo que aprendí en dos proyectos reales: una tienda que vende por WhatsApp y una empresa que recibe miles de pagos al mes.
+
+## Por qué validar a mano no escala
+
+Validar un Pago Móvil a mano tiene cuatro pasos que se repiten con cada cliente:
+
+1. Leer la captura y ubicar la referencia, el monto, la fecha y el banco.
+2. Entrar al banco y buscar si esa transferencia de verdad llegó.
+3. Anotar el pago en el pedido o en la hoja de cálculo.
+4. Responderle al cliente.
+
+Cada paso es una oportunidad de error: una referencia mal copiada, un pago registrado dos veces o una captura repetida que alguien vuelve a mandar. Y mientras la persona busca en el banco, el cliente espera.
+
+## Forma 1: el cliente carga su referencia y el sistema la busca en el banco
+
+Esta es la forma que usamos en el [bot de WhatsApp de NQLN](/notes/bot-whatsapp-7-horas-a-2-minutos):
+
+1. Cuando el cliente va a pagar, el bot le manda **un enlace**.
+2. En esa página el cliente anota la **referencia, el banco y la fecha** de su pago, y de paso deja sus datos de envío.
+3. El sistema **busca ese pago en el banco**, incluido el Pago Móvil.
+4. Si lo encuentra completo, **marca el pedido como pagado** y el cliente recibe la confirmación.
+5. Si no lo encuentra, **el pago pasa a revisión manual**. Nunca se aprueba un pago que no apareció.
+
+**Cuándo conviene:** cuando cobras en una o pocas cuentas y el sistema puede consultar los movimientos de ese banco. La confirmación llega casi al instante y nadie tiene que leer capturas.
+
+**El detalle que importa:** que el cliente escriba la referencia en un formulario da datos limpios. Una captura borrosa o recortada no rompe nada, porque el sistema no depende de leerla.
+
+## Forma 2: una IA lee la captura y después se concilia con el estado de cuenta
+
+Esta es la forma que usamos en el [caso de automatización de pagos](/notes/automatizar-pagos-whatsapp-12-a-3-personas), donde los clientes ya estaban acostumbrados a mandar la captura por el chat:
+
+1. El cliente manda la captura, como siempre.
+2. Un asistente con IA **lee la captura** y saca la referencia, el monto, la fecha y el banco.
+3. El sistema **revisa que esa transferencia no se haya usado antes**, aunque llegue por otro chat.
+4. Registra el pago y le confirma al cliente en segundos.
+5. Si algo no cuadra, **no adivina**: lo manda a un grupo interno para que una persona lo revise.
+6. Una vez al día, el equipo sube el **estado de cuenta del banco** y el sistema cruza cada movimiento con los pagos pendientes, por referencia y monto exacto. Lo que coincide queda conciliado solo; lo que no, aparece marcado para revisarlo.
+
+**Cuándo conviene:** cuando recibes pagos en varios bancos, o cuando no quieres cambiar la costumbre de tus clientes. En ese caso, la empresa pasó de 12 personas en operaciones a 3 y atiende al doble de clientes.
+
+## Qué tienen en común las dos formas
+
+**El dinero no se le deja a la IA.** La IA puede leer una captura o entender un mensaje, pero la regla que decide si un pago es válido está en el código: referencia, monto, fecha y que no se haya usado antes. Si la IA se equivoca leyendo, el pago no pasa.
+
+**Los duplicados se cortan en dos lugares.** El sistema revisa que un pago no esté repetido, y la base de datos tampoco acepta registrarlo dos veces. Con miles de pagos, una sola protección no alcanza.
+
+**Lo que no cuadra va a una persona.** Un pago que no aparece, un monto distinto o un pedido que ya estaba pagado no se resuelven solos: se le pasan al equipo con el motivo. Así el equipo solo ve lo que de verdad necesita su criterio.
+
+**Los datos bancarios los revisa el código.** Si el bot le da al cliente los datos para pagar, el código comprueba que sean los correctos antes de enviar el mensaje. Si el modelo se equivoca, el mensaje no sale con una cuenta equivocada.
+
+## ¿Cuál elegir?
+
+| Situación | Forma |
+| --- | --- |
+| Cobras en una o pocas cuentas y quieres confirmación al instante | El cliente carga la referencia y el sistema busca en el banco |
+| Recibes pagos en varios bancos | La IA lee la captura y concilias con el estado de cuenta |
+| Tus clientes ya mandan la captura y no quieres cambiar eso | La IA lee la captura y concilias con el estado de cuenta |
+| Quieres lo más seguro posible | Cualquiera de las dos, siempre con la regla en el código y revisión humana para lo que no cuadra |
+
+También se pueden combinar: el bot pide la referencia en un formulario y, si el cliente igual manda la captura, la IA la lee como respaldo.
+
+## ¿Tu equipo pasa el día buscando pagos en el banco?
+
+Si en tu negocio alguien revisa capturas de Pago Móvil una por una, se puede automatizar. Escríbeme por [WhatsApp](https://wa.me/584149409930) y cuéntame cuántos pagos reciben al día y en qué bancos. Si quieres saber cuánto cuesta mantener algo así, en [esta nota](/notes/cuanto-cuesta-bot-whatsapp-ia-venezuela) te explico cada costo.

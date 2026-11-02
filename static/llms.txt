@@ -36,11 +36,13 @@ Michael Liendo es un desarrollador full stack en La Guaira, Venezuela. Construye
 
 - [How we cut response time from 7 hours to 2 minutes with a WhatsApp bot](https://michaelliendo.com/en/notes/bot-whatsapp-7-horas-a-2-minutos)
 - [From 12 people to 3: how we automated payments and reconciliation over WhatsApp](https://michaelliendo.com/en/notes/automatizar-pagos-whatsapp-12-a-3-personas)
+- [How to validate Pago Móvil payments automatically on WhatsApp](https://michaelliendo.com/en/notes/validar-pago-movil-automaticamente)
 - [How much does an AI WhatsApp bot cost in Venezuela?](https://michaelliendo.com/en/notes/cuanto-cuesta-bot-whatsapp-ia-venezuela)
 - [Why I'm building Engrana AI, a WhatsApp sales agent for Venezuela](https://michaelliendo.com/en/notes/por-que-construyo-engrana-ai)
 - [How I built an AI editorial filter in 48 hours](https://michaelliendo.com/en/notes/filtro-editorial-ia-48-horas)
 - [How I landed my first Upwork client (and what it cost me)](https://michaelliendo.com/en/notes/primer-cliente-upwork)
 - [¿Cuánto cuesta un bot de WhatsApp con IA en Venezuela?](https://michaelliendo.com/notes/cuanto-cuesta-bot-whatsapp-ia-venezuela)
+- [Cómo validar pagos de Pago Móvil automáticamente por WhatsApp](https://michaelliendo.com/notes/validar-pago-movil-automaticamente)
 - [Cómo bajamos la respuesta de 7 horas a 2 minutos con un bot de WhatsApp](https://michaelliendo.com/notes/bot-whatsapp-7-horas-a-2-minutos)
 - [De 12 personas a 3: cómo automatizamos pagos y conciliación por WhatsApp](https://michaelliendo.com/notes/automatizar-pagos-whatsapp-12-a-3-personas)
 - [Por qué estoy construyendo Engrana AI, un agente de ventas por WhatsApp para Venezuela](https://michaelliendo.com/notes/por-que-construyo-engrana-ai)
