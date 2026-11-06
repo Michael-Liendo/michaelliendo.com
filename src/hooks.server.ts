@@ -15,6 +15,21 @@ const MOVED_NOTES: Record<string, string> = {
 		"automatizar-pagos-whatsapp-12-a-3-personas",
 };
 
+/** Notes from the previous site that no longer exist; they go to the notes list. */
+const RETIRED_NOTES = new Set([
+	"tips-cover-letter",
+	"life-lessons",
+	"an-elvis-telis-story",
+	"how-to-apply-color-palette-to-design",
+]);
+
+/** Note slugs that exist today, to map the old /blog/<slug> URLs onto /notes/<slug>. */
+const NOTE_SLUGS = new Set(
+	Object.keys(import.meta.glob("/src/mdsvex/*/es.svx")).map(
+		(path) => path.split("/")[3],
+	),
+);
+
 export const handle: Handle = async ({ event, resolve }) => {
 	// Avoid duplicate Spanish URLs: /es/* and /* serving same content.
 	if (event.url.pathname === "/es" || event.url.pathname.startsWith("/es/")) {
@@ -36,6 +51,26 @@ export const handle: Handle = async ({ event, resolve }) => {
 	const newSlug = movedNote && MOVED_NOTES[movedNote[2]];
 	if (newSlug) {
 		const target = `${movedNote[1] ?? ""}/notes/${newSlug}`;
+		return Response.redirect(new URL(target, event.url), 301);
+	}
+	if (movedNote && RETIRED_NOTES.has(movedNote[2])) {
+		return Response.redirect(
+			new URL(`${movedNote[1] ?? ""}/notes`, event.url),
+			301,
+		);
+	}
+
+	// The previous site kept notes under /blog; its /blog/michael-liendo page was the about page.
+	const oldBlog = event.url.pathname.match(/^(\/en)?\/blog(?:\/([\w-]+))?\/?$/);
+	if (oldBlog) {
+		const prefix = oldBlog[1] ?? "";
+		const slug = oldBlog[2];
+		const target =
+			slug === "michael-liendo"
+				? prefix || "/"
+				: slug && NOTE_SLUGS.has(slug)
+					? `${prefix}/notes/${slug}`
+					: `${prefix}/notes`;
 		return Response.redirect(new URL(target, event.url), 301);
 	}
 
