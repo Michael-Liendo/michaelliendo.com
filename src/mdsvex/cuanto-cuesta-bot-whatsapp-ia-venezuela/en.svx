@@ -61,7 +61,7 @@ That's why I prefer to look at your case and give you a fixed price, instead of 
 
 The useful question isn't “how much does the bot cost?”, but “how much does it cost me **not** to have it?”. Two real examples:
 
-- **A store in Caracas** had about 10 people answering chat, and customers waited more than 7 hours on average, sometimes a week. With the bot, the first reply arrives in about 2 minutes and the chat team went down to 2 or 3 people: **more than US$2,100 a month** in payroll. [Read the full case](/en/notes/bot-whatsapp-7-horas-a-2-minutos).
+- **A store in Caracas** kept customers waiting more than 7 hours on average for a first reply, and up to a week on the busiest days. On WhatsApp, that wait is a lost sale. With the bot, the first reply arrives in **about 2 minutes, at any hour**. [Read the full case](/en/notes/bot-whatsapp-7-horas-a-2-minutos).
 - **A company that collects payments on WhatsApp** went from 12 people in operations to 3, with about US$150 a month in AI. It saves **about US$2,700 a month** in payroll and serves twice as many customers. [Read the full case](/en/notes/automatizar-pagos-whatsapp-12-a-3-personas).
 
 To do your own math:

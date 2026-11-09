@@ -61,7 +61,7 @@ Por eso prefiero ver tu caso y darte un precio cerrado, en vez de un rango que n
 
 La pregunta útil no es “¿cuánto cuesta el bot?”, sino “¿cuánto me cuesta **no** tenerlo?”. Dos ejemplos reales:
 
-- **Una tienda en Caracas** tenía unas 10 personas respondiendo el chat y los clientes esperaban más de 7 horas en promedio, a veces una semana. Con el bot, la primera respuesta llega en unos 2 minutos y el equipo de chat bajó a 2 o 3 personas: **más de US$2.100 al mes** en nómina. [Lee el caso completo](/notes/bot-whatsapp-7-horas-a-2-minutos).
+- **Una tienda en Caracas** hacía esperar a sus clientes más de 7 horas en promedio por la primera respuesta, y hasta una semana en los días de más movimiento. En WhatsApp, esa espera es una venta perdida. Con el bot, la primera respuesta llega en **unos 2 minutos, a cualquier hora**. [Lee el caso completo](/notes/bot-whatsapp-7-horas-a-2-minutos).
 - **Una empresa que cobra por WhatsApp** pasó de 12 personas en operaciones a 3, con unos US$150 al mes de IA. Ahorra **unos US$2.700 al mes** en nómina y atiende al doble de clientes. [Lee el caso completo](/notes/automatizar-pagos-whatsapp-12-a-3-personas).
 
 Para hacer tu propia cuenta:

@@ -18,7 +18,7 @@ Michael Liendo es un desarrollador full stack en La Guaira, Venezuela. Construye
 
 ## Results
 
-- NQLN (retail, Caracas): AI WhatsApp bot that understands text, voice notes and photos, checks stock and validates payments. First reply went from 7 hours on average (up to a week on busy days) to about 2 minutes; the chat team went from about 10 people to 2 or 3.
+- NQLN (retail, Caracas): AI WhatsApp bot that understands text, voice notes and photos, checks stock and validates payments. First reply went from 7 hours on average (up to a week on busy days) to about 2 minutes, at any hour, for five brands.
 - La Victoria: WhatsApp bot and cash-flow dashboard with bank reconciliation. Operations went from 12 people to 3 while serving twice as many customers, saving about US$2,700 a month in payroll for about US$150 a month in AI.
 - Tizza: AI tutor for math, physics and chemistry, built end to end for web, iOS and Android, used by 430+ students.
 - Engrana AI (https://engrana.ai/): his own SaaS, an AI sales agent for the WhatsApp of shops in Venezuela. Not related to Engrana (engrana.es), from Spain.
