@@ -29,7 +29,7 @@ export default [
 		name: "Necesitas Bot",
 		role: "Tech lead · Vitrina Online",
 		description:
-			"Atención por WhatsApp con IA para una tienda online: la primera respuesta bajó de 7 horas a ~2 minutos y el equipo de chat pasó de 10 a 2–3 personas, ~US$2.100 al mes de ahorro. Gestiona pagos, envíos y catálogo.",
+			"Atención por WhatsApp con IA para una tienda online: la primera respuesta bajó de 7 horas en promedio, y hasta una semana, a ~2 minutos, a cualquier hora. Gestiona pagos, envíos y catálogo para cinco marcas.",
 		preview_url: "https://www.nqlnstore.com/",
 		image_url: "/images/nqln-icon.png",
 		tags: ["WhatsApp", "IA", "Shopify", "Pagos", "E-commerce"],

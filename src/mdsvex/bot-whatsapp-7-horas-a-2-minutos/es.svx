@@ -15,7 +15,7 @@ Este artículo es para dueños de negocio que venden por WhatsApp y sienten que 
 
 En Venezuela mucha gente compra por WhatsApp. Escribe, pregunta si hay talla o color, pide el precio en bolívares, manda la captura del Pago Móvil y espera que alguien le confirme. Para la tienda, cada una de esas conversaciones es una venta posible.
 
-El problema es que todo eso lo hacía una persona, mensaje por mensaje. Cuando revisamos el panel de soporte, el tiempo promedio hasta la **primera respuesta humana era de 7 horas y 16 minutos**. Y ese era el promedio: en los días de más movimiento, algunos clientes **esperaban hasta una semana** por una respuesta. No era por falta de gente: había alrededor de **10 personas contestando el chat**.
+El problema es que todo eso lo hacía una persona, mensaje por mensaje. Cuando revisamos el panel de soporte, el tiempo promedio hasta la **primera respuesta humana era de 7 horas y 16 minutos**. Y ese era el promedio: en los días de más movimiento, algunos clientes **esperaban hasta una semana** por una respuesta.
 
 Siete horas en WhatsApp es mucho; una semana es una venta perdida. En ese tiempo el cliente ya le escribió a otra tienda, se le pasaron las ganas o simplemente se olvidó. Además, la mayoría de las preguntas se repetían:
 
@@ -54,13 +54,10 @@ Estos son los números que medimos:
 | --- | --- | --- |
 | Primera respuesta (promedio) | 7 h 16 min (humana) | ~2 minutos (automática) |
 | Primera respuesta (peor caso) | hasta 1 semana | ~2 minutos |
-| Personas atendiendo el chat | ~10 | 2 a 3 |
 
 La primera respuesta pasó de más de 7 horas en promedio, y hasta una semana en los peores días, a unos 2 minutos, a cualquier hora. Ojo con la comparación: antes medíamos la primera respuesta humana y ahora la primera respuesta automática. Pero para el cliente lo que importa es lo mismo: alguien le contesta con información útil casi de inmediato.
 
-El equipo de atención pasó de unas 10 personas a 2 o 3. Con un costo de referencia de US$300 por persona al mes, eso son **más de US$2.100 al mes** en nómina, sin contar cargas sociales ni otros costos asociados a cada puesto.
-
-Las personas que quedaron no hacen el trabajo repetitivo. Atienden los casos que el bot les pasa: reclamos, cancelaciones, pedidos especiales, clientes que prefieren hablar con alguien. Es un trabajo más útil que copiar precios del inventario al chat.
+El equipo ya no hace el trabajo repetitivo. Atiende los casos que el bot le pasa: reclamos, cancelaciones, pedidos especiales, clientes que prefieren hablar con alguien. Es un trabajo más útil que copiar precios del inventario al chat.
 
 ## Cómo pasa el chat a una persona
 

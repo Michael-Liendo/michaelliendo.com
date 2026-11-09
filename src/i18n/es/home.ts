@@ -30,8 +30,8 @@ export default {
 				body: "Un bot de WhatsApp que entiende texto, notas de voz y fotos, consulta el inventario en Shopify y Odoo y valida pagos. Si duda, le pasa la conversación a una persona. Antes, en los días de más movimiento, algunos clientes esperaban hasta una semana.",
 				metrics: [
 					{ value: "2 min", label: "primera respuesta" },
-					{ value: "10→3", label: "personas en el chat" },
-					{ value: "$2.100", label: "ahorro al mes" },
+					{ value: "24/7", label: "atiende a cualquier hora" },
+					{ value: "5", label: "marcas en el mismo bot" },
 				],
 				link: { href: "https://www.nqlnstore.com/", label: "nqlnstore.com" },
 				chat: {

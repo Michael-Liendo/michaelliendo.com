@@ -30,8 +30,8 @@ export default {
 				body: "A WhatsApp bot that understands text, voice notes and photos, checks stock in Shopify and Odoo and validates payments. When it isn't sure, it hands the conversation to a person. Before, on the busiest days, some customers waited up to a week.",
 				metrics: [
 					{ value: "2 min", label: "first reply" },
-					{ value: "10→3", label: "people on chat" },
-					{ value: "$2,100", label: "saved per month" },
+					{ value: "24/7", label: "replies at any hour" },
+					{ value: "5", label: "brands on one bot" },
 				],
 				link: { href: "https://www.nqlnstore.com/", label: "nqlnstore.com" },
 				chat: {

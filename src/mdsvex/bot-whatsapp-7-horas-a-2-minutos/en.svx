@@ -15,7 +15,7 @@ This article is for business owners who sell on WhatsApp and feel the chat is ge
 
 In Venezuela, a lot of people shop through WhatsApp. They write in, ask if a size or color is available, ask for the price in bolívares, send a screenshot of their Pago Móvil transfer, and wait for someone to confirm. For the store, each of those conversations is a possible sale.
 
-The problem was that a person handled all of it, message by message. When we looked at the support panel, the average time to the **first human reply was 7 hours and 16 minutes**. And that was the average: on the busiest days, some customers **waited up to a week** for a reply. It wasn't for lack of people: about **10 people were answering the chat**.
+The problem was that a person handled all of it, message by message. When we looked at the support panel, the average time to the **first human reply was 7 hours and 16 minutes**. And that was the average: on the busiest days, some customers **waited up to a week** for a reply.
 
 Seven hours is a long time on WhatsApp; a week is a lost sale. By then the customer has already written to another store, lost interest, or simply forgotten. On top of that, most questions were the same ones:
 
@@ -54,13 +54,10 @@ These are the numbers we measured:
 | --- | --- | --- |
 | First response (average) | 7 h 16 min (human) | ~2 minutes (automated) |
 | First response (worst case) | up to 1 week | ~2 minutes |
-| People answering chat | ~10 | 2 to 3 |
 
 First response went from more than 7 hours on average, and up to a week on the worst days, to about 2 minutes, at any hour. A note on the comparison: before, we measured the first human reply; now, the first automated reply. But for the customer what matters is the same: someone answers with useful information almost right away.
 
-The support team went from about 10 people to 2 or 3. At a reference cost of US$300 per person per month, that's **more than US$2,100 per month** in payroll, not counting social charges or other costs tied to each position.
-
-The people who stayed don't do the repetitive work. They handle the cases the bot passes to them: complaints, cancellations, special orders, customers who prefer to talk to someone. That's more useful work than copying prices from the inventory into the chat.
+The team no longer does the repetitive work. They handle the cases the bot passes to them: complaints, cancellations, special orders, customers who prefer to talk to someone. That's more useful work than copying prices from the inventory into the chat.
 
 ## How the bot hands a chat to a person
 

@@ -29,7 +29,7 @@ export default [
 		name: "Necesitas Bot",
 		role: "Tech lead · Vitrina Online",
 		description:
-			"AI customer service on WhatsApp for an online store: first reply went from 7 hours to ~2 minutes and the chat team from 10 to 2–3 people, saving ~US$2,100 a month. Handles payments, shipping and catalog.",
+			"AI customer service on WhatsApp for an online store: first reply went from 7 hours on average, and up to a week, to ~2 minutes, at any hour. Handles payments, shipping and catalog for five brands.",
 		preview_url: "https://www.nqlnstore.com/",
 		image_url: "/images/nqln-icon.png",
 		tags: ["WhatsApp", "AI", "Shopify", "Payments", "E-commerce"],
