@@ -33,7 +33,8 @@ export { a, blockquote, h2, h3, img, table, th, td };
     if (!articleEnd) return;
     const observer = new IntersectionObserver((entries) => {
       if (!entries.some((entry) => entry.isIntersecting)) return;
-      track('note_read', { path, title: noteTitle });
+      // Sent right away: readers often leave the page soon after reaching the end.
+      track('note_read', { path, title: noteTitle }, { leavesPage: true });
       observer.disconnect();
     });
     observer.observe(articleEnd);
