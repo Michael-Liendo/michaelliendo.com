@@ -60,7 +60,8 @@ export async function initAnalytics(): Promise<void> {
 	loading = true;
 	const { default: posthog } = await import("posthog-js");
 	posthog.init(POSTHOG_KEY, {
-		api_host: "https://us.i.posthog.com",
+		// PostHog's managed reverse proxy on our own subdomain, so ad blockers don't drop events.
+		api_host: "https://t.michaelliendo.com",
 		ui_host: "https://us.posthog.com",
 		defaults: "2026-08-30",
 		persistence: "sessionStorage",
