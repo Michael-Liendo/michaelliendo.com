@@ -2,6 +2,53 @@ import type { Project } from "$lib/types/Project";
 
 export default [
 	{
+		name: "Venfy",
+		role: "Proyecto propio",
+		description:
+			"Convierte cualquier computadora en un smart TV para YouTube que controlas desde el teléfono: abres venfy.app/tv, vinculas la app de YouTube con un código y transmites como a un televisor. Sin instalar nada ni crear cuenta, con una cola compartida para varios teléfonos y un control remoto web. En español, inglés y portugués.",
+		preview_url: "https://venfy.app",
+		tags: ["Web", "YouTube", "Tiempo real", "Producto propio"],
+		date: "2026-10-08",
+		period: "oct 2026",
+		featured: true,
+	},
+	{
+		name: "Visitalo",
+		role: "Full stack",
+		description:
+			"Plataforma PropTech para Venezuela: tours 3D de propiedades hechos con el teléfono y pre-calificación de compradores antes de la visita. Monorepo con SvelteKit, Fastify, Drizzle y PostgreSQL, más de 37 endpoints y acceso con Google.",
+		preview_url: "https://visitalo.app",
+		tags: ["PropTech", "Bienes raíces", "Web"],
+		date: "2026-04-02",
+		featured: true,
+	},
+	{
+		name: "Enrola",
+		role: "En desarrollo",
+		description:
+			"Programa de fidelización para negocios con la tarjeta en Apple Wallet y Google Wallet: sellos, puntos y niveles. El cliente se inscribe con un enlace, el personal suma puntos escaneando un QR y el pase se actualiza solo en el teléfono.",
+		tags: ["Fidelización", "Apple Wallet", "Google Wallet"],
+		date: "2026-06-10",
+	},
+	{
+		name: "Soccer League Scheduler",
+		role: "Proyecto personal",
+		description:
+			"App para organizar una copa local de fútbol: calendario público con tabla, goleadores y tarjetas; panel para cargar resultados en vivo con reloj por partido; y un planificador que arma los cruces y reparte los descansos. Hecha para una copa de tres contra tres en Naiguatá.",
+		repo_url: "https://github.com/Michael-Liendo/soccer-league-scheduler",
+		tags: ["SvelteKit", "SQLite", "Open source"],
+		date: "2026-10-06",
+	},
+	{
+		name: "MSFS 2024 en Apple Silicon",
+		role: "Investigación",
+		description:
+			"Intento documentado de correr Microsoft Flight Simulator 2024 en un MacBook M4: cambié la cadena de traducción a D3D12 → Vulkan → Metal y superé el límite de Shader Model 6.7. Arranca y renderiza, pero todavía no es jugable. Incluye parches y pruebas para quien quiera seguir.",
+		repo_url: "https://github.com/Michael-Liendo/msfs2024-apple-silicon",
+		tags: ["C", "Gráficos", "Apple Silicon", "Open source"],
+		date: "2026-08-30",
+	},
+	{
 		name: "Gatekeeper Editorial 30X",
 		role: "Finalista · Hackathon 30X · Equipo DevGain",
 		description:
@@ -65,7 +112,6 @@ export default [
 		description:
 			"Contabilidad en el navegador para una o varias empresas: plan de cuentas, asientos, informes financieros y exportación a Excel.",
 		repo_url: "https://github.com/Michael-Liendo/contapp",
-		preview_url: "https://contapp.michaelliendo.com/",
 		tags: ["Contabilidad", "Web", "Open source"],
 		date: "2025-02-10",
 		featured: true,
@@ -137,8 +183,7 @@ export default [
 		name: "Underground",
 		description:
 			"App de chat con salas creadas por los usuarios, acceso por invitación y mensajes en tiempo real.",
-		repo_url: "https://github.com/Michael-Liendo/underground",
-		preview_url: "https://underground.michaelliendo.com/",
+		repo_url: "https://github.com/Michael-Liendo/underground-chat",
 		tags: ["Chat", "Tiempo real", "Open source"],
 		date: "2023-12-10",
 	},
@@ -155,7 +200,6 @@ export default [
 		description:
 			"Tienda online con categorías, carrito y proceso de compra.",
 		repo_url: "https://github.com/Michael-Liendo/cherrie",
-		preview_url: "https://cherrie.lat/",
 		tags: ["E-commerce", "Web", "Open source"],
 		date: "2023-02-10",
 	},
@@ -163,8 +207,7 @@ export default [
 		name: "Novabits",
 		description:
 			"Página de presentación para un estudio de desarrollo, con sección de contacto.",
-		repo_url: "https://github.com/Michael-Liendo/novabits",
-		preview_url: "https://novabits.michaelliendo.com/",
+		preview_url: "https://novabits.vercel.app",
 		tags: ["Landing page", "Web", "Open source"],
 		date: "2023-05-11",
 	},
