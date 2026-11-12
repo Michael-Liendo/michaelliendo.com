@@ -2,6 +2,53 @@ import type { Project } from "$lib/types/Project";
 
 export default [
 	{
+		name: "Venfy",
+		role: "Own product",
+		description:
+			"Turns any computer into a smart TV for YouTube that you control from your phone: open venfy.app/tv, link the YouTube app with a code and cast the way you would to a TV. Nothing to install, no account, with a shared queue for several phones and a web remote. In English, Spanish and Portuguese.",
+		preview_url: "https://venfy.app",
+		tags: ["Web", "YouTube", "Real time", "Own product"],
+		date: "2026-10-08",
+		period: "Oct 2026",
+		featured: true,
+	},
+	{
+		name: "Visitalo",
+		role: "Full stack",
+		description:
+			"PropTech platform for Venezuela: 3D property tours made with a phone and buyer pre-qualification before the visit. Monorepo with SvelteKit, Fastify, Drizzle and PostgreSQL, 37+ endpoints and Google sign-in.",
+		preview_url: "https://visitalo.app",
+		tags: ["PropTech", "Real estate", "Web"],
+		date: "2026-04-02",
+		featured: true,
+	},
+	{
+		name: "Enrola",
+		role: "In development",
+		description:
+			"Loyalty program for businesses with the card in Apple Wallet and Google Wallet: stamps, points and tiers. Customers join with a link, staff add points by scanning a QR code, and the pass updates itself on the phone.",
+		tags: ["Loyalty", "Apple Wallet", "Google Wallet"],
+		date: "2026-06-10",
+	},
+	{
+		name: "Soccer League Scheduler",
+		role: "Personal project",
+		description:
+			"App to run a local soccer cup: a public calendar with standings, top scorers and cards; an admin panel to record results live with a clock per match; and a planner that builds the fixtures and spreads out the rests. Built for a three-a-side cup in Naiguatá.",
+		repo_url: "https://github.com/Michael-Liendo/soccer-league-scheduler",
+		tags: ["SvelteKit", "SQLite", "Open source"],
+		date: "2026-10-06",
+	},
+	{
+		name: "MSFS 2024 on Apple Silicon",
+		role: "Research",
+		description:
+			"A documented attempt to run Microsoft Flight Simulator 2024 on an M4 MacBook: I changed the translation chain to D3D12 → Vulkan → Metal and cleared the Shader Model 6.7 wall. It boots and renders, but isn't playable yet. Includes patches and probes for anyone who wants to continue.",
+		repo_url: "https://github.com/Michael-Liendo/msfs2024-apple-silicon",
+		tags: ["C", "Graphics", "Apple Silicon", "Open source"],
+		date: "2026-08-30",
+	},
+	{
 		name: "Gatekeeper Editorial 30X",
 		role: "Finalist · 30X Hackathon · Team DevGain",
 		description:
@@ -65,7 +112,6 @@ export default [
 		description:
 			"Browser-based accounting for one or more companies: chart of accounts, journal entries, financial reports and Excel export.",
 		repo_url: "https://github.com/Michael-Liendo/contapp",
-		preview_url: "https://contapp.michaelliendo.com/",
 		tags: ["Accounting", "Web", "Open source"],
 		date: "2025-02-10",
 		featured: true,
@@ -137,8 +183,7 @@ export default [
 		name: "Underground",
 		description:
 			"A chat app with user-created rooms, invite-only access and real-time messages.",
-		repo_url: "https://github.com/Michael-Liendo/underground",
-		preview_url: "https://underground.michaelliendo.com/",
+		repo_url: "https://github.com/Michael-Liendo/underground-chat",
 		tags: ["Chat", "Real time", "Open source"],
 		date: "2023-12-10",
 	},
@@ -154,7 +199,6 @@ export default [
 		name: "Cherrie",
 		description: "An online store with categories, a cart and checkout.",
 		repo_url: "https://github.com/Michael-Liendo/cherrie",
-		preview_url: "https://cherrie.lat/",
 		tags: ["E-commerce", "Web", "Open source"],
 		date: "2023-02-10",
 	},
@@ -162,8 +206,7 @@ export default [
 		name: "Novabits",
 		description:
 			"A landing page for a software studio, with a contact section.",
-		repo_url: "https://github.com/Michael-Liendo/novabits",
-		preview_url: "https://novabits.michaelliendo.com/",
+		preview_url: "https://novabits.vercel.app",
 		tags: ["Landing page", "Web", "Open source"],
 		date: "2023-05-11",
 	},
