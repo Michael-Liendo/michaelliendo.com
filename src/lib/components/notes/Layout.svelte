@@ -19,9 +19,26 @@ export { a, blockquote, h2, h3, img, table, th, td };
   import './styles/note.css';
   import './styles/prism-one-dark.css';
   import { formatDate } from '$lib/utils';
+  import { page } from '$app/state';
+  import { track } from '$lib/analytics';
 
   let { title, description, date, preview_image_url, tags, children } =
     $props();
+
+  // `note_read` fires once per note view, when the end of the article scrolls into view.
+  let articleEnd = $state<HTMLElement | null>(null);
+  $effect(() => {
+    const noteTitle = title;
+    const path = page.url.pathname;
+    if (!articleEnd) return;
+    const observer = new IntersectionObserver((entries) => {
+      if (!entries.some((entry) => entry.isIntersecting)) return;
+      track('note_read', { path, title: noteTitle });
+      observer.disconnect();
+    });
+    observer.observe(articleEnd);
+    return () => observer.disconnect();
+  });
 </script>
 
 <div class="mx-auto w-full pb-12 pt-10">
@@ -70,4 +87,5 @@ export { a, blockquote, h2, h3, img, table, th, td };
   >
     {@render children()}
   </article>
+  <div bind:this={articleEnd} aria-hidden="true"></div>
 </div>
