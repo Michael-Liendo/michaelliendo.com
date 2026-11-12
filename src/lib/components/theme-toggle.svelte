@@ -3,6 +3,7 @@ import { MoonIcon, SunIcon } from "@lucide/svelte";
 import { onMount } from "svelte";
 
 import { locale } from "$i18n/i18n-svelte";
+import { track } from "$lib/analytics";
 
 let theme = $state<"light" | "dark">("light");
 
@@ -22,6 +23,7 @@ onMount(() => {
 
 function toggle() {
 	const next = theme === "dark" ? "light" : "dark";
+	track("theme_toggled", { theme: next });
 	const system = matchMedia("(prefers-color-scheme: dark)").matches
 		? "dark"
 		: "light";

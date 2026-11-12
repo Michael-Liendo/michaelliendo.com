@@ -1,39 +1,41 @@
 /**
- * Anonymous page and contact-click counts, sent to PostHog.
+ * Site analytics with posthog-js, sent to the shared PostHog project (449489).
  *
- * Follows the same pattern as Venfy: events go to the shared Engrana project
- * (449489) and carry `app = michaelliendo`, so filter on that property in any
- * chart. No PostHog script is loaded and nothing is stored in cookies; each tab
- * gets a random id that disappears when it closes. Browsers asking not to be
+ * Every event carries `app = michaelliendo`, so filter on that property in any
+ * chart. posthog-js adds automatic page views, page leaves, autocapture,
+ * heatmaps, Web Vitals and session replays (inputs masked). No cookies: state
+ * lives in sessionStorage and disappears when the tab closes, and no person
+ * profiles are created for anonymous visitors. Browsers asking not to be
  * tracked (Global Privacy Control / Do Not Track) send nothing.
+ *
+ * posthog-js is loaded after the page is interactive so it doesn't slow down
+ * the first paint; events tracked before that are queued and sent once it loads.
  */
+import type { PostHog } from "posthog-js";
 
-/** Public, write-only project token of the Engrana project (ID 449489). */
+/** Public, write-only project token of the shared project (ID 449489). */
 const POSTHOG_KEY = "phc_n4CgfT4drk4RpUBqqhMR2AcjHcaBzNb8C3TbD3TNYA7m";
-const CAPTURE_URL = "https://us.i.posthog.com/i/v0/e/";
 const APP = "michaelliendo";
-const VISITOR_KEY = "ml-visitor";
 
-export type AnalyticsEvent = "page_viewed" | "contact_clicked";
+export type AnalyticsEvent =
+	| "page_viewed"
+	| "contact_clicked"
+	| "outbound_link_clicked"
+	| "chat_simulation_started"
+	| "chat_simulation_completed"
+	| "note_read"
+	| "theme_toggled";
 
 type Properties = Record<string, string | number | boolean | null | undefined>;
 
+let client: PostHog | null = null;
+let loading = false;
+const queue: Array<[AnalyticsEvent, Properties, boolean]> = [];
+
 function trackingAllowed(): boolean {
-	if (import.meta.env.DEV) return false;
+	if (typeof window === "undefined" || import.meta.env.DEV) return false;
 	const nav = navigator as Navigator & { globalPrivacyControl?: boolean };
 	return !(nav.globalPrivacyControl || nav.doNotTrack === "1");
-}
-
-function visitorId(): string {
-	try {
-		const existing = sessionStorage.getItem(VISITOR_KEY);
-		if (existing) return existing;
-		const id = crypto.randomUUID();
-		sessionStorage.setItem(VISITOR_KEY, id);
-		return id;
-	} catch {
-		return crypto.randomUUID();
-	}
 }
 
 function deviceType(): "mobile" | "tablet" | "desktop" {
@@ -43,35 +45,53 @@ function deviceType(): "mobile" | "tablet" | "desktop" {
 	return "desktop";
 }
 
-export function track(event: AnalyticsEvent, properties: Properties = {}): void {
-	if (typeof window === "undefined" || !trackingAllowed()) return;
-
-	const body = JSON.stringify({
-		api_key: POSTHOG_KEY,
+function send(event: AnalyticsEvent, properties: Properties, leavesPage: boolean) {
+	client?.capture(
 		event,
-		distinct_id: visitorId(),
-		properties: {
-			app: APP,
-			// Anonymous events: no person profiles in the shared project.
-			$process_person_profile: false,
-			$current_url: window.location.href,
-			$host: window.location.host,
-			$pathname: window.location.pathname,
-			// PostHog tells people from bots by this; without it every visit is "Automation".
-			$raw_user_agent: navigator.userAgent,
-			locale: document.documentElement.lang,
-			device: deviceType(),
-			...properties,
+		{ locale: document.documentElement.lang, ...properties },
+		// sendBeacon lets the request finish when the click leaves the page.
+		leavesPage ? { transport: "sendBeacon" } : undefined,
+	);
+}
+
+/** Loads posthog-js once. Call it from the root layout after mount. */
+export async function initAnalytics(): Promise<void> {
+	if (client || loading || !trackingAllowed()) return;
+	loading = true;
+	const { default: posthog } = await import("posthog-js");
+	posthog.init(POSTHOG_KEY, {
+		api_host: "https://us.i.posthog.com",
+		ui_host: "https://us.posthog.com",
+		defaults: "2026-08-30",
+		persistence: "sessionStorage",
+		person_profiles: "identified_only",
+		respect_dnt: true,
+		capture_pageview: "history_change",
+		capture_pageleave: true,
+		autocapture: true,
+		capture_dead_clicks: true,
+		enable_heatmaps: true,
+		capture_performance: { web_vitals: true },
+		session_recording: { maskAllInputs: true },
+		loaded: () => {
+			// Tag everything (including $pageview and replays) with this site.
+			posthog.register({ app: APP, device: deviceType() });
+			client = posthog;
+			for (const [event, properties, leavesPage] of queue.splice(0)) {
+				send(event, properties, leavesPage);
+			}
 		},
 	});
+}
 
-	// keepalive lets the request finish when the click leaves the page.
-	fetch(CAPTURE_URL, {
-		method: "POST",
-		headers: { "Content-Type": "application/json" },
-		body,
-		keepalive: true,
-	}).catch(() => {});
+export function track(
+	event: AnalyticsEvent,
+	properties: Properties = {},
+	{ leavesPage = false }: { leavesPage?: boolean } = {},
+): void {
+	if (!trackingAllowed()) return;
+	if (client) send(event, properties, leavesPage);
+	else queue.push([event, properties, leavesPage]);
 }
 
 export function referrerHost(): string | null {
@@ -83,7 +103,7 @@ export function referrerHost(): string | null {
 	}
 }
 
-/** Which part of the page a contact link sits in, for `contact_clicked`. */
+/** Which part of the page a link sits in, for click events. */
 export function contactLocation(link: Element): string {
 	if (link.closest("header")) return "header";
 	if (link.closest("footer")) return "footer";

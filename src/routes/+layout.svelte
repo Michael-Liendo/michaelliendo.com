@@ -22,7 +22,12 @@ import "@fontsource/jetbrains-mono/latin-500.css";
 import "@fontsource/jetbrains-mono/latin-ext-500.css";
 import "../app.css";
 import { afterNavigate } from "$app/navigation";
-import { contactLocation, referrerHost, track } from "$lib/analytics";
+import {
+	contactLocation,
+	initAnalytics,
+	referrerHost,
+	track,
+} from "$lib/analytics";
 import { onMount } from "svelte";
 const { children } = $props();
 
@@ -38,6 +43,8 @@ afterNavigate(() => {
 });
 
 onMount(() => {
+	initAnalytics();
+
 	const onClick = (event: MouseEvent) => {
 		const link = (event.target as Element | null)?.closest?.("a[href]");
 		if (!link) return;
@@ -47,12 +54,32 @@ onMount(() => {
 			: href.startsWith("mailto:")
 				? "email"
 				: null;
-		if (!channel) return;
-		track("contact_clicked", {
-			channel,
-			location: contactLocation(link),
-			path: page.url.pathname,
-		});
+		if (channel) {
+			track(
+				"contact_clicked",
+				{ channel, location: contactLocation(link), path: page.url.pathname },
+				{ leavesPage: true },
+			);
+			return;
+		}
+		// Links to other sites: project demos, repos, client sites, social profiles.
+		let url: URL;
+		try {
+			url = new URL(href, window.location.href);
+		} catch {
+			return;
+		}
+		if (url.host === window.location.host || !url.protocol.startsWith("http")) return;
+		track(
+			"outbound_link_clicked",
+			{
+				host: url.host,
+				url: url.href,
+				location: contactLocation(link),
+				path: page.url.pathname,
+			},
+			{ leavesPage: true },
+		);
 	};
 	document.addEventListener("click", onClick, { capture: true });
 	return () => document.removeEventListener("click", onClick, { capture: true });

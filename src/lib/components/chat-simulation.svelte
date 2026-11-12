@@ -2,6 +2,7 @@
 import { PlayIcon, RotateCcwIcon } from "@lucide/svelte";
 import { onDestroy, tick } from "svelte";
 
+import { track } from "$lib/analytics";
 import type { HomeCase } from "$lib/types/Home";
 
 type Chat = NonNullable<HomeCase["chat"]>;
@@ -34,6 +35,7 @@ async function scrollToEnd() {
 }
 
 async function play() {
+	track("chat_simulation_started", { replay: shown > 0 });
 	const id = ++runId;
 	timers.forEach(clearTimeout);
 	timers = [];
@@ -65,6 +67,7 @@ async function play() {
 		if (id !== runId) return;
 	}
 	running = false;
+	track("chat_simulation_completed");
 }
 
 onDestroy(() => {
