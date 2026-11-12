@@ -14,4 +14,6 @@ export interface Project {
 	period?: string;
 	/** Shown in the first section on the projects page (client and product work). */
 	featured?: boolean;
+	/** Order inside the featured section: 1 goes first. Featured projects without it go last, by date. */
+	priority?: number;
 }

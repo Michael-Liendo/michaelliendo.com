@@ -11,6 +11,7 @@ export default [
 		date: "2026-10-08",
 		period: "Oct 2026",
 		featured: true,
+		priority: 6,
 	},
 	{
 		name: "Visitalo",
@@ -21,6 +22,7 @@ export default [
 		tags: ["PropTech", "Real estate", "Web"],
 		date: "2026-04-02",
 		featured: true,
+		priority: 7,
 	},
 	{
 		name: "Enrola",
@@ -59,6 +61,7 @@ export default [
 		date: "2026-10-18",
 		period: "Oct 2026 · 48 hours",
 		featured: true,
+		priority: 5,
 	},
 	{
 		name: "Engrana AI",
@@ -71,6 +74,7 @@ export default [
 		date: "2026-06-01",
 		period: "Jun 2026 – Present",
 		featured: true,
+		priority: 4,
 	},
 	{
 		name: "Necesitas Bot",
@@ -83,6 +87,7 @@ export default [
 		date: "2025-11-01",
 		period: "Nov 2025 – Present · 5 mos",
 		featured: true,
+		priority: 1,
 	},
 	{
 		name: "Tizza",
@@ -95,6 +100,7 @@ export default [
 		date: "2025-11-01",
 		period: "Nov 2025 – Present · 5 mos",
 		featured: true,
+		priority: 3,
 	},
 	{
 		name: "La Victoria — Reports",
@@ -105,6 +111,7 @@ export default [
 		date: "2025-06-01",
 		period: "Jun 2025 – Aug 2025 · 3 mos",
 		featured: true,
+		priority: 2,
 	},
 	{
 		name: "Contapp",
@@ -115,6 +122,7 @@ export default [
 		tags: ["Accounting", "Web", "Open source"],
 		date: "2025-02-10",
 		featured: true,
+		priority: 12,
 	},
 	{
 		name: "Petch",
@@ -127,6 +135,7 @@ export default [
 		date: "2025-03-01",
 		period: "Sep 2023 – Aug 2024 · 1 yr full-time; Mar 2025 · 1 mo freelance",
 		featured: true,
+		priority: 8,
 	},
 	{
 		name: "Astral Insights",
@@ -139,6 +148,7 @@ export default [
 		date: "2025-02-01",
 		period: "Feb 2025 · 1 mo",
 		featured: true,
+		priority: 11,
 	},
 	{
 		name: "Soluciones JM",
@@ -150,6 +160,7 @@ export default [
 		date: "2024-08-01",
 		period: "Aug 2024 – Feb 2025 · 7 mos",
 		featured: true,
+		priority: 9,
 	},
 	{
 		name: "Oriencoop",
@@ -162,6 +173,7 @@ export default [
 		date: "2024-12-01",
 		period: "Dec 2024 – Jan 2025 · 2 mos",
 		featured: true,
+		priority: 10,
 	},
 	{
 		name: "TownHall",

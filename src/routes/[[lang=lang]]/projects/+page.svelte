@@ -24,8 +24,13 @@ const projects = $derived(
 	),
 );
 
+// Most important first; the rest by date.
+const byPriority = (a: Project, b: Project) =>
+	(a.priority ?? Number.POSITIVE_INFINITY) -
+		(b.priority ?? Number.POSITIVE_INFINITY) || byDateDesc(a, b);
+
 const featuredProjects = $derived(
-	projects.filter((p) => p.featured).sort(byDateDesc),
+	projects.filter((p) => p.featured).sort(byPriority),
 );
 
 const moreProjects = $derived(
